@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'iransans';
+    src: url('https://cdn.jsdelivr.net/npm/iransans@1.0.0/woff2/IRANSansWeb.woff2');
+}
+
+.flex-center {
+    @apply flex justify-center items-center;
+}
+
+.text-rtl {
+    direction: rtl;
+}
