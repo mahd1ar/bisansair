@@ -88,8 +88,8 @@
     "util-deprecate": "^1.0.2"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/input.scss -o ./dist/output.css --watch",
-    "build": "npx tailwindcss -i ./src/input.scss -o ./dist/output.css --minify"
+    "dev": "npx tailwindcss -i ./src/input.scss -o ./src/css/output.css --watch",
+    "build": "npx tailwindcss -i ./src/input.scss -o ./src/css/output.css --minify"
   },
   "keywords": [],
   "author": "mahdiyar anari",
