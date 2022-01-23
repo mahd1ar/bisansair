@@ -14,3 +14,22 @@
 .text-rtl {
     direction: rtl;
 }
+
+.bi-primary-pill {
+    @apply p-2 px-3 font-bold bg-yellow-300 hover:bg-yellow-200 text-yellow-900 rounded-full shadow-xl cursor-pointer;
+}
+
+.bi-intro {
+    @apply flex-center text-center flex-col mb-5 font-iransans;
+}
+.bi-title {
+    @apply text-2xl font-bold;
+}
+.bi-description {
+    @apply text-gray-500;
+}
+
+html,
+body {
+    @apply font-iransans;
+}
