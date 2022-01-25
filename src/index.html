@@ -10,6 +10,8 @@
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet"
         type="text/css" />
 
+    <!-- anime.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script defer src="js/alpine.js"></script>
 </head>
 
@@ -25,18 +27,19 @@
     </div>
     <!-- /debug -->
 
-    <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-transparent pt-5">
+    <!-- <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-transparent pt-5"> -->
+    <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-white pt-5">
         <nav class="container mx-auto">
             <div
-                class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow lg:w-4/5">
+                class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
                 <div class="flex">
                     <div
-                        class="bg-gray-200 text-gray-500 px-2 py-1 rounded-full flex justify-center items-center flex-1">
+                        class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
                         <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-                        <span class="mx-2 text-sm"> 021-345648 </span>
+                        <span class="mx-2 text-sm hidden md:block"> 021-345648 </span>
                     </div>
                     <ul
-                        class="flex flex-row-reverse gap-2 font-iransans text-sm font-semibold items-center mx-5 xl:ml-10 text-[#666666]">
+                        class="hidden md:flex flex-row-reverse gap-2 font-iransans text-sm font-semibold items-center mx-5 xl:ml-10 text-[#666666]">
                         <li
                             class="p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
                             تور
@@ -71,26 +74,51 @@
                 </div>
 
                 <img src="./img/logo.png" class="object-contain w-9" alt="" />
+
+                <div id="mobile_menu_icon" class="w-6 flex flex-col gap-1 cursor-pointer md:hidden">
+                    <span class="bg-gray-700 h-1 rounded-full"> </span>
+                    <span class="bg-gray-700 h-1 rounded-full"> </span>
+                    <span class="bg-gray-700 h-1 rounded-full"> </span>
+                </div>
             </div>
         </nav>
 
-        <div class="relative flex justify-center items-center">
-            <div id="gradient"
-                class="absolute z-0 h-1/2 bottom-1/2 w-full bg-gradient-radial from-yellow-200 to-transparent"></div>
+        <div class="relative flex justify-center items-center h-screen overflow-x-clip">
+            <div id="yellow_gradient"
+                class="hidden md:block absolute z-0 h-full bottom-0 w-full bg-gradient-radial from-yellow-200 via-yellow-50 to-transparent">
+            </div>
 
-            <img class="mx-auto z-10" src="./img/Airplane.png" alt="" />
+            <!-- cloud -->
+            <div id="cloud-scene" x-data="alpineCloud" class="absolute hidden md:flex inset-0 overflow-x-clip  ">
+                <template x-for="cloud in clouds">
+                    <div :data-depth="cloud.data.depth" class="w-full h-full  ">
 
-            <div class="absolute z-10 text-center font-iransans">
-                <div class="">
-                    <h1 class="text-6xl font-bold font-vazir">بیسان سیر</h1>
+                        <img class="js-home-cloud absolute" :style="cloud.style"
+                            :src="'img/cloud/' + cloud.name + '.png'">
+
+
+                    </div>
+
+                </template>
+            </div>
+            <img id="airplane" class="mx-auto relative hidden md:block" src="./img/cloud/airplane.png" alt="" />
+
+            <div class="flex flex-row-reverse items-center md:flex-col absolute z-10 text-center font-iransans">
+                <div class="w-1/2 md:w-full relative">
+                    <h1 class=" text-6xl font-bold font-vazir">بیسان سیر</h1>
                     <h2 class="text-xl font-bold relative top-3">
                         با بیسان به بیش از 50 نقطه دنبا سفر کن
                     </h2>
+                    <div class="-z-10 w-[110%] md:hidden absolute left-0 -top-20">
+
+                        <img src="img/Airplane.png" alt="">
+                    </div>
                 </div>
 
-                <div class="bg-white mt-8 shadow-lg rounded-full px-4 py-[16px]">
-                    <div class="flex flex-row-reverse gap-2 justify-between">
-                        <div class="flex w-56 items-center">
+                <div
+                    class="container mx-auto w-1/2 md:w-full bg-white mt-8 shadow-lg rounded-3xl md:rounded-full px-4 py-[16px]">
+                    <div class="flex flex-col md:flex-row-reverse gap-2 justify-between">
+                        <div class="flex w-full md:w-1/5 items-center">
                             <input class="text-rtl w-full focus-visible:outline-none placeholder:text-gray-700"
                                 type="text" placeholder="مبدا" />
                             <span class="bg-white mx-2 w-12 h-10 rounded-full overflow-hidden flex-center shadow-lg">
@@ -98,7 +126,7 @@
                             </span>
                         </div>
 
-                        <div class="flex w-56 items-center">
+                        <div class="flex w-full md:w-1/5 items-center">
                             <input class="text-rtl w-full focus-visible:outline-none placeholder:text-gray-700"
                                 type="text" placeholder="مقصد" />
                             <span class="bg-white mx-2 w-12 h-10 rounded-full overflow-hidden flex-center shadow-lg">
@@ -106,7 +134,7 @@
                             </span>
                         </div>
 
-                        <div class="flex w-56 items-center">
+                        <div class="flex w-full md:w-1/5 items-center">
                             <input class="text-rtl w-full focus-visible:outline-none placeholder:text-gray-700"
                                 type="text" placeholder="تاریخ" />
                             <span class="bg-white mx-2 w-12 h-10 rounded-full overflow-hidden flex-center shadow-lg">
@@ -114,13 +142,14 @@
                             </span>
                         </div>
 
-                        <div class="flex w-32 items-center">
-                            <div class="flex-center">
-                                <div class="bg-gray-200 flex-center cursor-pointer w-9 h-9 rounded-full">
+                        <div class="flex w-full md:w-1/5 items-center">
+                            <div class="w-full flex-center">
+                                <div class="bg-gray-200 hidden md:flex-cc cursor-pointer w-9 h-9 rounded-full">
                                     <img src="./svg/minus.svg" alt="" />
                                 </div>
-                                <span class="mx-3"> نفرات </span>
-                                <div class="bg-gray-200 flex-center cursor-pointer w-9 h-9 rounded-full">
+                                <div class="mx-3 "> نفرات </div>
+                                <div
+                                    class="bg-gray-200 hidden md:flex justify-center items-center cursor-pointer w-9 h-9 rounded-full">
                                     <img src="./svg/plus.svg" alt="" />
                                 </div>
                             </div>
@@ -130,12 +159,12 @@
                             </span>
                         </div>
 
-                        <div class="flex w-32 items-center bg-yellow-300 rounded-full">
-                            <div class="flex-center w-full">
-                                <span class="mx-3"> جستتو </span>
+                        <div class="flex w-full justify-center md:w-32 items-center bg-yellow-300 rounded-full">
+                            <div class="flex-center md:w-full">
+                                <span class="md:mx-3 text-[#5A623A]"> جستتو </span>
                             </div>
 
-                            <span class="mx-2 w-12 h-10 rounded-full overflow-hidden flex-center">
+                            <span class="mx-2 md:w-12 h-10 rounded-full overflow-hidden flex-center">
                                 <img class="object-contain" src="svg/magnifier.svg" alt="" />
                             </span>
                         </div>
@@ -147,29 +176,34 @@
 
     <!-- special tours -->
     <section class="js-nowruz">
-        <div class="container mx-auto text-center">
-            <div class="flex-center text-center flex-col mb-8 font-iransans">
+        <div class="container flex flex-row md:flex-col items-center mx-auto text-center">
+
+            <div class="w-1/2 md:w-full flex-center text-center flex-col mb-8 font-iransans relative z-10">
                 <h2 class="text-3xl font-bold">تور های ویژه نوروز</h2>
-                <h3 class="text-gray-500">نوروز امسال با بیسان سیر</h3>
+                <h3 class="text-gray-500 mt-2 md:mt-0">نوروز امسال با بیسان سیر</h3>
+                <button
+                    class="md:hidden inline-block p-2 font-iransans font-bold px-4 bg-yellow-300 hover:bg-yellow-200 text-yellow-900 rounded-full mt-8 shadow-xl">
+                    نمایش تمام تور ها
+                </button>
             </div>
 
-            <div>
-                <div class="flex-center relative h-[430px]">
-                    <div data-card-id="0"
-                        class="top-0 transition duration-150 ease-out inline-block w-[336px] absolute rounded-full">
+            <div class="w-1/2 md:w-full">
+                <div class="flex-center relative h-[323px] md:h-[430px]">
+                    <div data-wow-duration="1.2s" data-wow-delay="1s" data-card-id="0"
+                        class="wow animate__fadeIn top-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
                             class="absolute p-6 px-4 inset-0 w-full h-full bg-gradient-to-t from-gray-800 to-transparent rounded-3xl">
                             <div class="flex flex-col gap-2 text-rtl items-start h-full">
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="rounded-full" src="img/flag-france.png" alt="" />
                                     <span> فرانسه ، پاریس </span>
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="font-bold" src="svg/cal.svg" alt="" />
                                     <span> شروع سفر </span>
                                     <span class="text-rtl font-bold">
@@ -178,7 +212,7 @@
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="font-bold" src="svg/cal.svg" alt="" />
                                     <span> پایان سفر </span>
                                     <span class="text-rtl font-bold">
@@ -187,7 +221,7 @@
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <strong> 6 </strong>
                                     <span>روز و </span>
                                     <strong>5 </strong>
@@ -195,7 +229,7 @@
                                 </div>
 
                                 <div class="mt-auto flex flex-col font-iransans w-full">
-                                    <strong class="text-white text-[20px] self-start">
+                                    <strong class="text-white text-sm md:text-[20px] self-start">
                                         تور ونیز با پرواز فردی برد
                                     </strong>
 
@@ -210,21 +244,21 @@
                         </div>
                     </div>
 
-                    <div data-card-id="1"
-                        class="top-0 transition duration-150 ease-out inline-block w-[336px] absolute rounded-full">
+                    <div data-wow-duration="1.2s" data-wow-delay="0.7s" data-card-id="1"
+                        class="wow animate__fadeIn top-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
                             class="absolute p-6 px-4 inset-0 w-full h-full bg-gradient-to-t from-gray-800 to-transparent rounded-3xl">
                             <div class="flex flex-col gap-2 text-rtl items-start h-full">
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="rounded-full" src="img/flag-france.png" alt="" />
                                     <span> فرانسه ، پاریس </span>
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="font-bold" src="svg/cal.svg" alt="" />
                                     <span> شروع سفر </span>
                                     <span class="text-rtl font-bold">
@@ -233,7 +267,7 @@
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="font-bold" src="svg/cal.svg" alt="" />
                                     <span> پایان سفر </span>
                                     <span class="text-rtl font-bold">
@@ -242,7 +276,7 @@
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <strong> 6 </strong>
                                     <span>روز و </span>
                                     <strong>5 </strong>
@@ -250,7 +284,7 @@
                                 </div>
 
                                 <div class="mt-auto flex flex-col font-iransans w-full">
-                                    <strong class="text-white text-[20px] self-start">
+                                    <strong class="text-white text-sm md:text-[20px] self-start">
                                         تور ونیز با پرواز فردی برد
                                     </strong>
 
@@ -265,21 +299,21 @@
                         </div>
                     </div>
 
-                    <div data-card-id="2"
-                        class="top-0 transition duration-150 ease-out inline-block w-[336px] absolute rounded-full">
+                    <div data-wow-duration="1.2s" data-wow-delay="1s" data-card-id="2"
+                        class="wow animate__fadeIn top-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
                             class="absolute p-6 px-4 inset-0 w-full h-full bg-gradient-to-t from-gray-800 to-transparent rounded-3xl">
                             <div class="flex flex-col gap-2 text-rtl items-start h-full">
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="rounded-full" src="img/flag-france.png" alt="" />
                                     <span> فرانسه ، پاریس </span>
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="font-bold" src="svg/cal.svg" alt="" />
                                     <span> شروع سفر </span>
                                     <span class="text-rtl font-bold">
@@ -288,7 +322,7 @@
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="font-bold" src="svg/cal.svg" alt="" />
                                     <span> پایان سفر </span>
                                     <span class="text-rtl font-bold">
@@ -297,7 +331,7 @@
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <strong> 6 </strong>
                                     <span>روز و </span>
                                     <strong>5 </strong>
@@ -305,7 +339,7 @@
                                 </div>
 
                                 <div class="mt-auto flex flex-col font-iransans w-full">
-                                    <strong class="text-white text-[20px] self-start">
+                                    <strong class="text-white text-sm md:text-[20px] self-start">
                                         تور ونیز با پرواز فردی برد
                                     </strong>
 
@@ -323,19 +357,18 @@
                     <!-- controllers  -->
                     <div class="w-full flex justify-between relative">
                         <button
-                            class="w-12 h-12 shadow-2xl bg-yellow-300 hover:bg-yellow-200 rounded-full flex-center js-slider-next">
+                            class="z-10 w-8 h-8 md:w-12 md:h-12 p-1 shadow-2xl bg-yellow-300 hover:bg-yellow-200 rounded-full flex-center js-slider-next">
                             <img src="svg/chevron-left.svg" alt="" />
                         </button>
                         <button
-                            class="w-12 h-12 shadow-2xl bg-yellow-300 hover:bg-yellow-200 rounded-full flex-center js-slider-prv">
+                            class="z-10 w-8 h-8 md:w-12 md:h-12 p-1 shadow-2xl bg-yellow-300 hover:bg-yellow-200 rounded-full flex-center js-slider-prv">
                             <img src="svg/chevron-rigth.svg" alt="" />
                         </button>
                     </div>
                 </div>
             </div>
 
-            <button
-                class="inline-block p-2 font-iransans font-bold px-4 bg-yellow-300 hover:bg-yellow-200 text-yellow-900 rounded-full mt-8 shadow-xl">
+            <button class="mt-10 bi-primary-pill hidden md:block">
                 نمایش تمام تور ها
             </button>
         </div>
@@ -348,9 +381,9 @@
                 <h3 class="text-gray-500">نوروز امسال با بیسان سیر</h3>
             </div>
 
-            <div x-data="alpineServices" class="flex justify-evenly flex-wrap">
+            <div x-data="alpineServices" class=" flex justify-evenly flex-wrap">
                 <template x-for="(item, index) in items">
-                    <div class="font-iransans w-1/3 p-3 mt-5">
+                    <div class="font-iransans w-1/3 p-6 md:p-3 mt-5">
                         <img class="mx-auro inline-block" :src="'svg/services/Frame-' + index + '.svg'" alt="" />
 
                         <h2 x-text="item.head" class="font-bold text-lg mt-10"></h2>
@@ -366,9 +399,9 @@
     <section class="mt-44">
         <div class="container mx-auto">
             <div
-                class="flex justify-between items-center bg-gradient-to-r from-[#dfd6cd] to-white p-16 text-rtl font-iransans shadow-xl rounded-3xl">
-                <div class="">
-                    <h1 class="text-5xl font-bold">تور های اقساطی</h1>
+                class="flex justify-between overflow-hidden items-center relative p-16 bg-gradient-to-r from-[#dfd6cd] to-whitep-16 text-rtl font-iransans shadow-xl rounded-3xl">
+                <div class="relative z-10">
+                    <h1 class="text-5xl font-bold ">تور های اقساطی</h1>
                     <p class="mt-5 text-lg">
                         با تور های اقصاتی بیسان به راحتی به تمام نقاط دنیا
                         سفر کنید
@@ -379,7 +412,12 @@
                     </button>
                 </div>
 
-                <img src="svg/human-1.svg" alt="" />
+                <img class="hidden md:block" src="svg/human-1.svg" alt="" />
+                <div
+                    class="md:hidden absolute inset-0 h-full w-full z-0 after:bg-gradient-to-l after:from-gray-300 after:to-transparent after:absolute after:w-full after:h-full after:top-0">
+
+                    <img src="img/tours.png" alt="" />
+                </div>
             </div>
         </div>
     </section>
@@ -387,9 +425,10 @@
     <!-- special tours  -->
 
     <section class="mt-44">
-        <div class="container flex mx-auto h-[430px]">
+        <div class="container flex mx-auto h-[323px] md:h-[430px]">
             <div x-data="alpineSpecialTours" class="flex justify-between w-1/2 relative">
-                <button @click="next" class="bi-primary-pill absolute top-1/2 2xl:-right-20 lg:-right-20 z-10">
+                <button @click="next"
+                    class="bi-primary-pill absolute top-1/2 2xl:-right-20 lg:-right-20 -right-12 z-10">
                     <img src="svg/chevron-rigth.svg" alt="" />
                 </button>
 
@@ -399,20 +438,20 @@
 
                 <template x-for="(item,inx) in items">
                     <div :style="styles[inx]"
-                        class="top-0 right-0 transition duration-150 ease-out inline-block w-[336px] absolute rounded-full">
+                        class="top-0 right-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
                             class="absolute p-6 px-4 inset-0 w-full h-full bg-gradient-to-t from-gray-800 to-transparent rounded-3xl">
                             <div class="flex flex-col gap-2 text-rtl items-start h-full">
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="rounded-full" src="img/flag-france.png" alt="" />
                                     <span> فرانسه ، پاریس </span>
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="font-bold" src="svg/cal.svg" alt="" />
                                     <span> شروع سفر </span>
                                     <span class="text-rtl font-bold">
@@ -421,7 +460,7 @@
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <img class="font-bold" src="svg/cal.svg" alt="" />
                                     <span> پایان سفر </span>
                                     <span class="text-rtl font-bold">
@@ -430,7 +469,7 @@
                                 </div>
 
                                 <div
-                                    class="bg-white text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
+                                    class="bg-white text-xs md:text-sm font-iransans p-2 rounded-full shadow-xl flex items-center justify-start gap-2">
                                     <strong> 6 </strong>
                                     <span>روز و </span>
                                     <strong>5 </strong>
@@ -438,7 +477,7 @@
                                 </div>
 
                                 <div class="mt-auto flex flex-col font-iransans w-full">
-                                    <strong class="text-white text-[20px] self-start">
+                                    <strong class="text-white text-sm md:text-[20px] self-start">
                                         تور ونیز با پرواز فردی برد
                                     </strong>
 
@@ -456,10 +495,10 @@
             </div>
 
             <div class="flex justify-between w-1/2 text-rtl font-iransans">
-                <div class="flex flex-col items-start gap-3">
-                    <h1 class="text-5xl font-bold">تورهای ویژه</h1>
-                    <p class="">تور های امسال با بیسان سیر</p>
-                    <p class="w-4/5">
+                <div class="flex flex-col md:items-start p-8 md:p-0 gap-3 text-center">
+                    <h1 class="text-lg md:text-5xl font-bold">تورهای ویژه</h1>
+                    <p class="text-xs md:text-base">تور های امسال با بیسان سیر</p>
+                    <p class="text-xs md:text-base  md:w-4/5">
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
                         صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها
                         و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
@@ -470,7 +509,7 @@
                         نرم افزارها شناخت بیشتری
                     </p>
 
-                    <button class="mt-auto inline-block bi-primary-pill">
+                    <button class="md:mt-auto inline-block bi-primary-pill">
                         شرایط و قوانین
                     </button>
                 </div>
@@ -478,17 +517,19 @@
         </div>
     </section>
 
-    <section class="bg-contain bg-repeat py-96 relative" style="background-image: url(svg/travel-textture/one.svg)">
-        <div class="bg-gradient-radial absolute from-white via-white to-transparent inset-0 z-0"></div>
+    <section class="bg-contain bg-repeat py-10 md:py-44 lg:py-96 relative overflow-hidden"
+        style="background-image: url(svg/travel-textture/one.svg)">
+        <div class="bg-gradient-radial absolute from-white via-white to-transparent inset-0 z-0 md:transform scale-110">
+        </div>
 
-        <div class="container mx-auto px-56 relative">
+        <div class="container mx-auto bi-wrapper relative">
             <div class="bi-intro">
                 <h2 class="bi-title">برگزیده های وبلاگ</h2>
                 <h3 class="bi-description">
                     وبلاگ بیسان را نیز دنبال کنید
                 </h3>
             </div>
-            <div class="grid grid-cols-3 gap-3">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
                 <div class="col-span-2 rounded-3xl relative overflow-hidden">
                     <img class="w-full h-full object-cover" src="img/blog/image-12.png" alt="" />
                     <div
@@ -543,7 +584,7 @@
         </div>
     </section>
 
-    <section x-data="alpineFAQs">
+    <section x-data="alpineFAQs" class="my-36">
         <div class="container mx-auto">
             <div class="bi-intro">
                 <h2 class="bi-title">سوالات متداول</h2>
@@ -574,8 +615,8 @@
         </div>
     </section>
 
-    <!-- logo  -->
-    <section>
+    <!-- logos  -->
+    <section class="bg-gradient-to-t from-gray-200 to-transparent py-20">
         <div class="container mx-auto">
 
             <div class="text-center mb-16 mt-40">
@@ -586,32 +627,32 @@
 
 
                 <div
-                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
+                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] z-10 text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
 
                     <img class="" src="img/logos/image-16.png" alt="">
                 </div>
                 <div
-                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
+                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] z-10 text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
 
                     <img class="" src="img/logos/image-17.png" alt="">
                 </div>
                 <div
-                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
+                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] z-10 text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
 
                     <img class="" src="img/logos/image-18.png" alt="">
                 </div>
                 <div
-                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
+                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] z-10 text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
 
                     <img class="" src="img/logos/image-19.png" alt="">
                 </div>
                 <div
-                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
+                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] z-10 text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
 
                     <img class="" src="img/logos/image-20.png" alt="">
                 </div>
                 <div
-                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
+                    class="aspect-square bg-white p-2 m-2 lg:max-w-[150px] z-10 text-center lg:w-1/6 md:w-1/4 shadow-lg rounded-xl flex-center">
 
                     <img class="" src="img/logos/image-21.png" alt="">
                 </div>
@@ -622,11 +663,54 @@
         </div>
     </section>
 
-    <!-- gap -->
-    <section class="container h-32"></section>
+    <footer class=" relative -top-60 flex bg-gray-200 overflow-x-clip" aria-hidden="true">
+        <img src="/src/img/footer.png" alt="">
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="js/index.js"></script>
     <script>
-        // PLACE VARIABLES HERE
+
+        // window.addEventListener('load', function () {
+
+        //          const w = new WOW({
+        //             animateClass: 'animate__animated'
+        //              callback : () => {
+        //                  console.log(99)
+        //              }
+        //          w.init();
+        //          console.log(w)
+        //          })
+
+
+        window.addEventListener('load', function () {
+
+            const w = new WOW({
+                animateClass: 'animate__animated'
+            })
+            w.init();
+
+            (() => {
+
+                const offsetTop = airplane.getBoundingClientRect().top + airplane.getBoundingClientRect().height - document.body.getBoundingClientRect().top  //airplane.y;//+ airplane.getBoundingClientRect().height;
+
+                document.addEventListener('scroll', function (e) {
+
+                    const res = 1 - ((offsetTop - window.pageYOffset) / offsetTop)
+
+                    if (res < 1) {
+                        airplane.style.transform = `scale(${res / 2 + 1})`
+                    }
+
+                })
+            })()
+
+
+            // js-home-cloud
+
+        })
 
         const alpineServices = {
             items: [
@@ -754,6 +838,62 @@
         };
         //
 
+
+
+
+        var alpineCloud = {
+
+            clouds: [],
+            mouseX: 0,
+            mousey: 0,
+            init() {
+
+                new Array(44).fill(0).forEach((_, i) => {
+                    const props = {
+                        name: i + 1,
+                        style: {
+                            left: ~~(Math.random() * 100) + '%',
+                            top: ~~(Math.random() * 80) + '%',
+                            zIndex: (~~(Math.random() * 4) % 4 === 0) ? 10 : 0,
+                        },
+                        data: { depth: Math.random().toFixed(2) },
+
+                    }
+                    this.clouds.push(props)
+                })
+
+
+                //     let x = 0
+
+                document.addEventListener('alpine:initialized', () => {
+                    var scene = document.getElementById('cloud-scene');
+                    var parallaxInstance = new Parallax(scene);
+                    //     document.addEventListener("mousemove", e => {
+                    //     x++
+
+                    //         const t =  (window.innerWidth / 2 - e.x) / (window.innerWidth / 2)
+
+                    //         console.log(t)
+
+                    //     if(x%3 )    
+                    //         document.querySelectorAll('.js-home-cloud').forEach( i => {
+                    //             const sign = Number(i.style.left.slice(0, -1)) < 50 ? -1 : +1
+                    //             i.style.transform = `translate(${ ((window.innerWidth / 2 - e.x) / (window.innerWidth / 2)) * 50 * sign }px , ${ ((window.innerWidth / 2 - e.x) / (window.innerWidth / 2)) * 50 * sign }px )`
+
+                    //         })
+
+                    //     })
+
+
+                })
+
+
+
+            },
+
+
+        }
+
         class Slider {
             static currentSliderIndex = undefined;
             static maxAmount = undefined;
@@ -805,13 +945,15 @@
                     const id = Number(card.dataset.cardId);
                     const margin = selectedCard - id;
                     const absMargin = Math.abs(selectedCard - id);
-                    card.style.transform = `translateX(${margin * 120
+                    const distanse = currentBrackPoint() === 'sm' ? 40 : 120;
+                    const opacity = currentBrackPoint() === 'sm' ? 0.40 : 0.25;
+                    card.style.transform = `translateX(${margin * distanse
                         }px) scale(${1 - absMargin * 0.1})`;
 
                     if (absMargin === 0) card.style.zIndex = 10;
                     else card.style.zIndex = 9;
 
-                    card.style.opacity = 1 - absMargin * 0.25;
+                    card.style.opacity = 1 - absMargin * opacity;
                 });
             }
         }

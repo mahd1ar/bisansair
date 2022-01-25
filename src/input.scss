@@ -11,6 +11,12 @@
     @apply flex justify-center items-center;
 }
 
+@layer components {
+    .flex-cc {
+        @apply flex justify-center items-center;
+    }
+}
+
 .text-rtl {
     direction: rtl;
 }
@@ -28,6 +34,12 @@
 .bi-description {
     @apply text-gray-500;
 }
+
+/*
+.bi-wrapper {
+    @apply xl:max-w-[1040] #{!important};
+}
+*/
 
 html,
 body {
