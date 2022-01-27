@@ -5,17 +5,17 @@ module.exports = {
       'iransans': ['iransans'],
       'vazir': ['Vazir'],
     },
-    // container: {
-    //   backgroundColor: "red",
-    //   maxWidth: {
-    //     'xl': '1040px',
-    //     '2xl': '1040px'
-    //   }
-    // },
-    // container: {
-    //   padding: '2rem',
-    // },
     extend: {
+      colors: {
+        primery: '#EDE059',
+        secondary: {
+          ligth: '#E3EBED',
+          dark: '#697A80'
+        }
+      },
+      borderRadius: {
+        circle: '50%'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },

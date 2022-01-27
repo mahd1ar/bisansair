@@ -90,3 +90,22 @@ class Slider {
         });
     }
 }
+
+
+var fligthPicker = {
+
+    showFrom: false,
+    showDatePicker: false,
+    toggleFrom() {
+        this.showDatePicker = false;
+        this.showFrom = !this.showFrom
+    },
+    toggleDatePicker() {
+        this.showFrom = false;
+        this.showDatePicker = !this.showDatePicker
+    },
+    days: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'],
+    items: new Array(35).fill(0).map((_, i) => i)
+
+
+}

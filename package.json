@@ -90,8 +90,8 @@
     "yaml": "^1.10.2"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/input.scss -o ./src/css/output.css --watch --config ./tailwind.config.js",
-    "build": "npx tailwindcss -i ./src/input.scss -o ./src/css/output.css --minify"
+    "dev": "npx tailwindcss -i ./src/scss/input.scss -o ./src/css/output.css --watch --config ./tailwind.config.js",
+    "build": "npx tailwindcss -i ./src/scss/input.scss -o ./src/css/output.css --minify"
   },
   "keywords": [],
   "author": "mahdiyar anari",

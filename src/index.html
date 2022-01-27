@@ -12,7 +12,7 @@
 
     <!-- anime.css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script defer src="js/alpine.js"></script>
+    <script defer src="lib/js/alpine.js"></script>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
     <!-- /debug -->
 
     <!-- <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-transparent pt-5"> -->
-    <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-white pt-5">
+    <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-white pt-5 z-20">
         <nav class="lg:max-w-[1104px] container mx-auto">
             <div
                 class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
@@ -116,19 +116,87 @@
                     </div>
                 </div>
 
-                <div
+                <div x-data="fligthPicker"
                     class="container mx-auto w-10/12 sm:w-1/2 md:w-full bg-white mt-8  shadow-lg rounded-3xl md:rounded-full px-4 py-[16px]">
                     <div class="flex flex-col md:flex-row-reverse gap-2 justify-between">
-                        <div class="flex w-full md:w-1/5 items-center">
-                            <div
+
+                        <div class="flex w-full md:w-1/5  items-center relative">
+                            <div @click="toggleFrom()"
                                 class="text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
                                 مبدا</div>
                             <span class="bg-white mx-2 w-12 h-10 rounded-full overflow-hidden flex-center shadow-lg">
                                 <img class="object-contain" src="./svg/departed_plane_icon.svg" alt="" />
                             </span>
+
+                            <div x-show="showFrom" @click.outside="toggleFrom()" style="display:  none;"
+                                class="h-72 w-80 rounded-3xl bg-white absolute -bottom-10 transform translate-y-full  right-0 p-3">
+                                <div class="flex flex-col overflow-y-scroll h-full bi-scrollbar">
+
+                                    <div class=" bg-gray-200 rounded-lg flex p-2 text-rtl">
+                                        <span class="flex-cc">
+                                            <img src="svg/city-icon.svg" alt="">
+                                        </span>
+                                        <span class="px-3">تهران</span>
+                                    </div>
+
+                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                        <span class="flex-cc">
+                                            <img src="svg/airport-icon.png" alt="">
+                                        </span>
+                                        <span class="px-3 ">فرودگاه امام خمینی</span>
+                                    </div>
+
+                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                        <span class="flex-cc">
+                                            <img src="svg/airport-icon.png" alt="">
+                                        </span>
+                                        <span class="px-3 ">فرودگاه امام خمینی</span>
+                                    </div>
+
+                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                        <span class="flex-cc">
+                                            <img src="svg/airport-icon.png" alt="">
+                                        </span>
+                                        <span class="px-3">فرودگاه امام خمینی</span>
+                                    </div>
+
+                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                        <span class="flex-cc">
+                                            <img src="svg/airport-icon.png" alt="">
+                                        </span>
+                                        <span class="px-3">فرودگاه امام خمینی</span>
+                                    </div>
+
+                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                        <span class="flex-cc">
+                                            <img src="svg/airport-icon.png" alt="">
+                                        </span>
+                                        <span class="px-3">فرودگاه امام خمینی</span>
+                                    </div>
+
+                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                        <span class="flex-cc">
+                                            <img src="svg/airport-icon.png" alt="">
+                                        </span>
+                                        <span class="px-3">فرودگاه امام خمینی</span>
+                                    </div>
+
+                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                        <span class="flex-cc">
+                                            <img src="svg/airport-icon.png" alt="">
+                                        </span>
+                                        <span class="px-3">فرودگاه امام خمینی</span>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+
                         </div>
 
-                        <div class="flex w-full md:w-1/5 items-center">
+                        <div class="flex w-full md:w-1/5  items-center">
 
                             <div
                                 class="text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
@@ -139,19 +207,100 @@
                             </span>
                         </div>
 
-                        <div class="flex w-full md:w-1/5 items-center">
+                        <div class="flex w-full md:w-1/5  items-center relative">
 
 
-                            <div
+                            <div @click="toggleDatePicker()"
                                 class="text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
                                 تاریخ</div>
 
                             <span class="bg-white mx-2 w-12 h-10 rounded-full overflow-hidden flex-center shadow-lg">
                                 <img class="object-contain" src="./svg/cal.svg" alt="" />
                             </span>
+
+                            <div id="date-picker" @click.outside="toggleDatePicker()" x-show="showDatePicker"
+                                style="display: none;"
+                                class="absolute -bottom-10 transform translate-y-full overflow-hidden right-0 w-[586px] rounded-3xl bg-white flex flex-col shadow-xl">
+
+                                <div class="flex relative ">
+
+                                    <div class="w-2/5 p-5 text-rtl">
+
+                                        <div class="rounded-3xl overflow-hidden flex shadow-xl mb-7">
+                                            <div class="w-1/2 p-2 text-center   bg-secondary-ligth text-secondary-dark">
+                                                شمسی</div>
+                                            <div class="w-1/2 p-2 text-center  ">میلادی</div>
+                                        </div>
+
+
+
+                                        <div class="flex">
+                                            <div class="w-3 bi-from "></div>
+                                            <div class="w-full flex flex-col items-start pr-3">
+                                                از
+                                                <br>
+                                                <span class="text-xl mt-1 mb-10">
+                                                    22 اردیبهشت 1400
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="flex">
+                                            <div class="w-3 bi-to"></div>
+                                            <div class="w-full flex flex-col items-start pr-3">
+                                                تا
+                                                <br>
+                                                <span class="text-xl mt-1">
+                                                    22 اردیبهشت 1400
+                                                </span>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="w-3/5 p-5">
+
+                                        <div class="flex justify-between mb-7">
+                                            <div> &lt; </div>
+                                            <div> فروردین 1399 </div>
+                                            <div> &gt; </div>
+                                        </div>
+                                        <div class="grid grid-cols-7 grid-rows-6 ">
+                                            <template x-for="d in days">
+                                                <span
+                                                    class=" bg-gray-200 m-2 rounded-3xl flex-cc text-gray-600 aspect-square"
+                                                    x-text="d">
+
+                                                </span>
+                                            </template>
+                                            <template x-for="i in items">
+
+                                                <span :class="{
+                                                    'flex-center rounded-full text-gray-600 relative' : true, 
+                                                    'text-red-400' : i % 7 === 0,
+                                                    'border border-gray-500' : i === 2 ,
+                                                    'bi-date-pick_start ' : i === 17 ,
+                                                    'bi-date-pick_end ' :  i === 23,
+                                                    'bi-date-pick_middle' : 17 < i && i < 23 
+                                             }" x-text="i"></span>
+
+                                            </template>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+
+                                <div class="h-16 bg-neutral-200 flex justify-end items-center">
+                                    <div class="p-2 px-3 bg-white shadow-xl inline-block rounded-lg m-5">
+                                        تایید
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="flex w-full md:w-1/5 items-center">
+                        <div class="flex w-full md:w-1/5  items-center">
                             <div class="w-full flex-center">
                                 <div class="bg-gray-200 hidden md:flex-cc cursor-pointer w-9 h-9 rounded-full">
                                     <img src="./svg/minus.svg" alt="" />
@@ -170,7 +319,7 @@
 
                         <div class="flex w-full justify-center md:w-32 items-center bg-yellow-300 rounded-full">
                             <div class="flex-center md:w-full">
-                                <span class="md:mx-3 text-[#5A623A]"> جستتو </span>
+                                <span class="md:mx-3 text-[#5A623A]"> جستجو </span>
                             </div>
 
                             <span class="mx-2 md:w-12 h-10 rounded-full overflow-hidden flex-center">
@@ -191,7 +340,7 @@
                 <h2 class="text-3xl font-bold">تور های ویژه نوروز</h2>
                 <h3 class="text-gray-500 mt-2 md:mt-0">نوروز امسال با بیسان سیر</h3>
                 <button
-                    class="hidden sm:block md:hidden inline-block p-2 font-iransans font-bold px-4 bg-yellow-300 hover:bg-yellow-200 text-yellow-900 rounded-full mt-8 shadow-xl">
+                    class="hidden sm:block md:hidden p-2 font-iransans font-bold px-4 bg-yellow-300 hover:bg-yellow-200 text-yellow-900 rounded-full mt-8 shadow-xl">
                     نمایش تمام تور ها
                 </button>
             </div>
@@ -1020,7 +1169,7 @@
                         name: i + 1,
                         style: {
                             left: ~~(Math.random() * 100) + '%',
-                            top: ~~(Math.random() * 80) + '%',
+                            top: ~~(Math.random() * 50) + '%',
                             zIndex: (~~(Math.random() * 4) % 4 === 0) ? 10 : 0,
                         },
                         data: { depth: Math.random().toFixed(2) },
