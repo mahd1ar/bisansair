@@ -1,0 +1,33 @@
+.bi-scrollbar {
+	&::-webkit-scrollbar {
+		width: 4px;
+	}
+
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 5px E6E6E6;
+		border-radius: 10px;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: #b3b3b3;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: #727272;
+	}
+}
+
+.text-rtl {
+	direction: rtl;
+}
+
+.bi-overlay {
+	@apply after:absolute after:left-0 after:bottom-0 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:via-transparent after:to-transparent;
+}
+
+.bi-icon {
+	@apply flex-center aspect-square w-12 overflow-hidden rounded-circle bg-center  shadow-lg;
+
+	img {
+		@apply object-contain;
+	}
+}

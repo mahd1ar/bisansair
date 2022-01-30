@@ -11,14 +11,13 @@
         type="text/css" />
 
     <!-- anime.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="lib/css/animate.min.css" />
     <script defer src="lib/js/alpine.js"></script>
 </head>
 
 <body>
     <!-- brake points debug -->
-    <div
-        class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 2xl:bg-gray-700 fixed top-10 left-10 z-50">
+    <div class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
         <span class="hidden sm:block">sm</span>
         <span class="hidden md:block">md</span>
         <span class="hidden lg:block">lg</span>
@@ -124,71 +123,113 @@
                             <div @click="toggleFrom()"
                                 class="text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
                                 مبدا</div>
-                            <span class="bg-white mx-2 w-12 h-10 rounded-full overflow-hidden flex-center shadow-lg">
+                            <span class=" mx-2 bi-icon ">
                                 <img class="object-contain" src="./svg/departed_plane_icon.svg" alt="" />
                             </span>
 
                             <div x-show="showFrom" @click.outside="toggleFrom()" style="display:  none;"
-                                class="h-72 w-80 rounded-3xl bg-white absolute -bottom-10 transform translate-y-full  right-0 p-3">
-                                <div class="flex flex-col overflow-y-scroll h-full bi-scrollbar">
+                                id="travel-selector-card__destination-picker" class="travel-selector-card__overlay">
 
-                                    <div class=" bg-gray-200 rounded-lg flex p-2 text-rtl">
-                                        <span class="flex-cc">
-                                            <img src="svg/city-icon.svg" alt="">
-                                        </span>
-                                        <span class="px-3">تهران</span>
-                                    </div>
+                                <div class="travel-selector-card__wrap bi-scrollbar ">
 
-                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
-                                        <span class="flex-cc">
-                                            <img src="svg/airport-icon.png" alt="">
-                                        </span>
-                                        <span class="px-3 ">فرودگاه امام خمینی</span>
-                                    </div>
+                                    <div
+                                        class="flex lg:hidden justify-between items-center h-20 px-5 border-b-2 border-gray-300">
+                                        <div @click="toggleFrom" class="bi-icon cursor-pointer">
+                                            <img src="svg/close.svg" alt="">
+                                        </div>
 
-                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
-                                        <span class="flex-cc">
-                                            <img src="svg/airport-icon.png" alt="">
-                                        </span>
-                                        <span class="px-3 ">فرودگاه امام خمینی</span>
-                                    </div>
-
-                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
-                                        <span class="flex-cc">
-                                            <img src="svg/airport-icon.png" alt="">
-                                        </span>
-                                        <span class="px-3">فرودگاه امام خمینی</span>
-                                    </div>
-
-                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
-                                        <span class="flex-cc">
-                                            <img src="svg/airport-icon.png" alt="">
-                                        </span>
-                                        <span class="px-3">فرودگاه امام خمینی</span>
-                                    </div>
-
-                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
-                                        <span class="flex-cc">
-                                            <img src="svg/airport-icon.png" alt="">
-                                        </span>
-                                        <span class="px-3">فرودگاه امام خمینی</span>
-                                    </div>
-
-                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
-                                        <span class="flex-cc">
-                                            <img src="svg/airport-icon.png" alt="">
-                                        </span>
-                                        <span class="px-3">فرودگاه امام خمینی</span>
-                                    </div>
-
-                                    <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
-                                        <span class="flex-cc">
-                                            <img src="svg/airport-icon.png" alt="">
-                                        </span>
-                                        <span class="px-3">فرودگاه امام خمینی</span>
+                                        <h2 class="text-2xl">
+                                            انتخاب مبدا
+                                        </h2>
                                     </div>
 
 
+                                    <div class="flex flex-col overflow-y-scroll h-full  bi-scrollbar">
+                                        <div class="p-3 border-b-2 mb-4 sticky top-0 bg-white z-20">
+                                            <input
+                                                class="w-full border-2 border-gray-400 rounded-3xl text-rtl  p-2 px-5"
+                                                type="text" placeholder="انتخاب شهر مبدا...">
+                                        </div>
+
+
+
+                                        <div class=" bg-gray-200 rounded-lg flex p-2 text-rtl">
+                                            <span class="flex-center">
+                                                <img src="svg/city-icon.svg" alt="">
+                                            </span>
+                                            <span class="px-3">تهران</span>
+                                        </div>
+
+                                        <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                            <span class="flex-center">
+                                                <img src="svg/airport-icon.png" alt="">
+                                            </span>
+                                            <span class="px-3 ">فرودگاه امام خمینی</span>
+                                        </div>
+
+                                        <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                            <span class="flex-center">
+                                                <img src="svg/airport-icon.png" alt="">
+                                            </span>
+                                            <span class="px-3 ">فرودگاه امام خمینی</span>
+                                        </div>
+
+                                        <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                            <span class="flex-center">
+                                                <img src="svg/airport-icon.png" alt="">
+                                            </span>
+                                            <span class="px-3">فرودگاه امام خمینی</span>
+                                        </div>
+
+                                        <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                            <span class="flex-center">
+                                                <img src="svg/airport-icon.png" alt="">
+                                            </span>
+                                            <span class="px-3">فرودگاه امام خمینی</span>
+                                        </div>
+
+                                        <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                            <span class="flex-center">
+                                                <img src="svg/airport-icon.png" alt="">
+                                            </span>
+                                            <span class="px-3">فرودگاه امام خمینی</span>
+                                        </div>
+
+                                        <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                            <span class="flex-center">
+                                                <img src="svg/airport-icon.png" alt="">
+                                            </span>
+                                            <span class="px-3">فرودگاه امام خمینی</span>
+                                        </div>
+
+                                        <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                            <span class="flex-center">
+                                                <img src="svg/airport-icon.png" alt="">
+                                            </span>
+                                            <span class="px-3">فرودگاه امام خمینی</span>
+                                        </div>
+
+                                        <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                            <span class="flex-center">
+                                                <img src="svg/airport-icon.png" alt="">
+                                            </span>
+                                            <span class="px-3">فرودگاه امام خمینی</span>
+                                        </div>
+
+                                        <div class="hover:bg-gray-100 rounded-lg flex p-2 text-rtl">
+                                            <span class="flex-center">
+                                                <img src="svg/airport-icon.png" alt="">
+                                            </span>
+                                            <span class="px-3">فرودگاه امام خمینی</span>
+                                        </div>
+
+
+
+                                        <!-- </div> -->
+
+
+
+                                    </div>
 
                                 </div>
                             </div>
@@ -202,7 +243,7 @@
                                 class="text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
                                 مقصد</div>
 
-                            <span class="bg-white mx-2 w-12 h-10 rounded-full overflow-hidden flex-center shadow-lg">
+                            <span class="bi-icon mx-2">
                                 <img class="object-contain" src="./svg/arrived_plane_icon.svg" alt="" />
                             </span>
                         </div>
@@ -214,68 +255,85 @@
                                 class="text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
                                 تاریخ</div>
 
-                            <span class="bg-white mx-2 w-12 h-10 rounded-full overflow-hidden flex-center shadow-lg">
+                            <span class=" mx-2 bi-icon">
                                 <img class="object-contain" src="./svg/cal.svg" alt="" />
                             </span>
 
-                            <div id="date-picker" @click.outside="toggleDatePicker()" x-show="showDatePicker"
-                                style="display: none;"
-                                class="absolute -bottom-10 transform translate-y-full overflow-hidden right-0 w-[586px] rounded-3xl bg-white flex flex-col shadow-xl">
+                            <div id="travel-selector-card__date-picker" class="travel-selector-card__overlay"
+                                @click.outside="toggleDatePicker()" x-show="showDatePicker" style="display: none;">
 
-                                <div class="flex relative ">
+                                <div class="travel-selector-card__wrap">
 
-                                    <div class="w-2/5 p-5 text-rtl">
-
-                                        <div class="rounded-3xl overflow-hidden flex shadow-xl mb-7">
-                                            <div class="w-1/2 p-2 text-center   bg-secondary-ligth text-secondary-dark">
-                                                شمسی</div>
-                                            <div class="w-1/2 p-2 text-center  ">میلادی</div>
+                                    <div
+                                        class="flex lg:hidden justify-between items-center h-20 px-5 border-b-2 border-gray-300">
+                                        <div @click="toggleDatePicker" class="bi-icon cursor-pointer">
+                                            <img src="svg/close.svg" alt="">
                                         </div>
 
-
-
-                                        <div class="flex">
-                                            <div class="w-3 bi-from "></div>
-                                            <div class="w-full flex flex-col items-start pr-3">
-                                                از
-                                                <br>
-                                                <span class="text-xl mt-1 mb-10">
-                                                    22 اردیبهشت 1400
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="flex">
-                                            <div class="w-3 bi-to"></div>
-                                            <div class="w-full flex flex-col items-start pr-3">
-                                                تا
-                                                <br>
-                                                <span class="text-xl mt-1">
-                                                    22 اردیبهشت 1400
-                                                </span>
-                                            </div>
-                                        </div>
-
-
+                                        <h2 class="text-2xl">
+                                            تاریخ
+                                        </h2>
                                     </div>
 
-                                    <div class="w-3/5 p-5">
+                                    <div class="flex relative ">
 
-                                        <div class="flex justify-between mb-7">
-                                            <div> &lt; </div>
-                                            <div> فروردین 1399 </div>
-                                            <div> &gt; </div>
+                                        <div class="w-2/5 p-5 flex flex-col text-rtl">
+
+                                            <div class="rounded-3xl overflow-hidden flex shadow-xl mb-7">
+                                                <div
+                                                    class="w-1/2 p-2 text-center   bg-secondary-ligth text-secondary-dark">
+                                                    شمسی</div>
+                                                <div class="w-1/2 p-2 text-center  ">میلادی</div>
+                                            </div>
+
+
+
+                                            <div class="flex">
+                                                <div class="w-3 bi-from "></div>
+                                                <div class="w-full flex flex-col items-start pr-3">
+                                                    از
+                                                    <br>
+                                                    <span class="text-xl mt-1 mb-10">
+                                                        22 اردیبهشت 1400
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="w-3 bi-to"></div>
+                                                <div class="w-full flex flex-col items-start pr-3">
+                                                    تا
+                                                    <br>
+                                                    <span class="text-xl mt-1">
+                                                        22 اردیبهشت 1400
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div @click="toggleDatePicker"
+                                                class="cursor-pointer w-full p-2 px-3 mt-auto  bg-primery text-yellow-800 shadow-xl rounded-3xl ">
+                                                تایید
+                                            </div>
+
                                         </div>
-                                        <div class="grid grid-cols-7 grid-rows-6 ">
-                                            <template x-for="d in days">
-                                                <span
-                                                    class=" bg-gray-200 m-2 rounded-3xl flex-cc text-gray-600 aspect-square"
-                                                    x-text="d">
 
-                                                </span>
-                                            </template>
-                                            <template x-for="i in items">
+                                        <div class="w-3/5 p-5 border-l-2 travel-selector--scrollable bi-scrollbar">
 
-                                                <span :class="{
+                                            <div class="flex justify-between mb-7">
+                                                <div> &lt; </div>
+                                                <div> فروردین 1399 </div>
+                                                <div> &gt; </div>
+                                            </div>
+                                            <div class="grid grid-cols-7 grid-rows-6 ">
+                                                <template x-for="d in days">
+                                                    <span
+                                                        class=" bg-gray-200 m-2 rounded-3xl flex-center text-gray-600 aspect-square"
+                                                        x-text="d">
+
+                                                    </span>
+                                                </template>
+                                                <template x-for="i in items">
+
+                                                    <span :class="{
                                                     'flex-center rounded-full text-gray-600 relative' : true, 
                                                     'text-red-400' : i % 7 === 0,
                                                     'border border-gray-500' : i === 2 ,
@@ -284,35 +342,124 @@
                                                     'bi-date-pick_middle' : 17 < i && i < 23 
                                              }" x-text="i"></span>
 
-                                            </template>
+                                                </template>
+                                            </div>
+
                                         </div>
 
+
                                     </div>
 
+                                    <div class="h-16 bg-neutral-200 hidden lg:flex justify-end items-center">
+                                        <div @click="toggleDatePicker" class="cursor-pointer p-2 px-3 bg-white shadow-xl inline-block
+                                            rounded-lg m-5">
+                                            تایید
+                                        </div>
+                                    </div>
 
                                 </div>
 
-                                <div class="h-16 bg-neutral-200 flex justify-end items-center">
-                                    <div class="p-2 px-3 bg-white shadow-xl inline-block rounded-lg m-5">
-                                        تایید
-                                    </div>
-                                </div>
                             </div>
                         </div>
 
-                        <div class="flex w-full md:w-1/5  items-center">
-                            <div class="w-full flex-center">
-                                <div class="bg-gray-200 hidden md:flex-cc cursor-pointer w-9 h-9 rounded-full">
-                                    <img src="./svg/minus.svg" alt="" />
+                        <div class="flex w-full md:w-1/5  items-center cursor-pointer relative">
+                            <div class="w-full flex-center ">
+
+                                <div class="mx-3 text-rtl" @click="toggleMem()" x-text="totalTravelers"> نفرات
                                 </div>
-                                <div class="mx-3 "> نفرات </div>
-                                <div
-                                    class="bg-gray-200 hidden md:flex justify-center items-center cursor-pointer w-9 h-9 rounded-full">
-                                    <img src="./svg/plus.svg" alt="" />
+
+
+
+
+                                <div id="travel-selector-card__traveler-picker" x-show="showMem" style="display: none;"
+                                    @click.outside="toggleMem()" class="travel-selector-card__overlay items-center">
+
+                                    <div class=" bg-white  w-10/12 lg:w-full rounded-3xl lg:rounded-none">
+
+                                        <div
+                                            class="flex lg:hidden justify-between items-center h-20 px-5 py-10 border-b-2 border-gray-300">
+                                            <div @click="toggleMem" class="bi-icon cursor-pointer">
+                                                <img src="svg/close.svg" alt="">
+                                            </div>
+
+                                            <h2 class="text-2xl">
+                                                انتخاب مسافر
+                                            </h2>
+                                        </div>
+
+                                        <div class="flex lg:block justify-center items-center">
+                                            <div class="lg:hidden w-1/2 flex flex-col p-5 ">
+
+                                                <div class="text-center mb-10 ">
+                                                    <img class="inline-block bg-white shadow-lg rounded-circle w-28 h-28 p-5"
+                                                        src="svg/user.svg" alt="">
+                                                </div>
+                                                <div class="">
+                                                    <h5 class="mb-6 text-xl text-rtl">
+                                                        <template x-for="{label , type , count } in travelers"
+                                                            :key="type">
+                                                            <span class="mx-2 "
+                                                                x-text="  String( count).toIndiaDigits() + ' ' + label + ' '  ">
+
+                                                            </span>
+                                                        </template>
+                                                    </h5>
+                                                    <div class="bi-primary-pill">
+                                                        تایید و جست و جو</div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="w-1/2 lg:w-full p-5 travel-selector--scrollable">
+                                                <div>
+                                                    <template x-for="(traveler, inx) in travelers">
+                                                        <div class="flex justify-between items-center mb-7">
+                                                            <div @click="travelersInc(inx)" class="bi-secondary-icon">
+                                                                <img src="svg/plus.svg" alt="">
+                                                            </div>
+                                                            <div>
+                                                                <span class="text-xl" x-text="traveler.count"> </span>
+                                                                <br>
+                                                                <span class="text-gray-500 text-base"
+                                                                    x-text="traveler.label">
+                                                                </span>
+                                                            </div>
+                                                            <div @click="travelersDec(inx)" class="bi-secondary-icon">
+                                                                <img src="svg/minus.svg" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </template>
+
+                                                </div>
+
+                                                <div>
+                                                    <template x-for="(tt,index) in travelTypes" :key="index">
+                                                        <div :class="{'bg-gray-100' : index == travelType,
+                                                                        'text-right flex justify-end  rounded-xl p-2' : true
+                                                                    }">
+                                                            <label class=" inline-block text-gray-800" :for="index"
+                                                                x-text="tt">
+
+                                                            </label>
+                                                            <input :value="index" name="fligth-types"
+                                                                x-model="travelType" :id="index"
+                                                                class="text-right appearance-none rounded-full h-4 w-4 border  transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left ml-2 cursor-pointer"
+                                                                type="radio">
+                                                        </div>
+
+                                                    </template>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
+
+
                             </div>
 
-                            <span class="bg-white mx-2 w-12 h-10 rounded-full overflow-hidden flex-center shadow-lg">
+                            <span class=" mx-2 bi-icon " @click="toggleMem">
                                 <img class="object-contain" src="./svg/user.svg" alt="" />
                             </span>
                         </div>
@@ -346,8 +493,8 @@
             </div>
 
             <div class="w-full sm:w-1/2 md:w-full">
-                <div class="flex-center relative h-[323px] md:h-[430px]">
-                    <div data-wow-duration="1s" data-wow-delay="0.7s" data-card-id="0"
+                <div class="js-swappable flex-center relative h-[323px] md:h-[430px]">
+                    <div data-wow-duration="1s" data-wow-delay="0.7s"
                         class="wow animate__fadeIn top-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                         <img class="" src="img/sample_image1.png" alt="" />
 
@@ -402,7 +549,7 @@
                         </div>
                     </div>
 
-                    <div data-wow-duration="1s" data-wow-delay="0.5s" data-card-id="1"
+                    <div data-wow-duration="1s" data-wow-delay="0.5s"
                         class="wow animate__fadeIn top-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                         <img class="" src="img/sample_image1.png" alt="" />
 
@@ -457,7 +604,7 @@
                         </div>
                     </div>
 
-                    <div data-wow-duration="1s" data-wow-delay="0.7s" data-card-id="2"
+                    <div data-wow-duration="1s" data-wow-delay="0.7s"
                         class="wow animate__fadeIn top-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                         <img class="" src="img/sample_image1.png" alt="" />
 
@@ -647,7 +794,8 @@
 
     <section class="mt-44 mb-10 js-special-tours">
         <div class="container flex flex-col-reverse sm:flex-row mx-auto ">
-            <div class="flex justify-center sm:justify-between w-full h-[323px] md:h-[430px] sm:w-1/2 relative ">
+            <div
+                class="js-swappable flex justify-center sm:justify-between w-full h-[323px] md:h-[430px] sm:w-1/2 relative ">
                 <button
                     class="js-next bi-primary-pill absolute top-1/2 2xl:-right-20 lg:-right-20 sm:-right-12 right-0 z-10">
                     <img src="svg/chevron-rigth.svg" alt="" />
@@ -657,7 +805,7 @@
                     <img src="svg/chevron-left.svg" alt="" />
                 </button>
 
-                <div data-card-id="0" data-wow-delay="0.2s"
+                <div data-wow-delay="0.2s"
                     class="wow animate__fadeIn top-0 sm:right-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                     <img class="" src="img/sample_image1.png" alt="" />
 
@@ -712,7 +860,7 @@
                     </div>
                 </div>
 
-                <div data-card-id="1" data-wow-delay="0.1s"
+                <div data-wow-delay="0.1s"
                     class="wow animate__fadeIn top-0 sm:right-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                     <img class="" src="img/sample_image1.png" alt="" />
 
@@ -767,7 +915,7 @@
                     </div>
                 </div>
 
-                <div data-card-id="2" data-wow-delay="0s"
+                <div data-wow-delay="0s"
                     class="wow animate__fadeIn top-0 sm:right-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                     <img class="" src="img/sample_image1.png" alt="" />
 
@@ -851,9 +999,9 @@
         </div>
 
         <div class="container mx-auto bi-wrapper relative">
-            <div class="bi-intro">
-                <h2 class="bi-title">برگزیده های وبلاگ</h2>
-                <h3 class="bi-description">
+            <div class="bi-headline_intro">
+                <h2 class="bi-headline_title">برگزیده های وبلاگ</h2>
+                <h3 class="bi-headline_description">
                     وبلاگ بیسان را نیز دنبال کنید
                 </h3>
             </div>
@@ -919,9 +1067,9 @@
 
     <section x-data="alpineFAQs" class="my-36">
         <div class="container mx-auto">
-            <div class="bi-intro">
-                <h2 class="bi-title">سوالات متداول</h2>
-                <h3 class="bi-description">
+            <div class="bi-headline_intro">
+                <h2 class="bi-headline_title">سوالات متداول</h2>
+                <h3 class="bi-headline_description">
                     در صورت وجود مشکل به بخش سوالات متداول مراجعه کنید
                 </h3>
             </div>
@@ -1050,52 +1198,13 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="lib/js/rellax.min.js"></script>
+    <script src="lib/js/wow.min.js"></script>
+    <script src="lib/js/parallax.min.js"></script>
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
     <script src="js/index.js"></script>
     <script>
 
-
-        window.addEventListener('load', function () {
-
-            new WOW({
-                animateClass: 'animate__animated'
-            }).init();
-
-            // scale airplane
-            (() => {
-
-                const offsetTop = airplane.getBoundingClientRect().top + airplane.getBoundingClientRect().height - document.body.getBoundingClientRect().top  //airplane.y;//+ airplane.getBoundingClientRect().height;
-
-                document.addEventListener('scroll', function (e) {
-
-                    const res = 1 - ((offsetTop - window.pageYOffset) / offsetTop)
-
-                    if (res < 1) {
-                        airplane.style.transform = `scale(${res / 2 + 1})`
-                    }
-
-                })
-            })()
-
-
-            new Slider({
-                containerSelectror: '.js-nowruz',
-                nextSelector: '.js-slider-next',
-                prvSelector: '.js-slider-prv',
-                isBilateral: true
-            });
-
-            new Slider({
-                containerSelectror: '.js-special-tours',
-                nextSelector: '.js-next',
-                prvSelector: '.js-prv',
-                isBilateral: currentBrackPoint() === 'NONE' ? true : false,
-            });
-
-
-        })
 
 
         const alpineFAQs = {
@@ -1157,36 +1266,6 @@
         };
 
 
-        var alpineCloud = {
-
-            clouds: [],
-            mouseX: 0,
-            mousey: 0,
-            init() {
-
-                new Array(44).fill(0).forEach((_, i) => {
-                    const props = {
-                        name: i + 1,
-                        style: {
-                            left: ~~(Math.random() * 100) + '%',
-                            top: ~~(Math.random() * 50) + '%',
-                            zIndex: (~~(Math.random() * 4) % 4 === 0) ? 10 : 0,
-                        },
-                        data: { depth: Math.random().toFixed(2) },
-
-                    }
-                    this.clouds.push(props)
-                })
-
-                document.addEventListener('alpine:initialized', () => {
-                    var scene = document.getElementById('cloud-scene');
-                    var parallaxInstance = new Parallax(scene);
-                })
-
-            },
-
-
-        }
 
     </script>
 </body>

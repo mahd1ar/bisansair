@@ -70,7 +70,7 @@
 }
 
 @layer components {
-	.flex-cc {
+	.flex-center {
 		@apply flex items-center justify-center;
 	}
 }
@@ -79,13 +79,13 @@
 	direction: rtl;
 }
 
-.bi-intro {
+.bi-headline_intro {
 	@apply flex-center mb-5 flex-col text-center font-iransans;
 }
-.bi-title {
+.bi-headline_title {
 	@apply text-2xl font-bold;
 }
-.bi-description {
+.bi-headline_description {
 	@apply text-gray-500;
 }
 
@@ -122,4 +122,16 @@ body {
 /* Handle on hover */
 .bi-scrollbar::-webkit-scrollbar-thumb:hover {
 	background: #727272;
+}
+
+.bi-secondary-icon {
+	@apply inline-flex aspect-square  items-center rounded-circle bg-secondary-ligth p-2;
+}
+
+.bi-form-check-input {
+	@apply flex-center relative;
+}
+.bi-form-check-input::after {
+	content: "";
+	@apply absolute rounded-circle bg-white p-1;
 }

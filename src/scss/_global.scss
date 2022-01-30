@@ -1,0 +1,17 @@
+@font-face {
+	font-family: "iransans";
+	src: url("https://cdn.jsdelivr.net/npm/iransans@1.0.0/woff2/IRANSansWeb.woff2");
+}
+
+html,
+body {
+	@apply font-iransans;
+}
+
+input {
+	@apply flex-center relative border-gray-300 bg-white checked:border-yellow-300 checked:bg-yellow-300 focus:outline-none;
+	&::after {
+		content: "";
+		@apply absolute rounded-circle bg-white p-1;
+	}
+}
