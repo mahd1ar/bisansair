@@ -1,6 +1,8 @@
 @import "_global.scss";
 @import "_general.scss";
 @import "_components.scss";
+@import "components/travel-selector-card/date-picker.scss";
+@import "components/footer.scss";
 
 @tailwind base;
 @tailwind components;
@@ -68,5 +70,5 @@
 }
 
 .bi-secondary-icon {
-	@apply inline-flex aspect-square cursor-pointer  items-center rounded-circle bg-secondary-ligth p-2;
+	@apply inline-flex aspect-square cursor-pointer select-none  items-center rounded-circle bg-secondary-ligth p-2;
 }

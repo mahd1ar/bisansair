@@ -1,0 +1,16 @@
+#footer {
+	@apply relative flex h-80 w-full  flex-col overflow-x-clip bg-gradient-to-t from-white to-gray-200 bg-cover px-10;
+	background: url(../img/footer.jpg) center center/cover;
+}
+
+.footer__cols {
+	@apply text-rtl container relative z-10 flex gap-4 py-10 xl:-translate-y-5 xl:transform;
+}
+
+.footer__col {
+	@apply z-10 w-1/3;
+}
+
+.footer__copy-write {
+	@apply relative mt-auto flex w-full flex-col items-center gap-2 pb-5 text-center text-white;
+}

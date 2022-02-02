@@ -1,20 +1,14 @@
-window.currentBrackPoint = () => {
-    const w = window.innerWidth;
 
-    if (w < 640) return "NONE"
-    if (640 <= w && w < 768) return "sm"
-    if (768 <= w && w < 1024) return "md"
-    if (1024 <= w && w < 1280) return "lg"
-    if (1280 <= w && w < 1536) return "xl"
-    if (1536 <= w) return "xl"
 
-}
+function getMounthLength(m) {
+    if (m > 12)
+        m = m % 12
 
-String.prototype.toIndiaDigits = function () {
-    var id = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
-    return this.replace(/[0-9]/g, function (w) {
-        return id[+w]
-    });
+    if (m < 1)
+        m = m = 12
+
+    if (m < 7) return 31
+    else return 30
 }
 
 //main 
@@ -64,93 +58,12 @@ window.addEventListener('load', function () {
 
 
 
-class Slider {
-    currentSliderIndex = undefined;
-    maxAmount = undefined;
-    selector = undefined;
-    isBilateral
-    constructor({ containerSelectror, nextSelector, prvSelector, isBilateral = true }) {
-        this.isBilateral = isBilateral
-
-        this.selector = containerSelectror + ' [data-card-id]';
-        const cardsLen = document.querySelectorAll(
-            this.selector
-        ).length;
-        this.currentSliderIndex = isBilateral ? ~~(cardsLen / 2) : cardsLen - 1;
-        this.maxAmount = cardsLen;
-
-        this._calcPosition();
-
-        document
-            .querySelector(containerSelectror + ' ' + nextSelector)
-            .addEventListener('click', () => {
-                this.next();
-            });
-
-        document
-            .querySelector(containerSelectror + ' ' + prvSelector)
-            .addEventListener('click', () => {
-                this.prv();
-            });
-
-        const swappable = document.querySelector(containerSelectror + " .js-swappable")
-
-        if (swappable) {
-
-            var hammertime = new Hammer(
-                swappable
-                , { direction: Hammer.DIRECTION_HORIZONTAL });
-            hammertime.on('swipeleft swiperight', ev => {
-                if (ev.type === "swiperight") this.next()
-                else this.prv()
-            });
-        }
-
-    }
-
-    next() {
-        this.currentSliderIndex =
-            (this.currentSliderIndex + 1) % this.maxAmount;
-        this._calcPosition();
-    }
-
-    prv() {
-        this.currentSliderIndex =
-            this.currentSliderIndex - 1 > -1
-                ? this.currentSliderIndex - 1
-                : this.maxAmount - 1;
-        this._calcPosition();
-    }
-
-    _calcPosition() {
-        const cards = document.querySelectorAll(this.selector);
-
-        const selectedCard = this.currentSliderIndex;
-
-
-        cards.forEach((card, id) => {
-
-            const margin = selectedCard - id;
-            const absMargin = Math.abs(selectedCard - id);
-            const distanse = ['sm', 'NONE'].includes(currentBrackPoint()) ? 40 : ['md'].includes(currentBrackPoint()) ? 80 : 120;
-            const opacity = ['sm', 'NONE'].includes(currentBrackPoint()) ? 0.40 : 0.25;
-            card.style.transform = `translateX(${(this.isBilateral ? 1 : -1) * margin * distanse}px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
-
-            if (absMargin === 0) card.style.zIndex = 10;
-            else card.style.zIndex = 9;
-
-            card.style.opacity = this.isBilateral ? 1 - absMargin * opacity : id > selectedCard ? 0 : 1 - absMargin * opacity;
-        });
-    }
-}
-
 
 var fligthPicker = {
     showMem: false,
     showFrom: false,
     showDatePicker: false,
     toggleMem() {
-        console.log(9999999)
         this.showDatePicker = false;
         this.showFrom = false;
 
@@ -200,10 +113,96 @@ var fligthPicker = {
     get totalTravelers() {
         let v = 0;
         this.travelers.forEach((i) => { v = v + i.count })
-        console.log({ v })
+
         return v !== 0 ?
             String(v).toIndiaDigits() + "نفر"
             : " نفرات"
+    },
+    init() {
+        const cal = new Array(6).fill(0).map(() => new Array(7).fill(0))
+
+        const today_miladi = {
+            d: new Date().getDate(),
+            m: new Date().getMonth() + 1,
+            y: new Date().getFullYear(),
+        }
+
+        const today_shamsi = gregorian_to_jalali(today_miladi.y, today_miladi.m, today_miladi.d)
+
+        const lengthOfMounth = getMounthLength(today_shamsi[1]);
+
+        const firstDay_miladi = jalali_to_gregorian(today_shamsi[0], today_shamsi[1], 1);
+
+        for (let i = 0; i < 3; i++) {
+
+            firstDay_miladi[i] = firstDay_miladi[i] < 10 ? `0${firstDay_miladi[i]}` : String(firstDay_miladi[i])
+        }
+
+        const firstDayOfMounth = `${firstDay_miladi[1]} ${firstDay_miladi[2]} ${firstDay_miladi[0]}`
+        const firstDayInWeek = (new Date(firstDayOfMounth).getDay() + 1) % 7
+
+        cal[0][firstDayInWeek] = 1;
+
+        const flatCal = cal.flat()
+        let counter = 1
+        for (let i = flatCal.indexOf(1); i < flatCal.length; i++) {
+
+            flatCal[i] = counter++
+            if (counter > lengthOfMounth) {
+                counter = 1
+            }
+        }
+
+        counter = getMounthLength(today_shamsi[1] - 1);
+
+        for (let i = flatCal.indexOf(1) - 1; -1 < i; i--) {
+
+            flatCal[i] = counter--
+
+        }
+
+        let monthIsBegan = false;
+        let monthIsEnded = false;
+        for (let i = 0; i < flatCal.length; i++) {
+
+            const a = {
+                origin: false,
+                destination: false,
+                isOutOfCurrentMonth: true,
+                isToday: false,
+                date: flatCal[i],
+                isFri: false,
+                calcStyle: ""
+            }
+
+            if ((i + 1) % 7 === 0) {
+                a.isFri = true;
+            }
+
+            if (flatCal[i] === 1)
+                monthIsBegan = true
+
+            if (monthIsBegan && flatCal[i] === getMounthLength(today_shamsi[1]))
+                monthIsEnded = true
+
+            if (monthIsBegan && !monthIsEnded) {
+                a.isOutOfCurrentMonth = false
+
+                if (today_shamsi[2] === flatCal[i])
+                    a.isToday = true
+            }
+
+
+
+            flatCal[i] = a
+        }
+
+        this.items.splice(0, this.items.length)
+        flatCal.forEach(i => {
+
+            this.items.push(i)
+        })
+
     }
 
 

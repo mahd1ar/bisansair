@@ -28,7 +28,7 @@
 
     <!-- <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-transparent pt-5"> -->
     <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-white pt-5 z-20">
-        <nav class="lg:max-w-[1104px] container mx-auto">
+        <nav x-data="navbar" class="lg:max-w-[1104px] container mx-auto">
             <div
                 class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
                 <div class="flex">
@@ -37,54 +37,204 @@
                         <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
                         <span class="mx-2 text-sm hidden md:block"> 021-345648 </span>
                     </div>
-                    <ul
+
+                    <ul x-ref="mitem"
                         class="hidden md:flex flex-row-reverse gap-2 font-iransans text-sm font-semibold items-center mx-5 xl:ml-10 text-[#666666]">
-                        <li
-                            class="p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            تور
+                        <li @click.prevent="toggleSelected"
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                            <a href=""> تور </a>
                             <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+
+
+                            <ul @click.outside="toggleSelected" style="display: none"
+                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
+                                <li> <a href="/"> 11 </a> </li>
+                                <li> <a href=""> 12 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                            </ul>
                         </li>
                         <li
-                            class="p-1 mx-1 cursor-pointer hover:bg-gray-200 flex flex-row-reverse items-center relative rounded-full">
-                            هتل ها
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 flex flex-row-reverse items-center relative rounded-full">
+                            <a href="">
+                                هتل ها
+                            </a>
                             <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+                            <ul style="display: none"
+                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
+                                <li> <a href="/"> امارات </a> </li>
+                                <li> <a href=""> ترکیه </a> </li>
+                                <li> <a href=""> ارمنستان </a> </li>
+                                <li> <a href=""> تایلند </a> </li>
+                                <li> <a href=""> فرانسه </a> </li>
+                                <li> <a href=""> اسپانیا </a> </li>
+                            </ul>
                         </li>
                         <li
-                            class="p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            تور اقساط
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                            <a href="">
+                                تور اقساط
+                            </a>
                             <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+                            <ul style="display: none"
+                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
+                                <li> <a href="/"> 11 </a> </li>
+                                <li> <a href=""> 12 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                            </ul>
                         </li>
                         <li
-                            class="p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            تور ویژه
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                            <a href="">
+                                تور ویژه
+                            </a>
                             <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+                            <ul style="display: none"
+                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
+                                <li> <a href="/"> 11 </a> </li>
+                                <li> <a href=""> 12 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                            </ul>
                         </li>
                         <li
-                            class="p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            ویزا
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                            <a href="">
+                                ویزا
+                            </a>
                             <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+                            <ul style="display: none"
+                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
+                                <li> <a href="/"> 11 </a> </li>
+                                <li> <a href=""> 12 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                            </ul>
                         </li>
                         <li
-                            class="p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            بلاگ
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                            <a href="">
+                                بلاگ
+                            </a>
                             <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
                         </li>
                     </ul>
+
+                    <!-- LEAVE ME ALONE -->
+                    <ul
+                        class="hidden md:flex flex-row-reverse gap-2 font-iransans text-sm font-semibold items-center mx-5 xl:ml-10 text-[#666666]">
+                        <template x-for="({index,text,href,children},inx) in menu" :key="index">
+
+                            <li @click.prevent="toggleSelected(inx)"
+                                class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                                <a :href="href ? href : '#'" x-text="text"></a>
+                                <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+
+
+                                <ul style="display: none" @click.outside="toggleSelected(-1)"
+                                    x-show="children.length > 0 && subMenu === inx"
+                                    class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white py-2 rounded-lg max-w-xs text-rtl flex flex-col gap-2 items-center overflow-hidden">
+                                    <template x-for="ch in children">
+
+                                        <li class="hover:bg-gray-200 px-5 py-2 w-full text-right"> <a
+                                                :href="ch.href ? ch.href : '#' " x-text="ch.text"> </a> </li>
+                                    </template>
+                                </ul>
+                            </li>
+
+                        </template>
+                    </ul>
+                    <!--  -->
                 </div>
 
                 <img src="./img/logo.png" class="object-contain w-9" alt="" />
 
-                <div id="mobile_menu_icon" class="w-6 flex flex-col gap-1 cursor-pointer md:hidden">
+                <div @click="taggleMobileMenu" class="w-6 flex flex-col gap-1 cursor-pointer md:hidden">
                     <span class="bg-gray-700 h-1 rounded-full"> </span>
                     <span class="bg-gray-700 h-1 rounded-full"> </span>
                     <span class="bg-gray-700 h-1 rounded-full"> </span>
                 </div>
+
             </div>
+
+            <div id="mobile-menu" x-show="isOpen" style="display: none;" x-transition.opacity>
+                <div class="mobile-menu__overlay">
+
+
+                    <div
+                        class="flex mx-auto mt-5 justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
+                        <div class="flex">
+                            <div
+                                class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
+                                <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
+
+                            </div>
+
+                        </div>
+
+                        <img src="./img/logo.png" class="object-contain w-9" alt="" />
+
+
+                        <button @click="taggleMobileMenu()"
+                            class=" w-6 flex relative flex-col gap-1 cursor-pointer md:hidden">
+                            <span class="bg-gray-700  h-1 rounded-full transform rotate-45 origin-right">
+                            </span>
+                            <span class="bg-gray-700  h-1 rounded-full transform -rotate-45 origin-left">
+                            </span>
+                        </button>
+
+                    </div>
+
+
+
+
+                    <div class="mobile-menu__wrapper">
+
+
+                        <!-- LEAVE ME HERE -->
+
+                        <div class="flex items-center justify-start gap-3 mt-2 mb-5 text-xl">
+                            <span x-show="subMenu !== -1" class="bi-icon cursor-pointer" @click="subMenu = -1">
+                                <img src="svg/chevron-rigth.svg" alt="">
+                            </span>
+                            <h1 x-text="currentCategory"></h1>
+                        </div>
+
+                        <ul class="bi-scrollbar">
+                            <template
+                                x-for="({index,text,href,children},inx) in (subMenu === -1  ? menu : menu[subMenu].children)"
+                                :key="index">
+                                <li>
+
+                                    <a :href="href ? href : '#' "
+                                        @click="children && children.length ? subMenu = inx : null"
+                                        class="mobile-menu__item">
+                                        <span x-text="text"></span>
+                                        <img class="icon" src="svg/chevron-left.svg" alt="">
+                                    </a>
+
+                                </li>
+                            </template>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </nav>
 
-        <div class="relative flex justify-center items-center h-screen overflow-x-clip">
+        <div class="relative flex justify-center items-center h-screen overflow-x-clip lg:-z-10 ">
             <div id="yellow_gradient"
-                class="hidden md:block absolute z-0 h-full bottom-0 w-full bg-gradient-radial from-yellow-200 via-yellow-50 to-transparent">
+                class="hidden md:block absolute -z-10 h-full bottom-0 w-full bg-gradient-radial from-yellow-200 via-yellow-50 to-transparent">
             </div>
 
             <!-- cloud -->
@@ -119,9 +269,9 @@
                     class="container mx-auto w-10/12 sm:w-1/2 md:w-full bg-white mt-8  shadow-lg rounded-3xl md:rounded-full px-4 py-[16px]">
                     <div class="flex flex-col md:flex-row-reverse gap-2 justify-between">
 
-                        <div class="flex w-full md:w-1/5  items-center relative">
+                        <div class="flex w-full md:w-1/5  items-stretch relative">
                             <div @click="toggleFrom()"
-                                class="text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
+                                class="flex items-center justify-center md:justify-start text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
                                 مبدا</div>
                             <span class=" mx-2 bi-icon ">
                                 <img class="object-contain" src="./svg/departed_plane_icon.svg" alt="" />
@@ -237,10 +387,10 @@
 
                         </div>
 
-                        <div class="flex w-full md:w-1/5  items-center">
+                        <div class="flex w-full md:w-1/5  items-stretch">
 
                             <div
-                                class="text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
+                                class="flex items-center justify-center md:justify-start text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
                                 مقصد</div>
 
                             <span class="bi-icon mx-2">
@@ -248,11 +398,11 @@
                             </span>
                         </div>
 
-                        <div class="flex w-full md:w-1/5  items-center relative">
+                        <div class="flex w-full md:w-1/5  items-stretch relative">
 
 
                             <div @click="toggleDatePicker()"
-                                class="text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
+                                class="flex items-center justify-center md:justify-start text-rtl cursor-pointer  md:text-right w-full focus-visible:outline-none placeholder:text-gray-700 border-b md:border-b-0">
                                 تاریخ</div>
 
                             <span class=" mx-2 bi-icon">
@@ -265,7 +415,7 @@
                                 <div class="travel-selector-card__wrap">
 
                                     <div
-                                        class="flex lg:hidden justify-between items-center h-20 px-5 border-b-2 border-gray-300">
+                                        class="flex lg:hidden bg-white justify-between items-center h-20 px-5 border-b-2 border-gray-300">
                                         <div @click="toggleDatePicker" class="bi-icon cursor-pointer">
                                             <img src="svg/close.svg" alt="">
                                         </div>
@@ -275,11 +425,11 @@
                                         </h2>
                                     </div>
 
-                                    <div class="flex relative ">
+                                    <div class="flex relative flex-col sm:flex-row">
 
-                                        <div class="w-2/5 p-5 flex flex-col text-rtl">
+                                        <div class="w-48 mx-auto sm:w-2/5 p-5 flex flex-col text-rtl">
 
-                                            <div class="rounded-3xl overflow-hidden flex shadow-xl mb-7">
+                                            <div class="rounded-3xl overflow-hidden flex shadow-xl sm:mb-7">
                                                 <div
                                                     class="w-1/2 p-2 text-center   bg-secondary-ligth text-secondary-dark">
                                                     شمسی</div>
@@ -288,61 +438,84 @@
 
 
 
-                                            <div class="flex">
+                                            <div class="hidden sm:flex">
                                                 <div class="w-3 bi-from "></div>
                                                 <div class="w-full flex flex-col items-start pr-3">
                                                     از
                                                     <br>
-                                                    <span class="text-xl mt-1 mb-10">
+                                                    <span class="text-xl mt-1 mb-10 text-right">
                                                         22 اردیبهشت 1400
                                                     </span>
                                                 </div>
                                             </div>
-                                            <div class="flex">
+                                            <div class="hidden sm:flex">
                                                 <div class="w-3 bi-to"></div>
                                                 <div class="w-full flex flex-col items-start pr-3">
                                                     تا
                                                     <br>
-                                                    <span class="text-xl mt-1">
+                                                    <span class="text-xl mt-1 text-right">
                                                         22 اردیبهشت 1400
                                                     </span>
                                                 </div>
                                             </div>
 
                                             <div @click="toggleDatePicker"
-                                                class="cursor-pointer w-full p-2 px-3 mt-auto  bg-primery text-yellow-800 shadow-xl rounded-3xl ">
+                                                class="hidden sm:flex cursor-pointer w-full p-2 px-3 mt-auto  bg-primery text-yellow-800 shadow-xl rounded-3xl ">
                                                 تایید
                                             </div>
 
                                         </div>
 
-                                        <div class="w-3/5 p-5 border-l-2 travel-selector--scrollable bi-scrollbar">
+                                        <div
+                                            class="max-w-md sm:w-3/5 p-5 border-l-2 travel-selector--scrollable bi-scrollbar">
 
                                             <div class="flex justify-between mb-7">
-                                                <div> &lt; </div>
+                                                <div> <img class="h-3" src="svg/chevron-left.svg" alt=""> </div>
                                                 <div> فروردین 1399 </div>
-                                                <div> &gt; </div>
+                                                <div> <img class="h-3" src="svg/chevron-rigth.svg" alt=""> </div>
                                             </div>
-                                            <div class="grid grid-cols-7 grid-rows-6 ">
+                                            <div class="grid grid-cols-7 grid-rows-7 ">
                                                 <template x-for="d in days">
                                                     <span
-                                                        class=" bg-gray-200 m-2 rounded-3xl flex-center text-gray-600 aspect-square"
+                                                        class=" bg-gray-200 m-3 sm:m-1 rounded-circle flex-center text-gray-600 aspect-square"
                                                         x-text="d">
 
                                                     </span>
                                                 </template>
-                                                <template x-for="i in items">
+                                                <!-- FROM picker: -->
+                                                <template x-for="(i,index) in items" :key="index">
+
+                                                    <div :class="{
+                                                    'flex-center sm:aspect-square rounded-full  relative ' : true, 
+                                                    'border border-gray-500' : i.isToday  ,
+                                                    'bi-date-pick_start ' : i.date === 17 ,
+                                                    'bi-date-pick_end ' :  i.date === 23,
+                                                    'bi-date-pick_middle' : 17 < i.date && i.date < 23 
+                                                }">
+                                                        <span :class="{
+                                                            'text-red-400' : i.isFri,
+                                                            'text-black' : !i.isFri && !i.isOutOfCurrentMonth,
+                                                            'text-gray-500' : !i.isFri && i.isOutOfCurrentMonth,
+                                                        }" x-text="i.date">
+
+                                                        </span>
+                                                    </div>
+
+                                                </template>
+
+                                                <!-- TO: -->
+                                                <!-- <template x-for="(i,index) in items" :key="index">
 
                                                     <span :class="{
-                                                    'flex-center rounded-full text-gray-600 relative' : true, 
-                                                    'text-red-400' : i % 7 === 0,
+                                                    'flex-center aspect-square rounded-full text-gray-600 relative' : true, 
+                                                    'text-red-400' : (index + 1) % 7 === 0,
                                                     'border border-gray-500' : i === 2 ,
                                                     'bi-date-pick_start ' : i === 17 ,
                                                     'bi-date-pick_end ' :  i === 23,
                                                     'bi-date-pick_middle' : 17 < i && i < 23 
                                              }" x-text="i"></span>
 
-                                                </template>
+                                                </template> -->
                                             </div>
 
                                         </div>
@@ -362,10 +535,10 @@
                             </div>
                         </div>
 
-                        <div class="flex w-full md:w-1/5  items-center cursor-pointer relative">
+                        <div class="flex w-full md:w-1/5  items-stretch cursor-pointer relative">
                             <div class="w-full flex-center ">
 
-                                <div class="mx-3 text-rtl" @click="toggleMem()" x-text="totalTravelers"> نفرات
+                                <div class="w-full mx-3 text-rtl" @click="toggleMem()" x-text="totalTravelers"> نفرات
                                 </div>
 
 
@@ -387,15 +560,15 @@
                                             </h2>
                                         </div>
 
-                                        <div class="flex lg:block justify-center items-center">
-                                            <div class="lg:hidden w-1/2 flex flex-col p-5 ">
+                                        <div class="flex flex-col sm:flex-row lg:block justify-center items-center">
+                                            <div class="lg:hidden w-1/2 flex flex-col p-2 sm:p-5 ">
 
-                                                <div class="text-center mb-10 ">
+                                                <div class="text-center sm:mb-10 ">
                                                     <img class="inline-block bg-white shadow-lg rounded-circle w-28 h-28 p-5"
                                                         src="svg/user.svg" alt="">
                                                 </div>
                                                 <div class="">
-                                                    <h5 class="mb-6 text-xl text-rtl">
+                                                    <h5 class="hidden sm:block mb-6 text-xl text-rtl">
                                                         <template x-for="{label , type , count } in travelers"
                                                             :key="type">
                                                             <span class="mx-2 "
@@ -404,27 +577,31 @@
                                                             </span>
                                                         </template>
                                                     </h5>
-                                                    <div class="bi-primary-pill">
+                                                    <div class="hidden sm:block bi-primary-pill">
                                                         تایید و جست و جو</div>
                                                 </div>
                                             </div>
 
 
-                                            <div class="w-1/2 lg:w-full p-5 travel-selector--scrollable">
+                                            <div class=" w-3/4 sm:w-1/2 lg:w-full p-5 travel-selector--scrollable">
                                                 <div>
                                                     <template x-for="(traveler, inx) in travelers">
                                                         <div class="flex justify-between items-center mb-7">
-                                                            <div @click="travelersInc(inx)" class="bi-secondary-icon">
+                                                            <div @click="travelersInc(inx)"
+                                                                class="bi-secondary-icon w-12 sm:w-auto flex-center">
                                                                 <img src="svg/plus.svg" alt="">
                                                             </div>
-                                                            <div>
-                                                                <span class="text-xl" x-text="traveler.count"> </span>
-                                                                <br>
-                                                                <span class="text-gray-500 text-base"
+                                                            <div class="flex flex-col-reverse">
+                                                                <span class="text-2xl"
+                                                                    x-text="String(traveler.count).toIndiaDigits()">
+                                                                </span>
+
+                                                                <span class="text-gray-500 text-base  mb-2"
                                                                     x-text="traveler.label">
                                                                 </span>
                                                             </div>
-                                                            <div @click="travelersDec(inx)" class="bi-secondary-icon">
+                                                            <div @click="travelersDec(inx)"
+                                                                class="bi-secondary-icon w-12 sm:w-auto flex-center">
                                                                 <img src="svg/minus.svg" alt="">
                                                             </div>
                                                         </div>
@@ -494,7 +671,7 @@
 
             <div class="w-full sm:w-1/2 md:w-full">
                 <div class="js-swappable flex-center relative h-[323px] md:h-[430px]">
-                    <div data-wow-duration="1s" data-wow-delay="0.7s"
+                    <div data-wow-duration="1s" data-wow-delay="0.7s" data-card-item
                         class="wow animate__fadeIn top-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                         <img class="" src="img/sample_image1.png" alt="" />
 
@@ -549,7 +726,7 @@
                         </div>
                     </div>
 
-                    <div data-wow-duration="1s" data-wow-delay="0.5s"
+                    <div data-wow-duration="1s" data-wow-delay="0.5s" data-card-item
                         class="wow animate__fadeIn top-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                         <img class="" src="img/sample_image1.png" alt="" />
 
@@ -604,7 +781,7 @@
                         </div>
                     </div>
 
-                    <div data-wow-duration="1s" data-wow-delay="0.7s"
+                    <div data-wow-duration="1s" data-wow-delay="0.7s" data-card-item
                         class="wow animate__fadeIn top-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                         <img class="" src="img/sample_image1.png" alt="" />
 
@@ -805,7 +982,7 @@
                     <img src="svg/chevron-left.svg" alt="" />
                 </button>
 
-                <div data-wow-delay="0.2s"
+                <div data-card-item data-wow-delay="0.2s"
                     class="wow animate__fadeIn top-0 sm:right-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                     <img class="" src="img/sample_image1.png" alt="" />
 
@@ -860,7 +1037,7 @@
                     </div>
                 </div>
 
-                <div data-wow-delay="0.1s"
+                <div data-card-item data-wow-delay="0.1s"
                     class="wow animate__fadeIn top-0 sm:right-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                     <img class="" src="img/sample_image1.png" alt="" />
 
@@ -915,7 +1092,7 @@
                     </div>
                 </div>
 
-                <div data-wow-delay="0s"
+                <div data-card-item data-wow-delay="0s"
                     class="wow animate__fadeIn top-0 sm:right-0 transition duration-150 ease-out inline-block w-[253px] md:w-[336px] absolute rounded-full">
                     <img class="" src="img/sample_image1.png" alt="" />
 
@@ -1147,17 +1324,17 @@
     <div class="w-full overflow-x-clip">
 
         <div class="relative container mx-auto ">
-            <img class="absolute z-10 top-0 md:-top-24 lg:-top-52 left-0 object-cover transform scale-150 overflow-x-clip"
+
+            <img class="absolute z-10 -top-28 lg:-top-52 left-0 object-cover transform scale-150 overflow-x-clip"
                 src="img/footer-clouds-2.png" alt="" srcset="">
         </div>
     </div>
-    <footer
-        class="flex flex-col relative bg-cover  bg-gradient-to-t from-white to-gray-200 w-full overflow-x-clip h-80 px-10 ">
+    <footer id="footer">
 
-        <img class="absolute w-full bottom-0 z-0 left-0" src="img/footer.jpg" alt="" />
-        <div class="flex container gap-4 z-10 text-rtl relative py-10 xl:transform xl:-translate-y-5">
+        <!-- <img class="absolute w-full bottom-0 z-0 left-0" src="img/footer.jpg" alt="" /> -->
+        <div class="footer__cols">
 
-            <div class="w-1/3 z-10">
+            <div class="footer__col">
                 <ul class="list-disc">
                     <li>درباره ما</li>
                     <li>تماس با ما</li>
@@ -1166,7 +1343,7 @@
                     <li>قوانین و مقررات</li>
                 </ul>
             </div>
-            <div class="w-1/3 z-10">
+            <div class="footer__col">
                 <ul class="list-disc">
                     <li>درباره ما</li>
                     <li>تماس با ما</li>
@@ -1175,7 +1352,7 @@
                     <li>قوانین و مقررات</li>
                 </ul>
             </div>
-            <div class="w-1/3 z-10">
+            <div class="footer__col">
                 <ul>
                     <li>درباره ما</li>
                     <li>تماس با ما</li>
@@ -1186,7 +1363,7 @@
             </div>
         </div>
 
-        <div class="relative flex flex-col gap-2 items-center mt-auto text-white text-center pb-5 w-full ">
+        <div class="footer__copy-write">
             <span>
                 گردشگری با مجموعه ای بی نظیر از هتل ها در تلاش است تا سفری آسوده و مطمین را برای شما عزیزان رقم بزند
             </span>
@@ -1197,11 +1374,17 @@
     </footer>
 
 
-
+    <!-- libraries -->
     <script src="lib/js/rellax.min.js"></script>
     <script src="lib/js/wow.min.js"></script>
     <script src="lib/js/parallax.min.js"></script>
-    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script src="lib/js/hammer.min.js"></script>
+
+    <!-- scripts -->
+    <script src="js/globals.js"></script>
+    <script src="js/utils.js"></script>
+
+    <script src="js/components/navbar.js"></script>
     <script src="js/index.js"></script>
     <script>
 

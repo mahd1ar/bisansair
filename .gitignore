@@ -2,3 +2,4 @@ node_modules/
 dist/
 .vercel
 debug.log
+src/css/output.css

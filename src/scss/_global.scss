@@ -15,3 +15,24 @@ input {
 		@apply absolute rounded-circle bg-white p-1;
 	}
 }
+
+#mobile-menu {
+	@apply fixed top-0 right-0 z-20 h-full w-full  bg-gradient-to-b from-black to-transparent;
+
+	.mobile-menu__overlay {
+		@apply container mx-auto lg:max-w-[1104px];
+	}
+
+	.mobile-menu__wrapper {
+		@apply text-rtl mt-5 rounded-3xl bg-white p-6 shadow-2xl;
+	}
+
+	ul {
+		@apply mx-auto grid grid-cols-1  gap-2 overflow-auto sm:grid-cols-2;
+		max-height: calc(100vh - 185px);
+	}
+
+	li a {
+		@apply relative flex cursor-pointer items-center justify-between rounded-xl bg-white p-5 shadow-md transition duration-100 ease-out hover:bg-gray-100;
+	}
+}

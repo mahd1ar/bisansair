@@ -1,0 +1,40 @@
+.travel-selector-card__overlay {
+	@apply fixed top-0 left-0 z-20 mx-auto flex h-screen w-screen overflow-hidden rounded-none bg-gradient-to-b from-gray-400 to-transparent shadow-xl sm:from-slate-900 lg:absolute
+			lg:-bottom-10 lg:translate-y-20 lg:transform lg:rounded-3xl
+			lg:bg-white;
+}
+
+#travel-selector-card__date-picker {
+	@apply flex-col lg:-left-1/2 lg:h-fit lg:w-[586px];
+}
+
+#travel-selector-card__destination-picker {
+	@apply items-center justify-center lg:-left-full lg:h-72 lg:w-80;
+}
+
+#travel-selector-card__traveler-picker {
+	@apply flex-center mx-auto  flex-col lg:block lg:h-fit lg:w-72;
+}
+
+/*
+  WRAPPER
+*/
+
+.travel-selector-card__wrap {
+	@apply m-auto h-full w-11/12 overflow-y-hidden rounded-3xl sm:max-h-[80%] sm:w-4/5  lg:max-h-full lg:w-full lg:rounded-none;
+	background-color: white !important;
+}
+
+/*
+  INTERNAL
+*/
+
+.travel-selector--scrollable {
+	@apply overflow-auto;
+	@media (min-width: theme("screens.sm")) {
+		max-height: calc(90vh - theme("height.20") - 76px);
+	}
+	@media (min-width: theme("screens.lg")) {
+		@apply max-h-fit;
+	}
+}
