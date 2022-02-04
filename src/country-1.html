@@ -57,7 +57,7 @@
         <div class="w-4/5 flex-shrink-0 ">
 
             <!-- about  -->
-            <div x-data="expandable" class="flex flex-col relative">
+            <div x-data="expandable" class="flex flex-col relative z-10">
                 <div class="flex items-start gap-6">
 
                     <div class="w-40">
@@ -66,20 +66,15 @@
                     </div>
                     <div class="w-full">
 
-                        <h1>darbare oroopa</h1>
-                        <p class="overflow-hidden transition-all duration-200 ease-out" x-ref="description"
-                            :style="{maxHeight}">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem accusantium facilis nisi
-                            aliquid
-                            inventore debitis non officia quibusdam labore magni voluptatem sequi dolor fugit harum
-                            placeat,
-                            inventore debitis non officia quibusdam labore magni voluptatem sequi dolor fugit harum
-                            placeat,
-                            inventore debitis non officia quibusdam labore magni voluptatem sequi dolor fugit harum
-                            placeat,
-                            inventore debitis non officia quibusdam labore magni voluptatem sequi dolor fugit harum
-                            placeat,
-                            tempora asperiores illo delectus.
+                        <h1>درباره اروپا</h1>
+                        <p class="overflow-hidden transition-all duration-200 ease-out text-gray-500 text-sm"
+                            x-ref="description" :style="{maxHeight}">
+                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
+                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار
+                            خود نشان دهند که صفحه
                         </p>
                     </div>
                 </div>
@@ -91,7 +86,7 @@
                         hidden : !isExpandable,
                         }">
                     <div @click="toggle" class="flex justify-center items-end gap-4 cursor-pointer">
-                        <span>more tour </span>
+                        <span>توضیحات بیشتر </span>
                         <i class="rounded-circle  w-8 h-8 flex-center bg-primery ">
                             <img :class="{'transform duration-200 ease-linear ' : true , 'rotate-180' : expanded , 'rotate-0' : !expanded }"
                                 src="svg/chevron-down.svg" alt="">
@@ -180,42 +175,7 @@
         </div>
     </main>
 
-    <script>
-        var expandable = {
-            expanded: false,
-            isExpandable: false,
-            _divHeight: 0,
-            _lines: 0,
-            _lineHeight: 0,
-            get maxHeight() {
-                if (this.expanded) {
-                    console.log(this._divHeight)
-                    return this._divHeight + 'px'
-                } else {
-                    console.log(this._lineHeight)
-                    return (this._lineHeight * 4) + 'px'
-                }
-
-            },
-            init() {
-
-                const el = this.$refs.description;
-                this._divHeight = el.offsetHeight
-                this._lineHeight = parseInt(getComputedStyle(el).lineHeight);
-                this._lines = this._divHeight / this._lineHeight;
-
-                if (this._lines > 4)
-                    this.isExpandable = true
-                else
-                    this.expanded = true
-            },
-            toggle() {
-                this.expanded = !this.expanded
-            }
-        }
-
-        console.log(c.scrollWidth - c.clientWidth)
-    </script>
+    <script src="js/pages/country-1.js"></script>
 </body>
 
 </html>
