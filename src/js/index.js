@@ -224,7 +224,7 @@ var alpineCloud = {
                 style: {
                     left: ~~(Math.random() * 100) + '%',
                     top: ~~(Math.random() * 50) + '%',
-                    zIndex: (~~(Math.random() * 4) % 4 === 0) ? 10 : 0,
+                    zIndex: (~~(Math.random() * 10)) + 2,
                 },
                 data: { depth: Math.random().toFixed(2) },
 

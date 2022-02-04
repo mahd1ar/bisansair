@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>country-1</title>
+    <link rel="stylesheet" href="css/output.css">
+    <script defer src="lib/js/alpine.js"></script>
+</head>
+
+<body>
+    <!-- brake points debug -->
+    <!-- <div class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
+        <span class="hidden sm:block">sm</span>
+        <span class="hidden md:block">md</span>
+        <span class="hidden lg:block">lg</span>
+        <span class="hidden xl:block">xl</span>
+        <span class="hidden 2xl:block">2xl</span>
+    </div> -->
+    <!-- /debug -->
+
+    <main class="container mx-auto flex gap-4" dir="rtl">
+
+        <aside class="w-1/5 flex-shrink-0">
+            <div class="flex w-full gap-4 flex-col items-center justify-center">
+                <div class="overflow-hidden rounded-circle">
+                    <img src="img/countries/image 3.png" alt="">
+                </div>
+                <h1 class=" text-2xl mt-4 font-bold">اروپا</h1>
+                <p class="font-bold">درباره اروپا بیشتر بدانید</p>
+            </div>
+
+            <!-- loop -->
+            <div class="flex flex-col justify-center items-center ">
+                <div>
+                    <div class="mt-6 w-full h-full flex-center bi-overlay py-8 px-3 rounded-3xl"
+                        style="background: url(img/countries/image8.jpg) center center/cover;">
+                        <div class="text-white relative"> eghamat dar farance</div>
+                    </div>
+
+                    <div class="mt-6 w-full h-full flex-center bi-overlay py-8 px-3 rounded-3xl"
+                        style="background: url(img/countries/image8.jpg) center center/cover;">
+                        <div class="text-white relative"> eghamat dar farance</div>
+                    </div>
+
+                    <div class="mt-6 w-full h-full flex-center bi-overlay py-8 px-3 rounded-3xl"
+                        style="background: url(img/countries/image8.jpg) center center/cover;">
+                        <div class="text-white relative"> eghamat dar farance</div>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+        <div class="w-4/5 flex-shrink-0 ">
+
+            <!-- about  -->
+            <div x-data="expandable" class="flex flex-col relative">
+                <div class="flex items-start gap-6">
+
+                    <div class="w-40">
+                        <img class="rounded-3xl aspect-square w-full object-cover" src="img/countries/Rectangle 67.png"
+                            alt="">
+                    </div>
+                    <div class="w-full">
+
+                        <h1>darbare oroopa</h1>
+                        <p class="overflow-hidden transition-all duration-200 ease-out" x-ref="description"
+                            :style="{maxHeight}">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem accusantium facilis nisi
+                            aliquid
+                            inventore debitis non officia quibusdam labore magni voluptatem sequi dolor fugit harum
+                            placeat,
+                            inventore debitis non officia quibusdam labore magni voluptatem sequi dolor fugit harum
+                            placeat,
+                            inventore debitis non officia quibusdam labore magni voluptatem sequi dolor fugit harum
+                            placeat,
+                            inventore debitis non officia quibusdam labore magni voluptatem sequi dolor fugit harum
+                            placeat,
+                            tempora asperiores illo delectus.
+                        </p>
+                    </div>
+                </div>
+
+                <div :class="{
+                        'absolute w-full left-0 h-10 flex justify-center items-end bg-gradient-to-t from-white via-white to-transparent' : true,
+                          'bottom-0' : !expanded,
+                        'top-full' : expanded,
+                        hidden : !isExpandable,
+                        }">
+                    <div @click="toggle" class="flex justify-center items-end gap-4 cursor-pointer">
+                        <span>more tour </span>
+                        <i class="rounded-circle  w-8 h-8 flex-center bg-primery ">
+                            <img :class="{'transform duration-200 ease-linear ' : true , 'rotate-180' : expanded , 'rotate-0' : !expanded }"
+                                src="svg/chevron-down.svg" alt="">
+                        </i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- flags -->
+            <div class="relative mt-5  ">
+                <!-- controllers -->
+                <div
+                    class="cursor-pointer flex-center rounded-circle w-14 h-14 bg-white absolute top-4 left-0 shadow-lg">
+                    <img src="svg/chevron-left.svg" alt="">
+                </div>
+
+                <div
+                    class="cursor-pointer flex-center rounded-circle w-14 h-14 bg-white absolute top-4 right-0 shadow-lg">
+                    <img src="svg/chevron-rigth.svg" alt="">
+                </div>
+
+                <div class="flex  gap-3 snap-x overflow-auto bi-hide-scrollbar p-6">
+
+
+                    <!-- LOOP HERE -->
+                    <div class="snap-center">
+                        <div
+                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
+                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
+                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                        </div>
+
+                    </div>
+                    <div class="snap-center">
+                        <div
+                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
+                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
+                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                        </div>
+
+                    </div>
+                    <div class="snap-center">
+                        <div
+                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
+                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
+                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                        </div>
+
+                    </div>
+                    <div class="snap-center">
+                        <div
+                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
+                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
+                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                        </div>
+
+                    </div>
+                    <div class="snap-center">
+                        <div
+                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
+                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
+                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                        </div>
+
+                    </div>
+                    <div class="snap-center">
+                        <div
+                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
+                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
+                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                        </div>
+
+                    </div>
+                    <div class="snap-center">
+                        <div
+                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
+                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
+                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        var expandable = {
+            expanded: false,
+            isExpandable: false,
+            _divHeight: 0,
+            _lines: 0,
+            _lineHeight: 0,
+            get maxHeight() {
+                if (this.expanded) {
+                    console.log(this._divHeight)
+                    return this._divHeight + 'px'
+                } else {
+                    console.log(this._lineHeight)
+                    return (this._lineHeight * 4) + 'px'
+                }
+
+            },
+            init() {
+
+                const el = this.$refs.description;
+                this._divHeight = el.offsetHeight
+                this._lineHeight = parseInt(getComputedStyle(el).lineHeight);
+                this._lines = this._divHeight / this._lineHeight;
+
+                if (this._lines > 4)
+                    this.isExpandable = true
+                else
+                    this.expanded = true
+            },
+            toggle() {
+                this.expanded = !this.expanded
+            }
+        }
+
+        console.log(c.scrollWidth - c.clientWidth)
+    </script>
+</body>
+
+</html>

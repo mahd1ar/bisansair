@@ -238,9 +238,10 @@
             </div>
 
             <!-- cloud -->
-            <div id="cloud-scene" x-data="alpineCloud" class="absolute hidden md:flex inset-0 overflow-x-clip  ">
+            <div id="cloud-scene" x-data="alpineCloud"
+                class="absolute hidden md:flex justify-center items-center inset-0 overflow-x-clip  ">
                 <template x-for="cloud in clouds">
-                    <div :data-depth="cloud.data.depth" class="w-full h-full  ">
+                    <div :data-depth="cloud.data.depth" :style="{zIndex : cloud.style.zIndex }" class="w-full h-full ">
 
                         <img class="js-home-cloud absolute" :style="cloud.style"
                             :src="'img/cloud/' + cloud.name + '.png'">
@@ -249,8 +250,15 @@
                     </div>
 
                 </template>
+                <div class="w-full h-full z-10 " data-depth="0.04">
+
+                    <div class="w-full h-full flex-center ">
+
+                        <img id="airplane" class=" hidden md:block" src="./img/cloud/airplane.png" alt="" />
+                    </div>
+                </div>
             </div>
-            <img id="airplane" class="mx-auto relative hidden md:block" src="./img/cloud/airplane.png" alt="" />
+            <!-- <img id="airplane" class="mx-auto relative hidden md:block" src="./img/cloud/airplane.png" alt="" /> -->
 
             <div
                 class="flex flex-col sm:flex-row-reverse w-full sm:px-12 items-center md:flex-col absolute z-10 text-center font-iransans">
@@ -460,7 +468,7 @@
                                             </div>
 
                                             <div @click="toggleDatePicker"
-                                                class="hidden sm:flex cursor-pointer w-full p-2 px-3 mt-auto  bg-primery text-yellow-800 shadow-xl rounded-3xl ">
+                                                class="hidden sm:flex justify-center bi-primary-pill mt-auto">
                                                 تایید
                                             </div>
 
@@ -486,13 +494,15 @@
                                                 <template x-for="(i,index) in items" :key="index">
 
                                                     <div :class="{
-                                                    'flex-center sm:aspect-square rounded-full  relative ' : true, 
-                                                    'border border-gray-500' : i.isToday  ,
+                                                    'flex-center sm:aspect-square select-none cursor-pointer relative ' : true, 
                                                     'bi-date-pick_start ' : i.date === 17 ,
                                                     'bi-date-pick_end ' :  i.date === 23,
                                                     'bi-date-pick_middle' : 17 < i.date && i.date < 23 
                                                 }">
                                                         <span :class="{
+                                                            'rounded-circle w-full h-full flex-center hover:bg-gray-100' : true,
+                                                            'bg-primery' : i.date === 23 || i.date === 17 ,
+                                                            'border border-gray-500' : i.isToday  ,
                                                             'text-red-400' : i.isFri,
                                                             'text-black' : !i.isFri && !i.isOutOfCurrentMonth,
                                                             'text-gray-500' : !i.isFri && i.isOutOfCurrentMonth,
@@ -538,7 +548,8 @@
                         <div class="flex w-full md:w-1/5  items-stretch cursor-pointer relative">
                             <div class="w-full flex-center ">
 
-                                <div class="w-full mx-3 text-rtl" @click="toggleMem()" x-text="totalTravelers"> نفرات
+                                <div class="w-full md:text-right mx-3 text-rtl" @click="toggleMem()"
+                                    x-text="totalTravelers"> نفرات
                                 </div>
 
 

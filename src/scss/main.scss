@@ -23,19 +23,6 @@
 	z-index: -10;
 }
 
-.bi-date-pick {
-	&_start,
-	&_end {
-		@apply rounded-full bg-primery text-gray-900;
-	}
-
-	&_start:before {
-		content: "";
-		background: #ede1596e !important;
-		@apply absolute right-0 top-0 -z-10 h-full w-1/2;
-	}
-}
-
 .bi-from,
 .bi-to {
 	@apply relative;
@@ -49,18 +36,6 @@
 	content: "";
 	@apply absolute top-0 left-0 h-full w-2 border-r-2 border-gray-500 lg:w-1;
 	border-style: dashed;
-}
-
-.bi-date-pick_end:before {
-	content: "";
-	background: #ede1596e !important;
-	@apply absolute left-0 top-0  h-full w-1/2;
-}
-
-.bi-date-pick_middle:before {
-	content: "";
-	@apply absolute top-0 left-0  h-full w-full;
-	background: #ede1596e !important;
 }
 
 @layer components {

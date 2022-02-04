@@ -21,7 +21,7 @@
 }
 
 .bi-overlay {
-	@apply after:absolute after:left-0 after:bottom-0 after:h-full after:w-full after:bg-gradient-to-t after:from-black after:via-transparent after:to-transparent;
+	@apply relative overflow-hidden before:absolute before:left-0 before:bottom-0 before:h-full before:w-full before:bg-black before:bg-opacity-30;
 }
 
 .bi-icon {
@@ -30,4 +30,12 @@
 	img {
 		@apply object-contain;
 	}
+}
+
+.bi-hide-scrollbar {
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
 }

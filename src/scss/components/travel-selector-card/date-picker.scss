@@ -16,6 +16,18 @@
 	@apply flex-center mx-auto  flex-col lg:block lg:h-fit lg:w-72;
 }
 
+.bi-date-pick_start {
+	@apply h-full w-full bg-gradient-to-r from-transparent via-transparent to-[#ede1596e];
+}
+
+.bi-date-pick_end {
+	@apply h-full w-full bg-gradient-to-r from-[#ede1596e] via-transparent to-transparent;
+}
+
+.bi-date-pick_middle {
+	background: #ede1596e !important;
+}
+
 /*
   WRAPPER
 */
