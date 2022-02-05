@@ -26,11 +26,11 @@
     </div> -->
     <!-- /debug -->
 
-    <!-- <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-transparent pt-5"> -->
+
     <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-white pt-5 z-20">
         <nav x-data="navbar" class="lg:max-w-[1104px] container mx-auto">
             <div
-                class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
+                class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow z-20 relative">
                 <div class="flex">
                     <div
                         class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
@@ -158,10 +158,12 @@
 
                 <img src="./img/logo.png" class="object-contain w-9" alt="" />
 
-                <div @click="taggleMobileMenu" class="w-6 flex flex-col gap-1 cursor-pointer md:hidden">
-                    <span class="bg-gray-700 h-1 rounded-full"> </span>
-                    <span class="bg-gray-700 h-1 rounded-full"> </span>
-                    <span class="bg-gray-700 h-1 rounded-full"> </span>
+                <div @click="taggleMobileMenu" class=" cursor-pointer md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
                 </div>
 
             </div>
@@ -184,12 +186,12 @@
                         <img src="./img/logo.png" class="object-contain w-9" alt="" />
 
 
-                        <button @click="taggleMobileMenu()"
-                            class=" w-6 flex relative flex-col gap-1 cursor-pointer md:hidden">
-                            <span class="bg-gray-700  h-1 rounded-full transform rotate-45 origin-right">
-                            </span>
-                            <span class="bg-gray-700  h-1 rounded-full transform -rotate-45 origin-left">
-                            </span>
+                        <button @click="taggleMobileMenu()" class="  relative  cursor-pointer md:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
                         </button>
 
                     </div>
@@ -258,6 +260,7 @@
                     </div>
                 </div>
             </div>
+            <!-- NOTE: IF YOU WISH TO FIXED AIRPLANE UNCOMMENT THIS -->
             <!-- <img id="airplane" class="mx-auto relative hidden md:block" src="./img/cloud/airplane.png" alt="" /> -->
 
             <div
@@ -382,11 +385,6 @@
                                         </div>
 
 
-
-                                        <!-- </div> -->
-
-
-
                                     </div>
 
                                 </div>
@@ -490,7 +488,7 @@
 
                                                     </span>
                                                 </template>
-                                                <!-- FROM picker: -->
+
                                                 <template x-for="(i,index) in items" :key="index">
 
                                                     <div :class="{
@@ -513,19 +511,7 @@
 
                                                 </template>
 
-                                                <!-- TO: -->
-                                                <!-- <template x-for="(i,index) in items" :key="index">
 
-                                                    <span :class="{
-                                                    'flex-center aspect-square rounded-full text-gray-600 relative' : true, 
-                                                    'text-red-400' : (index + 1) % 7 === 0,
-                                                    'border border-gray-500' : i === 2 ,
-                                                    'bi-date-pick_start ' : i === 17 ,
-                                                    'bi-date-pick_end ' :  i === 23,
-                                                    'bi-date-pick_middle' : 17 < i && i < 23 
-                                             }" x-text="i"></span>
-
-                                                </template> -->
                                             </div>
 
                                         </div>

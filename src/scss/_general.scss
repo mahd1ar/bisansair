@@ -22,6 +22,10 @@
 
 .bi-overlay {
 	@apply relative overflow-hidden before:absolute before:left-0 before:bottom-0 before:h-full before:w-full before:bg-black before:bg-opacity-30;
+
+	&-gradient-white {
+		@apply relative overflow-hidden before:absolute before:left-0 before:bottom-0 before:h-full before:w-full before:bg-gradient-to-t before:from-white before:to-transparent;
+	}
 }
 
 .bi-icon {

@@ -30,4 +30,32 @@ var expandable = {
     }
 }
 // scrollable flags :
-// console.log(c.scrollWidth - c.clientWidth)
+
+const flags = {
+    _schrollable: 0,
+    _totalItems: 0,
+    init() {
+        const c = this.$el.querySelector('.js-flags-container')
+        this._totalItems = c.querySelectorAll('.js-flag').length;
+        console.log(this._totalItems)
+        this._schrollable = -1 * c.scrollWidth - c.clientWidth;
+
+    },
+    next() {
+
+        const containerEl = this.$root.querySelector('.js-flags-container')
+        const visableItems = ~~(containerEl.clientWidth / this.$root.querySelector('.js-flags-container .js-flag').clientWidth)
+        const newPosition = containerEl.scrollLeft + (this._schrollable / (this._totalItems / visableItems))
+        containerEl.scroll(newPosition, 0)
+
+    },
+    prv() {
+
+        const containerEl = this.$root.querySelector('.js-flags-container')
+        const visableItems = ~~(containerEl.clientWidth / this.$root.querySelector('.js-flags-container .js-flag').clientWidth)
+        const newPosition = containerEl.scrollLeft - (this._schrollable / (this._totalItems / visableItems))
+        containerEl.scroll(newPosition, 0)
+
+    }
+
+}
