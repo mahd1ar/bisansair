@@ -1,0 +1,51 @@
+.tour_cards__from,
+.tour_cards__to {
+	@apply relative overflow-hidden pr-4 sm:pr-0;
+}
+.tour_cards__from::after {
+	content: "";
+	background: #333333;
+	@apply absolute top-1/4 right-0 block h-2 w-2 rounded-circle sm:hidden;
+}
+.tour_cards__from::before {
+	content: "";
+	border-left: 2px #cccccc dashed;
+	@apply absolute top-1/4 right-0 block h-full w-1 sm:hidden;
+}
+
+.tour_cards__to::after {
+	content: "";
+	@apply absolute top-1/4 right-0 block  h-2 w-2 rounded-circle sm:hidden;
+	background: #333333;
+}
+.tour_cards__to::before {
+	content: "";
+	border-left: 2px #cccccc dashed;
+	@apply absolute top-0 right-0 block h-1/4 w-1 sm:hidden;
+}
+
+.tour_cards__from--grid,
+.tour_cards__to--grid {
+	@apply relative overflow-hidden pr-4;
+}
+.tour_cards__from--grid::after {
+	content: "";
+	background: #333333;
+	@apply absolute top-1/4 right-0 block h-2 w-2 rounded-circle;
+}
+.tour_cards__from--grid::before {
+	content: "";
+	border-left: 2px #cccccc dashed;
+	@apply absolute top-1/4 right-0 block h-full w-1;
+}
+
+.tour_cards__to--grid::after {
+	content: "";
+	@apply absolute top-1/4 right-0 block  h-2 w-2 rounded-circle;
+	background: #333333;
+}
+.tour_cards__to--grid::before {
+	content: "";
+	border-left: 2px #cccccc dashed;
+	@apply absolute top-0 right-0 block h-1/4 w-1;
+}

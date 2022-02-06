@@ -35,10 +35,36 @@ const flags = {
     _schrollable: 0,
     _totalItems: 0,
     init() {
-        const c = this.$el.querySelector('.js-flags-container')
-        this._totalItems = c.querySelectorAll('.js-flag').length;
-        console.log(this._totalItems)
-        this._schrollable = -1 * c.scrollWidth - c.clientWidth;
+        const slider = this.$el.querySelector('.js-flags-container')
+        this._totalItems = slider.querySelectorAll('.js-flag').length;
+        this._schrollable = -1 * slider.scrollWidth - slider.clientWidth;
+
+        // drag to scroll
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.classList.add('active');
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.classList.remove('active');
+        });
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 3; //scroll-fast
+            slider.scrollLeft = scrollLeft - walk;
+        });
 
     },
     next() {
