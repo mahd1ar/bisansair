@@ -30,7 +30,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
         const list = fs.readdirSync(join(__dirname, '..'));
 
 
-        const cards = list.filter(i => i.split(".")[0] === "html").map(i => {
+        const cards = list.filter(i => i.split(".")[1] === "html").map(i => {
 
             return `<div class="col s12 m6">
                     <div class="card blue-grey darken-1">
