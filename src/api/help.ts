@@ -1,5 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node'
 import fs from "fs";
+import { join } from 'path'
 
 
 
@@ -23,8 +24,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
     
     const tail = `</div></div></body></html>`
     
-    
-    const list =  fs.readdirSync("..");
+    const list =  fs.readdirSync(join(__dirname, 'src'));
     
     const cards = list.filter(i => i.split(".")[0] === "html").map(i=>{
 

