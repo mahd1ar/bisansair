@@ -85,3 +85,28 @@ const flags = {
     }
 
 }
+
+function respondToVisibility(element, callback) {
+    const options = {
+        // root: document.body,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            callback(entry.intersectionRatio > 0);
+
+        });
+    }, options);
+
+    observer.observe(element);
+}
+
+
+window.addEventListener('load', function () {
+
+    if (typeof pagination !== 'undefined') {
+
+        pagination()
+    }
+})
+

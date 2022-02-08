@@ -441,7 +441,7 @@
             <!-- tours -->
             <section class="mt-11">
                 <div class="flex sm:flex-row flex-col items-center justify-between mb-8">
-                    <h2 class="mb-5 sm:mb-0 text-primery-dark font-bold text-2xl">تور های اروپا</h2>
+                    <h2 class="mb-10 sm:mb-0 text-primery-dark font-bold text-2xl">تور های اروپا</h2>
                     <div class="flex-center gap-4">
                         <span class="text-zinc-500 text-xs">نوع نمایش</span>
                         <ul class=" text-slate-500 overflow-clip flex-center rounded-3xl shadow-sm cursor-pointer">
@@ -470,7 +470,7 @@
                     </div>
                 </div>
                 <!-- TOURS CARDs -->
-                <div class="mb-9">
+                <div class="js-cards-container mb-9">
 
 
                     <div class="flex flex-wrap mb-2 lg:p-6 md:p-3 p-6 rounded-2xl shadow-md hover:shadow-xl">
@@ -488,13 +488,13 @@
                                     <span class="">
                                         کوالالامپور
                                     </span>
-                                    <span class="text-xs">1400,10,04</span>
+                                    <span class="text-xs flex-center">1400,10,04</span>
                                 </div>
 
 
                                 <div class="flex justify-between">
                                     <span>تهران</span>
-                                    <span class="text-xs">1400,10,04</span>
+                                    <span class="text-xs flex-center">1400,10,04</span>
                                 </div>
 
                             </div>
@@ -516,6 +516,7 @@
                     </div>
 
 
+
                     <div class="flex flex-wrap mb-2 lg:p-6 md:p-3 p-6 rounded-2xl shadow-md hover:shadow-xl">
 
                         <div class="md:border-l-2 border-b-2 md:border-b-0 w-1/2 md:w-4/12 flex items-center ">
@@ -531,13 +532,13 @@
                                     <span class="">
                                         کوالالامپور
                                     </span>
-                                    <span class="text-xs">1400,10,04</span>
+                                    <span class="text-xs flex-center">1400,10,04</span>
                                 </div>
 
 
                                 <div class="flex justify-between">
                                     <span>تهران</span>
-                                    <span class="text-xs">1400,10,04</span>
+                                    <span class="text-xs flex-center">1400,10,04</span>
                                 </div>
 
                             </div>
@@ -559,6 +560,7 @@
                     </div>
 
 
+
                     <div class="flex flex-wrap mb-2 lg:p-6 md:p-3 p-6 rounded-2xl shadow-md hover:shadow-xl">
 
                         <div class="md:border-l-2 border-b-2 md:border-b-0 w-1/2 md:w-4/12 flex items-center ">
@@ -574,13 +576,13 @@
                                     <span class="">
                                         کوالالامپور
                                     </span>
-                                    <span class="text-xs">1400,10,04</span>
+                                    <span class="text-xs flex-center">1400,10,04</span>
                                 </div>
 
 
                                 <div class="flex justify-between">
                                     <span>تهران</span>
-                                    <span class="text-xs">1400,10,04</span>
+                                    <span class="text-xs flex-center">1400,10,04</span>
                                 </div>
 
                             </div>
@@ -602,6 +604,7 @@
                     </div>
 
 
+
                     <div class="flex flex-wrap mb-2 lg:p-6 md:p-3 p-6 rounded-2xl shadow-md hover:shadow-xl">
 
                         <div class="md:border-l-2 border-b-2 md:border-b-0 w-1/2 md:w-4/12 flex items-center ">
@@ -617,13 +620,13 @@
                                     <span class="">
                                         کوالالامپور
                                     </span>
-                                    <span class="text-xs">1400,10,04</span>
+                                    <span class="text-xs flex-center">1400,10,04</span>
                                 </div>
 
 
                                 <div class="flex justify-between">
                                     <span>تهران</span>
-                                    <span class="text-xs">1400,10,04</span>
+                                    <span class="text-xs flex-center">1400,10,04</span>
                                 </div>
 
                             </div>
@@ -651,26 +654,28 @@
 
 
                 <!-- PAGINATION -->
-                <div class="text-center">
-                    <div class="flex-center flex-row-reverse gap-1">
-                        <div class="w-12 h-8  rounded-3xl flex-center bg-slate-200"><img src="svg/chevron-left.svg">
+                <div class="js-pagination">
+
+                    <div class="flex items-center justify-center">
+                        <div
+                            class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-primery-dark bg-primery ">
+                            <svg class="animate-spin ml-3 h-5 w-5 text-primery-dark" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                    stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                </path>
+                            </svg>
+                            درحال
+                            بارگذاری
                         </div>
 
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border">1</div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border">...</div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border hidden sm:block">13
-                        </div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-primery text-primery-dark border">14</div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border hidden sm:block">15
-                        </div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border">...</div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border">24</div>
-
-                        <div class="w-12 h-8  rounded-3xl flex-center bg-slate-200"><img src="svg/chevron-rigth.svg">
-                        </div>
                     </div>
+
+
                 </div>
-                <br><br><br>
+
             </section>
         </div>
 
@@ -700,6 +705,7 @@
     </main>
 
     <script src="js/components/navbar.js"></script>
+    <script src="js/commons/pagination.js"></script>
 
     <script src="js/pages/country-1.js"></script>
 </body>

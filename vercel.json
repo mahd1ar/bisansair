@@ -1,6 +1,6 @@
 {
     "functions": {
-      "api/help.ts": {
+      "src/api/help.ts": {
         "includeFiles": "src/**"
       }
     }

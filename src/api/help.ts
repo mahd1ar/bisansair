@@ -21,14 +21,20 @@ export default async (request: VercelRequest, response: VercelResponse) => {
         <div class="container">
             <div class="row">
     `
-    
-    const tail = `</div></div></body></html>`
-    
-    const list =  fs.readdirSync(join(__dirname, 'src'));
-    
-    const cards = list.filter(i => i.split(".")[0] === "html").map(i=>{
 
-        return `<div class="col s12 m6">
+    const tail = `</div></div></body></html>`
+
+    response.setHeader("x-debug--list", join(__dirname, 'src'))
+
+    try {
+
+
+        const list = fs.readdirSync(join(__dirname, 'src'));
+
+
+        const cards = list.filter(i => i.split(".")[0] === "html").map(i => {
+
+            return `<div class="col s12 m6">
                     <div class="card blue-grey darken-1">
                         <div class="card-content white-text">
                             <span class="card-title">Card Title</span>
@@ -42,10 +48,14 @@ export default async (request: VercelRequest, response: VercelResponse) => {
                     </div>
                 </div>`
 
-    })
+        })
 
-    const template = head + cards + tail;
+        const template = head + cards + tail;
 
-    response.status(200).send(template)
-        
+        response.status(200).send(template)
+
+    } catch (error) {
+
+        response.status(200).send(JSON.stringify(error))
+    }
 }
