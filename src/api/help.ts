@@ -24,12 +24,10 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 
     const tail = `</div></div></body></html>`
 
-    response.setHeader("x-debug--list", join(__dirname, 'src'))
-
     try {
 
 
-        const list = fs.readdirSync(join(__dirname, 'src'));
+        const list = fs.readdirSync(join(__dirname, '..'));
 
 
         const cards = list.filter(i => i.split(".")[0] === "html").map(i => {
