@@ -246,10 +246,11 @@
 
 
     <main class="container mx-auto relative gap-2 px-2 flex items-start" dir="rtl">
-        <div class="w-9/12">
+        <div class="w-full lg:w-9/12">
             <div>
-                <div class="p-6 bg-white rounded-3xl overflow-auto shadow-lg bi-scrollbar">
-                    <ul class="flex items-start gap-2 text-secondary-dark font-semibold">
+                <div
+                    class="py-6 lg:px-6 lg:bg-white lg:rounded-3xl overflow-auto border-t-2 lg:border-t-0 lg:shadow-lg bi-scrollbar">
+                    <ul class="flex items-start gap-2 text-secondary-dark font-semibold whitespace-pre bi-scrollbar ">
                         <li class="px-6 py-2 rounded-3xl cursor-pointer   bg-slate-200 ">توضیحات</li>
                         <li class="px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">برنامه سفر</li>
                         <li class="px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">مدارک مورد نیاز</li>
@@ -276,7 +277,7 @@
 
                 <!-- About tour -->
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl">در مورد سفر</h1>
+                    <h1 class="text-primery-dark text-xl font-bold">در مورد سفر</h1>
                     <div class="mt-2">
                         لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
                         صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای
@@ -285,7 +286,7 @@
                 </div>
 
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl">تیتر دوم</h1>
+                    <h1 class="text-primery-dark text-xl font-bold">تیتر دوم</h1>
                     <div class="mt-2">
                         گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی،
                         نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که
@@ -296,8 +297,8 @@
 
                 <!-- Services -->
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl">مدارک مورد نیاز</h1>
-                    <div class="grid grid-cols-3 gap-6 mt-4">
+                    <h1 class="text-primery-dark text-xl font-bold">مدارک مورد نیاز</h1>
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
 
                         <div class="flex items-center gap-4 rounded-3xl bi-overlay py-4 px-6"
                             style="background: url(img/transfer.jpg) center center / cover;">
@@ -342,9 +343,9 @@
 
                 <!-- Required Documents -->
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl">مدارک مورد نیاز</h1>
+                    <h1 class="text-primery-dark text-xl font-bold">مدارک مورد نیاز</h1>
 
-                    <div class="grid grid-cols-3 gap-6 mt-4 text-black">
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-4 text-black">
 
                         <div class="bg-slate-200 px-4 py-2 rounded-xl">
                             گذرنامه با 7 ماه اعتبار
@@ -359,102 +360,126 @@
 
                 <!-- Hotels table -->
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl">هتل ها</h1>
-
-                    <div class=" mt-4">
-                        <table class="table-auto w-full ">
-                            <thead>
-                                <tr class="text-right text-gray-500 text-xs">
-                                    <th class="border-l font-thin">نام هتل</th>
-                                    <th class="border-l font-thin  ">خدمات </th>
-                                    <th class="border-l font-thin  ">1 تخت ( هر نفر )</th>
-                                    <th class="border-l font-thin  ">1 تخت</th>
-                                    <th class=" font-thin  ">توضیحات</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                    <h1 class="text-primery-dark text-xl font-bold">هتل ها</h1>
 
 
-                                <tr>
-                                    <td class="py-4">
-                                        هتل ریدل استانبول
-                                    </td>
-                                    <td class="py-4">B.B</td>
-                                    <td class="py-4">3700000</td>
-                                    <td class="py-4">5700000</td>
-                                    <td class="py-4"></td>
-
-                                </tr>
-
-                                <tr class="bg-gray-200 ">
-                                    <td class="py-4">
-                                        هتل ریدل استانبول
-                                    </td>
-                                    <td class="py-4">B.B</td>
-                                    <td class="py-4">3700000</td>
-                                    <td class="py-4">5700000</td>
-                                    <td class="py-4"></td>
-                                </tr>
-                                <tr>
-                                    <td class="py-4">
-                                        هتل ریدل استانبول
-                                    </td>
-                                    <td class="py-4">B.B</td>
-                                    <td class="py-4">3700000</td>
-                                    <td class="py-4">5700000</td>
-                                    <td class="py-4"></td>
-
-                                </tr>
-
-                                <tr class="bg-gray-200 ">
-                                    <td class="py-4">
-                                        هتل ریدل استانبول
-                                    </td>
-                                    <td class="py-4">B.B</td>
-                                    <td class="py-4">3700000</td>
-                                    <td class="py-4">5700000</td>
-                                    <td class="py-4"></td>
-                                </tr>
-                                <tr>
-                                    <td class="py-4">
-                                        هتل ریدل استانبول
-                                    </td>
-                                    <td class="py-4">B.B</td>
-                                    <td class="py-4">3700000</td>
-                                    <td class="py-4">5700000</td>
-                                    <td class="py-4"></td>
-
-                                </tr>
-
-                                <tr class="bg-gray-200 ">
-                                    <td class="py-4">
-                                        هتل ریدل استانبول
-                                    </td>
-                                    <td class="py-4">B.B</td>
-                                    <td class="py-4">3700000</td>
-                                    <td class="py-4">5700000</td>
-                                    <td class="py-4"></td>
-                                </tr>
 
 
-                            </tbody>
-                        </table>
 
 
+                    <div class="flex flex-col mt-4">
+                        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 bi-scrollbar">
+                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    نام هتل</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    خدمات</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    1 تخت ( هر نفر )</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    1 تخت</th>
+                                                <th scope="col"
+                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    توضیحات</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white divide-y divide-gray-200">
+                                            <tr>
+
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center text-gray-700">
+                                                        هتل ریدل استانبول
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-700">B.B
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-sm text-gray-700 leading-5  rounded-full ">
+                                                        3700000 </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-sm text-gray-700 leading-5  rounded-full ">
+                                                        5700000 </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <span>
+                                                        dec
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+                                            <tr class="bg-neutral-200">
+
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center text-gray-700">
+                                                        هتل ریدل استانبول
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="text-sm text-gray-700">B.B
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-sm text-gray-700 leading-5  rounded-full ">
+                                                        3700000 </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span
+                                                        class="px-2 inline-flex text-sm text-gray-700 leading-5  rounded-full ">
+                                                        5700000 </span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <span>
+                                                        dec
+                                                    </span>
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+
+
+
+
                 </div>
 
                 <!-- Gallery -->
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl">گالری تصاویر</h1>
+                    <h1 class="text-primery-dark text-xl font-bold">گالری تصاویر</h1>
 
-                    <div class="grid grid-cols-3 gap-6 mt-4 ">
-                        <img class="h-[184px] rounded-3xl overflow-hidden object-cover" src="img/mosque.jpg" alt="">
-                        <img class="h-[184px] rounded-3xl overflow-hidden object-cover" src="img/mosque.jpg" alt="">
-                        <img class="h-[184px] rounded-3xl overflow-hidden object-cover" src="img/mosque.jpg" alt="">
-                        <img class="h-[184px] rounded-3xl overflow-hidden object-cover" src="img/mosque.jpg" alt="">
-                        <img class="h-[184px] rounded-3xl overflow-hidden object-cover" src="img/mosque.jpg" alt="">
-                        <img class="h-[184px] rounded-3xl overflow-hidden object-cover" src="img/mosque.jpg" alt="">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 ">
+                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
+                            src="img/mosque.jpg" alt="">
+                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
+                            src="img/mosque.jpg" alt="">
+                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
+                            src="img/mosque.jpg" alt="">
+                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
+                            src="img/mosque.jpg" alt="">
+                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
+                            src="img/mosque.jpg" alt="">
+                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
+                            src="img/mosque.jpg" alt="">
                     </div>
                 </div>
 
@@ -465,32 +490,37 @@
 
             </div>
         </div>
-        <div class="w-3/12 flex flex-col bg-white rounded-3xl p-6 shadow-lg">
-            <div class="border-b">
-                <h2 class="mb-4">
-                    مقصد :
-                    استانبول
-                </h2>
-            </div>
-            <div>
+        <aside class="fixed lg:relative  bottom-0 p-6 lg:p-0 left-0 w-full lg:w-3/12">
+            <div class=" flex w-full sm:w-80 lg:w-full   mr-auto  flex-col bg-white rounded-3xl p-4 lg:p-6 shadow-lg">
+                <div class="border-b">
+                    <h2 class="mb-4">
+                        مقصد :
+                        استانبول
+                    </h2>
+                </div>
                 <div>
-                    <div class="pt-4 text-gray-500 text-xs">شروع قیمت از:</div>
-                    <div class="py-4 flex-center gap-2 ">
-                        <span>تومان</span>
-                        <span class="text-xl font-semibold">
-                            5,200,000
-                        </span>
-                        <span>
-                            <img src="svg/money.svg" alt="">
-                        </span>
-                    </div>
-                    <div class="text-center ">
-                        <button class="bg-primery text-primery-dark w-full rounded-3xl py-2">رزرو تور</button>
+                    <div>
+                        <div class="flex flex-row justify-between items-center lg:items-start lg:flex-col">
+                            <div class="lg:pt-4 text-gray-500 text-xs">شروع قیمت از:</div>
+                            <div class="py-4 flex-center gap-2 ">
+                                <span>تومان</span>
+                                <span class="text-xl font-semibold">
+                                    5,200,000
+                                </span>
+                                <span>
+                                    <img src="svg/money.svg" alt="">
+                                </span>
+                            </div>
+                        </div>
 
+                        <div class="text-center ">
+                            <button class="bg-primery text-primery-dark w-full rounded-3xl py-2">رزرو تور</button>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </aside>
 
     </main>
 

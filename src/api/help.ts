@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node'
-import fs from "fs";
-import { join } from 'path'
+import axios from 'axios';
+import { GithubCommit, GtihubTree } from './_types';
 
 
 
@@ -24,15 +24,19 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 
     const tail = `</div></div></body></html>`
 
-    response.setHeader("x-debug--list", join(__dirname, 'src'))
 
     try {
 
 
-        const list = fs.readdirSync(join(__dirname, 'src'));
+        const commits = await axios.get<GithubCommit.RootObject[]>("https://api.github.com/repos/mahd1ar/bisanseir/commits")
 
 
-        const cards = list.filter(i => i.split(".")[0] === "html").map(i => {
+        const rootTree = await axios.get<GtihubTree.RootObject>(commits.data[0].commit.tree.url)
+
+        const srcTree = await axios.get<GtihubTree.RootObject>(rootTree.data.tree.find(i => i.path === 'src')!.url)
+
+
+        const cards = srcTree.data.tree.filter(i => i.path.split(".")[0] === "html").map(i => {
 
             return `<div class="col s12 m6">
                     <div class="card blue-grey darken-1">
@@ -42,8 +46,8 @@ export default async (request: VercelRequest, response: VercelResponse) => {
                                 I am convenient because I require little markup to use effectively.</p>
                         </div>
                         <div class="card-action">
-                            <a href="#">${i}</a>
-                            <a href="#">This is a link</a>
+                            <a href="#">${i.path}</a>
+                            <a href="#">${i.url}</a>
                         </div>
                     </div>
                 </div>`
