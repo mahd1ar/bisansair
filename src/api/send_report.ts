@@ -88,16 +88,16 @@ export default async (request: VercelRequest, response: VercelResponse) => {
 
         // wrap up
 
-        let templateHtml = "[ Daily Report Bot ]\n" +
-            "🖥 Project name : <b>Bisansir</b>\n" +
+        let templateHtml = "[ Daily Report Bot ]\n\n" +
+            "🖥 Project name : <b>Bisansir</b>\n\n" +
             "⏰ <i>report time from toggl:</i>\n" +
             `<b> ${toggleReport.h} hours - ${toggleReport.m} minutes </b>\n\n` +
             "🚩 <i>last commit:</i>\n" +
             `<a href="${lastCommit.url}" > ${lastCommit.id} </a>\n\n` +
             "✉️ <i>commit message:</i>\n" +
-            `${lastCommit.message.replace("[log]", "")}\n\n`;
-        "🔍 <i>preview all:</i>\n" +
-            `<a href="https://bisanseir.vercel.app/api/help"> https://bisanseir.vercel.app/api/help </a>\n`;
+            `${lastCommit.message.replace("[log]", "")}\n\n` +
+            "🔍 <i>preview all:</i>\n" +
+            `<a href="https://bisanseir.vercel.app/api/help"> https://bisanseir.vercel.app/api/help </a>\n\n`;
 
 
         const telegramUrl = `https://api.telegram.org/bot${process.env.TELEGRAMTOKEN}/sendMessage`

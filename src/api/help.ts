@@ -48,13 +48,13 @@ export default async (request: VercelRequest, response: VercelResponse) => {
                             <span class="card-title">${i.path}</span>
                         </div>
                         <div class="card-action">
-                            <a href="${BASEURI + "/" + i.path}">${i.path}</a>
+                            <a href="${BASEURI + "/" + i.path}">online preview</a>
                             <a href="${i.url}"> see source code </a>
                         </div>
                     </div>
                 </div>`
 
-        })
+        }).join("")
 
         const template = head + cards + tail;
 
