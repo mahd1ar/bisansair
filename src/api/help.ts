@@ -5,6 +5,8 @@ import { GithubCommit, GtihubTree } from './_types';
 
 
 export default async (request: VercelRequest, response: VercelResponse) => {
+    const BASEURI = "https://bisanseir.vercel.app/";
+
     const head = `
     <!DOCTYPE html>
     <html lang="en">
@@ -36,18 +38,18 @@ export default async (request: VercelRequest, response: VercelResponse) => {
         const srcTree = await axios.get<GtihubTree.RootObject>(rootTree.data.tree.find(i => i.path === 'src')!.url)
 
 
-        const cards = srcTree.data.tree.filter(i => i.path.split(".")[0] === "html").map(i => {
+        const cards = srcTree.data.tree.filter(i => i.path.split(".")[1] === "html").map(i => {
 
+            // <p>I am a very simple card. I am good at containing small bits of information.
+            //     I am convenient because I require little markup to use effectively.</p>
             return `<div class="col s12 m6">
                     <div class="card blue-grey darken-1">
                         <div class="card-content white-text">
-                            <span class="card-title">Card Title</span>
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                                I am convenient because I require little markup to use effectively.</p>
+                            <span class="card-title">${i.path}</span>
                         </div>
                         <div class="card-action">
-                            <a href="#">${i.path}</a>
-                            <a href="#">${i.url}</a>
+                            <a href="${BASEURI + "/" + i.path}">${i.path}</a>
+                            <a href="${i.url}"> see source code </a>
                         </div>
                     </div>
                 </div>`
