@@ -1175,16 +1175,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 	justify-content: center;
 }
 
-.sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border-width: 0;
+.pointer-events-none {
+	pointer-events: none;
 }
 
 .visible {
@@ -1393,14 +1385,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin-bottom: 9rem;
 }
 
-.my-11 {
-	margin-top: 2.75rem;
-	margin-bottom: 2.75rem;
-}
-
 .-my-2 {
 	margin-top: -0.5rem;
 	margin-bottom: -0.5rem;
+}
+
+.my-11 {
+	margin-top: 2.75rem;
+	margin-bottom: 2.75rem;
 }
 
 .mb-10 {
@@ -1619,6 +1611,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	height: 11rem;
 }
 
+.h-\[378px\] {
+	height: 378px;
+}
+
 .w-full {
 	width: 100%;
 }
@@ -1711,12 +1707,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	min-width: 100%;
 }
 
-.min-w-fit {
-	min-width: -webkit-fit-content;
-	min-width: -moz-fit-content;
-	min-width: fit-content;
-}
-
 .max-w-xs {
 	max-width: 20rem;
 }
@@ -1735,14 +1725,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-grow {
 	flex-grow: 1;
-}
-
-.table-auto {
-	table-layout: auto;
-}
-
-.border-collapse {
-	border-collapse: collapse;
 }
 
 .translate-y-16 {
@@ -1854,6 +1836,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .grid-cols-2 {
 	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -2073,14 +2059,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 	border-color: rgb(250 204 21 / var(--tw-border-opacity));
 }
 
-.border-secondary-dark {
-	--tw-border-opacity: 1;
-	border-color: rgb(105 122 128 / var(--tw-border-opacity));
-}
-
 .border-gray-200 {
 	--tw-border-opacity: 1;
 	border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.border-secondary-dark {
+	--tw-border-opacity: 1;
+	border-color: rgb(105 122 128 / var(--tw-border-opacity));
 }
 
 .bg-white {
@@ -2148,16 +2134,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-color: rgb(105 122 128 / var(--tw-bg-opacity));
 }
 
-.bg-green-100 {
-	--tw-bg-opacity: 1;
-	background-color: rgb(220 252 231 / var(--tw-bg-opacity));
-}
-
-.bg-neutral-300 {
-	--tw-bg-opacity: 1;
-	background-color: rgb(212 212 212 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-60 {
 	--tw-bg-opacity: 0.6;
 }
@@ -2211,6 +2187,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .from-gray-200 {
 	--tw-gradient-from: #e5e7eb;
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(229 231 235 / 0));
+}
+
+.from-red-700 {
+	--tw-gradient-from: #b91c1c;
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(185 28 28 / 0));
 }
 
 .via-white {
@@ -2362,6 +2343,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	padding-right: 1.5rem;
 }
 
+.px-10 {
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+}
+
 .pt-10 {
 	padding-top: 2.5rem;
 }
@@ -2380,10 +2366,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pb-20 {
 	padding-bottom: 5rem;
-}
-
-.text-left {
-	text-align: left;
 }
 
 .text-center {
@@ -2459,16 +2441,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 	line-height: 2.5rem;
 }
 
+.text-5xl {
+	font-size: 3rem;
+	line-height: 1;
+}
+
 .font-semibold {
 	font-weight: 600;
 }
 
 .font-bold {
 	font-weight: 700;
-}
-
-.font-thin {
-	font-weight: 100;
 }
 
 .font-medium {
@@ -2564,21 +2547,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-gray-400 {
 	--tw-text-opacity: 1;
 	color: rgb(156 163 175 / var(--tw-text-opacity));
-}
-
-.text-gray-900 {
-	--tw-text-opacity: 1;
-	color: rgb(17 24 39 / var(--tw-text-opacity));
-}
-
-.text-green-800 {
-	--tw-text-opacity: 1;
-	color: rgb(22 101 52 / var(--tw-text-opacity));
-}
-
-.text-indigo-600 {
-	--tw-text-opacity: 1;
-	color: rgb(79 70 229 / var(--tw-text-opacity));
 }
 
 .text-gray-700 {
@@ -2863,11 +2831,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-yellow-200:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgb(254 240 138 / var(--tw-bg-opacity));
-}
-
-.hover\:text-indigo-900:hover {
-	--tw-text-opacity: 1;
-	color: rgb(49 46 129 / var(--tw-text-opacity));
 }
 
 .hover\:shadow-xl:hover {
