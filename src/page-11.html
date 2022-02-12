@@ -8,43 +8,8 @@
     <title>page 11 </title>
     <link rel="stylesheet" href="css/output.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide-core.min.css">
-
-    <style>
-        .splide {
-            margin: 0 auto;
-        }
-
-        .thumbnails {
-            display: flex;
-            margin: 1rem auto 0;
-            padding: 0;
-            justify-content: center;
-        }
-
-        .thumbnail {
-            width: 70px;
-            height: 70px;
-            overflow: hidden;
-            list-style: none;
-            margin: 0 0.2rem;
-            cursor: pointer;
-            opacity: 0.3;
-        }
-
-        .thumbnail.is-active {
-            opacity: 1;
-        }
-
-        .thumbnail img {
-            width: 100%;
-            height: auto;
-        }
-    </style>
-
-
-
+    <link rel="stylesheet" href="lib/css/splide.min.css">
+    <link rel="stylesheet" href="lib/css/splide-core.min.css">
 
     <script defer src="lib/js/alpine.js"></script>
 </head>
@@ -59,9 +24,6 @@
         <span class="hidden 2xl:block">2xl</span>
     </div>
     <!-- /debug -->
-
-
-
 
 
     <header class="mb-10 pt-10">
@@ -280,24 +242,19 @@
 
     </header>
 
-
-
-
-
-    <main class="container mx-auto relative gap-2 px-2 flex items-start" dir="rtl">
-        <div class="w-full lg:w-9/12">
+    <main class="container mx-auto relative gap-6 px-2 flex flex-col md:flex-row items-start" dir="rtl">
+        <div class="w-full md:w-7/12 lg:w-9/12">
             <div>
-
 
                 <!-- Title -->
                 <div class="mt-8">
                     <div class="flex ">
-                        <div class="ml-4">
-                            <img class="rounded-circle w-16 h-16 " src="img/flag-turkish.png" alt="">
+                        <div class="ml-4 ">
+                            <img class="w-14 h-14 rounded-circle" src="img/flag-turkish.png" alt="">
                         </div>
                         <div>
-                            <h1 class="text-2xl font-bold">تور استانبول با پرواز ایران ایر</h1>
-                            <p class="text-xs text-gray-400">
+                            <h1 class="text-2xl font-bold">هتل گراندهیلارم استانبول</h1>
+                            <p class="text-gray-400">
                                 ترکیه استانبول
                             </p>
                         </div>
@@ -305,81 +262,33 @@
                     </div>
                 </div>
 
-                <!-- Slide show
-
-                <div class="flex flex-col">
-                    <div class="h-[378px] relative flex-center rounded-3xl overflow-hidden">
-                       
-                        <div class="w-full px-10 absolute flex justify-between">
-                            <i class="bg-white cursor-pointer right-0 rounded-circle flex-center w-14 h-14"><img
-                                    src="svg/chevron-rigth.svg" alt=""></i>
-
-                            <i class="bg-white cursor-pointer left-0 rounded-circle flex-center w-14 h-14"><img
-                                    src="svg/chevron-left.svg" alt=""></i>
-                        </div>
-
-                        <div class="h-full w-full">
-                            <img class="h-full w-full object-cover" src="img/mosque.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="flex-center relative" x-data="{items : [1,2,3,4,5,6,7]}">
-                     
-                        <div
-                            class="absolute h-full pointer-events-none bg-gradient-to-r from-red-700 to-transparent w-6 left-0">
-                        </div>
-                        <ul class="flex gap-3">
-
-                            <li class="cursor-pointer ">
-                                <img src="img/image-30.png" alt="">
-                            </li>
-                            <li class="cursor-pointer ">
-                                <img src="img/image-30.png" alt="">
-                            </li>
-                            <li class="cursor-pointer ">
-                                <img src="img/image-30.png" alt="">
-                            </li>
-                            <li class="cursor-pointer ">
-                                <img src="img/image-30.png" alt="">
-                            </li>
-                            <li class="cursor-pointer ">
-                                <img src="img/image-30.png" alt="">
-                            </li>
-                            <li class="cursor-pointer ">
-                                <img src="img/image-30.png" alt="">
-                            </li>
-                            <li class="cursor-pointer ">
-                                <img src="img/image-30.png" alt="">
-                            </li>
-                            <li class="cursor-pointer ">
-                                <img src="img/image-30.png" alt="">
-                            </li>
-                            <li class="cursor-pointer ">
-                                <img src="img/image-30.png" alt="">
-                            </li>
-
-                        </ul>
-                    </div>
-                </div> -->
-
-
-
-
-                <!-- <div class="" dir="ltr">
+                <!-- slider -->
+                <div class="mt-4" dir="ltr">
 
                     <div id="main-slider" class="splide">
+
+                        <div class="splide__arrows">
+                            <button class="splide__arrow splide__arrow--prev">
+                                <img src="svg/chevron-left.svg" alt="">
+                            </button>
+                            <button class="splide__arrow splide__arrow--next">
+                                <img src="svg/chevron-rigth.svg" alt="">
+                            </button>
+                        </div>
+
                         <div class="splide__track">
                             <ul class="splide__list">
                                 <li class="splide__slide">
-                                    <img src="https://source.unsplash.com/random/1000x1000?sig=1" />
+                                    <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="https://source.unsplash.com/random/1000x1000?sig=2" />
+                                    <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="https://source.unsplash.com/random/1000x1000?sig=3" />
+                                    <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
                                 </li>
                                 <li class="splide__slide">
-                                    <img src="https://source.unsplash.com/random/1000x1000?sig=4" />
+                                    <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
                                 </li>
                             </ul>
                         </div>
@@ -387,40 +296,176 @@
 
                     <ul id="thumbnails" class="thumbnails">
                         <li class="thumbnail">
-                            <img src="https://source.unsplash.com/random/1000x1000?sig=1" />
+                            <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
                         </li>
                         <li class="thumbnail">
-                            <img src="https://source.unsplash.com/random/1000x1000?sig=2" />
+                            <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
                         </li>
                         <li class="thumbnail">
-                            <img src="https://source.unsplash.com/random/1000x1000?sig=3" />
+                            <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
                         </li>
                         <li class="thumbnail">
-                            <img src="https://source.unsplash.com/random/1000x1000?sig=4" />
+                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
                         </li>
                     </ul>
 
-                </div> -->
+                </div>
+
+                <!-- mobile only hotel rating -->
+                <div class="relative bottom-0 md:hidden mt-8 left-0 w-full">
+
+                    <div class="px-8">
+
+                        <div
+                            class="rounded-3xl flex items-center  bg-white px-4 py-4 relative overflow-hidden drop-shadow-xl">
+                            <div style="width: 50%;" class="absolute left-0 top-0 h-full bg-primery">
+                            </div>
+                            <div class="w-full relative flex justify-evenly items-center">
+
+                                <span class="font-bold">
+                                    میانگین امتیاز کل
+                                </span>
+                                <span class="text-5xl">
+                                    4
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!-- details -->
+                    <div x-data="{isOpen : true}" class="relative">
+                        <div class="flex flex-col mt-1 transition-all duration-500 ease-out overflow-hidden"
+                            :style="{ maxHeight : isOpen ? '400px' : '100px'}">
+                            <div class="mt-1">
+                                <div>امکانات</div>
+                                <div class="flex items-center">
+                                    <div class="w-11/12 ">
+                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" w-1/12 font-semibold flex-center">4</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-1">
+                                <div>کارمندان</div>
+                                <div class="flex items-center">
+                                    <div class="w-11/12 ">
+                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" w-1/12 font-semibold flex-center">4</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-1">
+                                <div>پاکیزگی</div>
+                                <div class="flex items-center">
+                                    <div class="w-11/12 ">
+                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class=" w-1/12 font-semibold flex-center">4</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-1">
+                                <div>آسایش</div>
+                                <div class="flex items-center">
+                                    <div class="w-11/12">
+                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-1/12 font-semibold flex-center">4</div>
+                                </div>
+                            </div>
 
 
+                            <div class="mt-1">
+                                <div>ارزش</div>
+                                <div class="flex items-center">
+                                    <div class="w-11/12">
+                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-1/12 font-semibold flex-center">4</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-1">
+                                <div>ارزش</div>
+                                <div class="flex items-center">
+                                    <div class="w-11/12">
+                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-1/12 font-semibold flex-center">4</div>
+                                </div>
+                            </div>
+
+                            <div class="cursor-pointer absolute flex-center gap-4 bottom-0 right-0 w-full transform translate-y-full"
+                                @click="isOpen = !isOpen">
+                                <div x-show="isOpen === false"
+                                    class="transform -translate-y-full h-10 bg-gradient-to-t from-white to-transparent absolute w-full "
+                                    x-transition-opacity>
+                                </div>
+                                اطلاعات بیشتر
+                                <div class="w-10 h-10 bg-primery  flex-center rounded-circle">
+                                    <img :class="{'transform rotate-180' : isOpen} " src="svg/chevron-down.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col mt-12">
+                        <h4 class="text-xl font-semibold text-primery-dark">مکان</h4>
+                        <div class="h-36 rounded-3xl mt-4 overflow-hidden">
+                            <iframe class="w-full"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12943.844189993628!2d51.43529352797782!3d35.80088958266277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e05c2e12280e7%3A0x484bbfd7d8d0febe!2sHekmat%2C%20District%201%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2s!4v1644647293732!5m2!1sen!2s"
+                                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="mt-2 text-right">
+                            اول، خیابان دوم، کوچه سوم، میدان...
+                        </div>
+                    </div>
 
 
-
+                </div>
 
 
                 <!-- Tabs -->
-                <div class="py-6 lg:px-6   overflow-auto   bi-scrollbar">
-                    <ul class="flex items-start gap-2 text-secondary-dark font-semibold whitespace-pre bi-scrollbar ">
-                        <li class="px-6 py-2 rounded-3xl cursor-pointer   bg-slate-200 ">توضیحات</li>
-                        <li class="px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">برنامه سفر</li>
-                        <li class="px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">مدارک مورد نیاز</li>
-                        <li class="px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">اطلاعات سفر</li>
-                        <li class="px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">گالری</li>
+                <div class="py-6 lg:px-6   overflow-auto scroll-smooth bi-scrollbar ">
+                    <ul class="js-tabs flex items-start gap-2 text-secondary-dark font-semibold whitespace-pre  ">
+                        <li class="js-tab-item px-6 py-2 rounded-3xl cursor-pointer   bg-slate-200 ">توضیحات</li>
+                        <li class="js-tab-item px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">برنامه سفر</li>
+                        <li class="js-tab-item px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 "> مدارک مورد نیاز
+                        </li>
+                        <li class="js-tab-item px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">اطلاعات سفر</li>
+                        <li class="js-tab-item px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">گالری</li>
                     </ul>
                 </div>
 
                 <!-- About tour -->
-                <div class="mt-8">
+                <div class="lg:mt-8 mt-1">
                     <h1 class="text-primery-dark text-xl font-bold">در مورد هتل</h1>
                     <div class="mt-2">
                         لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
@@ -449,7 +494,7 @@
                         <h4 class="text-xl mt-8 mb-4">
                             غذا و نوشیدنی
                         </h4>
-                        <div class="grid grid-cols-3 gap-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6">
                             <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
                                 <i>
                                     <img src="svg/break-fast.svg" alt="">
@@ -470,7 +515,7 @@
                         <h4 class="text-xl mt-8 mb-4">
                             دسترسی
                         </h4>
-                        <div class="grid grid-cols-3 gap-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6">
                             <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
                                 <i>
                                     <img src="svg/disabled_people.svg" alt="">
@@ -493,7 +538,7 @@
                         <h4 class="text-xl mt-8 mb-4">
                             امکانات سلامتی
                         </h4>
-                        <div class="grid grid-cols-3 gap-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6">
                             <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
                                 <i>
                                     <img src="svg/fitness.svg" alt="">
@@ -529,11 +574,12 @@
 
             </div>
         </div>
-        <aside class="fixed lg:relative  bottom-0 p-6 lg:p-0 left-0 w-full lg:w-3/12">
+        <aside class="relative bottom-0 left-0 w-full md:w-5/12 lg:w-3/12">
 
             <!-- Cards -->
             <!-- rate -->
-            <div class="rounded-3xl flex items-center  bg-white px-4 py-4 relative overflow-hidden">
+
+            <div class="rounded-3xl  items-center hidden md:flex bg-white px-4 py-4 relative overflow-hidden shadow-xl">
                 <div style="width: 50%;" class="absolute left-0 top-0 h-full bg-primery">
                 </div>
                 <div class="w-full relative flex justify-evenly items-center">
@@ -547,56 +593,211 @@
                 </div>
 
             </div>
+
+
+            <!-- details -->
+            <div class="hidden md:flex flex-col mt-1">
+                <div class="mt-1">
+                    <div>امکانات</div>
+                    <div class="flex items-center">
+                        <div class="w-11/12 ">
+                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                            </div>
+                        </div>
+                        <div class="lg:1ext-left w-2/12 font-semibold flex-center">4</div>
+                    </div>
+                </div>
+
+                <div class="mt-1">
+                    <div>کارمندان</div>
+                    <div class="flex items-center">
+                        <div class="w-11/12 ">
+                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                            </div>
+                        </div>
+                        <div class="lg:1ext-left w-2/12 font-semibold flex-center">4</div>
+                    </div>
+                </div>
+
+                <div class="mt-1">
+                    <div>پاکیزگی</div>
+                    <div class="flex items-center">
+                        <div class="w-11/12 ">
+                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                            </div>
+                        </div>
+                        <div class="lg:1ext-left w-2/12 font-semibold flex-center">4</div>
+                    </div>
+                </div>
+
+                <div class="mt-1">
+                    <div>آسایش</div>
+                    <div class="flex items-center">
+                        <div class="w-11/12">
+                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                            </div>
+                        </div>
+                        <div class="w-2/12 font-semibold flex-center">4</div>
+                    </div>
+                </div>
+
+
+                <div class="mt-1">
+                    <div>ارزش</div>
+                    <div class="flex items-center">
+                        <div class="w-11/12">
+                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                            </div>
+                        </div>
+                        <div class="w-2/12 font-semibold flex-center">4</div>
+                    </div>
+                </div>
+
+
+                <div class="mt-1">
+                    <div>ارزش</div>
+                    <div class="flex items-center">
+                        <div class="w-11/12">
+                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
+
+                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                            </div>
+                        </div>
+                        <div class="w-2/12 font-semibold flex-center">4</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden md:flex flex-col mt-12">
+                <h4 class="text-xl font-semibold text-primery-dark">مکان</h4>
+                <div class="h-36 rounded-3xl mt-4 overflow-hidden">
+                    <iframe class="w-full"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12943.844189993628!2d51.43529352797782!3d35.80088958266277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e05c2e12280e7%3A0x484bbfd7d8d0febe!2sHekmat%2C%20District%201%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2s!4v1644647293732!5m2!1sen!2s"
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <div class="mt-2 text-right">
+                    اول، خیابان دوم، کوچه سوم، میدان...
+                </div>
+            </div>
+
+            <div class="flex flex-col mt-12 ">
+                <h4 class="text-xl font-semibold text-primery-dark">
+                    هتل های مشابه
+                </h4>
+
+                <div class="h-56 lg:h-auto lg:aspect-square mt-6 rounded-3xl overflow-hidden flex flex-col"
+                    style="background: url(img/mosque.jpg) center center / cover;">
+                    <div class="mt-auto py-4 flex flex-col items-center text-white relative">
+                        <!-- overlay -->
+                        <div class="bg-gradient-to-t from-black to-transparent absolute inset-0 h-full w-full"></div>
+                        <span class="relative">
+
+                            Grand hilaroium istonbul
+                        </span>
+                        <div class="relative flex flex-row-reverse gap-1 mt-1 flex-center">
+                            <span>
+                                <img src="svg/star.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star-outline.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star-outline.svg" alt="">
+                            </span>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="h-56 lg:h-auto lg:aspect-square mt-6 rounded-3xl overflow-hidden flex flex-col"
+                    style="background: url(img/mosque.jpg) center center / cover;">
+                    <div class="mt-auto py-4 flex flex-col items-center text-white relative">
+                        <!-- overlay -->
+                        <div class="bg-gradient-to-t from-black to-transparent absolute inset-0 h-full w-full"></div>
+                        <span class="relative">
+
+                            Grand hilaroium istonbul
+                        </span>
+                        <div class="relative flex flex-row-reverse gap-1 mt-1 flex-center">
+                            <span>
+                                <img src="svg/star.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star-outline.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star-outline.svg" alt="">
+                            </span>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="h-56 lg:h-auto lg:aspect-square mt-6 rounded-3xl overflow-hidden flex flex-col"
+                    style="background: url(img/mosque.jpg) center center / cover;">
+                    <div class="mt-auto py-4 flex flex-col items-center text-white relative">
+                        <!-- overlay -->
+                        <div class="bg-gradient-to-t from-black to-transparent absolute inset-0 h-full w-full"></div>
+                        <span class="relative">
+
+                            Grand hilaroium istonbul
+                        </span>
+                        <div class="relative flex flex-row-reverse gap-1 mt-1 flex-center">
+                            <span>
+                                <img src="svg/star.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star-outline.svg" alt="">
+                            </span>
+                            <span>
+                                <img src="svg/star-outline.svg" alt="">
+                            </span>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <br><br><br>
         </aside>
 
     </main>
 
     <script src="js/components/navbar.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-
-
-            var splide = new Splide("#main-slider", {
-                width: 600,
-                height: 300,
-                pagination: false,
-                cover: true
-            });
-
-            var thumbnails = document.getElementsByClassName("thumbnail");
-            var current;
-
-            for (var i = 0; i < thumbnails.length; i++) {
-                initThumbnail(thumbnails[i], i);
-            }
-
-            function initThumbnail(thumbnail, index) {
-                thumbnail.addEventListener("click", function () {
-                    splide.go(index);
-                });
-            }
-
-            splide.on("mounted move", function () {
-                var thumbnail = thumbnails[splide.index];
-
-                if (thumbnail) {
-                    if (current) {
-                        current.classList.remove("is-active");
-                    }
-
-                    thumbnail.classList.add("is-active");
-                    current = thumbnail;
-                }
-            });
-
-            splide.mount();
-
-
-
-        });
-    </script>
-
+    <script src="lib/js/splide.min.js"></script>
+    <script src="js/pages/page-11.js"></script>
 </body>
 
 </html>

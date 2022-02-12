@@ -1,0 +1,30 @@
+.splide {
+	@apply my-0 mx-auto overflow-hidden rounded-3xl;
+}
+
+.thumbnails {
+	@apply mx-auto mb-0 flex justify-center p-0 lg:mt-4;
+}
+
+.thumbnail {
+	@apply my-4 mx-2 aspect-square w-[78px] cursor-pointer overflow-hidden rounded-3xl opacity-30;
+}
+
+.thumbnail.is-active {
+	@apply opacity-100;
+}
+
+.thumbnail img {
+	width: 100%;
+	height: auto;
+}
+
+.splide__arrow {
+	background: rgb(255, 255, 255) !important;
+	opacity: 1 !important;
+	width: 56px !important ;
+	height: 56px !important ;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
