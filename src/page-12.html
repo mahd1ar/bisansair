@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page 11 </title>
+    <link rel="stylesheet" href="css/output.css">
+
+    <link rel="stylesheet" href="lib/css/splide.min.css">
+    <link rel="stylesheet" href="lib/css/splide-core.min.css">
+
+    <script defer src="lib/js/alpine.js"></script>
+</head>
+
+<body>
+    <!-- brake points debug -->
+    <div class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
+        <span class="hidden sm:block">sm</span>
+        <span class="hidden md:block">md</span>
+        <span class="hidden lg:block">lg</span>
+        <span class="hidden xl:block">xl</span>
+        <span class="hidden 2xl:block">2xl</span>
+    </div>
+    <!-- /debug -->
+
+
+    <header class="mb-10 pt-10">
+        <!-- TRAVEL TEXTURE -->
+        <div class="absolute w-full top-0 bi-overlay-gradient-white overflow-hidden h-80"
+            style="background: url(svg/travel-textture/one.svg) center center/cover;">
+        </div>
+
+
+
+        <nav x-data="navbar" class="lg:max-w-[1104px] container mx-auto">
+            <div
+                class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow z-20 relative">
+                <div class="flex">
+                    <div
+                        class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
+                        <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
+                        <span class="mx-2 text-sm hidden md:block"> 021-345648 </span>
+                    </div>
+
+                    <ul x-ref="mitem"
+                        class="hidden md:flex flex-row-reverse gap-2 font-iransans text-sm font-semibold items-center mx-5 xl:ml-10 text-[#666666]">
+                        <li @click.prevent="toggleSelected"
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                            <a href=""> تور </a>
+                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+
+
+                            <ul @click.outside="toggleSelected" style="display: none"
+                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
+                                <li> <a href="/"> 11 </a> </li>
+                                <li> <a href=""> 12 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                            </ul>
+                        </li>
+                        <li
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 flex flex-row-reverse items-center relative rounded-full">
+                            <a href="">
+                                هتل ها
+                            </a>
+                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+                            <ul style="display: none"
+                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
+                                <li> <a href="/"> امارات </a> </li>
+                                <li> <a href=""> ترکیه </a> </li>
+                                <li> <a href=""> ارمنستان </a> </li>
+                                <li> <a href=""> تایلند </a> </li>
+                                <li> <a href=""> فرانسه </a> </li>
+                                <li> <a href=""> اسپانیا </a> </li>
+                            </ul>
+                        </li>
+                        <li
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                            <a href="">
+                                تور اقساط
+                            </a>
+                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+                            <ul style="display: none"
+                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
+                                <li> <a href="/"> 11 </a> </li>
+                                <li> <a href=""> 12 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                            </ul>
+                        </li>
+                        <li
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                            <a href="">
+                                تور ویژه
+                            </a>
+                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+                            <ul style="display: none"
+                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
+                                <li> <a href="/"> 11 </a> </li>
+                                <li> <a href=""> 12 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                            </ul>
+                        </li>
+                        <li
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                            <a href="">
+                                ویزا
+                            </a>
+                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+                            <ul style="display: none"
+                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
+                                <li> <a href="/"> 11 </a> </li>
+                                <li> <a href=""> 12 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                                <li> <a href=""> 13 </a> </li>
+                            </ul>
+                        </li>
+                        <li
+                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                            <a href="">
+                                بلاگ
+                            </a>
+                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+                        </li>
+                    </ul>
+
+                    <!-- LEAVE ME ALONE -->
+                    <ul
+                        class="hidden md:flex flex-row-reverse gap-2 font-iransans text-sm font-semibold items-center mx-5 xl:ml-10 text-[#666666]">
+                        <template x-for="({index,text,href,children},inx) in menu" :key="index">
+
+                            <li @click.prevent="toggleSelected(inx)"
+                                class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
+                                <a :href="href ? href : '#'" x-text="text"></a>
+                                <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
+
+
+                                <ul style="display: none" @click.outside="toggleSelected(-1)"
+                                    x-show="children.length > 0 && subMenu === inx"
+                                    class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white py-2 rounded-lg max-w-xs text-rtl flex flex-col gap-2 items-center overflow-hidden">
+                                    <template x-for="ch in children">
+
+                                        <li class="hover:bg-gray-200 px-5 py-2 w-full text-right"> <a
+                                                :href="ch.href ? ch.href : '#' " x-text="ch.text"> </a> </li>
+                                    </template>
+                                </ul>
+                            </li>
+
+                        </template>
+                    </ul>
+                    <!--  -->
+                </div>
+
+                <img src="./img/logo.png" class="object-contain w-9" alt="" />
+
+                <div @click="taggleMobileMenu" class=" cursor-pointer md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+
+            </div>
+
+            <div id="mobile-menu" x-show="isOpen" style="display: none;" x-transition.opacity>
+                <div class="mobile-menu__overlay">
+
+
+                    <div
+                        class="flex mx-auto mt-5 justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
+                        <div class="flex">
+                            <div
+                                class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
+                                <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
+
+                            </div>
+
+                        </div>
+
+                        <img src="./img/logo.png" class="object-contain w-9" alt="" />
+
+
+                        <button @click="taggleMobileMenu()" class="  relative  cursor-pointer md:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+
+                    </div>
+
+
+
+
+                    <div class="mobile-menu__wrapper">
+
+
+                        <!-- LEAVE ME HERE -->
+
+                        <div class="flex items-center justify-start gap-3 mt-2 mb-5 text-xl">
+                            <span x-show="subMenu !== -1" class="bi-icon cursor-pointer" @click="subMenu = -1">
+                                <img src="svg/chevron-rigth.svg" alt="">
+                            </span>
+                            <h1 x-text="currentCategory"></h1>
+                        </div>
+
+                        <ul class="bi-scrollbar">
+                            <template
+                                x-for="({index,text,href,children},inx) in (subMenu === -1  ? menu : menu[subMenu].children)"
+                                :key="index">
+                                <li>
+
+                                    <a :href="href ? href : '#' "
+                                        @click="children && children.length ? subMenu = inx : null"
+                                        class="mobile-menu__item">
+                                        <span x-text="text"></span>
+                                        <img class="icon" src="svg/chevron-left.svg" alt="">
+                                    </a>
+
+                                </li>
+                            </template>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main class="container mx-auto relative gap-6 px-2 flex flex-col md:flex-row items-start" dir="rtl">
+        <div class="w-full md:w-7/12 lg:w-8/12">
+            <div>PIC</div>
+
+            <div>
+                <h1>
+                    توضیحات
+                </h1>
+
+                <p>
+                    بیسان‌سیر با ارائه خدمتی جدید قصد دارد تا سفر رفتن را برای مسافران خود آسان‌تر کند تا هم کمکی به
+                    صنعت گردشگری شده باشد و هم باعث افزایش رضایتمندی مسافران گردد.
+                    <br>
+                    یکی از محبوب‌ترین راه‌‌های خرید تورهای مسافرتی، تور اقساطی می‌باشد. مسافران عزیز به غیر از تکمیل
+                    مدارک لازم جهت دریافت تسهیلات، درگیر مراحل مختلف این کار نمی‌باشند.
+                    <br>
+                    روش کار بیسان‌سیر به اینصورت است که با شرکت سرمایه‌گذار باسابقه‌ و معتبری همکاری می‌کند و جهت هر چه
+                    آسان‌تر شدن این کار، تمامی مسئولیت بررسی مدارک، پرداخت اقساط و پیگیری تسویه حساب‌ها به عهده
+                    بیسان‌سیر می‌باشد.
+                </p>
+            </div>
+
+            <div>
+                <h1>
+                    شرايط خريد تور اقساطی
+                </h1>
+
+                <p>
+                    ☑️ حداقل ٧ روز كارى پيش از تاريخ سفر بايد خريد تور و آماده‌سازى مدارك به صورت كامل انجام شده باشد.
+                    <br>
+                    ☑️ تسهيلات پرداختی حداكثر ۵۰٪ هزينه کل تور و تا سقف ۱۵ میليون تومان برای كل اشخاص خواهد بود.
+                    <br>
+                    ☑️ باز پرداخت تسهيلات ۴ الی ٩ ماهه با كارمزد ۳% به ازای هر ماه از مجموع رقم تسهيلات دريافتی بوده و
+                    در
+                    قالب پرداخت‌هایی با فاصله‌ی يك يا دو ماهه امكان‌پذير است.
+                    <br>
+                    ☑️ در خصوص پرداخت دو ماهه، سر رسيد اولين پرداخت ۴۵ روز بعد از عقد قرارداد خواهد بود.
+                </p>
+            </div>
+
+            <div>
+                <h1>
+                    مراحل خريد تور اقساطی
+                </h1>
+
+                <p>
+                    �� انتخاب تور مورد نظر
+                    <br>
+                    �� حضور در آژانس به منظور امضای قرارداد
+                    <br>
+                    �� ارائه كامل مدارك ذکر شده در بخش بعدی
+                    <br>
+                    �� واريز ۵۰٪ مبلغ كل تور به حساب آژانس بيسان‌سير
+                    <br>
+                    �� رفتن به سفر و لذت بردن از خدمات ما در سفر
+                    <br>
+                    �� پرداخت چك‌های ارائه شده در موعد مقرر
+                </p>
+            </div>
+
+            <div>
+                <h1>
+                    مدارك لازم و نحوه ثبت نام تورهای اقساطی
+                </h1>
+
+                <p>
+                    �� انتخاب تور مورد نظر
+                    <br>
+                    �� حضور در آژانس به منظور امضای قرارداد
+                    <br>
+                    �� ارائه كامل مدارك ذکر شده در بخش بعدی
+                    <br>
+                    �� واريز ۵۰٪ مبلغ كل تور به حساب آژانس بيسان‌سير
+                    <br>
+                    �� رفتن به سفر و لذت بردن از خدمات ما در سفر
+                    <br>
+                    �� پرداخت چك‌های ارائه شده در موعد مقرر
+                </p>
+            </div>
+
+            <div>
+                <h1>
+                    نکات مهم
+                </h1>
+
+                <p>
+
+                    ✅ حساب مبدا چک می‌بایست صرفا شهر تهران باشد.
+                    <br>
+                    ✅ شروع اقساط از یکماه پس از عقد قرارداد سفر می‌باشد.
+                    <br>
+                    ✅ حتما باید چک‌های صادر شده از نوع دسته چک‌های صیادی جدید باشد.
+                    <br>
+                    ✅ صادرکننده چک‌های اقساط الزاما باید یکی از مسافرین استفاده ‌کننده از تور و یا اقوام درجه یک وی
+                    باشد. که
+                    در این صورت ارائه مدارک شناسایی طرفین جهت احراز نسبت الزامی می‌باشد.
+                    <br>
+                    ✅ دریافت تایید حساب مسافر از بانک مبدا چک، قبل از عقد قرارداد تسهیلات توسط واحد حسابداری
+                    الزامیست.
+                    <br>
+                    ✅ قبل از صدور چک، تعداد و مبالغ چک‌ها می‌بایست توسط واحد حسابداری تایید گردد.
+                    <br>
+                    ✅ در صورت داشتن هرگونه سوال یا درخواست پیش پرداخت کمتر از ۵۰٪ با واحد حسابداری تماس حاصل
+                    فرمائید.
+                </p>
+            </div>
+
+
+            <div>
+                <h1>
+                    مثال: محاسبه تور استانبول برای ۳ نفر
+                </h1>
+
+
+                <p>
+                    برای توضیح بهتر راجع به شرايط اقساط، با مثالی عملی آن را برای شما شرح می‌دهيم.
+                    <br>
+                    فرض كنيد شما در تاريخ ۲۰ دی ماه، يك تور استانبول برای تاريخ ۳۰ دی را برای خريد در نظر گرفته‌اید. اگر
+                    تعداد
+                    شما ۳ نفر باشد و رقم تور انتخابی شما برای هر نفر ۲٫۷۰۰٫۰۰۰ تومان باشد مجموع رقم تور برای ۳ نفر
+                    ۸٫۱۰۰٫۰۰۰
+                    تومان خواهد شد. شما می‌توانيد % ۵۰ اين رقم يعنی ۴٫۰۵۰٫۰۰۰ تومان را تسهيلات دريافت كنيد. حال اگر شما
+                    مدت زمان ۶ ماه را برای باز پرداخت تسهيلات تور مسافرتی خود در نظر بگيريد، می‌بايست در هر ماه ۷۹۶٫۵۰۰
+                    تومان بابت اقساط هر ٣ نفر پرداخت نماييد.
+
+                    <br>
+                <ul>
+                    <li>
+                        قیمت تور استانبول برای هر نفر: ۲٫۷۰۰٫۰۰۰ تومان
+                    </li>
+
+                    <li>
+                        قیمت کل برای ۳ نفر: ۸٫۱۰۰٫۰۰۰ تومان
+                    </li>
+
+                    <li>
+                        پیش پرداخت مسافر ۴٫۰:۵٪۰٫۰۰۰ ( ۵۰ ) تومان
+                    </li>
+
+                    <li>
+                        پرداخت الباقی مبلغ تور در ۶ قسط با احتساب مبلغ کارمزد: ۴٫۷۷۹٫۰۰۰ تومان
+                    </li>
+
+                    <li>
+                        پرداخت اقساط تور در هر ماه برای ۳ نفر با احتساب مبلغ کارمزد: ۷۹۶٫۵۰۰ تومان
+                    </li>
+
+                    <li>
+                        کل کارمزد اقساط تـور برای ۳ نفر در ۶ ماه: ۷۲۹٫۰۰۰ تومان
+                    </li>
+
+                    <li>
+                        کل کارمزد اقساط تور برای هر نفر در ۶ ماه: ۲۴۳٫۰۰۰ تومان
+                    </li>
+
+                    <li>
+                        کل قیمت تمام شده تور برای ۳ نفر با احساب کارمزد: ۸٫۸۲۹٫۰۰۰ تومان
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+        </div>
+        <aside class="relative bottom-0 left-0 w-full md:w-5/12 lg:w-4/12">
+
+            <div x-data="calculator" class="bg-white rounded-3xl p-6 drop-shadow-xl">
+                <h2 class="mb-4 font-bold text-primery-dark">
+                    محاسبه مبلغ
+                </h2>
+
+                <div class="relative">
+                    <span class="text-xs absolute top-0 transform -translate-y-1/2 right-5  z-20 bg-white p-1">
+                        مبلغ تور (تومان)
+                    </span>
+                    <div class="bg-white border rounded-3xl overflow-hidden my-4 relative">
+                        <input class="py-2 px-6" type="text" placeholder="پاسخ شما" @input="tourPrice.format($el)">
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center ">
+                    <h2 class="w-5/12 font-bold text-primery-dark whitespace-pre-wrap">تعدا اقساط:</h2>
+
+                    <div class="rounded-3xl p-3 border flex items-center justify-between w-7/12">
+
+                        <select class="appearance-none w-full  focus-visible:outline-none" name="" id="">
+                            <template x-for="i in new Array( installments.totalAvailable).fill(0).map((_,j) => j+1)">
+                                <option :value="i" x-text=" i + ' قسط'  ">
+                                    3
+                                </option>
+                            </template>
+                        </select>
+
+                    </div>
+                </div>
+
+                <hr class=" my-4">
+
+                <div class="flex flex-col ">
+                    <h2 class="w-5/12 font-bold text-primery-dark whitespace-pre-wrap">پیش پرداخت:</h2>
+
+                    <div class="mt-2 flex mb-4 rounded-3xl overflow-hidden">
+                        <template x-for="(i,index) in prepayment.values" :key="index">
+                            <div :class="{'w-1/2 py-2 flex-center text-secondary-dark' : true,
+                                'bg-secondary-ligth cursor-pointer' : index+1 === prepayment.type,
+                                'cursor-pointer' : index+1 !== prepayment.type
+                            }" @click="prepayment.type = index + 1" x-text="i"></div>
+                        </template>
+
+                    </div>
+                </div>
+
+                <div class="mb-4" x-show="prepayment.type === 2" x-transition>
+                    <label for="prepayment_amount" class=" control-label">مبلغ پیش پرداخت:</label>
+                    <div class="flex gap-2  items-center">
+                        <input class="border rounded-md p-1" @input="prepayment.format($el)" id="prepayment_amount"
+                            name="prepayment_amount" type="text">
+                        <span id="helpBlock" class="help-block">تومان</span>
+                    </div>
+                </div>
+
+                <div class="bg-pink-300">
+                    <div>
+                        <div class="flex">
+
+                            <div>
+                                مبلغ نقدی پیش پرداخت :
+                            </div>
+                            <div x-text="result.cash">
+                                2,000,000
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+                            <div>
+                                مبلغ هر قسط :
+                            </div>
+                            <div x-text="result.installmentAmount">
+                                4,000,000
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex">
+
+                            <div>
+                                جمع کل مبلغ اقساط :
+                            </div>
+                            <div x-text="result.total">
+                                1,500,000
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex">
+
+                            <div>
+                                قیمت تمام شده تور :
+                            </div>
+                            <div x-text="result.totalAmount">
+                                5,000,000
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </main>
+
+    <script src="js/components/navbar.js"></script>
+    <script src="js/commons/utils.js"></script>
+    <script>
+        function numin(s) {
+            var a = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"]
+            var p = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"]
+            for (var i = 0; i < 10; i++) {
+                s = s.replace(new RegExp(a[i], 'g'), i)
+                    .replace(new RegExp(p[i], 'g'), i)
+            }
+            return s;
+        }
+
+        function FormatNumberBy3(num, decpoint, sep) {
+            if (arguments.length == 2) {
+                sep = ",";
+            }
+            if (arguments.length == 1) {
+                sep = ",";
+                decpoint = ".";
+            }
+            num = num.toString();
+
+            aa = "";
+            for (i = 0; i < num.length; i++) {
+                var check = num.charAt(i);
+                if (check != sep)
+                    aa += check;
+            }
+            a = aa.split(decpoint);
+
+            x = a[0];
+            y = a[1];
+            z = "";
+
+            if (typeof (x) != "undefined") {
+                for (i = x.length - 1; i >= 0; i--)
+                    z += x.charAt(i);
+                z = z.replace(/(\d{3})/g, "$1" + sep);
+                if (z.slice(-sep.length) == sep)
+                    z = z.slice(0, -sep.length);
+                x = "";
+                for (i = z.length - 1; i >= 0; i--)
+                    x += z.charAt(i);
+                if (typeof (y) != "undefined") {
+                    if (y.length > 2)
+                        y = y.substring(0, 2);
+                    x += decpoint + y;
+                }
+            }
+            return x;
+        }
+
+        const calculator = function () {
+
+            return {
+                prepayment: {
+                    type: 1, values: ['پیشنهادی', 'انتخابی'],
+                    amount: 0,
+                    format(element) {
+                        // conver all digits to english digits
+                        let val = numin(element.value)
+
+                        // remove unrelated cars
+                        val = val.replace(/[^\d]/g, '')
+
+                        this.amount = Number(val)
+
+                        // comma separated
+                        val = FormatNumberBy3(val, ".", ",");
+
+                        element.value = val.toIndiaDigits()
+                    }
+                },
+                tourPrice: {
+
+                    price: 0,
+                    format(element) {
+                        // conver all digits to english digits
+                        let val = numin(element.value)
+
+                        // remove unrelated cars
+                        val = val.replace(/[^\d]/g, '')
+
+                        this.price = Number(val)
+
+                        // comma separated
+                        val = FormatNumberBy3(val, ".", ",");
+
+                        element.value = val.toIndiaDigits()
+                    }
+                },
+                installments: { numberOf: 2, totalAvailable: 9 },
+
+                calc() {
+                    // debugger
+                    const paymentAmount = parseInt(this.tourPrice.price);
+                    const prepaymentAmount = parseInt(this.prepayment.amount);
+                    const prepaymentType = Number(this.prepayment.type);
+
+                    let prepayment
+                    if (prepaymentType === 1) {
+
+                        prepayment = paymentAmount / 2;
+
+                    } else if (prepaymenttype === 2) {
+                        prepayment = prepaymentAmount;
+                    }
+
+
+                    const remaining = paymentAmount - prepayment
+                    let wage = (remaining * 3) / 100;
+
+                    if (wage < 0) wage = 0;
+
+                    if (!paymentAmount) {
+
+                        return {
+                            ok: false,
+                            msg: "مقدار پیش پرداخت باید کمتر از مبلغ کل فاکتور باشد"
+                        };
+                    }
+
+                    if (!prepayment) {
+                        return {
+                            ok: false,
+                            msg: "مقدار پیش پرداخت باید مشخص شود"
+                        };
+                    }
+
+                    if (prepayment < prepaymentAmount / 2 && prepaymenttype == '2') {
+                        return {
+                            ok: false,
+                            msg: "مبلغ پیش پرداخت باید حداقل نصف مبلغ کل فاکتور باشد"
+                        };
+                    }
+
+                    if (prepayment >= paymentAmount) {
+                        return {
+                            ok: false,
+                            msg: "مبلغ پیش برداخت نمیتواند بیشتر از مبلغ کل فاکتور باشد"
+                        }
+                    }
+
+                    const cash = prepayment;
+                    const installmentNumber = this.installments.numberOf
+                    const percentInstallments = (installmentNumber) * 3;
+                    const interestInstallments = ((remaining) * percentInstallments) / 100;
+                    const total = Math.floor(remaining + interestInstallments);
+
+                    const installmentAmount = Math.floor(total / installmentNumber); /* E(D: G1 B37 */
+                    const totalAmount = Math.floor(cash + total); /* BÌE* *E'E 4/G ©'D' */
+
+                    return {
+                        ok: true,
+                        cash: String(FormatNumberBy3(cash)).toIndiaDigits(),
+                        installmentAmount: String(FormatNumberBy3(installmentAmount)).toIndiaDigits(),
+                        total: String(FormatNumberBy3(total)).toIndiaDigits(),
+                        totalAmount: String(FormatNumberBy3(totalAmount)).toIndiaDigits()
+                    }
+                }
+                ,
+                get result() {
+                    const res = this.calc()
+                    if (res.ok) {
+                        return res
+                    } else {
+                        return {
+                            msg: res.msg,
+                            cash: "--",
+                            installmentAmount: "--",
+                            total: "--",
+                            totalAmount: "--"
+                        }
+                    }
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
