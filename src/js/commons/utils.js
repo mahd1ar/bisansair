@@ -51,3 +51,16 @@ String.prototype.toIndiaDigits = function () {
     });
 }
 
+function debounce(func, timeout = 300) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    };
+}
+
+      // function saveInput(e) {
+        //     const x =( window.scrollY + window.innerHeight ) - (main.clientHeight + main.offsetTop)
+        //     console.log(x)
+        // }
+        // const processChange = debounce((e) => saveInput(e));

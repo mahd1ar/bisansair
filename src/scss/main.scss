@@ -51,3 +51,27 @@
 .bi-secondary-icon {
 	@apply inline-flex aspect-square cursor-pointer select-none  items-center rounded-circle bg-secondary-ligth p-2;
 }
+
+#navigation {
+	#menu-top_menu {
+		@apply relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm;
+	}
+
+	.sub-menu {
+		@apply absolute top-full left-0 hidden;
+	}
+
+	.menu-item-has-children {
+		position: relative;
+		border: 1px solid red;
+		&:hover > .sub-menu {
+			display: block;
+			background-color: #ede059;
+
+			.sub-menu {
+				top: 0;
+				transform: translateX(100%);
+			}
+		}
+	}
+}

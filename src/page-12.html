@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page 11 </title>
+    <title>page 12 </title>
     <link rel="stylesheet" href="css/output.css">
 
     <link rel="stylesheet" href="lib/css/splide.min.css">
@@ -242,12 +242,14 @@
 
     </header>
 
-    <main class="container mx-auto relative gap-6 px-2 flex flex-col md:flex-row items-start" dir="rtl">
+    <main id="main" class="container mx-auto relative gap-6 px-2 flex flex-col lg:flex-row items-start" dir="rtl">
         <div class="w-full md:w-7/12 lg:w-8/12">
-            <div>PIC</div>
+            <div class="flex-center">
+                <img src="svg/installmentsTours.svg" alt="">
+            </div>
 
-            <div>
-                <h1>
+            <div class="mb-6">
+                <h1 class="font-bold text-xl mb-4 text-primery-dark">
                     توضیحات
                 </h1>
 
@@ -264,8 +266,8 @@
                 </p>
             </div>
 
-            <div>
-                <h1>
+            <div class="mb-6">
+                <h1 class="font-bold text-xl mb-4 text-primery-dark">
                     شرايط خريد تور اقساطی
                 </h1>
 
@@ -282,8 +284,8 @@
                 </p>
             </div>
 
-            <div>
-                <h1>
+            <div class="mb-6">
+                <h1 class="font-bold text-xl mb-4 text-primery-dark">
                     مراحل خريد تور اقساطی
                 </h1>
 
@@ -302,8 +304,8 @@
                 </p>
             </div>
 
-            <div>
-                <h1>
+            <div class="mb-6">
+                <h1 class="font-bold text-xl mb-4 text-primery-dark">
                     مدارك لازم و نحوه ثبت نام تورهای اقساطی
                 </h1>
 
@@ -322,8 +324,8 @@
                 </p>
             </div>
 
-            <div>
-                <h1>
+            <div class="mb-6">
+                <h1 class="font-bold text-xl mb-4 text-primery-dark">
                     نکات مهم
                 </h1>
 
@@ -350,8 +352,8 @@
             </div>
 
 
-            <div>
-                <h1>
+            <div class="mb-6">
+                <h1 class="font-bold text-xl mb-4 text-primery-dark">
                     مثال: محاسبه تور استانبول برای ۳ نفر
                 </h1>
 
@@ -368,7 +370,10 @@
                     تومان بابت اقساط هر ٣ نفر پرداخت نماييد.
 
                     <br>
-                <ul>
+                    <br>
+                    <br>
+
+                <ul class="list-disc pr-5">
                     <li>
                         قیمت تور استانبول برای هر نفر: ۲٫۷۰۰٫۰۰۰ تومان
                     </li>
@@ -405,113 +410,127 @@
             </div>
 
         </div>
-        <aside class="relative bottom-0 left-0 w-full md:w-5/12 lg:w-4/12">
+        <aside class="relative bottom-0 left-0 sm:sticky  lg:relative w-full  lg:w-4/12">
 
-            <div x-data="calculator" class="bg-white rounded-3xl p-6 drop-shadow-xl">
-                <h2 class="mb-4 font-bold text-primery-dark">
-                    محاسبه مبلغ
-                </h2>
+            <div x-data="calculator"
+                class=" bg-white w-full  lg:w-full mx-auto rounded-3xl p-6 drop-shadow-xl flex flex-col sm:flex-row lg:flex-col gap-10 lg:gap-0">
 
-                <div class="relative">
-                    <span class="text-xs absolute top-0 transform -translate-y-1/2 right-5  z-20 bg-white p-1">
-                        مبلغ تور (تومان)
-                    </span>
-                    <div class="bg-white border rounded-3xl overflow-hidden my-4 relative">
-                        <input class="py-2 px-6" type="text" placeholder="پاسخ شما" @input="tourPrice.format($el)">
+                <div class="sm:w-1/2 lg:w-full">
+                    <h2 class="mb-4 font-bold text-primery-dark">
+                        محاسبه مبلغ
+                    </h2>
+
+                    <div class="relative">
+                        <span class="text-xs absolute top-0 transform -translate-y-1/2 right-5  z-20 bg-white p-1">
+                            مبلغ تور (تومان)
+                        </span>
+                        <div class="bg-white border rounded-3xl overflow-hidden my-4 relative">
+                            <input class="py-2 px-6" type="text" placeholder="پاسخ شما" @input="tourPrice.format($el)">
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between items-center ">
+                        <h2 class="w-5/12 font-bold text-primery-dark whitespace-pre-wrap">تعدا اقساط:</h2>
+
+                        <div class="rounded-3xl p-3 border flex items-center justify-between w-7/12">
+
+                            <select x-model="installments.numberOf" class=" w-full  focus-visible:outline-none" name=""
+                                id="">
+                                <template
+                                    x-for="i in new Array( installments.totalAvailable).fill(0).map((_,j) => j+1)">
+                                    <template x-if="i > 1">
+                                        <option :value="i" x-text=" i + '&nbsp; قسط'  ">
+                                            3
+                                        </option>
+                                    </template>
+                                </template>
+
+                            </select>
+
+                        </div>
                     </div>
                 </div>
+                <hr class="hidden lg:block my-4">
+                <div class="sm:w-1/2 lg:w-full">
+                    <div class="flex flex-col ">
+                        <h2 class="w-5/12 font-bold text-primery-dark whitespace-pre-wrap">پیش پرداخت:</h2>
 
-                <div class="flex justify-between items-center ">
-                    <h2 class="w-5/12 font-bold text-primery-dark whitespace-pre-wrap">تعدا اقساط:</h2>
-
-                    <div class="rounded-3xl p-3 border flex items-center justify-between w-7/12">
-
-                        <select class="appearance-none w-full  focus-visible:outline-none" name="" id="">
-                            <template x-for="i in new Array( installments.totalAvailable).fill(0).map((_,j) => j+1)">
-                                <option :value="i" x-text=" i + ' قسط'  ">
-                                    3
-                                </option>
-                            </template>
-                        </select>
-
-                    </div>
-                </div>
-
-                <hr class=" my-4">
-
-                <div class="flex flex-col ">
-                    <h2 class="w-5/12 font-bold text-primery-dark whitespace-pre-wrap">پیش پرداخت:</h2>
-
-                    <div class="mt-2 flex mb-4 rounded-3xl overflow-hidden">
-                        <template x-for="(i,index) in prepayment.values" :key="index">
-                            <div :class="{'w-1/2 py-2 flex-center text-secondary-dark' : true,
+                        <div class="mt-2 flex mb-4 rounded-3xl overflow-hidden">
+                            <template x-for="(i,index) in prepayment.values" :key="index">
+                                <div :class="{'w-1/2 py-2 flex-center text-secondary-dark' : true,
                                 'bg-secondary-ligth cursor-pointer' : index+1 === prepayment.type,
                                 'cursor-pointer' : index+1 !== prepayment.type
                             }" @click="prepayment.type = index + 1" x-text="i"></div>
-                        </template>
+                            </template>
 
-                    </div>
-                </div>
-
-                <div class="mb-4" x-show="prepayment.type === 2" x-transition>
-                    <label for="prepayment_amount" class=" control-label">مبلغ پیش پرداخت:</label>
-                    <div class="flex gap-2  items-center">
-                        <input class="border rounded-md p-1" @input="prepayment.format($el)" id="prepayment_amount"
-                            name="prepayment_amount" type="text">
-                        <span id="helpBlock" class="help-block">تومان</span>
-                    </div>
-                </div>
-
-                <div class="bg-pink-300">
-                    <div>
-                        <div class="flex">
-
-                            <div>
-                                مبلغ نقدی پیش پرداخت :
-                            </div>
-                            <div x-text="result.cash">
-                                2,000,000
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex">
-                            <div>
-                                مبلغ هر قسط :
-                            </div>
-                            <div x-text="result.installmentAmount">
-                                4,000,000
-                            </div>
                         </div>
                     </div>
 
-                    <div>
-                        <div class="flex">
-
-                            <div>
-                                جمع کل مبلغ اقساط :
-                            </div>
-                            <div x-text="result.total">
-                                1,500,000
-                            </div>
+                    <div class="mb-4" x-show="prepayment.type === 2" x-transition>
+                        <label for="prepayment_amount" class=" control-label">مبلغ پیش پرداخت:</label>
+                        <div class="flex gap-2  items-center">
+                            <input class="border rounded-md p-1" @input="prepayment.format($el)" id="prepayment_amount"
+                                name="prepayment_amount" type="text">
+                            <span id="helpBlock" class="help-block">تومان</span>
                         </div>
                     </div>
-                    <div>
-                        <div class="flex">
 
-                            <div>
-                                قیمت تمام شده تور :
-                            </div>
-                            <div x-text="result.totalAmount">
-                                5,000,000
+                    <div class="">
+                        <div>
+                            <div class="flex">
+
+                                <div>
+                                    مبلغ نقدی پیش پرداخت :
+                                </div>
+                                <div x-text="result.cash">
+                                    2,000,000
+                                </div>
                             </div>
                         </div>
+                        <div>
+                            <div class="flex">
+                                <div>
+                                    مبلغ هر قسط :
+                                </div>
+                                <div x-text="result.installmentAmount">
+                                    4,000,000
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex">
+
+                                <div>
+                                    جمع کل مبلغ اقساط :
+                                </div>
+                                <div x-text="result.total">
+                                    1,500,000
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex">
+
+                                <div>
+                                    قیمت تمام شده تور :
+                                </div>
+                                <div x-text="result.totalAmount">
+                                    5,000,000
+                                </div>
+                            </div>
+                        </div>
+                        <span class="text-red-500 text-xs " x-text="result.ok ? '' : result.msg"></span>
                     </div>
                 </div>
             </div>
         </aside>
 
     </main>
+
+    <div class="bg-red-300 h-96">
+        ...
+    </div>
 
     <script src="js/components/navbar.js"></script>
     <script src="js/commons/utils.js"></script>
@@ -570,7 +589,8 @@
 
             return {
                 prepayment: {
-                    type: 1, values: ['پیشنهادی', 'انتخابی'],
+                    type: 1,
+                    values: ['پیشنهادی', 'انتخابی'],
                     amount: 0,
                     format(element) {
                         // conver all digits to english digits
@@ -618,7 +638,7 @@
 
                         prepayment = paymentAmount / 2;
 
-                    } else if (prepaymenttype === 2) {
+                    } else if (prepaymentType === 2) {
                         prepayment = prepaymentAmount;
                     }
 
@@ -643,7 +663,7 @@
                         };
                     }
 
-                    if (prepayment < prepaymentAmount / 2 && prepaymenttype == '2') {
+                    if (prepayment < prepaymentAmount / 2 && prepaymentType == '2') {
                         return {
                             ok: false,
                             msg: "مبلغ پیش پرداخت باید حداقل نصف مبلغ کل فاکتور باشد"
@@ -658,7 +678,7 @@
                     }
 
                     const cash = prepayment;
-                    const installmentNumber = this.installments.numberOf
+                    const installmentNumber = parseInt(this.installments.numberOf)
                     const percentInstallments = (installmentNumber) * 3;
                     const interestInstallments = ((remaining) * percentInstallments) / 100;
                     const total = Math.floor(remaining + interestInstallments);
@@ -676,22 +696,30 @@
                 }
                 ,
                 get result() {
-                    const res = this.calc()
-                    if (res.ok) {
-                        return res
-                    } else {
-                        return {
-                            msg: res.msg,
-                            cash: "--",
-                            installmentAmount: "--",
-                            total: "--",
-                            totalAmount: "--"
-                        }
+                    const emptyResult = {
+                        cash: "--",
+                        installmentAmount: "--",
+                        total: "--",
+                        totalAmount: "--"
                     }
+
+                    if (this.tourPrice.price === 0) {
+                        return {
+                            msg: '',
+                            ...emptyResult,
+                        }
+
+                    }
+
+                    const res = this.calc()
+
+                    return res.ok ? res : { msg: res.msg, ...emptyResult }
+
                 }
             }
 
         }
+
 
     </script>
 </body>
