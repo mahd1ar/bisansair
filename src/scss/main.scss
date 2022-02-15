@@ -54,23 +54,70 @@
 
 #navigation {
 	#menu-top_menu {
-		@apply relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm;
+		@apply relative
+				z-20
+				mx-auto
+				flex
+				flex-grow
+				items-center
+				justify-between
+				rounded-2xl
+				bg-white px-5;
 	}
 
 	.sub-menu {
-		@apply absolute top-full left-0 hidden;
+		@apply invisible
+				absolute
+				top-full
+				left-0
+				max-w-xs
+				
+				overflow-ellipsis
+				 opacity-0 transition-opacity
+				delay-150 duration-500 ease-out;
+	}
+
+	.menu-item {
+		@apply w-full cursor-pointer whitespace-nowrap rounded-md px-4 py-2 text-[#666666];
+
+		&:hover {
+			@apply bg-gray-50 py-2;
+		}
 	}
 
 	.menu-item-has-children {
 		position: relative;
-		border: 1px solid red;
-		&:hover > .sub-menu {
+		display: flex;
+		&::before {
+			content: "";
 			display: block;
-			background-color: #ede059;
+			width: 20px;
+			height: 20px;
+			position: relative;
+			top: 4px;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23ccc'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd' /%3E%3C/svg%3E");
+		}
+		.menu-item-has-children {
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			&::before {
+				content: "";
+				width: 20px;
+				height: 20px;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23ccc'%3E%3Cpath fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd' /%3E%3C/svg%3E");
+			}
+		}
+
+		&:hover > .sub-menu {
+			@apply visible w-72   
+			overflow-ellipsis bg-white opacity-100
+			transition-all;
 
 			.sub-menu {
-				top: 0;
-				transform: translateX(100%);
+				@apply top-0
+				translate-x-full
+				transform
+				overflow-hidden overflow-ellipsis;
 			}
 		}
 	}
