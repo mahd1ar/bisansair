@@ -50,13 +50,16 @@ export default async (request: VercelRequest, response: VercelResponse) => {
     const lastCommit = {
         url: (<GithubPayload.RootObject>request.body).commits[0].url,
         id: (<GithubPayload.RootObject>request.body).commits[0].id,
-        message: (<GithubPayload.RootObject>request.body).commits[0].message
+        message: (<GithubPayload.RootObject>request.body).commits[0].message,
+        modifiedFiles: (<GithubPayload.RootObject>request.body).commits[0].modified,
+        modifiedPages: (<GithubPayload.RootObject>request.body).commits[0].modified.filter(i => i.split("/").reverse()[0].split(".").reverse()[0] === "html").map(i => i.split("/").reverse()[0])
     };
 
     if (lastCommit.message.slice(0, 5) !== "[log]") {
         response.send("abort").status(200)
         return
     }
+
 
 
     try {
@@ -86,6 +89,8 @@ export default async (request: VercelRequest, response: VercelResponse) => {
             m: Math.ceil((todayReport - (~~todayReport)) * 60)
         }
 
+
+
         // wrap up
 
         let templateHtml = "[ Daily Report Bot ]\n\n" +
@@ -96,6 +101,10 @@ export default async (request: VercelRequest, response: VercelResponse) => {
             `<a href="${lastCommit.url}" > ${lastCommit.id} </a>\n\n` +
             "✉️ <i>commit message:</i>\n" +
             `${lastCommit.message.replace("[log]", "")}\n\n` +
+            "💥 <i>modified files : </i>\n" +
+            lastCommit.modifiedFiles.join("\n") + "\n\n" +
+            "🎖 <i>modified pages : </i>\n" +
+            lastCommit.modifiedPages.map(i => `<a href="https://bisanseir.vercel.app/${i}"> ${i} </a>`).join("\n") + "\n\n" +
             "🔍 <i>preview all:</i>\n" +
             `<a href="https://bisanseir.vercel.app/api/help"> https://bisanseir.vercel.app/api/help </a>\n\n`;
 
