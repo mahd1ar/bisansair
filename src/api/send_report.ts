@@ -101,10 +101,10 @@ export default async (request: VercelRequest, response: VercelResponse) => {
             `<a href="${lastCommit.url}" > ${lastCommit.id} </a>\n\n` +
             "✉️ <i>commit message:</i>\n" +
             `${lastCommit.message.replace("[log]", "")}\n\n` +
-            "💥 <i>modified files : </i>\n" +
-            lastCommit.modifiedFiles.join("\n") + "\n\n" +
             "🎖 <i>modified pages : </i>\n" +
             lastCommit.modifiedPages.map(i => `<a href="https://bisanseir.vercel.app/${i}"> ${i} </a>`).join("\n") + "\n\n" +
+            "💥 <i>modified files : </i>\n" +
+            lastCommit.modifiedFiles.join("\n") + "\n\n" +
             "🔍 <i>preview all:</i>\n" +
             `<a href="https://bisanseir.vercel.app/api/help"> https://bisanseir.vercel.app/api/help </a>\n\n`;
 

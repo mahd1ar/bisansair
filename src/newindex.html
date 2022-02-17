@@ -458,7 +458,8 @@
                                                 <div class="w-full flex flex-col items-start pr-3">
                                                     از
                                                     <br>
-                                                    <span class="text-xl mt-1 mb-10 text-right">
+                                                    <span class="text-xl mt-1 mb-10 text-right"
+                                                        x-text="datePicker.firstDayOftravel.join(',')">
                                                         22 اردیبهشت 1400
                                                     </span>
                                                 </div>
@@ -468,7 +469,8 @@
                                                 <div class="w-full flex flex-col items-start pr-3">
                                                     تا
                                                     <br>
-                                                    <span class="text-xl mt-1 text-right">
+                                                    <span class="text-xl mt-1 text-right"
+                                                        x-text="datePicker.lastDayOftravel.join(',')">
                                                         22 اردیبهشت 1400
                                                     </span>
                                                 </div>
@@ -505,15 +507,15 @@
 
                                                 <template x-for="(i,index) in datePicker.days" :key="index">
 
-                                                    <div :class="{
+                                                    <div @click="datePicker.pick(i)" :class="{
                                                     'flex-center sm:aspect-square select-none cursor-pointer relative ' : true, 
                                                     'bi-date-pick_start ' : i.date === 17 ,
                                                     'bi-date-pick_end ' :  i.date === 23,
                                                     'bi-date-pick_middle' : 17 < i.date && i.date < 23 
                                                 }">
                                                         <span :class="{
-                                                            'rounded-circle w-full h-full text-lg flex-center hover:bg-gray-100' : true,
-                                                            'bg-primery' : i.date === 23 || i.date === 17 ,
+                                                    'rounded-circle w-full h-full text-lg flex-center hover:bg-gray-100' : true,
+                                                    'bg-primery' : i.date === 23 || i.date === 17 ,
                                                             'border border-gray-500' : i.isToday  ,
                                                             'text-red-400' : i.isFri,
                                                             'text-black' : !i.isFri && !i.isOutOfCurrentMonth,
@@ -1459,6 +1461,29 @@
             ],
         };
 
+        /**
+         * 
+         * @param {number} jy year
+         * @param {number} jm month
+         * @param {number} jd day
+         * @returns {number} 
+         */
+        function shamsi_to_epoch(jy, jm, jd) {
+            const [gy, gm, gd] = jalali_to_gregorian(jy, jm, jd)
+            return gregorian_to_epoch(gy, gm, gd)
+        }
+
+        /**
+         * 
+         * @param {number} gy year
+         * @param {number} gm month
+         * @param {number} gd day
+         * @returns {number} 
+         */
+        function gregorian_to_epoch(gy, gm, gd) {
+            const d = new Date(`${gm} ${gd} ${gy}`);
+            return d.getTime()
+        }
 
         function en_getMounthLength(en_candidateMonth, en_candidateYear) {
 
@@ -1637,8 +1662,38 @@
                         :
                         ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج']
                 },
-                firstDayOftravel: '',
-                lastDayOftravel: '',
+                get firstDayOftravel() {
+                    if (this._firstDayOftravel_epoch === 0)
+                        return [0, 0, 0]
+                    const date = new Date(this._firstDayOftravel_epoch)
+                    const day = date.getDate(),
+                        month = date.getMonth() + 1,
+                        year = date.getFullYear();
+                    if (this.mode) {
+                        return [year, month, day]
+                    } else {
+                        return gregorian_to_jalali(year, month, day)
+                    }
+
+                },
+                get lastDayOftravel() {
+                    if (this._lastDayOftravel_epoch === 0)
+                        return [0, 0, 0]
+
+                    const date = new Date(this._lastDayOftravel_epoch)
+                    const day = date.getDate(),
+                        month = date.getMonth() + 1,
+                        year = date.getFullYear();
+                    if (this.mode) {
+                        return [year, month, day]
+                    } else {
+                        return gregorian_to_jalali(year, month, day)
+                    }
+
+                },
+                _firstDayOftravel_epoch: 0, // Y-M-D
+                _lastDayOftravel_epoch: 0,
+
                 mode: 0, // 0 for shamsi 1 for miladi,
                 modeLabel: [
                     "shamsi",
@@ -1650,6 +1705,33 @@
                 fa_today: 27,
                 fa_candidateMonth: 11, // bahman
                 fa_candidateYear: 1400,
+
+                pick({ date: day }) {
+                    console.log(day)
+                    const month = this.en_candidateMonth;
+                    const year = this.en_candidateYear;
+
+                    if (this._firstDayOftravel_epoch && this._lastDayOftravel_epoch) {
+                        this._firstDayOftravel_epoch = this._lastDayOftravel_epoch = 0
+                        return
+                    }
+
+                    if (this._firstDayOftravel_epoch === 0) {
+
+                        this._firstDayOftravel_epoch = gregorian_to_epoch(year, month, day)
+                    } else {
+
+                        const last = gregorian_to_epoch(year, month, day)
+                        if (last < this._firstDayOftravel_epoch) {
+                            this._firstDayOftravel_epoch = 0
+                        } else {
+                            this._lastDayOftravel_epoch = last
+                        }
+                    }
+
+
+                    // is it 
+                },
                 nextMonth() {
                     if (++this.fa_candidateMonth > 12) {
 
@@ -1697,9 +1779,9 @@
 
                     if (this.mode) {
 
-                        return [this.ea_today, months[this.en_candidateMonth - 1], this.en_candidateYear]
+                        return [this.ea_today, months[this.en_candidateMonth - 1], this.en_candidateYear].reverse()
                     } else {
-                        return [String(this.fa_today).toIndiaDigits(), months[this.fa_candidateMonth - 1], String(this.fa_candidateYear).toIndiaDigits()]
+                        return [String(this.fa_today).toIndiaDigits(), months[this.fa_candidateMonth - 1], String(this.fa_candidateYear).toIndiaDigits()].reverse()
 
                     }
                 },
@@ -1785,19 +1867,8 @@
                         }
                         return flatCal
                     } else {
-                        // console.log(this.en_candidateMonth)
-                        // if (this.en_candidateMonth === 10)
-                        //     debugger
 
                         const lengthOfMounth = en_getMounthLength(this.en_candidateMonth, this.en_candidateYear);
-
-                        // const firstDay_miladi = jalali_to_gregorian(this.fa_candidateYear, this.fa_candidateMonth, 1);
-
-                        // // just formating...
-                        // for (let i = 0; i < 3; i++) {
-
-                        //     firstDay_miladi[i] = firstDay_miladi[i] < 10 ? `0${firstDay_miladi[i]}` : String(firstDay_miladi[i])
-                        // }
 
                         const firstDayOfMounth = `${this.en_candidateMonth} 1 ${this.en_candidateYear}`
                         const firstDayInWeek = (new Date(firstDayOfMounth).getDay() + 1) % 7
@@ -1866,7 +1937,16 @@
             },
             init() {
 
-
+                const d = new Date()
+                const today_miladi = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
+                const today_shamsi = gregorian_to_jalali(today_miladi[0], today_miladi[1], today_miladi[2])
+                console.log(today_shamsi)
+                this.datePicker.en_today = today_miladi[2];
+                this.datePicker.en_candidateMonth = today_miladi[1];
+                this.datePicker.en_candidateYear = today_miladi[0];
+                this.datePicker.fa_today = today_shamsi[2]
+                this.datePicker.fa_candidateMonth = today_shamsi[1]
+                this.datePicker.fa_candidateYear = today_shamsi[0]
 
             }
 
