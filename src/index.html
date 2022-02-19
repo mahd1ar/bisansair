@@ -17,143 +17,132 @@
 
 <body>
     <!-- brake points debug -->
-    <!-- <div class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
+    <div class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
         <span class="hidden sm:block">sm</span>
         <span class="hidden md:block">md</span>
         <span class="hidden lg:block">lg</span>
         <span class="hidden xl:block">xl</span>
         <span class="hidden 2xl:block">2xl</span>
-    </div> -->
+    </div>
     <!-- /debug -->
 
 
     <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-white pt-5 z-20">
-        <nav x-data="navbar" class="lg:max-w-[1104px] container mx-auto">
+
+        <nav id="navigation" x-data="navbar" class="lg:max-w-[1104px] container mx-auto">
+
+
+
             <div
                 class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow z-20 relative">
+
                 <div class="flex">
                     <div
-                        class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
+                        class="w-32 bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 py-1 rounded-full flex-center flex-1">
                         <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-                        <span class="mx-2 text-sm hidden md:block"> 021-345648 </span>
+                        <span class="mx-2 text-sm hidden md:block"> ۰۲۱-۳۴۵۶۴۸ </span>
                     </div>
 
-                    <ul x-ref="mitem"
-                        class="hidden md:flex flex-row-reverse gap-2 font-iransans text-sm font-semibold items-center mx-5 xl:ml-10 text-[#666666]">
-                        <li @click.prevent="toggleSelected"
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            <a href=""> تور </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
 
-
-                            <ul @click.outside="toggleSelected" style="display: none"
-                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
-                                <li> <a href="/"> 11 </a> </li>
-                                <li> <a href=""> 12 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                            </ul>
-                        </li>
-                        <li
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 flex flex-row-reverse items-center relative rounded-full">
-                            <a href="">
-                                هتل ها
-                            </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-                            <ul style="display: none"
-                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
-                                <li> <a href="/"> امارات </a> </li>
-                                <li> <a href=""> ترکیه </a> </li>
-                                <li> <a href=""> ارمنستان </a> </li>
-                                <li> <a href=""> تایلند </a> </li>
-                                <li> <a href=""> فرانسه </a> </li>
-                                <li> <a href=""> اسپانیا </a> </li>
-                            </ul>
-                        </li>
-                        <li
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            <a href="">
-                                تور اقساط
-                            </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-                            <ul style="display: none"
-                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
-                                <li> <a href="/"> 11 </a> </li>
-                                <li> <a href=""> 12 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                            </ul>
-                        </li>
-                        <li
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            <a href="">
-                                تور ویژه
-                            </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-                            <ul style="display: none"
-                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
-                                <li> <a href="/"> 11 </a> </li>
-                                <li> <a href=""> 12 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                            </ul>
-                        </li>
-                        <li
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            <a href="">
-                                ویزا
-                            </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-                            <ul style="display: none"
-                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
-                                <li> <a href="/"> 11 </a> </li>
-                                <li> <a href=""> 12 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                            </ul>
-                        </li>
-                        <li
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            <a href="">
-                                بلاگ
-                            </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-                        </li>
-                    </ul>
-
-                    <!-- LEAVE ME ALONE -->
-                    <ul
-                        class="hidden md:flex flex-row-reverse gap-2 font-iransans text-sm font-semibold items-center mx-5 xl:ml-10 text-[#666666]">
-                        <template x-for="({index,text,href,children},inx) in menu" :key="index">
-
-                            <li @click.prevent="toggleSelected(inx)"
-                                class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                                <a :href="href ? href : '#'" x-text="text"></a>
-                                <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-
-
-                                <ul style="display: none" @click.outside="toggleSelected(-1)"
-                                    x-show="children.length > 0 && subMenu === inx"
-                                    class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white py-2 rounded-lg max-w-xs text-rtl flex flex-col gap-2 items-center overflow-hidden">
-                                    <template x-for="ch in children">
-
-                                        <li class="hover:bg-gray-200 px-5 py-2 w-full text-right"> <a
-                                                :href="ch.href ? ch.href : '#' " x-text="ch.text"> </a> </li>
-                                    </template>
+                    <div class="menu-top_menu-container hidden md:block" ref="menuContainer">
+                        <ul id="menu-top_menu" class="menu ">
+                            <li class="menu-item   menu-item-has-children ">
+                                <a href="http://hll.om/index.php/product/">تور</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item   "><a href="#">
+                                            bitumen
+                                            penetration grade
+                                        </a></li>
+                                    <li class="menu-item   "><a href="#">performance grade
+                                            bitumen</a></li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children ">
+                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen Cutback</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item   ">
+                                                <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
+                                                    bitumen
+                                                    slow curing (SC)</a>
+                                            </li>
+                                            <li class="menu-item   ">
+                                                <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
+                                                    bitumen medium curing (MC)</a>
+                                            </li>
+                                            <li class="menu-item   ">
+                                                <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
+                                                    curing
+                                                    cutback bitumen (RC)</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children ">
+                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen emulsion</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item   ">
+                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen Emulsion
+                                                    (BE)</a>
+                                            </li>
+                                            <li class="menu-item   ">
+                                                <a href="http://hll.om/product/cationic-emulsions/">Cationic
+                                                    Emulsions</a>
+                                            </li>
+                                            <li class="menu-item   ">
+                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic Emulsions</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
+                                            href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
+                                            Emulsified
+                                            Bitumen</a></li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
+                                            href="http://hll.om/category/products/solvent-base-primer/">Solvent Base
+                                            Primer</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
+                                            href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
+                                            Modified Emulsion (PME)</a></li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
+                                            href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready Mixed
+                                            Asphalt</a></li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
+                                            href="http://hll.om/category/products/c_bituplast/">Bituplast</a></li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
+                                            href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
+                                            Base Waterproofing Mortar</a></li>
+                                    <li class="menu-item   "><a
+                                            href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco Organic
+                                            Cleaner
+                                            (BOC):</a></li>
                                 </ul>
                             </li>
+                            <li class="menu-item   menu-item-has-children ">
+                                <a href="#">ﻫﺘﻞ ﻫﺎ</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item  menu-item-object-post "><a
+                                            href="http://hll.om/standardizing-bodies/">Standardizing Bodies</a></li>
+                                    <li class="menu-item  menu-item-object-post "><a
+                                            href="http://hll.om/family-of-bitumenous-binders/">Family of Bitumenous
+                                            Binders</a>
+                                    </li>
+                                    <li class="menu-item   "><a href="http://hll.om/product/quality-control/">Quality
+                                            Control</a></li>
+                                    <li class="menu-item  menu-item-object-post "><a
+                                            href="http://hll.om/bitumen-emulsions-anionic-cationic-unmodified-polymer-modified/">BITUMEN
+                                            EMULSIONS (ANIONIC; CATIONIC; UNMODIFIED; POLYMER MODIFIED)</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a href="http://hll.om/packing-logistics/">تور اقساط</a></li>
+                            <li class="menu-item"><a href="#">تور اروپا</a></li>
+                            <li class="menu-item"><a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a></li>
 
-                        </template>
-                    </ul>
-                    <!--  -->
+                            <li class="menu-item   "><a href="http://hll.om/contact-us/">ویزا</a></li>
+                            <li class="menu-item   "><a href="http://hll.om/contact-us/">بلاگ</a></li>
+
+                        </ul>
+                    </div>
+
                 </div>
 
                 <img src="./img/logo.png" class="object-contain w-9" alt="" />
@@ -168,8 +157,13 @@
 
             </div>
 
+
+
+
+            <!-- MOBILE SECTION -->
             <div id="mobile-menu" x-show="isOpen" style="display: none;" x-transition.opacity>
                 <div class="mobile-menu__overlay">
+
 
 
                     <div
@@ -198,41 +192,50 @@
 
 
 
-
-                    <div class="mobile-menu__wrapper">
-
-
-                        <!-- LEAVE ME HERE -->
+                    <div class="relative">
 
                         <div class="flex items-center justify-start gap-3 mt-2 mb-5 text-xl">
-                            <span x-show="subMenu !== -1" class="bi-icon cursor-pointer" @click="subMenu = -1">
+                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()"
+                                x-transition>
                                 <img src="svg/chevron-rigth.svg" alt="">
                             </span>
-                            <h1 x-text="currentCategory"></h1>
+
+                            <h1 x-text="ch.name ? ch.name : 'menu' "></h1>
+
                         </div>
 
                         <ul class="bi-scrollbar">
-                            <template
-                                x-for="({index,text,href,children},inx) in (subMenu === -1  ? menu : menu[subMenu].children)"
-                                :key="index">
+                            <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
                                 <li>
 
-                                    <a :href="href ? href : '#' "
-                                        @click="children && children.length ? subMenu = inx : null"
-                                        class="mobile-menu__item">
-                                        <span x-text="text"></span>
-                                        <img class="icon" src="svg/chevron-left.svg" alt="">
+                                    <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') " class="">
+                                        <span x-text="name"></span>
+                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg" x-transition>
                                     </a>
 
                                 </li>
                             </template>
 
                         </ul>
+
                     </div>
                 </div>
-            </div>
 
+            </div>
+            <!-- / -->
         </nav>
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div class="relative flex justify-center items-center h-screen overflow-x-clip lg:-z-10 ">
             <div id="yellow_gradient"
@@ -264,7 +267,7 @@
             <!-- <img id="airplane" class="mx-auto relative hidden md:block" src="./img/cloud/airplane.png" alt="" /> -->
 
             <div
-                class="flex flex-col sm:flex-row-reverse w-full sm:px-12 items-center md:flex-col absolute z-10 text-center font-iransans">
+                class="flex flex-col sm:flex-row-reverse w-full sm:px-12 items-center md:flex-col absolute z-20 lg:z-10 text-center font-iransans">
                 <div class="w-full sm:w-1/2 md:w-full relative">
                     <h1 class=" text-6xl font-bold font-vazir">بیسان سیر</h1>
                     <h2 class="text-xl font-bold relative top-3">
@@ -435,11 +438,17 @@
 
                                         <div class="w-48 mx-auto sm:w-2/5 p-5 flex flex-col text-rtl">
 
-                                            <div class="rounded-3xl overflow-hidden flex shadow-xl sm:mb-7">
-                                                <div
-                                                    class="w-1/2 p-2 text-center   bg-secondary-ligth text-secondary-dark">
-                                                    شمسی</div>
-                                                <div class="w-1/2 p-2 text-center  ">میلادی</div>
+                                            <div
+                                                class="rounded-3xl overflow-hidden flex shadow-xl sm:mb-7 cursor-pointer">
+
+                                                <template x-for="(i,index) in datePicker.modeLabel">
+
+                                                    <div @click="datePicker.mode = index" x-text="i" :class="{'w-1/2 p-2 text-center' : true, 
+                                                         'bg-secondary-ligth text-secondary-dark' : datePicker.mode === index 
+                                                        }">
+                                                    </div>
+                                                </template>
+
                                             </div>
 
 
@@ -449,7 +458,8 @@
                                                 <div class="w-full flex flex-col items-start pr-3">
                                                     از
                                                     <br>
-                                                    <span class="text-xl mt-1 mb-10 text-right">
+                                                    <span class="text-xl mt-1 mb-10 text-right"
+                                                        x-text="datePicker.formattedFirstDayOftravel">
                                                         22 اردیبهشت 1400
                                                     </span>
                                                 </div>
@@ -459,7 +469,8 @@
                                                 <div class="w-full flex flex-col items-start pr-3">
                                                     تا
                                                     <br>
-                                                    <span class="text-xl mt-1 text-right">
+                                                    <span class="text-xl mt-1 text-right"
+                                                        x-text="datePicker.formattedLastDayOftravel">
                                                         22 اردیبهشت 1400
                                                     </span>
                                                 </div>
@@ -476,12 +487,17 @@
                                             class="max-w-md sm:w-3/5 p-5 border-l-2 travel-selector--scrollable bi-scrollbar">
 
                                             <div class="flex justify-between mb-7">
-                                                <div> <img class="h-3" src="svg/chevron-left.svg" alt=""> </div>
-                                                <div> فروردین 1399 </div>
-                                                <div> <img class="h-3" src="svg/chevron-rigth.svg" alt=""> </div>
+                                                <div class="cursor-pointer" @click="datePicker.prevMonth()"> <img
+                                                        class="h-3" src="svg/chevron-left.svg" alt=""> </div>
+                                                <div class="text-gray-600 text-base"
+                                                    x-text="datePicker.candidateFullDate[1] + ' ' + datePicker.candidateFullDate[2] ">
+                                                </div>
+                                                <div class="cursor-pointer" @click="datePicker.nextMonth()"> <img
+                                                        class="h-3" src="svg/chevron-rigth.svg" alt=""> </div>
                                             </div>
-                                            <div class="grid grid-cols-7 grid-rows-7 ">
-                                                <template x-for="d in days">
+                                            <div :dir="datePicker.mode? 'ltr' : 'rtl'"
+                                                class="grid grid-cols-7 grid-rows-7 ">
+                                                <template x-for="d in datePicker.weekDays">
                                                     <span
                                                         class=" bg-gray-200 m-3 sm:m-1 rounded-circle flex-center text-gray-600 aspect-square"
                                                         x-text="d">
@@ -489,22 +505,26 @@
                                                     </span>
                                                 </template>
 
-                                                <template x-for="(i,index) in items" :key="index">
+                                                <template
+                                                    x-for="({date,isOutOfCurrentMonth ,isFri, origin,destination,inRange,isToday,formatedDate },index) in datePicker.days"
+                                                    :key="index">
 
-                                                    <div :class="{
-                                                    'flex-center sm:aspect-square select-none cursor-pointer relative ' : true, 
-                                                    'bi-date-pick_start ' : i.date === 17 ,
-                                                    'bi-date-pick_end ' :  i.date === 23,
-                                                    'bi-date-pick_middle' : 17 < i.date && i.date < 23 
+                                                    <div @click="datePicker.pick(date)" :class="{
+                                                    'flex-center sm:aspect-square select-none relative ' : true, 
+                                                    'bi-date-pick_start ' : origin && !!datePicker.days.find(i => i.destination) ,
+                                                    'bi-date-pick_end ' :  destination,
+                                                    'bi-date-pick_middle' : inRange 
                                                 }">
                                                         <span :class="{
-                                                            'rounded-circle w-full h-full flex-center hover:bg-gray-100' : true,
-                                                            'bg-primery' : i.date === 23 || i.date === 17 ,
-                                                            'border border-gray-500' : i.isToday  ,
-                                                            'text-red-400' : i.isFri,
-                                                            'text-black' : !i.isFri && !i.isOutOfCurrentMonth,
-                                                            'text-gray-500' : !i.isFri && i.isOutOfCurrentMonth,
-                                                        }" x-text="i.date">
+                                                            'rounded-circle w-full h-full text-lg flex-center hover:bg-gray-100' : true,
+                                                            'cursor-pointer' : !isOutOfCurrentMonth,
+                                                            'bg-primery' : origin || destination ,
+                                                            'border border-gray-500' : isToday  ,
+                                                            'text-red-400' : isFri && !isOutOfCurrentMonth,
+                                                            'text-red-200' : isFri && isOutOfCurrentMonth,
+                                                            'text-black' : !isFri && !isOutOfCurrentMonth,
+                                                            'text-gray-400' : !isFri && isOutOfCurrentMonth,
+                                                        }" x-text="formatedDate">
 
                                                         </span>
                                                     </div>
@@ -1181,13 +1201,15 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 <div data-wow-delay="0s"
-                    class="h-60 wow animate__fadeIn  col-span-1 sm:col-span-2 mt-2 mx-5 sm:m-0 rounded-3xl relative overflow-hidden">
+                    class="bi-blog-cell h-60 wow animate__fadeIn  col-span-1 sm:col-span-2 mt-2 mx-5 sm:m-0 rounded-3xl relative overflow-hidden">
                     <img class="w-full h-full object-cover" src="img/blog/image-12.png" alt="" />
                     <div
                         class="w-full h-full bg-gradient-to-t from-black to-transparent absolute inset-0 flex flex-col text-rtl">
                         <p class="mt-auto text-white m-6">
-                            اطلاعات کلی درباره شهر انتالیا
+                            اطلاعات کلی درباره شهر انتالیا 3
                         </p>
+                        <div class="bi-blog-cell--overlay bg-black absolute bg-opacity-50 top-0 left-0 w-full h-full">
+                        </div>
                     </div>
                 </div>
 
@@ -1248,7 +1270,112 @@
                 </h3>
             </div>
 
-            <template x-for="(item , inx) in items">
+            <!-- LOOP Here -->
+            <div class="js-faq-item bg-white shadow-xl mt-4 px-4 py-3 flex text-rtl items-start gap-3 rounded-2xl">
+                <button class="w-8 h-8 rounded-full bg-gray-50 drop-shadow-md shadow-black">
+                    <img class="ease-out duration-300 w-full h-full p-2" src="svg/chevron-down.svg" alt="" />
+                </button>
+
+                <p class="w-full js-faq-excerpt">ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                    از
+                    طراحان گرافیک
+                    است</p>
+
+                <p style="display: none;" class="js-faq-body w-full">
+                    چاپگرها
+                    و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
+                    و
+                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال
+                    و
+                    آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
+                    رایانه
+                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت
+                    که
+                    تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
+                    حروفچینی
+                    دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                </p>
+            </div>
+
+            <div class="js-faq-item bg-white shadow-xl mt-4 px-4 py-3 flex text-rtl items-start gap-3 rounded-2xl">
+                <button class="w-8 h-8 rounded-full bg-gray-50 drop-shadow-md shadow-black">
+                    <img class="ease-out duration-300 w-full h-full p-2" src="svg/chevron-down.svg" alt="" />
+                </button>
+
+                <p class="w-full js-faq-excerpt">ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                    از
+                    طراحان گرافیک
+                    است</p>
+
+                <p style="display: none;" class="js-faq-body w-full">
+                    چاپگرها
+                    و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
+                    و
+                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال
+                    و
+                    آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
+                    رایانه
+                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت
+                    که
+                    تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
+                    حروفچینی
+                    دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                </p>
+            </div>
+
+            <div class="js-faq-item bg-white shadow-xl mt-4 px-4 py-3 flex text-rtl items-start gap-3 rounded-2xl">
+                <button class="w-8 h-8 rounded-full bg-gray-50 drop-shadow-md shadow-black">
+                    <img class="ease-out duration-300 w-full h-full p-2" src="svg/chevron-down.svg" alt="" />
+                </button>
+
+                <p class="w-full js-faq-excerpt">ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                    از
+                    طراحان گرافیک
+                    است</p>
+
+                <p style="display: none;" class="js-faq-body w-full">
+                    چاپگرها
+                    و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
+                    و
+                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال
+                    و
+                    آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
+                    رایانه
+                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت
+                    که
+                    تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
+                    حروفچینی
+                    دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                </p>
+            </div>
+
+            <div class="js-faq-item bg-white shadow-xl mt-4 px-4 py-3 flex text-rtl items-start gap-3 rounded-2xl">
+                <button class="w-8 h-8 rounded-full bg-gray-50 drop-shadow-md shadow-black">
+                    <img class="ease-out duration-300 w-full h-full p-2" src="svg/chevron-down.svg" alt="" />
+                </button>
+
+                <p class="w-full js-faq-excerpt">ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده
+                    از
+                    طراحان گرافیک
+                    است</p>
+
+                <p style="display: none;" class="js-faq-body w-full">
+                    چاپگرها
+                    و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
+                    و
+                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال
+                    و
+                    آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
+                    رایانه
+                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت
+                    که
+                    تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
+                    حروفچینی
+                    دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                </p>
+            </div>
+
+            <template x-for="(item , inx) in items" :key="item.id">
                 <div :class="selected === inx ? 'border border-yellow-400 ' : '' "
                     class="bg-white shadow-xl mt-4 px-4 py-3 flex text-rtl items-start gap-3 rounded-2xl">
                     <button @click="selected === inx ? selected = -1 : selected = inx"
@@ -1383,71 +1510,7 @@
 
     <script src="js/components/navbar.js"></script>
     <script src="js/pages/index.js"></script>
-    <script>
 
-        // i fix this later 👇👇👇👇
-
-        const alpineFAQs = {
-
-            selected: -1,
-            items: [
-                {
-                    excerpt: `              ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.`,
-                    body: `                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                        چاپگرها
-                        و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-                        و
-                        کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال
-                        و
-                        آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
-                        رایانه
-                        ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت
-                        که
-                        تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
-                        حروفچینی
-                        دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                    `,
-                },
-                {
-                    excerpt: `              ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.`,
-                    body: `                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                        چاپگرها
-                        و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-                        و
-                        کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال
-                        و
-                        آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
-                        رایانه
-                        ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت
-                        که
-                        تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
-                        حروفچینی
-                        دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                    `,
-                },
-                {
-                    excerpt: `              ورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.`,
-                    body: `                 لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
-                        چاپگرها
-                        و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
-                        و
-                        کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال
-                        و
-                        آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان
-                        رایانه
-                        ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت
-                        که
-                        تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل
-                        حروفچینی
-                        دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-                    `,
-                },
-            ],
-        };
-
-
-
-    </script>
 </body>
 
 </html>

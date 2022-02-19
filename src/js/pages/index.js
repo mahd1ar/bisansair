@@ -59,7 +59,78 @@ window.addEventListener('load', function () {
 
 
 
-var fligthPicker = {
+/**
+ * 
+ * @param {number} jy year
+ * @param {number} jm month
+ * @param {number} jd day
+ * @returns {number} 
+ */
+function shamsi_to_epoch(jy, jm, jd) {
+    const [gy, gm, gd] = jalali_to_gregorian(jy, jm, jd)
+    return gregorian_to_epoch(gy, gm, gd)
+}
+
+/**
+ * 
+ * @param {number} gy year
+ * @param {number} gm month
+ * @param {number} gd day
+ * @returns {number} 
+ */
+function gregorian_to_epoch(gy, gm, gd) {
+    const d = new Date(`${gm} ${gd} ${gy}`);
+    return d.getTime()
+}
+
+/**
+ * 
+ * @param {number} en_candidateMonth 
+ * @param {number} en_candidateYear 
+ * @returns 
+ */
+function en_getMounthLength(en_candidateMonth, en_candidateYear) {
+
+    if (!en_candidateYear) {
+        en_candidateYear = new Date().getFullYear()
+    }
+
+    if (en_candidateMonth < 1) {
+        en_candidateMonth = en_candidateMonth + 12
+        en_candidateYear--
+    }
+
+    let nextMonth = en_candidateMonth + 1
+    let nextYear = en_candidateYear
+
+
+
+    if (nextMonth > 12) {
+
+        nextMonth = nextMonth % 12;
+        nextYear++
+    }
+
+    return ~~((new Date(`${nextMonth} 1 ${nextYear}`) - new Date(`${en_candidateMonth} 1 ${en_candidateYear}`)) / 1000 / 3600 / 24)
+}
+
+function fa_getMounthLength(fa_candidateMonth, fa_candidateYear) {
+    if (fa_candidateMonth > 12)
+        fa_candidateMonth = fa_candidateMonth % 12
+
+    if (fa_candidateMonth < 1)
+        fa_candidateMonth = fa_candidateMonth + 12
+
+    if (fa_candidateMonth < 7) return 31
+    else
+        return fa_candidateMonth === 12 ? fa_candidateYear % 4 === 3 ? 30 : 29 : 30
+}
+
+
+
+
+
+const fligthPicker = {
     showMem: false,
     showFrom: false,
     showDatePicker: false,
@@ -81,8 +152,8 @@ var fligthPicker = {
 
         this.showDatePicker = !this.showDatePicker
     },
-    days: ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج'],
-    items: new Array(35).fill(0).map((_, i) => i),
+
+
     travelers: [
         {
             type: "adult",
@@ -118,90 +189,396 @@ var fligthPicker = {
             String(v).toIndiaDigits() + "نفر"
             : " نفرات"
     },
+    datePicker: {
+        get weekDays() {
+
+            return this.mode ?
+                ['Sa', 'Su', 'M', 'T', 'W', 'T', 'F']
+                :
+                ['ش', 'ی', 'د', 'س', 'چ', 'پ', 'ج']
+        },
+        get formattedFirstDayOftravel() {
+
+            const dot = this.firstDayOftravel
+            if (!dot)
+                return ""
+
+            return this.mode ? dot.map((i, inx) => inx === 1 ? this.formateMonth(i) : i).join(" ")
+                : dot.reverse().map((i, inx) => (inx == 1) ? this.formateMonth(i) : String(i).toIndiaDigits()).join(" ");
+
+        },
+        get formattedLastDayOftravel() {
+
+            const dot = this.lastDayOftravel
+            if (!dot)
+                return ""
+
+            return this.mode ? dot.map((i, inx) => inx === 1 ? this.formateMonth(i) : i).join(" ")
+                : dot.reverse().map((i, inx) => (inx == 1) ? this.formateMonth(i) : String(i).toIndiaDigits()).join(" ");
+
+        },
+        get firstDayOftravel() {
+            if (this._firstDayOftravel_epoch === 0)
+                return null
+
+            const date = new Date(this._firstDayOftravel_epoch)
+            const day = date.getDate(),
+                month = date.getMonth() + 1,
+                year = date.getFullYear();
+
+            return (this.mode) ? [year, month, day] : gregorian_to_jalali(year, month, day);
+
+
+        },
+        get lastDayOftravel() {
+            if (this._lastDayOftravel_epoch === 0)
+                return null
+
+            const date = new Date(this._lastDayOftravel_epoch),
+                day = date.getDate(),
+                month = date.getMonth() + 1,
+                year = date.getFullYear();
+
+            return (this.mode) ? [year, month, day] : gregorian_to_jalali(year, month, day)
+
+
+        },
+        _firstDayOftravel_epoch: 0, // Y-M-D
+        _lastDayOftravel_epoch: 0,
+
+        mode: 0, // 0 for shamsi 1 for miladi,
+        modeLabel: [
+            "شمسی",
+            "میلادی"
+        ],
+        en_today: 16,
+        en_candidateMonth: 2, // Feb
+        en_candidateYear: 2022,
+        fa_today: 27,
+        fa_candidateMonth: 11, // bahman
+        fa_candidateYear: 1400,
+
+        pick(day) {
+
+            const month = this.mode ? this.en_candidateMonth : this.fa_candidateMonth;
+            const year = this.mode ? this.en_candidateYear : this.fa_candidateYear;
+            const unixtime = this.mode ? gregorian_to_epoch(year, month, day) : shamsi_to_epoch(year, month, day);
+
+            if (this._firstDayOftravel_epoch && this._lastDayOftravel_epoch) {
+                this._firstDayOftravel_epoch = this._lastDayOftravel_epoch = 0
+                return
+            }
+
+            if (this._firstDayOftravel_epoch === 0) {
+
+                this._firstDayOftravel_epoch = unixtime;
+                console.log(this._firstDayOftravel_epoch)
+            } else {
+
+                if (unixtime < this._firstDayOftravel_epoch)
+                    this._firstDayOftravel_epoch = 0
+                else
+                    this._lastDayOftravel_epoch = unixtime
+
+            }
+
+
+            // is it 
+        },
+        nextMonth() {
+            if (++this.fa_candidateMonth > 12) {
+
+                this.fa_candidateMonth %= 12
+                this.fa_candidateYear++
+            }
+
+            if (++this.en_candidateMonth > 12) {
+                this.en_candidateMonth %= 12
+                this.en_candidateYear++
+            }
+
+        },
+        prevMonth() {
+            if (--this.fa_candidateMonth < 1) {
+
+                this.fa_candidateMonth += 12
+                this.fa_candidateYear--
+            }
+
+            if (--this.en_candidateMonth < 1) {
+                this.en_candidateMonth += 12
+                this.en_candidateYear--
+            }
+
+        },
+        get candidateFullDate() {
+            const months = this.mode ?
+                ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                :
+                [
+                    "فروردین",
+                    "اردیبهشت",
+                    "خرداد",
+                    "تیر",
+                    "مرداد",
+                    "شهریور",
+                    "مهر",
+                    "آبان",
+                    "آذر",
+                    "دی",
+                    "بهمن",
+                    "اسفند"]
+
+
+            if (this.mode) {
+
+                return [this.en_candidateYear, months[this.en_candidateMonth - 1], this.en_today]
+            } else {
+                return [String(this.fa_candidateYear).toIndiaDigits(), months[this.fa_candidateMonth - 1], String(this.fa_today).toIndiaDigits()]
+
+            }
+        },
+
+        formateMonth(monthNum) {
+            const months = this.mode ?
+                ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                :
+                [
+                    "فروردین",
+                    "اردیبهشت",
+                    "خرداد",
+                    "تیر",
+                    "مرداد",
+                    "شهریور",
+                    "مهر",
+                    "آبان",
+                    "آذر",
+                    "دی",
+                    "بهمن",
+                    "اسفند"]
+
+            return months[monthNum - 1]
+
+        },
+        get days() {
+
+
+            const cal = new Array(6).fill(0).map(() => new Array(7).fill(0))
+
+            // if shamsi {
+            if (this.mode === 0) {
+
+                const lengthOfMounth = fa_getMounthLength(this.fa_candidateMonth, this.fa_candidateYear);
+
+                const firstDay_miladi = jalali_to_gregorian(this.fa_candidateYear, this.fa_candidateMonth, 1);
+
+                // just formating...
+                for (let i = 0; i < 3; i++) {
+
+                    firstDay_miladi[i] = firstDay_miladi[i] < 10 ? `0${firstDay_miladi[i]}` : String(firstDay_miladi[i])
+                }
+
+                const firstDayOfMounth = `${firstDay_miladi[1]} ${firstDay_miladi[2]} ${firstDay_miladi[0]}`
+                const firstDayInWeek = (new Date(firstDayOfMounth).getDay() + 1) % 7
+
+                cal[0][firstDayInWeek] = 1;
+
+                const flatCal = cal.flat()
+                let counter = 1
+                for (let i = flatCal.indexOf(1); i < flatCal.length; i++) {
+
+                    flatCal[i] = counter++
+                    if (counter > lengthOfMounth) {
+                        counter = 1
+                    }
+                }
+
+                counter = fa_getMounthLength(this.fa_candidateMonth - 1, this.fa_candidateYear);
+
+                for (let i = flatCal.indexOf(1) - 1; -1 < i; i--) {
+
+                    flatCal[i] = counter--
+
+                }
+
+                let monthIsBegan = false;
+                let monthIsEnded = false;
+                const fdot = this.firstDayOftravel,
+                    ldot = this.lastDayOftravel
+
+                for (let i = 0; i < flatCal.length; i++) {
+
+                    const a = {
+                        origin: false,
+                        destination: false,
+                        inRange: false,
+                        isOutOfCurrentMonth: true,
+                        isToday: false,
+                        date: flatCal[i],
+                        formatedDate: String(flatCal[i]).toIndiaDigits(),
+                        isFri: false,
+                        calcStyle: ""
+                    }
+
+                    if ((i + 1) % 7 === 0) {
+                        a.isFri = true;
+                    }
+
+
+                    if (monthIsBegan && flatCal[i - 1].date === fa_getMounthLength(this.fa_candidateMonth, this.fa_candidateYear)) {
+
+                        monthIsEnded = true
+                    }
+
+                    if (flatCal[i] === 1)
+                        monthIsBegan = true
+
+                    if (monthIsBegan && !monthIsEnded) {
+                        a.isOutOfCurrentMonth = false
+
+                        if (this.fa_today === flatCal[i])
+                            a.isToday = true
+
+
+                        if (fdot && this.fa_candidateMonth === fdot[1] && this.fa_candidateYear === fdot[0] && flatCal[i] === fdot[2])
+                            a.origin = true
+
+
+                        if (ldot && this.fa_candidateMonth === ldot[1] && this.fa_candidateYear === ldot[0] && flatCal[i] === ldot[2]) {
+                            a.destination = true
+
+                        }
+                    }
+
+
+
+                    flatCal[i] = a
+                }
+
+                if (this._lastDayOftravel_epoch && this._firstDayOftravel_epoch) {
+
+                    const startedDay = flatCal.find(i => i.origin) ? flatCal.find(i => i.origin).date : null
+                        , endedDay = flatCal.find(i => i.destination) ? flatCal.find(i => i.destination).date : null
+
+                    if (startedDay && endedDay) {
+
+                        flatCal.forEach(j => {
+                            if (j.isOutOfCurrentMonth === false && startedDay < j.date && j.date < endedDay)
+                                j.inRange = true;
+                        })
+                    } else if (startedDay) {
+                        flatCal.forEach(j => {
+                            if (j.isOutOfCurrentMonth === false && startedDay < j.date)
+                                j.inRange = true;
+                        })
+
+                    } else {
+                        flatCal.forEach(j => {
+                            if (j.isOutOfCurrentMonth === false && j.date < endedDay)
+                                j.inRange = true;
+                        })
+                    }
+
+
+                }
+
+                return flatCal
+            }
+            else {
+
+                const lengthOfMounth = en_getMounthLength(this.en_candidateMonth, this.en_candidateYear);
+
+                const firstDayOfMounth = `${this.en_candidateMonth} 1 ${this.en_candidateYear}`
+                const firstDayInWeek = (new Date(firstDayOfMounth).getDay() + 1) % 7
+
+                cal[0][firstDayInWeek] = 1;
+
+                const flatCal = cal.flat()
+                let counter = 1
+                for (let i = flatCal.indexOf(1); i < flatCal.length; i++) {
+
+                    flatCal[i] = counter++
+                    if (counter > lengthOfMounth) {
+                        counter = 1
+                    }
+                }
+
+                counter = en_getMounthLength(this.en_candidateMonth - 1, this.en_candidateYear);
+
+                for (let i = flatCal.indexOf(1) - 1; -1 < i; i--) {
+
+                    flatCal[i] = counter--
+
+                }
+
+                let monthIsBegan = false;
+                let monthIsEnded = false;
+
+                const fdot = this.firstDayOftravel
+                const ldot = this.lastDayOftravel
+
+                for (let i = 0; i < flatCal.length; i++) {
+
+                    const a = {
+                        origin: false,
+                        destination: false,
+                        isOutOfCurrentMonth: true,
+                        isToday: false,
+                        date: flatCal[i],
+                        formatedDate: flatCal[i],
+                        isFri: false,
+                        calcStyle: ""
+                    }
+
+                    if ((i + 1) % 7 === 0) {
+                        a.isFri = true;
+                    }
+
+
+                    if (monthIsBegan && flatCal[i - 1].date === en_getMounthLength(this.en_candidateMonth, this.en_candidateYear))
+                        monthIsEnded = true
+
+
+                    if (flatCal[i] === 1)
+                        monthIsBegan = true
+
+                    if (monthIsBegan && !monthIsEnded) {
+                        a.isOutOfCurrentMonth = false
+
+                        if (this.en_today === flatCal[i])
+                            a.isToday = true
+
+
+                        if (fdot && this.en_candidateMonth === fdot[1] && this.en_candidateYear === fdot[0] && flatCal[i] === fdot[2])
+                            a.origin = true
+
+
+                        if (ldot && this.en_candidateMonth === ldot[1] && this.en_candidateYear === ldot[0] && flatCal[i] === ldot[2])
+                            a.destination = true
+                    }
+
+
+
+
+                    flatCal[i] = a
+                }
+                console.log(flatCal)
+                return flatCal
+            }
+        }
+    },
     init() {
-        const cal = new Array(6).fill(0).map(() => new Array(7).fill(0))
 
-        const today_miladi = {
-            d: new Date().getDate(),
-            m: new Date().getMonth() + 1,
-            y: new Date().getFullYear(),
-        }
-
-        const today_shamsi = gregorian_to_jalali(today_miladi.y, today_miladi.m, today_miladi.d)
-
-        const lengthOfMounth = getMounthLength(today_shamsi[1]);
-
-        const firstDay_miladi = jalali_to_gregorian(today_shamsi[0], today_shamsi[1], 1);
-
-        for (let i = 0; i < 3; i++) {
-
-            firstDay_miladi[i] = firstDay_miladi[i] < 10 ? `0${firstDay_miladi[i]}` : String(firstDay_miladi[i])
-        }
-
-        const firstDayOfMounth = `${firstDay_miladi[1]} ${firstDay_miladi[2]} ${firstDay_miladi[0]}`
-        const firstDayInWeek = (new Date(firstDayOfMounth).getDay() + 1) % 7
-
-        cal[0][firstDayInWeek] = 1;
-
-        const flatCal = cal.flat()
-        let counter = 1
-        for (let i = flatCal.indexOf(1); i < flatCal.length; i++) {
-
-            flatCal[i] = counter++
-            if (counter > lengthOfMounth) {
-                counter = 1
-            }
-        }
-
-        counter = getMounthLength(today_shamsi[1] - 1);
-
-        for (let i = flatCal.indexOf(1) - 1; -1 < i; i--) {
-
-            flatCal[i] = counter--
-
-        }
-
-        let monthIsBegan = false;
-        let monthIsEnded = false;
-        for (let i = 0; i < flatCal.length; i++) {
-
-            const a = {
-                origin: false,
-                destination: false,
-                isOutOfCurrentMonth: true,
-                isToday: false,
-                date: flatCal[i],
-                isFri: false,
-                calcStyle: ""
-            }
-
-            if ((i + 1) % 7 === 0) {
-                a.isFri = true;
-            }
-
-            if (flatCal[i] === 1)
-                monthIsBegan = true
-
-            if (monthIsBegan && flatCal[i] === getMounthLength(today_shamsi[1]))
-                monthIsEnded = true
-
-            if (monthIsBegan && !monthIsEnded) {
-                a.isOutOfCurrentMonth = false
-
-                if (today_shamsi[2] === flatCal[i])
-                    a.isToday = true
-            }
-
-
-
-            flatCal[i] = a
-        }
-
-        this.items.splice(0, this.items.length)
-        flatCal.forEach(i => {
-
-            this.items.push(i)
-        })
+        const d = new Date()
+        const today_miladi = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
+        const today_shamsi = gregorian_to_jalali(today_miladi[0], today_miladi[1], today_miladi[2])
+        console.log(today_shamsi)
+        this.datePicker.en_today = today_miladi[2];
+        this.datePicker.en_candidateMonth = today_miladi[1];
+        this.datePicker.en_candidateYear = today_miladi[0];
+        this.datePicker.fa_today = today_shamsi[2]
+        this.datePicker.fa_candidateMonth = today_shamsi[1]
+        this.datePicker.fa_candidateYear = today_shamsi[0]
 
     }
 
@@ -211,7 +588,10 @@ var fligthPicker = {
 }
 
 
-var alpineCloud = {
+
+
+
+const alpineCloud = {
 
     clouds: [],
     mouseX: 0,
@@ -241,3 +621,23 @@ var alpineCloud = {
 
 
 }
+
+
+const alpineFAQs = {
+
+    init() {
+        const items = []
+        let id = 0
+        this.$root.querySelectorAll(".js-faq-item").forEach(element => {
+            const excerpt = element.querySelector(".js-faq-excerpt").innerHTML.replace(/\s+/g, ' ').trim()
+            const body = element.querySelector(".js-faq-body").innerHTML.replace(/\s+/g, ' ').trim()
+            items.push({ excerpt, body, id: id++ })
+            element.remove()
+        });
+        items.forEach(i => {
+            this.items.push(i)
+        })
+    },
+    selected: -1,
+    items: [],
+};

@@ -1,6 +1,7 @@
 
+
+
 var navbar = {
-    // isOpen: false,
     _isOpen: false,
     get isOpen() {
         return this._isOpen
@@ -12,40 +13,50 @@ var navbar = {
         this._isOpen = input
     },
     menu: [],
-    subMenu: -1,
+    subMenu: [],
+    tree: {},
+
     init() {
         // console.log(this.$refs.item.innerText)
 
-        let counter = 0;
-        this
-            .$refs
-            .mitem
-            .querySelectorAll('li.js-item-parent').forEach(i => {
-                const m = { index: counter++ };
-                m.text = i.querySelector('a').childNodes[0].textContent.trim();
-                m.children = [];
-                // debugger
-                i.querySelectorAll("ul.js-item-child li").forEach(j => {
-                    const n = { index: counter++ }
-                    n.text = j.querySelector('a').childNodes[0].textContent.trim()
-                    n.href = i.querySelector('a').href
-                    m.children.push(n)
-                })
+        function traverse(el, index = 0) {
+            // debugger
+            const t = {}
+            const name = el.querySelector(":scope > a");
+            const els = el.querySelectorAll(":scope > ul > li");
 
-                if (m.children.length === 0) {
-                    m.href = i.querySelector('a').href;
-                }
+            t.hasChildren = els.length > 0 ? true : false;
+            t.name = name ? name.innerHTML.replace(/\s+/g, ' ').trim() : "ROOT";
+            t.link = name ? name.href : "#";
+            t.children = [];
 
-                // console.log(m)
-                this.menu.push(m)
-            })
+            index++
 
-        this.$refs.mitem.remove()
-        console.log(this.menu)
+            for (let i = 0; i < els.length; i++) {
+
+                t.children.push(traverse(els[i], index))
+            }
+
+            return t
+
+        }
+
+        const el = document.querySelector(".menu-top_menu-container")
+
+        this.tree = traverse(el, 0,)
+    },
+    get ch() {
+        let l = this.tree.children
+
+        for (let i = 0; i < this.subMenu.length; i++)
+            l = l[this.subMenu[i]].children
+
+        return l
     },
     taggleMobileMenu() {
-        if (this.subMenu !== -1)
-            this.subMenu = -1
+        if (this.subMenu.length !== 0)
+            this.subMenu.splice(0, this.subMenu.length)
+
 
         this.isOpen = !this.isOpen
 
@@ -57,11 +68,5 @@ var navbar = {
                 this.subMenu = -1
             }, 60 * 1000);
     },
-    get currentCategory() {
-        return this.subMenu === -1 ?
-            'منو'
-            :
-            this.menu[this.subMenu].text
 
-    }
 }

@@ -122,3 +122,20 @@
 		}
 	}
 }
+
+.bi-blog-cell {
+	.bi-blog-cell--overlay {
+		transition: all ease-in-out 300ms;
+		opacity: 0;
+	}
+	img {
+		transition: all ease-in-out 300ms;
+		transform: scale(1);
+	}
+	&:hover .bi-blog-cell--overlay {
+		opacity: 1;
+	}
+	&:hover img {
+		transform: scale(2);
+	}
+}
