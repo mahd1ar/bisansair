@@ -29,7 +29,7 @@
 
     <header class="relative top-0 bg-gradient-to-b from-[#92F2FF] to-white pt-5 z-20">
 
-        <nav id="navigation" x-data="navbar" class="lg:max-w-[1104px] container mx-auto">
+        <nav id="navigation" x-data="navbar" class="lg:max-w-[1104px] container mx-auto overflow-x-clip">
 
 
 
@@ -225,19 +225,7 @@
             <!-- / -->
         </nav>
 
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="relative flex justify-center items-center h-screen overflow-x-clip lg:-z-10 ">
+        <div class="relative flex justify-center items-center h-screen overflow-x-clip md:-z-10 ">
             <div id="yellow_gradient"
                 class="hidden md:block absolute -z-10 h-full bottom-0 w-full bg-gradient-radial from-yellow-200 via-yellow-50 to-transparent">
             </div>
@@ -883,7 +871,8 @@
             <div class=" flex justify-evenly flex-wrap">
 
                 <div data-wow-delay="0s" class="wow animate__fadeIn font-iransans w-1/2 sm:w-1/3 p-6 md:p-3 mt-5">
-                    <img class="mx-auro inline-block" src="svg/services/Frame-0.svg" alt="" />
+                    <img class="mx-auro inline-block h-44 object-contain object-bottom " src="svg/services/Frame-0.svg"
+                        alt="" />
 
                     <h2 class="font-bold text-lg mt-10">
                         پشتیبانی 24 ساعته
@@ -896,7 +885,8 @@
                     </p>
                 </div>
                 <div data-wow-delay="0.1s" class="wow animate__fadeIn font-iransans w-1/2 sm:w-1/3 p-6 md:p-3 mt-5">
-                    <img class="mx-auro inline-block" src="svg/services/Frame-1.svg" alt="" />
+                    <img class="mx-auro inline-block h-44 object-contain object-bottom" src="svg/services/Frame-1.svg"
+                        alt="" />
                     <h2 class="font-bold text-lg mt-10">
                         آخرین قیمت را از ما بگیرید
 
@@ -909,7 +899,8 @@
                     </p>
                 </div>
                 <div data-wow-delay="0.2s" class="wow animate__fadeIn font-iransans w-1/2 sm:w-1/3 p-6 md:p-3 mt-5">
-                    <img class="mx-auro inline-block" src="svg/services/Frame-2.svg" alt="" />
+                    <img class="mx-auro inline-block h-44 object-contain object-bottom" src="svg/services/Frame-2.svg"
+                        alt="" />
 
                     <h2 class="font-bold text-lg mt-10">آسوده سفر کنید</h2>
 
@@ -920,7 +911,8 @@
                     </p>
                 </div>
                 <div data-wow-delay="0.3s" class="wow animate__fadeIn font-iransans w-1/2 sm:w-1/3 p-6 md:p-3 mt-5">
-                    <img class="mx-auro inline-block" src="svg/services/Frame-3.svg" alt="" />
+                    <img class="mx-auro inline-block h-44 object-contain object-bottom" src="svg/services/Frame-3.svg"
+                        alt="" />
 
                     <h2 class="font-bold text-lg mt-10">رضایت مشتری</h2>
 
@@ -931,7 +923,8 @@
                     </p>
                 </div>
                 <div data-wow-delay="0.4s" class="wow animate__fadeIn font-iransans w-1/2 sm:w-1/3 p-6 md:p-3 mt-5">
-                    <img class="mx-auro inline-block" src="svg/services/Frame-4.svg" alt="" />
+                    <img class="mx-auro inline-block h-44 object-contain object-bottom" src="svg/services/Frame-4.svg"
+                        alt="" />
 
                     <h2 class="font-bold text-lg mt-10">مجری تور های ترکیبی</h2>
 
@@ -942,7 +935,8 @@
                     </p>
                 </div>
                 <div data-wow-delay="0.5s" class="wow animate__fadeIn font-iransans w-1/2 sm:w-1/3 p-6 md:p-3 mt-5">
-                    <img class="mx-auro inline-block" src="svg/services/Frame-5.svg" alt="" />
+                    <img class="mx-auro inline-block h-44 object-contain object-bottom" src="svg/services/Frame-5.svg"
+                        alt="" />
 
                     <h2 class="font-bold text-lg mt-10">سرعت در اخذ ویزا</h2>
 
@@ -991,11 +985,11 @@
             <div
                 class="js-swappable flex justify-center sm:justify-between w-full h-[323px] md:h-[430px] sm:w-1/2 relative ">
                 <button
-                    class="js-next bi-primary-pill absolute top-1/2 2xl:-right-20 lg:-right-20 sm:-right-12 right-0 z-10">
+                    class="js-next bi-primary-pill absolute top-1/2 2xl:-right-20 lg:-right-20 sm:-right-12 right-0 z-20">
                     <img src="svg/chevron-rigth.svg" alt="" />
                 </button>
 
-                <button class="js-prv bi-primary-pill absolute top-1/2 2xl:right-1/2 lg:right-96 z-10">
+                <button class="js-prv bi-primary-pill absolute top-1/2 2xl:right-1/2 lg:right-96 z-20">
                     <img src="svg/chevron-left.svg" alt="" />
                 </button>
 
@@ -1208,49 +1202,62 @@
                         <p class="mt-auto text-white m-6">
                             اطلاعات کلی درباره شهر انتالیا 3
                         </p>
-                        <div class="bi-blog-cell--overlay bg-black absolute bg-opacity-50 top-0 left-0 w-full h-full">
+                        <div class="bi-blog-cell--overlay ">
+                            <a href="#">ادامه مطلب</a>
                         </div>
                     </div>
                 </div>
 
                 <div data-wow-delay="0.2s"
-                    class=" h-60 wow animate__fadeIn  mt-2 mx-5 sm:m-0 rounded-3xl relative overflow-hidden">
+                    class="bi-blog-cell h-60 wow animate__fadeIn  mt-2 mx-5 sm:m-0 rounded-3xl relative overflow-hidden">
                     <img class="w-full h-full object-cover" src="img/blog/image-11.png" alt="" />
                     <div
                         class="w-full h-full bg-gradient-to-t from-black to-transparent absolute inset-0 flex flex-col text-rtl">
                         <p class="mt-auto text-white m-6">
                             اطلاعات کلی درباره شهر انتالیا
                         </p>
+                        <div class="bi-blog-cell--overlay ">
+                            <a href="#">ادامه مطلب</a>
+                        </div>
                     </div>
                 </div>
                 <div data-wow-delay="0.4s"
-                    class="h-60 wow animate__fadeIn  mt-2 mx-5 sm:m-0 rounded-3xl relative overflow-hidden">
+                    class="bi-blog-cell h-60 wow animate__fadeIn  mt-2 mx-5 sm:m-0 rounded-3xl relative overflow-hidden">
                     <img class="w-full h-full object-cover" src="img/blog/image-8.png" alt="" />
                     <div
                         class="w-full h-full bg-gradient-to-t from-black to-transparent absolute inset-0 flex flex-col text-rtl">
                         <p class="mt-auto text-white m-6">
                             اطلاعات کلی درباره شهر انتالیا
                         </p>
+                        <div class="bi-blog-cell--overlay ">
+                            <a href="#">ادامه مطلب</a>
+                        </div>
                     </div>
                 </div>
                 <div data-wow-delay="0.6s"
-                    class="h-60 wow animate__fadeIn  mt-2 mx-5 sm:m-0 rounded-3xl relative overflow-hidden">
+                    class="bi-blog-cell h-60 wow animate__fadeIn  mt-2 mx-5 sm:m-0 rounded-3xl relative overflow-hidden">
                     <img class="w-full h-full object-cover" src="img/blog/image-9.png" alt="" />
                     <div
                         class="w-full h-full bg-gradient-to-t from-black to-transparent absolute inset-0 flex flex-col text-rtl">
                         <p class="mt-auto text-white m-6">
                             اطلاعات کلی درباره شهر انتالیا
                         </p>
+                        <div class="bi-blog-cell--overlay ">
+                            <a href="#">ادامه مطلب</a>
+                        </div>
                     </div>
                 </div>
                 <div data-wow-delay="0.8s"
-                    class="h-60 wow animate__fadeIn  mt-2 mx-5 sm:m-0 rounded-3xl relative overflow-hidden">
+                    class="bi-blog-cell h-60 wow animate__fadeIn  mt-2 mx-5 sm:m-0 rounded-3xl relative overflow-hidden">
                     <img class="w-full h-full object-cover" src="img/blog/image-10.png" alt="" />
                     <div
                         class="w-full h-full bg-gradient-to-t from-black to-transparent absolute inset-0 flex flex-col text-rtl">
                         <p class="mt-auto text-white m-6">
                             اطلاعات کلی درباره شهر انتالیا
                         </p>
+                        <div class="bi-blog-cell--overlay ">
+                            <a href="#">ادامه مطلب</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1261,7 +1268,7 @@
         </div>
     </section>
 
-    <section x-data="alpineFAQs" class="my-36">
+    <section x-data="alpineFAQs" class="mt-36 mb-16">
         <div class="container mx-auto">
             <div class="bi-headline_intro">
                 <h2 class="bi-headline_title">سوالات متداول</h2>
@@ -1387,7 +1394,8 @@
 
                     <p x-text="item.excerpt" x-show="selected !== inx" class="w-full"></p>
 
-                    <p x-text="item.body" x-show="selected === inx" class="w-full"></p>
+                    <p x-text="item.body" x-show="selected === inx"
+                        class="w-full transition ease-in duration-200 overflow-hidden"></p>
                 </div>
             </template>
 
@@ -1455,11 +1463,40 @@
     </div>
     <footer id="footer">
 
-        <!-- <img class="absolute w-full bottom-0 z-0 left-0" src="img/footer.jpg" alt="" /> -->
+        <img class="absolute sm:hidden w-full bottom-0 z-0 left-0" src="img/footer-clouds-2.png" alt="" />
         <div class="footer__cols">
 
             <div class="footer__col">
-                <ul class="list-disc">
+                <ul class="list-none sm:list-disc text-center sm:text-right  list-inside marker:text-black">
+                    <li>
+                        <a href="">
+                            درباره ما
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            تماس با ما
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            چرا بیسان سیر
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            باشگاه مشتریان
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            قوانین و مقررات
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <ul class="list-none sm:list-disc text-center sm:text-right list-inside marker:text-black">
                     <li>درباره ما</li>
                     <li>تماس با ما</li>
                     <li>چرا بیسان سیر</li>
@@ -1468,27 +1505,31 @@
                 </ul>
             </div>
             <div class="footer__col">
-                <ul class="list-disc">
-                    <li>درباره ما</li>
-                    <li>تماس با ما</li>
-                    <li>چرا بیسان سیر</li>
-                    <li>باشگاه مشتریان</li>
-                    <li>قوانین و مقررات</li>
-                </ul>
-            </div>
-            <div class="footer__col">
-                <ul>
-                    <li>درباره ما</li>
-                    <li>تماس با ما</li>
-                    <li>چرا بیسان سیر</li>
-                    <li>باشگاه مشتریان</li>
-                    <li>قوانین و مقررات</li>
+                <ul dir="rtl" class="text-center sm:text-right">
+                    <li class="flex gap-2 items-start mb-2 justify-center sm:justify-start">
+                        <i class="w-5 hidden sm:block"><img class="w-full" src="svg/location.svg" alt=""></i>
+                        <span>
+                            خیابان شهید بهشتی،خیابان مهناز)صابونچی(،پلاک 85،طبقه 3،واحد 5
+                        </span>
+                    </li>
+                    <li class="flex gap-2 items-start mb-2 justify-center sm:justify-start">
+                        <i class="w-5 hidden sm:block"><img class="w-full" src="svg/phone-black.svg" alt=""></i>
+                        <a href="tel:43000040">
+                            43000040
+                        </a>
+                    </li>
+                    <li class="flex gap-2 items-start mb-2 justify-center sm:justify-start">
+                        <i class="w-5 hidden sm:block"><img class="w-full" src="svg/email.svg" alt=""></i>
+                        <a href="mailto:info@bisansair.com">
+                            info@bisansair.com
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
 
         <div class="footer__copy-write">
-            <span>
+            <span class="text-black sm:text-white">
                 گردشگری با مجموعه ای بی نظیر از هتل ها در تلاش است تا سفری آسوده و مطمین را برای شما عزیزان رقم بزند
             </span>
             <span class="bg-gray-500 rounded-2xl p-1 px-3">

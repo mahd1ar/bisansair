@@ -94,7 +94,7 @@ export default async (request: VercelRequest, response: VercelResponse) => {
         // wrap up
 
         let templateHtml = "[ Daily Report Bot ]\n\n" +
-            "🖥 Project name : <b>Bisansir</b>\n\n" +
+            "🖥 Project name : <b>#Bisansir</b>\n\n" +
             "⏰ <i>report time from toggl:</i>\n" +
             `<b> ${toggleReport.h} hours - ${toggleReport.m} minutes </b>\n\n` +
             "🚩 <i>last commit:</i>\n" +
