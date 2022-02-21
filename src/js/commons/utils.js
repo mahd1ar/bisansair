@@ -59,8 +59,17 @@ function debounce(func, timeout = 300) {
     };
 }
 
-      // function saveInput(e) {
-        //     const x =( window.scrollY + window.innerHeight ) - (main.clientHeight + main.offsetTop)
-        //     console.log(x)
-        // }
-        // const processChange = debounce((e) => saveInput(e));
+function respondToVisibility(element, callback) {
+    const options = {
+        // root: document.body,
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            callback(entry.intersectionRatio > 0);
+
+        });
+    }, options);
+
+    observer.observe(element);
+}

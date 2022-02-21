@@ -3,3 +3,4 @@ dist/
 .vercel
 debug.log
 src/css/output.css
+package-lock.json
