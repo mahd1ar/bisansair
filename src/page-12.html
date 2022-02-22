@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page 12 </title>
-    <link rel="stylesheet" href="css/output.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 12</title>
+    <link rel="stylesheet" href="css/output.css" />
 
     <script defer src="lib/js/alpine.js"></script>
 </head>
 
 <body>
     <!-- brake points debug -->
-    <div class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
+    <div class="fixed top-10 left-10 z-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
         <span class="hidden sm:block">sm</span>
         <span class="hidden md:block">md</span>
         <span class="hidden lg:block">lg</span>
@@ -22,407 +22,469 @@
     </div>
     <!-- /debug -->
 
-
     <header class="mb-10 pt-10">
         <!-- TRAVEL TEXTURE -->
-        <div class="absolute w-full top-0 bi-overlay-gradient-white overflow-hidden h-80"
-            style="background: url(svg/travel-textture/one.svg) center center/cover;">
-        </div>
+        <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+					background: url(svg/travel-textture/one.svg)
+						center center/cover;
+				"></div>
 
-
-
-
-        <nav id="navigation" x-data="navbar" class="lg:max-w-[1104px] container mx-auto overflow-x-clip">
-
-
-
+        <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
             <div
-                class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow z-20 relative">
-
+                class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                 <div class="flex">
                     <div
-                        class="w-32 bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 py-1 rounded-full flex-center flex-1">
-                        <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-                        <span class="mx-2 text-sm hidden md:block"> ۰۲۱-۳۴۵۶۴۸ </span>
+                        class="flex-center w-32 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                        <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                        <span class="mx-2 hidden text-sm md:block">
+                            ۰۲۱-۳۴۵۶۴۸
+                        </span>
                     </div>
 
-
                     <div class="menu-top_menu-container hidden md:block" ref="menuContainer">
-                        <ul id="menu-top_menu" class="menu ">
-                            <li class="menu-item   menu-item-has-children ">
+                        <ul id="menu-top_menu" class="menu">
+                            <li class="menu-item menu-item-has-children">
                                 <a href="http://hll.om/index.php/product/">تور</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item   "><a href="#">
+                                    <li class="menu-item">
+                                        <a href="#">
                                             bitumen
-                                            penetration grade
-                                        </a></li>
-                                    <li class="menu-item   "><a href="#">performance grade
-                                            bitumen</a></li>
+                                            penetration
+                                            grade
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">performance
+                                            grade
+                                            bitumen</a>
+                                    </li>
                                     <li
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children ">
-                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen Cutback</a>
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen
+                                            Cutback</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
                                                     bitumen
-                                                    slow curing (SC)</a>
+                                                    slow
+                                                    curing
+                                                    (SC)</a>
                                             </li>
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
-                                                    bitumen medium curing (MC)</a>
+                                                    bitumen
+                                                    medium
+                                                    curing
+                                                    (MC)</a>
                                             </li>
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
                                                     curing
-                                                    cutback bitumen (RC)</a>
+                                                    cutback
+                                                    bitumen
+                                                    (RC)</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children ">
-                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen emulsion</a>
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen
+                                            emulsion</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen Emulsion
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen
+                                                    Emulsion
                                                     (BE)</a>
                                             </li>
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/cationic-emulsions/">Cationic
                                                     Emulsions</a>
                                             </li>
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic Emulsions</a>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic
+                                                    Emulsions</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
                                             Emulsified
-                                            Bitumen</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/solvent-base-primer/">Solvent Base
+                                            Bitumen</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/solvent-base-primer/">Solvent
+                                            Base
                                             Primer</a>
                                     </li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
-                                            Modified Emulsion (PME)</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready Mixed
-                                            Asphalt</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c_bituplast/">Bituplast</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
-                                            Base Waterproofing Mortar</a></li>
-                                    <li class="menu-item   "><a
-                                            href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco Organic
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
+                                            Modified
+                                            Emulsion
+                                            (PME)</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready
+                                            Mixed
+                                            Asphalt</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c_bituplast/">Bituplast</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
+                                            Base
+                                            Waterproofing
+                                            Mortar</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco
+                                            Organic
                                             Cleaner
-                                            (BOC):</a></li>
+                                            (BOC):</a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li class="menu-item   menu-item-has-children ">
+                            <li class="menu-item menu-item-has-children">
                                 <a href="#">ﻫﺘﻞ ﻫﺎ</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item  menu-item-object-post "><a
-                                            href="http://hll.om/standardizing-bodies/">Standardizing Bodies</a></li>
-                                    <li class="menu-item  menu-item-object-post "><a
-                                            href="http://hll.om/family-of-bitumenous-binders/">Family of Bitumenous
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/standardizing-bodies/">Standardizing
+                                            Bodies</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/family-of-bitumenous-binders/">Family
+                                            of
+                                            Bitumenous
                                             Binders</a>
                                     </li>
-                                    <li class="menu-item   "><a href="http://hll.om/product/quality-control/">Quality
-                                            Control</a></li>
-                                    <li class="menu-item  menu-item-object-post "><a
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/quality-control/">Quality
+                                            Control</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a
                                             href="http://hll.om/bitumen-emulsions-anionic-cationic-unmodified-polymer-modified/">BITUMEN
-                                            EMULSIONS (ANIONIC; CATIONIC; UNMODIFIED; POLYMER MODIFIED)</a></li>
+                                            EMULSIONS
+                                            (ANIONIC;
+                                            CATIONIC;
+                                            UNMODIFIED;
+                                            POLYMER
+                                            MODIFIED)</a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="http://hll.om/packing-logistics/">تور اقساط</a></li>
-                            <li class="menu-item"><a href="#">تور اروپا</a></li>
-                            <li class="menu-item"><a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a></li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/packing-logistics/">تور اقساط</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">تور اروپا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a>
+                            </li>
 
-                            <li class="menu-item   "><a href="http://hll.om/contact-us/">ویزا</a></li>
-                            <li class="menu-item   "><a href="http://hll.om/contact-us/">بلاگ</a></li>
-
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ویزا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">بلاگ</a>
+                            </li>
                         </ul>
                     </div>
-
                 </div>
 
-                <img src="./img/logo.png" class="object-contain w-9" alt="" />
+                <img src="./img/logo.png" class="w-9 object-contain" alt="" />
 
-                <div @click="taggleMobileMenu" class=" cursor-pointer md:hidden">
+                <div @click="taggleMobileMenu" class="cursor-pointer md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </div>
-
             </div>
 
-
-
-
             <!-- MOBILE SECTION -->
-            <div id="mobile-menu" x-show="isOpen" style="display: none;" x-transition.opacity>
+            <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
                 <div class="mobile-menu__overlay">
-
-
-
                     <div
-                        class="flex mx-auto mt-5 justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
+                        class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                         <div class="flex">
                             <div
-                                class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
-                                <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-
+                                class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                                <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
                             </div>
-
                         </div>
 
-                        <img src="./img/logo.png" class="object-contain w-9" alt="" />
+                        <img src="./img/logo.png" class="w-9 object-contain" alt="" />
 
-
-                        <button @click="taggleMobileMenu()" class="  relative  cursor-pointer md:hidden">
+                        <button @click="taggleMobileMenu()" class="relative cursor-pointer md:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
-
                     </div>
 
-
-
                     <div class="relative">
-
-                        <div class="flex items-center justify-start gap-3 mt-2 mb-5 text-xl">
+                        <div class="mt-2 mb-5 flex items-center justify-start gap-3 text-xl">
                             <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()"
                                 x-transition>
-                                <img src="svg/chevron-rigth.svg" alt="">
+                                <img src="svg/chevron-rigth.svg" alt="" />
                             </span>
 
                             <h1 x-text="ch.name ? ch.name : 'menu' "></h1>
-
                         </div>
 
                         <ul class="bi-scrollbar">
                             <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
                                 <li>
-
                                     <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') " class="">
                                         <span x-text="name"></span>
-                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg" x-transition>
+                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg"
+                                            x-transition />
                                     </a>
-
                                 </li>
                             </template>
-
                         </ul>
-
                     </div>
                 </div>
-
             </div>
             <!-- / -->
         </nav>
-
     </header>
 
-    <main id="main" class="container mx-auto relative gap-6 px-2 flex flex-col lg:flex-row items-start" dir="rtl">
+    <main id="main" class="container relative mx-auto flex flex-col items-start gap-6 px-2 lg:flex-row" dir="rtl">
         <div class="w-full md:w-7/12 lg:w-8/12">
             <div class="flex-center">
-                <img src="svg/installmentsTours.svg" alt="">
+                <img src="svg/installmentsTours.svg" alt="" />
             </div>
 
             <div class="mb-6">
-                <h1 class="font-bold text-xl mb-4 text-primery-dark">
+                <h1 class="mb-4 text-xl font-bold text-primery-dark">
                     توضیحات
                 </h1>
 
                 <p>
-                    بیسان‌سیر با ارائه خدمتی جدید قصد دارد تا سفر رفتن را برای مسافران خود آسان‌تر کند تا هم کمکی به
-                    صنعت گردشگری شده باشد و هم باعث افزایش رضایتمندی مسافران گردد.
-                    <br>
-                    یکی از محبوب‌ترین راه‌‌های خرید تورهای مسافرتی، تور اقساطی می‌باشد. مسافران عزیز به غیر از تکمیل
-                    مدارک لازم جهت دریافت تسهیلات، درگیر مراحل مختلف این کار نمی‌باشند.
-                    <br>
-                    روش کار بیسان‌سیر به اینصورت است که با شرکت سرمایه‌گذار باسابقه‌ و معتبری همکاری می‌کند و جهت هر چه
-                    آسان‌تر شدن این کار، تمامی مسئولیت بررسی مدارک، پرداخت اقساط و پیگیری تسویه حساب‌ها به عهده
-                    بیسان‌سیر می‌باشد.
+                    بیسان‌سیر با ارائه خدمتی جدید قصد دارد تا
+                    سفر رفتن را برای مسافران خود آسان‌تر کند تا
+                    هم کمکی به صنعت گردشگری شده باشد و هم باعث
+                    افزایش رضایتمندی مسافران گردد.
+                    <br />
+                    یکی از محبوب‌ترین راه‌‌های خرید تورهای
+                    مسافرتی، تور اقساطی می‌باشد. مسافران عزیز به
+                    غیر از تکمیل مدارک لازم جهت دریافت تسهیلات،
+                    درگیر مراحل مختلف این کار نمی‌باشند.
+                    <br />
+                    روش کار بیسان‌سیر به اینصورت است که با شرکت
+                    سرمایه‌گذار باسابقه‌ و معتبری همکاری می‌کند
+                    و جهت هر چه آسان‌تر شدن این کار، تمامی
+                    مسئولیت بررسی مدارک، پرداخت اقساط و پیگیری
+                    تسویه حساب‌ها به عهده بیسان‌سیر می‌باشد.
                 </p>
             </div>
 
             <div class="mb-6">
-                <h1 class="font-bold text-xl mb-4 text-primery-dark">
+                <h1 class="mb-4 text-xl font-bold text-primery-dark">
                     شرايط خريد تور اقساطی
                 </h1>
 
                 <p>
-                    ☑️ حداقل ٧ روز كارى پيش از تاريخ سفر بايد خريد تور و آماده‌سازى مدارك به صورت كامل انجام شده باشد.
-                    <br>
-                    ☑️ تسهيلات پرداختی حداكثر ۵۰٪ هزينه کل تور و تا سقف ۱۵ میليون تومان برای كل اشخاص خواهد بود.
-                    <br>
-                    ☑️ باز پرداخت تسهيلات ۴ الی ٩ ماهه با كارمزد ۳% به ازای هر ماه از مجموع رقم تسهيلات دريافتی بوده و
-                    در
-                    قالب پرداخت‌هایی با فاصله‌ی يك يا دو ماهه امكان‌پذير است.
-                    <br>
-                    ☑️ در خصوص پرداخت دو ماهه، سر رسيد اولين پرداخت ۴۵ روز بعد از عقد قرارداد خواهد بود.
+                    ☑️ حداقل ٧ روز كارى پيش از تاريخ سفر بايد
+                    خريد تور و آماده‌سازى مدارك به صورت كامل
+                    انجام شده باشد.
+                    <br />
+                    ☑️ تسهيلات پرداختی حداكثر ۵۰٪ هزينه کل تور و
+                    تا سقف ۱۵ میليون تومان برای كل اشخاص خواهد
+                    بود.
+                    <br />
+                    ☑️ باز پرداخت تسهيلات ۴ الی ٩ ماهه با كارمزد
+                    ۳% به ازای هر ماه از مجموع رقم تسهيلات
+                    دريافتی بوده و در قالب پرداخت‌هایی با
+                    فاصله‌ی يك يا دو ماهه امكان‌پذير است.
+                    <br />
+                    ☑️ در خصوص پرداخت دو ماهه، سر رسيد اولين
+                    پرداخت ۴۵ روز بعد از عقد قرارداد خواهد بود.
                 </p>
             </div>
 
             <div class="mb-6">
-                <h1 class="font-bold text-xl mb-4 text-primery-dark">
+                <h1 class="mb-4 text-xl font-bold text-primery-dark">
                     مراحل خريد تور اقساطی
                 </h1>
 
                 <p>
                     �� انتخاب تور مورد نظر
-                    <br>
+                    <br />
                     �� حضور در آژانس به منظور امضای قرارداد
-                    <br>
+                    <br />
                     �� ارائه كامل مدارك ذکر شده در بخش بعدی
-                    <br>
-                    �� واريز ۵۰٪ مبلغ كل تور به حساب آژانس بيسان‌سير
-                    <br>
+                    <br />
+                    �� واريز ۵۰٪ مبلغ كل تور به حساب آژانس
+                    بيسان‌سير
+                    <br />
                     �� رفتن به سفر و لذت بردن از خدمات ما در سفر
-                    <br>
+                    <br />
                     �� پرداخت چك‌های ارائه شده در موعد مقرر
                 </p>
             </div>
 
             <div class="mb-6">
-                <h1 class="font-bold text-xl mb-4 text-primery-dark">
+                <h1 class="mb-4 text-xl font-bold text-primery-dark">
                     مدارك لازم و نحوه ثبت نام تورهای اقساطی
                 </h1>
 
                 <p>
                     �� انتخاب تور مورد نظر
-                    <br>
+                    <br />
                     �� حضور در آژانس به منظور امضای قرارداد
-                    <br>
+                    <br />
                     �� ارائه كامل مدارك ذکر شده در بخش بعدی
-                    <br>
-                    �� واريز ۵۰٪ مبلغ كل تور به حساب آژانس بيسان‌سير
-                    <br>
+                    <br />
+                    �� واريز ۵۰٪ مبلغ كل تور به حساب آژانس
+                    بيسان‌سير
+                    <br />
                     �� رفتن به سفر و لذت بردن از خدمات ما در سفر
-                    <br>
+                    <br />
                     �� پرداخت چك‌های ارائه شده در موعد مقرر
                 </p>
             </div>
 
             <div class="mb-6">
-                <h1 class="font-bold text-xl mb-4 text-primery-dark">
+                <h1 class="mb-4 text-xl font-bold text-primery-dark">
                     نکات مهم
                 </h1>
 
                 <p>
-
-                    ✅ حساب مبدا چک می‌بایست صرفا شهر تهران باشد.
-                    <br>
-                    ✅ شروع اقساط از یکماه پس از عقد قرارداد سفر می‌باشد.
-                    <br>
-                    ✅ حتما باید چک‌های صادر شده از نوع دسته چک‌های صیادی جدید باشد.
-                    <br>
-                    ✅ صادرکننده چک‌های اقساط الزاما باید یکی از مسافرین استفاده ‌کننده از تور و یا اقوام درجه یک وی
-                    باشد. که
-                    در این صورت ارائه مدارک شناسایی طرفین جهت احراز نسبت الزامی می‌باشد.
-                    <br>
-                    ✅ دریافت تایید حساب مسافر از بانک مبدا چک، قبل از عقد قرارداد تسهیلات توسط واحد حسابداری
-                    الزامیست.
-                    <br>
-                    ✅ قبل از صدور چک، تعداد و مبالغ چک‌ها می‌بایست توسط واحد حسابداری تایید گردد.
-                    <br>
-                    ✅ در صورت داشتن هرگونه سوال یا درخواست پیش پرداخت کمتر از ۵۰٪ با واحد حسابداری تماس حاصل
-                    فرمائید.
+                    ✅ حساب مبدا چک می‌بایست صرفا شهر تهران
+                    باشد.
+                    <br />
+                    ✅ شروع اقساط از یکماه پس از عقد قرارداد سفر
+                    می‌باشد.
+                    <br />
+                    ✅ حتما باید چک‌های صادر شده از نوع دسته
+                    چک‌های صیادی جدید باشد.
+                    <br />
+                    ✅ صادرکننده چک‌های اقساط الزاما باید یکی از
+                    مسافرین استفاده ‌کننده از تور و یا اقوام
+                    درجه یک وی باشد. که در این صورت ارائه مدارک
+                    شناسایی طرفین جهت احراز نسبت الزامی می‌باشد.
+                    <br />
+                    ✅ دریافت تایید حساب مسافر از بانک مبدا چک،
+                    قبل از عقد قرارداد تسهیلات توسط واحد
+                    حسابداری الزامیست.
+                    <br />
+                    ✅ قبل از صدور چک، تعداد و مبالغ چک‌ها
+                    می‌بایست توسط واحد حسابداری تایید گردد.
+                    <br />
+                    ✅ در صورت داشتن هرگونه سوال یا درخواست پیش
+                    پرداخت کمتر از ۵۰٪ با واحد حسابداری تماس
+                    حاصل فرمائید.
                 </p>
             </div>
 
-
             <div class="mb-6">
-                <h1 class="font-bold text-xl mb-4 text-primery-dark">
+                <h1 class="mb-4 text-xl font-bold text-primery-dark">
                     مثال: محاسبه تور استانبول برای ۳ نفر
                 </h1>
 
+                <div>
+                    <p>
+                        برای توضیح بهتر راجع به شرايط اقساط،
+                        با مثالی عملی آن را برای شما شرح
+                        می‌دهيم.
+                        <br />
+                        فرض كنيد شما در تاريخ ۲۰ دی ماه، يك
+                        تور استانبول برای تاريخ ۳۰ دی را برای
+                        خريد در نظر گرفته‌اید. اگر تعداد شما ۳
+                        نفر باشد و رقم تور انتخابی شما برای هر
+                        نفر ۲٫۷۰۰٫۰۰۰ تومان باشد مجموع رقم تور
+                        برای ۳ نفر ۸٫۱۰۰٫۰۰۰ تومان خواهد شد.
+                        شما می‌توانيد % ۵۰ اين رقم يعنی
+                        ۴٫۰۵۰٫۰۰۰ تومان را تسهيلات دريافت
+                        كنيد. حال اگر شما مدت زمان ۶ ماه را
+                        برای باز پرداخت تسهيلات تور مسافرتی
+                        خود در نظر بگيريد، می‌بايست در هر ماه
+                        ۷۹۶٫۵۰۰ تومان بابت اقساط هر ٣ نفر
+                        پرداخت نماييد.
 
-                <p>
-                    برای توضیح بهتر راجع به شرايط اقساط، با مثالی عملی آن را برای شما شرح می‌دهيم.
-                    <br>
-                    فرض كنيد شما در تاريخ ۲۰ دی ماه، يك تور استانبول برای تاريخ ۳۰ دی را برای خريد در نظر گرفته‌اید. اگر
-                    تعداد
-                    شما ۳ نفر باشد و رقم تور انتخابی شما برای هر نفر ۲٫۷۰۰٫۰۰۰ تومان باشد مجموع رقم تور برای ۳ نفر
-                    ۸٫۱۰۰٫۰۰۰
-                    تومان خواهد شد. شما می‌توانيد % ۵۰ اين رقم يعنی ۴٫۰۵۰٫۰۰۰ تومان را تسهيلات دريافت كنيد. حال اگر شما
-                    مدت زمان ۶ ماه را برای باز پرداخت تسهيلات تور مسافرتی خود در نظر بگيريد، می‌بايست در هر ماه ۷۹۶٫۵۰۰
-                    تومان بابت اقساط هر ٣ نفر پرداخت نماييد.
+                        <br />
+                        <br />
+                        <br />
+                    </p>
 
-                    <br>
-                    <br>
-                    <br>
+                    <ul class="list-disc pr-5">
+                        <li>
+                            قیمت تور استانبول برای هر نفر:
+                            ۲٫۷۰۰٫۰۰۰ تومان
+                        </li>
 
-                <ul class="list-disc pr-5">
-                    <li>
-                        قیمت تور استانبول برای هر نفر: ۲٫۷۰۰٫۰۰۰ تومان
-                    </li>
+                        <li>
+                            قیمت کل برای ۳ نفر: ۸٫۱۰۰٫۰۰۰
+                            تومان
+                        </li>
 
-                    <li>
-                        قیمت کل برای ۳ نفر: ۸٫۱۰۰٫۰۰۰ تومان
-                    </li>
+                        <li>
+                            پیش پرداخت مسافر ۴٫۰:۵٪۰٫۰۰۰ (
+                            ۵۰ ) تومان
+                        </li>
 
-                    <li>
-                        پیش پرداخت مسافر ۴٫۰:۵٪۰٫۰۰۰ ( ۵۰ ) تومان
-                    </li>
+                        <li>
+                            پرداخت الباقی مبلغ تور در ۶ قسط
+                            با احتساب مبلغ کارمزد: ۴٫۷۷۹٫۰۰۰
+                            تومان
+                        </li>
 
-                    <li>
-                        پرداخت الباقی مبلغ تور در ۶ قسط با احتساب مبلغ کارمزد: ۴٫۷۷۹٫۰۰۰ تومان
-                    </li>
+                        <li>
+                            پرداخت اقساط تور در هر ماه برای
+                            ۳ نفر با احتساب مبلغ کارمزد:
+                            ۷۹۶٫۵۰۰ تومان
+                        </li>
 
-                    <li>
-                        پرداخت اقساط تور در هر ماه برای ۳ نفر با احتساب مبلغ کارمزد: ۷۹۶٫۵۰۰ تومان
-                    </li>
+                        <li>
+                            کل کارمزد اقساط تـور برای ۳ نفر
+                            در ۶ ماه: ۷۲۹٫۰۰۰ تومان
+                        </li>
 
-                    <li>
-                        کل کارمزد اقساط تـور برای ۳ نفر در ۶ ماه: ۷۲۹٫۰۰۰ تومان
-                    </li>
+                        <li>
+                            کل کارمزد اقساط تور برای هر نفر
+                            در ۶ ماه: ۲۴۳٫۰۰۰ تومان
+                        </li>
 
-                    <li>
-                        کل کارمزد اقساط تور برای هر نفر در ۶ ماه: ۲۴۳٫۰۰۰ تومان
-                    </li>
-
-                    <li>
-                        کل قیمت تمام شده تور برای ۳ نفر با احساب کارمزد: ۸٫۸۲۹٫۰۰۰ تومان
-                    </li>
-                </ul>
-                </p>
+                        <li>
+                            کل قیمت تمام شده تور برای ۳ نفر
+                            با احساب کارمزد: ۸٫۸۲۹٫۰۰۰ تومان
+                        </li>
+                    </ul>
+                </div>
             </div>
-
         </div>
-        <aside class="relative bottom-0 left-0 sm:sticky  lg:relative w-full  lg:w-4/12">
-
+        <aside class="relative bottom-0 left-0 w-full sm:sticky lg:relative lg:w-4/12">
             <div x-data="calculator"
-                class=" bg-white w-full  lg:w-full mx-auto rounded-3xl p-6 drop-shadow-xl flex flex-col sm:flex-row lg:flex-col gap-10 lg:gap-0">
-
+                class="mx-auto flex w-full flex-col gap-10 rounded-3xl bg-white p-6 drop-shadow-xl sm:flex-row lg:w-full lg:flex-col lg:gap-0">
                 <div class="sm:w-1/2 lg:w-full">
                     <h2 class="mb-4 font-bold text-primery-dark">
                         محاسبه مبلغ
                     </h2>
 
                     <div class="relative">
-                        <span class="text-xs absolute top-0 transform -translate-y-1/2 right-5  z-20 bg-white p-1">
+                        <span class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs">
                             مبلغ تور (تومان)
                         </span>
-                        <div class="bg-white border rounded-3xl overflow-hidden my-4 relative">
-                            <input class="py-2 px-6" type="text" placeholder="پاسخ شما" @input="tourPrice.format($el)">
+                        <div class="relative my-4 overflow-hidden rounded-3xl border bg-white">
+                            <input class="py-2 px-6" type="text" placeholder="پاسخ شما"
+                                @input="tourPrice.format($el)" />
                         </div>
                     </div>
 
-                    <div class="flex justify-between items-center ">
-                        <h2 class="w-5/12 font-bold text-primery-dark whitespace-pre-wrap">تعدا اقساط:</h2>
+                    <div class="flex items-center justify-between">
+                        <h2 class="w-5/12 whitespace-pre-wrap font-bold text-primery-dark">
+                            تعدا اقساط:
+                        </h2>
 
-                        <div class="rounded-3xl p-3 border flex items-center justify-between w-7/12">
-
-                            <select x-model="installments.numberOf" class=" w-full  focus-visible:outline-none" name=""
+                        <div class="flex w-7/12 items-center justify-between rounded-3xl border p-3">
+                            <select x-model="installments.numberOf" class="w-full focus-visible:outline-none" name=""
                                 id="">
                                 <template
                                     x-for="i in new Array( installments.totalAvailable).fill(0).map((_,j) => j+1)">
@@ -432,33 +494,32 @@
                                         </option>
                                     </template>
                                 </template>
-
                             </select>
-
                         </div>
                     </div>
                 </div>
-                <hr class="hidden lg:block my-4">
+                <hr class="my-4 hidden lg:block" />
                 <div class="sm:w-1/2 lg:w-full">
-                    <div class="flex flex-col ">
-                        <h2 class="w-5/12 font-bold text-primery-dark whitespace-pre-wrap">پیش پرداخت:</h2>
+                    <div class="flex flex-col">
+                        <h2 class="w-5/12 whitespace-pre-wrap font-bold text-primery-dark">
+                            پیش پرداخت:
+                        </h2>
 
-                        <div class="mt-2 flex mb-4 rounded-3xl overflow-hidden">
+                        <div class="mt-2 mb-4 flex overflow-hidden rounded-3xl">
                             <template x-for="(i,index) in prepayment.values" :key="index">
                                 <div :class="{'w-1/2 py-2 flex-center text-secondary-dark' : true,
                                 'bg-secondary-ligth cursor-pointer' : index+1 === prepayment.type,
                                 'cursor-pointer' : index+1 !== prepayment.type
                             }" @click="prepayment.type = index + 1" x-text="i"></div>
                             </template>
-
                         </div>
                     </div>
 
                     <div class="mb-4" x-show="prepayment.type === 2" x-transition>
-                        <label for="prepayment_amount" class=" control-label">مبلغ پیش پرداخت:</label>
-                        <div class="flex gap-2  items-center">
-                            <input class="border rounded-md p-1" @input="prepayment.format($el)" id="prepayment_amount"
-                                name="prepayment_amount" type="text">
+                        <label for="prepayment_amount" class="control-label">مبلغ پیش پرداخت:</label>
+                        <div class="flex items-center gap-2">
+                            <input class="rounded-md border p-1" @input="prepayment.format($el)" id="prepayment_amount"
+                                name="prepayment_amount" type="text" />
                             <span id="helpBlock" class="help-block">تومان</span>
                         </div>
                     </div>
@@ -466,9 +527,9 @@
                     <div class="">
                         <div>
                             <div class="flex">
-
                                 <div>
-                                    مبلغ نقدی پیش پرداخت :
+                                    مبلغ نقدی پیش پرداخت
+                                    :
                                 </div>
                                 <div x-text="result.cash">
                                     2,000,000
@@ -477,9 +538,7 @@
                         </div>
                         <div>
                             <div class="flex">
-                                <div>
-                                    مبلغ هر قسط :
-                                </div>
+                                <div>مبلغ هر قسط :</div>
                                 <div x-text="result.installmentAmount">
                                     4,000,000
                                 </div>
@@ -488,7 +547,6 @@
 
                         <div>
                             <div class="flex">
-
                                 <div>
                                     جمع کل مبلغ اقساط :
                                 </div>
@@ -499,7 +557,6 @@
                         </div>
                         <div>
                             <div class="flex">
-
                                 <div>
                                     قیمت تمام شده تور :
                                 </div>
@@ -508,27 +565,47 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="text-red-500 text-xs " x-text="result.ok ? '' : result.msg"></span>
+                        <span class="text-xs text-red-500" x-text="result.ok ? '' : result.msg"></span>
                     </div>
                 </div>
             </div>
         </aside>
-
     </main>
 
-    <div class="h-96 flex-center ">
-        ...gap ( delete me later )
-    </div>
+    <div class="flex-center h-96">...gap ( delete me later )</div>
 
     <script src="js/components/navbar.js"></script>
     <script src="js/commons/utils.js"></script>
     <script>
         function numin(s) {
-            var a = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"]
-            var p = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"]
+            var a = [
+                "٠",
+                "١",
+                "٢",
+                "٣",
+                "٤",
+                "٥",
+                "٦",
+                "٧",
+                "٨",
+                "٩",
+            ];
+            var p = [
+                "۰",
+                "۱",
+                "۲",
+                "۳",
+                "۴",
+                "۵",
+                "۶",
+                "۷",
+                "۸",
+                "۹",
+            ];
             for (var i = 0; i < 10; i++) {
-                s = s.replace(new RegExp(a[i], 'g'), i)
-                    .replace(new RegExp(p[i], 'g'), i)
+                s = s
+                    .replace(new RegExp(a[i], "g"), i)
+                    .replace(new RegExp(p[i], "g"), i);
             }
             return s;
         }
@@ -546,8 +623,7 @@
             aa = "";
             for (i = 0; i < num.length; i++) {
                 var check = num.charAt(i);
-                if (check != sep)
-                    aa += check;
+                if (check != sep) aa += check;
             }
             a = aa.split(decpoint);
 
@@ -555,7 +631,7 @@
             y = a[1];
             z = "";
 
-            if (typeof (x) != "undefined") {
+            if (typeof x != "undefined") {
                 for (i = x.length - 1; i >= 0; i--)
                     z += x.charAt(i);
                 z = z.replace(/(\d{3})/g, "$1" + sep);
@@ -564,9 +640,8 @@
                 x = "";
                 for (i = z.length - 1; i >= 0; i--)
                     x += z.charAt(i);
-                if (typeof (y) != "undefined") {
-                    if (y.length > 2)
-                        y = y.substring(0, 2);
+                if (typeof y != "undefined") {
+                    if (y.length > 2) y = y.substring(0, 2);
                     x += decpoint + y;
                 }
             }
@@ -574,141 +649,162 @@
         }
 
         const calculator = function () {
-
             return {
                 prepayment: {
                     type: 1,
-                    values: ['پیشنهادی', 'انتخابی'],
+                    values: ["پیشنهادی", "انتخابی"],
                     amount: 0,
                     format(element) {
                         // conver all digits to english digits
-                        let val = numin(element.value)
+                        let val = numin(element.value);
 
                         // remove unrelated cars
-                        val = val.replace(/[^\d]/g, '')
+                        val = val.replace(/[^\d]/g, "");
 
-                        this.amount = Number(val)
+                        this.amount = Number(val);
 
                         // comma separated
                         val = FormatNumberBy3(val, ".", ",");
 
-                        element.value = val.toIndiaDigits()
-                    }
+                        element.value = val.toIndiaDigits();
+                    },
                 },
                 tourPrice: {
-
                     price: 0,
                     format(element) {
                         // conver all digits to english digits
-                        let val = numin(element.value)
+                        let val = numin(element.value);
 
                         // remove unrelated cars
-                        val = val.replace(/[^\d]/g, '')
+                        val = val.replace(/[^\d]/g, "");
 
-                        this.price = Number(val)
+                        this.price = Number(val);
 
                         // comma separated
                         val = FormatNumberBy3(val, ".", ",");
 
-                        element.value = val.toIndiaDigits()
-                    }
+                        element.value = val.toIndiaDigits();
+                    },
                 },
                 installments: { numberOf: 2, totalAvailable: 9 },
 
                 calc() {
                     // debugger
-                    const paymentAmount = parseInt(this.tourPrice.price);
-                    const prepaymentAmount = parseInt(this.prepayment.amount);
-                    const prepaymentType = Number(this.prepayment.type);
+                    const paymentAmount = parseInt(
+                        this.tourPrice.price
+                    );
+                    const prepaymentAmount = parseInt(
+                        this.prepayment.amount
+                    );
+                    const prepaymentType = Number(
+                        this.prepayment.type
+                    );
 
-                    let prepayment
+                    let prepayment;
                     if (prepaymentType === 1) {
-
                         prepayment = paymentAmount / 2;
-
                     } else if (prepaymentType === 2) {
                         prepayment = prepaymentAmount;
                     }
 
-
-                    const remaining = paymentAmount - prepayment
+                    const remaining =
+                        paymentAmount - prepayment;
                     let wage = (remaining * 3) / 100;
 
                     if (wage < 0) wage = 0;
 
                     if (!paymentAmount) {
-
                         return {
                             ok: false,
-                            msg: "مقدار پیش پرداخت باید کمتر از مبلغ کل فاکتور باشد"
+                            msg: "مقدار پیش پرداخت باید کمتر از مبلغ کل فاکتور باشد",
                         };
                     }
 
                     if (!prepayment) {
                         return {
                             ok: false,
-                            msg: "مقدار پیش پرداخت باید مشخص شود"
+                            msg: "مقدار پیش پرداخت باید مشخص شود",
                         };
                     }
 
-                    if (prepayment < prepaymentAmount / 2 && prepaymentType == '2') {
+                    if (
+                        prepayment < prepaymentAmount / 2 &&
+                        prepaymentType == "2"
+                    ) {
                         return {
                             ok: false,
-                            msg: "مبلغ پیش پرداخت باید حداقل نصف مبلغ کل فاکتور باشد"
+                            msg: "مبلغ پیش پرداخت باید حداقل نصف مبلغ کل فاکتور باشد",
                         };
                     }
 
                     if (prepayment >= paymentAmount) {
                         return {
                             ok: false,
-                            msg: "مبلغ پیش برداخت نمیتواند بیشتر از مبلغ کل فاکتور باشد"
-                        }
+                            msg: "مبلغ پیش برداخت نمیتواند بیشتر از مبلغ کل فاکتور باشد",
+                        };
                     }
 
                     const cash = prepayment;
-                    const installmentNumber = parseInt(this.installments.numberOf)
-                    const percentInstallments = (installmentNumber) * 3;
-                    const interestInstallments = ((remaining) * percentInstallments) / 100;
-                    const total = Math.floor(remaining + interestInstallments);
+                    const installmentNumber = parseInt(
+                        this.installments.numberOf
+                    );
+                    const percentInstallments =
+                        installmentNumber * 3;
+                    const interestInstallments =
+                        (remaining * percentInstallments) /
+                        100;
+                    const total = Math.floor(
+                        remaining + interestInstallments
+                    );
 
-                    const installmentAmount = Math.floor(total / installmentNumber); /* E(D: G1 B37 */
-                    const totalAmount = Math.floor(cash + total); /* BÌE* *E'E 4/G ©'D' */
+                    const installmentAmount = Math.floor(
+                        total / installmentNumber
+                    ); /* E(D: G1 B37 */
+                    const totalAmount = Math.floor(
+                        cash + total
+                    ); /* BÌE* *E'E 4/G ©'D' */
 
                     return {
                         ok: true,
-                        cash: String(FormatNumberBy3(cash)).toIndiaDigits(),
-                        installmentAmount: String(FormatNumberBy3(installmentAmount)).toIndiaDigits(),
-                        total: String(FormatNumberBy3(total)).toIndiaDigits(),
-                        totalAmount: String(FormatNumberBy3(totalAmount)).toIndiaDigits()
-                    }
-                }
-                ,
+                        cash: String(
+                            FormatNumberBy3(cash)
+                        ).toIndiaDigits(),
+                        installmentAmount: String(
+                            FormatNumberBy3(
+                                installmentAmount
+                            )
+                        ).toIndiaDigits(),
+                        total: String(
+                            FormatNumberBy3(total)
+                        ).toIndiaDigits(),
+                        totalAmount: String(
+                            FormatNumberBy3(totalAmount)
+                        ).toIndiaDigits(),
+                    };
+                },
                 get result() {
                     const emptyResult = {
                         cash: "--",
                         installmentAmount: "--",
                         total: "--",
-                        totalAmount: "--"
-                    }
+                        totalAmount: "--",
+                    };
 
                     if (this.tourPrice.price === 0) {
                         return {
-                            msg: '',
+                            msg: "",
                             ...emptyResult,
-                        }
-
+                        };
                     }
 
-                    const res = this.calc()
+                    const res = this.calc();
 
-                    return res.ok ? res : { msg: res.msg, ...emptyResult }
-
-                }
-            }
-
-        }
-
-
+                    return res.ok
+                        ? res
+                        : { msg: res.msg, ...emptyResult };
+                },
+            };
+        };
     </script>
 </body>
 

@@ -32,9 +32,6 @@
             style="background: url(svg/travel-textture/one.svg) center center/cover;">
         </div>
 
-
-
-
         <nav id="navigation" x-data="navbar" class="lg:max-w-[1104px] container mx-auto overflow-x-clip">
 
 
@@ -702,17 +699,30 @@
 
 
                 </div>
-                <div class="js-pagination">
+                <!-- pagination -->
+                <div class="text-center my-8">
+                    <div class="flex-center flex-row-reverse gap-1">
+                        <a href="#" class="w-12 h-8  rounded-3xl flex-center bg-slate-200 "><img
+                                src="svg/chevron-left.svg">
+                        </a>
 
-                    <div class="flex items-center justify-center">
-                        <div
-                            class="inline-flex items-center px-8 py-2 font-semibold leading-6 text-sm   bi-primary-btn ">
-                            بیشتر
-                        </div>
+                        <a href="#" class="px-3 h-8  rounded-3xl flex-center bg-white  text-gray-600 border">1</a>
+                        <a href="#" class="px-3 h-8  rounded-3xl flex-center bg-white  text-gray-600 border">...</a>
+                        <a href="#"
+                            class="px-3 h-8  rounded-3xl flex-center bg-white  text-gray-600 border hidden sm:flex">13
+                        </a>
+                        <div class="px-3 h-8  rounded-3xl flex-center bg-primery  text-primery-dark border">14</div>
 
+                        <a href="#"
+                            class="px-3 h-8  rounded-3xl flex-center bg-white  text-gray-600 border hidden sm:flex">15
+                        </a>
+                        <a href="#" class="px-3 h-8  rounded-3xl flex-center bg-white  text-gray-600 border">...</a>
+                        <a href="#" class="px-3 h-8  rounded-3xl flex-center bg-white  text-gray-600 border">24</a>
+
+                        <a href="#" class="w-12 h-8  rounded-3xl flex-center bg-slate-200 "><img
+                                src="svg/chevron-rigth.svg">
+                        </a>
                     </div>
-
-
                 </div>
 
 
@@ -776,96 +786,6 @@
 
         });
 
-        function pagination(observableEl, cardsContainer) {
-
-            if (!observableEl || !cardsContainer) throw new Error("observable element or container are not provided")
-
-
-            let fetchedElementId = 0
-            let maxCartAvailable = 10;
-            const getsPerFetch = 3;
-            observableEl.addEventListener('click', () => {
-
-
-
-
-
-                if (maxCartAvailable >= 0) {
-
-                    maxCartAvailable -= getsPerFetch;
-
-                    // AJAX REQ SIMULATION
-                    setTimeout(() => {
-                        console.log("FETCHING")
-                        const template = new Array(getsPerFetch).fill("").map((i, index) => {
-                            return `
-                            
-                                    <div class="flex p-6 shadow-md rounded-3xl mb-4" data-fetched="${fetchedElementId++}" >
-                                        <div class="w-52 flex-shrink-0 rounded-2xl overflow-clip relative">
-                                            <img class="w-full object-cover" src="img/stock/photo-1642201289923-524d32bba771.jpg"
-                                                alt="">
-                                            <!-- tag -->
-                                            <div
-                                                class="absolute py-1 px-2 right-4 bottom-4 bg-white rounded-2xl text-xs text-gray-600">
-                                                00/2/23
-                                            </div>
-                                        </div>
-                                        <div class="pr-6 flex flex-col justify-between">
-                                            <h3 class="font-bold">کانال آب دبی</h3>
-                                            <div
-                                                class="text-sm text-neutral-600 mt-2 h-full relative overflow-hidden text-ellipsis">
-                                                <p class="max-h-full ">
-
-                                                    صفا بدون شک پرطرفدارترین پارک در دبی است. بیش از ده سال است که ساکنین و
-                                                    گردشگران، به
-                                                    خصوص
-                                                    خانواده‌ها، روزانه اوقات فراغت خود را چه به صورت پیک نیک و چه با استفاده از
-                                                    امکانات
-                                                    باربیکیوی پارک، در این فضای دلنشین و زیبا می‌گذرانند
-                                                </p>
-                                            </div>
-                                            <div class="mt-auto flex gap-2">
-                                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
-                                                    دبی
-                                                </span>
-                                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
-                                                    امارات
-                                                </span>
-                                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
-                                                    دانستنیها
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>  
-                                    `
-                        }).join("")
-
-                        cardsContainer.insertAdjacentHTML("beforeend", template)
-
-
-                        cardsContainer.lastElementChild.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
-
-                    }, 1000);
-
-                } else {
-
-                    observableEl.remove()
-                }
-
-
-
-            })
-
-        }
-
-
-        window.addEventListener('load', function () {
-
-            if (typeof pagination !== 'undefined') {
-
-                pagination(document.querySelector(".js-pagination"), document.querySelector(".js-cards-container"))
-            }
-        })
 
 
     </script>

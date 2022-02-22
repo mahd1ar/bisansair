@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 14</title>
+    <link rel="stylesheet" href="css/output.css" />
+
+    <script defer src="lib/js/alpine.js"></script>
+</head>
+
+<body>
+    <!-- brake points debug -->
+    <div class="fixed top-10 left-10 z-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
+        <span class="hidden sm:block">sm</span>
+        <span class="hidden md:block">md</span>
+        <span class="hidden lg:block">lg</span>
+        <span class="hidden xl:block">xl</span>
+        <span class="hidden 2xl:block">2xl</span>
+    </div>
+    <!-- /debug -->
+
+    <header class="mb-10 pt-10">
+        <!-- TRAVEL TEXTURE -->
+        <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+					background: url(svg/travel-textture/one.svg)
+						center center/cover;
+				"></div>
+
+        <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
+            <div
+                class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                <div class="flex">
+                    <div
+                        class="flex-center w-32 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                        <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                        <span class="mx-2 hidden text-sm md:block">
+                            ۰۲۱-۳۴۵۶۴۸
+                        </span>
+                    </div>
+
+                    <div class="menu-top_menu-container hidden md:block" ref="menuContainer">
+                        <ul id="menu-top_menu" class="menu">
+                            <li class="menu-item menu-item-has-children">
+                                <a href="http://hll.om/index.php/product/">تور</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="#">
+                                            bitumen
+                                            penetration
+                                            grade
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">performance
+                                            grade
+                                            bitumen</a>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen
+                                            Cutback</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
+                                                    bitumen
+                                                    slow
+                                                    curing
+                                                    (SC)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
+                                                    bitumen
+                                                    medium
+                                                    curing
+                                                    (MC)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
+                                                    curing
+                                                    cutback
+                                                    bitumen
+                                                    (RC)</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen
+                                            emulsion</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen
+                                                    Emulsion
+                                                    (BE)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cationic-emulsions/">Cationic
+                                                    Emulsions</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic
+                                                    Emulsions</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
+                                            Emulsified
+                                            Bitumen</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/solvent-base-primer/">Solvent
+                                            Base
+                                            Primer</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
+                                            Modified
+                                            Emulsion
+                                            (PME)</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready
+                                            Mixed
+                                            Asphalt</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c_bituplast/">Bituplast</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
+                                            Base
+                                            Waterproofing
+                                            Mortar</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco
+                                            Organic
+                                            Cleaner
+                                            (BOC):</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#">ﻫﺘﻞ ﻫﺎ</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/standardizing-bodies/">Standardizing
+                                            Bodies</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/family-of-bitumenous-binders/">Family
+                                            of
+                                            Bitumenous
+                                            Binders</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/quality-control/">Quality
+                                            Control</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a
+                                            href="http://hll.om/bitumen-emulsions-anionic-cationic-unmodified-polymer-modified/">BITUMEN
+                                            EMULSIONS
+                                            (ANIONIC;
+                                            CATIONIC;
+                                            UNMODIFIED;
+                                            POLYMER
+                                            MODIFIED)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/packing-logistics/">تور اقساط</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">تور اروپا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ویزا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">بلاگ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+
+                <div @click="taggleMobileMenu" class="cursor-pointer md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- MOBILE SECTION -->
+            <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
+                <div class="mobile-menu__overlay">
+                    <div
+                        class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                        <div class="flex">
+                            <div
+                                class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                                <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                            </div>
+                        </div>
+
+                        <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+
+                        <button @click="taggleMobileMenu()" class="relative cursor-pointer md:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <div class="mt-2 mb-5 flex items-center justify-start gap-3 text-xl">
+                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()"
+                                x-transition>
+                                <img src="svg/chevron-rigth.svg" alt="" />
+                            </span>
+
+                            <h1 x-text="ch.name ? ch.name : 'menu' "></h1>
+                        </div>
+
+                        <ul class="bi-scrollbar">
+                            <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
+                                <li>
+                                    <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') " class="">
+                                        <span x-text="name"></span>
+                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg"
+                                            x-transition />
+                                    </a>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+        </nav>
+    </header>
+
+    <main id="main" class="container relative mx-auto flex flex-col gap-6 px-2 lg:flex-row" dir="rtl">
+        <div class="w-1/3">
+            <a href="#" class="mb-6 block rounded-xl bg-primery py-2 text-center font-bold text-primery-dark">ویزا
+                امارات</a>
+            <div>
+                <div class="relative mb-6 rounded-3xl shadow">
+                    <!-- discount -->
+
+                    <!-- overlay -->
+                    <div class="absolute flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white">
+                        <img class="h-1/3 object-cover" src="img/paris.png" alt="" />
+                        <div class="relative -top-1/3 h-1/2 bg-gradient-to-t from-white via-white to-transparent"></div>
+                    </div>
+
+                    <div class="flex-center absolute top-2 left-0 w-full">
+                        <span class="rounded-3xl bg-neutral-100 py-1 px-2 text-sm md:text-xs">
+                            8 روز و 8 شب
+                        </span>
+                    </div>
+
+                    <div class="relative h-full pt-16">
+                        <div class="relative mr-auto flex h-full flex-col items-stretch justify-end p-4">
+                            <div class="flex flex-col">
+                                <div>
+                                    <h3 class="mb-2 text-base font-bold">
+                                        تور سه روزه
+                                    </h3>
+                                    <ul class="flex w-full flex-wrap items-center justify-start gap-1 text-sm">
+                                        <li class="px-2 py-1">
+                                            <span>بیمه</span>
+                                        </li>
+                                        <li class="px-2 py-1">
+                                            <span>بیمه</span>
+                                        </li>
+                                        <li class="px-2 py-1">
+                                            <span>خدمات
+                                                ویزا</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="relative flex-col items-center justify-center">
+                                <div class="tour_cards__from--grid py-3">
+                                    <h4 class="mb-1.5 text-base">
+                                        تهران
+                                    </h4>
+                                    <span class="flex flex-row justify-between text-xs text-neutral-600">
+                                        <span>
+                                            پرواز
+                                            رفت
+                                        </span>
+                                        <span>
+                                            04/10/1400
+                                        </span>
+                                    </span>
+                                </div>
+
+                                <div class="tour_cards__to--grid py-3">
+                                    <h4 class="mb-1.5 text-base">
+                                        پاریس
+                                    </h4>
+                                    <span class="flex flex-row justify-between text-xs text-neutral-600">
+                                        <span>
+                                            پرواز
+                                            برگشت
+                                        </span>
+                                        <span>
+                                            04/10/1400
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="mt-4">
+                                <div
+                                    class="flex-center relative top-1/4 w-full gap-3 rounded-full py-3 px-5 text-center text-black">
+                                    <div class="flex-center gap-2">
+                                        <span class="text-sm">تومان</span>
+                                        <strong>5.200.00</strong>
+                                    </div>
+                                    <img class="" src="svg/money.svg" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-2/3">
+            <div class="rounded-3xl p-10 text-3xl font-bold text-white" style="
+						background-image: url('img/stock/photo-1642201137425-b82da17f4051.jpg');
+					">
+                <span> بزرگترین دیدنی های دبی </span>
+            </div>
+            <div class="flex flex-col">
+                <div class="mt-4 text-left text-sm text-gray-800">
+                    20 اردیبهشت 1400
+                </div>
+                <div class="flex gap-2">
+                    <div class="bi-primary-tag">دبی</div>
+                    <div class="bi-primary-tag">امارات</div>
+                    <div class="bi-primary-tag">دانستنی ها</div>
+                </div>
+            </div>
+
+            <div class="mt-6 mb-2">
+                <div class="mt-6 leading-7 text-gray-700">
+                    کانال آب دبی (Dubai Water Canal) چهره‌ی
+                    امارات متحده را تغییر داده، و به عنوان یکی
+                    از بزرگ‌ترین تحولات شهری در جهان، تاریخ‌ساز
+                    شده است. کانال دبی با اتصال نهر دبی، واقع در
+                    قسمت قدیمی ‌شهر، به خلیج فارس، به قسمت عظیمی
+                    ‌از شهر، ساحلی کاملا جدید بخشیده است. این
+                    توسعه شهری حماسی زیبایی دبی را چندین برابر
+                    کرده است. اگر قصد سفر با تور دبی و بازدید از
+                    کانال آب را دارید، در ادامه‌ی مطلب با بیسان
+                    همراه باشید:
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <img style="max-height: 450px" class="mt-16 w-full rounded-3xl object-cover object-center"
+                    src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" alt="" />
+                <h2 class="mt-6 text-xl font-bold text-primery-dark">
+                    تیتر دوم
+                </h2>
+                <div class="mt-6 leading-7 text-gray-700">
+                    کانال آب دبی (Dubai Water Canal) چهره‌ی
+                    امارات متحده را تغییر داده، و به عنوان یکی
+                    از بزرگ‌ترین تحولات شهری در جهان، تاریخ‌ساز
+                    شده است. کانال دبی با اتصال نهر دبی، واقع در
+                    قسمت قدیمی ‌شهر، به خلیج فارس، به قسمت عظیمی
+                    ‌از شهر، ساحلی کاملا جدید بخشیده است. این
+                    توسعه شهری حماسی زیبایی دبی را چندین برابر
+                    کرده است. اگر قصد سفر با تور دبی و بازدید از
+                    کانال آب را دارید، در ادامه‌ی مطلب با بیسان
+                    همراه باشید:
+                </div>
+            </div>
+            <div class="mt-6">
+                <img style="max-height: 450px" class="min-h mt-16 w-full rounded-3xl object-cover object-center"
+                    src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" alt="" />
+                <h2 class="mt-6 text-xl font-bold text-primery-dark">
+                    تیتر دوم
+                </h2>
+                <div class="mt-6 leading-7 text-gray-700">
+                    کانال آب دبی (Dubai Water Canal) چهره‌ی
+                    امارات متحده را تغییر داده، و به عنوان یکی
+                    از بزرگ‌ترین تحولات شهری در جهان، تاریخ‌ساز
+                    شده است. کانال دبی با اتصال نهر دبی، واقع در
+                    قسمت قدیمی ‌شهر، به خلیج فارس، به قسمت عظیمی
+                    ‌از شهر، ساحلی کاملا جدید بخشیده است. این
+                    توسعه شهری حماسی زیبایی دبی را چندین برابر
+                    کرده است. اگر قصد سفر با تور دبی و بازدید از
+                    کانال آب را دارید، در ادامه‌ی مطلب با بیسان
+                    همراه باشید:
+                </div>
+            </div>
+
+            <hr class="my-6 divide-y" />
+
+            <div class="flex gap-4">
+                <a href="#" class="flex w-1/2 items-center rounded p-2 hover:bg-gray-50">
+                    <i class="w-2/12"><img src="svg/chevron-rigth.svg" alt="" /></i>
+                    <div class="flex w-10/12 leading-7">
+                        <div class="flex max-w-full flex-col">
+                            <h4 class="inline overflow-hidden text-ellipsis whitespace-nowrap text-left font-bold">
+                                بهترین تورهای تفریحی دبی
+                            </h4>
+                            <span class="text-left text-sm text-gray-600">
+                                مطلب بعدی
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="flex w-1/2 flex-row-reverse items-center rounded p-2 hover:bg-gray-50">
+                    <i class="w-2/12 text-left"><img class="inline-block" src="svg/chevron-left.svg" alt="" /></i>
+                    <div class="flex w-10/12 leading-7">
+                        <div class="flex max-w-full flex-col">
+                            <h4 class="inline overflow-hidden text-ellipsis whitespace-nowrap font-bold">
+                                بهترین مکان‌های برگزاری
+                                جشن در در دبی
+                            </h4>
+                            <span class="text-rigth text-sm text-gray-600">
+                                مطلب قبلی
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div>
+                <div class="mt-10 flex justify-between">
+                    <span class="text-xl font-bold text-primery-dark">نظرات</span>
+
+                    <span class="text-sm text-gray-500">28 نظر ثبت شده</span>
+                </div>
+
+                <form class="mt-14 flex flex-col gap-6">
+                    <div class="flex">
+                        <div class="w-1/2">
+                            <div class="relative">
+                                <span
+                                    class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs">
+                                    نام
+                                </span>
+                                <div class="relative overflow-hidden rounded-3xl border bg-white">
+                                    <input class="py-2 px-6 focus:placeholder:text-white" type="text"
+                                        placeholder="علی" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-1/2">
+                            <div class="relative">
+                                <span
+                                    class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs">
+                                    نام خانوادگی
+                                </span>
+                                <div class="relative overflow-hidden rounded-3xl border bg-white">
+                                    <input class="py-2 px-6 focus:placeholder:text-white" type="text"
+                                        placeholder="احمدی" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <div class="relative">
+                            <span class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs">
+                                نام خانوادگی
+                            </span>
+                            <div class="relative my-4 overflow-hidden rounded-3xl border bg-white">
+                                <textarea
+                                    class="w-full py-2 px-6 focus:placeholder:text-white focus-visible:outline-none"
+                                    type="text" placeholder="پاسخ شما" cols="30" rows="7"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <button
+                            class="inline-block rounded-3xl bg-primery px-4 py-2 font-bold text-primery-dark hover:bg-yellow-200"
+                            type="submit">
+                            ارسال
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div class="flex-center h-96">...gap ( delete me later )</div>
+
+    <script src="js/components/navbar.js"></script>
+    <script src="js/commons/utils.js"></script>
+</body>
+
+</html>
