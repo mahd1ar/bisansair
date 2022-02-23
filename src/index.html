@@ -32,7 +32,7 @@
                 class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                 <div class="flex">
                     <div
-                        class="flex-center w-32 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                        class="flex-center w-8 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg md:w-32 md:bg-gray-200 md:shadow-none">
                         <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
                         <span class="mx-2 hidden text-sm md:block">
                             ۰۲۱-۳۴۵۶۴۸
@@ -225,14 +225,13 @@
                         </button>
                     </div>
 
-                    <div class="relative">
-                        <div class="mt-2 mb-5 flex items-center justify-start gap-3 text-xl">
-                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()"
-                                x-transition>
+                    <div class="relative rounded-3xl bg-white" dir="rtl">
+                        <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
+                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
                                 <img src="svg/chevron-rigth.svg" alt="" />
                             </span>
 
-                            <h1 x-text="ch.name ? ch.name : 'menu' "></h1>
+                            <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
                         </div>
 
                         <ul class="bi-scrollbar">
@@ -252,7 +251,7 @@
             <!-- / -->
         </nav>
 
-        <div class="relative flex h-screen items-center justify-center overflow-x-clip md:-z-10">
+        <div class="js-hero relative flex h-screen items-center justify-center overflow-x-clip">
             <div id="yellow_gradient"
                 class="absolute bottom-0 -z-10 hidden h-full w-full bg-gradient-radial from-yellow-200 via-yellow-50 to-transparent md:block">
             </div>

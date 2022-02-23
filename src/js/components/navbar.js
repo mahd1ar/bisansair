@@ -7,20 +7,27 @@ var navbar = {
         return this._isOpen
     },
     set isOpen(input) {
-        if (input) document.body.style.overflow = 'hidden'
-        else document.body.style.overflow = ''
+
+        const indexPageHeroSection = document.querySelector('.js-hero')
+
+        if (indexPageHeroSection)
+            if (input)
+                indexPageHeroSection.classList.add('-z-10')
+            else
+                indexPageHeroSection.classList.remove('-z-10')
+
+        document.body.style.overflow = input ? 'hidden' : ''
 
         this._isOpen = input
     },
-    menu: [],
+    // menu: [],
     subMenu: [],
     tree: {},
 
     init() {
-        // console.log(this.$refs.item.innerText)
 
         function traverse(el, index = 0) {
-            // debugger
+
             const t = {}
             const name = el.querySelector(":scope > a");
             const els = el.querySelectorAll(":scope > ul > li");
@@ -45,11 +52,22 @@ var navbar = {
 
         this.tree = traverse(el, 0,)
     },
+    get currentSubmenu() {
+        let el = this.tree;
+
+        for (let i = 0; i < this.subMenu.length; i++)
+
+            el = el.children[this.subMenu[i]]
+
+
+        return el
+    },
     get ch() {
         let l = this.tree.children
 
-        for (let i = 0; i < this.subMenu.length; i++)
+        for (let i = 0; i < this.subMenu.length; i++) {
             l = l[this.subMenu[i]].children
+        }
 
         return l
     },

@@ -2,21 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page 11 </title>
-    <link rel="stylesheet" href="css/output.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 11</title>
+    <link rel="stylesheet" href="css/output.css" />
 
-    <link rel="stylesheet" href="lib/css/splide.min.css">
-    <link rel="stylesheet" href="lib/css/splide-core.min.css">
+    <link rel="stylesheet" href="lib/css/splide.min.css" />
+    <link rel="stylesheet" href="lib/css/splide-core.min.css" />
 
     <script defer src="lib/js/alpine.js"></script>
 </head>
 
 <body>
     <!-- brake points debug -->
-    <div class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
+    <div class="fixed top-10 left-10 z-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
         <span class="hidden sm:block">sm</span>
         <span class="hidden md:block">md</span>
         <span class="hidden lg:block">lg</span>
@@ -25,240 +25,267 @@
     </div>
     <!-- /debug -->
 
-
     <header class="mb-10 pt-10">
         <!-- TRAVEL TEXTURE -->
-        <div class="absolute w-full top-0 bi-overlay-gradient-white overflow-hidden h-80"
-            style="background: url(svg/travel-textture/one.svg) center center/cover;">
-        </div>
+        <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+					background: url(svg/travel-textture/one.svg)
+						center center/cover;
+				"></div>
 
-
-        <nav id="navigation" x-data="navbar" class="lg:max-w-[1104px] container mx-auto overflow-x-clip">
+        <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
             <div
-                class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow z-20 relative">
-
+                class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                 <div class="flex">
                     <div
-                        class="w-32 bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 py-1 rounded-full flex-center flex-1">
-                        <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-                        <span class="mx-2 text-sm hidden md:block"> ۰۲۱-۳۴۵۶۴۸ </span>
+                        class="flex-center w-8 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg md:w-32 md:bg-gray-200 md:shadow-none">
+                        <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                        <span class="mx-2 hidden text-sm md:block">
+                            ۰۲۱-۳۴۵۶۴۸
+                        </span>
                     </div>
 
-
                     <div class="menu-top_menu-container hidden md:block" ref="menuContainer">
-                        <ul id="menu-top_menu" class="menu ">
-                            <li class="menu-item   menu-item-has-children ">
+                        <ul id="menu-top_menu" class="menu">
+                            <li class="menu-item menu-item-has-children">
                                 <a href="http://hll.om/index.php/product/">تور</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item   "><a href="#">
+                                    <li class="menu-item">
+                                        <a href="#">
                                             bitumen
-                                            penetration grade
-                                        </a></li>
-                                    <li class="menu-item   "><a href="#">performance grade
-                                            bitumen</a></li>
+                                            penetration
+                                            grade
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">performance
+                                            grade
+                                            bitumen</a>
+                                    </li>
                                     <li
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children ">
-                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen Cutback</a>
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen
+                                            Cutback</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
                                                     bitumen
-                                                    slow curing (SC)</a>
+                                                    slow
+                                                    curing
+                                                    (SC)</a>
                                             </li>
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
-                                                    bitumen medium curing (MC)</a>
+                                                    bitumen
+                                                    medium
+                                                    curing
+                                                    (MC)</a>
                                             </li>
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
                                                     curing
-                                                    cutback bitumen (RC)</a>
+                                                    cutback
+                                                    bitumen
+                                                    (RC)</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children ">
-                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen emulsion</a>
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen
+                                            emulsion</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen Emulsion
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen
+                                                    Emulsion
                                                     (BE)</a>
                                             </li>
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/cationic-emulsions/">Cationic
                                                     Emulsions</a>
                                             </li>
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic Emulsions</a>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic
+                                                    Emulsions</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
                                             Emulsified
-                                            Bitumen</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/solvent-base-primer/">Solvent Base
+                                            Bitumen</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/solvent-base-primer/">Solvent
+                                            Base
                                             Primer</a>
                                     </li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
-                                            Modified Emulsion (PME)</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready Mixed
-                                            Asphalt</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c_bituplast/">Bituplast</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
-                                            Base Waterproofing Mortar</a></li>
-                                    <li class="menu-item   "><a
-                                            href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco Organic
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
+                                            Modified
+                                            Emulsion
+                                            (PME)</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready
+                                            Mixed
+                                            Asphalt</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c_bituplast/">Bituplast</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
+                                            Base
+                                            Waterproofing
+                                            Mortar</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco
+                                            Organic
                                             Cleaner
-                                            (BOC):</a></li>
+                                            (BOC):</a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li class="menu-item   menu-item-has-children ">
+                            <li class="menu-item menu-item-has-children">
                                 <a href="#">ﻫﺘﻞ ﻫﺎ</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item  menu-item-object-post "><a
-                                            href="http://hll.om/standardizing-bodies/">Standardizing Bodies</a></li>
-                                    <li class="menu-item  menu-item-object-post "><a
-                                            href="http://hll.om/family-of-bitumenous-binders/">Family of Bitumenous
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/standardizing-bodies/">Standardizing
+                                            Bodies</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/family-of-bitumenous-binders/">Family
+                                            of
+                                            Bitumenous
                                             Binders</a>
                                     </li>
-                                    <li class="menu-item   "><a href="http://hll.om/product/quality-control/">Quality
-                                            Control</a></li>
-                                    <li class="menu-item  menu-item-object-post "><a
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/quality-control/">Quality
+                                            Control</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a
                                             href="http://hll.om/bitumen-emulsions-anionic-cationic-unmodified-polymer-modified/">BITUMEN
-                                            EMULSIONS (ANIONIC; CATIONIC; UNMODIFIED; POLYMER MODIFIED)</a></li>
+                                            EMULSIONS
+                                            (ANIONIC;
+                                            CATIONIC;
+                                            UNMODIFIED;
+                                            POLYMER
+                                            MODIFIED)</a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="http://hll.om/packing-logistics/">تور اقساط</a></li>
-                            <li class="menu-item"><a href="#">تور اروپا</a></li>
-                            <li class="menu-item"><a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a></li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/packing-logistics/">تور اقساط</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">تور اروپا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a>
+                            </li>
 
-                            <li class="menu-item   "><a href="http://hll.om/contact-us/">ویزا</a></li>
-                            <li class="menu-item   "><a href="http://hll.om/contact-us/">بلاگ</a></li>
-
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ویزا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">بلاگ</a>
+                            </li>
                         </ul>
                     </div>
-
                 </div>
 
-                <img src="./img/logo.png" class="object-contain w-9" alt="" />
+                <img src="./img/logo.png" class="w-9 object-contain" alt="" />
 
-                <div @click="taggleMobileMenu" class=" cursor-pointer md:hidden">
+                <div @click="taggleMobileMenu" class="cursor-pointer md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </div>
-
             </div>
 
-
-
-
             <!-- MOBILE SECTION -->
-            <div id="mobile-menu" x-show="isOpen" style="display: none;" x-transition.opacity>
+            <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
                 <div class="mobile-menu__overlay">
-
-
-
                     <div
-                        class="flex mx-auto mt-5 justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
+                        class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                         <div class="flex">
                             <div
-                                class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
-                                <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-
+                                class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                                <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
                             </div>
-
                         </div>
 
-                        <img src="./img/logo.png" class="object-contain w-9" alt="" />
+                        <img src="./img/logo.png" class="w-9 object-contain" alt="" />
 
-
-                        <button @click="taggleMobileMenu()" class="  relative  cursor-pointer md:hidden">
+                        <button @click="taggleMobileMenu()" class="relative cursor-pointer md:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
-
                     </div>
 
-
-
-                    <div class="relative">
-
-                        <div class="flex items-center justify-start gap-3 mt-2 mb-5 text-xl">
-                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()"
-                                x-transition>
-                                <img src="svg/chevron-rigth.svg" alt="">
+                    <div class="relative rounded-3xl bg-white" dir="rtl">
+                        <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
+                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
+                                <img src="svg/chevron-rigth.svg" alt="" />
                             </span>
 
-                            <h1 x-text="ch.name ? ch.name : 'menu' "></h1>
-
+                            <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
                         </div>
 
                         <ul class="bi-scrollbar">
                             <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
                                 <li>
-
                                     <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') " class="">
                                         <span x-text="name"></span>
-                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg" x-transition>
+                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg"
+                                            x-transition />
                                     </a>
-
                                 </li>
                             </template>
-
                         </ul>
-
                     </div>
                 </div>
-
             </div>
             <!-- / -->
         </nav>
-
     </header>
 
-    <main class="container mx-auto relative gap-6 px-2 flex flex-col md:flex-row items-start" dir="rtl">
+    <main class="container relative mx-auto flex flex-col items-start gap-6 px-2 md:flex-row" dir="rtl">
         <div class="w-full md:w-7/12 lg:w-9/12">
             <div>
-
                 <!-- Title -->
                 <div class="mt-8">
-                    <div class="flex ">
-                        <div class="ml-4 ">
-                            <img class="w-14 h-14 rounded-circle" src="img/flag-turkish.png" alt="">
+                    <div class="flex">
+                        <div class="ml-4">
+                            <img class="h-14 w-14 rounded-circle" src="img/flag-turkish.png" alt="" />
                         </div>
                         <div>
-                            <h1 class="text-2xl font-bold">هتل گراندهیلارم استانبول</h1>
+                            <h1 class="text-2xl font-bold">
+                                هتل گراندهیلارم استانبول
+                            </h1>
                             <p class="text-gray-400">
                                 ترکیه استانبول
                             </p>
                         </div>
-
                     </div>
                 </div>
 
                 <!-- slider -->
                 <div class="mt-4" dir="ltr">
-
                     <div id="main-slider" class="splide">
-
                         <div class="splide__arrows">
                             <button class="splide__arrow splide__arrow--prev">
-                                <img src="svg/chevron-left.svg" alt="">
+                                <img src="svg/chevron-left.svg" alt="" />
                             </button>
                             <button class="splide__arrow splide__arrow--next">
-                                <img src="svg/chevron-rigth.svg" alt="">
+                                <img src="svg/chevron-rigth.svg" alt="" />
                             </button>
                         </div>
 
@@ -294,20 +321,15 @@
                             <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
                         </li>
                     </ul>
-
                 </div>
 
                 <!-- mobile only hotel rating -->
-                <div class="relative bottom-0 md:hidden mt-8 left-0 w-full">
-
+                <div class="relative bottom-0 left-0 mt-8 w-full md:hidden">
                     <div class="px-8">
-
                         <div
-                            class="rounded-3xl flex items-center  bg-white px-4 py-4 relative overflow-hidden drop-shadow-xl">
-                            <div style="width: 50%;" class="absolute left-0 top-0 h-full bg-primery">
-                            </div>
-                            <div class="w-full relative flex justify-evenly items-center">
-
+                            class="relative flex items-center overflow-hidden rounded-3xl bg-white px-4 py-4 drop-shadow-xl">
+                            <div style="width: 50%" class="absolute left-0 top-0 h-full bg-primery"></div>
+                            <div class="relative flex w-full items-center justify-evenly">
                                 <span class="font-bold">
                                     میانگین امتیاز کل
                                 </span>
@@ -315,53 +337,57 @@
                                     4
                                 </span>
                             </div>
-
                         </div>
-
                     </div>
                     <!-- details -->
                     <div x-data="{isOpen : true}" class="relative">
-                        <div class="flex flex-col mt-1 transition-all duration-500 ease-out overflow-hidden"
+                        <div class="mt-1 flex flex-col overflow-hidden transition-all duration-500 ease-out"
                             :style="{ maxHeight : isOpen ? '400px' : '100px'}">
                             <div class="mt-1">
                                 <div>امکانات</div>
                                 <div class="flex items-center">
-                                    <div class="w-11/12 ">
-                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
-                                            </div>
+                                    <div class="w-11/12">
+                                        <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                            <div style="
+														width: 45%;
+													" class="absolute top-0 left-0 h-full bg-primery"></div>
                                         </div>
                                     </div>
-                                    <div class=" w-1/12 font-semibold flex-center">4</div>
+                                    <div class="flex-center w-1/12 font-semibold">
+                                        4
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="mt-1">
                                 <div>کارمندان</div>
                                 <div class="flex items-center">
-                                    <div class="w-11/12 ">
-                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
-                                            </div>
+                                    <div class="w-11/12">
+                                        <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                            <div style="
+														width: 45%;
+													" class="absolute top-0 left-0 h-full bg-primery"></div>
                                         </div>
                                     </div>
-                                    <div class=" w-1/12 font-semibold flex-center">4</div>
+                                    <div class="flex-center w-1/12 font-semibold">
+                                        4
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="mt-1">
                                 <div>پاکیزگی</div>
                                 <div class="flex items-center">
-                                    <div class="w-11/12 ">
-                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
-                                            </div>
+                                    <div class="w-11/12">
+                                        <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                            <div style="
+														width: 45%;
+													" class="absolute top-0 left-0 h-full bg-primery"></div>
                                         </div>
                                     </div>
-                                    <div class=" w-1/12 font-semibold flex-center">4</div>
+                                    <div class="flex-center w-1/12 font-semibold">
+                                        4
+                                    </div>
                                 </div>
                             </div>
 
@@ -369,28 +395,15 @@
                                 <div>آسایش</div>
                                 <div class="flex items-center">
                                     <div class="w-11/12">
-                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
-                                            </div>
+                                        <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                            <div style="
+														width: 45%;
+													" class="absolute top-0 left-0 h-full bg-primery"></div>
                                         </div>
                                     </div>
-                                    <div class="w-1/12 font-semibold flex-center">4</div>
-                                </div>
-                            </div>
-
-
-                            <div class="mt-1">
-                                <div>ارزش</div>
-                                <div class="flex items-center">
-                                    <div class="w-11/12">
-                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
-                                            </div>
-                                        </div>
+                                    <div class="flex-center w-1/12 font-semibold">
+                                        4
                                     </div>
-                                    <div class="w-1/12 font-semibold flex-center">4</div>
                                 </div>
                             </div>
 
@@ -398,227 +411,259 @@
                                 <div>ارزش</div>
                                 <div class="flex items-center">
                                     <div class="w-11/12">
-                                        <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                            <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery">
-                                            </div>
+                                        <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                            <div style="
+														width: 45%;
+													" class="absolute top-0 left-0 h-full bg-primery"></div>
                                         </div>
                                     </div>
-                                    <div class="w-1/12 font-semibold flex-center">4</div>
+                                    <div class="flex-center w-1/12 font-semibold">
+                                        4
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="cursor-pointer absolute flex-center gap-4 bottom-0 right-0 w-full transform translate-y-full"
+                            <div class="mt-1">
+                                <div>ارزش</div>
+                                <div class="flex items-center">
+                                    <div class="w-11/12">
+                                        <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                            <div style="
+														width: 45%;
+													" class="absolute top-0 left-0 h-full bg-primery"></div>
+                                        </div>
+                                    </div>
+                                    <div class="flex-center w-1/12 font-semibold">
+                                        4
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex-center absolute bottom-0 right-0 w-full translate-y-full transform cursor-pointer gap-4"
                                 @click="isOpen = !isOpen">
                                 <div x-show="isOpen === false"
-                                    class="transform -translate-y-full h-10 bg-gradient-to-t from-white to-transparent absolute w-full "
-                                    x-transition-opacity>
-                                </div>
+                                    class="absolute h-10 w-full -translate-y-full transform bg-gradient-to-t from-white to-transparent"
+                                    x-transition-opacity></div>
                                 اطلاعات بیشتر
-                                <div class="w-10 h-10 bg-primery  flex-center rounded-circle">
-                                    <img :class="{'transform rotate-180' : isOpen} " src="svg/chevron-down.svg" alt="">
+                                <div class="flex-center h-10 w-10 rounded-circle bg-primery">
+                                    <img :class="{'transform rotate-180' : isOpen} " src="svg/chevron-down.svg"
+                                        alt="" />
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex flex-col mt-12">
-                        <h4 class="text-xl font-semibold text-primery-dark">مکان</h4>
-                        <div class="h-36 rounded-3xl mt-4 overflow-hidden">
+                    <div class="mt-12 flex flex-col">
+                        <h4 class="text-xl font-semibold text-primery-dark">
+                            مکان
+                        </h4>
+                        <div class="mt-4 h-36 overflow-hidden rounded-3xl">
                             <iframe class="w-full"
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12943.844189993628!2d51.43529352797782!3d35.80088958266277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e05c2e12280e7%3A0x484bbfd7d8d0febe!2sHekmat%2C%20District%201%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2s!4v1644647293732!5m2!1sen!2s"
-                                style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                                style="border: 0" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                         <div class="mt-2 text-right">
-                            اول، خیابان دوم، کوچه سوم، میدان...
+                            اول، خیابان دوم، کوچه سوم،
+                            میدان...
                         </div>
                     </div>
-
-
                 </div>
 
-
                 <!-- Tabs -->
-                <div class="py-6 lg:px-6   overflow-auto scroll-smooth bi-scrollbar ">
-                    <ul class="js-tabs flex items-start gap-2 text-secondary-dark font-semibold whitespace-pre  ">
-                        <li class="js-tab-item px-6 py-2 rounded-3xl cursor-pointer   bg-slate-200 ">توضیحات</li>
-                        <li class="js-tab-item px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">برنامه سفر</li>
-                        <li class="js-tab-item px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 "> مدارک مورد نیاز
+                <div class="bi-scrollbar overflow-auto scroll-smooth py-6 lg:px-6">
+                    <ul class="js-tabs flex items-start gap-2 whitespace-pre font-semibold text-secondary-dark">
+                        <li class="js-tab-item cursor-pointer rounded-3xl bg-slate-200 px-6 py-2">
+                            توضیحات
                         </li>
-                        <li class="js-tab-item px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">اطلاعات سفر</li>
-                        <li class="js-tab-item px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">گالری</li>
+                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                            برنامه سفر
+                        </li>
+                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                            مدارک مورد نیاز
+                        </li>
+                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                            اطلاعات سفر
+                        </li>
+                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                            گالری
+                        </li>
                     </ul>
                 </div>
 
                 <!-- About tour -->
-                <div class="lg:mt-8 mt-1">
-                    <h1 class="text-primery-dark text-xl font-bold">در مورد هتل</h1>
+                <div class="mt-1 lg:mt-8">
+                    <h1 class="text-xl font-bold text-primery-dark">
+                        در مورد هتل
+                    </h1>
                     <div class="mt-2">
-                        لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                        صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای
-                        پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر
+                        لورم ایپسوم یا طرح‌نما (به انگلیسی:
+                        Lorem ipsum) به متنی آزمایشی و بی‌معنی
+                        در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
+                        گفته می‌شود. طراح گرافیک از این متن به
+                        عنوان عنصری از ترکیب بندی برای پر کردن
+                        صفحه و ارایه اولیه شکل ظاهری و کلی طرح
+                        سفارش گرفته شده استفاده می نماید، تا
+                        از نظر
                     </div>
                 </div>
 
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl font-bold">تیتر دوم</h1>
+                    <h1 class="text-xl font-bold text-primery-dark">
+                        تیتر دوم
+                    </h1>
                     <div class="mt-2">
-                        گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی،
-                        نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که
-                        صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و
-                        اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند
+                        گرافیکی نشانگر چگونگی نوع و اندازه
+                        فونت و ظاهر متن باشد. معمولا طراحان
+                        گرافیک برای صفحه‌آرایی، نخست از
+                        متن‌های آزمایشی و بی‌معنی استفاده
+                        می‌کنند تا صرفا به مشتری یا صاحب کار
+                        خود نشان دهند که صفحه طراحی یا صفحه
+                        بندی شده بعد از اینکه متن در آن قرار
+                        گیرد چگونه به نظر می‌رسد و قلم‌ها و
+                        اندازه‌بندی‌ها چگونه در نظر گرفته
+                        شده‌است. از آنجایی که طراحان عموما
+                        نویسنده متن نیستند
                     </div>
                 </div>
 
                 <!-- facilities -->
                 <div class="mt-8">
-                    <h2 class="text-primery-dark text-xl font-bold">
+                    <h2 class="text-xl font-bold text-primery-dark">
                         امکانات
                     </h2>
 
                     <div>
-                        <h4 class="text-xl mt-8 mb-4">
+                        <h4 class="mt-8 mb-4 text-xl">
                             غذا و نوشیدنی
                         </h4>
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6">
-                            <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
+                        <div class="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-6">
+                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
                                 <i>
-                                    <img src="svg/break-fast.svg" alt="">
+                                    <img src="svg/break-fast.svg" alt="" />
                                 </i>
                                 سرور صبحانه در اتاق</span>
 
-                            <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
+                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
                                 <i>
-                                    <img src="svg/restaurant.svg" alt="">
+                                    <img src="svg/restaurant.svg" alt="" />
                                 </i>
                                 رستوران
                             </span>
-
                         </div>
                     </div>
                     <!-- accessibility -->
                     <div>
-                        <h4 class="text-xl mt-8 mb-4">
+                        <h4 class="mt-8 mb-4 text-xl">
                             دسترسی
                         </h4>
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6">
-                            <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
+                        <div class="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-6">
+                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
                                 <i>
-                                    <img src="svg/disabled_people.svg" alt="">
+                                    <img src="svg/disabled_people.svg" alt="" />
                                 </i>
                                 توالت ویژه ی معلولین
                             </span>
 
-                            <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
+                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
                                 <i>
-                                    <img src="svg/wheelchair.svg" alt="">
+                                    <img src="svg/wheelchair.svg" alt="" />
                                 </i>
                                 تردد آسان صندلی چرخدار
                             </span>
-
                         </div>
                     </div>
 
                     <!-- health -->
                     <div>
-                        <h4 class="text-xl mt-8 mb-4">
+                        <h4 class="mt-8 mb-4 text-xl">
                             امکانات سلامتی
                         </h4>
-                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-6">
-                            <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
+                        <div class="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-6">
+                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
                                 <i>
-                                    <img src="svg/fitness.svg" alt="">
+                                    <img src="svg/fitness.svg" alt="" />
                                 </i>
                                 سالن تناسب اندام
                             </span>
 
-                            <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
+                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
                                 <i>
-                                    <img src="svg/steam_room.svg" alt="">
+                                    <img src="svg/steam_room.svg" alt="" />
                                 </i>
                                 اتاق بخار
                             </span>
 
-                            <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
+                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
                                 <i>
-                                    <img src="svg/massage.svg" alt="">
+                                    <img src="svg/massage.svg" alt="" />
                                 </i>
                                 ماساژ
                             </span>
 
-                            <span class="flex gap-2 bg-slate-200 px-4 py-2 rounded-xl">
+                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
                                 <i>
-                                    <img src="svg/bath.svg" alt="">
+                                    <img src="svg/bath.svg" alt="" />
                                 </i>
                                 امکانات آبگرم
                             </span>
-
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
         <aside class="relative bottom-0 left-0 w-full md:w-5/12 lg:w-3/12">
-
             <!-- Cards -->
             <!-- rate -->
 
-            <div class="rounded-3xl  items-center hidden md:flex bg-white px-4 py-4 relative overflow-hidden shadow-xl">
-                <div style="width: 50%;" class="absolute left-0 top-0 h-full bg-primery">
+            <div class="relative hidden items-center overflow-hidden rounded-3xl bg-white px-4 py-4 shadow-xl md:flex">
+                <div style="width: 50%" class="absolute left-0 top-0 h-full bg-primery"></div>
+                <div class="relative flex w-full items-center justify-evenly">
+                    <span> میانگین امتیاز کل </span>
+                    <span class="text-5xl"> 4 </span>
                 </div>
-                <div class="w-full relative flex justify-evenly items-center">
-
-                    <span>
-                        میانگین امتیاز کل
-                    </span>
-                    <span class="text-5xl">
-                        4
-                    </span>
-                </div>
-
             </div>
 
-
             <!-- details -->
-            <div class="hidden md:flex flex-col mt-1">
+            <div class="mt-1 hidden flex-col md:flex">
                 <div class="mt-1">
                     <div>امکانات</div>
                     <div class="flex items-center">
-                        <div class="w-11/12 ">
-                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                        <div class="w-11/12">
+                            <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                <div style="width: 45%" class="absolute top-0 left-0 h-full bg-primery"></div>
                             </div>
                         </div>
-                        <div class="lg:1ext-left w-2/12 font-semibold flex-center">4</div>
+                        <div class="lg:1ext-left flex-center w-2/12 font-semibold">
+                            4
+                        </div>
                     </div>
                 </div>
 
                 <div class="mt-1">
                     <div>کارمندان</div>
                     <div class="flex items-center">
-                        <div class="w-11/12 ">
-                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                        <div class="w-11/12">
+                            <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                <div style="width: 45%" class="absolute top-0 left-0 h-full bg-primery"></div>
                             </div>
                         </div>
-                        <div class="lg:1ext-left w-2/12 font-semibold flex-center">4</div>
+                        <div class="lg:1ext-left flex-center w-2/12 font-semibold">
+                            4
+                        </div>
                     </div>
                 </div>
 
                 <div class="mt-1">
                     <div>پاکیزگی</div>
                     <div class="flex items-center">
-                        <div class="w-11/12 ">
-                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                        <div class="w-11/12">
+                            <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                <div style="width: 45%" class="absolute top-0 left-0 h-full bg-primery"></div>
                             </div>
                         </div>
-                        <div class="lg:1ext-left w-2/12 font-semibold flex-center">4</div>
+                        <div class="lg:1ext-left flex-center w-2/12 font-semibold">
+                            4
+                        </div>
                     </div>
                 </div>
 
@@ -626,159 +671,157 @@
                     <div>آسایش</div>
                     <div class="flex items-center">
                         <div class="w-11/12">
-                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                            <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                <div style="width: 45%" class="absolute top-0 left-0 h-full bg-primery"></div>
                             </div>
                         </div>
-                        <div class="w-2/12 font-semibold flex-center">4</div>
+                        <div class="flex-center w-2/12 font-semibold">
+                            4
+                        </div>
                     </div>
                 </div>
-
 
                 <div class="mt-1">
                     <div>ارزش</div>
                     <div class="flex items-center">
                         <div class="w-11/12">
-                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                            <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                <div style="width: 45%" class="absolute top-0 left-0 h-full bg-primery"></div>
                             </div>
                         </div>
-                        <div class="w-2/12 font-semibold flex-center">4</div>
+                        <div class="flex-center w-2/12 font-semibold">
+                            4
+                        </div>
                     </div>
                 </div>
-
 
                 <div class="mt-1">
                     <div>ارزش</div>
                     <div class="flex items-center">
                         <div class="w-11/12">
-                            <div class="h-2 relative w-full bg-gray-200 rounded-md overflow-hidden">
-
-                                <div style="width: 45%;" class="absolute top-0 h-full left-0 bg-primery"></div>
+                            <div class="relative h-2 w-full overflow-hidden rounded-md bg-gray-200">
+                                <div style="width: 45%" class="absolute top-0 left-0 h-full bg-primery"></div>
                             </div>
                         </div>
-                        <div class="w-2/12 font-semibold flex-center">4</div>
+                        <div class="flex-center w-2/12 font-semibold">
+                            4
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="hidden md:flex flex-col mt-12">
-                <h4 class="text-xl font-semibold text-primery-dark">مکان</h4>
-                <div class="h-36 rounded-3xl mt-4 overflow-hidden">
+            <div class="mt-12 hidden flex-col md:flex">
+                <h4 class="text-xl font-semibold text-primery-dark">
+                    مکان
+                </h4>
+                <div class="mt-4 h-36 overflow-hidden rounded-3xl">
                     <iframe class="w-full"
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12943.844189993628!2d51.43529352797782!3d35.80088958266277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e05c2e12280e7%3A0x484bbfd7d8d0febe!2sHekmat%2C%20District%201%2C%20Tehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2s!4v1644647293732!5m2!1sen!2s"
-                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        style="border: 0" allowfullscreen="" loading="lazy"></iframe>
                 </div>
                 <div class="mt-2 text-right">
                     اول، خیابان دوم، کوچه سوم، میدان...
                 </div>
             </div>
 
-            <div class="flex flex-col mt-12 ">
+            <div class="mt-12 flex flex-col">
                 <h4 class="text-xl font-semibold text-primery-dark">
                     هتل های مشابه
                 </h4>
 
-                <div class="h-56 lg:h-auto lg:aspect-square mt-6 rounded-3xl overflow-hidden flex flex-col"
-                    style="background: url(img/mosque.jpg) center center / cover;">
-                    <div class="mt-auto py-4 flex flex-col items-center text-white relative">
+                <div class="mt-6 flex h-56 flex-col overflow-hidden rounded-3xl lg:aspect-square lg:h-auto" style="
+							background: url(img/mosque.jpg) center
+								center / cover;
+						">
+                    <div class="relative mt-auto flex flex-col items-center py-4 text-white">
                         <!-- overlay -->
-                        <div class="bg-gradient-to-t from-black to-transparent absolute inset-0 h-full w-full"></div>
+                        <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black to-transparent"></div>
                         <span class="relative">
-
                             Grand hilaroium istonbul
                         </span>
-                        <div class="relative flex flex-row-reverse gap-1 mt-1 flex-center">
+                        <div class="flex-center relative mt-1 flex flex-row-reverse gap-1">
                             <span>
-                                <img src="svg/star.svg" alt="">
+                                <img src="svg/star.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star.svg" alt="">
+                                <img src="svg/star.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star.svg" alt="">
+                                <img src="svg/star.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star-outline.svg" alt="">
+                                <img src="svg/star-outline.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star-outline.svg" alt="">
+                                <img src="svg/star-outline.svg" alt="" />
                             </span>
                         </div>
-
-
                     </div>
                 </div>
 
-                <div class="h-56 lg:h-auto lg:aspect-square mt-6 rounded-3xl overflow-hidden flex flex-col"
-                    style="background: url(img/mosque.jpg) center center / cover;">
-                    <div class="mt-auto py-4 flex flex-col items-center text-white relative">
+                <div class="mt-6 flex h-56 flex-col overflow-hidden rounded-3xl lg:aspect-square lg:h-auto" style="
+							background: url(img/mosque.jpg) center
+								center / cover;
+						">
+                    <div class="relative mt-auto flex flex-col items-center py-4 text-white">
                         <!-- overlay -->
-                        <div class="bg-gradient-to-t from-black to-transparent absolute inset-0 h-full w-full"></div>
+                        <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black to-transparent"></div>
                         <span class="relative">
-
                             Grand hilaroium istonbul
                         </span>
-                        <div class="relative flex flex-row-reverse gap-1 mt-1 flex-center">
+                        <div class="flex-center relative mt-1 flex flex-row-reverse gap-1">
                             <span>
-                                <img src="svg/star.svg" alt="">
+                                <img src="svg/star.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star.svg" alt="">
+                                <img src="svg/star.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star.svg" alt="">
+                                <img src="svg/star.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star-outline.svg" alt="">
+                                <img src="svg/star-outline.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star-outline.svg" alt="">
+                                <img src="svg/star-outline.svg" alt="" />
                             </span>
                         </div>
-
-
                     </div>
                 </div>
 
-                <div class="h-56 lg:h-auto lg:aspect-square mt-6 rounded-3xl overflow-hidden flex flex-col"
-                    style="background: url(img/mosque.jpg) center center / cover;">
-                    <div class="mt-auto py-4 flex flex-col items-center text-white relative">
+                <div class="mt-6 flex h-56 flex-col overflow-hidden rounded-3xl lg:aspect-square lg:h-auto" style="
+							background: url(img/mosque.jpg) center
+								center / cover;
+						">
+                    <div class="relative mt-auto flex flex-col items-center py-4 text-white">
                         <!-- overlay -->
-                        <div class="bg-gradient-to-t from-black to-transparent absolute inset-0 h-full w-full"></div>
+                        <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black to-transparent"></div>
                         <span class="relative">
-
                             Grand hilaroium istonbul
                         </span>
-                        <div class="relative flex flex-row-reverse gap-1 mt-1 flex-center">
+                        <div class="flex-center relative mt-1 flex flex-row-reverse gap-1">
                             <span>
-                                <img src="svg/star.svg" alt="">
+                                <img src="svg/star.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star.svg" alt="">
+                                <img src="svg/star.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star.svg" alt="">
+                                <img src="svg/star.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star-outline.svg" alt="">
+                                <img src="svg/star-outline.svg" alt="" />
                             </span>
                             <span>
-                                <img src="svg/star-outline.svg" alt="">
+                                <img src="svg/star-outline.svg" alt="" />
                             </span>
                         </div>
-
-
                     </div>
                 </div>
-
             </div>
 
-            <br><br><br>
+            <br /><br /><br />
         </aside>
-
     </main>
 
     <script src="js/components/navbar.js"></script>

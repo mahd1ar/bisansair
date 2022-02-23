@@ -28,12 +28,15 @@ input {
 	}
 
 	ul {
-		@apply mx-auto grid grid-cols-1  gap-2 overflow-auto sm:grid-cols-2;
+		@apply mx-auto grid grid-cols-1  gap-2 overflow-auto p-3 sm:grid-cols-2;
 		max-height: calc(100vh - 185px);
 	}
 
 	li a {
-		@apply relative flex cursor-pointer items-center justify-between rounded-xl bg-white p-5 shadow-md transition duration-100 ease-out hover:bg-gray-100;
+		@apply relative flex cursor-pointer items-center justify-between rounded-xl bg-white p-5 drop-shadow-lg transition duration-100 ease-out hover:bg-gray-100;
+		span {
+			@apply inline overflow-hidden text-ellipsis whitespace-nowrap;
+		}
 	}
 }
 

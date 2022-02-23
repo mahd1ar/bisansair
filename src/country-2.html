@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>country-2 </title>
-    <link rel="stylesheet" href="css/output.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>country-2</title>
+    <link rel="stylesheet" href="css/output.css" />
     <script defer src="lib/js/alpine.js"></script>
 </head>
 
 <body>
     <!-- brake points debug -->
-    <div class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
+    <div class="fixed top-10 left-10 z-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
         <span class="hidden sm:block">sm</span>
         <span class="hidden md:block">md</span>
         <span class="hidden lg:block">lg</span>
@@ -21,325 +21,381 @@
     </div>
     <!-- /debug -->
 
-
-
-
-
     <header class="mb-10 pt-10">
         <!-- TRAVEL TEXTURE -->
-        <div class="absolute w-full top-0 bi-overlay-gradient-white overflow-hidden h-80"
-            style="background: url(svg/travel-textture/one.svg) center center/cover;">
-        </div>
+        <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+					background: url(svg/travel-textture/one.svg)
+						center center/cover;
+				"></div>
 
-
-
-        <nav x-data="navbar" class="lg:max-w-[1104px] container mx-auto">
+        <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
             <div
-                class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow z-20 relative">
+                class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                 <div class="flex">
                     <div
-                        class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
-                        <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-                        <span class="mx-2 text-sm hidden md:block"> 021-345648 </span>
+                        class="flex-center w-8 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg md:w-32 md:bg-gray-200 md:shadow-none">
+                        <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                        <span class="mx-2 hidden text-sm md:block">
+                            ۰۲۱-۳۴۵۶۴۸
+                        </span>
                     </div>
 
-                    <ul x-ref="mitem"
-                        class="hidden md:flex flex-row-reverse gap-2 font-iransans text-sm font-semibold items-center mx-5 xl:ml-10 text-[#666666]">
-                        <li @click.prevent="toggleSelected"
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            <a href=""> تور </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-
-
-                            <ul @click.outside="toggleSelected" style="display: none"
-                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
-                                <li> <a href="/"> 11 </a> </li>
-                                <li> <a href=""> 12 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                            </ul>
-                        </li>
-                        <li
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 flex flex-row-reverse items-center relative rounded-full">
-                            <a href="">
-                                هتل ها
-                            </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-                            <ul style="display: none"
-                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
-                                <li> <a href="/"> امارات </a> </li>
-                                <li> <a href=""> ترکیه </a> </li>
-                                <li> <a href=""> ارمنستان </a> </li>
-                                <li> <a href=""> تایلند </a> </li>
-                                <li> <a href=""> فرانسه </a> </li>
-                                <li> <a href=""> اسپانیا </a> </li>
-                            </ul>
-                        </li>
-                        <li
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            <a href="">
-                                تور اقساط
-                            </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-                            <ul style="display: none"
-                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
-                                <li> <a href="/"> 11 </a> </li>
-                                <li> <a href=""> 12 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                            </ul>
-                        </li>
-                        <li
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            <a href="">
-                                تور ویژه
-                            </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-                            <ul style="display: none"
-                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
-                                <li> <a href="/"> 11 </a> </li>
-                                <li> <a href=""> 12 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                            </ul>
-                        </li>
-                        <li
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            <a href="">
-                                ویزا
-                            </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-                            <ul style="display: none"
-                                class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white p-2 px-4 rounded-lg max-w-xs  text-rtl flex flex-col gap-2 items-start overflow-hidden">
-                                <li> <a href="/"> 11 </a> </li>
-                                <li> <a href=""> 12 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                                <li> <a href=""> 13 </a> </li>
-                            </ul>
-                        </li>
-                        <li
-                            class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                            <a href="">
-                                بلاگ
-                            </a>
-                            <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-                        </li>
-                    </ul>
-
-                    <!-- LEAVE ME ALONE -->
-                    <ul
-                        class="hidden md:flex flex-row-reverse gap-2 font-iransans text-sm font-semibold items-center mx-5 xl:ml-10 text-[#666666]">
-                        <template x-for="({index,text,href,children},inx) in menu" :key="index">
-
-                            <li @click.prevent="toggleSelected(inx)"
-                                class="js-item-parent p-1 mx-1 cursor-pointer hover:bg-gray-200 rounded-full flex flex-row-reverse items-center relative">
-                                <a :href="href ? href : '#'" x-text="text"></a>
-                                <img src="./svg/chevron-down.svg" class="mx-1 w-[13px]" alt="" />
-
-
-                                <ul style="display: none" @click.outside="toggleSelected(-1)"
-                                    x-show="children.length > 0 && subMenu === inx"
-                                    class="js-item-child absolute transform translate-y-16 -top-0 z-30 shadow-sm bg-white py-2 rounded-lg max-w-xs text-rtl flex flex-col gap-2 items-center overflow-hidden">
-                                    <template x-for="ch in children">
-
-                                        <li class="hover:bg-gray-200 px-5 py-2 w-full text-right"> <a
-                                                :href="ch.href ? ch.href : '#' " x-text="ch.text"> </a> </li>
-                                    </template>
+                    <div class="menu-top_menu-container hidden md:block" ref="menuContainer">
+                        <ul id="menu-top_menu" class="menu">
+                            <li class="menu-item menu-item-has-children">
+                                <a href="http://hll.om/index.php/product/">تور</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="#">
+                                            bitumen
+                                            penetration
+                                            grade
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">performance
+                                            grade
+                                            bitumen</a>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen
+                                            Cutback</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
+                                                    bitumen
+                                                    slow
+                                                    curing
+                                                    (SC)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
+                                                    bitumen
+                                                    medium
+                                                    curing
+                                                    (MC)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
+                                                    curing
+                                                    cutback
+                                                    bitumen
+                                                    (RC)</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen
+                                            emulsion</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen
+                                                    Emulsion
+                                                    (BE)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cationic-emulsions/">Cationic
+                                                    Emulsions</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic
+                                                    Emulsions</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
+                                            Emulsified
+                                            Bitumen</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/solvent-base-primer/">Solvent
+                                            Base
+                                            Primer</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
+                                            Modified
+                                            Emulsion
+                                            (PME)</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready
+                                            Mixed
+                                            Asphalt</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c_bituplast/">Bituplast</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
+                                            Base
+                                            Waterproofing
+                                            Mortar</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco
+                                            Organic
+                                            Cleaner
+                                            (BOC):</a>
+                                    </li>
                                 </ul>
                             </li>
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#">ﻫﺘﻞ ﻫﺎ</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/standardizing-bodies/">Standardizing
+                                            Bodies</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/family-of-bitumenous-binders/">Family
+                                            of
+                                            Bitumenous
+                                            Binders</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/quality-control/">Quality
+                                            Control</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a
+                                            href="http://hll.om/bitumen-emulsions-anionic-cationic-unmodified-polymer-modified/">BITUMEN
+                                            EMULSIONS
+                                            (ANIONIC;
+                                            CATIONIC;
+                                            UNMODIFIED;
+                                            POLYMER
+                                            MODIFIED)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/packing-logistics/">تور اقساط</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">تور اروپا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a>
+                            </li>
 
-                        </template>
-                    </ul>
-                    <!--  -->
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ویزا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">بلاگ</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
-                <img src="./img/logo.png" class="object-contain w-9" alt="" />
+                <img src="./img/logo.png" class="w-9 object-contain" alt="" />
 
-                <div @click="taggleMobileMenu" class=" cursor-pointer md:hidden">
+                <div @click="taggleMobileMenu" class="cursor-pointer md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </div>
-
             </div>
 
-            <div id="mobile-menu" x-show="isOpen" style="display: none;" x-transition.opacity>
+            <!-- MOBILE SECTION -->
+            <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
                 <div class="mobile-menu__overlay">
-
-
                     <div
-                        class="flex mx-auto mt-5 justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
+                        class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                         <div class="flex">
                             <div
-                                class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
-                                <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-
+                                class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                                <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
                             </div>
-
                         </div>
 
-                        <img src="./img/logo.png" class="object-contain w-9" alt="" />
+                        <img src="./img/logo.png" class="w-9 object-contain" alt="" />
 
-
-                        <button @click="taggleMobileMenu()" class="  relative  cursor-pointer md:hidden">
+                        <button @click="taggleMobileMenu()" class="relative cursor-pointer md:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
-
                     </div>
 
-
-
-
-                    <div class="mobile-menu__wrapper">
-
-
-                        <!-- LEAVE ME HERE -->
-
-                        <div class="flex items-center justify-start gap-3 mt-2 mb-5 text-xl">
-                            <span x-show="subMenu !== -1" class="bi-icon cursor-pointer" @click="subMenu = -1">
-                                <img src="svg/chevron-rigth.svg" alt="">
+                    <div class="relative rounded-3xl bg-white" dir="rtl">
+                        <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
+                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
+                                <img src="svg/chevron-rigth.svg" alt="" />
                             </span>
-                            <h1 x-text="currentCategory"></h1>
+
+                            <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
                         </div>
 
                         <ul class="bi-scrollbar">
-                            <template
-                                x-for="({index,text,href,children},inx) in (subMenu === -1  ? menu : menu[subMenu].children)"
-                                :key="index">
+                            <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
                                 <li>
-
-                                    <a :href="href ? href : '#' "
-                                        @click="children && children.length ? subMenu = inx : null"
-                                        class="mobile-menu__item">
-                                        <span x-text="text"></span>
-                                        <img class="icon" src="svg/chevron-left.svg" alt="">
+                                    <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') " class="">
+                                        <span x-text="name"></span>
+                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg"
+                                            x-transition />
                                     </a>
-
                                 </li>
                             </template>
-
                         </ul>
                     </div>
                 </div>
             </div>
-
+            <!-- / -->
         </nav>
-
     </header>
 
-
-
-
-
-    <main class="container mx-auto flex flex-col lg:flex-row  gap-4 relative px-4 md:px-0" dir="rtl">
-
-        <aside class="lg:w-1/5 flex-shrink-0">
-            <div class="flex w-full gap-4 flex-col items-center justify-center">
+    <main class="container relative mx-auto flex flex-col gap-4 px-4 md:px-0 lg:flex-row" dir="rtl">
+        <aside class="flex-shrink-0 lg:w-1/5">
+            <div class="flex w-full flex-col items-center justify-center gap-4">
                 <div class="overflow-hidden rounded-circle">
-                    <img src="img/countries/image 3.png" alt="">
+                    <img src="img/countries/image 3.png" alt="" />
                 </div>
-                <h1 class=" text-2xl mt-4 font-bold">اروپا</h1>
-                <p class="font-bold hidden lg:block">درباره اروپا بیشتر بدانید</p>
+                <h1 class="mt-4 text-2xl font-bold">اروپا</h1>
+                <p class="hidden font-bold lg:block">
+                    درباره اروپا بیشتر بدانید
+                </p>
             </div>
 
             <!-- loop -->
-            <div class="lg:flex flex-col justify-center items-center  hidden ">
+            <div class="hidden flex-col items-center justify-center lg:flex">
                 <div>
-                    <div class="mt-6 w-full h-full flex-center bi-overlay py-8 px-3 rounded-3xl"
-                        style="background: url(img/countries/image8.jpg) center center/cover;">
-                        <div class="text-white relative text-center"> باید ها و نباید های سفر به اروپا</div>
+                    <div class="flex-center bi-overlay mt-6 h-full w-full rounded-3xl py-8 px-3" style="
+								background: url(img/countries/image8.jpg)
+									center center/cover;
+							">
+                        <div class="relative text-center text-white">
+                            باید ها و نباید های سفر به اروپا
+                        </div>
                     </div>
 
-                    <div class="mt-6 w-full h-full flex-center bi-overlay py-8 px-3 rounded-3xl"
-                        style="background: url(img/countries/image8.jpg) center center/cover;">
-                        <div class="text-white relative text-center"> اقامت در فرانسه</div>
+                    <div class="flex-center bi-overlay mt-6 h-full w-full rounded-3xl py-8 px-3" style="
+								background: url(img/countries/image8.jpg)
+									center center/cover;
+							">
+                        <div class="relative text-center text-white">
+                            اقامت در فرانسه
+                        </div>
                     </div>
 
-                    <div class="mt-6 w-full h-full flex-center bi-overlay py-8 px-3 rounded-3xl"
-                        style="background: url(img/countries/image8.jpg) center center/cover;">
-                        <div class="text-white relative text-center"> ماردی که هنگام اقامت در بارسلونا بید بدانید</div>
+                    <div class="flex-center bi-overlay mt-6 h-full w-full rounded-3xl py-8 px-3" style="
+								background: url(img/countries/image8.jpg)
+									center center/cover;
+							">
+                        <div class="relative text-center text-white">
+                            ماردی که هنگام اقامت در بارسلونا
+                            بید بدانید
+                        </div>
                     </div>
                 </div>
             </div>
-
         </aside>
 
-        <div class="lg:w-4/5 flex-shrink-0 ">
-
+        <div class="flex-shrink-0 lg:w-4/5">
             <!-- about  -->
-            <div x-data="expandable" class="flex flex-col relative z-10">
+            <div x-data="expandable" class="relative z-10 flex flex-col">
                 <div class="flex items-start gap-6 bg-white bg-opacity-60">
-
-                    <div x-show="!expanded" class="w-40  transition ease-in duration-100">
-
-                        <img class="rounded-3xl aspect-square w-full object-cover" src="img/countries/Rectangle 67.png"
-                            alt="">
+                    <div x-show="!expanded" class="w-40 transition duration-100 ease-in">
+                        <img class="aspect-square w-full rounded-3xl object-cover" src="img/countries/Rectangle 67.png"
+                            alt="" />
                     </div>
                     <div class="w-full">
-
                         <h1>درباره اروپا</h1>
-                        <div class="overflow-hidden transition-all duration-200 ease-out text-gray-500 text-sm"
+                        <div class="overflow-hidden text-sm text-gray-500 transition-all duration-200 ease-out"
                             x-ref="description" :style="{maxHeight}">
-
                             <p>
-
-                                لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                                صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب
-                                بندی
-                                برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا
-                                از
-                                نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                                صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب
-                                کار
+                                لورم ایپسوم یا طرح‌نما (به
+                                انگلیسی: Lorem ipsum) به
+                                متنی آزمایشی و بی‌معنی در
+                                صنعت چاپ، صفحه‌آرایی و
+                                طراحی گرافیک گفته می‌شود.
+                                طراح گرافیک از این متن به
+                                عنوان عنصری از ترکیب بندی
+                                برای پر کردن صفحه و ارایه
+                                اولیه شکل ظاهری و کلی طرح
+                                سفارش گرفته شده استفاده می
+                                نماید، تا از نظر گرافیکی
+                                نشانگر چگونگی نوع و اندازه
+                                فونت و ظاهر متن باشد.
+                                معمولا طراحان گرافیک برای
+                                صفحه‌آرایی، نخست از
+                                متن‌های آزمایشی و بی‌معنی
+                                استفاده می‌کنند تا صرفا به
+                                مشتری یا صاحب کار
                             </p>
 
-                            <div class="flex sm:flex-row flex-col gap-6 my-7">
-                                <div class=" w-full sm:w-5/12 ">
-                                    <img class="overflow-hidden rounded-3x mx-auto" src="img/breakfast.jpg" alt="">
+                            <div class="my-7 flex flex-col gap-6 sm:flex-row">
+                                <div class="w-full sm:w-5/12">
+                                    <img class="rounded-3x mx-auto overflow-hidden" src="img/breakfast.jpg" alt="" />
                                 </div>
-                                <div class=" w-full sm:w-7/12">
-                                    <h2 class="text-base font-bold text-black mb-2">تیتر دوم</h2>
-                                    خود نشان دهند که صفحه
-                                    صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از
-                                    ترکیب بندی
-                                    برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می
-                                    نماید، تا از
-                                    نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک
-                                    برای
-                                    صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا
-                                    صاحب کار
-                                    خود نشان دهند که صفحه
-                                    صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از
-                                    ترکیب بندی
+                                <div class="w-full sm:w-7/12">
+                                    <h2 class="mb-2 text-base font-bold text-black">
+                                        تیتر دوم
+                                    </h2>
+                                    خود نشان دهند که
+                                    صفحه صفحه‌آرایی و
+                                    طراحی گرافیک گفته
+                                    می‌شود. طراح گرافیک
+                                    از این متن به عنوان
+                                    عنصری از ترکیب بندی
+                                    برای پر کردن صفحه و
+                                    ارایه اولیه شکل
+                                    ظاهری و کلی طرح
+                                    سفارش گرفته شده
+                                    استفاده می نماید، تا
+                                    از نظر گرافیکی
+                                    نشانگر چگونگی نوع و
+                                    اندازه فونت و ظاهر
+                                    متن باشد. معمولا
+                                    طراحان گرافیک برای
+                                    صفحه‌آرایی، نخست از
+                                    متن‌های آزمایشی و
+                                    بی‌معنی استفاده
+                                    می‌کنند تا صرفا به
+                                    مشتری یا صاحب کار
+                                    خود نشان دهند که
+                                    صفحه صفحه‌آرایی و
+                                    طراحی گرافیک گفته
+                                    می‌شود. طراح گرافیک
+                                    از این متن به عنوان
+                                    عنصری از ترکیب بندی
                                 </div>
                             </div>
 
-                            خود نشان دهند که صفحه
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار
-                            خود نشان دهند که صفحه
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار
-                            خود نشان دهند که صفحه
-
+                            خود نشان دهند که صفحه صفحه‌آرایی
+                            و طراحی گرافیک گفته می‌شود. طراح
+                            گرافیک از این متن به عنوان عنصری
+                            از ترکیب بندی برای پر کردن صفحه
+                            و ارایه اولیه شکل ظاهری و کلی
+                            طرح سفارش گرفته شده استفاده می
+                            نماید، تا از نظر گرافیکی نشانگر
+                            چگونگی نوع و اندازه فونت و ظاهر
+                            متن باشد. معمولا طراحان گرافیک
+                            برای صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
+                            می‌کنند تا صرفا به مشتری یا صاحب
+                            کار خود نشان دهند که صفحه
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
+                            می‌کنند تا صرفا به مشتری یا صاحب
+                            کار خود نشان دهند که صفحه
                         </div>
                     </div>
                 </div>
@@ -350,194 +406,172 @@
                         'top-full' : expanded,
                         hidden : !isExpandable,
                         }">
-                    <div @click="toggle" class="flex justify-center items-end gap-4 cursor-pointer">
+                    <div @click="toggle" class="flex cursor-pointer items-end justify-center gap-4">
                         <span>توضیحات بیشتر </span>
-                        <i class="rounded-circle  w-8 h-8 flex-center bg-primery ">
+                        <i class="flex-center h-8 w-8 rounded-circle bg-primery">
                             <img :class="{'transform duration-200 ease-linear ' : true , 'rotate-180' : expanded , 'rotate-0' : !expanded }"
-                                src="svg/chevron-down.svg" alt="">
+                                src="svg/chevron-down.svg" alt="" />
                         </i>
                     </div>
                 </div>
             </div>
 
             <!-- flags -->
-            <div x-data="flags" class="relative mt-5  ">
+            <div x-data="flags" class="relative mt-5">
                 <!-- controllers -->
                 <div @click="prv"
-                    class="cursor-pointer flex-center rounded-circle w-14 h-14 bg-white absolute top-4 left-0 shadow-lg">
-                    <img src="svg/chevron-left.svg" alt="">
+                    class="flex-center absolute top-4 left-0 h-14 w-14 cursor-pointer rounded-circle bg-white shadow-lg">
+                    <img src="svg/chevron-left.svg" alt="" />
                 </div>
 
                 <div @click="next"
-                    class="cursor-pointer flex-center rounded-circle w-14 h-14 bg-white absolute top-4 right-0 shadow-lg">
-                    <img src="svg/chevron-rigth.svg" alt="">
+                    class="flex-center absolute top-4 right-0 h-14 w-14 cursor-pointer rounded-circle bg-white shadow-lg">
+                    <img src="svg/chevron-rigth.svg" alt="" />
                 </div>
 
-                <div class="js-flags-container scroll-smooth flex  gap-3 snap-x overflow-auto bi-hide-scrollbar p-6">
-
-
+                <div class="js-flags-container bi-hide-scrollbar flex snap-x gap-3 overflow-auto scroll-smooth p-6">
                     <!-- LOOP HERE -->
-                    <div class="js-flag snap-center cursor-grab">
+                    <div class="js-flag cursor-grab snap-center">
                         <div
-                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
-                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
-                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                            class="flex w-36 items-center justify-start gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                            <img class="h-8 w-8 rounded-circle object-cover" src="img/flag-france.png" alt="" />
+                            <span class="text-base font-bold text-gray-500">فرانسه</span>
                         </div>
-
                     </div>
-                    <div class="js-flag snap-center cursor-grab">
+                    <div class="js-flag cursor-grab snap-center">
                         <div
-                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
-                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
-                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                            class="flex w-36 items-center justify-start gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                            <img class="h-8 w-8 rounded-circle object-cover" src="img/flag-france.png" alt="" />
+                            <span class="text-base font-bold text-gray-500">فرانسه</span>
                         </div>
-
                     </div>
-                    <div class="js-flag snap-center cursor-grab">
+                    <div class="js-flag cursor-grab snap-center">
                         <div
-                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
-                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
-                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                            class="flex w-36 items-center justify-start gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                            <img class="h-8 w-8 rounded-circle object-cover" src="img/flag-france.png" alt="" />
+                            <span class="text-base font-bold text-gray-500">فرانسه</span>
                         </div>
-
                     </div>
-                    <div class="js-flag snap-center cursor-grab">
+                    <div class="js-flag cursor-grab snap-center">
                         <div
-                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
-                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
-                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                            class="flex w-36 items-center justify-start gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                            <img class="h-8 w-8 rounded-circle object-cover" src="img/flag-france.png" alt="" />
+                            <span class="text-base font-bold text-gray-500">فرانسه</span>
                         </div>
-
                     </div>
-                    <div class="js-flag snap-center cursor-grab">
+                    <div class="js-flag cursor-grab snap-center">
                         <div
-                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
-                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
-                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                            class="flex w-36 items-center justify-start gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                            <img class="h-8 w-8 rounded-circle object-cover" src="img/flag-france.png" alt="" />
+                            <span class="text-base font-bold text-gray-500">فرانسه</span>
                         </div>
-
                     </div>
-                    <div class="js-flag snap-center cursor-grab">
+                    <div class="js-flag cursor-grab snap-center">
                         <div
-                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
-                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
-                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                            class="flex w-36 items-center justify-start gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                            <img class="h-8 w-8 rounded-circle object-cover" src="img/flag-france.png" alt="" />
+                            <span class="text-base font-bold text-gray-500">فرانسه</span>
                         </div>
-
                     </div>
-                    <div class="js-flag snap-center cursor-grab">
+                    <div class="js-flag cursor-grab snap-center">
                         <div
-                            class="w-36 bg-white flex items-center justify-start gap-2 px-4 py-2 rounded-3xl shadow-lg">
-                            <img class="rounded-circle w-8 h-8 object-cover " src="img/flag-france.png" alt="">
-                            <span class="text-base text-gray-500 font-bold">فرانسه</span>
+                            class="flex w-36 items-center justify-start gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                            <img class="h-8 w-8 rounded-circle object-cover" src="img/flag-france.png" alt="" />
+                            <span class="text-base font-bold text-gray-500">فرانسه</span>
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
 
             <!-- tours -->
             <section class="mt-11">
-                <div class="flex sm:flex-row flex-col items-center justify-between mb-8">
-                    <h2 class="mb-10 sm:mb-0 text-primery-dark font-bold text-2xl">تور های اروپا</h2>
+                <div class="mb-8 flex flex-col items-center justify-between sm:flex-row">
+                    <h2 class="mb-10 text-2xl font-bold text-primery-dark sm:mb-0">
+                        تور های اروپا
+                    </h2>
                     <div class="flex-center gap-4">
-                        <span class="text-zinc-500 text-xs">نوع نمایش</span>
-                        <ul class=" text-slate-500 overflow-clip flex-center rounded-3xl shadow-sm cursor-pointer">
-                            <li class="flex-center p-3 gap-2  hover:bg-slate-50">
-                                <img src="svg/table.svg" alt="" aria-hidden="true">
-                                <span>
-                                    جدول
-                                </span>
-
+                        <span class="text-xs text-zinc-500">نوع نمایش</span>
+                        <ul class="flex-center cursor-pointer overflow-clip rounded-3xl text-slate-500 shadow-sm">
+                            <li class="flex-center gap-2 p-3 hover:bg-slate-50">
+                                <img src="svg/table.svg" alt="" aria-hidden="true" />
+                                <span> جدول </span>
                             </li>
-                            <li class="flex-center bg-slate-200 p-3 gap-2">
-                                <img src="svg/card.svg" alt="">
-                                <span>
-                                    کارت
-                                </span>
-
+                            <li class="flex-center gap-2 bg-slate-200 p-3">
+                                <img src="svg/card.svg" alt="" />
+                                <span> کارت </span>
                             </li>
-                            <li class="flex-center p-3 gap-2  hover:bg-slate-50">
-                                <img src="svg/list.svg" alt="">
-                                <span>
-                                    خلاصه
-                                </span>
-
+                            <li class="flex-center gap-2 p-3 hover:bg-slate-50">
+                                <img src="svg/list.svg" alt="" />
+                                <span> خلاصه </span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <!-- TOURS CARDs -->
-                <div class="grid px-4 md:grid-cols-3 sm:grid-cols-2 gap-2">
-
-                    <div class="relative  shadow rounded-3xl mb-6 ">
+                <div class="grid gap-2 px-4 sm:grid-cols-2 md:grid-cols-3">
+                    <div class="relative mb-6 rounded-3xl shadow">
                         <!-- discount -->
                         <div
-                            class="px-3 py-1 whitespace-nowrap text-white bg-[#FF5F5F] transform -translate-y-1/2 -translate-x-1/2 left-1/2  rounded-3xl absolute z-10">
-                            20 درصد
-                            تخفیف
-                            نوروز
+                            class="absolute left-1/2 z-10 -translate-y-1/2 -translate-x-1/2 transform whitespace-nowrap rounded-3xl bg-[#FF5F5F] px-3 py-1 text-white">
+                            20 درصد تخفیف نوروز
                         </div>
                         <!-- overlay -->
-                        <div class="bg-white flex flex-col h-full w-full absolute rounded-3xl overflow-hidden">
-                            <img class="h-1/2 object-cover" src="img/paris.png" alt="">
-                            <div class=" relative -top-1/3 h-1/2 bg-gradient-to-t  from-white via-white to-transparent">
-
+                        <div class="absolute flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white">
+                            <img class="h-1/2 object-cover" src="img/paris.png" alt="" />
+                            <div class="relative -top-1/3 h-1/2 bg-gradient-to-t from-white via-white to-transparent">
                             </div>
                         </div>
 
                         <span
-                            class="bg-neutral-200 text-sm md:text-xs rounded-3xl absolute px-2 py-1 top-7 sm:translate-x-1/2 right-6 sm:right-1/2 ">
-
+                            class="absolute top-7 right-6 rounded-3xl bg-neutral-200 px-2 py-1 text-sm sm:right-1/2 sm:translate-x-1/2 md:text-xs">
                             8 روز و 8 شب
                         </span>
 
-                        <div class="relative pt-48 h-full">
-
-                            <div class="flex  flex-col items-stretch justify-end h-full  mr-auto py-6 px-8 relative">
-
-                                <div class="flex flex-col ">
+                        <div class="relative h-full pt-48">
+                            <div class="relative mr-auto flex h-full flex-col items-stretch justify-end py-6 px-8">
+                                <div class="flex flex-col">
                                     <div>
-                                        <h3 class="text-xl font-bold mb-2">
-                                            تور سه روزه
+                                        <h3 class="mb-2 text-xl font-bold">
+                                            تور سه
+                                            روزه
                                         </h3>
-                                        <ul class="flex justify-start items-center gap-2 flex-wrap">
+                                        <ul class="flex flex-wrap items-center justify-start gap-2">
                                             <li
-                                                class=" bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
                                                 <span>بیمه</span>
                                             </li>
                                             <li
-                                                class="bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
                                                 <span>بیمه</span>
                                             </li>
                                             <li
-                                                class="bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
-                                                <span>خدمات ویزا</span>
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                <span>خدمات
+                                                    ویزا</span>
                                             </li>
-
-
                                         </ul>
                                     </div>
                                     <div class="mt-auto hidden">
                                         <div
-                                            class=" inline-flex gap-3 py-3 px-4 rounded-full bg-gray-500 text-white relative top-1/4">
+                                            class="relative top-1/4 inline-flex gap-3 rounded-full bg-gray-500 py-3 px-4 text-white">
                                             <div class="flex-center gap-2">
                                                 <span class="text-sm">تومان</span>
                                                 <strong>5.200.00</strong>
                                             </div>
-                                            <img class="" src="svg/money-white.svg" alt="">
+                                            <img class="" src="svg/money-white.svg" alt="" />
                                         </div>
                                     </div>
                                 </div>
                                 <!-- <div class="w-1 mx-6 my-6 border-l hidden"></div> -->
-                                <div class="flex-col  justify-center items-center relative">
-                                    <div class="py-3  tour_cards__from--grid">
-                                        <h4 class="mb-3 text-base">تهران</h4>
-                                        <span class="flex  flex-row justify-between text-neutral-600 text-xs">
+                                <div class="relative flex-col items-center justify-center">
+                                    <div class="tour_cards__from--grid py-3">
+                                        <h4 class="mb-3 text-base">
+                                            تهران
+                                        </h4>
+                                        <span class="flex flex-row justify-between text-xs text-neutral-600">
                                             <span>
-                                                پرواز رفت
+                                                پرواز
+                                                رفت
                                             </span>
                                             <span>
                                                 04/10/1400
@@ -551,11 +585,14 @@
                                                 8 روز و 8 شب
                                             </span>
                                         </div> -->
-                                    <div class="py-3 tour_cards__to--grid">
-                                        <h4 class="mb-3 text-base">پاریس</h4>
-                                        <span class="flex  flex-row justify-between text-neutral-600 text-xs">
+                                    <div class="tour_cards__to--grid py-3">
+                                        <h4 class="mb-3 text-base">
+                                            پاریس
+                                        </h4>
+                                        <span class="flex flex-row justify-between text-xs text-neutral-600">
                                             <span>
-                                                پرواز برگشت
+                                                پرواز
+                                                برگشت
                                             </span>
                                             <span>
                                                 04/10/1400
@@ -566,85 +603,81 @@
 
                                 <div class="mt-8">
                                     <div
-                                        class=" flex-center gap-3 py-3  rounded-full bg-gray-200 text-black relative top-1/4 w-full text-center px-5">
+                                        class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-gray-200 py-3 px-5 text-center text-black">
                                         <div class="flex-center gap-2">
                                             <span class="text-sm">تومان</span>
                                             <strong>5.200.00</strong>
                                         </div>
-                                        <img class="" src="svg/money.svg" alt="">
+                                        <img class="" src="svg/money.svg" alt="" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
-                    <div class="relative  shadow rounded-3xl mb-6 ">
+                    <div class="relative mb-6 rounded-3xl shadow">
                         <!-- discount -->
                         <div
-                            class="px-3 py-1 whitespace-nowrap text-white bg-[#FF5F5F] transform -translate-y-1/2 -translate-x-1/2 left-1/2  rounded-3xl absolute z-10">
-                            20 درصد
-                            تخفیف
-                            نوروز
+                            class="absolute left-1/2 z-10 -translate-y-1/2 -translate-x-1/2 transform whitespace-nowrap rounded-3xl bg-[#FF5F5F] px-3 py-1 text-white">
+                            20 درصد تخفیف نوروز
                         </div>
                         <!-- overlay -->
-                        <div class="bg-white flex flex-col h-full w-full absolute rounded-3xl overflow-hidden">
-                            <img class="h-1/2 object-cover" src="img/paris.png" alt="">
-                            <div class=" relative -top-1/3 h-1/2 bg-gradient-to-t  from-white via-white to-transparent">
-
+                        <div class="absolute flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white">
+                            <img class="h-1/2 object-cover" src="img/paris.png" alt="" />
+                            <div class="relative -top-1/3 h-1/2 bg-gradient-to-t from-white via-white to-transparent">
                             </div>
                         </div>
 
                         <span
-                            class="bg-neutral-200 text-sm md:text-xs rounded-3xl absolute px-2 py-1 top-7 sm:translate-x-1/2 right-6 sm:right-1/2 ">
-
+                            class="absolute top-7 right-6 rounded-3xl bg-neutral-200 px-2 py-1 text-sm sm:right-1/2 sm:translate-x-1/2 md:text-xs">
                             8 روز و 8 شب
                         </span>
 
-                        <div class="relative pt-48 h-full">
-
-                            <div class="flex  flex-col items-stretch justify-end h-full  mr-auto py-6 px-8 relative">
-
-                                <div class="flex flex-col ">
+                        <div class="relative h-full pt-48">
+                            <div class="relative mr-auto flex h-full flex-col items-stretch justify-end py-6 px-8">
+                                <div class="flex flex-col">
                                     <div>
-                                        <h3 class="text-xl font-bold mb-2">
-                                            تور سه روزه
+                                        <h3 class="mb-2 text-xl font-bold">
+                                            تور سه
+                                            روزه
                                         </h3>
-                                        <ul class="flex justify-start items-center gap-2 flex-wrap">
+                                        <ul class="flex flex-wrap items-center justify-start gap-2">
                                             <li
-                                                class=" bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
                                                 <span>بیمه</span>
                                             </li>
                                             <li
-                                                class="bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
                                                 <span>بیمه</span>
                                             </li>
                                             <li
-                                                class="bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
-                                                <span>خدمات ویزا</span>
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                <span>خدمات
+                                                    ویزا</span>
                                             </li>
-
-
                                         </ul>
                                     </div>
                                     <div class="mt-auto hidden">
                                         <div
-                                            class=" inline-flex gap-3 py-3 px-4 rounded-full bg-gray-500 text-white relative top-1/4">
+                                            class="relative top-1/4 inline-flex gap-3 rounded-full bg-gray-500 py-3 px-4 text-white">
                                             <div class="flex-center gap-2">
                                                 <span class="text-sm">تومان</span>
                                                 <strong>5.200.00</strong>
                                             </div>
-                                            <img class="" src="svg/money-white.svg" alt="">
+                                            <img class="" src="svg/money-white.svg" alt="" />
                                         </div>
                                     </div>
                                 </div>
                                 <!-- <div class="w-1 mx-6 my-6 border-l hidden"></div> -->
-                                <div class="flex-col  justify-center items-center relative">
-                                    <div class="py-3  tour_cards__from--grid">
-                                        <h4 class="mb-3 text-base">تهران</h4>
-                                        <span class="flex  flex-row justify-between text-neutral-600 text-xs">
+                                <div class="relative flex-col items-center justify-center">
+                                    <div class="tour_cards__from--grid py-3">
+                                        <h4 class="mb-3 text-base">
+                                            تهران
+                                        </h4>
+                                        <span class="flex flex-row justify-between text-xs text-neutral-600">
                                             <span>
-                                                پرواز رفت
+                                                پرواز
+                                                رفت
                                             </span>
                                             <span>
                                                 04/10/1400
@@ -658,11 +691,14 @@
                                                 8 روز و 8 شب
                                             </span>
                                         </div> -->
-                                    <div class="py-3 tour_cards__to--grid">
-                                        <h4 class="mb-3 text-base">پاریس</h4>
-                                        <span class="flex  flex-row justify-between text-neutral-600 text-xs">
+                                    <div class="tour_cards__to--grid py-3">
+                                        <h4 class="mb-3 text-base">
+                                            پاریس
+                                        </h4>
+                                        <span class="flex flex-row justify-between text-xs text-neutral-600">
                                             <span>
-                                                پرواز برگشت
+                                                پرواز
+                                                برگشت
                                             </span>
                                             <span>
                                                 04/10/1400
@@ -673,93 +709,91 @@
 
                                 <div class="mt-8">
                                     <div
-                                        class=" flex-center gap-3 py-3  rounded-full bg-gray-200 text-black relative top-1/4 w-full text-center px-5">
+                                        class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-gray-200 py-3 px-5 text-center text-black">
                                         <div class="flex-center gap-2">
                                             <span class="text-sm">تومان</span>
                                             <strong>5.200.00</strong>
                                         </div>
-                                        <img class="" src="svg/money.svg" alt="">
+                                        <img class="" src="svg/money.svg" alt="" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
-                    <div class="relative  shadow rounded-3xl mb-6 ">
+                    <div class="relative mb-6 rounded-3xl shadow">
                         <!-- discount -->
                         <div
-                            class="px-3 py-1 whitespace-nowrap text-white bg-[#FF5F5F] transform -translate-y-1/2 -translate-x-1/2 left-1/2  rounded-3xl absolute z-10">
-                            20 درصد
-                            تخفیف
-                            نوروز
+                            class="absolute left-1/2 z-10 -translate-y-1/2 -translate-x-1/2 transform whitespace-nowrap rounded-3xl bg-[#FF5F5F] px-3 py-1 text-white">
+                            20 درصد تخفیف نوروز
                         </div>
                         <!-- overlay -->
-                        <div class="bg-white flex flex-col h-full w-full absolute rounded-3xl overflow-hidden">
-                            <img class="h-1/2 object-cover" src="img/paris.png" alt="">
-                            <div class=" relative -top-1/3 h-1/2 bg-gradient-to-t  from-white via-white to-transparent">
-
+                        <div class="absolute flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white">
+                            <img class="h-1/2 object-cover" src="img/paris.png" alt="" />
+                            <div class="relative -top-1/3 h-1/2 bg-gradient-to-t from-white via-white to-transparent">
                             </div>
                         </div>
 
                         <span
-                            class="bg-neutral-200 text-sm md:text-xs rounded-3xl absolute px-2 py-1 top-7 sm:translate-x-1/2 right-6 sm:right-1/2 ">
-
+                            class="absolute top-7 right-6 rounded-3xl bg-neutral-200 px-2 py-1 text-sm sm:right-1/2 sm:translate-x-1/2 md:text-xs">
                             8 روز و 8 شب
                         </span>
 
-                        <div class="relative pt-48 h-full">
-
-                            <div class="flex  flex-col items-stretch justify-end h-full  mr-auto py-6 px-8 relative">
-
-                                <div class="flex flex-col ">
+                        <div class="relative h-full pt-48">
+                            <div class="relative mr-auto flex h-full flex-col items-stretch justify-end py-6 px-8">
+                                <div class="flex flex-col">
                                     <div>
-                                        <h3 class="text-xl font-bold mb-2">
-                                            تور سه روزه
+                                        <h3 class="mb-2 text-xl font-bold">
+                                            تور سه
+                                            روزه
                                         </h3>
-                                        <ul class="flex justify-start items-center gap-2 flex-wrap">
+                                        <ul class="flex flex-wrap items-center justify-start gap-2">
                                             <li
-                                                class=" bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
                                                 <span>بیمه</span>
                                             </li>
                                             <li
-                                                class="bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
                                                 <span>بیمه</span>
                                             </li>
                                             <li
-                                                class="bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
-                                                <span>خدمات ویزا</span>
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                <span>خدمات
+                                                    ویزا</span>
                                             </li>
                                             <li
-                                                class="bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
-                                                <span>خدمات ویزا</span>
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                <span>خدمات
+                                                    ویزا</span>
                                             </li>
                                             <li
-                                                class="bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
-                                                <span>خدمات ویزا</span>
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                <span>خدمات
+                                                    ویزا</span>
                                             </li>
-
-
                                         </ul>
                                     </div>
                                     <div class="mt-auto hidden">
                                         <div
-                                            class=" inline-flex gap-3 py-3 px-4 rounded-full bg-gray-500 text-white relative top-1/4">
+                                            class="relative top-1/4 inline-flex gap-3 rounded-full bg-gray-500 py-3 px-4 text-white">
                                             <div class="flex-center gap-2">
                                                 <span class="text-sm">تومان</span>
                                                 <strong>5.200.00</strong>
                                             </div>
-                                            <img class="" src="svg/money-white.svg" alt="">
+                                            <img class="" src="svg/money-white.svg" alt="" />
                                         </div>
                                     </div>
                                 </div>
                                 <!-- <div class="w-1 mx-6 my-6 border-l hidden"></div> -->
-                                <div class="flex-col  justify-center items-center relative">
-                                    <div class="py-3  tour_cards__from--grid">
-                                        <h4 class="mb-3 text-base">تهران</h4>
-                                        <span class="flex  flex-row justify-between text-neutral-600 text-xs">
+                                <div class="relative flex-col items-center justify-center">
+                                    <div class="tour_cards__from--grid py-3">
+                                        <h4 class="mb-3 text-base">
+                                            تهران
+                                        </h4>
+                                        <span class="flex flex-row justify-between text-xs text-neutral-600">
                                             <span>
-                                                پرواز رفت
+                                                پرواز
+                                                رفت
                                             </span>
                                             <span>
                                                 04/10/1400
@@ -773,11 +807,14 @@
                                                 8 روز و 8 شب
                                             </span>
                                         </div> -->
-                                    <div class="py-3 tour_cards__to--grid">
-                                        <h4 class="mb-3 text-base">پاریس</h4>
-                                        <span class="flex  flex-row justify-between text-neutral-600 text-xs">
+                                    <div class="tour_cards__to--grid py-3">
+                                        <h4 class="mb-3 text-base">
+                                            پاریس
+                                        </h4>
+                                        <span class="flex flex-row justify-between text-xs text-neutral-600">
                                             <span>
-                                                پرواز برگشت
+                                                پرواز
+                                                برگشت
                                             </span>
                                             <span>
                                                 04/10/1400
@@ -788,85 +825,81 @@
 
                                 <div class="mt-8">
                                     <div
-                                        class=" flex-center gap-3 py-3  rounded-full bg-gray-200 text-black relative top-1/4 w-full text-center px-5">
+                                        class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-gray-200 py-3 px-5 text-center text-black">
                                         <div class="flex-center gap-2">
                                             <span class="text-sm">تومان</span>
                                             <strong>5.200.00</strong>
                                         </div>
-                                        <img class="" src="svg/money.svg" alt="">
+                                        <img class="" src="svg/money.svg" alt="" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-
-                    <div class="relative  shadow rounded-3xl mb-6 ">
+                    <div class="relative mb-6 rounded-3xl shadow">
                         <!-- discount -->
                         <div
-                            class="px-3 py-1 whitespace-nowrap text-white bg-[#FF5F5F] transform -translate-y-1/2 -translate-x-1/2 left-1/2  rounded-3xl absolute z-10">
-                            20 درصد
-                            تخفیف
-                            نوروز
+                            class="absolute left-1/2 z-10 -translate-y-1/2 -translate-x-1/2 transform whitespace-nowrap rounded-3xl bg-[#FF5F5F] px-3 py-1 text-white">
+                            20 درصد تخفیف نوروز
                         </div>
                         <!-- overlay -->
-                        <div class="bg-white flex flex-col h-full w-full absolute rounded-3xl overflow-hidden">
-                            <img class="h-1/2 object-cover" src="img/paris.png" alt="">
-                            <div class=" relative -top-1/3 h-1/2 bg-gradient-to-t  from-white via-white to-transparent">
-
+                        <div class="absolute flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white">
+                            <img class="h-1/2 object-cover" src="img/paris.png" alt="" />
+                            <div class="relative -top-1/3 h-1/2 bg-gradient-to-t from-white via-white to-transparent">
                             </div>
                         </div>
 
                         <span
-                            class="bg-neutral-200 text-sm md:text-xs rounded-3xl absolute px-2 py-1 top-7 sm:translate-x-1/2 right-6 sm:right-1/2 ">
-
+                            class="absolute top-7 right-6 rounded-3xl bg-neutral-200 px-2 py-1 text-sm sm:right-1/2 sm:translate-x-1/2 md:text-xs">
                             8 روز و 8 شب
                         </span>
 
-                        <div class="relative pt-48 h-full">
-
-                            <div class="flex  flex-col items-stretch justify-end h-full  mr-auto py-6 px-8 relative">
-
-                                <div class="flex flex-col ">
+                        <div class="relative h-full pt-48">
+                            <div class="relative mr-auto flex h-full flex-col items-stretch justify-end py-6 px-8">
+                                <div class="flex flex-col">
                                     <div>
-                                        <h3 class="text-xl font-bold mb-2">
-                                            تور سه روزه
+                                        <h3 class="mb-2 text-xl font-bold">
+                                            تور سه
+                                            روزه
                                         </h3>
-                                        <ul class="flex justify-start items-center gap-2 flex-wrap">
+                                        <ul class="flex flex-wrap items-center justify-start gap-2">
                                             <li
-                                                class=" bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
                                                 <span>بیمه</span>
                                             </li>
                                             <li
-                                                class="bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
                                                 <span>بیمه</span>
                                             </li>
                                             <li
-                                                class="bg-neutral-200 gap-3 rounded-2xl flex-center text-sm shadow-sm px-2 py-1">
-                                                <span>خدمات ویزا</span>
+                                                class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                <span>خدمات
+                                                    ویزا</span>
                                             </li>
-
-
                                         </ul>
                                     </div>
                                     <div class="mt-auto hidden">
                                         <div
-                                            class=" inline-flex gap-3 py-3 px-4 rounded-full bg-gray-500 text-white relative top-1/4">
+                                            class="relative top-1/4 inline-flex gap-3 rounded-full bg-gray-500 py-3 px-4 text-white">
                                             <div class="flex-center gap-2">
                                                 <span class="text-sm">تومان</span>
                                                 <strong>5.200.00</strong>
                                             </div>
-                                            <img class="" src="svg/money-white.svg" alt="">
+                                            <img class="" src="svg/money-white.svg" alt="" />
                                         </div>
                                     </div>
                                 </div>
                                 <!-- <div class="w-1 mx-6 my-6 border-l hidden"></div> -->
-                                <div class="flex-col  justify-center items-center relative">
-                                    <div class="py-3  tour_cards__from--grid">
-                                        <h4 class="mb-3 text-base">تهران</h4>
-                                        <span class="flex  flex-row justify-between text-neutral-600 text-xs">
+                                <div class="relative flex-col items-center justify-center">
+                                    <div class="tour_cards__from--grid py-3">
+                                        <h4 class="mb-3 text-base">
+                                            تهران
+                                        </h4>
+                                        <span class="flex flex-row justify-between text-xs text-neutral-600">
                                             <span>
-                                                پرواز رفت
+                                                پرواز
+                                                رفت
                                             </span>
                                             <span>
                                                 04/10/1400
@@ -880,11 +913,14 @@
                                                 8 روز و 8 شب
                                             </span>
                                         </div> -->
-                                    <div class="py-3 tour_cards__to--grid">
-                                        <h4 class="mb-3 text-base">پاریس</h4>
-                                        <span class="flex  flex-row justify-between text-neutral-600 text-xs">
+                                    <div class="tour_cards__to--grid py-3">
+                                        <h4 class="mb-3 text-base">
+                                            پاریس
+                                        </h4>
+                                        <span class="flex flex-row justify-between text-xs text-neutral-600">
                                             <span>
-                                                پرواز برگشت
+                                                پرواز
+                                                برگشت
                                             </span>
                                             <span>
                                                 04/10/1400
@@ -895,67 +931,90 @@
 
                                 <div class="mt-8">
                                     <div
-                                        class=" flex-center gap-3 py-3  rounded-full bg-gray-200 text-black relative top-1/4 w-full text-center px-5">
+                                        class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-gray-200 py-3 px-5 text-center text-black">
                                         <div class="flex-center gap-2">
                                             <span class="text-sm">تومان</span>
                                             <strong>5.200.00</strong>
                                         </div>
-                                        <img class="" src="svg/money.svg" alt="">
+                                        <img class="" src="svg/money.svg" alt="" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
-
-
 
                 <!-- PAGINATION -->
                 <div class="text-center">
                     <div class="flex-center flex-row-reverse gap-1">
-                        <div class="w-12 h-8  rounded-3xl flex-center bg-slate-200"><img src="svg/chevron-left.svg">
+                        <div class="flex-center h-8 w-12 rounded-3xl bg-slate-200">
+                            <img src="svg/chevron-left.svg" />
                         </div>
 
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border">1</div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border">...</div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border hidden sm:block">13
+                        <div class="flex-center h-8 rounded-3xl border bg-white px-3 text-gray-600">
+                            1
                         </div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-primery text-primery-dark border">14</div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border hidden sm:block">15
+                        <div class="flex-center h-8 rounded-3xl border bg-white px-3 text-gray-600">
+                            ...
                         </div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border">...</div>
-                        <div class="px-3 h-8  rounded-3xl flex-center bg-white text-gray-600 border">24</div>
+                        <div class="flex-center hidden h-8 rounded-3xl border bg-white px-3 text-gray-600 sm:block">
+                            13
+                        </div>
+                        <div class="flex-center h-8 rounded-3xl border bg-primery px-3 text-primery-dark">
+                            14
+                        </div>
+                        <div class="flex-center hidden h-8 rounded-3xl border bg-white px-3 text-gray-600 sm:block">
+                            15
+                        </div>
+                        <div class="flex-center h-8 rounded-3xl border bg-white px-3 text-gray-600">
+                            ...
+                        </div>
+                        <div class="flex-center h-8 rounded-3xl border bg-white px-3 text-gray-600">
+                            24
+                        </div>
 
-                        <div class="w-12 h-8  rounded-3xl flex-center bg-slate-200"><img src="svg/chevron-rigth.svg">
+                        <div class="flex-center h-8 w-12 rounded-3xl bg-slate-200">
+                            <img src="svg/chevron-rigth.svg" />
                         </div>
                     </div>
                 </div>
-                <br><br><br>
+                <br /><br /><br />
             </section>
         </div>
 
-        <p class="font-bold text-xl px-2 lg:hidden">درباره اروپا بیشتر بدانید</p>
+        <p class="px-2 text-xl font-bold lg:hidden">
+            درباره اروپا بیشتر بدانید
+        </p>
 
-
-        <div class="flex flex-col justify-center px-2 lg:hidden ">
+        <div class="flex flex-col justify-center px-2 lg:hidden">
             <div>
                 <!-- loop here -->
-                <div class="mt-6 w-full h-full flex-center bi-overlay p-6 rounded-full"
-                    style="background: url(img/countries/image8.jpg) center center/cover;">
-                    <div class="text-white relative text-center text-base"> باید ها و نباید های سفر به اروپا</div>
+                <div class="flex-center bi-overlay mt-6 h-full w-full rounded-full p-6" style="
+							background: url(img/countries/image8.jpg)
+								center center/cover;
+						">
+                    <div class="relative text-center text-base text-white">
+                        باید ها و نباید های سفر به اروپا
+                    </div>
                 </div>
 
-                <div class="mt-6 w-full h-full flex-center bi-overlay p-6 rounded-full"
-                    style="background: url(img/countries/image8.jpg) center center/cover;">
-                    <div class="text-white relative text-center text-base"> اقامت در فرانسه</div>
+                <div class="flex-center bi-overlay mt-6 h-full w-full rounded-full p-6" style="
+							background: url(img/countries/image8.jpg)
+								center center/cover;
+						">
+                    <div class="relative text-center text-base text-white">
+                        اقامت در فرانسه
+                    </div>
                 </div>
 
-                <div class="mt-6 w-full h-full flex-center bi-overlay p-6 rounded-full"
-                    style="background: url(img/countries/image8.jpg) center center/cover;">
-                    <div class="text-white relative text-center text-base"> ماردی که هنگام اقامت در بارسلونا بید
-                        بدانید</div>
+                <div class="flex-center bi-overlay mt-6 h-full w-full rounded-full p-6" style="
+							background: url(img/countries/image8.jpg)
+								center center/cover;
+						">
+                    <div class="relative text-center text-base text-white">
+                        ماردی که هنگام اقامت در بارسلونا بید
+                        بدانید
+                    </div>
                 </div>
             </div>
         </div>

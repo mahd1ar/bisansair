@@ -2,17 +2,17 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page 10 </title>
-    <link rel="stylesheet" href="css/output.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 10</title>
+    <link rel="stylesheet" href="css/output.css" />
     <script defer src="lib/js/alpine.js"></script>
 </head>
 
 <body>
     <!-- brake points debug -->
-    <div class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
+    <div class="fixed top-10 left-10 z-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
         <span class="hidden sm:block">sm</span>
         <span class="hidden md:block">md</span>
         <span class="hidden lg:block">lg</span>
@@ -21,387 +21,448 @@
     </div>
     <!-- /debug -->
 
-
-
-
-
     <header class="mb-10 pt-10">
         <!-- TRAVEL TEXTURE -->
-        <div class="absolute w-full top-0 bi-overlay-gradient-white overflow-hidden h-80"
-            style="background: url(svg/travel-textture/one.svg) center center/cover;">
-        </div>
+        <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+					background: url(svg/travel-textture/one.svg)
+						center center/cover;
+				"></div>
 
-
-        <nav id="navigation" x-data="navbar" class="lg:max-w-[1104px] container mx-auto overflow-x-clip">
-
+        <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
             <div
-                class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow z-20 relative">
-
+                class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                 <div class="flex">
                     <div
-                        class="w-32 bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 py-1 rounded-full flex-center flex-1">
-                        <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-                        <span class="mx-2 text-sm hidden md:block"> ۰۲۱-۳۴۵۶۴۸ </span>
+                        class="flex-center w-8 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg md:w-32 md:bg-gray-200 md:shadow-none">
+                        <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                        <span class="mx-2 hidden text-sm md:block">
+                            ۰۲۱-۳۴۵۶۴۸
+                        </span>
                     </div>
 
-
                     <div class="menu-top_menu-container hidden md:block" ref="menuContainer">
-                        <ul id="menu-top_menu" class="menu ">
-                            <li class="menu-item   menu-item-has-children ">
+                        <ul id="menu-top_menu" class="menu">
+                            <li class="menu-item menu-item-has-children">
                                 <a href="http://hll.om/index.php/product/">تور</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item   "><a href="#">
+                                    <li class="menu-item">
+                                        <a href="#">
                                             bitumen
-                                            penetration grade
-                                        </a></li>
-                                    <li class="menu-item   "><a href="#">performance grade
-                                            bitumen</a></li>
+                                            penetration
+                                            grade
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">performance
+                                            grade
+                                            bitumen</a>
+                                    </li>
                                     <li
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children ">
-                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen Cutback</a>
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen
+                                            Cutback</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
                                                     bitumen
-                                                    slow curing (SC)</a>
+                                                    slow
+                                                    curing
+                                                    (SC)</a>
                                             </li>
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
-                                                    bitumen medium curing (MC)</a>
+                                                    bitumen
+                                                    medium
+                                                    curing
+                                                    (MC)</a>
                                             </li>
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
                                                     curing
-                                                    cutback bitumen (RC)</a>
+                                                    cutback
+                                                    bitumen
+                                                    (RC)</a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li
-                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children ">
-                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen emulsion</a>
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen
+                                            emulsion</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen Emulsion
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen
+                                                    Emulsion
                                                     (BE)</a>
                                             </li>
-                                            <li class="menu-item   ">
+                                            <li class="menu-item">
                                                 <a href="http://hll.om/product/cationic-emulsions/">Cationic
                                                     Emulsions</a>
                                             </li>
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic Emulsions</a>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic
+                                                    Emulsions</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
                                             Emulsified
-                                            Bitumen</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/solvent-base-primer/">Solvent Base
+                                            Bitumen</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/solvent-base-primer/">Solvent
+                                            Base
                                             Primer</a>
                                     </li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
-                                            Modified Emulsion (PME)</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready Mixed
-                                            Asphalt</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/c_bituplast/">Bituplast</a></li>
-                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category "><a
-                                            href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
-                                            Base Waterproofing Mortar</a></li>
-                                    <li class="menu-item   "><a
-                                            href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco Organic
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
+                                            Modified
+                                            Emulsion
+                                            (PME)</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready
+                                            Mixed
+                                            Asphalt</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c_bituplast/">Bituplast</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
+                                            Base
+                                            Waterproofing
+                                            Mortar</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco
+                                            Organic
                                             Cleaner
-                                            (BOC):</a></li>
+                                            (BOC):</a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li class="menu-item   menu-item-has-children ">
+                            <li class="menu-item menu-item-has-children">
                                 <a href="#">ﻫﺘﻞ ﻫﺎ</a>
                                 <ul class="sub-menu">
-                                    <li class="menu-item  menu-item-object-post "><a
-                                            href="http://hll.om/standardizing-bodies/">Standardizing Bodies</a></li>
-                                    <li class="menu-item  menu-item-object-post "><a
-                                            href="http://hll.om/family-of-bitumenous-binders/">Family of Bitumenous
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/standardizing-bodies/">Standardizing
+                                            Bodies</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/family-of-bitumenous-binders/">Family
+                                            of
+                                            Bitumenous
                                             Binders</a>
                                     </li>
-                                    <li class="menu-item   "><a href="http://hll.om/product/quality-control/">Quality
-                                            Control</a></li>
-                                    <li class="menu-item  menu-item-object-post "><a
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/quality-control/">Quality
+                                            Control</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a
                                             href="http://hll.om/bitumen-emulsions-anionic-cationic-unmodified-polymer-modified/">BITUMEN
-                                            EMULSIONS (ANIONIC; CATIONIC; UNMODIFIED; POLYMER MODIFIED)</a></li>
+                                            EMULSIONS
+                                            (ANIONIC;
+                                            CATIONIC;
+                                            UNMODIFIED;
+                                            POLYMER
+                                            MODIFIED)</a>
+                                    </li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="http://hll.om/packing-logistics/">تور اقساط</a></li>
-                            <li class="menu-item"><a href="#">تور اروپا</a></li>
-                            <li class="menu-item"><a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a></li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/packing-logistics/">تور اقساط</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">تور اروپا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a>
+                            </li>
 
-                            <li class="menu-item   "><a href="http://hll.om/contact-us/">ویزا</a></li>
-                            <li class="menu-item   "><a href="http://hll.om/contact-us/">بلاگ</a></li>
-
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ویزا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">بلاگ</a>
+                            </li>
                         </ul>
                     </div>
-
                 </div>
 
-                <img src="./img/logo.png" class="object-contain w-9" alt="" />
+                <img src="./img/logo.png" class="w-9 object-contain" alt="" />
 
-                <div @click="taggleMobileMenu" class=" cursor-pointer md:hidden">
+                <div @click="taggleMobileMenu" class="cursor-pointer md:hidden">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </div>
-
             </div>
 
-
-
-
             <!-- MOBILE SECTION -->
-            <div id="mobile-menu" x-show="isOpen" style="display: none;" x-transition.opacity>
+            <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
                 <div class="mobile-menu__overlay">
-
-
-
                     <div
-                        class="flex mx-auto mt-5 justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
+                        class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                         <div class="flex">
                             <div
-                                class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
-                                <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-
+                                class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                                <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
                             </div>
-
                         </div>
 
-                        <img src="./img/logo.png" class="object-contain w-9" alt="" />
+                        <img src="./img/logo.png" class="w-9 object-contain" alt="" />
 
-
-                        <button @click="taggleMobileMenu()" class="  relative  cursor-pointer md:hidden">
+                        <button @click="taggleMobileMenu()" class="relative cursor-pointer md:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
-
                     </div>
 
-
-
-                    <div class="relative">
-
-                        <div class="flex items-center justify-start gap-3 mt-2 mb-5 text-xl">
-                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()"
-                                x-transition>
-                                <img src="svg/chevron-rigth.svg" alt="">
+                    <div class="relative rounded-3xl bg-white" dir="rtl">
+                        <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
+                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
+                                <img src="svg/chevron-rigth.svg" alt="" />
                             </span>
 
-                            <h1 x-text="ch.name ? ch.name : 'menu' "></h1>
-
+                            <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
                         </div>
 
                         <ul class="bi-scrollbar">
                             <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
                                 <li>
-
                                     <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') " class="">
                                         <span x-text="name"></span>
-                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg" x-transition>
+                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg"
+                                            x-transition />
                                     </a>
-
                                 </li>
                             </template>
-
                         </ul>
-
                     </div>
                 </div>
-
             </div>
             <!-- / -->
         </nav>
-
     </header>
 
-
-
-
-
-    <main class="container mx-auto relative gap-2 px-2 flex flex-col lg:flex-row items-start" dir="rtl">
+    <main class="container relative mx-auto flex flex-col items-start gap-2 px-2 lg:flex-row" dir="rtl">
         <div class="w-full lg:w-9/12">
             <div>
                 <div
-                    class="py-6 lg:px-6 lg:bg-white lg:rounded-3xl overflow-auto border-t-2 lg:border-t-0 lg:shadow-lg bi-scrollbar">
-                    <ul class="flex items-start gap-2 text-secondary-dark font-semibold whitespace-pre bi-scrollbar ">
-                        <li class="px-6 py-2 rounded-3xl cursor-pointer   bg-slate-200 ">توضیحات</li>
-                        <li class="px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">برنامه سفر</li>
-                        <li class="px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">مدارک مورد نیاز</li>
-                        <li class="px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">اطلاعات سفر</li>
-                        <li class="px-6 py-2 rounded-3xl cursor-pointer hover:bg-slate-50 ">گالری</li>
+                    class="bi-scrollbar overflow-auto border-t-2 py-6 lg:rounded-3xl lg:border-t-0 lg:bg-white lg:px-6 lg:shadow-lg">
+                    <ul class="bi-scrollbar flex items-start gap-2 whitespace-pre font-semibold text-secondary-dark">
+                        <li class="cursor-pointer rounded-3xl bg-slate-200 px-6 py-2">
+                            توضیحات
+                        </li>
+                        <li class="cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                            برنامه سفر
+                        </li>
+                        <li class="cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                            مدارک مورد نیاز
+                        </li>
+                        <li class="cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                            اطلاعات سفر
+                        </li>
+                        <li class="cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                            گالری
+                        </li>
                     </ul>
                 </div>
 
                 <!-- Title -->
                 <div class="mt-8">
-                    <div class="flex ">
+                    <div class="flex">
                         <div class="ml-4">
-                            <img class="rounded-circle w-16 h-16 " src="img/flag-turkish.png" alt="">
+                            <img class="h-16 w-16 rounded-circle" src="img/flag-turkish.png" alt="" />
                         </div>
                         <div>
-                            <h1 class="text-2xl font-bold">تور استانبول با پرواز ایران ایر</h1>
+                            <h1 class="text-2xl font-bold">
+                                تور استانبول با پرواز
+                                ایران ایر
+                            </h1>
                             <p class="text-xs text-gray-400">
                                 ترکیه استانبول
                             </p>
                         </div>
-
                     </div>
                 </div>
 
                 <!-- About tour -->
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl font-bold">در مورد سفر</h1>
+                    <h1 class="text-xl font-bold text-primery-dark">
+                        در مورد سفر
+                    </h1>
                     <div class="mt-2">
-                        لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                        صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای
-                        پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از نظر
+                        لورم ایپسوم یا طرح‌نما (به انگلیسی:
+                        Lorem ipsum) به متنی آزمایشی و بی‌معنی
+                        در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
+                        گفته می‌شود. طراح گرافیک از این متن به
+                        عنوان عنصری از ترکیب بندی برای پر کردن
+                        صفحه و ارایه اولیه شکل ظاهری و کلی طرح
+                        سفارش گرفته شده استفاده می نماید، تا
+                        از نظر
                     </div>
                 </div>
 
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl font-bold">تیتر دوم</h1>
+                    <h1 class="text-xl font-bold text-primery-dark">
+                        تیتر دوم
+                    </h1>
                     <div class="mt-2">
-                        گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای صفحه‌آرایی،
-                        نخست از متن‌های آزمایشی و بی‌معنی استفاده می‌کنند تا صرفا به مشتری یا صاحب کار خود نشان دهند که
-                        صفحه طراحی یا صفحه بندی شده بعد از اینکه متن در آن قرار گیرد چگونه به نظر می‌رسد و قلم‌ها و
-                        اندازه‌بندی‌ها چگونه در نظر گرفته شده‌است. از آنجایی که طراحان عموما نویسنده متن نیستند
+                        گرافیکی نشانگر چگونگی نوع و اندازه
+                        فونت و ظاهر متن باشد. معمولا طراحان
+                        گرافیک برای صفحه‌آرایی، نخست از
+                        متن‌های آزمایشی و بی‌معنی استفاده
+                        می‌کنند تا صرفا به مشتری یا صاحب کار
+                        خود نشان دهند که صفحه طراحی یا صفحه
+                        بندی شده بعد از اینکه متن در آن قرار
+                        گیرد چگونه به نظر می‌رسد و قلم‌ها و
+                        اندازه‌بندی‌ها چگونه در نظر گرفته
+                        شده‌است. از آنجایی که طراحان عموما
+                        نویسنده متن نیستند
                     </div>
                 </div>
 
                 <!-- Services -->
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl font-bold">مدارک مورد نیاز</h1>
-                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
-
-                        <div class="flex items-center gap-4 rounded-3xl bi-overlay py-4 px-6"
-                            style="background: url(img/transfer.jpg) center center / cover;">
-
-                            <div class="bg-primery p-3 rounded-circle relative">
-                                <img src="svg/bus-primary-dark.svg" alt="">
+                    <h1 class="text-xl font-bold text-primery-dark">
+                        مدارک مورد نیاز
+                    </h1>
+                    <div class="mt-4 grid grid-cols-2 gap-6 lg:grid-cols-3">
+                        <div class="bi-overlay flex items-center gap-4 rounded-3xl py-4 px-6" style="
+									background: url(img/transfer.jpg)
+										center center /
+										cover;
+								">
+                            <div class="relative rounded-circle bg-primery p-3">
+                                <img src="svg/bus-primary-dark.svg" alt="" />
                             </div>
-                            <div class="text-white relative font-bold">
+                            <div class="relative font-bold text-white">
                                 ترانسفر هتل
                             </div>
-
                         </div>
 
-                        <div class="flex items-center gap-4 rounded-3xl bi-overlay py-4 px-6"
-                            style="background: url(img/transfer.jpg) center center / cover;">
-
-                            <div class="bg-primery p-3 rounded-circle relative">
-                                <img src="svg/bus-primary-dark.svg" alt="">
+                        <div class="bi-overlay flex items-center gap-4 rounded-3xl py-4 px-6" style="
+									background: url(img/transfer.jpg)
+										center center /
+										cover;
+								">
+                            <div class="relative rounded-circle bg-primery p-3">
+                                <img src="svg/bus-primary-dark.svg" alt="" />
                             </div>
-                            <div class="text-white relative font-bold">
+                            <div class="relative font-bold text-white">
                                 بیمه
                             </div>
-
                         </div>
 
-                        <div class="flex items-center gap-4 rounded-3xl bi-overlay py-4 px-6"
-                            style="background: url(img/transfer.jpg) center center / cover;">
-
-                            <div class="bg-primery p-3 rounded-circle relative">
-                                <img src="svg/bus-primary-dark.svg" alt="">
+                        <div class="bi-overlay flex items-center gap-4 rounded-3xl py-4 px-6" style="
+									background: url(img/transfer.jpg)
+										center center /
+										cover;
+								">
+                            <div class="relative rounded-circle bg-primery p-3">
+                                <img src="svg/bus-primary-dark.svg" alt="" />
                             </div>
-                            <div class="text-white relative font-bold">
+                            <div class="relative font-bold text-white">
                                 راهنمای تور
                             </div>
-
                         </div>
-
-
-
                     </div>
                 </div>
 
                 <!-- Required Documents -->
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl font-bold">مدارک مورد نیاز</h1>
+                    <h1 class="text-xl font-bold text-primery-dark">
+                        مدارک مورد نیاز
+                    </h1>
 
-                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-4 text-black">
-
-                        <div class="bg-slate-200 px-4 py-2 rounded-xl">
+                    <div class="mt-4 grid grid-cols-2 gap-6 text-black lg:grid-cols-3">
+                        <div class="rounded-xl bg-slate-200 px-4 py-2">
                             گذرنامه با 7 ماه اعتبار
                         </div>
-                        <div class="bg-slate-200 px-4 py-2 rounded-xl">
+                        <div class="rounded-xl bg-slate-200 px-4 py-2">
                             نتیجه تست منفی PCR
                         </div>
-
-
                     </div>
                 </div>
 
                 <!-- Hotels table -->
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl font-bold">هتل ها</h1>
+                    <h1 class="text-xl font-bold text-primery-dark">
+                        هتل ها
+                    </h1>
 
-
-
-
-
-
-                    <div class="flex flex-col mt-4">
-                        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 bi-scrollbar">
-                            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                                <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                    <div class="mt-4 flex flex-col">
+                        <div class="bi-scrollbar -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+                                <div class="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
                                     <table class="min-w-full divide-y divide-gray-200">
                                         <thead class="bg-gray-50">
                                             <tr>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    نام هتل</th>
+                                                    class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
+                                                    نام
+                                                    هتل
+                                                </th>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    خدمات</th>
+                                                    class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
+                                                    خدمات
+                                                </th>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    1 تخت ( هر نفر )</th>
+                                                    class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
+                                                    1
+                                                    تخت
+                                                    (
+                                                    هر
+                                                    نفر
+                                                    )
+                                                </th>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    1 تخت</th>
+                                                    class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
+                                                    1
+                                                    تخت
+                                                </th>
                                                 <th scope="col"
-                                                    class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    توضیحات</th>
-
+                                                    class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
+                                                    توضیحات
+                                                </th>
                                             </tr>
                                         </thead>
-                                        <tbody class="bg-white divide-y divide-gray-200">
+                                        <tbody class="divide-y divide-gray-200 bg-white">
                                             <tr>
-
-                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                <td class="whitespace-nowrap px-6 py-4">
                                                     <div class="flex items-center text-gray-700">
-                                                        هتل ریدل استانبول
+                                                        هتل
+                                                        ریدل
+                                                        استانبول
                                                     </div>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
-                                                    <div class="text-sm text-gray-700">B.B
+                                                <td class="whitespace-nowrap px-6 py-4">
+                                                    <div class="text-sm text-gray-700">
+                                                        B.B
                                                     </div>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                <td class="whitespace-nowrap px-6 py-4">
                                                     <span
-                                                        class="px-2 inline-flex text-sm text-gray-700 leading-5  rounded-full ">
-                                                        3700000 </span>
+                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
+                                                        3700000
+                                                    </span>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                <td class="whitespace-nowrap px-6 py-4">
                                                     <span
-                                                        class="px-2 inline-flex text-sm text-gray-700 leading-5  rounded-full ">
-                                                        5700000 </span>
+                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
+                                                        5700000
+                                                    </span>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
                                                     <span>
                                                         dec
                                                     </span>
@@ -409,114 +470,108 @@
                                             </tr>
 
                                             <tr class="bg-neutral-200">
-
-                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                <td class="whitespace-nowrap px-6 py-4">
                                                     <div class="flex items-center text-gray-700">
-                                                        هتل ریدل استانبول
+                                                        هتل
+                                                        ریدل
+                                                        استانبول
                                                     </div>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
-                                                    <div class="text-sm text-gray-700">B.B
+                                                <td class="whitespace-nowrap px-6 py-4">
+                                                    <div class="text-sm text-gray-700">
+                                                        B.B
                                                     </div>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                <td class="whitespace-nowrap px-6 py-4">
                                                     <span
-                                                        class="px-2 inline-flex text-sm text-gray-700 leading-5  rounded-full ">
-                                                        3700000 </span>
+                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
+                                                        3700000
+                                                    </span>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                <td class="whitespace-nowrap px-6 py-4">
                                                     <span
-                                                        class="px-2 inline-flex text-sm text-gray-700 leading-5  rounded-full ">
-                                                        5700000 </span>
+                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
+                                                        5700000
+                                                    </span>
                                                 </td>
-                                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                <td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
                                                     <span>
                                                         dec
                                                     </span>
                                                 </td>
                                             </tr>
-
-
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
 
                 <!-- Gallery -->
                 <div class="mt-8">
-                    <h1 class="text-primery-dark text-xl font-bold">گالری تصاویر</h1>
+                    <h1 class="text-xl font-bold text-primery-dark">
+                        گالری تصاویر
+                    </h1>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4 ">
-                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
-                            src="img/mosque.jpg" alt="">
-                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
-                            src="img/mosque.jpg" alt="">
-                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
-                            src="img/mosque.jpg" alt="">
-                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
-                            src="img/mosque.jpg" alt="">
-                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
-                            src="img/mosque.jpg" alt="">
-                        <img class="w-full h-44 md:h-64 lg:h-[184px] rounded-3xl overflow-hidden object-cover"
-                            src="img/mosque.jpg" alt="">
+                    <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
+                            src="img/mosque.jpg" alt="" />
+                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
+                            src="img/mosque.jpg" alt="" />
+                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
+                            src="img/mosque.jpg" alt="" />
+                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
+                            src="img/mosque.jpg" alt="" />
+                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
+                            src="img/mosque.jpg" alt="" />
+                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
+                            src="img/mosque.jpg" alt="" />
                     </div>
                 </div>
 
                 <!-- GAP -->
-                <br>
-                <br>
-                <br>
-
+                <br />
+                <br />
+                <br />
             </div>
         </div>
-        <aside class="sticky  lg:relative  bottom-0 p-6 lg:p-0 left-0 w-full lg:w-3/12">
-            <div class=" flex w-full sm:w-80 lg:w-full   mr-auto  flex-col bg-white rounded-3xl p-4 lg:p-6 shadow-lg">
+        <aside class="sticky bottom-0 left-0 w-full p-6 lg:relative lg:w-3/12 lg:p-0">
+            <div class="mr-auto flex w-full flex-col rounded-3xl bg-white p-4 shadow-lg sm:w-80 lg:w-full lg:p-6">
                 <div class="border-b">
-                    <h2 class="mb-4">
-                        مقصد :
-                        استانبول
-                    </h2>
+                    <h2 class="mb-4">مقصد : استانبول</h2>
                 </div>
                 <div>
                     <div>
-                        <div class="flex flex-row justify-between items-center lg:items-start lg:flex-col">
-                            <div class="lg:pt-4 text-gray-500 text-xs">شروع قیمت از:</div>
-                            <div class="py-4 flex-center gap-2 ">
+                        <div class="flex flex-row items-center justify-between lg:flex-col lg:items-start">
+                            <div class="text-xs text-gray-500 lg:pt-4">
+                                شروع قیمت از:
+                            </div>
+                            <div class="flex-center gap-2 py-4">
                                 <span>تومان</span>
                                 <span class="text-xl font-semibold">
                                     5,200,000
                                 </span>
                                 <span>
-                                    <img src="svg/money.svg" alt="">
+                                    <img src="svg/money.svg" alt="" />
                                 </span>
                             </div>
                         </div>
 
-                        <div class="text-center ">
-                            <button class="bg-primery text-primery-dark w-full rounded-3xl py-2">رزرو تور</button>
-
+                        <div class="text-center">
+                            <button class="w-full rounded-3xl bg-primery py-2 text-primery-dark">
+                                رزرو تور
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </aside>
-
     </main>
 
-    <div class="h-96 flex-center">
-        gap (delete me later)
-    </div>
+    <div class="flex-center h-96">gap (delete me later)</div>
 
     <script src="js/components/navbar.js"></script>
-
 </body>
 
 </html>
