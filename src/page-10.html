@@ -258,20 +258,22 @@
             <div>
                 <div
                     class="bi-scrollbar overflow-auto border-t-2 py-6 lg:rounded-3xl lg:border-t-0 lg:bg-white lg:px-6 lg:shadow-lg">
-                    <ul class="bi-scrollbar flex items-start gap-2 whitespace-pre font-semibold text-secondary-dark">
-                        <li class="cursor-pointer rounded-3xl bg-slate-200 px-6 py-2">
+                    <ul
+                        class="js-tabs-container bi-scrollbar flex items-start gap-2 whitespace-nowrap font-semibold text-secondary-dark">
+                        <li class="js-tab-item cursor-pointer rounded-3xl bg-slate-200 px-6 py-2">
                             توضیحات
                         </li>
-                        <li class="cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
                             برنامه سفر
+
                         </li>
-                        <li class="cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
                             مدارک مورد نیاز
                         </li>
-                        <li class="cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
                             اطلاعات سفر
                         </li>
-                        <li class="cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
+                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
                             گالری
                         </li>
                     </ul>
@@ -572,6 +574,15 @@
     <div class="flex-center h-96">gap (delete me later)</div>
 
     <script src="js/components/navbar.js"></script>
+    <script>
+        document
+            .querySelectorAll(".js-tab-item")
+            .forEach(el => {
+                el.addEventListener("click", e => {
+                    e.target.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
+                })
+            })
+    </script>
 </body>
 
 </html>

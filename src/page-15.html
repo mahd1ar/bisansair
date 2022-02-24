@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 15</title>
+    <link rel="stylesheet" href="css/output.css" />
+
+    <script defer src="lib/js/alpine.js"></script>
+</head>
+
+<body>
+    <!-- brake points debug -->
+    <div class="fixed top-10 left-10 z-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
+        <span class="hidden sm:block">sm</span>
+        <span class="hidden md:block">md</span>
+        <span class="hidden lg:block">lg</span>
+        <span class="hidden xl:block">xl</span>
+        <span class="hidden 2xl:block">2xl</span>
+    </div>
+    <!-- /debug -->
+
+    <header class="mb-10 pt-10">
+        <!-- TRAVEL TEXTURE -->
+        <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+					background: url(svg/travel-textture/one.svg)
+						center center/cover;
+				"></div>
+
+        <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
+            <div
+                class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                <div class="flex">
+                    <div
+                        class="flex-center w-8 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg md:w-32 md:bg-gray-200 md:shadow-none">
+                        <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                        <span class="mx-2 hidden text-sm md:block">
+                            ۰۲۱-۳۴۵۶۴۸
+                        </span>
+                    </div>
+
+                    <div class="menu-top_menu-container hidden md:block" ref="menuContainer">
+                        <ul id="menu-top_menu" class="menu">
+                            <li class="menu-item menu-item-has-children">
+                                <a href="http://hll.om/index.php/product/">تور</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="#">
+                                            bitumen
+                                            penetration
+                                            grade
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">performance
+                                            grade
+                                            bitumen</a>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen
+                                            Cutback</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
+                                                    bitumen
+                                                    slow
+                                                    curing
+                                                    (SC)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
+                                                    bitumen
+                                                    medium
+                                                    curing
+                                                    (MC)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
+                                                    curing
+                                                    cutback
+                                                    bitumen
+                                                    (RC)</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen
+                                            emulsion</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen
+                                                    Emulsion
+                                                    (BE)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cationic-emulsions/">Cationic
+                                                    Emulsions</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic
+                                                    Emulsions</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
+                                            Emulsified
+                                            Bitumen</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/solvent-base-primer/">Solvent
+                                            Base
+                                            Primer</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
+                                            Modified
+                                            Emulsion
+                                            (PME)</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready
+                                            Mixed
+                                            Asphalt</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c_bituplast/">Bituplast</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
+                                            Base
+                                            Waterproofing
+                                            Mortar</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco
+                                            Organic
+                                            Cleaner
+                                            (BOC):</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#">ﻫﺘﻞ ﻫﺎ</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/standardizing-bodies/">Standardizing
+                                            Bodies</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/family-of-bitumenous-binders/">Family
+                                            of
+                                            Bitumenous
+                                            Binders</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/quality-control/">Quality
+                                            Control</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a
+                                            href="http://hll.om/bitumen-emulsions-anionic-cationic-unmodified-polymer-modified/">BITUMEN
+                                            EMULSIONS
+                                            (ANIONIC;
+                                            CATIONIC;
+                                            UNMODIFIED;
+                                            POLYMER
+                                            MODIFIED)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/packing-logistics/">تور اقساط</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">تور اروپا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ویزا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">بلاگ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+
+                <div @click="taggleMobileMenu" class="cursor-pointer md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- MOBILE SECTION -->
+            <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
+                <div class="mobile-menu__overlay">
+                    <div
+                        class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                        <div class="flex">
+                            <div
+                                class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                                <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                            </div>
+                        </div>
+
+                        <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+
+                        <button @click="taggleMobileMenu()" class="relative cursor-pointer md:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="relative rounded-3xl bg-white" dir="rtl">
+                        <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
+                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
+                                <img src="svg/chevron-rigth.svg" alt="" />
+                            </span>
+
+                            <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
+                        </div>
+
+                        <ul class="bi-scrollbar">
+                            <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
+                                <li>
+                                    <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') " class="">
+                                        <span x-text="name"></span>
+                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg"
+                                            x-transition />
+                                    </a>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+        </nav>
+    </header>
+
+    <main id="main" class="container relative mx-auto flex flex-col gap-6 px-2 lg:flex-row" dir="rtl">
+        <div class="mb-12 w-full lg:w-2/3">
+            <div>
+                <div class="mb-12 flex items-center gap-6 bg-white p-6">
+                    <span class="text-xl font-bold text-primery-dark">اخذ ویزا</span>
+                    <input class="text-xl" type="text" placeholder="نام کشور مورد نظر را وارد کنید ..." />
+                    <div class="mr-auto flex cursor-pointer gap-3 rounded-3xl bg-primery px-4 py-2 hover:bg-yellow-200">
+                        <img src="svg/magnifier.svg" alt="" />
+                        <span>جستجو</span>
+                    </div>
+                </div>
+
+                <div class="js-accordion mb-8">
+                    <div class="js-accordion-handler flex cursor-pointer items-center justify-between rounded-3xl bg-white p-3 text-white"
+                        style="
+								background-image: url(img/stock/photo-1644258201768-e6d8b09e34a4.jpg);
+							">
+                        <h2 class="font-bold">اروپا</h2>
+                        <i class="flex-center aspect-square w-14 rounded-circle bg-white">
+                            <img class="w-5" src="svg/chevron-down.svg" alt="" />
+                        </i>
+                    </div>
+
+                    <div
+                        class="js-accordion-container mt-6 grid grid-cols-1 gap-6 overflow-hidden transition-all duration-200 ease-out sm:grid-cols-2">
+                        <div class="flex cursor-pointer items-center gap-8 rounded-2xl bg-white p-6 hover:bg-gray-100">
+                            <img src="img/flag-france.png" class="w-14 rounded-circle shadow-md" />
+                            <div class="flex flex-col">
+                                <h4 class="text-lg font-bold">
+                                    ایتالیا
+                                </h4>
+                                <span class="text-neutral-500">italy</span>
+                            </div>
+                        </div>
+                        <div class="flex cursor-pointer items-center gap-8 rounded-2xl bg-white p-6 hover:bg-gray-100">
+                            <img src="img/flag-france.png" class="w-14 rounded-circle shadow-md" />
+                            <div class="flex flex-col">
+                                <h4 class="text-lg font-bold">
+                                    ایتالیا
+                                </h4>
+                                <span class="text-neutral-500">italy</span>
+                            </div>
+                        </div>
+                        <div class="flex cursor-pointer items-center gap-8 rounded-2xl bg-white p-6 hover:bg-gray-100">
+                            <img src="img/flag-france.png" class="w-14 rounded-circle shadow-md" />
+                            <div class="flex flex-col">
+                                <h4 class="text-lg font-bold">
+                                    ایتالیا
+                                </h4>
+                                <span class="text-neutral-500">italy</span>
+                            </div>
+                        </div>
+                        <div class="flex cursor-pointer items-center gap-8 rounded-2xl bg-white p-6 hover:bg-gray-100">
+                            <img src="img/flag-france.png" class="w-14 rounded-circle shadow-md" />
+                            <div class="flex flex-col">
+                                <h4 class="text-lg font-bold">
+                                    ایتالیا
+                                </h4>
+                                <span class="text-neutral-500">italy</span>
+                            </div>
+                        </div>
+                        <div class="flex cursor-pointer items-center gap-8 rounded-2xl bg-white p-6 hover:bg-gray-100">
+                            <img src="img/flag-france.png" class="w-14 rounded-circle shadow-md" />
+                            <div class="flex flex-col">
+                                <h4 class="text-lg font-bold">
+                                    ایتالیا
+                                </h4>
+                                <span class="text-neutral-500">italy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="js-accordion mb-8">
+                    <div class="js-accordion-handler flex cursor-pointer items-center justify-between rounded-3xl bg-white p-3 text-white"
+                        style="
+								background-image: url(img/stock/photo-1644258201768-e6d8b09e34a4.jpg);
+							">
+                        <h2 class="font-bold">اروپا</h2>
+                        <i class="flex-center aspect-square w-14 rounded-circle bg-white">
+                            <img class="w-5" src="svg/chevron-down.svg" alt="" />
+                        </i>
+                    </div>
+
+                    <div
+                        class="js-accordion-container mt-6 grid grid-cols-1 gap-6 overflow-hidden transition-all duration-200 ease-out sm:grid-cols-2">
+                        <div class="flex cursor-pointer items-center gap-8 rounded-2xl bg-white p-6 hover:bg-gray-100">
+                            <img src="img/flag-france.png" class="w-14 rounded-circle shadow-md" />
+                            <div class="flex flex-col">
+                                <h4 class="text-lg font-bold">
+                                    ایتالیا
+                                </h4>
+                                <span class="text-neutral-500">italy</span>
+                            </div>
+                        </div>
+                        <div class="flex cursor-pointer items-center gap-8 rounded-2xl bg-white p-6 hover:bg-gray-100">
+                            <img src="img/flag-france.png" class="w-14 rounded-circle shadow-md" />
+                            <div class="flex flex-col">
+                                <h4 class="text-lg font-bold">
+                                    ایتالیا
+                                </h4>
+                                <span class="text-neutral-500">italy</span>
+                            </div>
+                        </div>
+                        <div class="flex cursor-pointer items-center gap-8 rounded-2xl bg-white p-6 hover:bg-gray-100">
+                            <img src="img/flag-france.png" class="w-14 rounded-circle shadow-md" />
+                            <div class="flex flex-col">
+                                <h4 class="text-lg font-bold">
+                                    ایتالیا
+                                </h4>
+                                <span class="text-neutral-500">italy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <aside class="flex w-full flex-col gap-7 lg:w-1/3">
+            <h2 class="text-xl font-bold text-primery-dark">
+                چرا بهتر است ما براى شما ويزا بگيريم؟
+            </h2>
+            <div class="flex gap-4">
+                <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                    <img src="svg/mailman.svg" alt="" />
+                </div>
+                <div>
+                    <h4 class="font-bold text-primery-dark">
+                        اطلاعات به روز شرایط اخذ ویزا
+                    </h4>
+                    <p class="mt-2 text-sm leading-6 text-gray-400">
+                        ما بی‌وقفه در حال بررسی آخرین تحولات
+                        فی‌ما‌بین کشورها در جهت اخذ ویزا هستیم
+                        تا بتوانیم بهترین روش را پیشنهاد دهیم.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                    <img src="svg/running-man.svg" alt="" />
+                </div>
+                <div>
+                    <h4 class="font-bold text-primery-dark">
+                        سرعت در اخذ ويزا
+                    </h4>
+                    <p class="mt-2 text-sm leading-6 text-gray-400">
+                        ما معمولاً از كوتاه‌ترین و در عین حال
+                        مطمئن‌ترین راه برای اخذ ویزا استفاده
+                        می‌کنیم.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                    <img src="svg/commenting-man.svg" alt="" />
+                </div>
+                <div>
+                    <h4 class="font-bold text-primery-dark">
+                        مشاوره تخصصی رایگان
+                    </h4>
+                    <p class="mt-2 text-sm leading-6 text-gray-400">
+                        همکاران ما با اشراف کامل پیرامون
+                        موضوعات مرتبط با اخذ ویزا همواره
+                        آماده‌ راهنمایی شما هستند
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                    <img src="svg/nice-hand.svg" alt="" />
+                </div>
+                <div>
+                    <h4 class="font-bold text-primery-dark">
+                        بهترین روش اخذ ویزا
+                    </h4>
+                    <p class="mt-2 text-sm leading-6 text-gray-400">
+                        روش اخذ ویزا با توجه به نیاز و پتانسل
+                        شما انتخاب می‌شود، پس باید بهترین
+                        راه‌ها برای ویزا شدن را بشناسیم.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                    <img src="svg/credit-card.svg" alt="" />
+                </div>
+                <div>
+                    <h4 class="font-bold text-primery-dark">
+                        صرفه‌جویی در هزینه
+                    </h4>
+                    <p class="mt-2 text-sm leading-6 text-gray-400">
+                        وقتی کوتاه‌ترین و بهترین روش اخذ ویزا
+                        را بشناسید و انتخاب کنید، طبیعتاً
+                        هزینه‌های اخذ ویزا کاهش پیدا خواهد
+                        کرد.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                    <img src="svg/five-star.svg" alt="" />
+                </div>
+                <div>
+                    <h4 class="font-bold text-primery-dark">
+                        رضایت بالای مشتریان
+                    </h4>
+                    <p class="mt-2 text-sm leading-6 text-gray-400">
+                        اکثر مسافرانی که با ما برای گرفتن ویزا
+                        اقدام کرده‌اند، تبدیل به مشتریان
+                        وفادارمان شده‌اند.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                    <img src="svg/support.svg" alt="" />
+                </div>
+                <div>
+                    <h4 class="font-bold text-primery-dark">
+                        پشتیبانی مستمر
+                    </h4>
+                    <p class="mt-2 text-sm leading-6 text-gray-400">
+                        همکاران ما برای پاسخگویی و رفع هرگونه
+                        مشکل احتمالی همیشه در دسترس هستند، از
+                        لحظه شروع تا زمان صدور ویزا همراه شما
+                        هستیم.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                    <img src="svg/verify.svg" alt="" />
+                </div>
+                <div>
+                    <h4 class="font-bold text-primery-dark">
+                        پشتیبانی مستمر
+                    </h4>
+                    <p class="mt-2 text-sm leading-6 text-gray-400">
+                        با افتخار اعلام می‌کنیم که، ما اکثراً
+                        توسط مسافرین قبلی‌ به مخاطبین جدیدمان
+                        معرفی می‌شویم.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                    <img src="svg/health.svg" alt="" />
+                </div>
+                <div>
+                    <h4 class="font-bold text-primery-dark">
+                        صداقت
+                    </h4>
+                    <p class="mt-2 text-sm leading-6 text-gray-400">
+                        با نگاهی اجمالی به وبسایت بیسان‌سیر ،
+                        متوجه توضیح صادقانه ما در تمامی بخش‌ها
+                        خواهید شد.
+                    </p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div class="flex-center h-96">...gap ( delete me later )</div>
+
+    <script src="js/components/navbar.js"></script>
+    <script>
+        document.querySelectorAll(".js-accordion").forEach((acEl) => {
+            const handler = acEl.querySelector(
+                ".js-accordion-handler"
+            ),
+                container = acEl.querySelector(
+                    ".js-accordion-container"
+                );
+
+            if (!container.style.maxHeight)
+                container.style.maxHeight =
+                    container.scrollHeight + "px";
+
+            handler.addEventListener("click", (e) => {
+                const h = container.scrollHeight;
+
+                if (
+                    !container.style.maxHeight ||
+                    container.style.maxHeight === "0" ||
+                    container.style.maxHeight === "0px"
+                ) {
+                    container.style.maxHeight = h + "px";
+                    handler.querySelector('i').style.transform = "rotate(180deg)";
+                } else {
+                    container.style.maxHeight = "0px";
+                    handler.querySelector('i').style.transform = "rotate(0deg)";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
