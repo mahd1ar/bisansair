@@ -17,7 +17,7 @@ input {
 }
 
 #mobile-menu {
-	@apply fixed top-0 right-0 z-20 h-full w-full  bg-gradient-to-b from-black to-transparent;
+	@apply fixed top-0 right-0 z-30 h-full w-full  bg-gradient-to-b from-black to-transparent;
 
 	.mobile-menu__overlay {
 		@apply container mx-auto lg:max-w-[1104px];

@@ -189,6 +189,33 @@ const fligthPicker = {
             String(v).toIndiaDigits() + "نفر"
             : " نفرات"
     },
+    travelPicker: {
+        destination: {
+            model: "",
+            is: "",
+            options: []
+        },
+        starting: {
+            model: "",
+            is: "",
+            _options: [],
+            get options() {
+                return this.model ?
+                    this._options.filter(({ text }) => text.search(this.model) > -1)
+                    :
+                    this._options
+
+            },
+            pick(itemId) {
+                this.is = itemId
+                this.model = this._options.find(({ id }) => id === itemId).text
+            },
+            clear() {
+                this.model = "";
+                this.is = "";
+            }
+        }
+    },
     datePicker: {
         get weekDays() {
 
@@ -580,6 +607,20 @@ const fligthPicker = {
         this.datePicker.fa_candidateMonth = today_shamsi[1]
         this.datePicker.fa_candidateYear = today_shamsi[0]
 
+
+
+        this.$refs.startingFrom.querySelectorAll(".js-starting-option").forEach((node, index) => {
+            this.travelPicker.starting._options.push({
+                id: index,
+                text: node.querySelector(".js-starting-text").innerText.replace(/\s+/g, ' ').trim(),
+                // html: node.outerHTML,
+                icon: node.querySelector("img").src
+            })
+
+            node.remove()
+        })
+
+        console.log(this.travelPicker.starting.options)
     }
 
 
