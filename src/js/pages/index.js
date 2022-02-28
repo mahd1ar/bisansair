@@ -131,71 +131,83 @@ function fa_getMounthLength(fa_candidateMonth, fa_candidateYear) {
 
 
 const fligthPicker = {
-    showMem: false,
-    showFrom: false,
-    showDatePicker: false,
-    toggleMem() {
-        this.showDatePicker = false;
-        this.showFrom = false;
-
-        this.showMem = !this.showMem
-    },
-    toggleFrom() {
-        this.showMem = false
-        this.showDatePicker = false;
-
-        this.showFrom = !this.showFrom
-    },
-    toggleDatePicker() {
-        this.showMem = false
-        this.showFrom = false;
-
-        this.showDatePicker = !this.showDatePicker
-    },
-
-
-    travelers: [
-        {
-            type: "adult",
-            label: "بزرگسال",
-            count: 0,
+    travelersPicker: {
+        show: false,
+        togglePanel(val) {
+            this.show = (typeof val === 'undefined')
+                ? !this.show
+                : val
         },
-        {
-            type: "kid",
-            label: "کودک",
-            count: 0,
+        state: [
+            {
+                type: "adult",
+                label: "بزرگسال",
+                count: 0,
+            },
+            {
+                type: "kid",
+                label: "کودک",
+                count: 0,
+            },
+            {
+                type: "newborn",
+                label: "نوزاد",
+                count: 0,
+            }
+        ],
+        type: 0,
+        types: [
+            'اکونومی', 'بیسنس', 'فرست کلاس'
+        ],
+        inc(index) {
+            this.state[index].count++
         },
-        {
-            type: "newborn",
-            label: "نوزاد",
-            count: 0,
-        }
-    ],
-    travelType: 0,
-    travelTypes: [
-        'اکونومی', 'بیسنس', 'فرست کلاس'
-    ],
-    travelersInc(index) {
-        this.travelers[index].count++
-    },
-    travelersDec(index) {
-        this.travelers[index].count > 0 && this.travelers[index].count--
-    },
-    get totalTravelers() {
-        let v = 0;
-        this.travelers.forEach((i) => { v = v + i.count })
+        dec(index) {
+            this.state[index].count > 0 && this.state[index].count--
+        },
+        get totalTravelers() {
+            let v = 0;
+            this.state.forEach((i) => { v = v + i.count })
 
-        return v !== 0 ?
-            String(v).toIndiaDigits() + "نفر"
-            : " نفرات"
+            return v !== 0 ?
+                String(v).toIndiaDigits() + "نفر"
+                : " نفرات"
+        },
     },
     travelPicker: {
         destination: {
+            show: false,
+            togglePanel(val) {
+                this.show = (typeof val === 'undefined')
+                    ? !this.show
+                    : val
+            },
             model: "",
             is: "",
-            options: []
+            _options: [],
+            get options() {
+                return this.model ?
+                    this._options.filter(({ text }) => text.search(this.model) > -1)
+                    :
+                    this._options
+
+            },
+            pick(itemId) {
+                this.is = itemId
+                this.model = this._options.find(({ id }) => id === itemId).text
+            },
+            clear() {
+                this.model = "";
+                this.is = "";
+            }
         },
         starting: {
+            show: false,
+            togglePanel(val) {
+                this.show = (typeof val === 'undefined')
+                    ? !this.show
+                    : val
+            },
             model: "",
             is: "",
             _options: [],
@@ -217,6 +229,12 @@ const fligthPicker = {
         }
     },
     datePicker: {
+        show: false,
+        togglePanel(val) {
+            this.show = (typeof val === 'undefined')
+                ? !this.show
+                : val
+        },
         get weekDays() {
 
             return this.mode ?
@@ -278,6 +296,9 @@ const fligthPicker = {
             "شمسی",
             "میلادی"
         ],
+        today_shamsi: [],
+        today_miladi: [],
+
         en_today: 16,
         en_candidateMonth: 2, // Feb
         en_candidateYear: 2022,
@@ -463,8 +484,10 @@ const fligthPicker = {
                     if (monthIsBegan && !monthIsEnded) {
                         a.isOutOfCurrentMonth = false
 
-                        if (this.fa_today === flatCal[i])
-                            a.isToday = true
+                        if (this.fa_today === flatCal[i]) {
+                            if (this.today_shamsi[0] === this.fa_candidateYear && this.today_shamsi[1] === this.fa_candidateMonth)
+                                a.isToday = true
+                        }
 
 
                         if (fdot && this.fa_candidateMonth === fdot[1] && this.fa_candidateYear === fdot[0] && flatCal[i] === fdot[2])
@@ -572,8 +595,10 @@ const fligthPicker = {
                     if (monthIsBegan && !monthIsEnded) {
                         a.isOutOfCurrentMonth = false
 
-                        if (this.en_today === flatCal[i])
-                            a.isToday = true
+                        if (this.en_today === flatCal[i]) {
+                            if (this.today_miladi[0] === this.en_candidateYear && this.today_miladi[1] === this.en_candidateMonth)
+                                a.isToday = true
+                        }
 
 
                         if (fdot && this.en_candidateMonth === fdot[1] && this.en_candidateYear === fdot[0] && flatCal[i] === fdot[2])
@@ -607,6 +632,9 @@ const fligthPicker = {
         this.datePicker.fa_candidateMonth = today_shamsi[1]
         this.datePicker.fa_candidateYear = today_shamsi[0]
 
+        this.datePicker.today_shamsi = today_shamsi
+        this.datePicker.today_miladi = today_miladi
+
 
 
         this.$refs.startingFrom.querySelectorAll(".js-starting-option").forEach((node, index) => {
@@ -620,12 +648,19 @@ const fligthPicker = {
             node.remove()
         })
 
-        console.log(this.travelPicker.starting.options)
+        this.$refs.destinationCity.querySelectorAll(".js-destination-option").forEach((node, index) => {
+            this.travelPicker.destination._options.push({
+                id: index,
+                text: node.querySelector(".js-destination-text").innerText.replace(/\s+/g, ' ').trim(),
+                // html: node.outerHTML,
+                icon: node.querySelector("img").src
+            })
+
+            node.remove()
+        })
+
+
     }
-
-
-
-
 }
 
 
