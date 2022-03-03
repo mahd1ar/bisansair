@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page 18</title>
+    <link rel="stylesheet" href="css/output.css" />
+
+    <link rel="stylesheet" href="lib/css/splide.min.css" />
+    <link rel="stylesheet" href="lib/css/splide-core.min.css" />
+
+    <script defer src="lib/js/alpine.js"></script>
+</head>
+
+<body>
+    <!-- brake points debug -->
+    <div class="fixed top-10 left-10 z-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
+        <span class="hidden sm:block">sm</span>
+        <span class="hidden md:block">md</span>
+        <span class="hidden lg:block">lg</span>
+        <span class="hidden xl:block">xl</span>
+        <span class="hidden 2xl:block">2xl</span>
+    </div>
+    <!-- /debug -->
+
+    <header class="mb-10 pt-10">
+        <!-- TRAVEL TEXTURE -->
+        <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+					background: url(svg/travel-textture/one.svg)
+						center center/cover;
+				"></div>
+
+        <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
+            <div
+                class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                <div class="flex">
+                    <div
+                        class="flex-center w-8 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg md:w-32 md:bg-gray-200 md:shadow-none">
+                        <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                        <span class="mx-2 hidden text-sm md:block">
+                            ۰۲۱-۳۴۵۶۴۸
+                        </span>
+                    </div>
+
+                    <div class="menu-top_menu-container hidden md:block" ref="menuContainer">
+                        <ul id="menu-top_menu" class="menu">
+                            <li class="menu-item menu-item-has-children">
+                                <a href="http://hll.om/index.php/product/">تور</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="#">
+                                            bitumen
+                                            penetration
+                                            grade
+                                        </a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">performance
+                                            grade
+                                            bitumen</a>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen
+                                            Cutback</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
+                                                    bitumen
+                                                    slow
+                                                    curing
+                                                    (SC)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
+                                                    bitumen
+                                                    medium
+                                                    curing
+                                                    (MC)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
+                                                    curing
+                                                    cutback
+                                                    bitumen
+                                                    (RC)</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children">
+                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen
+                                            emulsion</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen
+                                                    Emulsion
+                                                    (BE)</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/cationic-emulsions/">Cationic
+                                                    Emulsions</a>
+                                            </li>
+                                            <li class="menu-item">
+                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic
+                                                    Emulsions</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
+                                            Emulsified
+                                            Bitumen</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/solvent-base-primer/">Solvent
+                                            Base
+                                            Primer</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
+                                            Modified
+                                            Emulsion
+                                            (PME)</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready
+                                            Mixed
+                                            Asphalt</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/c_bituplast/">Bituplast</a>
+                                    </li>
+                                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category">
+                                        <a href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
+                                            Base
+                                            Waterproofing
+                                            Mortar</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco
+                                            Organic
+                                            Cleaner
+                                            (BOC):</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#">ﻫﺘﻞ ﻫﺎ</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/standardizing-bodies/">Standardizing
+                                            Bodies</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a href="http://hll.om/family-of-bitumenous-binders/">Family
+                                            of
+                                            Bitumenous
+                                            Binders</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="http://hll.om/product/quality-control/">Quality
+                                            Control</a>
+                                    </li>
+                                    <li class="menu-item menu-item-object-post">
+                                        <a
+                                            href="http://hll.om/bitumen-emulsions-anionic-cationic-unmodified-polymer-modified/">BITUMEN
+                                            EMULSIONS
+                                            (ANIONIC;
+                                            CATIONIC;
+                                            UNMODIFIED;
+                                            POLYMER
+                                            MODIFIED)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/packing-logistics/">تور اقساط</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">تور اروپا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a>
+                            </li>
+
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">ویزا</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="http://hll.om/contact-us/">بلاگ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+
+                <div @click="taggleMobileMenu" class="cursor-pointer md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- MOBILE SECTION -->
+            <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
+                <div class="mobile-menu__overlay">
+                    <div
+                        class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                        <div class="flex">
+                            <div
+                                class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                                <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                            </div>
+                        </div>
+
+                        <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+
+                        <button @click="taggleMobileMenu()" class="relative cursor-pointer md:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="relative rounded-3xl bg-white" dir="rtl">
+                        <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
+                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
+                                <img src="svg/chevron-rigth.svg" alt="" />
+                            </span>
+
+                            <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
+                        </div>
+
+                        <ul class="bi-scrollbar">
+                            <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
+                                <li>
+                                    <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') " class="">
+                                        <span x-text="name"></span>
+                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg"
+                                            x-transition />
+                                    </a>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- / -->
+        </nav>
+    </header>
+
+    <main class="container relative mx-auto flex flex-col items-start gap-6 px-2 md:flex-row" dir="rtl">
+        <div class="w-full  lg:w-8/12">
+            <div>
+
+                <div class="flex gap-6 items-start flex-col sm:flex-row bg-white p-6 rounded-3xl shadow-lg">
+                    <img class="w-36 sm:w-4/12 object-cover rounded-circle mx-auto" src="svg/europe.svg" alt="">
+                    <div class="sm:w-8/12 flex flex-col gap-2">
+                        <h4 class="font-bold text-primery-dark text-xl">ویزا شینگن </h4>
+                        <p class="leading-7">
+                            شینگن یکی از معروف‌ترین انواع ویزا است و افرادی که قصد سفر به کشورهای اروپایی را دارند با آن
+                            مواجه شده‌اند. شینگن به مجموعه کشورهای اروپایی گفته می‌شود که تحت پیمانی با همین نام، قوانین
+                            یکپارچه‌ای را در راستای فعالیت‌ها و مقررات مرزی و مسافرتی خود، وضع کرده‌اند. به سبب همین
+                            پیمان، تمامی مردم کشورهای خارج از این اتحادیه، جهت سفر و اقامت در این مناطق، موظف به اخذ
+                            مجوز ورود و ویزای جامع و واحد موسوم به «ویزای شینگن» هستند.
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+                <div class="mt-8">
+                    <h2 class="font-bold text-primery-dark text-xl">
+                        تاریخچه شینگن
+                    </h2>
+                    <p class="mt-4 leading-7">
+                        ایده‌ یکپارچه‌سازی مجوز ورود به کشورهای اروپایی به سال‌ها قبل، پس از اتمام جنگ جهانی دوم، باز
+                        می‌گردد. اولین‌بار در دهه‌ی ۶۰ میلادی، در سال ۱۹۵۷، بود که مجموعه کشورهای اسکاندیناوی، شامل چهار
+                        کشور سوئد، دانمارک، فنلاند و نروژ با امضای پیمانی تصمیم به صدور مجوزی واحد برای رفت و آمدهای بین
+                        یکدیگر گرفتند. ۲۷ سال بعد، در سال ۱۹۸۴، آلمان و فرانسه این ایده را برای کشورهای عضو اتحادیه
+                        اروپا مطرح کردند. سرانجام یک سال بعد، در ۱۴ ژوئن ۱۹۸۵، در منطقه‌ای به نام شینگن در کشور
+                        لوکزامبورگ، پنج کشور فرانسه، آلمان غربی، هلند، بلژیک و لوکزامبورگ «پیمان شینگن» را به امضا
+                        رساندند. بر اساس این پیمان، رفت و آمد بین مرزهای مشترک این کشورها آزاد شد. همچنین، فعالیت‌های
+                        مشترک متعدد دیگری نیز در زمینه‌های گوناگون بین این کشورها آغاز شد.
+                        <br>
+                        به مروز زمان الحاقیه‌های
+                        دیگری نیز به این پیمان اضافه شد. همچنین با گذشت سال‌های متمادی، کشورهای اروپایی دیگر نیز به این
+                        پیمان پیوستند. امروزه کماکان کشورهای باقی‌مانده‌ی اروپایی سعی در پیوستن به پیمان شینگن دارند.
+                        اعضای شینگن اکنون ۲۶ کشور عضو شینگن هستند. از این میان ۳ کشور سوئیس، نروژ و ایسلند علی‌رغم آن‌که
+                        عضو اتحادیه اروپا نیستند، عضو شینگن هستند. همچنین ایرلند و بریتانیا از اعضای اتحادیه اروپا هستند
+                        که عضو شینگن نیستند؛ البته لازم به اشاره است که اخیرا بریتانیا از اتحادیه اروپا نیز خارج شد.
+                        کشورهای دیگر نیز از جمله رومانی، بلغارستان و قبرس نیز از جمله کشورهای در حال الحاق به این پیمان
+                        هستند.
+                    </p>
+                </div>
+                <div class="mt-8">
+                    <h2 class="font-bold text-primery-dark text-xl">
+                        اعضای شینگن
+                    </h2>
+                    <p class="mt-4 leading-7">
+                        اکنون ۲۶ کشور عضو شینگن هستند. از این میان ۳ کشور سوئیس، نروژ و ایسلند علی‌رغم آن‌که عضو اتحادیه
+                        اروپا نیستند، عضو شینگن هستند. همچنین ایرلند و بریتانیا از اعضای اتحادیه اروپا هستند که عضو
+                        شینگن نیستند؛ البته لازم به اشاره است که اخیرا بریتانیا از اتحادیه اروپا نیز خارج شد. کشورهای
+                        دیگر نیز از جمله رومانی، بلغارستان و قبرس نیز از جمله کشورهای در حال الحاق به این پیمان هستند.
+                    </p>
+                    <ul class="mt-8 gap-6 grid grid-cols-2">
+                        <li>اتریش - Austria</li>
+                        <li>مجارستان - Hungary</li>
+                        <li>فنلاند - Finland</li>
+                        <li> مجارستان - Hungary</li>
+                        <li>اتریش - Austria</li>
+                        <li> لهستان - Poland </li>
+                        <li> لهستان - Poland </li>
+                        <li>فنلاند - Finland</li>
+                    </ul>
+                    <div class="h-80 flex-center m-16 mt-20">
+                        <img class="object-contain" src="svg/services/passport.svg" alt="">
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h2 class="font-bold text-primery-dark text-xl">
+                        مدارک مورد نیاز
+                    </h2>
+                    <p class="mt-4 leading-7">
+                        قبل از هر موردی باید هماهنگی‌های لازم را با سفارت کشور مقصد انجام دهید. مدارک مورد نیاز برای اخذ
+                        ویزای شینگن در اکثر کشورهای عضو این پیمان شبیه به یکدیگر است و تنها در برخی از جزئیات و موارد،
+                        تفاوت کمی دارند. به هر ترتیب، مدارک اصلی که باید همراه داشته باشید، شامل موارد زیر است:
+                        <br> <br>
+                        فرم
+                        تکمیل‌شده‌ درخواست: به طور کلی اولین مرحله برای اخذ ویزای هر کشور تکمیل فرم درخواست روادید آن
+                        است. این فرم باید از سفارت مربوطه دریافت شود. هر چند که این کشورها عضو شینگن هستند، ممکن است فرم
+                        درخواست ویزای هر یک از آن‌ها متفاوت باشد؛ در نتیجه لازم است از سفارت‌های آن‌ها دریافت شود.
+                        <br><br>
+                        اصل
+                        گذرنامه و گذرنامه‌های قبلی. همچنین گذرنامه باید تا حداقل ۶ ماه پس از درخواست روادید، اعتبار
+                        داشته باشد.
+                        <br><br>
+                        عکس پرسنلی رنگی تمام رخ با زمینه‌ی سفید که باید با ظاهر وقت صاحب عکس هم‌خوانی داشته
+                        و جدید باشد.
+                        <br><br>
+                        مدارک شغلی رسمی مانند جواز کسب، روزنامه‌ی شغلی، فیش حقوقی و گواهی اشتغال به کار یا
+                        تحصیل لازم است. همچنین، اسناد ملکی شخص متقاضی و منابع مالی وی همراه با گردش حساب رسمی مورد نیاز
+                        خواهد بود.
+                        <br><br>
+                        <b style="color: #FF5F5F;"> نکته: </b>
+                        لازم به اشاره است که این مدارک باید همراه با ترجمه‌ی رسمی به سفارت ارائه شود.
+                        <br><br>
+                        بلیط پرواز رفت و برگشت به کشور مقصد یا رزرو بلیط لازم خواهد بود.
+                        <br><br>
+                    </p>
+                </div>
+
+                <div class="mt-8">
+                    <h2 class="font-bold text-primery-dark ">
+                        بیمه مسافرتی:
+                    </h2>
+
+                    <p class="mt-4 leading-7">
+                        همراه داشتن برگه‌ی تاییدیه‌ رزرو هتل یا اصل
+                        دعوت‌نامه‌ای که شخص دعوت‌کننده از کشور مقصد برای متقاضی فرستاده است.
+
+                    </p>
+                </div>
+
+                <div class="mt-8">
+                    <h2 class="font-bold text-primery-dark ">
+                        واچر هتل:
+                    </h2>
+
+                    <p class="mt-4 leading-7">
+                        متقاضیان روادید
+                        باید برای کل مدت‌ زمان سفر بیمه‌ مسافرتی فردی یا جمعی داشته باشند. شرکت بیمه‌گذار نیز باید
+                        نماینده‌ معتبری در کشور مقصد داشته باشد.
+                    </p>
+                </div>
+
+                <div class="mt-8">
+                    <h2 class="font-bold " style="color: #FF5F5F;">
+                        نکات ضروری
+                    </h2>
+
+                    <p class="mt-4 leading-7">
+                        دانستن نکات زیر
+                        جهت ارائه‌ درخواست ویزای شینگن، خالی از لطف نیست.
+
+                        <br><br>
+                        تمامی مراحل درخواست و اخذ ویزای شینگن در
+                        کنسولگری‌ها و سفارت‌های کشورهای این پیمان، قابل اجرا و پیگیری است.
+                        <br><br>
+                        تمامی مدارک مورد نیاز هر
+                        سفارت باید به صورت تمام و کمال ارائه شود.
+                        <br><br>
+                        مدارک مورد نیاز ممکن است گاهی با توجه به شرایط فرد
+                        متقاصی و کشور صادرکننده‌ ویزا متفاوت باشد. لذا به طوری کلی بهتر است به سفارت و بخش توریستی آن
+                        کشور مراجعه شود.
+                        <br><br>
+                        کلیه مدارک ترجمه‌ شده نیاز به مهر دادگستری دارند. این کار معمولا توسط
+                        دارالترجمه‌ها پس از ترجمه‌ مدارک، انجام می‌شود.
+                        <br><br>
+
+                        تمام هزینه‌هایی که برای درخواست و اخذ ویزا صورت
+                        می‌گیرد، غیرقابل برگشت است.
+                        <br>
+                        <br>
+                        درخواست ویزا می‌تواند تا چهار ماه قبل از زمان مسافرت ارائه شود.
+
+                    </p>
+                </div>
+
+                <div class="h-80 flex-center m-16 mt-20">
+                    <img class="object-contain" src="svg/services/schengen-visa.svg" alt="">
+                </div>
+
+                <div class="mt-8">
+                    <h2 class="font-bold text-primery-dark text-xl">
+                        ویزا شینگن
+                    </h2>
+
+                    <p class="mt-4 leading-7">
+                        مسافران خارج از منطقه‌ شینگن می‌توانند با در اختیار داشتن ویزای شینگن، تحت زمان و شرایط مشخصی،
+                        به هر یک از کشورهای عضو این پیمان سفر کنند و در آن اقامت داشته باشند. این ویزا بر اساس هدف سفر و
+                        مدت زمان اقامت دارای انواع مختلفی است و برای هر یک از انواع آن نیز مدارک خاصی باید ارائه شوند.
+                        <br><br>
+
+                        <strong class="text-primery-dark block">
+
+                            انواع ویزای شینگن
+                        </strong>
+
+                        ویزای شینگن دارای سه نوع کلی است و هریک از ویزاها با توجه به نوع سفر در زیر
+                        مجموعه یکی از این گروه‌‌ها قرار می‌گیرند؛
+                        <br><br>
+                        <strong class="text-primery-dark block">
+                            ویزای اتحادیه شینگن (USV)
+                        </strong>
+
+                        دارنده «ویزای اتحادیه‌ی
+                        شینگن» (Uniform Schengen Visas) مجوز ورود و سفر به کشورهای عضو این پیمان را برای حداکثر ۹۰ روز
+                        در بازه زمانی ۱۸۰ روزه در اختیار دارد. این ویزا در اصل همان ویزای توریستی برای گردشگران محسوب
+                        می‌شود. از طرفی، این نوع از ویزا به چند دسته‌ی دیگر تقسیم می‌شود که شامل موارد زیر است:
+                        <br><br>
+                        <strong class="text-primery-dark block">
+                            ویزای
+                            نوع A
+                        </strong>
+
+
+                        منظور از این ویزا، «ویزای ترانزیت فرودگاه» (Airport Transit Visa) است. در این صورت، مسافر
+                        حق خروج از فرودگاه کشور عضو شینگن را ندارد و فقط می‌تواند در یکی از فرودگاه‌های عضو این پیمان،
+                        هواپیمای خود را عوض کرده و به مقصد کشور دیگری در خارج از منطقه‌ شینگن برود.
+
+                        <br><br>
+                        <strong class="text-primery-dark block">
+                            ویزای نوع B
+                        </strong>
+
+                        این ویزا
+                        نیز نوعی ویزای عبور و ترانزیت است. با داشتن ویزای نوع B، مسافر می‌تواند از خاک کشورهای شینگن، در
+                        مدت حداکثر پنج روز، به مقصدی خارج از این منطقه، گذر کند.
+                        <br><br>
+                        <strong class="text-primery-dark block">
+                            ویزای نوع C
+                        </strong>
+
+
+                        ویزای نوع C در واقع روادید
+                        کوتاه‌ مدتی است برای ورود و اقامت در کشورهای عضو اتحادیه‌ی شینگن صادر می‌شود. دریافت‌کنندگان
+                        ویزای C با توجه به هدف و شرایط سفر خود، یکی از سه نوع ویزای زیر را دریافت می‌کنند.
+                        <br>
+                        <strong>
+                            نکته:
+                        </strong>
+
+                        قابل
+                        توجه اینکه در اختیار داشتن ویزای شینگن شرط لازم و کافی برای ورود به کلیه کشورهای منطقه شینگن
+                        نیست؛ برای نمونه، ویزاهای کوتاه مدت ایتالیا با نام روادید متحدالشکل کوتاه مدت (ویزای شینگن) برای
+                        اقامت حداکثر ۹۰ روزه در یک بازه زمانی ۱۸۰ روزه جهت سفر به حوزه شینگن صادر می‌شود، مشروط بر اینکه
+                        تنها مقصد یا مقصد اصلی سفر «ایتالیا» باشد. کشورهای عضو پیمان شینگن این اختیار را دارند که در
+                        مبادی مرزی کشورشان از ورود مسافرانی که بدون در نظر گرفتن دستورالعمل فوق، روادید شینگن اخذ
+                        کرده‌اند، جلوگیری کنند.
+                        <br><br>
+                        <strong class="text-primery-dark block">
+                            ویزای یک بار ورود(Single-entry)
+                        </strong>
+
+
+                        همان‌طور که از اسم ویزای یک‌بار ورود
+                        مشخص است، این ویزا تنها برای یک‌بار ورود به منطقه شینگن اعتبار دارد؛ به این معنی که اعتبار ویزای
+                        مسافر به محض ترک کردن کشوری که به آن وارد شده است، فارغ از این‌که مدت آن به پایان رسیده است یا
+                        خیر، منقضی خواهد شد.
+                        <br><br>
+                        <strong class="text-primery-dark block">
+                            ویزای دو بار ورود (Double-entry)
+                        </strong>
+
+                        ویزای دوبار ورود شرایطی مشابه با ویزای
+                        یک‌بار ورود دارد، با این تفاوت که مسافر مجوز دو بار وارد شدن به کشورهای شینگن را دارد. به خاطر
+                        داشته باشید که استفاده از این شرایط در محدوده‌ زمانی مشخصی قابل اجرا است.
+                        <br><br>
+                        <strong class="text-primery-dark block">
+                            ویزای چند بار ورود
+                            (Multiple-entry)
+                        </strong>
+
+
+
+                        ویزای چندبار ورود مجوز هر چندبار ورود و سفر بین کشورهای عضو شینگن را صادر
+                        می‌کند. به این معنی که مسافر می‌تواند به چندین کشور عضو این پیمان سفر کرده و در آن‌ها اقامت
+                        داشته باشد. تنها محدودیت این ویزا محدودیت زمانی است که برای ۹۰ روز در هر ۶ ماه از سال، اعتبار
+                        دارد. همچنین، این ۹۰ روز به محض ورود به هر یک از کشورهای ناحیه‌ شینگن محاسبه می‌شود.
+                        <br><br>
+                        <strong class="text-primery-dark block">
+                            ویزای
+                            اعتباری منطقه محدوده (LTV)
+                        </strong>
+
+                        این نوع از ویزا، «ویزای اعتباری منطقه‌ محدوده» (Limited Territorial
+                        Validity Visas) نام دارد. این ویزا به فرد اجازه می‌دهد که تنها به محدوده‌های مشخصی که در زمان
+                        اخذ ویزا اعلام می‌شود، سفر کرده و در آن‌ها اقامت داشته باشید. این ویزا به غیر از مناطق مشخص‌شده،
+                        در هیچ منطقه‌ دیگری اعتبار ندارد و دارنده‌ آن مجوز سفر به هیچ‌یک از دیگر مناطق را ندارد. این
+                        ویزا بیشتر تحت شرایط خاص، مانند ویزا برای پناهندگان، اعطا می‌شود.
+                        <br><br>
+                        <strong class="text-primery-dark block">
+                            ویزای ملی (NV)
+                        </strong>
+
+                        از «ویزای ملی»
+                        (National Visas) به عنوان «ویزای نوع D» یاد می‌شود. این ویزا برای افرادی که برای تحصیل، کار یا
+                        کسانی که برای مدت‌زمان مشخصی و با هدف معینی، قصد اقامت در کشورهای ناحیه‌ی شینگن را دارند، صادر
+                        می‌شود. این ویزا نیز بسته به شرایط و هدف آن می‌تواند یک‌بار ورود یا چندبار ورود باشد و دارنده‌
+                        آن باید پس از اتمام اعتبار ویزا و پایان دوره‌ تعیین شده، به کشور خود بازگردد. با در اختیار داشتن
+                        ویزای چند بار ورود نوع D، بدون نیاز به اخذ روادید دیگری می‌توان به‌ تمامی کشورهای ناحیه‌ شینگن
+                        بدون محدودیت سفر کرد. با این توضیحات، داوطلبان این ویزا باید یکی از شرایط زیر را داشته باشند
+                        :
+                        <br><br>
+                        دانشجویان بین‌المللی که برای انجام پروژه‌های تحقیقاتی برای مدتی مشخص و نه بیشتر از یک سال، به
+                        کشورهای شینگن سفر می‌کنند.
+                        <br><br>
+                        دانشجویان بین‌المللی که قصد شروع تحصیل در یکی از دوره‌های تحصیلی
+                        کشورهای عضو پیمان شینگن را دارند. به این گروه نیز ویزای یک‌ساله اعطا می‌شود که برای اقامت بیشتر
+                        قابل تمدید است.
+                        <br><br>
+                        کار کردن یا پژوهش علمی و آموزشی در مراکز تحقیقاتی یا موسسات معتبر کشورهای
+                        اتحادیه‌ شینگن. این ویزا با توجه به بررسی سوابق فرد و اعضای خانواده‌اش صادر می‌شود.
+                        <br><br>
+                        متخصصانی که
+                        با هدف به اشتراک گذاشتن تخصص و مهارت خود به کشورهای عضو این پیمان سفر می‌کنند؛ برای مثال
+                        هنرمندان و ورزشکاران در این گروه قرار می‌گیرند.
+                        <br><br>
+                        موارد اضطراری که فرد به دلیل وضعیت پزشکی برای
+                        مدت مشخصی قادر به ترک ناحیه‌ شینگن نباشد.
+
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <aside class=" left-0 sticky sm:hidden bottom-0 lg:block w-full lg:w-4/12">
+            <div class="shadow-lg p-6 flex flex-col gap-4 bg-white rounded-3xl">
+
+                <ul class=" flex-col gap-6 text-secondary-dark font-bold hidden lg:flex">
+                    <li>
+                        تاریخجه شینگن
+                    </li>
+                    <li>
+                        اعضای شینگن
+                    </li>
+                    <li>مدرک مورد نیاز برای ویزای شینگن</li>
+                    <li>ویزای شینگن</li>
+                    <li>انواع ویزای شینگن</li>
+
+                </ul>
+                <div
+                    class="shadow-lg mt-4 hover:bg-yellow-200 cursor-pointer bg-primery w-full py-2 text-center rounded-3xl font-bold text-primery-dark">
+                    فرم ویزا
+                </div>
+                <div
+                    class="shadow-lg mt-0 hover:bg-gray-100 cursor-pointer bg-white w-full py-2 text-center rounded-3xl  text-secondary-dark">
+                    مدارک مورد نیاز
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <div class="flex-center " style="height: 24rem">
+        gap ( delete me later)
+    </div>
+
+    <script src="js/components/navbar.js"></script>
+
+</body>
+
+</html>
