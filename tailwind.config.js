@@ -28,6 +28,7 @@ module.exports = {
       screens: {
         'xl': '1040px',
         '2xl': '1040px',
+        // 'landscape': { 'raw': 'only screen and (min-height : 321px)' },
       },
     },
   },

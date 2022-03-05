@@ -5,11 +5,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>page 17</title>
+    <title>page 19</title>
     <link rel="stylesheet" href="css/output.css" />
-
-    <link rel="stylesheet" href="lib/css/splide.min.css" />
-    <link rel="stylesheet" href="lib/css/splide-core.min.css" />
 
     <script defer src="lib/js/alpine.js"></script>
 </head>
@@ -255,202 +252,121 @@
         </nav>
     </header>
 
-    <main class="container relative mx-auto flex flex-col items-start gap-6 px-2 md:flex-row" dir="rtl">
-        <div class="w-full  lg:w-8/12">
+    <main id="main" class="container relative mx-auto flex flex-col gap-6 px-2 lg:flex-row" dir="rtl">
+        <div class="mb-12 w-full ">
             <div>
-                <!-- Title -->
+                <div class="mb-5 flex items-center gap-6 bg-white p-6 shadow-lg rounded-3xl">
+                    <span class="text-xl font-bold text-primery-dark">
+                        سوالات متداول
+                    </span>
+                    <input class="text-xl" type="text" placeholder="نام کشور مورد نظر را وارد کنید ..." />
+                    <div class="mr-auto flex cursor-pointer gap-3 rounded-3xl bg-primery px-4 py-2 hover:bg-yellow-200">
+                        <img src="svg/magnifier.svg" alt="" />
+                        <span>جستجو</span>
+                    </div>
+                </div>
+
+                <div class="text-secondary-dark flex gap-4 flex-wrap">
+                    <span class="py-2 px-4 shadow-lg cursor-pointer hover:bg-gray-100 rounded-3xl ">
+                        خرید
+                    </span>
+                    <span class="py-2 px-4 shadow-lg cursor-pointer hover:bg-gray-100 rounded-3xl ">
+                        پشتیبانی
+                    </span>
+                    <span class="py-2 px-4 shadow-lg cursor-pointer hover:bg-gray-100 rounded-3xl ">
+                        استرداد
+                    </span>
+                    <span class="py-2 px-4 shadow-lg cursor-pointer hover:bg-gray-100 rounded-3xl ">
+                        شرایط تور اقساط
+                    </span>
+                    <span class="py-2 px-4 shadow-lg cursor-pointer hover:bg-gray-100 rounded-3xl ">
+                        ویزا
+                    </span>
+
+                </div>
+
                 <div>
-                    <h1 class="text-2xl text-primery-dark font-bold">
-                        درباره ما
-                    </h1>
-                </div>
-
-                <!-- slider -->
-                <div class="mt-4" dir="ltr">
-                    <div id="main-slider" class="splide">
-                        <div class="splide__arrows">
-                            <button class="splide__arrow splide__arrow--prev">
-                                <img src="svg/chevron-left.svg" alt="" />
-                            </button>
-                            <button class="splide__arrow splide__arrow--next">
-                                <img src="svg/chevron-rigth.svg" alt="" />
-                            </button>
-                        </div>
-
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
-                                </li>
-                                <li class="splide__slide">
-                                    <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
-                                </li>
-                                <li class="splide__slide">
-                                    <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
-                                </li>
-                                <li class="splide__slide">
-                                    <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
-                                </li>
-                            </ul>
-                        </div>
+                    <h2 class="text-xl font-bold text-primery-dark mt-10 mb-6">خرید</h2>
+                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
+                        <h4 class="text-lg mb-4">سوال اول</h4>
+                        <p class="leading-7 text-base">
+                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
+                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                        </p>
                     </div>
-                    <!-- 
-                    <ul id="thumbnails" class="thumbnails">
-                        <li class="thumbnail">
-                            <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
-                        </li>
-                        <li class="thumbnail">
-                            <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
-                        </li>
-                        <li class="thumbnail">
-                            <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
-                        </li>
-                        <li class="thumbnail">
-                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
-                        </li>
-                    </ul> -->
-                </div>
-
-
-                <div class="flex flex-col-reverse sm:flex-row items-start mt-8">
-
-                    <div class="flex flex-col mt-8 sm:mt-0 w-full sm:w-1/2 lg:w-full gap-4 text-gray-700 leading-7 ">
-                        <div>
-                            بیسان‌سیر با بروزرسانی اطلاعات خود در زمینه تورهای مسافرتی و خدمات اخذ ویزای توریستی و
-                            تحصیلی،
-                            توسط پرسنلی با تجربه، کارآزموده و متعهد در تلاش است که با ارائه خدماتی متمایز به شما اثبات
-                            کند
-                            که در این حرفه بهترین است.
-                        </div>
-                        <div>
-                            هدف اصلی بیسان‌سیر جلب نظر شما مسافران عزیز و ارائه بهترین مشاوره و برنامه‌ریزی درخصوص
-                            انتخاب
-                            مناسب‌ترین پروازها و هتل‌ها برای سفرتان می‌باشد تا آرامش و لذت‌تان در طول سفر چند برابر
-                            گردد.
-                        </div>
-                        <div>
-                            از اصول حرفه‌ای این مجموعه، اخلاق حرفه‌ای و تعهد بر توافقات با مشتری می‌باشد که موجب متمایز
-                            شدن
-                            بیسان‌سیر با رقبا گردیده است.
-                        </div>
-                        <div>
-                            همیشه رضایت کامل مسافران را مهمترین هدف خود قرار داده و با ارائه خدماتی نو و با کیفیت به
-                            مسافران
-                            توانسته‌ایم در این صنعت به سرعت رشد کنیم.
-                        </div>
+                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
+                        <h4 class="text-lg mb-4">سوال دوم</h4>
+                        <p class="leading-7 text-base">
+                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
+                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                        </p>
                     </div>
-                    <div class="flex flex-col p-6 rounded-3xl w-full sm:w-1/2 lg:hidden">
-                        <h3 class="text-xl text-primery-dark font-bold">خدمات بیسان سیر </h3>
-
-                        <ul class="flex flex-col gap-2 text-gray-800 list-disc list-inside">
-                            <li>
-                                رزرو و صدور بلیط تمامی ایرلاین‌های داخلی و خارجی
-                            </li>
-                            <li>
-                                رزرو هتل در سراسر جهان به صورت آنلاین و گارانتی شده
-                            </li>
-                            <li>خدمات اخذ ویزا</li>
-                            <li>صدور بیمه نامه مسافرتی خارجی</li>
-                            <li>ارائه خدمات VIP و CIP</li>
-                            <li>مشاوره رایگان در امور اخذ ویزا</li>
-                        </ul>
+                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
+                        <h4 class="text-lg mb-4">سوال سوم</h4>
+                        <p class="leading-7 text-base">
+                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
+                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                        </p>
+                    </div>
+                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
+                        <h4 class="text-lg mb-4">سوال چهارم</h4>
+                        <p class="leading-7 text-base">
+                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
+                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                        </p>
                     </div>
                 </div>
 
-                <div class="p-6 shadow-md mt-6 flex flex-col gap-4 rounded-3xl">
-                    <div class="flex flex-col gap-4 sm:flex-row items-start sm:items-center justify-between ">
-                        <span class="text-xl text-primery-dark font-bold">
-                            پشتیبانی
-                        </span>
-
-                        <div class="bg-secondary-dark flex text-white rounded-3xl gap-5 py-2 px-5">
-                            <div class="flex gap-2">
-                                <img src="svg/24.svg" alt="">
-                                24 ساعته
-                            </div>
-                            <div class="flex gap-2">
-                                <img src="svg/cal-white.png" alt="">
-
-                                7 روز هفته
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-gray-500 ">
-                        7 روز هفته، به صورت 24 ساعته پاسخگوی شما در زمینه‌های مختلف هستیم تا آسایش خاطر را برای شما
-                        عزیزان از لحظه خرید تا بازگشت از سفر فراهم کنیم.
-                    </div>
-                </div>
-
-                <div class="text-gray-700 leading-7 mt-6">
-                    ما در حوزه گردشگری حرف‌های زیادی برای گفتن داریم و به خود می‌بالیم که همه روزه برتعداد مشتریان
-                    وفادارمان افزوده می‌شود.
-                </div>
-
-
-
-                <div class="flex flex-col gap-2 mt-6">
-                    <div class="flex gap-2 text-gray-600">
-                        <span class="w-10 flex-center">
-                            <img class="object-contain" src="svg/location.svg" alt="">
-                        </span>
-                        <div>
-                            خیابان شهید بهشتی،خیابان مهناز(صابونچی)،پلاک 58،طبقه 3،واحد 5
-                        </div>
-                    </div>
-                    <div class="flex gap-2 text-gray-600">
-                        <span class="w-10 flex-center">
-                            <img class="object-contain" src="svg/phone-black.svg" alt="">
-                        </span>
-                        <div>
-                            43000030
-                        </div>
-                    </div>
-                    <div class="flex gap-2 text-gray-600">
-                        <span class="w-10 flex-center">
-                            <img class="object-contain" src="svg/email.svg" alt="">
-                        </span>
-                        <div>
-                            info@bisanseir.com
-                        </div>
-                    </div>
-                </div>
 
             </div>
         </div>
-        <aside class="relative bottom-0 left-0 hidden lg:block lg:w-4/12">
-            <div class="shadow-lg p-6 flex flex-col gap-4 bg-white rounded-3xl">
-                <h3 class="text-xl text-primery-dark font-bold">خدمات بیسان سیر </h3>
 
-                <ul class="flex flex-col gap-2 text-gray-800 list-disc list-inside">
-                    <li>
-                        رزرو و صدور بلیط تمامی ایرلاین‌های داخلی و خارجی
-                    </li>
-                    <li>
-                        رزرو هتل در سراسر جهان به صورت آنلاین و گارانتی شده
-                    </li>
-                    <li>خدمات اخذ ویزا</li>
-                    <li>صدور بیمه نامه مسافرتی خارجی</li>
-                    <li>ارائه خدمات VIP و CIP</li>
-                    <li>مشاوره رایگان در امور اخذ ویزا</li>
-                </ul>
-            </div>
-        </aside>
+
     </main>
 
+    <div class="flex-center " style="height: 24rem">...gap ( delete me later )</div>
+
     <script src="js/components/navbar.js"></script>
-    <script src="lib/js/splide.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll(".js-accordion").forEach((acEl) => {
+            const handler = acEl.querySelector(
+                ".js-accordion-handler"
+            ),
+                container = acEl.querySelector(
+                    ".js-accordion-container"
+                );
 
-            const splide = new Splide("#main-slider", {
-                width: "100%",
-                height: 378,
-                pagination: false,
-                cover: true,
+            if (!container.style.maxHeight)
+                container.style.maxHeight =
+                    container.scrollHeight + "px";
+
+            handler.addEventListener("click", (e) => {
+                const h = container.scrollHeight;
+
+                if (
+                    !container.style.maxHeight ||
+                    container.style.maxHeight === "0" ||
+                    container.style.maxHeight === "0px"
+                ) {
+                    container.style.maxHeight = h + "px";
+                    handler.querySelector('i').style.transform = "rotate(180deg)";
+                } else {
+                    container.style.maxHeight = "0px";
+                    handler.querySelector('i').style.transform = "rotate(0deg)";
+                }
             });
-
-            splide.mount();
-
         });
     </script>
 </body>

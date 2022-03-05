@@ -195,6 +195,7 @@ const fligthPicker = {
             pick(itemId) {
                 this.is = itemId
                 this.model = this._options.find(({ id }) => id === itemId).text
+                this.togglePanel(false)
             },
             clear() {
                 this.model = "";
@@ -221,6 +222,7 @@ const fligthPicker = {
             pick(itemId) {
                 this.is = itemId
                 this.model = this._options.find(({ id }) => id === itemId).text
+                this.togglePanel(false)
             },
             clear() {
                 this.model = "";

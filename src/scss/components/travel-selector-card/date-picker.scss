@@ -1,5 +1,5 @@
 .travel-selector-card__overlay {
-	@apply fixed top-0 left-0 z-20 mx-auto flex h-screen w-screen overflow-hidden rounded-none bg-gradient-to-b from-gray-400 to-transparent shadow-xl sm:from-slate-900 lg:absolute
+	@apply fixed top-0 left-0 z-20 mx-auto flex h-full w-screen overflow-hidden rounded-none bg-gradient-to-b from-gray-400 to-transparent shadow-xl sm:from-slate-900 lg:absolute
 			lg:-bottom-10 lg:translate-y-20 lg:transform lg:rounded-3xl
 			lg:bg-white;
 }
@@ -8,7 +8,7 @@
 	@apply flex-col lg:-left-1/2 lg:h-fit lg:w-[586px];
 }
 
-#travel-selector-card__destination-picker {
+.travel-selector-card__place-picker {
 	@apply items-center justify-center lg:-left-full lg:h-72 lg:w-80;
 }
 
