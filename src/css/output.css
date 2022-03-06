@@ -1607,6 +1607,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin: 4rem;
 }
 
+.m-0 {
+	margin: 0px;
+}
+
 .mx-auto {
 	margin-left: auto;
 	margin-right: auto;
@@ -1811,6 +1815,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin-top: 5rem;
 }
 
+.mt-9 {
+	margin-top: 2.25rem;
+}
+
+.mt-7 {
+	margin-top: 1.75rem;
+}
+
 .block {
 	display: block;
 }
@@ -1837,6 +1849,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .grid {
 	display: grid;
+}
+
+.contents {
+	display: contents;
 }
 
 .hidden {
@@ -2061,6 +2077,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-52 {
 	width: 13rem;
+}
+
+.w-screen {
+	width: 100vw;
 }
 
 .min-w-full {
@@ -2545,6 +2565,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-color: rgb(105 122 128 / var(--tw-bg-opacity));
 }
 
+.bg-red-500 {
+	--tw-bg-opacity: 1;
+	background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-60 {
 	--tw-bg-opacity: 0.6;
 }
@@ -2686,6 +2711,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-10 {
 	padding: 2.5rem;
+}
+
+.p-0 {
+	padding: 0px;
 }
 
 .px-5 {
@@ -3067,6 +3096,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .shadow-black {
 	--tw-shadow-color: #000;
+	--tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-white {
+	--tw-shadow-color: #fff;
 	--tw-shadow: var(--tw-shadow-colored);
 }
 
