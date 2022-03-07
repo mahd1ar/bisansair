@@ -232,10 +232,47 @@ const fligthPicker = {
     },
     datePicker: {
         show: false,
+        view: 'days', // month, days 
+        _firstDayOftravel_epoch: 0, // Y-M-D
+        _lastDayOftravel_epoch: 0,
+
+        mode: 0, // 0 for shamsi 1 for miladi,
+        modeLabel: [
+            "شمسی",
+            "میلادی"
+        ],
+        today_shamsi: [],
+        today_miladi: [],
+
+        en_today: 16,
+        en_candidateMonth: 2, // Feb
+        en_candidateYear: 2022,
+        fa_today: 27,
+        fa_candidateMonth: 11, // bahman
+        fa_candidateYear: 1400,
+
         togglePanel(val) {
             this.show = (typeof val === 'undefined')
                 ? !this.show
                 : val
+        },
+        get months() {
+            return this.mode ?
+                ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+                :
+                [
+                    "فروردین",
+                    "اردیبهشت",
+                    "خرداد",
+                    "تیر",
+                    "مرداد",
+                    "شهریور",
+                    "مهر",
+                    "آبان",
+                    "آذر",
+                    "دی",
+                    "بهمن",
+                    "اسفند"]
         },
         get weekDays() {
 
@@ -290,23 +327,6 @@ const fligthPicker = {
 
 
         },
-        _firstDayOftravel_epoch: 0, // Y-M-D
-        _lastDayOftravel_epoch: 0,
-
-        mode: 0, // 0 for shamsi 1 for miladi,
-        modeLabel: [
-            "شمسی",
-            "میلادی"
-        ],
-        today_shamsi: [],
-        today_miladi: [],
-
-        en_today: 16,
-        en_candidateMonth: 2, // Feb
-        en_candidateYear: 2022,
-        fa_today: 27,
-        fa_candidateMonth: 11, // bahman
-        fa_candidateYear: 1400,
 
         pick(day) {
 
@@ -335,7 +355,27 @@ const fligthPicker = {
 
             // is it 
         },
-        nextMonth() {
+        pickMonth(mIndex) {
+            // debugger
+            const candidate = this.mode ? this.en_candidateMonth : this.fa_candidateMonth;
+
+            const res = ((mIndex + 1) - candidate)
+            this.view = 'days'
+
+            if (res === 0) {
+                return
+            }
+
+            if (res > 0)
+                this.nextMonth(res)
+            else
+                this.prevMonth(Math.abs(res))
+
+        },
+        nextMonth(iterator = 1) {
+            if (iterator < 1)
+                return
+
             if (++this.fa_candidateMonth > 12) {
 
                 this.fa_candidateMonth %= 12
@@ -347,8 +387,13 @@ const fligthPicker = {
                 this.en_candidateYear++
             }
 
+            this.nextMonth(iterator - 1)
+
         },
-        prevMonth() {
+        prevMonth(iterator = 1) {
+            if (iterator < 1)
+                return
+
             if (--this.fa_candidateMonth < 1) {
 
                 this.fa_candidateMonth += 12
@@ -359,6 +404,8 @@ const fligthPicker = {
                 this.en_candidateMonth += 12
                 this.en_candidateYear--
             }
+
+            this.prevMonth(iterator - 1)
 
         },
         get candidateFullDate() {
@@ -390,25 +437,7 @@ const fligthPicker = {
         },
 
         formateMonth(monthNum) {
-            const months = this.mode ?
-                ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-                :
-                [
-                    "فروردین",
-                    "اردیبهشت",
-                    "خرداد",
-                    "تیر",
-                    "مرداد",
-                    "شهریور",
-                    "مهر",
-                    "آبان",
-                    "آذر",
-                    "دی",
-                    "بهمن",
-                    "اسفند"]
-
-            return months[monthNum - 1]
-
+            return this.months[monthNum - 1]
         },
         get days() {
 

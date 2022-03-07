@@ -48,9 +48,30 @@ var navbar = {
 
         }
 
+
         const el = document.querySelector(".menu-top_menu-container")
 
-        this.tree = traverse(el, 0,)
+        this.tree = traverse(el, 0)
+
+
+
+        // const newnav = navigation.cloneNode().outerHTML
+        // console.log(navigation.outerHTML)
+        // document.body.insertAdjacentNode(
+        //     "beforeend",
+        //     // newnav
+        //     navigation
+        // );
+        // newnav.id = "floatNav"
+
+        // document.body.appendChild(navigation);
+
+        // document.querySelector("header").appendChild(navigation)
+
+        window.addEventListener('scroll', e => {
+            console.log(window.pageYOffset)
+        })
+
     },
     get currentSubmenu() {
         let el = this.tree;
