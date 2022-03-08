@@ -26,205 +26,260 @@
     <!-- /debug -->
 
 
+    <div class="fixed w-full z-50 transition-all nav-container" id="navigation-sticky-placeholder">
+        <!-- DO NOT DELETE ME -->
+    </div>
     <header class="mb-10 pt-10">
         <!-- TRAVEL TEXTURE -->
         <div class="absolute w-full top-0 bi-overlay-gradient-white overflow-hidden h-80"
             style="background: url(svg/travel-textture/one.svg) center center/cover;">
         </div>
 
-        <nav id="navigation" x-data="navbar" class="lg:max-w-[1104px] container mx-auto overflow-x-clip">
+        <div id="navigation-placeholder" class="nav-container">
+            <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
+                <div
+                    class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                    <div class="flex">
+                        <a href="tel:02188319191"
+                            class="flex-center w-8 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
+                            <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                            <span class="mx-2 hidden text-sm lg:block">
+                                ۰۲۱-۳۴۵۶۴۸
+                            </span>
+                        </a>
 
+                        <div class="menu-top_menu-container hidden lg:block" ref="menuContainer">
+                            <ul id="menu-top_menu" class="menu">
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="http://hll.om/index.php/product/">تور</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <a href="#">
+                                                bitumen
+                                                penetration
+                                                grade
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="#">performance
+                                                grade
+                                                bitumen</a>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen
+                                                Cutback</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
+                                                        bitumen
+                                                        slow
+                                                        curing
+                                                        (SC)</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
+                                                        bitumen
+                                                        medium
+                                                        curing
+                                                        (MC)</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
+                                                        curing
+                                                        cutback
+                                                        bitumen
+                                                        (RC)</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item menu-item-has-children">
+                                            <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen
+                                                emulsion</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen
+                                                        Emulsion
+                                                        (BE)</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="http://hll.om/product/cationic-emulsions/">Cationic
+                                                        Emulsions</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="http://hll.om/product/anionic-emulsions/">Anionic
+                                                        Emulsions</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
+                                                Emulsified
+                                                Bitumen</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="http://hll.om/category/products/solvent-base-primer/">Solvent
+                                                Base
+                                                Primer</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
+                                                Modified
+                                                Emulsion
+                                                (PME)</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready
+                                                Mixed
+                                                Asphalt</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="http://hll.om/category/products/c_bituplast/">Bituplast</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a
+                                                href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
+                                                Base
+                                                Waterproofing
+                                                Mortar</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco
+                                                Organic
+                                                Cleaner
+                                                (BOC):</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item menu-item-has-children">
+                                    <a href="#">ﻫﺘﻞ ﻫﺎ</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item menu-item-object-post">
+                                            <a href="http://hll.om/standardizing-bodies/">Standardizing
+                                                Bodies</a>
+                                        </li>
+                                        <li class="menu-item menu-item-object-post">
+                                            <a href="http://hll.om/family-of-bitumenous-binders/">Family
+                                                of
+                                                Bitumenous
+                                                Binders</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="http://hll.om/product/quality-control/">Quality
+                                                Control</a>
+                                        </li>
+                                        <li class="menu-item menu-item-object-post menu-item-has-children">
+                                            <a
+                                                href="http://hll.om/bitumen-emulsions-anionic-cationic-unmodified-polymer-modified/">BITUMEN
+                                                EMULSIONS
+                                            </a>
 
+                                            <ul class="sub-menu">
+                                                <li class="menu-item">
+                                                    <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
+                                                        bitumen
+                                                        slow
+                                                        curing
+                                                        (SC)</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
+                                                        bitumen
+                                                        medium
+                                                        curing
+                                                        (MC)</a>
+                                                </li>
+                                                <li class="menu-item">
+                                                    <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
+                                                        curing
+                                                        cutback
+                                                        bitumen
+                                                        (RC)</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="http://hll.om/packing-logistics/">تور اقساط</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">تور اروپا</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a>
+                                </li>
 
-            <div
-                class="flex mx-auto justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow z-20 relative">
-
-                <div class="flex">
-                    <div
-                        class="w-32 bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 py-1 rounded-full flex-center flex-1">
-                        <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-                        <span class="mx-2 text-sm hidden md:block"> ۰۲۱-۳۴۵۶۴۸ </span>
+                                <li class="menu-item">
+                                    <a href="http://hll.om/contact-us/">ویزا</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="http://hll.om/contact-us/">بلاگ</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
+                    <img src="./img/logo.png" class="w-9 object-contain" alt="" />
 
-                    <div class="menu-top_menu-container hidden md:block" ref="menuContainer">
-                        <ul id="menu-top_menu" class="menu ">
-                            <li class="menu-item   menu-item-has-children ">
-                                <a href="http://hll.om/index.php/product/">تور</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item   "><a href="#">
-                                            bitumen
-                                            penetration grade
-                                        </a></li>
-                                    <li class="menu-item   "><a href="#">performance grade
-                                            bitumen</a></li>
-                                    <li class="menu-item   menu-item-has-children ">
-                                        <a href="http://hll.om/category/products/cutback-bitumen/">Bitumen Cutback</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/cutback-bitumen-slow-curing-sc/">Cutback
-                                                    bitumen
-                                                    slow curing (SC)</a>
-                                            </li>
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/cutback-bitumen-medium-curing-mc/">Cutback
-                                                    bitumen medium curing (MC)</a>
-                                            </li>
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/rapid-curing-cutback-bitumen-rc/">Rapid
-                                                    curing
-                                                    cutback bitumen (RC)</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item   menu-item-has-children ">
-                                        <a href="http://hll.om/category/products/bitumen-emulsion/">bitumen emulsion</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/bitumen-emulsion-be/">Bitumen Emulsion
-                                                    (BE)</a>
-                                            </li>
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/cationic-emulsions/">Cationic
-                                                    Emulsions</a>
-                                            </li>
-                                            <li class="menu-item   ">
-                                                <a href="http://hll.om/product/anionic-emulsions/">Anionic Emulsions</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item   "><a
-                                            href="http://hll.om/category/products/c-mulch-emulsified-bitumen/">Mulch
-                                            Emulsified
-                                            Bitumen</a></li>
-                                    <li class="menu-item   "><a
-                                            href="http://hll.om/category/products/solvent-base-primer/">Solvent Base
-                                            Primer</a>
-                                    </li>
-                                    <li class="menu-item   "><a
-                                            href="http://hll.om/category/products/c-polymer-modified-emulsion-pme/">Polymer
-                                            Modified Emulsion (PME)</a></li>
-                                    <li class="menu-item   "><a
-                                            href="http://hll.om/category/products/c-ready-mixed-asphalt/">Ready Mixed
-                                            Asphalt</a></li>
-                                    <li class="menu-item   "><a
-                                            href="http://hll.om/category/products/c_bituplast/">Bituplast</a></li>
-                                    <li class="menu-item   "><a
-                                            href="http://hll.om/category/products/bitumen-base-waterproofing-mortar/">Bitumen
-                                            Base Waterproofing Mortar</a></li>
-                                    <li class="menu-item   "><a
-                                            href="http://hll.om/product/bituco-organic-cleaner-boc/">Bituco Organic
-                                            Cleaner
-                                            (BOC):</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item   menu-item-has-children ">
-                                <a href="#">ﻫﺘﻞ ﻫﺎ</a>
-                                <ul class="sub-menu">
-                                    <li class="menu-item  menu-item-object-post "><a
-                                            href="http://hll.om/standardizing-bodies/">Standardizing Bodies</a></li>
-                                    <li class="menu-item  menu-item-object-post "><a
-                                            href="http://hll.om/family-of-bitumenous-binders/">Family of Bitumenous
-                                            Binders</a>
-                                    </li>
-                                    <li class="menu-item   "><a href="http://hll.om/product/quality-control/">Quality
-                                            Control</a></li>
-                                    <li class="menu-item  menu-item-object-post "><a
-                                            href="http://hll.om/bitumen-emulsions-anionic-cationic-unmodified-polymer-modified/">BITUMEN
-                                            EMULSIONS (ANIONIC; CATIONIC; UNMODIFIED; POLYMER MODIFIED)</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item"><a href="http://hll.om/packing-logistics/">تور اقساط</a></li>
-                            <li class="menu-item"><a href="#">تور اروپا</a></li>
-                            <li class="menu-item"><a href="http://hll.om/contact-us/">ﺗﻮر ویژه</a></li>
-
-                            <li class="menu-item   "><a href="http://hll.om/contact-us/">ویزا</a></li>
-                            <li class="menu-item   "><a href="http://hll.om/contact-us/">بلاگ</a></li>
-
-                        </ul>
+                    <div @click="taggleMobileMenu" class="cursor-pointer lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
                     </div>
-
                 </div>
 
-                <img src="./img/logo.png" class="object-contain w-9" alt="" />
-
-                <div @click="taggleMobileMenu" class=" cursor-pointer md:hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </div>
-
-            </div>
-
-
-
-
-            <!-- MOBILE SECTION -->
-            <div id="mobile-menu" x-show="isOpen" style="display: none;" x-transition.opacity>
-                <div class="mobile-menu__overlay">
-
-
-
-                    <div
-                        class="flex mx-auto mt-5 justify-between items-center px-5 py-3 bg-white drop-shadow-sm rounded-2xl flex-grow ">
-                        <div class="flex">
-                            <div
-                                class="bg-yellow-300 shadow-lg md:shadow-none md:bg-gray-200 text-gray-500 p-1 rounded-full flex justify-center items-center flex-1">
-                                <img src="./svg/phone.svg" class="object-contain w-6 h-6 py-1" alt="" />
-
+                <!-- MOBILE SECTION -->
+                <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
+                    <div class="mobile-menu__overlay">
+                        <div
+                            class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                            <div class="flex">
+                                <div
+                                    class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
+                                    <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
+                                </div>
                             </div>
 
+                            <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+
+                            <button @click="taggleMobileMenu()" class="relative cursor-pointer lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
                         </div>
 
-                        <img src="./img/logo.png" class="object-contain w-9" alt="" />
+                        <div class="relative rounded-3xl bg-white" dir="rtl">
+                            <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
+                                <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
+                                    <img src="svg/chevron-rigth.svg" alt="" />
+                                </span>
 
+                                <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
+                            </div>
 
-                        <button @click="taggleMobileMenu()" class="  relative  cursor-pointer md:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-
-                    </div>
-
-
-
-                    <div class="relative">
-
-                        <div class="flex items-center justify-start gap-3 mt-2 mb-5 text-xl">
-                            <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()"
-                                x-transition>
-                                <img src="svg/chevron-rigth.svg" alt="">
-                            </span>
-
-                            <h1 x-text="ch.name ? ch.name : 'menu' "></h1>
-
+                            <ul class="bi-scrollbar">
+                                <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
+                                    <li>
+                                        <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') "
+                                            class="">
+                                            <span x-text="name"></span>
+                                            <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg"
+                                                x-transition />
+                                        </a>
+                                    </li>
+                                </template>
+                            </ul>
                         </div>
-
-                        <ul class="bi-scrollbar">
-                            <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
-                                <li>
-
-                                    <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') " class="">
-                                        <span x-text="name"></span>
-                                        <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg" x-transition>
-                                    </a>
-
-                                </li>
-                            </template>
-
-                        </ul>
-
                     </div>
                 </div>
-
-            </div>
-            <!-- / -->
-        </nav>
+                <!-- / -->
+            </nav>
+        </div>
 
     </header>
 

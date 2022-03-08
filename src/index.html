@@ -28,12 +28,13 @@
         </div> -->
     </div>
     <!-- /debug -->
-
+    <div class="fixed w-full z-50 transition-all nav-container" id="navigation-sticky-placeholder">
+        <!-- DO NOT DELETE ME -->
+    </div>
     <header class="relative top-0 z-20 bg-gradient-to-b from-[#92F2FF] to-white pt-5">
 
 
-        <div id="navigation-placeholder">
-
+        <div id="navigation-placeholder" class="nav-container">
             <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
                 <div
                     class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
@@ -1843,8 +1844,8 @@
     <script src="lib/js/hammer.min.js"></script>
 
     <!-- scripts -->
-    <script src="js/commons/globals.js"></script>
     <script src="js/commons/utils.js"></script>
+    <script src="js/components/slider.js"></script>
 
     <script src="js/components/navbar.js"></script>
     <script src="js/pages/index.js"></script>

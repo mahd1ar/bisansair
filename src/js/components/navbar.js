@@ -3,10 +3,23 @@
 
 var navbar = {
     _isOpen: false,
+    scrollThreshhold: 112,
+    fixedPosition: true,
+
+
+    watch: {
+        scroll() {
+            console.log("scroll")
+        }
+    },
     get isOpen() {
         return this._isOpen
     },
     set isOpen(input) {
+        if (input && !this.fixedPosition)
+            document.querySelector('#navigation-sticky-placeholder').style.height = '100%'
+        else
+            document.querySelector('#navigation-sticky-placeholder').style.height = ''
 
         const indexPageHeroSection = document.querySelector('.js-hero')
 
@@ -20,7 +33,7 @@ var navbar = {
 
         this._isOpen = input
     },
-    // menu: [],
+
     subMenu: [],
     tree: {},
 
@@ -55,22 +68,44 @@ var navbar = {
 
 
 
-        // const newnav = navigation.cloneNode().outerHTML
-        // console.log(navigation.outerHTML)
-        // document.body.insertAdjacentNode(
-        //     "beforeend",
-        //     // newnav
-        //     navigation
-        // );
-        // newnav.id = "floatNav"
 
-        // document.body.appendChild(navigation);
+        function placeNavbarFixed() {
 
-        // document.querySelector("header").appendChild(navigation)
+            document.querySelector("#navigation-placeholder").appendChild(navigation);
+            document.querySelector("#navigation-placeholder").style.height = 'auto';
+            document.querySelector("#navigation-sticky-placeholder").style.transform = "translate(0,-100%)";
+        }
+
+
+        function placeNavbarSticky() {
+            document.querySelector("#navigation-placeholder").style.height = document.getElementById('navigation').getBoundingClientRect().height + 'px';
+            document.querySelector("#navigation-sticky-placeholder").appendChild(navigation);
+            document.querySelector("#navigation-sticky-placeholder").style.transform = "translate(0,0%)"
+        }
+
+
+
+        this.$watch('fixedPosition', (n) => {
+            if (n) placeNavbarFixed()
+            else placeNavbarSticky()
+        })
+
+        if (window.pageYOffset > this.scrollThreshhold) {
+            this.fixedPosition = false
+        }
 
         window.addEventListener('scroll', e => {
-            console.log(window.pageYOffset)
+            if (window.pageYOffset > this.scrollThreshhold) {
+
+                this.fixedPosition = false
+            } else {
+                this.fixedPosition = true
+
+            }
+
         })
+
+
 
     },
     get currentSubmenu() {

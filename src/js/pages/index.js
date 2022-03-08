@@ -655,7 +655,7 @@ const fligthPicker = {
         const d = new Date()
         const today_miladi = [d.getFullYear(), d.getMonth() + 1, d.getDate()]
         const today_shamsi = gregorian_to_jalali(today_miladi[0], today_miladi[1], today_miladi[2])
-        console.log(today_shamsi)
+
         this.datePicker.en_today = today_miladi[2];
         this.datePicker.en_candidateMonth = today_miladi[1];
         this.datePicker.en_candidateYear = today_miladi[0];
@@ -665,8 +665,6 @@ const fligthPicker = {
 
         this.datePicker.today_shamsi = today_shamsi
         this.datePicker.today_miladi = today_miladi
-
-
 
         this.$refs.startingFrom.querySelectorAll(".js-starting-option").forEach((node, index) => {
             this.travelPicker.starting._options.push({
@@ -688,6 +686,20 @@ const fligthPicker = {
             })
 
             node.remove()
+        })
+
+
+        this.$watch(['datePicker.show', 'travelPicker.destination.show', 'travelPicker.starting.show', 'travelersPicker.show'], () => {
+            if ((this.datePicker.show || this.travelPicker.destination.show || this.travelPicker.starting.show || this.travelersPicker.show) && window.innerWidth < 1024) {
+
+                document.querySelectorAll('.nav-container').forEach(i => {
+                    i.style.zIndex = 10
+                })
+            } else {
+                document.querySelectorAll('.nav-container').forEach(i => {
+                    i.style.zIndex = ''
+                })
+            }
         })
 
 
