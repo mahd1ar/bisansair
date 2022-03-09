@@ -16,17 +16,7 @@
 </head>
 
 <body>
-    <!-- brake points debug -->
-    <div class="fixed top-10 left-10 z-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
-        <span class="hidden sm:block">sm</span>
-        <span class="hidden md:block">md</span>
-        <span class="hidden lg:block">lg</span>
-        <span class="hidden xl:block">xl</span>
-        <span class="hidden 2xl:block">2xl</span>
-        <!-- <div class="landscape:bg-pink-200">
-            lanacape
-        </div> -->
-    </div>
+
     <!-- /debug -->
     <div class="fixed w-full z-50 transition-all nav-container" id="navigation-sticky-placeholder">
         <!-- DO NOT DELETE ME -->
@@ -312,7 +302,7 @@
                     <h2 class="relative top-3 text-xl font-bold">
                         با بیسان به بیش از 50 نقطه دنبا سفر کن
                     </h2>
-                    <div class="absolute left-0 -top-32 -z-10 w-[110%] sm:-top-20 md:hidden">
+                    <div class="absolute left-0 -top-32 -z-10 w-[110%] sm:-top-20 md:hidden pointer-events-none">
                         <img src="img/Airplane.png" alt="" />
                     </div>
                 </div>
@@ -686,8 +676,8 @@
                                                 </div>
                                             </div>
 
-                                            <div @click="toggleDatePicker"
-                                                class="bi-primary-pill mt-auto hidden justify-center sm:flex">
+                                            <div @click="datePicker.togglePanel(false)"
+                                                class="bi-primary-pill mt-auto hidden justify-center sm:flex lg:hidden">
                                                 تایید
                                             </div>
                                         </div>
@@ -764,7 +754,7 @@
                                     </div>
 
                                     <div class="hidden h-16 items-center justify-end bg-neutral-200 lg:flex">
-                                        <div @click="toggleDatePicker"
+                                        <div @click="datePicker.togglePanel(false)"
                                             class="m-5 inline-block cursor-pointer rounded-lg bg-white p-2 px-3 shadow-xl">
                                             تایید
                                         </div>
@@ -874,7 +864,8 @@
                             </span>
                         </div>
 
-                        <div class="flex w-full items-center justify-center rounded-full bg-yellow-300 md:w-32">
+                        <button @click="submit()"
+                            class="flex w-full items-center justify-center rounded-full bg-yellow-300 md:w-32">
                             <div class="flex-center md:w-full">
                                 <span class="text-[#5A623A] md:mx-3">
                                     جستجو
@@ -884,7 +875,7 @@
                             <span class="flex-center mx-2 h-10 overflow-hidden rounded-full md:w-12">
                                 <img class="object-contain" src="svg/magnifier.svg" alt="" />
                             </span>
-                        </div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1277,7 +1268,8 @@
                     <img src="svg/chevron-rigth.svg" alt="" />
                 </button>
 
-                <button class="js-prv bi-primary-pill absolute top-1/2 z-20 lg:right-96 2xl:right-1/2">
+                <button
+                    class="js-prv bi-primary-pill absolute top-1/2 z-20 left-0 lg:left-auto lg:right-96 2xl:right-1/2">
                     <img src="svg/chevron-left.svg" alt="" />
                 </button>
 

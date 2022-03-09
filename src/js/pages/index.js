@@ -444,7 +444,7 @@ const fligthPicker = {
 
             const cal = new Array(6).fill(0).map(() => new Array(7).fill(0))
 
-            // if shamsi {
+            // if shamsi 
             if (this.mode === 0) {
 
                 const lengthOfMounth = fa_getMounthLength(this.fa_candidateMonth, this.fa_candidateYear);
@@ -645,7 +645,7 @@ const fligthPicker = {
 
                     flatCal[i] = a
                 }
-                console.log(flatCal)
+
                 return flatCal
             }
         }
@@ -703,6 +703,14 @@ const fligthPicker = {
         })
 
 
+    },
+
+    submit() {
+
+        console.log('first day of travel: ', this.datePicker._firstDayOftravel_epoch ? new Date(this.datePicker._firstDayOftravel_epoch) : 0)
+        console.log('last day of travel: ', this.datePicker._lastDayOftravel_epoch ? new Date(this.datePicker._lastDayOftravel_epoch) : 0)
+        console.log('destination is: ', this.travelPicker.destination.is ? this.travelPicker.destination._options[this.travelPicker.destination.is] : "")
+        console.log('starting is: ', this.travelPicker.starting.is ? this.travelPicker.starting._options[this.travelPicker.starting.is] : "")
     }
 }
 

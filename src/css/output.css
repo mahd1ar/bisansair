@@ -115,7 +115,8 @@ input::after {
 	grid-template-columns: repeat(1, minmax(0, 1fr));
 	gap: 0.5rem;
 	overflow: auto;
-	padding: 0.75rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
 }
 
 @media (min-width: 640px) {
@@ -1735,12 +1736,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin-top: 2rem;
 }
 
-.mb-9 {
-	margin-bottom: 2.25rem;
-}
-
 .ml-3 {
 	margin-left: 0.75rem;
+}
+
+.mb-9 {
+	margin-bottom: 2.25rem;
 }
 
 .mt-0 {
@@ -2003,12 +2004,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 	width: 3rem;
 }
 
-.w-1\/2 {
-	width: 50%;
-}
-
 .w-5 {
 	width: 1.25rem;
+}
+
+.w-1\/2 {
+	width: 50%;
 }
 
 .w-10 {
@@ -2069,10 +2070,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-7\/12 {
 	width: 58.333333%;
-}
-
-.w-32 {
-	width: 8rem;
 }
 
 .w-20 {
@@ -2934,16 +2931,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 	text-transform: uppercase;
 }
 
+.leading-7 {
+	line-height: 1.75rem;
+}
+
 .leading-6 {
 	line-height: 1.5rem;
 }
 
 .leading-5 {
 	line-height: 1.25rem;
-}
-
-.leading-7 {
-	line-height: 1.75rem;
 }
 
 .tracking-wider {
@@ -3792,10 +3789,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 		height: 16rem;
 	}
 
-	.md\:w-32 {
-		width: 8rem;
-	}
-
 	.md\:w-4\/12 {
 		width: 33.333333%;
 	}
@@ -3814,6 +3807,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.md\:w-1\/5 {
 		width: 20%;
+	}
+
+	.md\:w-32 {
+		width: 8rem;
 	}
 
 	.md\:w-12 {
@@ -3958,6 +3955,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 		right: -5rem;
 	}
 
+	.lg\:left-auto {
+		left: auto;
+	}
+
 	.lg\:right-96 {
 		right: 24rem;
 	}
@@ -4007,16 +4008,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 		height: auto;
 	}
 
+	.lg\:w-32 {
+		width: 8rem;
+	}
+
 	.lg\:w-1\/5 {
 		width: 20%;
 	}
 
 	.lg\:w-4\/5 {
 		width: 80%;
-	}
-
-	.lg\:w-32 {
-		width: 8rem;
 	}
 
 	.lg\:w-full {
@@ -4197,13 +4198,5 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.\32xl\:block {
 		display: block;
-	}
-}
-
-@media (orientation: landscape) {
-
-	.landscape\:bg-pink-200 {
-		--tw-bg-opacity: 1;
-		background-color: rgb(251 207 232 / var(--tw-bg-opacity));
 	}
 }
