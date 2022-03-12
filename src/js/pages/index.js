@@ -233,6 +233,9 @@ const fligthPicker = {
     datePicker: {
         show: false,
         view: 'days', // month, days 
+        _firstDayOftravel_epoch__confirmed: 0, // Y-M-D
+        _lastDayOftravel_epoch__confirmed: 0,
+
         _firstDayOftravel_epoch: 0, // Y-M-D
         _lastDayOftravel_epoch: 0,
 
@@ -439,6 +442,18 @@ const fligthPicker = {
         formateMonth(monthNum) {
             return this.months[monthNum - 1]
         },
+
+        confirm() {
+            this.togglePanel(false);
+            this._firstDayOftravel_epoch__confirmed = this._firstDayOftravel_epoch
+            this._lastDayOftravel_epoch__confirmed = this._lastDayOftravel_epoch
+
+        },
+        close() {
+            this.togglePanel(false);
+            this._firstDayOftravel_epoch = this._firstDayOftravel_epoch__confirmed
+            this._lastDayOftravel_epoch = this._lastDayOftravel_epoch__confirmed
+        },
         get days() {
 
 
@@ -605,6 +620,7 @@ const fligthPicker = {
                         destination: false,
                         isOutOfCurrentMonth: true,
                         isToday: false,
+                        inRange: false,
                         date: flatCal[i],
                         formatedDate: flatCal[i],
                         isFri: false,
@@ -640,6 +656,32 @@ const fligthPicker = {
                             a.destination = true
                     }
 
+                    if (this._lastDayOftravel_epoch && this._firstDayOftravel_epoch) {
+
+                        const startedDay = flatCal.find(i => i.origin) ? flatCal.find(i => i.origin).date : null
+                            , endedDay = flatCal.find(i => i.destination) ? flatCal.find(i => i.destination).date : null
+
+                        if (startedDay && endedDay) {
+
+                            flatCal.forEach(j => {
+                                if (j.isOutOfCurrentMonth === false && startedDay < j.date && j.date < endedDay)
+                                    j.inRange = true;
+                            })
+                        } else if (startedDay) {
+                            flatCal.forEach(j => {
+                                if (j.isOutOfCurrentMonth === false && startedDay < j.date)
+                                    j.inRange = true;
+                            })
+
+                        } else {
+                            flatCal.forEach(j => {
+                                if (j.isOutOfCurrentMonth === false && j.date < endedDay)
+                                    j.inRange = true;
+                            })
+                        }
+
+
+                    }
 
 
 
@@ -688,18 +730,25 @@ const fligthPicker = {
             node.remove()
         })
 
-
-        this.$watch(['datePicker.show', 'travelPicker.destination.show', 'travelPicker.starting.show', 'travelersPicker.show'], () => {
+        const adjustZindexOfNavs = () => {
             if ((this.datePicker.show || this.travelPicker.destination.show || this.travelPicker.starting.show || this.travelersPicker.show) && window.innerWidth < 1024) {
 
                 document.querySelectorAll('.nav-container').forEach(i => {
                     i.style.zIndex = 10
+                    document.body.style.overflow = "hidden"
                 })
             } else {
                 document.querySelectorAll('.nav-container').forEach(i => {
+                    document.body.style.overflow = ""
                     i.style.zIndex = ''
                 })
             }
+        }
+
+        adjustZindexOfNavs()
+
+        this.$watch(['datePicker.show', 'travelPicker.destination.show', 'travelPicker.starting.show', 'travelersPicker.show'], () => {
+            adjustZindexOfNavs()
         })
 
 

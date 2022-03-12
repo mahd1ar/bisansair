@@ -19,8 +19,11 @@
 	@apply cursor-pointer rounded-lg bg-yellow-300 p-2 px-3 font-bold text-yellow-900 shadow-md hover:bg-yellow-200;
 }
 
-.bi-primary-tag { @apply rounded-3xl bg-primery px-2 py-1 text-sm flex-center; }
-.bi-secondary-tag {}
+.bi-primary-tag {
+	@apply flex-center rounded-3xl bg-primery px-2 py-1 text-sm;
+}
+.bi-secondary-tag {
+}
 
 .bi-date-overlay:before {
 	content: "";
@@ -74,4 +77,8 @@
 	&:hover img {
 		@apply scale-125 transform;
 	}
+}
+
+.title-shadow {
+	text-shadow: 0px 1px 10px white;
 }

@@ -50,3 +50,14 @@
 		@apply max-h-fit;
 	}
 }
+
+.datepicker--scrollable {
+	@apply overflow-auto;
+	max-height: calc(100vh - 140px);
+	@media (min-width: theme("screens.sm")) {
+		max-height: calc(90vh - theme("height.20") - 76px);
+	}
+	@media (min-width: theme("screens.lg")) {
+		@apply max-h-fit;
+	}
+}

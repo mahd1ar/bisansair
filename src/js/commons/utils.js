@@ -51,7 +51,7 @@ String.prototype.toIndiaDigits = function () {
     });
 }
 
-function debounce(func, timeout = 300) {
+function customDebounce(func, timeout = 300) {
     let timer;
     return (...args) => {
         clearTimeout(timer);
