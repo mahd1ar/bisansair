@@ -483,143 +483,145 @@
                     </div>
                 </div>
 
-                <!-- Tabs -->
-                <div class="bi-scrollbar overflow-auto scroll-smooth py-6 lg:px-6">
-                    <ul class="js-tabs flex items-start gap-2 whitespace-nowrap font-semibold text-secondary-dark">
-                        <li class="js-tab-item cursor-pointer rounded-3xl bg-slate-200 px-6 py-2">
-                            توضیحات
-                        </li>
-                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
-                            برنامه سفر
-                        </li>
-                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
-                            مدارک مورد نیاز
-                        </li>
-                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
-                            اطلاعات سفر
-                        </li>
-                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-50">
-                            گالری
-                        </li>
-                    </ul>
-                </div>
+                <div x-data="{ tabno : 0 }">
 
-                <!-- About tour -->
-                <div class="mt-1 lg:mt-8">
-                    <h1 class="text-xl font-bold text-primery-dark">
-                        در مورد هتل
-                    </h1>
-                    <div class="mt-2">
-                        لورم ایپسوم یا طرح‌نما (به انگلیسی:
-                        Lorem ipsum) به متنی آزمایشی و بی‌معنی
-                        در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-                        گفته می‌شود. طراح گرافیک از این متن به
-                        عنوان عنصری از ترکیب بندی برای پر کردن
-                        صفحه و ارایه اولیه شکل ظاهری و کلی طرح
-                        سفارش گرفته شده استفاده می نماید، تا
-                        از نظر
+                    <!-- Tabs -->
+                    <div class="bi-scrollbar overflow-auto scroll-smooth py-6 lg:px-6">
+                        <ul class="js-tabs flex items-start gap-2 whitespace-nowrap font-semibold text-secondary-dark">
+                            <li @click="tabno =0 " class="js-tab-item cursor-pointer rounded-3xl px-6 py-2"
+                                :class="tabno === 0 ? 'bg-slate-200' : 'hover:bg-slate-50'">
+                                توضیحات
+                            </li>
+                            <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 " @click="tabno = 1 "
+                                :class="tabno === 1 ? 'bg-slate-200' : 'hover:bg-slate-50'">
+                                امکانات
+                            </li>
+
+
+                        </ul>
                     </div>
-                </div>
 
-                <div class="mt-8">
-                    <h1 class="text-xl font-bold text-primery-dark">
-                        تیتر دوم
-                    </h1>
-                    <div class="mt-2">
-                        گرافیکی نشانگر چگونگی نوع و اندازه
-                        فونت و ظاهر متن باشد. معمولا طراحان
-                        گرافیک برای صفحه‌آرایی، نخست از
-                        متن‌های آزمایشی و بی‌معنی استفاده
-                        می‌کنند تا صرفا به مشتری یا صاحب کار
-                        خود نشان دهند که صفحه طراحی یا صفحه
-                        بندی شده بعد از اینکه متن در آن قرار
-                        گیرد چگونه به نظر می‌رسد و قلم‌ها و
-                        اندازه‌بندی‌ها چگونه در نظر گرفته
-                        شده‌است. از آنجایی که طراحان عموما
-                        نویسنده متن نیستند
-                    </div>
-                </div>
+                    <!-- description -->
+                    <div x-show="tabno === 0" x-transition>
 
-                <!-- facilities -->
-                <div class="mt-8">
-                    <h2 class="text-xl font-bold text-primery-dark">
-                        امکانات
-                    </h2>
-
-                    <div>
-                        <h4 class="mt-8 mb-4 text-xl">
-                            غذا و نوشیدنی
-                        </h4>
-                        <div class="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-6">
-                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
-                                <i>
-                                    <img src="svg/break-fast.svg" alt="" />
-                                </i>
-                                سرور صبحانه در اتاق</span>
-
-                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
-                                <i>
-                                    <img src="svg/restaurant.svg" alt="" />
-                                </i>
-                                رستوران
-                            </span>
+                        <div class="mt-1 lg:mt-8">
+                            <h1 class="text-xl font-bold text-primery-dark">
+                                در مورد هتل
+                            </h1>
+                            <div class="mt-2">
+                                لورم ایپسوم یا طرح‌نما (به انگلیسی:
+                                Lorem ipsum) به متنی آزمایشی و بی‌معنی
+                                در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
+                                گفته می‌شود. طراح گرافیک از این متن به
+                                عنوان عنصری از ترکیب بندی برای پر کردن
+                                صفحه و ارایه اولیه شکل ظاهری و کلی طرح
+                                سفارش گرفته شده استفاده می نماید، تا
+                                از نظر
+                            </div>
                         </div>
-                    </div>
-                    <!-- accessibility -->
-                    <div>
-                        <h4 class="mt-8 mb-4 text-xl">
-                            دسترسی
-                        </h4>
-                        <div class="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-6">
-                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
-                                <i>
-                                    <img src="svg/disabled_people.svg" alt="" />
-                                </i>
-                                توالت ویژه ی معلولین
-                            </span>
 
-                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
-                                <i>
-                                    <img src="svg/wheelchair.svg" alt="" />
-                                </i>
-                                تردد آسان صندلی چرخدار
-                            </span>
+                        <div class="mt-8">
+                            <h1 class="text-xl font-bold text-primery-dark">
+                                تیتر دوم
+                            </h1>
+                            <div class="mt-2">
+                                گرافیکی نشانگر چگونگی نوع و اندازه
+                                فونت و ظاهر متن باشد. معمولا طراحان
+                                گرافیک برای صفحه‌آرایی، نخست از
+                                متن‌های آزمایشی و بی‌معنی استفاده
+                                می‌کنند تا صرفا به مشتری یا صاحب کار
+                                خود نشان دهند که صفحه طراحی یا صفحه
+                                بندی شده بعد از اینکه متن در آن قرار
+                                گیرد چگونه به نظر می‌رسد و قلم‌ها و
+                                اندازه‌بندی‌ها چگونه در نظر گرفته
+                                شده‌است. از آنجایی که طراحان عموما
+                                نویسنده متن نیستند
+                            </div>
                         </div>
                     </div>
 
-                    <!-- health -->
-                    <div>
-                        <h4 class="mt-8 mb-4 text-xl">
-                            امکانات سلامتی
-                        </h4>
-                        <div class="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-6">
-                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
-                                <i>
-                                    <img src="svg/fitness.svg" alt="" />
-                                </i>
-                                سالن تناسب اندام
-                            </span>
 
-                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
-                                <i>
-                                    <img src="svg/steam_room.svg" alt="" />
-                                </i>
-                                اتاق بخار
-                            </span>
+                    <!-- facilities -->
+                    <div x-show="tabno === 1" class="mt-8" x-transition>
+                        <h2 class="text-xl font-bold text-primery-dark">
+                            امکانات
+                        </h2>
 
-                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
-                                <i>
-                                    <img src="svg/massage.svg" alt="" />
-                                </i>
-                                ماساژ
-                            </span>
+                        <div>
+                            <h4 class="mt-8 mb-4 text-xl">
+                                غذا و نوشیدنی
+                            </h4>
+                            <div class="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-6">
+                                <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
+                                    <i>
+                                        <img src="svg/break-fast.svg" alt="" />
+                                    </i>
+                                    سرور صبحانه در اتاق</span>
 
-                            <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
-                                <i>
-                                    <img src="svg/bath.svg" alt="" />
-                                </i>
-                                امکانات آبگرم
-                            </span>
+                                <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
+                                    <i>
+                                        <img src="svg/restaurant.svg" alt="" />
+                                    </i>
+                                    رستوران
+                                </span>
+                            </div>
+                        </div>
+                        <!-- accessibility -->
+                        <div>
+                            <h4 class="mt-8 mb-4 text-xl">
+                                دسترسی
+                            </h4>
+                            <div class="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-6">
+                                <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
+                                    <i>
+                                        <img src="svg/disabled_people.svg" alt="" />
+                                    </i>
+                                    توالت ویژه ی معلولین
+                                </span>
+
+                                <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
+                                    <i>
+                                        <img src="svg/wheelchair.svg" alt="" />
+                                    </i>
+                                    تردد آسان صندلی چرخدار
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- health -->
+                        <div>
+                            <h4 class="mt-8 mb-4 text-xl">
+                                امکانات سلامتی
+                            </h4>
+                            <div class="grid grid-cols-1 gap-2 lg:grid-cols-3 lg:gap-6">
+                                <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
+                                    <i>
+                                        <img src="svg/fitness.svg" alt="" />
+                                    </i>
+                                    سالن تناسب اندام
+                                </span>
+
+                                <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
+                                    <i>
+                                        <img src="svg/steam_room.svg" alt="" />
+                                    </i>
+                                    اتاق بخار
+                                </span>
+
+                                <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
+                                    <i>
+                                        <img src="svg/massage.svg" alt="" />
+                                    </i>
+                                    ماساژ
+                                </span>
+
+                                <span class="flex gap-2 rounded-xl bg-slate-200 px-4 py-2">
+                                    <i>
+                                        <img src="svg/bath.svg" alt="" />
+                                    </i>
+                                    امکانات آبگرم
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
