@@ -586,10 +586,18 @@
     </main>
 
     <div class="flex-center " style="height: 24rem">...gap ( delete me later )</div>
-
+    <script src="lib/js/stickybits.min.js"></script>
     <script src="js/components/navbar.js"></script>
     <script src="js/commons/utils.js"></script>
     <script>
+        window.addEventListener("load", function () {
+
+            if (currentBrackPoint() === "lg") {
+                stickybits("aside", { stickyBitStickyOffset: 80 });
+
+            }
+        })
+
         function numin(s) {
             var a = [
                 "٠",

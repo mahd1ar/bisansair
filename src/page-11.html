@@ -457,7 +457,7 @@
                                 @click="isOpen = !isOpen">
                                 <div x-show="isOpen === false"
                                     class="absolute h-10 w-full -translate-y-full transform bg-gradient-to-t from-white to-transparent"
-                                    x-transition-opacity></div>
+                                    x-transition.opacity></div>
                                 اطلاعات بیشتر
                                 <div class="flex-center h-10 w-10 rounded-circle bg-primery">
                                     <img :class="{'transform rotate-180' : isOpen} " src="svg/chevron-down.svg"
@@ -501,48 +501,8 @@
                         </ul>
                     </div>
 
-                    <!-- description -->
-                    <div x-show="tabno === 0" x-transition>
-
-                        <div class="mt-1 lg:mt-8">
-                            <h1 class="text-xl font-bold text-primery-dark">
-                                در مورد هتل
-                            </h1>
-                            <div class="mt-2">
-                                لورم ایپسوم یا طرح‌نما (به انگلیسی:
-                                Lorem ipsum) به متنی آزمایشی و بی‌معنی
-                                در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-                                گفته می‌شود. طراح گرافیک از این متن به
-                                عنوان عنصری از ترکیب بندی برای پر کردن
-                                صفحه و ارایه اولیه شکل ظاهری و کلی طرح
-                                سفارش گرفته شده استفاده می نماید، تا
-                                از نظر
-                            </div>
-                        </div>
-
-                        <div class="mt-8">
-                            <h1 class="text-xl font-bold text-primery-dark">
-                                تیتر دوم
-                            </h1>
-                            <div class="mt-2">
-                                گرافیکی نشانگر چگونگی نوع و اندازه
-                                فونت و ظاهر متن باشد. معمولا طراحان
-                                گرافیک برای صفحه‌آرایی، نخست از
-                                متن‌های آزمایشی و بی‌معنی استفاده
-                                می‌کنند تا صرفا به مشتری یا صاحب کار
-                                خود نشان دهند که صفحه طراحی یا صفحه
-                                بندی شده بعد از اینکه متن در آن قرار
-                                گیرد چگونه به نظر می‌رسد و قلم‌ها و
-                                اندازه‌بندی‌ها چگونه در نظر گرفته
-                                شده‌است. از آنجایی که طراحان عموما
-                                نویسنده متن نیستند
-                            </div>
-                        </div>
-                    </div>
-
-
                     <!-- facilities -->
-                    <div x-show="tabno === 1" class="mt-8" x-transition>
+                    <div x-show="tabno === 1" class="mt-8" x-transition.opacity.duration.300ms>
                         <h2 class="text-xl font-bold text-primery-dark">
                             امکانات
                         </h2>
@@ -624,6 +584,48 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- description -->
+                    <div x-show="tabno === 0" x-transition.opacity.duration.300ms>
+
+                        <div class="mt-1 lg:mt-8">
+                            <h1 class="text-xl font-bold text-primery-dark">
+                                در مورد هتل
+                            </h1>
+                            <div class="mt-2">
+                                لورم ایپسوم یا طرح‌نما (به انگلیسی:
+                                Lorem ipsum) به متنی آزمایشی و بی‌معنی
+                                در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
+                                گفته می‌شود. طراح گرافیک از این متن به
+                                عنوان عنصری از ترکیب بندی برای پر کردن
+                                صفحه و ارایه اولیه شکل ظاهری و کلی طرح
+                                سفارش گرفته شده استفاده می نماید، تا
+                                از نظر
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <h1 class="text-xl font-bold text-primery-dark">
+                                تیتر دوم
+                            </h1>
+                            <div class="mt-2">
+                                گرافیکی نشانگر چگونگی نوع و اندازه
+                                فونت و ظاهر متن باشد. معمولا طراحان
+                                گرافیک برای صفحه‌آرایی، نخست از
+                                متن‌های آزمایشی و بی‌معنی استفاده
+                                می‌کنند تا صرفا به مشتری یا صاحب کار
+                                خود نشان دهند که صفحه طراحی یا صفحه
+                                بندی شده بعد از اینکه متن در آن قرار
+                                گیرد چگونه به نظر می‌رسد و قلم‌ها و
+                                اندازه‌بندی‌ها چگونه در نظر گرفته
+                                شده‌است. از آنجایی که طراحان عموما
+                                نویسنده متن نیستند
+                            </div>
+                        </div>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>

@@ -456,8 +456,16 @@
 
     <script src="js/components/navbar.js"></script>
     <script src="lib/js/splide.min.js"></script>
+    <script src="js/commons/utils.js"> </script>
+    <script src="lib/js/stickybits.min.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+
+            if (currentBrackPoint() === "lg") {
+                stickybits("aside", { stickyBitStickyOffset: 80 });
+
+            }
 
             const splide = new Splide("#main-slider", {
                 width: "100%",
@@ -470,6 +478,9 @@
 
         });
     </script>
+
+
+
 </body>
 
 </html>
