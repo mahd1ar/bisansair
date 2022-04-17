@@ -54,7 +54,242 @@ window.addEventListener('load', function () {
 
 
 
+    new SVGAnimation(".frame-2", (animations) => {
+
+        const anime1 = anime({
+            remove: ".frame-2 .dot",
+            targets: '.frame-2 .dot',
+            opacity: [1, 0, 1],
+            easing: 'linear',
+            duration: 2000,
+            loop: true,
+            delay: function (el, i) { return i * 250 },
+        });
+
+        const anime2 = anime({
+            targets: '#lamp',
+            easing: 'easeOutQuad',
+            duration: 200,
+            rotate: [0, -60],
+        });
+
+        const anime3 = anime({
+            targets: '.frame-2 svg ,.frame-2 h2 , .frame-2 p ',
+            easing: 'easeInOutQuad',
+            duration: 200,
+            scale: [1, 1.1],
+            delay: function (el, i) { return i * 70 },
+        });
+
+        const anime4 = anime({
+            targets: '#g1',
+            duration: 900,
+            rotate: [-40, 0],
+        });
+
+        animations.push(anime1)
+        animations.push(anime2)
+        animations.push(anime3)
+        animations.push(anime4)
+
+    }
+    )
+
+
+    new SVGAnimation(".frame-1",
+        (animation) => {
+            const anime1 = anime({
+                targets: '.frame-1 .dot',
+                opacity: [1, 0],
+                easing: 'linear',
+                duration: 100,
+                loop: true,
+                direction: 'alternate',
+                delay: function (el, i) { return i * 150 },
+            });
+
+            const anime2 = anime({
+                targets: '.frame-1 .l1',
+                rotate: (_, i) => { return [0, i % 2 ? 35 : -35] },
+                easing: 'linear',
+                duration: 2500,
+                loop: true,
+                direction: 'alternate',
+                delay: function (el, i) { return i * 150 },
+            });
+
+            const anime3 = anime({
+                targets: '.frame-1 .dood',
+                stroke: ["#fff", "#333333"],
+                strokeWidth: [0, 2, 1, 0],
+                strokeDashoffset: [anime.setDashoffset, 0],
+                easing: 'linear',
+                duration: 2500,
+                loop: true,
+                delay: function (el, i) { return i * 150 },
+            });
+
+            const anime4 = anime({
+                targets: '.frame-1 svg ,.frame-1 h2 , .frame-1 p ',
+                easing: 'easeInOutQuad',
+                duration: 200,
+                scale: [1, 1.1],
+                delay: function (el, i) { return i * 70 },
+            });
+
+
+
+            animation.push(anime1)
+            animation.push(anime2)
+            animation.push(anime3)
+            animation.push(anime4)
+        }
+    )
+
+    new SVGAnimation(".frame-0",
+        (animation) => {
+
+            const anime3 = anime({
+                targets: '.frame-0 .barg ',
+                easing: 'linear',
+                duration: 5000,
+                rotate: [0, -35],
+                loop: true,
+                direction: 'alternate',
+            });
+
+            const anime1 = anime({
+                targets: '.frame-0 .kif',
+                rotate: [0, 8],
+                easing: 'linear',
+                duration: 2000,
+                loop: true,
+                direction: 'alternate',
+            });
+
+
+            const anime2 = anime({
+                targets: '.frame-0 svg ,.frame-0 h2 , .frame-0 p ',
+                easing: 'easeInOutQuad',
+                duration: 200,
+                scale: [1, 1.1],
+                delay: function (el, i) { return i * 70 },
+            });
+
+            animation.push(anime1)
+            animation.push(anime2)
+            animation.push(anime3)
+        }
+    )
+
+
+    new SVGAnimation(".frame-5",
+        (animation) => {
+
+            const anime3 = anime({
+                targets: '.frame-5 .case ',
+                easing: 'easeInCubic',
+                duration: 2000,
+                translateX: [0, 20],
+                loop: true,
+                direction: 'alternate',
+            });
+
+            const anime1 = anime({
+                targets: '.frame-5 .building',
+                opacity: [1, 0, 1],
+                easing: 'linear',
+                duration: 1000,
+                delay: (el, i) => i * 100,
+            });
+
+
+            const anime2 = anime({
+                targets: '.frame-5 svg ,.frame-5 h2 , .frame-5 p ',
+                easing: 'easeInOutQuad',
+                duration: 200,
+                scale: [1, 1.1],
+                delay: function (el, i) { return i * 70 },
+            });
+
+
+
+
+            animation.push(anime1)
+            animation.push(anime2)
+            animation.push(anime3)
+        }
+    )
+
+
+
+    new SVGAnimation(".frame-4",
+        (animation) => {
+
+            anime({
+                targets: '.frame-4 .icon',
+                scale: [0, 1],
+                duration: 1400,
+                delay: (el, i) => i * 150,
+            });
+
+
+            const anime2 = anime({
+                targets: '.frame-4 svg ,.frame-4 h2 , .frame-4 p ',
+                easing: 'easeInOutQuad',
+                duration: 200,
+                scale: [1, 1.1],
+                delay: function (el, i) { return i * 70 },
+            });
+
+            const anime3 = anime({
+                targets: '.frame-4 .pointer',
+                easing: 'easeInOutQuad',
+                translateX: [0, -200, -10, 23],
+                translateY: [0, -70, -100, -30, 14],
+                duration: 4200,
+            });
+
+
+
+            animation.push(anime2)
+            animation.push(anime3)
+
+        }
+    )
+
+    new SVGAnimation(".frame-3",
+        (animation) => {
+
+
+
+            const anime2 = anime({
+                targets: '.frame-3 svg ,.frame-3 h2 , .frame-3 p ',
+                easing: 'easeInOutQuad',
+                duration: 200,
+                scale: [1, 1.1],
+                delay: function (el, i) { return i * 70 },
+            });
+
+            const anime3 = anime({
+                targets: '.frame-3 .move',
+                easing: 'linear',
+                translateX: [0, -20, -10],
+                direction: "alternate",
+                loop: true,
+                duration: 4200,
+                delay: (el, i) => i * 470,
+            });
+
+
+            animation.push(anime2)
+            animation.push(anime3)
+
+        }
+    )
+
 })
+
 
 
 

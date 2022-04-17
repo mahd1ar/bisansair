@@ -2150,6 +2150,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.translate-y-8 {
+	--tw-translate-y: 2rem;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-10 {
+	--tw-translate-y: 2.5rem;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .rotate-180 {
 	--tw-rotate: 180deg;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2169,18 +2179,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .scale-150 {
 	--tw-scale-x: 1.5;
 	--tw-scale-y: 1.5;
-	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scale-90 {
-	--tw-scale-x: .9;
-	--tw-scale-y: .9;
-	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.scale-100 {
-	--tw-scale-x: 1;
-	--tw-scale-y: 1;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -3089,14 +3087,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	opacity: 0.8;
 }
 
-.opacity-0 {
-	opacity: 0;
-}
-
-.opacity-100 {
-	opacity: 1;
-}
-
 .shadow-lg {
 	--tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 	--tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -3512,11 +3502,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-slate-100:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-slate-200:hover {
-	--tw-bg-opacity: 1;
-	background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .hover\:shadow-xl:hover {
@@ -4276,3 +4261,4 @@ Ensure the default browser behavior of the `hidden` attribute.
 		display: block;
 	}
 }
+

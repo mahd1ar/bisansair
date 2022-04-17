@@ -86,3 +86,66 @@ function currentBrackPoint() {
     if (1536 <= w) return "xl"
 
 }
+
+
+class SVGAnimation {
+    animations = []
+    selector = ""
+    constructor(selector, callbackIN, callbackOUT) {
+        this.selector = selector;
+        if (document.querySelector(this.selector))
+            document.querySelector(this.selector).addEventListener("mouseenter", this.animatoinInProxy.bind(this))
+        else throw new Error("invalid selector")
+
+        this.callbackIN = callbackIN
+        this.callbackOUT = callbackOUT
+    }
+    animatoinOutProxy() {
+
+        this.animations.forEach(i => {
+
+            i.reverse()
+            i.loop = false;
+            i.play()
+            i.loopComplete = () => {
+                i.pause()
+
+                i.remove()
+
+            }
+            i.complete = () => {
+
+                i.pause()
+
+                i.remove()
+            }
+
+
+        })
+        this.animations.splice(1, this.animations.length)
+
+
+        if (this.callbackOUT)
+            this.callbackOUT(this.animations)
+    }
+    animatoinInProxy() {
+
+        const f1 = document.querySelector(this.selector)
+
+
+        const debouncedCalbackout = customDebounce(() => {
+            this.animatoinOutProxy()
+        }, 100)
+
+
+
+        f1.onmouseleave = () => {
+
+            debouncedCalbackout()
+            // this.callbackOUT(this.animations)
+        }
+
+        this.callbackIN(this.animations)
+    }
+
+}

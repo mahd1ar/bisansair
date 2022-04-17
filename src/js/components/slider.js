@@ -79,7 +79,7 @@ class Slider {
             const distanse = ['sm', 'NONE'].includes(currentBrackPoint()) ? 40 : ['md'].includes(currentBrackPoint()) ? 80 : 120;
             const opacity = ['sm', 'NONE'].includes(currentBrackPoint()) ? 0.40 : 0.25;
             card.style.transform = `translateX(${(this.isBilateral ? 1 : -1) * margin * distanse}px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
-
+            card.style.transitionDuration = '400ms'
             if (absMargin === 0) card.style.zIndex = 10;
             else card.style.zIndex = 9;
 
