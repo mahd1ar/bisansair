@@ -26,9 +26,9 @@
             <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
                 <div
                     class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
-                    <div class="flex">
+                    <div class="flex w-auto lg:w-full justify-between">
                         <a href="tel:02188319191"
-                            class="flex-center w-8 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
+                            class="flex-center w-8 flex-0 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
                             <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
                             <span class="mx-2 hidden text-sm lg:block">
                                 ۰۲۱-۳۴۵۶۴۸
@@ -37,6 +37,10 @@
 
                         <div class="menu-top_menu-container hidden lg:block" ref="menuContainer">
                             <ul id="menu-top_menu" class="menu">
+                                <li class="menu-item ">
+                                    <a href="#">خانه</a>
+
+                                </li>
                                 <li class="menu-item menu-item-has-children">
                                     <a href="#">تور</a>
                                     <ul class="sub-menu">

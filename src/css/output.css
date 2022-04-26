@@ -170,6 +170,7 @@ input::after {
 	margin-right: auto;
 	display: flex;
 	flex-grow: 1;
+	flex-direction: row-reverse;
 	align-items: center;
 	justify-content: space-between;
 	border-radius: 1rem;
@@ -183,10 +184,13 @@ input::after {
 	visibility: hidden;
 	position: absolute;
 	top: 100%;
-	left: 0px;
+	right: 0px;
 	max-width: 20rem;
 	text-overflow: ellipsis;
 	opacity: 0;
+	--tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+	--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 	transition-property: opacity;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-delay: 150ms;
@@ -203,6 +207,7 @@ input::after {
 	padding-right: 0.75rem;
 	padding-top: 0.5rem;
 	padding-bottom: 0.5rem;
+	text-align: right;
 	--tw-text-opacity: 1;
 	color: rgb(102 102 102 / var(--tw-text-opacity));
 }
@@ -229,6 +234,7 @@ input::after {
 #navigation .menu-item-has-children {
 		position: relative;
 		display: flex;
+		flex-direction: row;
 	}
 
 #navigation .menu-item-has-children::before {
@@ -243,7 +249,7 @@ input::after {
 		}
 
 #navigation .menu-item-has-children .menu-item-has-children {
-			flex-direction: row-reverse;
+			flex-direction: row;
 			justify-content: space-between;
 		}
 
@@ -252,6 +258,7 @@ input::after {
 				background-repeat: no-repeat;
 				width: 20px;
 				height: 20px;
+				transform: rotate(180deg);
 				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23ccc'%3E%3Cpath fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd' /%3E%3C/svg%3E");
 			}
 
@@ -269,7 +276,7 @@ input::after {
 
 #navigation .menu-item-has-children:hover > .sub-menu .sub-menu {
 	top: 0px;
-	--tw-translate-x: 100%;
+	--tw-translate-x: -100%;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -2038,6 +2045,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	width: 2.5rem;
 }
 
+.w-auto {
+	width: auto;
+}
+
 .w-\[110\%\] {
 	width: 110%;
 }
@@ -2140,6 +2151,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.translate-y-8 {
+	--tw-translate-y: 2rem;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .translate-y-full {
 	--tw-translate-y: 100%;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2147,16 +2163,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .-translate-y-full {
 	--tw-translate-y: -100%;
-	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-8 {
-	--tw-translate-y: 2rem;
-	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.translate-y-10 {
-	--tw-translate-y: 2.5rem;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2685,11 +2691,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .object-cover {
 	-o-object-fit: cover;
 	   object-fit: cover;
-}
-
-.object-bottom {
-	-o-object-position: bottom;
-	   object-position: bottom;
 }
 
 .object-center {
