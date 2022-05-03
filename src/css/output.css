@@ -932,7 +932,7 @@ input::after {
 	margin-right: auto;
 	margin-bottom: 0px;
 	display: flex;
-	justify-content: center;
+	overflow: hidden;
 	padding: 0px;
 }
 
@@ -950,6 +950,7 @@ input::after {
 	margin-right: 0.5rem;
 	aspect-ratio: 1 / 1;
 	width: 78px;
+	flex-shrink: 0;
 	cursor: pointer;
 	overflow: hidden;
 	border-radius: 1.5rem;

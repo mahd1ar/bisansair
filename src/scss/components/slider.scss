@@ -3,11 +3,11 @@
 }
 
 .thumbnails {
-	@apply mx-auto mb-0 flex justify-center p-0 lg:mt-4;
+	@apply mx-auto mb-0 flex p-0 lg:mt-4 overflow-hidden;
 }
 
 .thumbnail {
-	@apply my-4 mx-2 aspect-square w-[78px] cursor-pointer overflow-hidden rounded-3xl opacity-30;
+	@apply my-4 mx-2 aspect-square w-[78px] cursor-pointer overflow-hidden rounded-3xl opacity-30 shrink-0;
 }
 
 .thumbnail.is-active {

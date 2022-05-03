@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             thumbnail.classList.add("is-active");
+            thumbnail.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" })
             current = thumbnail;
         }
     });
