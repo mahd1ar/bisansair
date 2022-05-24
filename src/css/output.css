@@ -2167,6 +2167,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.-translate-y-2 {
+	--tw-translate-y: -0.5rem;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .translate-y-full {
 	--tw-translate-y: 100%;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2521,14 +2526,19 @@ Ensure the default browser behavior of the `hidden` attribute.
 	border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
-.border-yellow-400 {
-	--tw-border-opacity: 1;
-	border-color: rgb(250 204 21 / var(--tw-border-opacity));
-}
-
 .border-gray-200 {
 	--tw-border-opacity: 1;
 	border-color: rgb(229 231 235 / var(--tw-border-opacity));
+}
+
+.border-primery {
+	--tw-border-opacity: 1;
+	border-color: rgb(237 224 89 / var(--tw-border-opacity));
+}
+
+.border-yellow-400 {
+	--tw-border-opacity: 1;
+	border-color: rgb(250 204 21 / var(--tw-border-opacity));
 }
 
 .border-secondary-dark {
@@ -2821,6 +2831,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-10 {
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
+}
+
+.py-20 {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
 }
 
 .px-6 {
@@ -3490,6 +3505,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:border-2:hover {
+	border-width: 2px;
+}
+
 .hover\:bg-slate-50:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgb(248 250 252 / var(--tw-bg-opacity));
@@ -4141,6 +4160,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 		max-width: 150px;
 	}
 
+	.lg\:translate-y-4 {
+		--tw-translate-y: 1rem;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	}
+
+	.lg\:grid-cols-4 {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
 	.lg\:grid-cols-3 {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
@@ -4211,11 +4239,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	.lg\:px-7 {
 		padding-left: 1.75rem;
 		padding-right: 1.75rem;
-	}
-
-	.lg\:py-96 {
-		padding-top: 24rem;
-		padding-bottom: 24rem;
 	}
 
 	.lg\:px-6 {
