@@ -6465,7 +6465,7 @@
                         src="https://dummyimage.com/400x600/eee/fff&text=replace+me" alt="" />
 
                     <div
-                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold">
+                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold z-10">
                         تور شیراز
                     </div>
                 </a>
@@ -6479,7 +6479,7 @@
                         src="https://dummyimage.com/400x600/eee/fff&text=replace+me" alt="" />
 
                     <div
-                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold">
+                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold z-10">
                         تور شیراز
                     </div>
                 </a>
@@ -6493,7 +6493,7 @@
                         src="https://dummyimage.com/400x600/eee/fff&text=replace+me" alt="" />
 
                     <div
-                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold">
+                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold z-10">
                         تور شیراز
                     </div>
                 </a>
@@ -6507,7 +6507,7 @@
                         src="https://dummyimage.com/400x600/eee/fff&text=replace+me" alt="" />
 
                     <div
-                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold">
+                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold z-10">
                         تور شیراز
                     </div>
                 </a>
@@ -6541,7 +6541,12 @@
                 <p style="display: none" class="js-faq-body w-full">
                     چاپگرها و متون بلکه روزنامه و مجله در ستون و
                     سطرآنچنان که لازم است و برای شرایط فعلی
-                    تکنولوژی مورد نیاز و کاربردهای متنوع با هدف
+                    <br>
+                    <span style="color: red">
+
+                        تکنولوژی
+                    </span>
+                    مورد نیاز و کاربردهای متنوع با هدف
                     بهبود ابزارهای کاربردی می باشد. کتابهای
                     زیادی در شصت و سه درصد گذشته، حال و آینده
                     شناخت فراوان جامعه و متخصصان را می طلبد تا
@@ -6647,7 +6652,7 @@
             <template x-for="(item , inx) in items" :key="item.id">
                 <div :class="selected === inx ? 'border border-yellow-400' : '' "
                     class="text-rtl mt-4 flex items-start gap-3 overflow-hidden rounded-2xl bg-white px-4 py-3 shadow-xl transition-all">
-                    <button @click="selected === inx ? selected = -1 : selected = inx"
+                    <button @click="selected = selected === inx ?  -1 :  inx"
                         class="h-8 w-8 shrink-0 rounded-full bg-gray-50 shadow-black drop-shadow-md">
                         <img class="h-full w-full p-2 duration-300 ease-out"
                             :class="selected === inx ? 'transform rotate-180' : '' " src="svg/chevron-down.svg"
@@ -6655,10 +6660,11 @@
                     </button>
 
                     <div class="w-full">
-                        <p x-text="item.excerpt" :style="{maxHeight : selected === inx ? '0px' : '56px' }"
+                        <p @click="selected = selected === inx ?  -1 :  inx" x-text="item.excerpt"
+                            :style="{maxHeight : selected === inx ? '0px' : '56px' }"
                             class="w-full overflow-hidden text-ellipsis transition-all duration-200"></p>
 
-                        <p x-text="item.body" :style="{maxHeight : selected === inx ? '400px' : '0px' }"
+                        <p x-html="item.body" :style="{maxHeight : selected === inx ? '400px' : '0px' }"
                             class="pointer-events-none w-full overflow-hidden transition-all duration-200 ease-in"></p>
                     </div>
                 </div>
