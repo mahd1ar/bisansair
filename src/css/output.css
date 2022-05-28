@@ -2427,6 +2427,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	overflow-x: auto;
 }
 
+.overflow-x-hidden {
+	overflow-x: hidden;
+}
+
 .overflow-x-clip {
 	overflow-x: clip;
 }
