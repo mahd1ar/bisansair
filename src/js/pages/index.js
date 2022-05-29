@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
         containerSelectror: '.js-special-tours',
         nextSelector: '.js-next',
         prvSelector: '.js-prv',
-        isBilateral: currentBrackPoint() === 'NONE' ? true : false,
+        isBilateral: currentBrackPoint() === 'NONE',
     });
 
 

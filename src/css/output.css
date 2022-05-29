@@ -370,6 +370,25 @@ input::after {
 	scrollbar-width: none;
 }
 
+.bi-background-gradient {
+	// bg-gradient-to-t from-white via-white to-transparent
+	background: rgb(34, 193, 195);
+	background: linear-gradient(
+		112deg,
+		rgba(34, 193, 195, 1) 0%,
+		rgba(224, 26, 251, 1) 100%
+	);
+}
+
+.bi-background-gradient:hover {
+		background: rgb(63, 94, 251);
+		background: radial-gradient(
+			circle,
+			rgba(63, 94, 251, 1) 0%,
+			rgba(255, 126, 152, 0) 100%
+		);
+	}
+
 .bi-headline_intro {
 	display: flex;
 	align-items: center;
@@ -3963,6 +3982,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.md\:justify-start {
 		justify-content: flex-start;
+	}
+
+	.md\:overflow-visible {
+		overflow: visible;
 	}
 
 	.md\:rounded-full {

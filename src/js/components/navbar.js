@@ -1,7 +1,7 @@
 
 
 
-var navbar = {
+window.navbar = {
     _isOpen: false,
     scrollThreshhold: 112,
     fixedPosition: true,
@@ -71,7 +71,7 @@ var navbar = {
 
         function placeNavbarFixed() {
 
-            document.querySelector("#navigation-placeholder").appendChild(navigation);
+            document.querySelector("#navigation-placeholder").appendChild(document.querySelector("#navigation"));
             document.querySelector("#navigation-placeholder").style.height = 'auto';
             document.querySelector("#navigation-sticky-placeholder").style.transform = "translate(0,-100%)";
         }
@@ -79,7 +79,7 @@ var navbar = {
 
         function placeNavbarSticky() {
             document.querySelector("#navigation-placeholder").style.height = document.getElementById('navigation').getBoundingClientRect().height + 'px';
-            document.querySelector("#navigation-sticky-placeholder").appendChild(navigation);
+            document.querySelector("#navigation-sticky-placeholder").appendChild(document.querySelector("#navigation"));
             document.querySelector("#navigation-sticky-placeholder").style.transform = "translate(0,0%)"
         }
 
