@@ -4,6 +4,7 @@ module.exports = {
     fontFamily: {
       'iransans': ['iransans'],
       'vazir': ['Vazir'],
+      'yekan': ['BYekan'],
     },
     extend: {
       colors: {

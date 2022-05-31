@@ -3,9 +3,20 @@
 	src: url("https://cdn.jsdelivr.net/npm/iransans@1.0.0/woff2/IRANSansWeb.woff2");
 }
 
+@font-face {
+	font-family: "BYekan";
+	src: url("../font/BYekan.eot");
+	src: url("../font/BYekan.eot?#iefix") format("embedded-opentype"),
+		url("../font/BYekan.woff") format("woff"),
+		url("../font/BYekan.ttf") format("truetype"),
+		url("../font/BYekan.svg#BYekan") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
 html,
 body {
-	@apply font-iransans scroll-smooth;
+	@apply scroll-smooth font-iransans;
 	-webkit-tap-highlight-color: transparent;
 }
 
@@ -46,8 +57,8 @@ input {
 		@apply relative
 				z-20
 				mx-auto
-				flex flex-row-reverse
-				flex-grow
+				flex flex-grow
+				flex-row-reverse
 				items-center
 				justify-between
 				rounded-2xl
@@ -60,14 +71,14 @@ input {
 				top-full
 				right-0
 				max-w-xs
-				shadow
 				overflow-ellipsis
-				 opacity-0 transition-opacity
+				opacity-0
+				 shadow transition-opacity
 				delay-150 duration-500 ease-out;
 	}
 
 	.menu-item {
-		@apply w-full text-right cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-[#666666] lg:px-4;
+		@apply w-full cursor-pointer whitespace-nowrap rounded-md px-3 py-2 text-right text-[#666666] lg:px-4;
 
 		&:hover {
 			@apply bg-yellow-50 py-2;

@@ -1013,7 +1013,7 @@ const alpineCloud = {
             const props = {
                 name: i + 1,
                 style: {
-                    left: ~~(Math.random() * 100) + '%',
+                    left: ~~(Math.random() * 80) + '%',
                     top: ~~(Math.random() * 50) + '%',
                     zIndex: (~~(Math.random() * 10)) + 2,
                 },

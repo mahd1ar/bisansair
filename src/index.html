@@ -30,8 +30,8 @@
                         <a href="tel:02188319191"
                             class="flex-center w-8 flex-0 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
                             <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
-                            <span class="mx-2 hidden text-sm lg:block">
-                                ۰۲۱-۳۴۵۶۴۸
+                            <span class="mx-2 hidden text-sm lg:block font-yekan">
+                                021 - 345648
                             </span>
                         </a>
 
@@ -308,7 +308,7 @@
                 </div>
 
                 <div x-data="fligthPicker"
-                    class="container mx-auto transform translate-y-8 w-10/12 rounded-3xl bg-white px-4 py-[16px] shadow-lg sm:w-1/2 md:w-full md:rounded-full">
+                    class="container mx-auto relative top-8 w-10/12 rounded-3xl bg-white px-4 py-[16px] shadow-lg sm:w-1/2 md:w-full md:rounded-full">
                     <div class="flex flex-col justify-between gap-2 md:flex-row-reverse">
                         <div class="relative flex w-full items-stretch md:w-1/5">
                             <div @click="travelPicker.starting.togglePanel()"
@@ -6562,7 +6562,7 @@
     </section>
 
     <!-- NEW SECTION -->
-    <section class="py-20">
+    <section x-data="{items : [1,2,3]}" class="py-20">
         <div class="border-gray-200 rounded-lg container mx-auto border p-10">
             <div>
                 <h1 class="text-center text-2xl text-primery-dark font-bold">
@@ -6572,63 +6572,76 @@
                     مقصد بعدی شما از بین مقصدهای محبوب سایر مسافران
                 </p>
             </div>
-            <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
-                <a href="#" class="relative flex h-60 w-full justify-center rounded-3xl shadow">
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:grid-cols-4">
+
+
+                <a href="#" class="relative flex h-60 w-full justify-center rounded-xl shadow">
                     <!-- overlay -->
                     <div
-                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-3xl  transition-all">
+                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-xl  transition-all">
                     </div>
 
-                    <img class="absolute top-0 h-full w-full rounded-3xl object-cover"
-                        src="https://dummyimage.com/400x600/eee/fff&text=replace+me" alt="" />
+                    <img class="absolute top-0 h-full w-full rounded-xl object-cover"
+                        src="https://bisanseir.com/media/zone/2022/05/28/a6e60ac1-dc33-5196-b692-b2ec9b3b7304.jpg"
+                        alt="" />
 
-                    <div
-                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold z-10">
+                    <span
+                        class="absolute bottom-4 right-4  rounded-md bg-primery  flex-center  px-4 py-1 text-yellow-900 font-bold z-10">
                         تور شیراز
-                    </div>
+                    </span>
                 </a>
-                <a href="#" class="relative flex h-60 w-full justify-center rounded-3xl shadow">
+
+
+                <a href="#" class="relative flex h-60 w-full justify-center rounded-xl shadow">
                     <!-- overlay -->
                     <div
-                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-3xl  transition-all">
+                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-xl  transition-all">
                     </div>
 
-                    <img class="absolute top-0 h-full w-full rounded-3xl object-cover"
-                        src="https://dummyimage.com/400x600/eee/fff&text=replace+me" alt="" />
+                    <img class="absolute top-0 h-full w-full rounded-xl object-cover"
+                        src="https://bisanseir.com/media/zone/2022/05/28/a6e60ac1-dc33-5196-b692-b2ec9b3b7304.jpg"
+                        alt="" />
 
-                    <div
-                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold z-10">
+                    <span
+                        class="absolute bottom-4 right-4  rounded-md bg-primery  flex-center  px-4 py-1 text-yellow-900 font-bold z-10">
                         تور شیراز
-                    </div>
+                    </span>
                 </a>
-                <a href="#" class="relative flex h-60 w-full justify-center rounded-3xl shadow">
+
+
+                <a href="#" class="relative flex h-60 w-full justify-center rounded-xl shadow">
                     <!-- overlay -->
                     <div
-                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-3xl  transition-all">
+                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-xl  transition-all">
                     </div>
 
-                    <img class="absolute top-0 h-full w-full rounded-3xl object-cover"
-                        src="https://dummyimage.com/400x600/eee/fff&text=replace+me" alt="" />
+                    <img class="absolute top-0 h-full w-full rounded-xl object-cover"
+                        src="https://bisanseir.com/media/zone/2022/05/28/a6e60ac1-dc33-5196-b692-b2ec9b3b7304.jpg"
+                        alt="" />
 
-                    <div
-                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold z-10">
+                    <span
+                        class="absolute bottom-4 right-4  rounded-md bg-primery  flex-center  px-4 py-1 text-yellow-900 font-bold z-10">
                         تور شیراز
-                    </div>
+                    </span>
                 </a>
-                <a href="#" class="relative flex h-60 w-full justify-center rounded-3xl shadow">
+
+
+                <a href="#" class="relative flex h-60 w-full justify-center rounded-xl shadow">
                     <!-- overlay -->
                     <div
-                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-3xl  transition-all">
+                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-xl  transition-all">
                     </div>
 
-                    <img class="absolute top-0 h-full w-full rounded-3xl object-cover"
-                        src="https://dummyimage.com/400x600/eee/fff&text=replace+me" alt="" />
+                    <img class="absolute top-0 h-full w-full rounded-xl object-cover"
+                        src="https://bisanseir.com/media/zone/2022/05/28/a6e60ac1-dc33-5196-b692-b2ec9b3b7304.jpg"
+                        alt="" />
 
-                    <div
-                        class="absolute bottom-0  lg:translate-y-4 -translate-y-2 transform rounded-md bg-primery  flex-center w-10/12 py-1 text-yellow-900 font-bold z-10">
+                    <span
+                        class="absolute bottom-4 right-4  rounded-md bg-primery  flex-center  px-4 py-1 text-yellow-900 font-bold z-10">
                         تور شیراز
-                    </div>
+                    </span>
                 </a>
+
 
             </div>
         </div>
