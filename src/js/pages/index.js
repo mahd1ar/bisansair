@@ -13,8 +13,7 @@ function getMounthLength(m) {
 
 //main 
 
-
-window.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
 
     new WOW({
         animateClass: 'animate__animated'
