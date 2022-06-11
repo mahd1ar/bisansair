@@ -52,6 +52,32 @@ input::after {
 		padding: 0.25rem;
 	}
 
+table {
+	border-collapse: separate !important;
+	border-spacing: 0 8px;
+}
+
+table tbody tr:nth-child(even) {
+		background: #e6e6e6;
+	}
+
+table tbody tr td {
+		border-top: 2px #cccccc solid;
+		border-bottom: 2px #cccccc solid;
+	}
+
+table tbody tr td:last-child {
+		border-left: 2px #cccccc solid;
+		border-top-left-radius: 17px;
+		border-bottom-left-radius: 17px;
+	}
+
+table tbody tr td:first-child {
+		border-right: 2px #cccccc solid;
+		border-top-right-radius: 17px;
+		border-bottom-right-radius: 17px;
+	}
+
 #mobile-menu {
 	position: fixed;
 	top: 0px;
@@ -1638,6 +1664,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	grid-column: span 1 / span 1;
 }
 
+.col-span-2 {
+	grid-column: span 2 / span 2;
+}
+
 .float-left {
 	float: left;
 }
@@ -1834,8 +1864,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin-top: 11rem;
 }
 
-.mt-36 {
-	margin-top: 9rem;
+.mt-12 {
+	margin-top: 3rem;
 }
 
 .mb-16 {
@@ -1848,10 +1878,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-4 {
 	margin-left: 1rem;
-}
-
-.mt-12 {
-	margin-top: 3rem;
 }
 
 .mb-1\.5 {
@@ -1984,6 +2010,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-44 {
 	height: 11rem;
+}
+
+.h-24 {
+	height: 6rem;
 }
 
 .h-60 {
@@ -2201,12 +2231,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.scale-110 {
-	--tw-scale-x: 1.1;
-	--tw-scale-y: 1.1;
-	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .scale-150 {
 	--tw-scale-x: 1.5;
 	--tw-scale-y: 1.5;
@@ -2409,11 +2433,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	--tw-divide-y-reverse: 0;
 	border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
 	border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
-}
-
-.divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
-	--tw-divide-opacity: 1;
-	border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
 
 .self-start {
@@ -2636,10 +2655,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-opacity-60 {
 	--tw-bg-opacity: 0.6;
-}
-
-.bg-opacity-75 {
-	--tw-bg-opacity: 0.75;
 }
 
 .bg-gradient-to-t {

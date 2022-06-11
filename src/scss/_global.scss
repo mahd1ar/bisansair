@@ -28,6 +28,33 @@ input {
 	}
 }
 
+table {
+	border-collapse: separate !important;
+	border-spacing: 0 8px;
+}
+
+table tbody tr {
+	&:nth-child(even) {
+		background: #e6e6e6;
+	}
+
+	td {
+		border-top: 2px #cccccc solid;
+		border-bottom: 2px #cccccc solid;
+	}
+	td:last-child {
+		border-left: 2px #cccccc solid;
+		border-top-left-radius: 17px;
+		border-bottom-left-radius: 17px;
+	}
+
+	td:first-child {
+		border-right: 2px #cccccc solid;
+		border-top-right-radius: 17px;
+		border-bottom-right-radius: 17px;
+	}
+}
+
 #mobile-menu {
 	@apply fixed top-0 right-0 z-30 h-full w-full  bg-gradient-to-b from-black to-transparent;
 
