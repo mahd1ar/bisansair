@@ -73,7 +73,6 @@ class Slider {
         const selectedCard = this.currentSliderIndex;
 
         cards.forEach((card, id) => {
-
             const margin = selectedCard - id;
             const absMargin = Math.abs(selectedCard - id);
             const distanse = ['sm', 'NONE'].includes(currentBrackPoint()) ? 40 : ['md'].includes(currentBrackPoint()) ? 80 : 120;
@@ -81,15 +80,22 @@ class Slider {
             card.style.transform = `translateX(${(this.isBilateral ? 1 : -1) * margin * distanse}px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
             card.style.transitionDuration = '400ms'
             if (absMargin === 0) {
-                card.style.zIndex = 10;
                 card.style.pointerEvents = "auto"
             }
             else {
                 card.style.pointerEvents = "none"
-                card.style.zIndex = 9;
             }
+            card.style.zIndex = 10 - Math.abs(margin);
+            const imgopacity = this.isBilateral ? 1 - absMargin * opacity : id > selectedCard ? 0 : 1 - absMargin * opacity;
 
-            card.style.opacity = this.isBilateral ? 1 - absMargin * opacity : id > selectedCard ? 0 : 1 - absMargin * opacity;
+            console.log(margin, imgopacity)
+            card.querySelector('img').style.opacity = imgopacity;
+            if (imgopacity <= 0)
+                card.style.display = "none";
+            else
+                card.style.display = "block";
+
         });
+        console.log("====")
     }
 }
