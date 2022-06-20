@@ -1001,7 +1001,9 @@ table tbody tr td:first-child {
 
 .thumbnail img {
 	width: 100%;
-	height: auto;
+	height: 100%;
+	-o-object-fit: cover;
+	   object-fit: cover;
 }
 
 .splide__arrow {
@@ -1836,6 +1838,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin-top: 0.25rem;
 }
 
+.mr-2 {
+	margin-right: 0.5rem;
+}
+
 .ml-2 {
 	margin-left: 0.5rem;
 }
@@ -1894,10 +1900,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-14 {
 	margin-top: 3.5rem;
-}
-
-.mr-2 {
-	margin-right: 0.5rem;
 }
 
 .mt-20 {
@@ -3243,6 +3245,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transition-duration: 150ms;
 }
 
+.transition-transform {
+	transition-property: transform;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}
+
 .duration-200 {
 	transition-duration: 200ms;
 }
@@ -3568,6 +3576,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:bg-yellow-200:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgb(254 240 138 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-slate-200:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-slate-100:hover {

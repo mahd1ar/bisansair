@@ -462,7 +462,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
-            if (currentBrackPoint() === "lg") {
+            if (["lg", 'xl'].includes(currentBrackPoint())) {
                 stickybits("aside", { stickyBitStickyOffset: 80 });
 
             }

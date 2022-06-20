@@ -12,10 +12,6 @@
 
 <body>
 
-    <div class="fixed w-full z-20 transition-all " id="navigation-sticky-placeholder">
-
-        <!-- DO NOT DELETE ME -->
-    </div>
 
     <div class="fixed w-full z-50 transition-all nav-container" id="navigation-sticky-placeholder">
         <!-- DO NOT DELETE ME -->
@@ -275,33 +271,30 @@
 
     <main class="container relative mx-auto flex flex-col items-start gap-2 px-2 lg:flex-row" dir="rtl">
         <div class="w-full lg:w-9/12">
-            <div x-data="{tabno : 0}">
+            <div>
                 <div
                     class="bi-scrollbar overflow-auto border-t-2 py-6 lg:rounded-3xl lg:border-t-0 lg:bg-white lg:px-6 lg:shadow-lg">
-                    <ul
+                    <div
                         class="js-tabs-container bi-scrollbar flex items-start gap-2 whitespace-nowrap font-semibold text-secondary-dark">
-                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  "
-                            :class="tabno === 0 ? 'bg-slate-200' : 'hover:bg-slate-50' " @click="tabno = 0 ">
+                        <a href="#about" class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  hover:bg-slate-200 ">
                             توضیحات
-                        </li>
-                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 "
-                            :class="tabno === 1 ? 'bg-slate-200' : 'hover:bg-slate-50' " @click="tabno = 1 ">
+                        </a>
+                        <a href="#docs" class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  hover:bg-slate-200 ">
                             برنامه سفر
 
-                        </li>
-                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2"
-                            :class="tabno === 2 ? 'bg-slate-200' : 'hover:bg-slate-50' " @click="tabno = 2 ">
+                        </a>
+                        <a href="#required-documents"
+                            class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  hover:bg-slate-200 ">
                             مدارک مورد نیاز
-                        </li>
-                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2"
-                            :class="tabno === 3 ? 'bg-slate-200' : 'hover:bg-slate-50' " @click="tabno = 3 ">
-                            اطلاعات سفر
-                        </li>
-                        <li class="js-tab-item cursor-pointer rounded-3xl px-6 py-2"
-                            :class="tabno === 4 ? 'bg-slate-200' : 'hover:bg-slate-50' " @click="tabno = 4 ">
+                        </a>
+                        <a href="#hotels" class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  hover:bg-slate-200 ">
+                            هتل ها
+                        </a>
+                        <a href="#gallery"
+                            class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  hover:bg-slate-200 ">
                             گالری
-                        </li>
-                    </ul>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Title -->
@@ -323,7 +316,7 @@
                 </div>
 
                 <!-- About tour -->
-                <div class="mt-8" x-show="tabno === 0" x-transition:enter.duration.500ms>
+                <div class="mt-8" id="about">
                     <h1 class="text-xl font-bold text-primery-dark">
                         در مورد سفر
                     </h1>
@@ -339,7 +332,8 @@
                     </div>
                 </div>
 
-                <div class="mt-8" x-show="tabno === 1" x-transition:enter.duration.500ms>
+                <!-- docs -->
+                <div class="mt-8" id="docs">
                     <h1 class="text-xl font-bold text-primery-dark">
                         مدارک مورد نیاز
                     </h1>
@@ -359,7 +353,7 @@
                 </div>
 
                 <!-- Services -->
-                <div class="mt-8" x-show="tabno === 2" x-transition:enter.duration.500ms>
+                <div class="mt-8" id="services">
                     <h1 class="text-xl font-bold text-primery-dark">
                         مدارک مورد نیاز
                     </h1>
@@ -406,7 +400,7 @@
                 </div>
 
                 <!-- Required Documents -->
-                <div class="mt-8" x-show="tabno === 3" x-transition:enter.duration.500ms>
+                <div class="mt-8" id="required-documents">
                     <h1 class="text-xl font-bold text-primery-dark">
                         مدارک مورد نیاز
                     </h1>
@@ -422,7 +416,7 @@
                 </div>
 
                 <!-- Hotels table -->
-                <div class="mt-8" x-show="tabno === 3" x-transition:enter.duration.500ms>
+                <div class="mt-8" id="hotels">
                     <h1 class="text-xl font-bold text-primery-dark">
                         هتل ها
                     </h1>
@@ -600,7 +594,7 @@
                 </div>
 
                 <!-- Gallery -->
-                <div class="mt-8" x-show="tabno === 4" x-transition:enter.duration.500ms>
+                <div class="mt-8" id="gallery">
                     <h1 class="text-xl font-bold text-primery-dark">
                         گالری تصاویر
                     </h1>
@@ -666,7 +660,7 @@
     <script src="lib/js/stickybits.min.js"></script>
     <script src="js/commons/utils.js"> </script>
     <script>
-        window.addEventListener("load", function () {
+        document.addEventListener('DOMContentLoaded', function () {
 
             document
                 .querySelectorAll(".js-tab-item")
@@ -677,7 +671,7 @@
                 })
 
 
-            if (currentBrackPoint() === "lg") {
+            if (["lg", 'xl'].includes(currentBrackPoint())) {
                 stickybits(".sticky", { stickyBitStickyOffset: 80 });
 
             }

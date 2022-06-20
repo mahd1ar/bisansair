@@ -3,11 +3,11 @@
 }
 
 .thumbnails {
-	@apply mx-auto mb-0 flex p-0 lg:mt-4 overflow-hidden;
+	@apply mx-auto mb-0 flex overflow-hidden p-0 lg:mt-4;
 }
 
 .thumbnail {
-	@apply my-4 mx-2 aspect-square w-[78px] cursor-pointer overflow-hidden rounded-3xl opacity-30 shrink-0;
+	@apply my-4 mx-2 aspect-square w-[78px] shrink-0 cursor-pointer overflow-hidden rounded-3xl opacity-30;
 }
 
 .thumbnail.is-active {
@@ -16,7 +16,8 @@
 
 .thumbnail img {
 	width: 100%;
-	height: auto;
+	height: 100%;
+	object-fit: cover;
 }
 
 .splide__arrow {
