@@ -81,14 +81,13 @@ class Slider {
             card.style.transitionDuration = '400ms'
             if (absMargin === 0) {
                 card.style.pointerEvents = "auto"
-            }
-            else {
+            } else {
                 card.style.pointerEvents = "none"
             }
             card.style.zIndex = 10 - Math.abs(margin);
             const imgopacity = this.isBilateral ? 1 - absMargin * opacity : id > selectedCard ? 0 : 1 - absMargin * opacity;
 
-            console.log(margin, imgopacity)
+
             card.querySelector('img').style.opacity = imgopacity;
             if (imgopacity <= 0)
                 card.style.display = "none";
@@ -96,6 +95,6 @@ class Slider {
                 card.style.display = "block";
 
         });
-        console.log("====")
+
     }
 }

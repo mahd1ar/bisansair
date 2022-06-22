@@ -1590,6 +1590,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 	right: 1.5rem;
 }
 
+.top-20 {
+	top: 5rem;
+}
+
+.left-10 {
+	left: 2.5rem;
+}
+
+.right-1\/2 {
+	right: 50%;
+}
+
 .top-3 {
 	top: 0.75rem;
 }
@@ -1622,10 +1634,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	top: 2.5rem;
 }
 
-.left-10 {
-	left: 2.5rem;
-}
-
 .bottom-9 {
 	bottom: 2.25rem;
 }
@@ -1636,10 +1644,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bottom-10 {
 	bottom: 2.5rem;
-}
-
-.top-20 {
-	top: 5rem;
 }
 
 .z-50 {
@@ -2208,6 +2212,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.translate-x-1\/2 {
+	--tw-translate-x: 50%;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .-translate-y-8 {
 	--tw-translate-y: -2rem;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2630,6 +2639,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-color: rgb(227 235 237 / var(--tw-bg-opacity));
 }
 
+.bg-secondary-dark {
+	--tw-bg-opacity: 1;
+	background-color: rgb(105 122 128 / var(--tw-bg-opacity));
+}
+
 .bg-gray-100 {
 	--tw-bg-opacity: 1;
 	background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -2650,17 +2664,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-color: rgb(245 245 245 / var(--tw-bg-opacity));
 }
 
-.bg-secondary-dark {
-	--tw-bg-opacity: 1;
-	background-color: rgb(105 122 128 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-60 {
 	--tw-bg-opacity: 0.6;
 }
 
 .bg-gradient-to-t {
 	background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-l {
+	background-image: linear-gradient(to left, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-b {
@@ -2712,6 +2725,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .via-white {
 	--tw-gradient-stops: var(--tw-gradient-from), #fff, var(--tw-gradient-to, rgb(255 255 255 / 0));
+}
+
+.via-transparent {
+	--tw-gradient-stops: var(--tw-gradient-from), transparent, var(--tw-gradient-to, rgb(0 0 0 / 0));
 }
 
 .via-yellow-50 {
@@ -3152,6 +3169,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	opacity: 0.75;
 }
 
+.opacity-50 {
+	opacity: 0.5;
+}
+
 .opacity-80 {
 	opacity: 0.8;
 }
@@ -3588,6 +3609,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
 
+.hover\:via-white:hover {
+	--tw-gradient-stops: var(--tw-gradient-from), #fff, var(--tw-gradient-to, rgb(255 255 255 / 0));
+}
+
 .hover\:shadow-xl:hover {
 	--tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 	--tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -3637,16 +3662,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 		right: 50%;
 	}
 
+	.sm\:right-0 {
+		right: 0px;
+	}
+
 	.sm\:-top-20 {
 		top: -5rem;
 	}
 
 	.sm\:-right-12 {
 		right: -3rem;
-	}
-
-	.sm\:right-0 {
-		right: 0px;
 	}
 
 	.sm\:col-span-2 {
@@ -3775,6 +3800,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.sm\:translate-x-1\/2 {
 		--tw-translate-x: 50%;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	}
+
+	.sm\:-translate-x-1\/2 {
+		--tw-translate-x: -50%;
 		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	}
 
@@ -4266,14 +4296,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 		background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 	}
 
-	.lg\:bg-white {
-		--tw-bg-opacity: 1;
-		background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-	}
-
 	.lg\:bg-blue-500 {
 		--tw-bg-opacity: 1;
 		background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+	}
+
+	.lg\:bg-white {
+		--tw-bg-opacity: 1;
+		background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 	}
 
 	.lg\:p-6 {
