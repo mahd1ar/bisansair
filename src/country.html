@@ -21,6 +21,7 @@
         <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
 					background: url(svg/travel-textture/one.svg)
 						center center/cover;
+					background-color: #f0f0f0;
 				"></div>
 
         <div id="navigation-placeholder" class="nav-container">
@@ -318,7 +319,7 @@
             <!-- about  -->
             <div x-data="expandable" class="relative z-10 flex flex-col">
                 <div class="flex items-start gap-6 bg-white bg-opacity-60">
-                    <div class="w-40">
+                    <div x-show="!expanded" class="w-40">
                         <img class="aspect-square w-full rounded-3xl object-cover" src="img/countries/Rectangle 67.png"
                             alt="" />
                     </div>

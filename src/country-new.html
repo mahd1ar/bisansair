@@ -27,6 +27,7 @@
         <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
 					background: url(svg/travel-textture/one.svg)
 						center center/cover;
+					background-color: #f0f0f0;
 				"></div>
 
         <div id="navigation-placeholder" class="nav-container">
@@ -324,7 +325,7 @@
             <!-- about  -->
             <div x-data="expandable" class="relative z-10 flex flex-col">
                 <div class="flex items-start gap-6 bg-white bg-opacity-60">
-                    <div class="w-40">
+                    <div x-show="!expanded" class="w-40">
                         <img class="aspect-square w-full rounded-3xl object-cover" src="img/countries/Rectangle 67.png"
                             alt="" />
                     </div>
@@ -531,8 +532,8 @@
                                 </li>
                             </ul>
                         </div>
-
-                        <div class="inline-flex flex-col gap-2 rounded-3xl bg-white p-4 relative">
+                        <!-- ISSUE 19 -->
+                        <div class="inline-flex flex-col w-full sm:w-60 gap-2 rounded-3xl bg-white p-4 relative">
 
                             <div class="flex justify-between">
                                 <div>
@@ -556,12 +557,12 @@
                                 8 روز و 7 شب
                             </div>
                             <div
-                                class="text-primary-dark flex items-center justify-center gap-2 rounded-3xl bg-secondary-dark py-2 px-4 text-white">
+                                class="text-primary-dark flex items-center justify-between gap-1 rounded-3xl bg-secondary-dark py-2 px-4 text-white">
                                 <span class="text-xs">
                                     تومان
                                 </span>
-                                <span class="font-yekan text-2xl font-bold">
-                                    5,200,000
+                                <span class="font-yekan text-xl font-bold">
+                                    1,853,200,000
                                 </span>
                                 <span>
                                     <svg width="22" height="18" viewBox="0 0 22 18" fill="none"
@@ -619,8 +620,8 @@
                                 </li>
                             </ul>
                         </div>
-
-                        <div class="inline-flex flex-col gap-2 rounded-3xl bg-white p-4 relative">
+                        <!-- ISSUE 19 -->
+                        <div class="inline-flex flex-col w-full sm:w-60 gap-2 rounded-3xl bg-white p-4 relative">
                             <span
                                 class="bg-primery text-primery-dark text-xs rounded-full px-2 py-1 absolute rigth-10 top-0 transform -translate-y-1/2">تور
                                 ویژه</span>
@@ -646,11 +647,11 @@
                                 8 روز و 7 شب
                             </div>
                             <div
-                                class="text-primary-dark flex items-center justify-center gap-2 rounded-3xl bg-primery py-2 px-4 text-primery-dark">
+                                class="text-primary-dark flex items-center justify-between gap-1 rounded-3xl bg-primery py-2 px-4 text-primery-dark">
                                 <span class="text-xs">
                                     تومان
                                 </span>
-                                <span class="font-yekan text-2xl font-bold">
+                                <span class="font-yekan text-xl font-bold">
                                     5,200,000
                                 </span>
                                 <span>

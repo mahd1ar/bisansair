@@ -21,9 +21,11 @@
     </div>
     <header class="mb-10 pt-10">
         <!-- TRAVEL TEXTURE -->
+        <!-- ISSUE 20 : the background-color property is added to the header tag on all pages except the index page  -->
         <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
 					background: url(svg/travel-textture/one.svg)
 						center center/cover;
+					background-color: #f0f0f0;
 				"></div>
 
         <div id="navigation-placeholder" class="nav-container">
@@ -274,7 +276,8 @@
     <main class="container relative mx-auto " dir="rtl">
 
         <!-- Title -->
-        <div class="mt-8">
+        <!-- ISSUE 21 -->
+        <div class="mt-8 mb-4">
             <div class="flex">
                 <div class="ml-4 shrink-0">
                     <img class="h-14 w-14 rounded-circle object-cover" src="img/flag-turkish.png" alt="" />
@@ -296,7 +299,7 @@
                 <div>
 
                     <!-- slider -->
-                    <div class="mt-4" dir="ltr">
+                    <div dir="ltr">
                         <div id="main-slider" class="splide">
                             <div class="splide__arrows">
                                 <button class="splide__arrow splide__arrow--prev">

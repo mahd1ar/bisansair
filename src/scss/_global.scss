@@ -80,6 +80,8 @@ table tbody tr {
 }
 
 #navigation {
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+	@apply rounded-2xl;
 	#menu-top_menu {
 		@apply relative
 				z-20
@@ -89,7 +91,7 @@ table tbody tr {
 				items-center
 				justify-between
 				rounded-2xl
-				bg-white px-5;
+				px-5;
 	}
 
 	.sub-menu {

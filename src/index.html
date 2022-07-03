@@ -24,13 +24,14 @@
     <header class="relative top-0 z-20 bg-gradient-to-b from-[#92F2FF] to-white pt-5">
         <div id="navigation-placeholder" class="nav-container">
             <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
-                <div
-                    class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                <!-- ISSUE 17 : this component is also global -->
+                <div id="navigation__bar"
+                    class="relative z-20 mx-auto flex flex-grow items-start justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                     <div class="flex w-auto lg:w-full justify-between">
                         <a href="tel:02188319191"
                             class="flex-center w-8 flex-0 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
                             <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
-                            <span class="mx-2 hidden text-sm lg:block font-yekan">
+                            <span class="mx-2 hidden text-sm lg:block font-yekan whitespace-nowrap">
                                 021 - 345648
                             </span>
                         </a>
@@ -208,7 +209,8 @@
                         </div>
                     </div>
 
-                    <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+                    <img src="./img/logo.png" id="navigation__bisanseir-logo" class="w-9 object-contain"
+                        alt="bisanseir-logo" />
 
                     <div @click="taggleMobileMenu" class="cursor-pointer lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -270,10 +272,11 @@
             </nav>
         </div>
 
+        <!-- yellow overlay -->
+        <div
+            class="absolute bottom-0 -z-10 hidden h-full w-full bg-gradient-radial from-yellow-200 via-yellow-50 to-transparent md:block">
+        </div>
         <div class="js-hero relative flex h-screen items-center justify-center overflow-x-clip">
-            <div id="yellow_gradient"
-                class="absolute bottom-0 -z-10 hidden h-full w-full bg-gradient-radial from-yellow-200 via-yellow-50 to-transparent md:block">
-            </div>
 
             <!-- cloud -->
             <div id="cloud-scene" x-data="alpineCloud"
@@ -7092,12 +7095,14 @@
                     </button>
 
                     <div class="w-full">
+                        <!-- issue 1 -->
                         <p @click="selected = selected === inx ?  -1 :  inx" x-text="item.excerpt"
-                            :style="{maxHeight : selected === inx ? '0px' : '56px' }"
                             class="w-full overflow-hidden text-ellipsis transition-all duration-200"></p>
 
                         <p x-html="item.body" :style="{maxHeight : selected === inx ? '400px' : '0px' }"
-                            class="pointer-events-none w-full overflow-hidden transition-all duration-200 ease-in"></p>
+                            class="pointer-events-none w-full pt-4 overflow-hidden transition-all duration-200 ease-in">
+                        </p>
+                        <!-- end issue 1 -->
                     </div>
                 </div>
             </template>
@@ -7145,9 +7150,10 @@
             </div>
         </div>
     </section>
-
-    <div class="w-full overflow-x-clip">
-        <div class="container relative mx-auto">
+    <!-- ISSUE 18 -->
+    <div class="w-full overflow-x-clip relative">
+        <div class="h-40 w-full bg-gradient-to-b from-gray-200 via-transparent to-transparent absolute z-10"></div>
+        <div class="container relative mx-auto ">
             <img class="absolute -top-28 left-0 z-10 scale-150 transform overflow-x-clip object-cover lg:-top-52"
                 src="img/footer-clouds-2.png" alt="" srcset="" />
         </div>
@@ -7227,8 +7233,8 @@
     <!-- scripts -->
     <script src="js/commons/utils.js"></script>
     <script src="js/components/slider.js"></script>
-
-    <script src="js/components/navbar.js"></script>
+    <!-- ISSUE 17 -->
+    <script src="js/components/navbar-homepage.js"></script>
     <script src="js/pages/index.js"></script>
 </body>
 
