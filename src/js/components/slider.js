@@ -76,7 +76,6 @@ class Slider {
             const absMargin = Math.abs(selectedCard - id);
             const distanse = ['sm', 'NONE'].includes(currentBrackPoint()) ? 40 : ['md'].includes(currentBrackPoint()) ? 80 : 120;
             const opacity = ['sm', 'NONE'].includes(currentBrackPoint()) ? 0.40 : 0.25;
-            card.style.transform = `translateX(${(this.isBilateral ? 1 : -1) * margin * distanse}px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
             card.style.transitionDuration = '400ms'
             if (absMargin === 0) {
                 card.style.pointerEvents = "auto"
@@ -86,12 +85,23 @@ class Slider {
             card.style.zIndex = 10 - Math.abs(margin);
             const imgopacity = this.isBilateral ? 1 - absMargin * opacity : id > selectedCard ? 0 : 1 - absMargin * opacity;
 
-
             card.querySelector('img').style.opacity = imgopacity;
-            if (imgopacity <= 0)
-                card.style.display = "none";
-            else
+
+            if (imgopacity <= 0) {
+
+                card.style.transform = `translate3d(${(this.isBilateral ? 1 : -1) * margin * distanse}px ,0px ,0px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
+                card.style.opacity = 0;
+                setTimeout(() => {
+                    card.style.display = "none";
+                }, 170);
+            } else {
                 card.style.display = "block";
+                setTimeout(() => {
+
+                    card.style.transform = `translate3d(${(this.isBilateral ? 1 : -1) * margin * distanse}px ,0px ,0px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
+                    card.style.opacity = 1;
+                }, 10);
+            }
 
         });
 

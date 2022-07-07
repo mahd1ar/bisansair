@@ -201,10 +201,11 @@ table tbody tr td:first-child {
 	white-space: nowrap;
 }
 
-#navigation {
-	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
-	border-radius: 1rem;
-}
+/**
+ box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+ @apply rounded-2xl;
+
+*/
 
 #navigation #menu-top_menu {
 	position: relative;
@@ -1019,7 +1020,9 @@ table tbody tr td:first-child {
 	align-items: center !important;
 }
 
-/* ! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com
+
+*/
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -1673,10 +1676,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	grid-column: span 1 / span 1;
 }
 
-.col-span-2 {
-	grid-column: span 2 / span 2;
-}
-
 .float-left {
 	float: left;
 }
@@ -2107,10 +2106,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-10 {
 	width: 2.5rem;
-}
-
-.w-60 {
-	width: 15rem;
 }
 
 .w-auto {
@@ -3277,12 +3272,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transition-duration: 150ms;
 }
 
-.transition-transform {
-	transition-property: transform;
-	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-	transition-duration: 150ms;
-}
-
 .duration-200 {
 	transition-duration: 200ms;
 }
@@ -3685,10 +3674,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 		right: -3rem;
 	}
 
-	.sm\:col-span-2 {
-		grid-column: span 2 / span 2;
-	}
-
 	.sm\:m-1 {
 		margin: 0.25rem;
 	}
@@ -3773,6 +3758,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 		width: 58.333333%;
 	}
 
+	.sm\:w-60 {
+		width: 15rem;
+	}
+
 	.sm\:w-2\/5 {
 		width: 40%;
 	}
@@ -3807,10 +3796,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.sm\:w-8\/12 {
 		width: 66.666667%;
-	}
-
-	.sm\:w-60 {
-		width: 15rem;
 	}
 
 	.sm\:translate-x-1\/2 {
@@ -3938,6 +3923,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @media (min-width: 768px) {
 
+	.md\:col-span-2 {
+		grid-column: span 2 / span 2;
+	}
+
 	.md\:mx-3 {
 		margin-left: 0.75rem;
 		margin-right: 0.75rem;
@@ -4025,10 +4014,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.md\:w-5\/12 {
 		width: 41.666667%;
-	}
-
-	.md\:w-60 {
-		width: 15rem;
 	}
 
 	.md\:transform {

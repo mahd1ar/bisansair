@@ -1014,7 +1014,7 @@ const alpineCloud = {
                 style: {
                     left: ~~(Math.random() * 80) + '%',
                     top: ~~(Math.random() * 50) + '%',
-                    zIndex: (~~(Math.random() * 10)) + 5,
+                    zIndex: (~~(Math.random() * 10)) + 3,
                 },
                 data: { depth: Math.random().toFixed(2) },
 

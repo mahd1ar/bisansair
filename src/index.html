@@ -13,7 +13,6 @@
     <!-- anime.css -->
     <link rel="stylesheet" href="lib/css/animate.min.css" />
     <script defer src="lib/js/alpine.js"></script>
-
 </head>
 
 <body class="overflow-x-hidden">
@@ -24,23 +23,21 @@
     <header class="relative top-0 z-20 bg-gradient-to-b from-[#92F2FF] to-white pt-5">
         <div id="navigation-placeholder" class="nav-container">
             <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
-                <!-- ISSUE 17 : this component is also global -->
                 <div id="navigation__bar"
                     class="relative z-20 mx-auto flex flex-grow items-start justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
-                    <div class="flex w-auto lg:w-full justify-between">
+                    <div class="flex w-auto justify-between lg:w-full">
                         <a href="tel:02188319191"
-                            class="flex-center w-8 flex-0 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
+                            class="flex-center flex-0 w-8 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
                             <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
-                            <span class="mx-2 hidden text-sm lg:block font-yekan whitespace-nowrap">
+                            <span class="mx-2 hidden whitespace-nowrap font-yekan text-sm lg:block">
                                 021 - 345648
                             </span>
                         </a>
 
                         <div class="menu-top_menu-container hidden lg:block" ref="menuContainer">
                             <ul id="menu-top_menu" class="menu">
-                                <li class="menu-item ">
+                                <li class="menu-item">
                                     <a href="#">خانه</a>
-
                                 </li>
                                 <li class="menu-item menu-item-has-children">
                                     <a href="#">تور</a>
@@ -277,7 +274,6 @@
             class="absolute bottom-0 -z-10 hidden h-full w-full bg-gradient-radial from-yellow-200 via-yellow-50 to-transparent md:block">
         </div>
         <div class="js-hero relative flex h-screen items-center justify-center overflow-x-clip">
-
             <!-- cloud -->
             <div id="cloud-scene" x-data="alpineCloud"
                 class="absolute inset-0 hidden items-center justify-center overflow-x-clip md:flex">
@@ -288,7 +284,7 @@
                     </div>
                 </template>
                 <div class="z-10 h-full w-full" data-depth="0.04">
-                    <div class="flex-center h-full w-full transform -translate-y-8 ">
+                    <div class="flex-center h-full w-full -translate-y-8 transform">
                         <img id="airplane" class="relative hidden md:block" src="./img/cloud/airplane.png" alt="" />
                     </div>
                 </div>
@@ -311,18 +307,16 @@
                 </div>
 
                 <div x-data="fligthPicker"
-                    class="container mx-auto relative top-8 w-10/12 rounded-3xl bg-white px-4 py-[16px] shadow-lg sm:w-1/2 md:w-full md:rounded-full">
+                    class="container relative top-8 mx-auto w-10/12 rounded-3xl bg-white px-4 py-[16px] shadow-lg sm:w-1/2 md:w-full md:rounded-full">
                     <div class="flex flex-col justify-between gap-2 md:flex-row-reverse">
                         <div class="relative flex w-full items-stretch md:w-1/5">
                             <div @click="travelPicker.starting.togglePanel()"
-                                class="text-rtl  inline-flex  w-full cursor-pointer items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap border-b placeholder:text-gray-700 focus-visible:outline-none md:justify-start md:border-b-0 md:text-right">
+                                class="text-rtl inline-flex w-full cursor-pointer items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap border-b placeholder:text-gray-700 focus-visible:outline-none md:justify-start md:border-b-0 md:text-right">
                                 <div class="flex-shrink-0">
-
                                     مبدا
                                 </div>
-                                <div class="text-xs mr-2 text-gray-500" x-text="travelPicker.starting.model"
+                                <div class="mr-2 text-xs text-gray-500" x-text="travelPicker.starting.model"
                                     x-show="travelPicker.starting.model"></div>
-
                             </div>
                             <span class="bi-icon ml-2 w-16">
                                 <img class="object-contain" src="./svg/departed_plane_icon.svg" alt="" />
@@ -471,7 +465,7 @@
                                 <div class="flex-shrink-0">
                                     مقصد
                                 </div>
-                                <div class="text-xs mr-2 text-gray-500" x-text="travelPicker.destination.model"
+                                <div class="mr-2 text-xs text-gray-500" x-text="travelPicker.destination.model"
                                     x-show="travelPicker.destination.model"></div>
                             </div>
                             <span class="bi-icon ml-2 w-16">
@@ -629,20 +623,19 @@
                         <div class="relative flex w-full items-stretch md:w-1/5">
                             <div @click="datePicker.togglePanel()"
                                 class="text-rtl inline-flex w-full cursor-pointer items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap border-b placeholder:text-gray-700 focus-visible:outline-none md:justify-start md:border-b-0 md:text-right">
-
                                 <div x-show="!datePicker.formattedLastDayOftravel || !datePicker.formattedFirstDayOftravel"
                                     class="flex-shrink-0">
                                     تاریخ
-
                                 </div>
-                                <div style="display : none" class="text-xs mr-2 text-gray-500 flex"
+                                <div style="
+											display: none;
+										" class="mr-2 flex text-xs text-gray-500"
                                     x-show="datePicker.formattedLastDayOftravel && datePicker.formattedFirstDayOftravel">
-
-                                    <div x-text="datePicker.formattedFirstDayOftravel">
+                                    <div x-text="datePicker.formattedFirstDayOftravel"></div>
+                                    <div class="mx-2">
+                                        /
                                     </div>
-                                    <div class="mx-2">/</div>
-                                    <div x-text="datePicker.formattedLastDayOftravel">
-                                    </div>
+                                    <div x-text="datePicker.formattedLastDayOftravel"></div>
                                 </div>
                             </div>
 
@@ -710,7 +703,7 @@
                                         </div>
 
                                         <div
-                                            class="datepicker--scrollable bi-scrollbar mx-auto w-full max-w-md p-5 sm:w-3/5 sm:border-l-2 h-full">
+                                            class="datepicker--scrollable bi-scrollbar mx-auto h-full w-full max-w-md p-5 sm:w-3/5 sm:border-l-2">
                                             <div class="mb-7 flex justify-between">
                                                 <div class="cursor-pointer" x-show="datePicker.view === 'days'"
                                                     @click="datePicker.mode ? datePicker.prevMonth() : datePicker.nextMonth()">
@@ -778,7 +771,7 @@
                                                 </template>
                                             </div>
                                             <button @click="datePicker.confirm()"
-                                                class="bi-primary-pill mt-auto w-full sm:hidden justify-center ">
+                                                class="bi-primary-pill mt-auto w-full justify-center sm:hidden">
                                                 تایید
                                             </button>
                                         </div>
@@ -915,7 +908,7 @@
 
     <!-- special tours -->
     <section class="js-nowruz">
-        <div class="container mx-auto flex flex-col items-center text-center sm:flex-row md:flex-col ">
+        <div class="container mx-auto flex flex-col items-center text-center sm:flex-row md:flex-col">
             <div class="flex-center relative z-10 mb-8 w-full flex-col text-center font-iransans sm:w-1/2 md:w-full">
                 <h2 class="text-3xl font-bold">
                     تور های ویژه نوروز
@@ -931,10 +924,9 @@
 
             <div class="w-full sm:w-1/2 md:w-full">
                 <div
-                    class="js-swappable flex-center relative h-[323px] md:h-[430px] overflow-hidden md:overflow-visible">
-
+                    class="js-swappable flex-center relative h-[323px] overflow-hidden md:h-[430px] md:overflow-visible">
                     <div data-card-item
-                        class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out md:w-[336px]">
+                        class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out md:w-[336px]">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
@@ -985,7 +977,7 @@
                                     </strong>
 
                                     <span
-                                        class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                        class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                         <div>
                                             تومان
                                         </div>
@@ -1000,7 +992,7 @@
                     </div>
 
                     <div data-card-item
-                        class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out md:w-[336px]">
+                        class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out md:w-[336px]">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
@@ -1051,7 +1043,7 @@
                                     </strong>
 
                                     <span
-                                        class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                        class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                         <div>
                                             تومان
                                         </div>
@@ -1066,7 +1058,7 @@
                     </div>
 
                     <div data-card-item
-                        class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out md:w-[336px]">
+                        class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out md:w-[336px]">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
@@ -1117,7 +1109,7 @@
                                     </strong>
 
                                     <span
-                                        class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                        class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                         <div>
                                             تومان
                                         </div>
@@ -1132,7 +1124,7 @@
                     </div>
 
                     <div data-card-item
-                        class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out md:w-[336px]">
+                        class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out md:w-[336px]">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
@@ -1183,7 +1175,7 @@
                                     </strong>
 
                                     <span
-                                        class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                        class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                         <div>
                                             تومان
                                         </div>
@@ -1198,7 +1190,7 @@
                     </div>
 
                     <div data-card-item
-                        class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out md:w-[336px]">
+                        class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out md:w-[336px]">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
@@ -1249,7 +1241,7 @@
                                     </strong>
 
                                     <span
-                                        class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                        class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                         <div>
                                             تومان
                                         </div>
@@ -1264,7 +1256,7 @@
                     </div>
 
                     <div data-card-item
-                        class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out md:w-[336px]">
+                        class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out md:w-[336px]">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
@@ -1315,7 +1307,7 @@
                                     </strong>
 
                                     <span
-                                        class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                        class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                         <div>
                                             تومان
                                         </div>
@@ -1330,7 +1322,7 @@
                     </div>
 
                     <div data-card-item
-                        class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out md:w-[336px]">
+                        class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out md:w-[336px]">
                         <img class="" src="img/sample_image1.png" alt="" />
 
                         <div
@@ -1381,7 +1373,7 @@
                                     </strong>
 
                                     <span
-                                        class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                        class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                         <div>
                                             تومان
                                         </div>
@@ -1394,8 +1386,6 @@
                             </div>
                         </div>
                     </div>
-
-
 
                     <!-- controllers  -->
                     <div class="relative flex w-full justify-between">
@@ -1431,10 +1421,8 @@
             <div class="flex flex-wrap justify-evenly">
                 <div data-wow-delay="0s"
                     class="wow animate__fadeIn frame-0 mt-5 w-1/2 p-6 font-iransans sm:w-1/3 md:p-3">
-
-                    <div class="h-44 flex items-end ">
-
-                        <svg class="mx-auto inline-block w-full h-full  " viewBox="0 0 284 172" fill="none"
+                    <div class="flex h-44 items-end">
+                        <svg class="mx-auto inline-block h-full w-full" viewBox="0 0 284 172" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_420_86)">
                                 <path
@@ -1449,8 +1437,10 @@
                                 <path
                                     d="M156.703 29.8163L157.084 32.1487L155.01 32.488L154.629 30.198C152.554 30.41 150.48 30.0708 149.167 29.3498L149.887 26.6357C151.03 27.2294 152.639 27.5687 154.163 27.4839L153.612 24.0065C151.199 23.7944 148.532 23.4552 148.024 20.4866C147.686 18.2814 148.956 16.1186 152.215 15.2281L151.834 12.8957L153.909 12.5564L154.29 14.8464C155.856 14.7192 157.465 14.8888 158.735 15.4401L158.1 18.1542C156.957 17.7301 155.814 17.5605 154.756 17.5605L155.306 21.1227C157.719 21.2924 160.344 21.674 160.852 24.6002C161.19 26.763 159.92 28.8833 156.703 29.8163ZM153.147 20.9531L152.681 17.9846C151.623 18.4087 151.284 19.0872 151.369 19.7657C151.496 20.4866 152.173 20.7835 153.147 20.9531ZM157.55 25.4059C157.423 24.685 156.788 24.3881 155.814 24.2185L156.28 27.1022C157.253 26.6781 157.634 26.042 157.55 25.4059Z"
                                     fill="#E0E0E0" />
-                                <path class="barg" style="transform-origin: 241px 163px;"
-                                    d="M264.403 96.1419C264.403 96.1419 260.466 93.8519 256.402 103.224C252.338 112.596 250.899 117.939 250.899 117.939C250.899 117.939 249.798 119.933 248.401 118.745C247.004 117.6 245.014 114.165 242.855 114.928C240.611 115.734 239.976 118.364 240.653 122.095C241.331 125.827 242.474 134.139 242.559 134.86C242.643 135.581 242.305 136.726 241.246 136.048C240.188 135.411 233.88 129.177 231.128 132.358C228.376 135.539 231.932 145.674 232.313 146.777C232.694 147.879 232.483 148.388 231.975 148.685C231.467 148.982 229.519 146.692 227.657 144.996C225.794 143.299 223.338 141.645 221.899 143.638C220.46 145.589 220.417 153.392 228.546 165.521L232.652 170.907L239.426 170.101C253.777 167.556 259.366 162.128 259.747 159.711C260.17 157.294 257.291 156.658 254.751 156.488C252.253 156.318 249.247 156.53 249.12 155.937C248.993 155.343 249.205 154.877 250.264 154.368C251.322 153.859 261.101 149.406 261.44 145.208C261.779 141.009 252.973 140.797 251.745 140.458C250.56 140.119 251.11 139.101 251.703 138.677C252.296 138.21 259.069 133.333 262.202 131.213C265.377 129.093 266.817 126.845 265.843 124.64C264.869 122.519 261.059 123.452 259.239 123.283C257.461 123.113 258.096 120.908 258.096 120.908C258.096 120.908 260.932 116.158 264.827 106.744C268.806 97.3717 264.319 96.0995 264.319 96.0995"
+                                <path class="barg" style="
+											transform-origin: 241px
+												163px;
+										" d="M264.403 96.1419C264.403 96.1419 260.466 93.8519 256.402 103.224C252.338 112.596 250.899 117.939 250.899 117.939C250.899 117.939 249.798 119.933 248.401 118.745C247.004 117.6 245.014 114.165 242.855 114.928C240.611 115.734 239.976 118.364 240.653 122.095C241.331 125.827 242.474 134.139 242.559 134.86C242.643 135.581 242.305 136.726 241.246 136.048C240.188 135.411 233.88 129.177 231.128 132.358C228.376 135.539 231.932 145.674 232.313 146.777C232.694 147.879 232.483 148.388 231.975 148.685C231.467 148.982 229.519 146.692 227.657 144.996C225.794 143.299 223.338 141.645 221.899 143.638C220.46 145.589 220.417 153.392 228.546 165.521L232.652 170.907L239.426 170.101C253.777 167.556 259.366 162.128 259.747 159.711C260.17 157.294 257.291 156.658 254.751 156.488C252.253 156.318 249.247 156.53 249.12 155.937C248.993 155.343 249.205 154.877 250.264 154.368C251.322 153.859 261.101 149.406 261.44 145.208C261.779 141.009 252.973 140.797 251.745 140.458C250.56 140.119 251.11 139.101 251.703 138.677C252.296 138.21 259.069 133.333 262.202 131.213C265.377 129.093 266.817 126.845 265.843 124.64C264.869 122.519 261.059 123.452 259.239 123.283C257.461 123.113 258.096 120.908 258.096 120.908C258.096 120.908 260.932 116.158 264.827 106.744C268.806 97.3717 264.319 96.0995 264.319 96.0995"
                                     fill="#EBEBEB" />
                                 <path
                                     d="M232.906 169.507C235.785 162.595 239.891 153.053 244.421 142.578C248.951 132.061 253.058 122.562 255.979 115.692C257.418 112.257 258.603 109.458 259.45 107.507C259.873 106.532 260.17 105.811 260.381 105.302C260.508 105.048 260.551 104.878 260.635 104.708C260.678 104.581 260.72 104.496 260.72 104.496C260.72 104.496 260.72 104.581 260.635 104.708C260.593 104.835 260.508 105.048 260.424 105.302C260.212 105.811 259.916 106.574 259.535 107.55C258.73 109.5 257.587 112.299 256.148 115.734C253.269 122.647 249.163 132.188 244.633 142.663C240.103 153.18 235.996 162.68 233.075 169.592"
@@ -2179,7 +2169,6 @@
                                 </clipPath>
                             </defs>
                         </svg>
-
                     </div>
 
                     <h2 class="mt-10 text-lg font-bold">
@@ -2197,10 +2186,8 @@
 
                 <div data-wow-delay="0.2s"
                     class="wow animate__fadeIn frame-1 mt-5 w-1/2 p-6 font-iransans sm:w-1/3 md:p-3">
-
-
-                    <div class="h-44 flex items-end ">
-                        <svg class="mx-auto inline-block w-full h-full  " viewBox="0 0 200 182" fill="none"
+                    <div class="flex h-44 items-end">
+                        <svg class="mx-auto inline-block h-full w-full" viewBox="0 0 200 182" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_420_3019)">
                                 <path
@@ -2986,17 +2973,23 @@
                                 <path
                                     d="M159.276 152.986C156.102 154.086 151.997 153.113 149.289 151.124C146.58 149.135 144.633 146.341 142.941 143.463C142.221 142.236 141.502 140.967 141.248 139.57C141.036 138.173 141.375 136.565 142.433 135.676C144.126 134.237 146.707 134.957 148.654 136.057C154.705 139.485 158.81 146.045 159.276 152.986Z"
                                     fill="#EDE059" />
-                                <path class="l1" style="transform-origin: 152px 156px;"
-                                    d="M155.89 160.519C153.986 163.016 150.727 164.116 147.596 164.286C144.464 164.413 141.375 163.566 138.455 162.423C137.397 162 136.212 161.45 135.873 160.392C135.577 159.588 135.873 158.657 136.423 157.98C136.973 157.303 137.735 156.879 138.539 156.541C141.417 155.314 144.718 155.271 147.765 156.033C150.77 156.837 153.393 158.572 155.89 160.519Z"
+                                <path class="l1" style="
+											transform-origin: 152px
+												156px;
+										" d="M155.89 160.519C153.986 163.016 150.727 164.116 147.596 164.286C144.464 164.413 141.375 163.566 138.455 162.423C137.397 162 136.212 161.45 135.873 160.392C135.577 159.588 135.873 158.657 136.423 157.98C136.973 157.303 137.735 156.879 138.539 156.541C141.417 155.314 144.718 155.271 147.765 156.033C150.77 156.837 153.393 158.572 155.89 160.519Z"
                                     fill="#EDE059" />
                                 <path
                                     d="M159.318 139.443C156.694 139.485 154.748 137.2 153.563 134.872C151.912 131.656 151.362 127.889 151.997 124.334C152.251 122.98 152.759 121.541 153.944 120.906C155.171 120.272 156.737 120.695 157.752 121.626C158.768 122.557 159.318 123.869 159.741 125.181C161.096 129.751 160.799 134.957 159.318 139.443Z"
                                     fill="#EDE059" />
-                                <path style="transform-origin :168px 150px " class="l1"
-                                    d="M167.867 153.917C163.423 146.341 162.661 137.073 165.285 128.693C165.708 127.339 166.512 125.773 167.951 125.689C169.517 125.604 170.533 127.339 170.956 128.863C172.479 134.195 172.141 139.824 171.802 145.368C171.633 148.754 170.448 151.674 167.867 153.917Z"
+                                <path style="
+											transform-origin: 168px
+												150px;
+										" class="l1" d="M167.867 153.917C163.423 146.341 162.661 137.073 165.285 128.693C165.708 127.339 166.512 125.773 167.951 125.689C169.517 125.604 170.533 127.339 170.956 128.863C172.479 134.195 172.141 139.824 171.802 145.368C171.633 148.754 170.448 151.674 167.867 153.917Z"
                                     fill="#EDE059" />
-                                <path style="transform-origin: 175px 155px;" class="l1"
-                                    d="M172.522 157.006C174.13 151.801 178.235 147.484 183.313 145.537C184.498 145.072 185.979 144.818 186.868 145.749C187.714 146.638 187.461 148.119 186.91 149.219C186.022 150.997 184.541 152.436 183.102 153.832C181.79 155.102 180.393 156.329 178.743 157.091C177.092 157.81 174.045 158.022 172.522 157.006Z"
+                                <path style="
+											transform-origin: 175px
+												155px;
+										" class="l1" d="M172.522 157.006C174.13 151.801 178.235 147.484 183.313 145.537C184.498 145.072 185.979 144.818 186.868 145.749C187.714 146.638 187.461 148.119 186.91 149.219C186.022 150.997 184.541 152.436 183.102 153.832C181.79 155.102 180.393 156.329 178.743 157.091C177.092 157.81 174.045 158.022 172.522 157.006Z"
                                     fill="#EDE059" />
                                 <path
                                     d="M144.887 137.539C144.887 137.539 144.93 137.581 144.972 137.623C145.056 137.666 145.099 137.75 145.226 137.793C145.437 137.962 145.776 138.216 146.157 138.47C146.368 138.639 146.58 138.808 146.834 138.977C147.088 139.147 147.342 139.401 147.596 139.612C148.146 140.078 148.781 140.586 149.458 141.178C149.796 141.474 150.135 141.813 150.516 142.152C150.897 142.49 151.235 142.871 151.616 143.252C152.378 143.971 153.139 144.86 153.944 145.749C155.509 147.569 157.075 149.685 158.514 152.012C159.953 154.382 161.138 156.71 162.069 158.911C162.492 160.011 162.958 161.069 163.254 162.085C163.423 162.593 163.592 163.058 163.719 163.524C163.846 163.989 163.973 164.455 164.1 164.878C164.354 165.724 164.523 166.529 164.693 167.248C164.777 167.587 164.862 167.925 164.904 168.221C164.947 168.518 164.989 168.814 165.031 169.068C165.116 169.533 165.201 169.957 165.243 170.21C165.285 170.337 165.285 170.422 165.285 170.507C165.285 170.591 165.327 170.591 165.327 170.591C165.327 170.591 165.327 170.549 165.327 170.507C165.327 170.422 165.285 170.337 165.285 170.21C165.243 169.914 165.2 169.533 165.116 169.068C165.074 168.814 165.031 168.518 164.989 168.221C164.947 167.925 164.862 167.587 164.777 167.248C164.608 166.529 164.481 165.724 164.227 164.878C164.1 164.455 163.973 163.989 163.846 163.524C163.719 163.058 163.55 162.55 163.381 162.042C163.085 161.027 162.619 159.969 162.196 158.868C161.265 156.668 160.08 154.298 158.641 151.928C157.16 149.6 155.594 147.484 154.028 145.664C153.224 144.775 152.462 143.929 151.701 143.167C151.32 142.786 150.981 142.405 150.6 142.109C150.219 141.771 149.881 141.474 149.542 141.178C148.865 140.543 148.23 140.078 147.68 139.612C147.384 139.401 147.13 139.189 146.876 138.977C146.622 138.808 146.411 138.639 146.199 138.512C145.776 138.216 145.48 138.004 145.226 137.835C145.141 137.75 145.056 137.708 144.972 137.666C144.93 137.581 144.93 137.539 144.887 137.539Z"
@@ -3153,12 +3146,9 @@
 
                 <div data-wow-delay="0.1s"
                     class="wow animate__fadeIn frame-2 mt-5 w-1/2 p-6 font-iransans sm:w-1/3 md:p-3">
-
-                    <div class="h-44  flex items-end">
-
-                        <svg class="mx-auto h-full inline-block w-full" viewBox="0 0 247 169" fill="none"
+                    <div class="flex h-44 items-end">
+                        <svg class="mx-auto inline-block h-full w-full" viewBox="0 0 247 169" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
-
                             <g id="gruop-1" clip-path="url(#clip0_420_1286)">
                                 <path d="M101.468 19.0203L108.615 41.6144H103.424L101.148 33.8302L101.468 19.0203Z"
                                     fill="#EBEBEB" />
@@ -3770,8 +3760,10 @@
                                             fill="black" />
                                     </g>
                                 </g>
-                                <path style="transform-origin : 71px 58px "
-                                    d="M67.8482 53.3105L65.4526 66.1644L59.4634 83.1698L93.2424 78.2997L79.627 63.4499L73.9173 52.4323L67.8482 53.3105Z"
+                                <path style="
+											transform-origin: 71px
+												58px;
+										" d="M67.8482 53.3105L65.4526 66.1644L59.4634 83.1698L93.2424 78.2997L79.627 63.4499L73.9173 52.4323L67.8482 53.3105Z"
                                     id="lamp" fill="#EDE059" />
                                 <path
                                     d="M0.130615 100.894C0.130615 102.371 1.32845 103.568 2.80578 103.568C4.28312 103.568 5.48095 102.371 5.48095 100.894C5.48095 99.4168 4.28312 98.2192 2.80578 98.2192C1.32845 98.2192 0.130615 99.4168 0.130615 100.894Z"
@@ -4130,12 +4122,9 @@
                 </div>
                 <div data-wow-delay="0.3s"
                     class="wow animate__fadeIn frame-3 mt-5 w-1/2 p-6 font-iransans sm:w-1/3 md:p-3">
-
-                    <div class="h-44 flex items-end ">
-
-                        <svg class="mx-auto h-full inline-block w-full " viewBox="0 0 291 217" fill="none"
+                    <div class="flex h-44 items-end">
+                        <svg class="mx-auto inline-block h-full w-full" viewBox="0 0 291 217" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
-
                             <g clip-path="url(#clip0_420_2847)">
                                 <path d="M290.662 190.358H0.954102V190.474H290.662V190.358Z" fill="#EBEBEB" />
                                 <path d="M261.633 199.684H242.454V199.8H261.633V199.684Z" fill="#EBEBEB" />
@@ -4549,8 +4538,6 @@
                                         transform="translate(0.954102 0.708984)" />
                                 </clipPath>
                             </defs>
-
-
                         </svg>
                     </div>
 
@@ -4568,14 +4555,9 @@
                 </div>
                 <div data-wow-delay="0.4s"
                     class="wow animate__fadeIn frame-4 mt-5 w-1/2 p-6 font-iransans sm:w-1/3 md:p-3">
-
-
-                    <div class="h-44 flex items-end ">
-
-                        <svg class="mx-auto w-full inline-block " viewBox="0 0 330 181" fill="none"
+                    <div class="flex h-44 items-end">
+                        <svg class="mx-auto inline-block w-full" viewBox="0 0 330 181" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
-
-
                             <path d="M120.986 16.4885L92.2385 22.6968L100.735 62.0409L129.483 55.8326L120.986 16.4885Z"
                                 fill="#F5F5F5" />
                             <path d="M257.823 0.314209H159.844V64.0084H257.823V0.314209Z" fill="#F5F5F5" />
@@ -4720,8 +4702,9 @@
                             <path
                                 d="M212.749 164.788C212.749 164.788 212.749 164.685 212.749 164.529C212.749 164.374 212.749 164.114 212.749 163.803C212.749 163.647 212.749 163.492 212.749 163.284C212.749 163.077 212.801 162.869 212.853 162.662C212.905 162.195 212.956 161.676 213.164 161.106C213.423 159.913 213.942 158.512 214.824 157.06C215.705 155.608 216.95 154.052 218.662 152.703C220.374 151.406 222.552 150.265 225.042 149.85C225.664 149.747 226.287 149.643 226.961 149.643C227.272 149.643 227.635 149.591 227.946 149.591C228.258 149.591 228.621 149.643 228.932 149.643C229.295 149.643 229.606 149.695 229.969 149.747C230.332 149.799 230.643 149.85 231.007 149.902C231.681 150.058 232.355 150.213 233.029 150.473C233.704 150.68 234.378 151.043 235 151.355C235.312 151.51 235.623 151.718 235.934 151.925C236.245 152.081 236.556 152.34 236.868 152.548C237.49 152.963 238.009 153.481 238.579 154C239.098 154.57 239.617 155.141 240.083 155.763C241.017 157.008 241.795 158.409 242.262 159.965C242.781 161.521 243.04 163.129 243.04 164.788C243.04 166.448 242.729 168.056 242.262 169.612C241.795 171.168 240.965 172.569 240.083 173.814C239.617 174.436 239.098 175.007 238.579 175.577C238.009 176.096 237.49 176.614 236.868 177.029C236.556 177.237 236.297 177.496 235.934 177.652C235.623 177.859 235.312 178.067 235 178.222C234.326 178.534 233.704 178.897 233.029 179.104C232.355 179.363 231.681 179.519 231.007 179.675C230.643 179.727 230.332 179.778 229.969 179.83C229.606 179.882 229.295 179.934 228.932 179.934C228.569 179.934 228.258 179.986 227.946 179.986C227.635 179.986 227.272 179.934 226.961 179.934C226.287 179.934 225.664 179.778 225.042 179.727C222.552 179.26 220.374 178.17 218.662 176.874C216.95 175.577 215.705 174.021 214.824 172.517C213.942 171.013 213.423 169.664 213.164 168.471C213.008 167.901 212.956 167.382 212.853 166.915C212.801 166.708 212.801 166.5 212.749 166.293C212.749 166.085 212.749 165.93 212.749 165.774C212.749 165.463 212.749 165.203 212.749 165.048C212.749 164.892 212.749 164.788 212.749 164.788C212.749 164.788 212.749 164.892 212.801 165.048C212.801 165.203 212.853 165.463 212.853 165.774C212.853 165.93 212.853 166.085 212.905 166.293C212.905 166.5 212.956 166.708 213.008 166.915C213.06 167.382 213.164 167.901 213.32 168.471C213.579 169.612 214.149 171.013 214.979 172.465C215.861 173.917 217.106 175.421 218.818 176.718C220.529 178.015 222.656 179.104 225.145 179.519C225.768 179.623 226.39 179.727 227.065 179.727C227.376 179.727 227.739 179.778 228.05 179.778C228.361 179.778 228.724 179.727 229.036 179.727C229.347 179.727 229.71 179.675 230.021 179.623C230.332 179.571 230.695 179.519 231.007 179.467C231.681 179.312 232.355 179.156 233.029 178.897C233.704 178.689 234.326 178.326 235 178.015C235.312 177.859 235.623 177.652 235.934 177.444C236.245 177.289 236.556 177.029 236.816 176.822C237.438 176.407 237.957 175.888 238.527 175.37C239.046 174.799 239.565 174.28 239.98 173.606C240.861 172.361 241.639 171.013 242.106 169.457C242.573 167.952 242.832 166.345 242.884 164.737C242.884 163.129 242.625 161.521 242.106 160.017C241.639 158.512 240.861 157.112 239.98 155.867C239.565 155.245 238.994 154.674 238.527 154.155C237.957 153.637 237.438 153.118 236.816 152.703C236.505 152.496 236.245 152.236 235.934 152.081C235.623 151.873 235.312 151.718 235 151.51C234.326 151.199 233.704 150.888 233.029 150.628C232.355 150.369 231.681 150.213 231.007 150.058C230.695 150.006 230.332 149.954 230.021 149.902C229.71 149.85 229.347 149.799 229.036 149.799C228.724 149.799 228.361 149.747 228.05 149.747C227.739 149.747 227.376 149.799 227.065 149.799C226.39 149.799 225.768 149.954 225.145 150.006C222.656 150.421 220.529 151.51 218.818 152.807C217.106 154.104 215.861 155.608 214.979 157.06C214.098 158.512 213.579 159.913 213.32 161.054C213.164 161.625 213.06 162.143 213.008 162.61C212.956 162.817 212.956 163.025 212.905 163.232C212.905 163.44 212.905 163.596 212.853 163.751C212.853 164.062 212.801 164.27 212.801 164.477C212.749 164.685 212.749 164.788 212.749 164.788Z"
                                 fill="#263238" />
-                            <path class="icon" style="transform-origin: bottom;"
-                                d="M223.745 159.239L221.67 171.064L227.895 170.235L234.067 171.064L231.577 159.239H223.745Z"
+                            <path class="icon" style="
+										transform-origin: bottom;
+									" d="M223.745 159.239L221.67 171.064L227.895 170.235L234.067 171.064L231.577 159.239H223.745Z"
                                 fill="#263238" />
                             <path
                                 d="M230.488 159.394C230.436 159.394 230.332 158.979 229.969 158.357C229.814 158.046 229.554 157.683 229.243 157.371C229.087 157.216 228.88 157.112 228.621 157.008C228.413 156.904 228.154 156.904 227.895 156.904C227.376 156.904 226.857 157.008 226.494 157.268C226.131 157.527 225.872 157.838 225.716 158.149C225.405 158.772 225.301 159.239 225.249 159.187C225.249 159.187 225.249 158.72 225.56 158.046C225.716 157.734 225.924 157.319 226.39 157.008C226.805 156.697 227.376 156.593 227.946 156.593C228.258 156.593 228.517 156.645 228.776 156.749C229.036 156.853 229.243 157.008 229.451 157.164C229.814 157.527 230.073 157.89 230.229 158.253C230.488 158.927 230.54 159.394 230.488 159.394Z"
@@ -4735,8 +4718,9 @@
                             <path
                                 d="M152.116 165.152C152.116 165.152 152.116 165.048 152.116 164.892C152.116 164.737 152.116 164.477 152.116 164.166C152.116 164.011 152.116 163.855 152.116 163.647C152.116 163.44 152.168 163.232 152.219 163.025C152.271 162.558 152.323 162.04 152.531 161.469C152.79 160.276 153.309 158.876 154.19 157.423C155.072 155.971 156.317 154.415 158.029 153.066C159.74 151.77 161.919 150.629 164.408 150.214C165.031 150.11 165.653 150.006 166.328 150.006C166.639 150.006 167.002 149.954 167.313 149.954C167.624 149.954 167.987 150.006 168.298 150.006C168.662 150.006 168.973 150.058 169.336 150.11C169.699 150.162 170.01 150.214 170.373 150.265C171.047 150.421 171.722 150.577 172.396 150.836C173.07 151.043 173.745 151.407 174.367 151.718C174.678 151.873 174.989 152.081 175.301 152.288C175.612 152.444 175.923 152.703 176.234 152.911C176.857 153.326 177.375 153.844 177.946 154.363C178.465 154.934 178.983 155.504 179.45 156.127C180.384 157.371 181.162 158.772 181.629 160.328C182.147 161.884 182.407 163.492 182.407 165.152C182.407 166.811 182.095 168.419 181.629 169.975C181.162 171.531 180.332 172.932 179.45 174.177C178.983 174.799 178.465 175.37 177.946 175.94C177.375 176.459 176.857 176.978 176.234 177.393C175.923 177.6 175.664 177.859 175.301 178.015C174.989 178.222 174.678 178.43 174.367 178.585C173.693 178.897 173.07 179.26 172.396 179.467C171.722 179.727 171.047 179.882 170.373 180.038C170.01 180.09 169.699 180.142 169.336 180.193C168.973 180.245 168.662 180.297 168.298 180.297C167.935 180.297 167.624 180.349 167.313 180.349C167.002 180.349 166.639 180.297 166.328 180.297C165.653 180.297 165.031 180.142 164.408 180.09C161.919 179.623 159.74 178.534 158.029 177.237C156.317 175.94 155.072 174.384 154.19 172.88C153.309 171.376 152.79 170.027 152.531 168.834C152.375 168.264 152.323 167.745 152.219 167.278C152.168 167.071 152.168 166.863 152.116 166.656C152.116 166.448 152.116 166.293 152.116 166.137C152.116 165.826 152.116 165.567 152.116 165.411C152.116 165.203 152.116 165.152 152.116 165.152C152.116 165.152 152.116 165.255 152.168 165.411C152.168 165.567 152.219 165.826 152.219 166.137C152.219 166.293 152.219 166.448 152.271 166.656C152.271 166.863 152.323 167.071 152.375 167.278C152.427 167.745 152.531 168.264 152.686 168.834C152.946 169.975 153.516 171.376 154.346 172.828C155.228 174.28 156.473 175.785 158.184 177.081C159.896 178.378 162.022 179.467 164.512 179.882C165.135 179.986 165.757 180.09 166.431 180.09C166.742 180.09 167.106 180.142 167.417 180.142C167.728 180.142 168.091 180.09 168.402 180.09C168.713 180.09 169.076 180.038 169.388 179.986C169.699 179.934 170.062 179.882 170.373 179.83C171.047 179.675 171.722 179.519 172.396 179.26C173.07 179.052 173.693 178.689 174.367 178.378C174.678 178.222 174.989 178.015 175.301 177.807C175.612 177.652 175.923 177.393 176.182 177.185C176.805 176.77 177.323 176.251 177.894 175.733C178.413 175.162 178.931 174.643 179.346 173.969C180.228 172.724 181.006 171.376 181.473 169.82C181.94 168.316 182.199 166.708 182.251 165.1C182.251 163.492 181.992 161.884 181.473 160.38C181.006 158.876 180.228 157.475 179.346 156.23C178.931 155.608 178.361 155.037 177.894 154.519C177.323 154 176.805 153.481 176.182 153.066C175.871 152.859 175.612 152.599 175.301 152.444C174.989 152.236 174.678 152.081 174.367 151.873C173.693 151.562 173.07 151.251 172.396 150.992C171.722 150.732 171.047 150.577 170.373 150.421C170.062 150.369 169.699 150.317 169.388 150.265C169.076 150.214 168.713 150.162 168.402 150.162C168.091 150.162 167.728 150.11 167.417 150.11C167.106 150.11 166.742 150.162 166.431 150.162C165.757 150.162 165.135 150.317 164.512 150.369C162.022 150.784 159.896 151.873 158.184 153.17C156.473 154.467 155.228 155.971 154.346 157.423C153.464 158.876 152.946 160.276 152.686 161.417C152.531 161.988 152.427 162.506 152.375 162.973C152.323 163.181 152.323 163.388 152.271 163.596C152.271 163.803 152.271 163.959 152.219 164.114C152.219 164.425 152.168 164.633 152.168 164.84C152.116 165.048 152.116 165.152 152.116 165.152Z"
                                 fill="#263238" />
-                            <path class="icon" style="transform-origin: bottom"
-                                d="M167.261 158.357L160.674 164.322V171.895H165.809V167.33H169.025V171.895H173.796V164.322L167.261 158.357Z"
+                            <path class="icon" style="
+										transform-origin: bottom;
+									" d="M167.261 158.357L160.674 164.322V171.895H165.809V167.33H169.025V171.895H173.796V164.322L167.261 158.357Z"
                                 fill="#263238" />
                             <path
                                 d="M109.014 158.409C108.962 158.357 115.445 148.087 123.537 135.431C131.628 122.775 138.267 112.557 138.319 112.609C138.371 112.661 131.887 122.931 123.796 135.587C115.705 148.243 109.066 158.461 109.014 158.409Z"
@@ -4747,8 +4731,9 @@
                             <path
                                 d="M121.669 164.944C121.669 164.944 121.669 164.84 121.618 164.685C121.618 164.529 121.566 164.27 121.566 163.959C121.566 163.803 121.566 163.648 121.514 163.44C121.514 163.233 121.462 163.025 121.41 162.818C121.358 162.351 121.255 161.832 121.099 161.262C120.84 160.12 120.269 158.72 119.439 157.268C118.557 155.815 117.313 154.311 115.601 153.015C113.889 151.718 111.763 150.629 109.273 150.214C108.651 150.11 108.028 150.006 107.354 150.006C107.043 150.006 106.68 149.954 106.368 149.954C106.057 149.954 105.694 150.006 105.383 150.006C105.072 150.006 104.709 150.058 104.397 150.11C104.086 150.162 103.723 150.214 103.412 150.266C102.738 150.421 102.063 150.577 101.389 150.836C100.715 151.044 100.092 151.407 99.4182 151.718C99.107 151.873 98.7958 152.081 98.4846 152.288C98.1734 152.444 97.8621 152.703 97.6028 152.911C96.9804 153.326 96.4617 153.844 95.8912 154.363C95.3725 154.934 94.8538 155.452 94.4389 156.075C93.5571 157.32 92.7791 158.668 92.3123 160.224C91.8455 161.728 91.5861 163.336 91.5343 164.944C91.5343 166.552 91.7936 168.16 92.3123 169.664C92.7791 171.168 93.5571 172.569 94.4389 173.814C94.8538 174.436 95.4244 175.007 95.8912 175.577C96.4617 176.096 96.9804 176.615 97.6028 177.03C97.914 177.237 98.1734 177.496 98.4846 177.652C98.7958 177.859 99.107 178.015 99.4182 178.223C100.092 178.534 100.715 178.845 101.389 179.104C102.063 179.364 102.738 179.519 103.412 179.675C103.723 179.727 104.086 179.779 104.397 179.83C104.709 179.882 105.072 179.934 105.383 179.934C105.694 179.934 106.057 179.986 106.368 179.986C106.68 179.986 107.043 179.934 107.354 179.934C108.028 179.934 108.651 179.779 109.273 179.727C111.763 179.312 113.889 178.223 115.601 176.926C117.313 175.629 118.557 174.125 119.439 172.673C120.321 171.22 120.84 169.82 121.099 168.679C121.255 168.108 121.358 167.59 121.41 167.123C121.462 166.915 121.462 166.708 121.514 166.5C121.514 166.293 121.514 166.137 121.566 165.982C121.566 165.67 121.618 165.463 121.618 165.255C121.669 164.996 121.669 164.944 121.669 164.944C121.669 164.944 121.669 165.048 121.669 165.204C121.669 165.359 121.669 165.619 121.669 165.93C121.669 166.085 121.669 166.241 121.669 166.448C121.669 166.656 121.618 166.863 121.566 167.071C121.514 167.538 121.462 168.056 121.255 168.627C120.995 169.82 120.477 171.22 119.595 172.673C118.713 174.125 117.468 175.681 115.757 177.03C114.045 178.326 111.866 179.467 109.377 179.882C108.754 179.986 108.132 180.09 107.458 180.09C107.146 180.09 106.783 180.142 106.472 180.142C106.161 180.142 105.798 180.09 105.487 180.09C105.124 180.09 104.812 180.038 104.449 179.986C104.086 179.934 103.775 179.882 103.412 179.83C102.738 179.675 102.063 179.519 101.389 179.26C100.715 179.052 100.041 178.689 99.4182 178.378C99.107 178.222 98.7958 178.015 98.4846 177.808C98.1734 177.652 97.8621 177.393 97.5509 177.185C96.9285 176.77 96.4098 176.252 95.8393 175.733C95.3206 175.162 94.8019 174.592 94.3351 173.969C93.4015 172.724 92.6235 171.324 92.1567 169.768C91.638 168.212 91.3787 166.604 91.3787 164.944C91.3787 163.284 91.6899 161.677 92.1567 160.12C92.6235 158.564 93.4534 157.164 94.3351 155.919C94.8019 155.297 95.3206 154.726 95.8393 154.156C96.4098 153.637 96.9285 153.118 97.5509 152.703C97.8621 152.496 98.1215 152.237 98.4846 152.081C98.7958 151.873 99.107 151.666 99.4182 151.51C100.092 151.199 100.715 150.836 101.389 150.629C102.063 150.369 102.738 150.214 103.412 150.058C103.775 150.006 104.086 149.954 104.449 149.902C104.812 149.851 105.124 149.799 105.487 149.799C105.85 149.799 106.161 149.747 106.472 149.747C106.783 149.747 107.146 149.799 107.458 149.799C108.132 149.799 108.754 149.954 109.377 150.006C111.866 150.473 114.045 151.562 115.757 152.859C117.468 154.156 118.713 155.712 119.595 157.216C120.477 158.72 120.995 160.069 121.255 161.262C121.41 161.832 121.462 162.351 121.566 162.818C121.618 163.025 121.618 163.233 121.669 163.44C121.669 163.648 121.669 163.803 121.669 163.959C121.669 164.27 121.669 164.529 121.669 164.685C121.721 164.84 121.669 164.944 121.669 164.944Z"
                                 fill="#263238" />
-                            <path class="icon" style="transform-origin: bottom"
-                                d="M112.437 157.06H100.559V172.776H112.437V157.06Z" fill="#263238" />
+                            <path class="icon" style="
+										transform-origin: bottom;
+									" d="M112.437 157.06H100.559V172.776H112.437V157.06Z" fill="#263238" />
                             <path
                                 d="M107.043 159.602C107.043 159.654 106.161 159.758 105.072 159.758C103.983 159.758 103.101 159.706 103.101 159.602C103.101 159.55 103.983 159.446 105.072 159.446C106.213 159.446 107.043 159.498 107.043 159.602Z"
                                 fill="#455A64" />
@@ -4900,13 +4885,8 @@
                                         transform="translate(0.817383 0.314209)" />
                                 </clipPath>
                             </defs>
-
-
-
                         </svg>
                     </div>
-
-
 
                     <h2 class="mt-10 text-lg font-bold">
                         مجری تور های ترکیبی
@@ -4922,10 +4902,8 @@
                 </div>
                 <div data-wow-delay="0.5s"
                     class="wow animate__fadeIn frame-5 mt-5 w-1/2 p-6 font-iransans sm:w-1/3 md:p-3">
-
-                    <div class="h-44 flex items-end ">
-
-                        <svg class="mx-auto h-full inline-block w-full " viewBox="0 0 224 217" fill="none"
+                    <div class="flex h-44 items-end">
+                        <svg class="mx-auto inline-block h-full w-full" viewBox="0 0 224 217" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_420_4860)">
                                 <path
@@ -6140,7 +6118,6 @@
                         </svg>
                     </div>
 
-
                     <h2 class="mt-10 text-lg font-bold">
                         سرعت در اخذ ویزا
                     </h2>
@@ -6190,7 +6167,7 @@
     <section class="js-special-tours mt-44 mb-10">
         <div class="container mx-auto flex flex-col-reverse sm:flex-row">
             <div
-                class="js-swappable relative flex h-[323px] w-full justify-center sm:w-1/2 sm:justify-between md:h-[430px] overflow-hidden md:overflow-visible">
+                class="js-swappable relative flex h-[323px] w-full justify-center overflow-hidden sm:w-1/2 sm:justify-between md:h-[430px] md:overflow-visible">
                 <button
                     class="js-next bi-primary-pill absolute top-1/2 right-0 z-20 sm:-right-12 lg:-right-20 2xl:-right-20">
                     <img src="svg/chevron-rigth.svg" alt="" />
@@ -6202,11 +6179,11 @@
                 </button>
 
                 <div data-card-item
-                    class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out sm:right-0 md:w-[336px] ">
+                    class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out sm:right-0 md:w-[336px]">
                     <img class="" src="img/sample_image1.png" alt="" />
 
                     <div
-                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4 ">
+                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4">
                         <div class="text-rtl flex h-full flex-col items-start gap-2">
                             <div
                                 class="flex items-center justify-start gap-2 rounded-full bg-white p-2 font-iransans text-xs shadow-xl md:text-sm">
@@ -6249,7 +6226,7 @@
                                 </strong>
 
                                 <span
-                                    class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                    class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                     <div>تومان</div>
                                     <strong>
                                         2,244,000,000
@@ -6262,11 +6239,11 @@
                 </div>
 
                 <div data-card-item
-                    class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out sm:right-0 md:w-[336px] ">
+                    class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out sm:right-0 md:w-[336px]">
                     <img class="" src="img/sample_image1.png" alt="" />
 
                     <div
-                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4 ">
+                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4">
                         <div class="text-rtl flex h-full flex-col items-start gap-2">
                             <div
                                 class="flex items-center justify-start gap-2 rounded-full bg-white p-2 font-iransans text-xs shadow-xl md:text-sm">
@@ -6309,7 +6286,7 @@
                                 </strong>
 
                                 <span
-                                    class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                    class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                     <div>تومان</div>
                                     <strong>
                                         2,244,000,000
@@ -6322,11 +6299,11 @@
                 </div>
 
                 <div data-card-item
-                    class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out sm:right-0 md:w-[336px] ">
+                    class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out sm:right-0 md:w-[336px]">
                     <img class="" src="img/sample_image1.png" alt="" />
 
                     <div
-                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4 ">
+                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4">
                         <div class="text-rtl flex h-full flex-col items-start gap-2">
                             <div
                                 class="flex items-center justify-start gap-2 rounded-full bg-white p-2 font-iransans text-xs shadow-xl md:text-sm">
@@ -6369,7 +6346,7 @@
                                 </strong>
 
                                 <span
-                                    class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                    class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                     <div>تومان</div>
                                     <strong>
                                         2,244,000,000
@@ -6382,11 +6359,11 @@
                 </div>
 
                 <div data-card-item
-                    class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out sm:right-0 md:w-[336px] ">
+                    class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out sm:right-0 md:w-[336px]">
                     <img class="" src="img/sample_image1.png" alt="" />
 
                     <div
-                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4 ">
+                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4">
                         <div class="text-rtl flex h-full flex-col items-start gap-2">
                             <div
                                 class="flex items-center justify-start gap-2 rounded-full bg-white p-2 font-iransans text-xs shadow-xl md:text-sm">
@@ -6429,7 +6406,7 @@
                                 </strong>
 
                                 <span
-                                    class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                    class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                     <div>تومان</div>
                                     <strong>
                                         2,244,000,000
@@ -6442,11 +6419,11 @@
                 </div>
 
                 <div data-card-item
-                    class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out sm:right-0 md:w-[336px] ">
+                    class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out sm:right-0 md:w-[336px]">
                     <img class="" src="img/sample_image1.png" alt="" />
 
                     <div
-                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4 ">
+                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4">
                         <div class="text-rtl flex h-full flex-col items-start gap-2">
                             <div
                                 class="flex items-center justify-start gap-2 rounded-full bg-white p-2 font-iransans text-xs shadow-xl md:text-sm">
@@ -6489,7 +6466,7 @@
                                 </strong>
 
                                 <span
-                                    class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                    class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                     <div>تومان</div>
                                     <strong>
                                         2,244,000,000
@@ -6502,11 +6479,11 @@
                 </div>
 
                 <div data-card-item
-                    class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out sm:right-0 md:w-[336px] ">
+                    class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out sm:right-0 md:w-[336px]">
                     <img class="" src="img/sample_image1.png" alt="" />
 
                     <div
-                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4 ">
+                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4">
                         <div class="text-rtl flex h-full flex-col items-start gap-2">
                             <div
                                 class="flex items-center justify-start gap-2 rounded-full bg-white p-2 font-iransans text-xs shadow-xl md:text-sm">
@@ -6549,7 +6526,7 @@
                                 </strong>
 
                                 <span
-                                    class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                    class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                     <div>تومان</div>
                                     <strong>
                                         2,244,000,000
@@ -6562,11 +6539,11 @@
                 </div>
 
                 <div data-card-item
-                    class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out sm:right-0 md:w-[336px] ">
+                    class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out sm:right-0 md:w-[336px]">
                     <img class="" src="img/sample_image1.png" alt="" />
 
                     <div
-                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4 ">
+                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4">
                         <div class="text-rtl flex h-full flex-col items-start gap-2">
                             <div
                                 class="flex items-center justify-start gap-2 rounded-full bg-white p-2 font-iransans text-xs shadow-xl md:text-sm">
@@ -6609,7 +6586,7 @@
                                 </strong>
 
                                 <span
-                                    class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                    class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                     <div>تومان</div>
                                     <strong>
                                         2,244,000,000
@@ -6622,11 +6599,11 @@
                 </div>
 
                 <div data-card-item
-                    class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out sm:right-0 md:w-[336px] ">
+                    class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out sm:right-0 md:w-[336px]">
                     <img class="" src="img/sample_image1.png" alt="" />
 
                     <div
-                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4 ">
+                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4">
                         <div class="text-rtl flex h-full flex-col items-start gap-2">
                             <div
                                 class="flex items-center justify-start gap-2 rounded-full bg-white p-2 font-iransans text-xs shadow-xl md:text-sm">
@@ -6669,7 +6646,7 @@
                                 </strong>
 
                                 <span
-                                    class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                    class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                     <div>تومان</div>
                                     <strong>
                                         2,244,000,000
@@ -6682,11 +6659,11 @@
                 </div>
 
                 <div data-card-item
-                    class="absolute top-0 inline-block w-[253px] bg-white overflow-hidden rounded-3xl transition-transform duration-150 ease-out sm:right-0 md:w-[336px] ">
+                    class="absolute top-0 inline-block w-[253px] overflow-hidden rounded-3xl bg-white transition-all duration-150 ease-out sm:right-0 md:w-[336px]">
                     <img class="" src="img/sample_image1.png" alt="" />
 
                     <div
-                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4 ">
+                        class="absolute inset-0 h-full w-full rounded-3xl bg-gradient-to-t from-gray-800 to-transparent p-6 px-4">
                         <div class="text-rtl flex h-full flex-col items-start gap-2">
                             <div
                                 class="flex items-center justify-start gap-2 rounded-full bg-white p-2 font-iransans text-xs shadow-xl md:text-sm">
@@ -6729,7 +6706,7 @@
                                 </strong>
 
                                 <span
-                                    class="mt-3 mx-auto inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
+                                    class="mx-auto mt-3 inline-flex justify-start gap-2 rounded-full bg-white p-2 font-iransans text-sm shadow-xl">
                                     <div>تومان</div>
                                     <strong>
                                         2,244,000,000
@@ -6740,8 +6717,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
 
             <div class="text-rtl flex w-full justify-between font-iransans sm:w-1/2">
@@ -6770,16 +6745,14 @@
         </div>
     </section>
 
-    <section class="relative overflow-hidden bg-contain bg-repeat py-10 md:py-44 "
+    <section class="relative overflow-hidden bg-contain bg-repeat py-10 md:py-44"
         style="background-image: url(svg/travel-textture/one.svg)">
-
         <!-- overlay #1 -->
 
-        <div class="absolute inset-0 z-0 bg-gradient-radial from-white via-white to-transparent md:transform">
-        </div>
+        <div class="absolute inset-0 z-0 bg-gradient-radial from-white via-white to-transparent md:transform"></div>
 
         <!-- overlay #2 -->
-        <div class="absolute inset-0  w-full h-24 mt-auto bg-gradient-to-t from-white to-transparent"></div>
+        <div class="absolute inset-0 mt-auto h-24 w-full bg-gradient-to-t from-white to-transparent"></div>
 
         <div class="bi-wrapper container relative mx-auto">
             <div class="bi-headline_intro">
@@ -6792,7 +6765,7 @@
             </div>
             <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
                 <div data-wow-delay="0s"
-                    class="bi-blog-cell wow animate__fadeIn relative col-span-1 mx-5 mt-2 h-60 overflow-hidden rounded-3xl sm:col-span-2 sm:m-0">
+                    class="bi-blog-cell wow animate__fadeIn relative col-span-1 mx-5 mt-2 h-60 overflow-hidden rounded-3xl sm:m-0 md:col-span-2">
                     <img class="h-full w-full object-cover" src="img/blog/image-12.png" alt="" />
                     <div
                         class="text-rtl absolute inset-0 flex h-full w-full flex-col bg-gradient-to-t from-black to-transparent">
@@ -6818,19 +6791,21 @@
                         </div>
                     </div>
                 </div>
+
                 <div data-wow-delay="0.4s"
-                    class="bi-blog-cell wow animate__fadeIn relative col-span-2 mx-5 mt-2 h-60 overflow-hidden rounded-3xl sm:m-0">
+                    class="bi-blog-cell wow animate__fadeIn relative col-span-1 mx-5 mt-2 h-60 overflow-hidden rounded-3xl sm:m-0 md:col-span-2">
                     <img class="h-full w-full object-cover" src="img/blog/image-8.png" alt="" />
                     <div
                         class="text-rtl absolute inset-0 flex h-full w-full flex-col bg-gradient-to-t from-black to-transparent">
                         <p class="m-6 mt-auto text-white">
-                            اطلاعات کلی درباره شهر انتالیا
+                            4 اطلاعات کلی درباره شهر انتالیا
                         </p>
                         <div class="bi-blog-cell--overlay">
                             <a href="#">ادامه مطلب</a>
                         </div>
                     </div>
                 </div>
+
                 <div data-wow-delay="0.6s"
                     class="bi-blog-cell wow animate__fadeIn relative mx-5 mt-2 h-60 overflow-hidden rounded-3xl sm:m-0">
                     <img class="h-full w-full object-cover" src="img/blog/image-9.png" alt="" />
@@ -6844,6 +6819,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div data-wow-delay="0.8s"
                     class="bi-blog-cell wow animate__fadeIn relative mx-5 mt-2 h-60 overflow-hidden rounded-3xl sm:m-0">
                     <img class="h-full w-full object-cover" src="img/blog/image-10.png" alt="" />
@@ -6867,22 +6843,21 @@
 
     <!-- NEW SECTION -->
     <section class="py-20">
-        <div class="border-gray-200 rounded-lg container mx-auto border p-10">
+        <div class="container mx-auto rounded-lg border border-gray-200 p-10">
             <div>
-                <h1 class="text-center text-2xl text-primery-dark font-bold">
+                <h1 class="text-center text-2xl font-bold text-primery-dark">
                     تور های پر طرفدار
                 </h1>
-                <p class="text-center text-gray-500 mt-4">
-                    مقصد بعدی شما از بین مقصدهای محبوب سایر مسافران
+                <p class="mt-4 text-center text-gray-500">
+                    مقصد بعدی شما از بین مقصدهای محبوب سایر
+                    مسافران
                 </p>
             </div>
-            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:grid-cols-4">
-
-
+            <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <a href="#" class="relative flex h-60 w-full justify-center rounded-xl shadow">
                     <!-- overlay -->
                     <div
-                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-xl  transition-all">
+                        class="bg absolute top-0 left-0 z-10 h-full w-full rounded-xl border-primery transition-all hover:border-2">
                     </div>
 
                     <img class="absolute top-0 h-full w-full rounded-xl object-cover"
@@ -6890,16 +6865,15 @@
                         alt="" />
 
                     <span
-                        class="absolute bottom-4 right-4  rounded-md bg-primery  flex-center  px-4 py-1 text-yellow-900 font-bold z-10">
+                        class="flex-center absolute bottom-4 right-4 z-10 rounded-md bg-primery px-4 py-1 font-bold text-yellow-900">
                         تور شیراز
                     </span>
                 </a>
 
-
                 <a href="#" class="relative flex h-60 w-full justify-center rounded-xl shadow">
                     <!-- overlay -->
                     <div
-                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-xl  transition-all">
+                        class="bg absolute top-0 left-0 z-10 h-full w-full rounded-xl border-primery transition-all hover:border-2">
                     </div>
 
                     <img class="absolute top-0 h-full w-full rounded-xl object-cover"
@@ -6907,16 +6881,15 @@
                         alt="" />
 
                     <span
-                        class="absolute bottom-4 right-4  rounded-md bg-primery  flex-center  px-4 py-1 text-yellow-900 font-bold z-10">
+                        class="flex-center absolute bottom-4 right-4 z-10 rounded-md bg-primery px-4 py-1 font-bold text-yellow-900">
                         تور شیراز
                     </span>
                 </a>
 
-
                 <a href="#" class="relative flex h-60 w-full justify-center rounded-xl shadow">
                     <!-- overlay -->
                     <div
-                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-xl  transition-all">
+                        class="bg absolute top-0 left-0 z-10 h-full w-full rounded-xl border-primery transition-all hover:border-2">
                     </div>
 
                     <img class="absolute top-0 h-full w-full rounded-xl object-cover"
@@ -6924,16 +6897,15 @@
                         alt="" />
 
                     <span
-                        class="absolute bottom-4 right-4  rounded-md bg-primery  flex-center  px-4 py-1 text-yellow-900 font-bold z-10">
+                        class="flex-center absolute bottom-4 right-4 z-10 rounded-md bg-primery px-4 py-1 font-bold text-yellow-900">
                         تور شیراز
                     </span>
                 </a>
 
-
                 <a href="#" class="relative flex h-60 w-full justify-center rounded-xl shadow">
                     <!-- overlay -->
                     <div
-                        class="hover:border-2 border-primery bg absolute top-0 left-0 w-full h-full z-10 rounded-xl  transition-all">
+                        class="bg absolute top-0 left-0 z-10 h-full w-full rounded-xl border-primery transition-all hover:border-2">
                     </div>
 
                     <img class="absolute top-0 h-full w-full rounded-xl object-cover"
@@ -6941,12 +6913,10 @@
                         alt="" />
 
                     <span
-                        class="absolute bottom-4 right-4  rounded-md bg-primery  flex-center  px-4 py-1 text-yellow-900 font-bold z-10">
+                        class="flex-center absolute bottom-4 right-4 z-10 rounded-md bg-primery px-4 py-1 font-bold text-yellow-900">
                         تور شیراز
                     </span>
                 </a>
-
-
             </div>
         </div>
     </section>
@@ -6976,22 +6946,19 @@
                 <p style="display: none" class="js-faq-body w-full">
                     چاپگرها و متون بلکه روزنامه و مجله در ستون و
                     سطرآنچنان که لازم است و برای شرایط فعلی
-                    <br>
-                    <span style="color: red">
-
-                        تکنولوژی
-                    </span>
-                    مورد نیاز و کاربردهای متنوع با هدف
-                    بهبود ابزارهای کاربردی می باشد. کتابهای
-                    زیادی در شصت و سه درصد گذشته، حال و آینده
-                    شناخت فراوان جامعه و متخصصان را می طلبد تا
-                    با نرم افزارها شناخت بیشتری را برای طراحان
-                    رایانه ای علی الخصوص طراحان خلاقی و فرهنگ
-                    پیشرو در زبان فارسی ایجاد کرد. در این صورت
-                    می توان امید داشت که تمام و دشواری موجود در
-                    ارائه راهکارها و شرایط سخت تایپ به پایان رسد
-                    و زمان مورد نیاز شامل حروفچینی دستاوردهای
-                    اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود
+                    <br />
+                    <span style="color: red"> تکنولوژی </span>
+                    مورد نیاز و کاربردهای متنوع با هدف بهبود
+                    ابزارهای کاربردی می باشد. کتابهای زیادی در
+                    شصت و سه درصد گذشته، حال و آینده شناخت
+                    فراوان جامعه و متخصصان را می طلبد تا با نرم
+                    افزارها شناخت بیشتری را برای طراحان رایانه
+                    ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در
+                    زبان فارسی ایجاد کرد. در این صورت می توان
+                    امید داشت که تمام و دشواری موجود در ارائه
+                    راهکارها و شرایط سخت تایپ به پایان رسد و
+                    زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی
+                    و جوابگوی سوالات پیوسته اهل دنیای موجود
                     طراحی اساسا مورد استفاده قرار گیرد.
                 </p>
             </div>
@@ -7095,14 +7062,12 @@
                     </button>
 
                     <div class="w-full">
-                        <!-- issue 1 -->
                         <p @click="selected = selected === inx ?  -1 :  inx" x-text="item.excerpt"
                             class="w-full overflow-hidden text-ellipsis transition-all duration-200"></p>
 
                         <p x-html="item.body" :style="{maxHeight : selected === inx ? '400px' : '0px' }"
-                            class="pointer-events-none w-full pt-4 overflow-hidden transition-all duration-200 ease-in">
+                            class="pointer-events-none w-full overflow-hidden pt-4 transition-all duration-200 ease-in">
                         </p>
-                        <!-- end issue 1 -->
                     </div>
                 </div>
             </template>
@@ -7150,10 +7115,10 @@
             </div>
         </div>
     </section>
-    <!-- ISSUE 18 -->
-    <div class="w-full overflow-x-clip relative">
-        <div class="h-40 w-full bg-gradient-to-b from-gray-200 via-transparent to-transparent absolute z-10"></div>
-        <div class="container relative mx-auto ">
+
+    <div class="relative w-full overflow-x-clip">
+        <div class="absolute z-10 h-40 w-full bg-gradient-to-b from-gray-200 via-transparent to-transparent"></div>
+        <div class="container relative mx-auto">
             <img class="absolute -top-28 left-0 z-10 scale-150 transform overflow-x-clip object-cover lg:-top-52"
                 src="img/footer-clouds-2.png" alt="" srcset="" />
         </div>
@@ -7233,7 +7198,7 @@
     <!-- scripts -->
     <script src="js/commons/utils.js"></script>
     <script src="js/components/slider.js"></script>
-    <!-- ISSUE 17 -->
+
     <script src="js/components/navbar-homepage.js"></script>
     <script src="js/pages/index.js"></script>
 </body>

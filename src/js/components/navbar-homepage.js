@@ -89,7 +89,6 @@ window.navbar = {
 
         function placeNavbarFixed() {
             homeMode()
-            console.log(9999)
             document.querySelector("#navigation-placeholder").appendChild(document.querySelector("#navigation"));
             document.querySelector("#navigation-placeholder").style.height = 'auto';
             document.querySelector("#navigation-sticky-placeholder").style.transform = "translate(0,-100%)";
@@ -98,7 +97,6 @@ window.navbar = {
 
         function placeNavbarSticky() {
             normalMode()
-            console.log(8888)
             document.querySelector("#navigation-placeholder").style.height = document.getElementById('navigation').getBoundingClientRect().height + 'px';
             document.querySelector("#navigation-sticky-placeholder").appendChild(document.querySelector("#navigation"));
             document.querySelector("#navigation-sticky-placeholder").style.transform = "translate(0,0%)"

@@ -78,10 +78,12 @@ table tbody tr {
 		}
 	}
 }
+/**
+ box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+ @apply rounded-2xl;
 
+*/
 #navigation {
-	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
-	@apply rounded-2xl;
 	#menu-top_menu {
 		@apply relative
 				z-20
