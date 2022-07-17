@@ -126,6 +126,11 @@ table tbody tr td:first-child {
 #mobile-menu .mobile-menu__overlay {
 	margin-left: auto;
 	margin-right: auto;
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 0.5rem;
 }
 
 @media (min-width: 1024px) {
@@ -166,7 +171,10 @@ table tbody tr td:first-child {
 }
 
 #mobile-menu ul {
-		max-height: calc(100vh - 185px);
+
+		/**
+		 max-height: calc(100vh - 185px);
+		  */
 	}
 
 #mobile-menu li a {
@@ -1021,8 +1029,7 @@ table tbody tr td:first-child {
 }
 
 /*! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com
-
-*/
+		  */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -2112,10 +2119,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	width: auto;
 }
 
-.w-\[110\%\] {
-	width: 110%;
-}
-
 .w-10\/12 {
 	width: 83.333333%;
 }
@@ -2202,6 +2205,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-grow {
 	flex-grow: 1;
+}
+
+.flex-grow-0 {
+	flex-grow: 0;
 }
 
 .-translate-y-1\/2 {
@@ -3815,6 +3822,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.sm\:w-60 {
 		width: 15rem;
+	}
+
+	.sm\:w-\[110\%\] {
+		width: 110%;
 	}
 
 	.sm\:w-2\/5 {

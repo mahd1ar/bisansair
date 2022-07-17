@@ -24,7 +24,7 @@
         <div id="navigation-placeholder" class="nav-container">
             <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
                 <div id="navigation__bar"
-                    class="relative z-20 mx-auto flex flex-grow items-start justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                    class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                     <div class="flex w-auto justify-between lg:w-full">
                         <a href="tel:02188319191"
                             class="flex-center flex-0 w-8 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
@@ -202,6 +202,12 @@
                                 <li class="menu-item">
                                     <a href="#">بلاگ</a>
                                 </li>
+                                <li class="menu-item">
+                                    <a href="#">بلاگ1</a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">2بلاگ</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -222,7 +228,7 @@
                 <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
                     <div class="mobile-menu__overlay">
                         <div
-                            class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                            class="mx-auto mt-5 flex flex-grow-0 items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm w-full">
                             <div class="flex">
                                 <div
                                     class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
@@ -241,7 +247,8 @@
                             </button>
                         </div>
 
-                        <div class="relative rounded-3xl bg-white" dir="rtl">
+                        <div class="relative rounded-3xl bg-white flex flex-col" style="max-height: calc(100% - 97px);"
+                            dir="rtl">
                             <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
                                 <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
                                     <img src="svg/chevron-rigth.svg" alt="" />
@@ -250,7 +257,7 @@
                                 <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
                             </div>
 
-                            <ul class="bi-scrollbar">
+                            <ul class="bi-scrollbar w-full  ">
                                 <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
                                     <li>
                                         <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') "
@@ -301,7 +308,8 @@
                     <h2 class="title-shadow relative top-3 text-xl font-bold">
                         با بیسان به بیش از 50 نقطه دنبا سفر کن
                     </h2>
-                    <div class="pointer-events-none absolute left-0 -top-32 -z-10 w-[110%] sm:-top-20 md:hidden">
+                    <div
+                        class="pointer-events-none absolute left-0 -top-32 -z-10 w-full sm:w-[110%] sm:-top-20 md:hidden">
                         <img src="img/Airplane.png" alt="" />
                     </div>
                 </div>
