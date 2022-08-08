@@ -1,8 +1,176 @@
+
+var INFINITY = 1 / 0,
+    MAX_SAFE_INTEGER = 9007199254740991,
+    MAX_INTEGER = 1.7976931348623157e+308,
+    NAN = 0 / 0;
+
+
+var funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    symbolTag = '[object Symbol]';
+
+
+var reTrim = /^\s+|\s+$/g;
+
+
+var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+
+
+var reIsBinary = /^0b[01]+$/i;
+
+var reIsOctal = /^0o[0-7]+$/i;
+
+var reIsUint = /^(?:0|[1-9]\d*)$/;
+
+var freeParseInt = parseInt;
+
+var objectProto = Object.prototype;
+
+
+var objectToString = objectProto.toString;
+
+var nativeCeil = Math.ceil,
+    nativeMax = Math.max;
+
+
+function baseRange(start, end, step, fromRight) {
+    var index = -1,
+        length = nativeMax(nativeCeil((end - start) / (step || 1)), 0),
+        result = Array(length);
+
+    while (length--) {
+        result[fromRight ? length : ++index] = start;
+        start += step;
+    }
+    return result;
+}
+
+
+function createRange(fromRight) {
+    return function (start, end, step) {
+        if (step && typeof step != 'number' && isIterateeCall(start, end, step)) {
+            end = step = undefined;
+        }
+        // Ensure the sign of `-0` is preserved.
+        start = toFinite(start);
+        if (end === undefined) {
+            end = start;
+            start = 0;
+        } else {
+            end = toFinite(end);
+        }
+        step = step === undefined ? (start < end ? 1 : -1) : toFinite(step);
+        return baseRange(start, end, step, fromRight);
+    };
+}
+
+
+function isIndex(value, length) {
+    length = length == null ? MAX_SAFE_INTEGER : length;
+    return !!length &&
+        (typeof value == 'number' || reIsUint.test(value)) &&
+        (value > -1 && value % 1 == 0 && value < length);
+}
+
+function isIterateeCall(value, index, object) {
+    if (!isObject(object)) {
+        return false;
+    }
+    var type = typeof index;
+    if (type == 'number'
+        ? (isArrayLike(object) && isIndex(index, object.length))
+        : (type == 'string' && index in object)
+    ) {
+        return eq(object[index], value);
+    }
+    return false;
+}
+
+function eq(value, other) {
+    return value === other || (value !== value && other !== other);
+}
+
+
+function isArrayLike(value) {
+    return value != null && isLength(value.length) && !isFunction(value);
+}
+
+
+function isFunction(value) {
+    var tag = isObject(value) ? objectToString.call(value) : '';
+    return tag == funcTag || tag == genTag;
+}
+
+
+function isLength(value) {
+    return typeof value == 'number' &&
+        value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+
+function isObject(value) {
+    var type = typeof value;
+    return !!value && (type == 'object' || type == 'function');
+}
+
+
+
+function isObjectLike(value) {
+    return !!value && typeof value == 'object';
+}
+
+function isSymbol(value) {
+    return typeof value == 'symbol' ||
+        (isObjectLike(value) && objectToString.call(value) == symbolTag);
+}
+
+function toFinite(value) {
+    if (!value) {
+        return value === 0 ? value : 0;
+    }
+    value = toNumber(value);
+    if (value === INFINITY || value === -INFINITY) {
+        var sign = (value < 0 ? -1 : 1);
+        return sign * MAX_INTEGER;
+    }
+    return value === value ? value : 0;
+}
+
+function toNumber(value) {
+    if (typeof value == 'number') {
+        return value;
+    }
+    if (isSymbol(value)) {
+        return NAN;
+    }
+    if (isObject(value)) {
+        var other = typeof value.valueOf == 'function' ? value.valueOf() : value;
+        value = isObject(other) ? (other + '') : other;
+    }
+    if (typeof value != 'string') {
+        return value === 0 ? value : +value;
+    }
+    value = value.replace(reTrim, '');
+    var isBinary = reIsBinary.test(value);
+    return (isBinary || reIsOctal.test(value))
+        ? freeParseInt(value.slice(2), isBinary ? 2 : 8)
+        : (reIsBadHex.test(value) ? NAN : +value);
+}
+
+var range = createRange();
+
+
+
+
+
 class Slider {
-    currentSliderIndex = undefined;
-    maxAmount = undefined;
+    state = undefined;
     selector = undefined;
     isBilateral
+
+    maxCartCount = 7;
+    sideCardsCount = 2
+    taraz = 2
     constructor({ containerSelectror, nextSelector, prvSelector, isBilateral = true }) {
         this.isBilateral = isBilateral
 
@@ -12,8 +180,9 @@ class Slider {
         ).length;
         if (cardsLen === 0)
             throw new Error("BI::no card selected")
-        this.currentSliderIndex = isBilateral ? ~~(cardsLen / 2) : cardsLen - 1;
-        this.maxAmount = cardsLen;
+        // this.state = isBilateral ? ~~(cardsLen / 2) : cardsLen - 1;
+        this.state = 0;
+        this.maxCartCount = cardsLen;
 
         this._calcPosition();
 
@@ -53,53 +222,77 @@ class Slider {
     }
 
     next() {
-        this.currentSliderIndex =
-            (this.currentSliderIndex + 1) % this.maxAmount;
+        this.state++
         this._calcPosition();
     }
 
     prv() {
-        this.currentSliderIndex =
-            this.currentSliderIndex - 1 > -1
-                ? this.currentSliderIndex - 1
-                : this.maxAmount - 1;
+        this.state--
         this._calcPosition();
     }
 
     _calcPosition() {
-        const cards = document.querySelectorAll(this.selector);
 
-        const selectedCard = this.currentSliderIndex;
+        const cards = [...document.querySelectorAll(this.selector)];
+        const selectedCard = this.state;
 
-        cards.forEach((card, id) => {
-            const margin = selectedCard - id;
-            const absMargin = Math.abs(selectedCard - id);
+
+        let LEdge = this.sideCardsCount + this.state
+        let REdge = this.state - this.sideCardsCount
+
+        if (LEdge === this.maxCartCount) {
+            LEdge -= this.maxCartCount
+            REdge -= this.maxCartCount
+            this.state = this.state - this.maxCartCount
+        }
+
+        if (REdge === this.maxCartCount * -1) {
+            REdge += this.maxCartCount
+            LEdge += this.maxCartCount
+            this.state = this.state + this.maxCartCount
+        }
+
+
+        cards.forEach(i => i.style.opacity = 0)
+
+        range(REdge, LEdge + 1).forEach((item, id) => {
+
+
+            let margin = (this.taraz - id);
+
+            const absMargin = Math.abs(margin);
             const distanse = ['sm', 'NONE'].includes(currentBrackPoint()) ? 40 : ['md'].includes(currentBrackPoint()) ? 80 : 120;
             const opacity = ['sm', 'NONE'].includes(currentBrackPoint()) ? 0.40 : 0.25;
-            card.style.transitionDuration = '400ms'
-            if (absMargin === 0) {
-                card.style.pointerEvents = "auto"
-            } else {
-                card.style.pointerEvents = "none"
-            }
-            card.style.zIndex = 10 - Math.abs(margin);
-            const imgopacity = this.isBilateral ? 1 - absMargin * opacity : id > selectedCard ? 0 : 1 - absMargin * opacity;
 
-            card.querySelector('img').style.opacity = imgopacity;
+
+            cards.at(item).style.transitionDuration = '400ms'
+            if (absMargin === 0) {
+                cards.at(item).style.pointerEvents = "auto"
+            } else {
+                cards.at(item).style.pointerEvents = "none"
+            }
+
+            cards.at(item).style.zIndex = 10 - Math.abs(margin);
+
+            const imgopacity = this.isBilateral ?
+                1 - absMargin * opacity :
+                item > selectedCard ? 0 : 1 - absMargin * opacity;
+
+            cards.at(item).querySelector('img').style.opacity = imgopacity;
 
             if (imgopacity <= 0) {
 
-                card.style.transform = `translate3d(${(this.isBilateral ? 1 : -1) * margin * distanse}px ,0px ,0px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
-                card.style.opacity = 0;
+                cards.at(item).style.transform = `translate3d(${(this.isBilateral ? 1 : -1) * margin * distanse}px ,0px ,0px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
+                cards.at(item).style.opacity = 0;
                 setTimeout(() => {
-                    card.style.display = "none";
+                    cards.at(item).style.display = "none";
                 }, 170);
             } else {
-                card.style.display = "block";
+                cards.at(item).style.display = "block";
                 setTimeout(() => {
 
-                    card.style.transform = `translate3d(${(this.isBilateral ? 1 : -1) * margin * distanse}px ,0px ,0px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
-                    card.style.opacity = 1;
+                    cards.at(item).style.transform = `translate3d(${(this.isBilateral ? 1 : -1) * margin * distanse}px ,0px ,0px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
+                    cards.at(item).style.opacity = 1;
                 }, 10);
             }
 

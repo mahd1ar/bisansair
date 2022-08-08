@@ -290,9 +290,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 
-
-
-
 /**
  * 
  * @param {number} jy year
