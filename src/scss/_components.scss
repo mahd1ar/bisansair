@@ -7,3 +7,29 @@
 .bi-headline_description {
 	@apply text-gray-500;
 }
+
+.x-transition {
+	&-enter {
+		@apply transition duration-1000 ease-out;
+	}
+
+	&-enter-start,
+	&-leave-end {
+		.child-item {
+			@apply scale-90 opacity-0 transition duration-300;
+			/**
+			transition-delay: calc(var(--count) * 75ms);
+			*/
+		}
+	}
+	&-enter-end,
+	&-leave-start {
+		.child-item {
+			@apply scale-100 opacity-100 transition duration-500;
+			transition-delay: calc(var(--count) * 75ms);
+		}
+	}
+	&-leave {
+		@apply transition duration-1000 ease-in;
+	}
+}

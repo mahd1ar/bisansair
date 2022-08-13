@@ -44,3 +44,14 @@
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
 }
+
+.bi-shadow {
+	box-shadow: 0px -5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.bi-svgfull {
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+}
