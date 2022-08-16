@@ -6,6 +6,13 @@ module.exports = {
       'vazir': ['Vazir'],
       'yekan': ['BYekan'],
     },
+    container: {
+      padding: {
+        DEFAULT: '1rem',
+        xl: '5rem',
+        '2xl': '5rem',
+      },
+    },
     extend: {
       colors: {
         primery: {
@@ -27,8 +34,10 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       screens: {
-        'xl': '1040px',
-        '2xl': '1040px',
+        // 'md': '786px',
+        // 'lg': '1280px',
+        'xl': '1280px',
+        '2xl': '1280px',
         // 'landscape': { 'raw': 'only screen and (max-width: 600px) and (orientation: landscape)' },
       },
     },

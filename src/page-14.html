@@ -222,7 +222,7 @@
                 <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
                     <div class="mobile-menu__overlay">
                         <div
-                            class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                            class="mx-auto mt-5 flex flex-grow-0 items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm w-full">
                             <div class="flex">
                                 <div
                                     class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
@@ -241,7 +241,8 @@
                             </button>
                         </div>
 
-                        <div class="relative rounded-3xl bg-white" dir="rtl">
+                        <div class="relative rounded-3xl bg-white flex flex-col" style="max-height: calc(100% - 97px);"
+                            dir="rtl">
                             <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
                                 <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
                                     <img src="svg/chevron-rigth.svg" alt="" />
@@ -250,7 +251,7 @@
                                 <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
                             </div>
 
-                            <ul class="bi-scrollbar">
+                            <ul class="bi-scrollbar w-full  ">
                                 <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
                                     <li>
                                         <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') "

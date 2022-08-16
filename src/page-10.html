@@ -8,15 +8,139 @@
     <title>page 10</title>
     <link rel="stylesheet" href="css/output.css" />
     <script defer src="lib/js/alpine.js"></script>
+    <link rel="stylesheet" href="lib/css/splide.min.css" />
+    <link rel="stylesheet" href="lib/css/splide-core.min.css" />
 </head>
 
 <body>
-
-
-    <div class="fixed w-full z-50 transition-all nav-container" id="navigation-sticky-placeholder">
+    <div class="fixed top-10 left-10 z-50 opacity-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
+        <span class="hidden sm:block">sm</span>
+        <span class="hidden md:block">md</span>
+        <span class="hidden lg:block">lg</span>
+        <span class="hidden xl:block">xl</span>
+        <span class="hidden 2xl:block">2xl</span>
+    </div>
+    <div class="nav-container fixed z-50 w-full transition-all" id="navigation-sticky-placeholder">
         <!-- DO NOT DELETE ME -->
     </div>
     <header class="mb-10 pt-10">
+        <!-- mobile controller layout -->
+        <nav x-data="mobile_controller" class="fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
+            <div x-show="isOpen" style="display: none" class="relative h-full w-full overflow-hidden bg-white"
+                x-transition.delay.150ms>
+                <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+							background: url(img/backgrounds/Group.png)
+								center center/cover;
+							background-color: #f0f0f0;
+						"></div>
+                <div class="container relative mx-auto flex h-full flex-col">
+                    <div class="mt-10 flex flex-col items-center gap-7">
+                        <img src="img/logo-with-text.svg" />
+                        <h3 class="text-lg font-bold text-primery-dark">
+                            !!! رویاهات رو تور کن
+                        </h3>
+
+                        <button x-show="subMenu.length > 0" x-transition
+                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold text-secondary-dark transition-all"
+                            @click="back">
+                            بازگشت به منوی قبلی
+                        </button>
+                    </div>
+                    <div class="bi-scrollbar mt-4 h-full overflow-auto">
+                        <!-- info: animatin wrapper -->
+                        <div class="grid grid-cols-3 gap-2 px-4 text-center sm:grid-cols-5 md:grid-cols-6"
+                            x-show="animationIndex" x-transition:enter="x-transition-enter"
+                            x-transition:enter-start="x-transition-enter-start"
+                            x-transition:enter-end="x-transition-enter-end" x-transition:leave="x-transition-leave"
+                            x-transition:leave-start="x-transition-leave-start "
+                            x-transition:leave-end="x-transition-leave-end">
+                            <template x-for="({name,link,icon,hasChildren},inx) in ch" :key="inx">
+                                <div :style="{ '--count' : inx }"
+                                    @click="hasChildren ? changeSubMenu(inx) : openlink(link) "
+                                    class="child-item flex aspect-square cursor-pointer cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl bg-gray-200"
+                                    x-transition.fade>
+                                    <span x-show="icon" x-html="icon" class="flex-center bi-svgfull aspect-square w-8">
+                                    </span>
+                                    <span class="text-center font-bold text-secondary-dark" x-text="name"></span>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bi-shadow relative mt-auto h-16">
+                <div class="relative z-20 flex justify-center gap-16 text-secondary-dark">
+                    <div class="flex">
+                        <!-- NOTE : CHANGE THIS LINKS  -->
+                        <button @click="openlink('/blog')"
+                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
+                            <img src="img/controll/blog.svg" />
+                            <span> بلاگ </span>
+                        </button>
+                        <!-- NOTE : CHANGE THIS LINKS  -->
+                        <button @click="openlink('/search')"
+                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
+                            <img src="img/controll/search.svg" />
+                            <span> جستجو </span>
+                        </button>
+                    </div>
+
+                    <div class="flex">
+                        <button @click="taggleMobileMenu"
+                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
+                            <img src="img/controll/menu.svg" />
+                            <span> فهرست </span>
+                        </button>
+                        <!-- NOTE : HOME PAGE LINK HERE -->
+                        <button @click="openlink('/')"
+                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
+                            <img src="img/controll/home.svg" />
+                            <span> خانه </span>
+                        </button>
+                    </div>
+                    <!-- call btn -->
+                    <a href="tel:+982143000030"
+                        class="bi-shadow flex-center absolute top-0 aspect-square w-16 -translate-y-1/2 rotate-45 transform rounded-xl bg-primery">
+                        <img src="img/controll/call.svg" class="-rotate-45 transform cursor-pointer" />
+                    </a>
+                </div>
+                <div aria-hidden="true" class="absolute top-0 z-10 flex w-full justify-center overflow-hidden">
+                    <svg style="transform: translateY(-25px)" width="375" height="89" viewBox="0 0 375 89" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_2657_2667)">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M138.307 31.4436C134.181 27.3178 128.585 25 122.75 25H0V89H375V25H253.25C247.415 25 241.819 27.3179 237.693 31.4437L203.556 65.5807C194.965 74.1723 181.035 74.1723 172.444 65.5807L138.307 31.4436Z"
+                                fill="white" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_2657_2667" x="-20" y="0" width="415" height="104"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="-5" />
+                                <feGaussianBlur stdDeviation="10" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2657_2667" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2657_2667"
+                                    result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+                <div aria-hidden="true" class="absolute top-0 h-full w-full bg-white" style="
+							clip-path: polygon(
+								50% 92%,
+								66% 0,
+								100% 0,
+								100% 100%,
+								0 100%,
+								0 0,
+								34% 0
+							);
+						"></div>
+            </div>
+        </nav>
         <!-- TRAVEL TEXTURE -->
         <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
 					background: url(svg/travel-textture/one.svg)
@@ -25,7 +149,8 @@
 				"></div>
 
         <div id="navigation-placeholder" class="nav-container">
-            <nav id="navigation" x-data="navbar" class="container mx-auto overflow-x-clip lg:max-w-[1104px]">
+            <nav id="navigation" x-data="navbar"
+                class="container mx-auto hidden overflow-x-clip lg:block lg:max-w-[1104px] xl:max-w-full">
                 <div
                     class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                     <div class="flex">
@@ -39,45 +164,80 @@
 
                         <div class="menu-top_menu-container hidden lg:block" ref="menuContainer">
                             <ul id="menu-top_menu" class="menu">
+                                <li class="menu-item">
+                                    <a href="#">خانه
+                                        <i class="hidden">
+                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                        </i>
+                                    </a>
+                                </li>
                                 <li class="menu-item menu-item-has-children">
-                                    <a href="#">تور</a>
+                                    <a href="#">تور
+                                        <i class="hidden">
+                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                        </i>
+                                    </a>
                                     <ul class="sub-menu">
                                         <li class="menu-item">
                                             <a href="#">
                                                 bitumen
                                                 penetration
                                                 grade
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">performance
                                                 grade
-                                                bitumen</a>
+                                                bitumen
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                         </li>
                                         <li class="menu-item menu-item-has-children">
                                             <a href="#">Bitumen
-                                                Cutback</a>
+                                                Cutback
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                             <ul class="sub-menu">
                                                 <li class="menu-item">
                                                     <a href="#">Cutback
                                                         bitumen
                                                         slow
                                                         curing
-                                                        (SC)</a>
+                                                        (SC)
+
+                                                        <i class="hidden">
+                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                        </i>
+                                                    </a>
                                                 </li>
                                                 <li class="menu-item">
                                                     <a href="#">Cutback
                                                         bitumen
                                                         medium
                                                         curing
-                                                        (MC)</a>
+                                                        (MC)
+                                                        <i class="hidden">
+                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                        </i>
+                                                    </a>
                                                 </li>
                                                 <li class="menu-item">
                                                     <a href="#">Rapid
                                                         curing
                                                         cutback
                                                         bitumen
-                                                        (RC)</a>
+                                                        (RC)
+                                                        <i class="hidden">
+                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                        </i>
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -88,76 +248,134 @@
                                                 <li class="menu-item">
                                                     <a href="#">Bitumen
                                                         Emulsion
-                                                        (BE)</a>
+                                                        (BE)
+                                                        <i class="hidden">
+                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                        </i>
+                                                    </a>
                                                 </li>
                                                 <li class="menu-item">
                                                     <a href="#">Cationic
-                                                        Emulsions</a>
+                                                        Emulsions
+                                                        <i class="hidden">
+                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                        </i>
+                                                    </a>
                                                 </li>
                                                 <li class="menu-item">
                                                     <a href="#">Anionic
-                                                        Emulsions</a>
+                                                        Emulsions
+                                                        <i class="hidden">
+                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                        </i>
+                                                    </a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">Mulch
                                                 Emulsified
-                                                Bitumen</a>
+                                                Bitumen
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">Solvent
                                                 Base
-                                                Primer</a>
+                                                Primer
+
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">Polymer
                                                 Modified
                                                 Emulsion
-                                                (PME)</a>
+                                                (PME)
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">Ready
                                                 Mixed
-                                                Asphalt</a>
+                                                Asphalt
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="#">Bituplast</a>
+                                            <a href="#">Bituplast
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">Bitumen
                                                 Base
                                                 Waterproofing
-                                                Mortar</a>
+                                                Mortar
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">Bituco
                                                 Organic
                                                 Cleaner
-                                                (BOC):</a>
+                                                (BOC):
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="menu-item menu-item-has-children">
-                                    <a href="#">ﻫﺘﻞ ﻫﺎ</a>
+                                    <a href="#">ﻫﺘﻞ ﻫﺎ
+                                        <i class="hidden">
+                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                        </i>
+                                    </a>
                                     <ul class="sub-menu">
                                         <li class="menu-item menu-item-object-post">
                                             <a href="#">Standardizing
-                                                Bodies</a>
+                                                Bodies
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                         </li>
                                         <li class="menu-item menu-item-object-post">
                                             <a href="#">Family
                                                 of
                                                 Bitumenous
-                                                Binders</a>
+                                                Binders
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
+                                            </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="#">Quality
-                                                Control</a>
+                                                Control
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" /> </i></a>
                                         </li>
                                         <li class="menu-item menu-item-object-post menu-item-has-children">
                                             <a href="#">BITUMEN
                                                 EMULSIONS
+                                                <i class="hidden">
+                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                </i>
                                             </a>
 
                                             <ul class="sub-menu">
@@ -166,41 +384,83 @@
                                                         bitumen
                                                         slow
                                                         curing
-                                                        (SC)</a>
+                                                        (SC)
+                                                        <i class="hidden">
+                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                        </i></a>
                                                 </li>
                                                 <li class="menu-item">
                                                     <a href="#">Cutback
                                                         bitumen
                                                         medium
                                                         curing
-                                                        (MC)</a>
+                                                        (MC)
+                                                        <i class="hidden">
+                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                        </i></a>
                                                 </li>
                                                 <li class="menu-item">
                                                     <a href="#">Rapid
                                                         curing
                                                         cutback
                                                         bitumen
-                                                        (RC)</a>
+                                                        (RC)
+                                                        <i class="hidden">
+                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                                        </i></a>
                                                 </li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#">تور اقساط</a>
+                                    <a href="#">تور اقساط
+                                        <i class="hidden">
+                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                        </i>
+                                    </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#">تور اروپا</a>
+                                    <a href="#">تور اروپا
+                                        <i class="hidden">
+                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                        </i>
+                                    </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#">ﺗﻮر ویژه</a>
+                                    <a href="#">ﺗﻮر ویژه
+                                        <i class="hidden">
+                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                        </i>
+                                    </a>
                                 </li>
 
                                 <li class="menu-item">
-                                    <a href="#">ویزا</a>
+                                    <a href="#">ویزا
+                                        <i class="hidden">
+                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" /> </i></a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="#">بلاگ</a>
+                                    <a href="#">بلاگ
+                                        <i class="hidden">
+                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">بلاگ1
+                                        <i class="hidden">
+                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                        </i>
+                                    </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="https://google.com">
+                                        2بلاگ
+                                        <i class="hidden">
+                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
+                                        </i>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -221,7 +481,7 @@
                 <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
                     <div class="mobile-menu__overlay">
                         <div
-                            class="mx-auto mt-5 flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
+                            class="mx-auto mt-5 flex w-full flex-grow-0 items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
                             <div class="flex">
                                 <div
                                     class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
@@ -240,7 +500,11 @@
                             </button>
                         </div>
 
-                        <div class="relative rounded-3xl bg-white" dir="rtl">
+                        <div class="relative flex flex-col rounded-3xl bg-white" style="
+									max-height: calc(
+										100% - 97px
+									);
+								" dir="rtl">
                             <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
                                 <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
                                     <img src="svg/chevron-rigth.svg" alt="" />
@@ -249,7 +513,7 @@
                                 <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
                             </div>
 
-                            <ul class="bi-scrollbar">
+                            <ul class="bi-scrollbar w-full">
                                 <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
                                     <li>
                                         <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') "
@@ -267,416 +531,1389 @@
                 <!-- / -->
             </nav>
         </div>
-
     </header>
 
-    <main class="container relative mx-auto flex flex-col items-start gap-2 px-2 lg:flex-row" dir="rtl">
-        <div class="w-full lg:w-9/12">
-            <div>
-                <div
-                    class="bi-scrollbar overflow-auto border-t-2 py-6 lg:rounded-3xl lg:border-t-0 lg:bg-white lg:px-6 lg:shadow-lg">
+    <main class="container relative mx-auto" dir="rtl">
+        <!-- Breadcrumb -->
+        <div class="flex justify-center sm:justify-start">
+            <span class="inline-flex items-center gap-2 rounded-lg bg-white py-1 px-2">
+                بیسانسیر
+                <span>
+                    <img src="img/tours/chav-left.svg" />
+                </span>
+                تور
+                <span>
+                    <img src="img/tours/chav-left.svg" />
+                </span>
+                ترکیه
+                <span>
+                    <img src="img/tours/chav-left.svg" />
+                </span>
+                استانبول
+            </span>
+        </div>
+        <!-- Tour introduction -->
+        <div class="mt-2 flex w-full flex-col gap-2 overflow-hidden rounded-2xl shadow-lg sm:flex-row sm:gap-0">
+            <div class="w-full rounded-2xl bg-white sm:w-9/12">
+                <div class="flex items-start p-5 sm:items-center">
+                    <div class="ml-4 shrink-0">
+                        <img class="h-16 w-16 rounded-circle object-cover" src="img/flag-turkish.png" alt="" />
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <h1 class="text-2xl font-bold">
+                            تور استانبول با پرواز ایران ایر
+                        </h1>
+                        <div class="flex flex-col flex-wrap items-start gap-4 text-sm sm:flex-row sm:gap-1">
+                            <div
+                                class="flex items-center gap-2 rounded border-2 border-gray-200 py-1 px-2 text-gray-500">
+                                <i class="flex-center aspect-square w-6 rounded-circle bg-primery sm:bg-gray-200">
+                                    <img src="img/tours/location.svg" alt="" />
+                                </i>
+                                <span>
+                                    ترکیه ، استانبول
+                                </span>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-2 rounded border-2 border-gray-200 py-1 px-2 text-gray-500">
+                                <i class="flex-center aspect-square w-6 rounded-circle bg-primery sm:bg-gray-200">
+                                    <img src="img/tours/clock.svg" alt="" />
+                                </i>
+                                <span> 5 شب </span>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-2 rounded border-2 border-gray-200 py-1 px-2 text-gray-500">
+                                <i class="flex-center aspect-square w-6 rounded-circle bg-primery sm:bg-gray-200">
+                                    <img src="img/tours/cal.svg" alt="" />
+                                </i>
+                                <span>
+                                    ۳ و ۱۰ و ۱۷ و ۲۴
+                                    شهریور
+                                </span>
+                            </div>
+
+                            <div
+                                class="flex items-center gap-2 rounded border-2 border-gray-200 py-1 px-2 text-gray-500">
+                                <i class="flex-center aspect-square w-6 rounded-circle bg-primery sm:bg-gray-200">
+                                    <img src="img/tours/hotel.svg" alt="" />
+                                </i>
+                                <span>
+                                    هتل ۴ و ۵ ستاره
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-center w-full rounded-2xl bg-gray-200 sm:w-3/12 sm:rounded-none">
+                <div class="flex flex-col justify-start gap-1 py-7 text-xs text-black">
+                    <span> شروع قیمت از </span>
+                    <div>
+                        <div class="flex-center relative w-full gap-3 text-black">
+                            <div class="flex-center gap-2">
+                                <span class="text-sm">تومان</span>
+                                <strong class="text-xl font-bold">5.200.00</strong>
+                            </div>
+                            <img class="" src="svg/money.svg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 flex flex-col items-start gap-2 lg:flex-row">
+            <div class="w-full lg:w-9/12">
+                <div>
                     <div
-                        class="js-tabs-container bi-scrollbar flex items-start gap-2 whitespace-nowrap font-semibold text-secondary-dark">
-                        <a href="#about" class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  hover:bg-slate-200 ">
-                            توضیحات
-                        </a>
-                        <a href="#docs" class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  hover:bg-slate-200 ">
-                            برنامه سفر
+                        class="bi-scrollbar bi-shadow-sm sticky top-0 hidden overflow-auto rounded-3xl bg-white py-6 sm:block lg:hidden">
+                        <div
+                            class="js-tabs-container bi-scrollbar flex items-start gap-2 whitespace-nowrap font-semibold text-secondary-dark">
+                            <a href="#hotels"
+                                class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-200">
+                                hotels
+                            </a>
+                            <a href="#tour_info"
+                                class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-200">
+                                tour_info
+                            </a>
 
-                        </a>
-                        <a href="#required-documents"
-                            class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  hover:bg-slate-200 ">
-                            مدارک مورد نیاز
-                        </a>
-                        <a href="#hotels" class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  hover:bg-slate-200 ">
-                            هتل ها
-                        </a>
-                        <a href="#gallery"
-                            class="js-tab-item cursor-pointer rounded-3xl px-6 py-2  hover:bg-slate-200 ">
-                            گالری
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Title -->
-                <div class="mt-8">
-                    <div class="flex items-start">
-                        <div class="ml-4 shrink-0">
-                            <img class="h-16 w-16 rounded-circle object-cover" src="img/flag-turkish.png" alt="" />
-                        </div>
-                        <div>
-                            <h1 class="text-2xl font-bold">
-                                تور استانبول با پرواز
-                                ایران ایر
-                            </h1>
-                            <p class="text-xs text-gray-400">
-                                ترکیه استانبول
-                            </p>
+                            <a href="#gallery"
+                                class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-200">
+                                گالری
+                            </a>
+                            <a href="#Suggested_tour"
+                                class="js-tab-item cursor-pointer rounded-3xl px-6 py-2 hover:bg-slate-200">
+                                Suggested_tour
+                            </a>
                         </div>
                     </div>
-                </div>
 
-                <!-- About tour -->
-                <div class="mt-8" id="about">
-                    <h1 class="text-xl font-bold text-primery-dark">
-                        در مورد سفر
-                    </h1>
-                    <div class="mt-2">
-                        لورم ایپسوم یا طرح‌نما (به انگلیسی:
-                        Lorem ipsum) به متنی آزمایشی و بی‌معنی
-                        در صنعت چاپ، صفحه‌آرایی و طراحی گرافیک
-                        گفته می‌شود. طراح گرافیک از این متن به
-                        عنوان عنصری از ترکیب بندی برای پر کردن
-                        صفحه و ارایه اولیه شکل ظاهری و کلی طرح
-                        سفارش گرفته شده استفاده می نماید، تا
-                        از نظر
-                    </div>
-                </div>
+                    <!-- Hotels table -->
+                    <div class="mt-8" id="hotels">
+                        <!-- mobile only -->
+                        <div class="flex flex-col gap-4 md:hidden">
+                            <div class="bi-shadow-sm flex flex-col gap-1 rounded-2xl p-4 odd:bg-white even:bg-zinc-100">
+                                <div class="flex justify-between">
+                                    <div class="flex flex-col gap-1">
+                                        <h3 class="font-bold text-black">
+                                            هتل
+                                            گرانادا
+                                            لاکچری
+                                        </h3>
+                                        <span class="text-sm text-slate-600">
+                                            Granda
+                                            Luxary
+                                            Hotel
+                                        </span>
+                                    </div>
+                                    <div class="flex-center w-1/2">
+                                        <div class="flex h-4 w-full justify-end">
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
 
-                <!-- docs -->
-                <div class="mt-8" id="docs">
-                    <h1 class="text-xl font-bold text-primery-dark">
-                        مدارک مورد نیاز
-                    </h1>
-                    <div class="mt-2">
-                        گرافیکی نشانگر چگونگی نوع و اندازه
-                        فونت و ظاهر متن باشد. معمولا طراحان
-                        گرافیک برای صفحه‌آرایی، نخست از
-                        متن‌های آزمایشی و بی‌معنی استفاده
-                        می‌کنند تا صرفا به مشتری یا صاحب کار
-                        خود نشان دهند که صفحه طراحی یا صفحه
-                        بندی شده بعد از اینکه متن در آن قرار
-                        گیرد چگونه به نظر می‌رسد و قلم‌ها و
-                        اندازه‌بندی‌ها چگونه در نظر گرفته
-                        شده‌است. از آنجایی که طراحان عموما
-                        نویسنده متن نیستند
-                    </div>
-                </div>
+                                <div class="flex justify-between text-slate-600">
+                                    <div class="text-sm">
+                                        امتیاز بوکینگ:
+                                        <b>5.9</b>
+                                    </div>
+                                    <div class="flex-center gap-2">
+                                        <span>
+                                            Belek
+                                        </span>
+                                        <i class="flex-center rounded bg-gray-200 p-1">
+                                            <img src="img/tours/location.svg" alt="" />
+                                        </i>
+                                    </div>
+                                </div>
 
-                <!-- Services -->
-                <div class="mt-8" id="services">
-                    <h1 class="text-xl font-bold text-primery-dark">
-                        مدارک مورد نیاز
-                    </h1>
-                    <div class="mt-4 grid grid-cols-2 gap-6 lg:grid-cols-3">
-                        <div class="bi-overlay flex items-center gap-4 rounded-3xl py-4 px-6" style="
-									background: url(img/transfer.jpg)
-										center center /
-										cover;
-								">
-                            <div class="relative rounded-circle bg-primery p-3">
-                                <img src="svg/bus-primary-dark.svg" alt="" />
+                                <div class="flex gap-3 font-bold text-slate-600">
+                                    <span class="rounded bg-slate-600 px-2 text-white">U.ALL</span>
+
+                                    صبحانه، نهار، شام،
+                                    نوشیدنی
+                                </div>
+
+                                <div class="mt-4 flex flex-col gap-1">
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="relative font-bold text-white">
-                                ترانسفر هتل
+
+                            <div class="bi-shadow-sm flex flex-col gap-1 rounded-2xl p-4 odd:bg-white even:bg-zinc-100">
+                                <div class="flex justify-between">
+                                    <div class="flex flex-col gap-1">
+                                        <h3 class="font-bold text-black">
+                                            هتل
+                                            گرانادا
+                                            لاکچری
+                                        </h3>
+                                        <span class="text-sm text-slate-600">
+                                            Granda
+                                            Luxary
+                                            Hotel
+                                        </span>
+                                    </div>
+                                    <div class="flex-center w-1/2">
+                                        <div class="flex h-4 w-full justify-end">
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between text-slate-600">
+                                    <div class="text-sm">
+                                        امتیاز بوکینگ:
+                                        <b>5.9</b>
+                                    </div>
+                                    <div class="flex-center gap-2">
+                                        <span>
+                                            Belek
+                                        </span>
+                                        <i class="flex-center rounded bg-gray-200 p-1">
+                                            <img src="img/tours/location.svg" alt="" />
+                                        </i>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3 font-bold text-slate-600">
+                                    <span class="rounded bg-slate-600 px-2 text-white">U.ALL</span>
+
+                                    صبحانه، نهار، شام،
+                                    نوشیدنی
+                                </div>
+
+                                <div class="mt-4 flex flex-col gap-1">
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bi-shadow-sm flex flex-col gap-1 rounded-2xl p-4 odd:bg-white even:bg-zinc-100">
+                                <div class="flex justify-between">
+                                    <div class="flex flex-col gap-1">
+                                        <h3 class="font-bold text-black">
+                                            هتل
+                                            گرانادا
+                                            لاکچری
+                                        </h3>
+                                        <span class="text-sm text-slate-600">
+                                            Granda
+                                            Luxary
+                                            Hotel
+                                        </span>
+                                    </div>
+                                    <div class="flex-center w-1/2">
+                                        <div class="flex h-4 w-full justify-end">
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                            <img src="svg/gold-star.svg" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between text-slate-600">
+                                    <div class="text-sm">
+                                        امتیاز بوکینگ:
+                                        <b>5.9</b>
+                                    </div>
+                                    <div class="flex-center gap-2">
+                                        <span>
+                                            Belek
+                                        </span>
+                                        <i class="flex-center rounded bg-gray-200 p-1">
+                                            <img src="img/tours/location.svg" alt="" />
+                                        </i>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-3 font-bold text-slate-600">
+                                    <span class="rounded bg-slate-600 px-2 text-white">U.ALL</span>
+
+                                    صبحانه، نهار، شام،
+                                    نوشیدنی
+                                </div>
+
+                                <div class="mt-4 flex flex-col gap-1">
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="flex justify-between rounded border p-4 text-gray-600 odd:bg-white even:bg-zinc-100">
+                                        <div class="font-bold">
+                                            یک تخته
+                                        </div>
+
+                                        <div class="">
+                                            <b class="text-primery-dark">
+                                                5,750,000
+                                            </b>
+                                            تومان
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="bi-overlay flex items-center gap-4 rounded-3xl py-4 px-6" style="
-									background: url(img/transfer.jpg)
-										center center /
-										cover;
-								">
-                            <div class="relative rounded-circle bg-primery p-3">
-                                <img src="svg/bus-primary-dark.svg" alt="" />
-                            </div>
-                            <div class="relative font-bold text-white">
-                                بیمه
-                            </div>
-                        </div>
-
-                        <div class="bi-overlay flex items-center gap-4 rounded-3xl py-4 px-6" style="
-									background: url(img/transfer.jpg)
-										center center /
-										cover;
-								">
-                            <div class="relative rounded-circle bg-primery p-3">
-                                <img src="svg/bus-primary-dark.svg" alt="" />
-                            </div>
-                            <div class="relative font-bold text-white">
-                                راهنمای تور
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Required Documents -->
-                <div class="mt-8" id="required-documents">
-                    <h1 class="text-xl font-bold text-primery-dark">
-                        مدارک مورد نیاز
-                    </h1>
-
-                    <div class="mt-4 grid grid-cols-2 gap-6 text-black lg:grid-cols-3">
-                        <div class="rounded-xl bg-slate-200 px-4 py-2">
-                            گذرنامه با 7 ماه اعتبار
-                        </div>
-                        <div class="rounded-xl bg-slate-200 px-4 py-2">
-                            نتیجه تست منفی PCR
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hotels table -->
-                <div class="mt-8" id="hotels">
-                    <h1 class="text-xl font-bold text-primery-dark">
-                        هتل ها
-                    </h1>
-
-                    <div class="mt-4 flex flex-col">
-                        <div class="bi-scrollbar -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                            <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-                                <div class="overflow-hidden border-b border-gray-200  sm:rounded-lg">
-                                    <table class="min-w-full ">
-                                        <thead class="bg-gray-50">
-                                            <tr>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
-                                                    نام
-                                                    هتل
-                                                </th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
-                                                    خدمات
-                                                </th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
-                                                    1
-                                                    تخت
-                                                    (
-                                                    هر
-                                                    نفر
-                                                    )
-                                                </th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
-                                                    1
-                                                    تخت
-                                                </th>
-                                                <th scope="col"
-                                                    class="px-6 py-3 text-right text-xs font-medium uppercase tracking-wider text-gray-500">
-                                                    توضیحات
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class=" bg-white">
-                                            <tr>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <div class="flex items-center text-gray-700">
+                        <!-- desktop only -->
+                        <div class="mt-4 hidden flex-col md:flex">
+                            <div class="bi-scrollbar bi-shadow-sm -my-2 overflow-x-auto rounded-3xl bg-white p-6">
+                                <div class="inline-block min-w-full py-2 align-middle">
+                                    <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                        <table class="min-w-full">
+                                            <thead class="bg-primery text-xs font-bold text-primery-dark">
+                                                <tr>
+                                                    <th scope="col"
+                                                        class="rounded-r-2xl px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        نام
                                                         هتل
-                                                        ریدل
-                                                        استانبول
-                                                    </div>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <div class="text-sm text-gray-700">
-                                                        B.B
-                                                    </div>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <span
-                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
-                                                        3700000
-                                                    </span>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <span
-                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
-                                                        5700000
-                                                    </span>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-                                                    <span>
-                                                        dec
-                                                    </span>
-                                                </td>
-                                            </tr>
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        خدمات
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        دو
+                                                        تخته
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        یک
+                                                        تخته
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        کودک
+                                                        با
+                                                        تخت
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="rounded-l-2xl px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        کودک
+                                                        بدون
+                                                        تخت
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="whitespace-nowrap py-4 pr-4">
+                                                        <div class="flex flex-col items-start text-gray-700">
+                                                            هتل
+                                                            ریدل
+                                                            استانبول
+                                                            <div class="flex">
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <div class="text-sm text-gray-700">
+                                                            B.B
+                                                        </div>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            3700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                </tr>
 
-                                            <tr class="">
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <div class="flex items-center text-gray-700">
-                                                        هتل
-                                                        ریدل
-                                                        استانبول
-                                                    </div>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <div class="text-sm text-gray-700">
-                                                        B.B
-                                                    </div>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <span
-                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
-                                                        3700000
-                                                    </span>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <span
-                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
-                                                        5700000
-                                                    </span>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-                                                    <span>
-                                                        dec
-                                                    </span>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="whitespace-nowrap py-4 pr-4">
+                                                        <div class="flex flex-col items-start text-gray-700">
+                                                            هتل
+                                                            ریدل
+                                                            استانبول
+                                                            <div class="flex">
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <div class="text-sm text-gray-700">
+                                                            B.B
+                                                        </div>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            3700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <div class="flex items-center text-gray-700">
-                                                        هتل
-                                                        ریدل
-                                                        استانبول
-                                                    </div>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <div class="text-sm text-gray-700">
-                                                        B.B
-                                                    </div>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <span
-                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
-                                                        3700000
-                                                    </span>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <span
-                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
-                                                        5700000
-                                                    </span>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-                                                    <span>
-                                                        dec
-                                                    </span>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="whitespace-nowrap py-4 pr-4">
+                                                        <div class="flex flex-col items-start text-gray-700">
+                                                            هتل
+                                                            ریدل
+                                                            استانبول
+                                                            <div class="flex">
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <div class="text-sm text-gray-700">
+                                                            B.B
+                                                        </div>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            3700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                </tr>
 
-                                            <tr class="">
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <div class="flex items-center text-gray-700">
-                                                        هتل
-                                                        ریدل
-                                                        استانبول
-                                                    </div>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <div class="text-sm text-gray-700">
-                                                        B.B
-                                                    </div>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <span
-                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
-                                                        3700000
-                                                    </span>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <span
-                                                        class="inline-flex rounded-full px-2 text-sm leading-5 text-gray-700">
-                                                        5700000
-                                                    </span>
-                                                </td>
-                                                <td class="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-                                                    <span>
-                                                        dec
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                <tr>
+                                                    <td class="whitespace-nowrap py-4 pr-4">
+                                                        <div class="flex flex-col items-start text-gray-700">
+                                                            هتل
+                                                            ریدل
+                                                            استانبول
+                                                            <div class="flex">
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <div class="text-sm text-gray-700">
+                                                            B.B
+                                                        </div>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            3700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Tour info -->
+                    <div class="mt-8" id="tour_info">
+                        <h2 class="text-xl font-bold text-primery-dark">
+                            اطلاعات تور
+                        </h2>
+                        <div class="mt-4 flex flex-col gap-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-3">
+                                <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
+                                    <div class="flex-center rounded-3xl bg-primery px-3">
+                                        <img src="img/tours/gold_clock.svg" alt="" />
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <span class="text-sm text-gray-500">تاریخ
+                                            رفت و
+                                            برگشت</span>
+                                        <div class="flex flex-col text-base font-bold text-zinc-500">
+                                            <div class="flex gap-2 p-4">
+                                                <span>دوشنبه</span>
+                                                <span>۱۴۰۰/۰۲/۱۲</span>
+                                            </div>
+                                            <div class="flex gap-2 p-4">
+                                                <span>دوشنبه</span>
+                                                <span>۱۴۰۰/۰۲/۱۲</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
+                                    <div class="flex-center rounded-3xl bg-primery px-3">
+                                        <img src="img/tours/gold_cal.svg" alt="" />
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <span class="text-sm text-gray-500">
+                                            مدت تور
+                                        </span>
+                                        <div class="flex flex-col text-base font-bold text-zinc-500">
+                                            <div class="flex gap-2 p-4">
+                                                <span>
+                                                    ۵
+                                                    شب
+                                                    و
+                                                    ۶
+                                                    روز
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
+                                    <div class="flex-center rounded-3xl bg-primery px-3">
+                                        <img src="img/tours/gold-plane.svg" alt="" />
+                                    </div>
+                                    <div class="flex flex-col justify-center">
+                                        <span class="text-sm text-gray-500">
+                                            حمل و
+                                            نقل تور
+                                        </span>
+                                        <div class="flex flex-col text-base font-bold text-zinc-500">
+                                            <div class="flex gap-2 p-4">
+                                                <span>
+                                                    هوایی
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
+                                <div class="flex-center rounded-3xl bg-primery px-3">
+                                    <img src="img/tours/gold-folder.svg" alt="" />
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <span class="text-sm text-gray-500">
+                                        مدارک لازم
+                                    </span>
+                                    <div class="flex flex-col text-base font-bold text-zinc-500">
+                                        <ul class="list-disc gap-2 p-4 leading-7">
+                                            <li>
+                                                تست
+                                                PCR
+                                                منفی
+                                                72
+                                                ساعت
+                                                قبل
+                                                از
+                                                پرواز
+                                            </li>
+                                            <li>
+                                                کارت
+                                                واکسن
+                                                لاتین
+                                            </li>
+                                            <li>
+                                                گذرنامه
+                                                با
+                                                حداقل
+                                                6
+                                                ماه
+                                                اعتبار
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
+                                <div class="flex-center rounded-3xl bg-primery px-3">
+                                    <img src="img/tours/gold_cal.svg" alt="" />
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <span class="text-sm text-gray-500">
+                                        توضیحات
+                                    </span>
+                                    <div class="flex flex-col text-base font-bold text-zinc-500">
+                                        <ul class="list-disc gap-2 p-4 leading-7">
+                                            <li>
+                                                تورها
+                                                چارتر
+                                                و
+                                                غیر
+                                                قابل
+                                                استرداد
+                                                می‌باشد.
+                                            </li>
+                                            <li>
+                                                برای
+                                                اطلاع
+                                                از
+                                                هزینه
+                                                بلیط
+                                                بچه
+                                                ۲
+                                                سال
+                                                تماس
+                                                حاصل
+                                                فرمایید.
+                                            </li>
+                                            <li>
+                                                پرداخت
+                                                ۵۰٪
+                                                از
+                                                مبلغ
+                                                تور
+                                                هنگام
+                                                عقد
+                                                قرارداد
+                                                الزامی
+                                                می‌باشد.
+                                            </li>
+                                            <li>
+                                                پرواز
+                                                صبح
+                                                به
+                                                شب
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gallery -->
+                    <div class="mt-8" id="gallery">
+                        <h1 class="text-xl font-bold text-primery-dark">
+                            گالری تصاویر
+                        </h1>
+                        <div class="splide mt-6" dir="ltr">
+                            <div class="splide__arrows">
+                                <button class="splide__arrow splide__arrow--prev">
+                                    <img src="svg/chevron-left.svg" alt="" />
+                                </button>
+
+                                <button class="splide__arrow splide__arrow--next">
+                                    <img src="svg/chevron-rigth.svg" alt="" />
+                                </button>
+                            </div>
+
+                            <div class="splide__track">
+                                <ul class="splide__list gap-4">
+                                    <li class="splide__slide overflow-hidden rounded-2xl">
+                                        <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                                    </li>
+                                    <li class="splide__slide overflow-hidden rounded-2xl">
+                                        <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
+                                    </li>
+                                    <li class="splide__slide overflow-hidden rounded-2xl">
+                                        <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
+                                    </li>
+                                    <li class="splide__slide overflow-hidden rounded-2xl">
+                                        <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                                    </li>
+                                    <li class="splide__slide overflow-hidden rounded-2xl">
+                                        <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
+                                    </li>
+                                    <li class="splide__slide overflow-hidden rounded-2xl">
+                                        <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Suggested tour -->
+                    <div class="mt-8" id="Suggested_tour">
+                        <h1 class="text-center text-xl font-bold text-primery-dark">
+                            تور های پیشنهادی
+                        </h1>
+
+                        <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+                            <div class="relative mb-6 rounded-3xl shadow">
+                                <!-- discount -->
+                                <div
+                                    class="absolute left-1/2 z-10 -translate-y-1/2 -translate-x-1/2 transform whitespace-nowrap rounded-3xl bg-primery px-3 py-1 text-xs text-primery-dark">
+                                    تور ویژه
+                                </div>
+                                <!-- overlay -->
+                                <div class="absolute flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white">
+                                    <img class="h-1/2 object-cover" src="img/paris.png" alt="" />
+                                    <div
+                                        class="relative -top-1/3 h-1/2 bg-gradient-to-t from-white via-white to-transparent">
+                                    </div>
+                                </div>
+
+                                <span
+                                    class="absolute top-7 right-6 rounded-3xl bg-neutral-200 px-2 py-1 text-sm sm:right-1/2 sm:translate-x-1/2 md:text-xs">
+                                    8 روز و 8 شب
+                                </span>
+
+                                <div class="relative h-full pt-48">
+                                    <div
+                                        class="relative mr-auto flex h-full flex-col items-stretch justify-end py-6 px-8">
+                                        <div class="flex flex-col">
+                                            <div>
+                                                <h3 class="mb-2 text-xl font-bold">
+                                                    تور
+                                                    سه
+                                                    روزه
+                                                </h3>
+                                                <ul class="flex flex-wrap items-center justify-start gap-2">
+                                                    <li
+                                                        class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                        <span>بیمه</span>
+                                                    </li>
+                                                    <li
+                                                        class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                        <span>بیمه</span>
+                                                    </li>
+                                                    <li
+                                                        class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                        <span>خدمات
+                                                            ویزا</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="mt-auto hidden">
+                                                <div
+                                                    class="relative top-1/4 inline-flex gap-3 rounded-full bg-gray-500 py-3 px-4 text-white">
+                                                    <div class="flex-center gap-2">
+                                                        <span class="text-sm">تومان</span>
+                                                        <strong>5.200.00</strong>
+                                                    </div>
+                                                    <img class="" src="svg/money-white.svg" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="relative flex-col items-center justify-center">
+                                            <div class="tour_cards__from--grid py-3">
+                                                <h4 class="mb-3 text-base">
+                                                    تهران
+                                                </h4>
+                                                <span class="flex flex-row justify-between text-xs text-neutral-600">
+                                                    <span>
+                                                        پرواز
+                                                        رفت
+                                                    </span>
+                                                    <span>
+                                                        04/10/1400
+                                                    </span>
+                                                </span>
+                                            </div>
+
+                                            <div class="tour_cards__to--grid py-3">
+                                                <h4 class="mb-3 text-base">
+                                                    پاریس
+                                                </h4>
+                                                <span class="flex flex-row justify-between text-xs text-neutral-600">
+                                                    <span>
+                                                        پرواز
+                                                        برگشت
+                                                    </span>
+                                                    <span>
+                                                        04/10/1400
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-8">
+                                            <div
+                                                class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-primery py-3 px-5 text-center text-black">
+                                                <div class="flex-center gap-2">
+                                                    <span class="text-sm">تومان</span>
+                                                    <strong>5.200.00</strong>
+                                                </div>
+                                                <img class="" src="svg/money.svg" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative mb-6 rounded-3xl shadow">
+                                <!-- discount -->
+                                <div
+                                    class="absolute left-1/2 z-10 -translate-y-1/2 -translate-x-1/2 transform whitespace-nowrap rounded-3xl bg-[#FF5F5F] px-3 py-1 text-xs text-white">
+                                    20 درصد تخفیف نوروز
+                                </div>
+                                <!-- overlay -->
+                                <div class="absolute flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white">
+                                    <img class="h-1/2 object-cover" src="img/paris.png" alt="" />
+                                    <div
+                                        class="relative -top-1/3 h-1/2 bg-gradient-to-t from-white via-white to-transparent">
+                                    </div>
+                                </div>
+
+                                <span
+                                    class="absolute top-7 right-6 rounded-3xl bg-neutral-200 px-2 py-1 text-sm sm:right-1/2 sm:translate-x-1/2 md:text-xs">
+                                    8 روز و 8 شب
+                                </span>
+
+                                <div class="relative h-full pt-48">
+                                    <div
+                                        class="relative mr-auto flex h-full flex-col items-stretch justify-end py-6 px-8">
+                                        <div class="flex flex-col">
+                                            <div>
+                                                <h3 class="mb-2 text-xl font-bold">
+                                                    تور
+                                                    سه
+                                                    روزه
+                                                </h3>
+                                                <ul class="flex flex-wrap items-center justify-start gap-2">
+                                                    <li
+                                                        class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                        <span>بیمه</span>
+                                                    </li>
+                                                    <li
+                                                        class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                        <span>بیمه</span>
+                                                    </li>
+                                                    <li
+                                                        class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                        <span>خدمات
+                                                            ویزا</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="mt-auto hidden">
+                                                <div
+                                                    class="relative top-1/4 inline-flex gap-3 rounded-full bg-gray-500 py-3 px-4 text-white">
+                                                    <div class="flex-center gap-2">
+                                                        <span class="text-sm">تومان</span>
+                                                        <strong>5.200.00</strong>
+                                                    </div>
+                                                    <img class="" src="svg/money-white.svg" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="relative flex-col items-center justify-center">
+                                            <div class="tour_cards__from--grid py-3">
+                                                <h4 class="mb-3 text-base">
+                                                    تهران
+                                                </h4>
+                                                <span class="flex flex-row justify-between text-xs text-neutral-600">
+                                                    <span>
+                                                        پرواز
+                                                        رفت
+                                                    </span>
+                                                    <span>
+                                                        04/10/1400
+                                                    </span>
+                                                </span>
+                                            </div>
+
+                                            <div class="tour_cards__to--grid py-3">
+                                                <h4 class="mb-3 text-base">
+                                                    پاریس
+                                                </h4>
+                                                <span class="flex flex-row justify-between text-xs text-neutral-600">
+                                                    <span>
+                                                        پرواز
+                                                        برگشت
+                                                    </span>
+                                                    <span>
+                                                        04/10/1400
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-8">
+                                            <div
+                                                class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-primery py-3 px-5 text-center text-black">
+                                                <div class="flex-center gap-2">
+                                                    <span class="text-sm">تومان</span>
+                                                    <strong>5.200.00</strong>
+                                                </div>
+                                                <img class="" src="svg/money.svg" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative mb-6 rounded-3xl shadow">
+                                <!-- overlay -->
+                                <div class="absolute flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white">
+                                    <img class="h-1/2 object-cover" src="img/paris.png" alt="" />
+                                    <div
+                                        class="relative -top-1/3 h-1/2 bg-gradient-to-t from-white via-white to-transparent">
+                                    </div>
+                                </div>
+
+                                <span
+                                    class="absolute top-7 right-6 rounded-3xl bg-neutral-200 px-2 py-1 text-sm sm:right-1/2 sm:translate-x-1/2 md:text-xs">
+                                    8 روز و 8 شب
+                                </span>
+
+                                <div class="relative h-full pt-48">
+                                    <div
+                                        class="relative mr-auto flex h-full flex-col items-stretch justify-end py-6 px-8">
+                                        <div class="flex flex-col">
+                                            <div>
+                                                <h3 class="mb-2 text-xl font-bold">
+                                                    تور
+                                                    سه
+                                                    روزه
+                                                </h3>
+                                                <ul class="flex flex-wrap items-center justify-start gap-2">
+                                                    <li
+                                                        class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                        <span>بیمه</span>
+                                                    </li>
+                                                    <li
+                                                        class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                        <span>بیمه</span>
+                                                    </li>
+                                                    <li
+                                                        class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-sm shadow-sm">
+                                                        <span>خدمات
+                                                            ویزا</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="mt-auto hidden">
+                                                <div
+                                                    class="relative top-1/4 inline-flex gap-3 rounded-full bg-gray-500 py-3 px-4 text-white">
+                                                    <div class="flex-center gap-2">
+                                                        <span class="text-sm">تومان</span>
+                                                        <strong>5.200.00</strong>
+                                                    </div>
+                                                    <img class="" src="svg/money-white.svg" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="relative flex-col items-center justify-center">
+                                            <div class="tour_cards__from--grid py-3">
+                                                <h4 class="mb-3 text-base">
+                                                    تهران
+                                                </h4>
+                                                <span class="flex flex-row justify-between text-xs text-neutral-600">
+                                                    <span>
+                                                        پرواز
+                                                        رفت
+                                                    </span>
+                                                    <span>
+                                                        04/10/1400
+                                                    </span>
+                                                </span>
+                                            </div>
+
+                                            <div class="tour_cards__to--grid py-3">
+                                                <h4 class="mb-3 text-base">
+                                                    پاریس
+                                                </h4>
+                                                <span class="flex flex-row justify-between text-xs text-neutral-600">
+                                                    <span>
+                                                        پرواز
+                                                        برگشت
+                                                    </span>
+                                                    <span>
+                                                        04/10/1400
+                                                    </span>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-8">
+                                            <div
+                                                class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-gray-200 py-3 px-5 text-center text-black">
+                                                <div class="flex-center gap-2">
+                                                    <span class="text-sm">تومان</span>
+                                                    <strong>5.200.00</strong>
+                                                </div>
+                                                <img class="" src="svg/money.svg" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GAP -->
+                    <br />
+                    <br />
+                    <br />
                 </div>
+            </div>
+            <aside class="sticky bottom-0 left-0 hidden w-full flex-col gap-4 p-6 lg:relative lg:flex lg:w-3/12 lg:p-0">
+                <a href="#" class="bi-shadow-sm rounded-3xl bg-primery">
+                    <div class="flex gap-2 py-4 pr-8">
+                        <div class="flex-center h-16 rounded-3xl bg-white bg-opacity-60 p-2">
+                            <img class="rotate-90 transform" src="img/controll/call.svg" alt="" />
+                        </div>
+                        <div class="w-f flex flex-col justify-center gap-1">
+                            <span class="text-sm text-primery-dark">نیاز به مشاوره
+                                دارید؟</span>
+                            <h3 class="font-yekan text-lg font-semibold">
+                                021-43000030
+                            </h3>
+                        </div>
+                    </div>
+                </a>
 
-                <!-- Gallery -->
-                <div class="mt-8" id="gallery">
-                    <h1 class="text-xl font-bold text-primery-dark">
-                        گالری تصاویر
-                    </h1>
+                <div id="guide"
+                    class="relative mr-auto flex w-full items-stretch gap-2 rounded-3xl bg-white p-4 shadow-lg sm:w-80 lg:w-full lg:p-6">
+                    <div class="flex flex-col gap-2 text-secondary-dark">
+                        <div class="py-2" data-guide="hotels">
+                            <i class="js-ball ml-2 inline-block h-3 w-3 rounded-circle bg-gray-200"></i>
+                            <img class="js-indicator ml-1 hidden" src="img/tours/duble_chav-left.svg" alt="" />
 
-                    <div class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
-                            src="img/mosque.jpg" alt="" />
-                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
-                            src="img/mosque.jpg" alt="" />
-                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
-                            src="img/mosque.jpg" alt="" />
-                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
-                            src="img/mosque.jpg" alt="" />
-                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
-                            src="img/mosque.jpg" alt="" />
-                        <img class="h-44 w-full overflow-hidden rounded-3xl object-cover md:h-64 lg:h-[184px]"
-                            src="img/mosque.jpg" alt="" />
+                            هتل
+                        </div>
+                        <div class="py-2" data-guide="tour_info">
+                            <i class="js-ball ml-2 inline-block h-3 w-3 rounded-circle bg-gray-200"></i>
+                            <img class="js-indicator ml-1 hidden" src="img/tours/duble_chav-left.svg" alt="" />
+                            اطلاعات تور
+                        </div>
+                        <div class="py-2" data-guide="gallery">
+                            <i class="js-ball ml-2 inline-block h-3 w-3 rounded-circle bg-gray-200"></i>
+                            <img class="js-indicator ml-1 hidden" src="img/tours/duble_chav-left.svg" alt="" />
+
+                            گالری تصویر
+                        </div>
+                        <div class="py-2" data-guide="Suggested_tour">
+                            <i class="js-ball ml-2 inline-block h-3 w-3 rounded-circle bg-gray-200"></i>
+                            <img class="js-indicator ml-1 hidden" src="img/tours/duble_chav-left.svg" alt="" />
+
+                            تورهای پیشنهادی
+                        </div>
                     </div>
                 </div>
 
-                <!-- GAP -->
-                <br />
-                <br />
-                <br />
-            </div>
+                <!-- socile media -->
+                <div
+                    class="relative mr-auto flex w-full flex-col items-stretch rounded-3xl bg-white p-4 pb-0 shadow-lg sm:w-80 lg:w-full">
+                    <div class="flex w-full items-center justify-between">
+                        <a href="#" class="flex-center aspect-square w-10 rounded-circle bg-gray-200">
+                            <img src="img/tours/link.svg" alt="" />
+                        </a>
+                        <a href="#" class="flex-center aspect-square w-10 rounded-circle bg-gray-200">
+                            <img src="img/tours/twitter.svg" alt="" />
+                        </a>
+                        <a href="#" class="flex-center aspect-square w-10 rounded-circle bg-gray-200">
+                            <img src="img/tours/facebook.svg" alt="" />
+                        </a>
+                        <a href="#" class="flex-center aspect-square w-10 rounded-circle bg-gray-200">
+                            <img src="img/tours/instagram.svg" alt="" />
+                        </a>
+                    </div>
+                    <div class="flex-center relative">
+                        <a href="#"
+                            class="translate-y-1/2 transform cursor-pointer rounded-2xl bg-primery py-1 px-4 text-base font-bold text-primery-dark">اشتراک
+                            گذاری</a>
+                    </div>
+                </div>
+            </aside>
         </div>
-        <aside class="sticky bottom-0 left-0 w-full p-6 lg:relative lg:w-3/12 lg:p-0">
-            <div class="mr-auto flex w-full flex-col rounded-3xl bg-white p-4 shadow-lg sm:w-80 lg:w-full lg:p-6">
-                <div class="border-b">
-                    <h2 class="mb-4">مقصد : استانبول</h2>
-                </div>
-                <div>
-                    <div>
-                        <div class="flex flex-row items-center justify-between lg:flex-col lg:items-start">
-                            <div class="text-xs text-gray-500 lg:pt-4">
-                                شروع قیمت از:
-                            </div>
-                            <div class="flex-center gap-2 py-4">
-                                <span>تومان</span>
-                                <span class="text-xl font-semibold">
-                                    5,200,000
-                                </span>
-                                <span>
-                                    <img src="svg/money.svg" alt="" />
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="text-center">
-                            <button class="w-full rounded-3xl bg-primery py-2 text-primery-dark">
-                                رزرو تور
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
     </main>
 
-    <div class="flex-center " style="height: 24rem">gap (delete me later)</div>
+    <div class="flex-center" style="height: 24rem">
+        gap (delete me later)
+    </div>
 
     <script src="js/components/navbar.js"></script>
+    <script src="js/components/mobile-controller.js"></script>
     <script src="lib/js/stickybits.min.js"></script>
-    <script src="js/commons/utils.js"> </script>
+    <script src="lib/js/splide.min.js"></script>
+    <script src="js/commons/utils.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-
-            document
-                .querySelectorAll(".js-tab-item")
-                .forEach(el => {
-                    el.addEventListener("click", e => {
-                        e.target.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
-                    })
-                })
-
-
-            if (["lg", 'xl'].includes(currentBrackPoint())) {
-                stickybits(".sticky", { stickyBitStickyOffset: 80 });
-
+        document.addEventListener("DOMContentLoaded", function () {
+            if (["lg", "xl"].includes(currentBrackPoint())) {
+                stickybits(".sticky", {
+                    stickyBitStickyOffset: 80,
+                });
             }
-        })
+
+            // slider
+            new Splide(".splide", {
+                perPage: currentBrackPoint() === "NONE" ? 3 : 4,
+                rewind: true,
+            }).mount();
+
+            // observer
+            let options = {
+                root: null,
+                rootMargin: "10px",
+                threshold: 1.0,
+            };
+
+            const observer = new IntersectionObserver((entreis) => {
+                entreis.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const { id } = entry.target;
+
+                        const elements =
+                            document.querySelectorAll("#guide [data-guide]");
+
+                        for (let i = 0; i < elements.length; i++) {
+
+                            elements[i].querySelector(".js-ball").style.background = "#D7D7D7";
+
+                            elements[i].querySelector(".js-indicator").classList.add("hidden");
+                            elements[i].querySelector(".js-indicator").classList.remove("inline-block");
+                        }
+
+                        for (let i = 0; i < document.querySelectorAll("#guide [data-guide]").length; i++) {
+
+                            const elem = document.querySelectorAll("#guide [data-guide]")[i];
+
+                            elem.querySelector("i").style.background = "#EDE059";
+
+                            if (elem.dataset.guide === id) {
+
+                                elem.querySelector(".js-indicator").classList.remove("hidden");
+
+                                elem.querySelector(".js-indicator").classList.add("inline-block");
+                                break;
+                            }
+                        }
+                    }
+                });
+            }, options);
+
+            observer.observe(gallery);
+            observer.observe(tour_info);
+            observer.observe(hotels);
+            observer.observe(Suggested_tour);
+        });
     </script>
 </body>
 

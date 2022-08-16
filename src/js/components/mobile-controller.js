@@ -1,21 +1,31 @@
 
-
-
-window.navbar = {
+window.mobile_controller = {
     _isOpen: false,
     scrollThreshhold: 112,
     fixedPosition: true,
 
 
-    watch: {
-        scroll() {
-            console.log("scroll")
-        }
-    },
+    subMenu: [],
+    tree: {},
+    animationIndex: true,
+
     get isOpen() {
         return this._isOpen
     },
     set isOpen(input) {
+
+        if (input) {
+            this.$root.classList.remove('h-20')
+            this.$root.classList.add('h-full')
+        } else {
+            setTimeout(() => {
+
+                this.$root.classList.add('h-20')
+                this.$root.classList.remove('h-full')
+            }, 300);
+
+        }
+
         if (input && !this.fixedPosition)
             document.querySelector('#navigation-sticky-placeholder').style.height = '100%'
         else
@@ -34,17 +44,17 @@ window.navbar = {
         this._isOpen = input
     },
 
-    subMenu: [],
-    tree: {},
-
     init() {
+        // this.taggleMobileMenu()
 
         function traverse(el, index = 0) {
 
             const t = {}
             const name = el.querySelector(":scope > a");
+            const icon = el.querySelector(":scope > a > i");
             const els = el.querySelectorAll(":scope > ul > li");
-
+            t.icon = icon ? icon.innerHTML : null
+            icon && icon.remove()
             t.hasChildren = els.length > 0 ? true : false;
             t.name = name ? name.innerHTML.replace(/\s+/g, ' ').trim() : "ROOT";
             t.link = name ? name.href : "#";
@@ -66,47 +76,6 @@ window.navbar = {
 
         this.tree = traverse(el, 0)
 
-
-
-
-        function placeNavbarFixed() {
-
-            document.querySelector("#navigation-placeholder").appendChild(document.querySelector("#navigation"));
-            document.querySelector("#navigation-placeholder").style.height = 'auto';
-            document.querySelector("#navigation-sticky-placeholder").style.transform = "translate(0,-100%)";
-        }
-
-
-        function placeNavbarSticky() {
-            document.querySelector("#navigation-placeholder").style.height = document.getElementById('navigation').getBoundingClientRect().height + 'px';
-            document.querySelector("#navigation-sticky-placeholder").appendChild(document.querySelector("#navigation"));
-            document.querySelector("#navigation-sticky-placeholder").style.transform = "translate(0,0%)"
-        }
-
-
-
-        this.$watch('fixedPosition', (n) => {
-            if (n) placeNavbarFixed()
-            else placeNavbarSticky()
-        })
-
-        if (window.pageYOffset > this.scrollThreshhold) {
-            this.fixedPosition = false
-        }
-
-        window.addEventListener('scroll', e => {
-            if (window.pageYOffset > this.scrollThreshhold) {
-
-                this.fixedPosition = false
-            } else {
-                this.fixedPosition = true
-
-            }
-
-        })
-
-
-
     },
     get currentSubmenu() {
         let el = this.tree;
@@ -119,11 +88,13 @@ window.navbar = {
         return el
     },
     get ch() {
+
         let l = this.tree.children
 
         for (let i = 0; i < this.subMenu.length; i++) {
             l = l[this.subMenu[i]].children
         }
+
 
         return l
     },
@@ -135,12 +106,24 @@ window.navbar = {
         this.isOpen = !this.isOpen
 
     },
-    toggleSelected(inx) {
-        this.subMenu = inx
-        if (inx !== -1)
-            setTimeout(() => {
-                this.subMenu = -1
-            }, 60 * 1000);
+    changeSubMenu(index) {
+        this.animationIndex = false
+        setTimeout(() => {
+            this.subMenu.push(index)
+            this.animationIndex = true
+        }, 500);
+    },
+    back() {
+        this.animationIndex = false
+        setTimeout(() => {
+            this.subMenu.pop()
+            this.animationIndex = true
+        }, 500);
+
+    },
+    openlink(link) {
+
+        window.open(link, '_self')
     },
 
 }
