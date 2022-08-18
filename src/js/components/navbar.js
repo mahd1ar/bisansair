@@ -1,6 +1,3 @@
-
-
-
 window.navbar = {
     _isOpen: false,
     scrollThreshhold: 112,

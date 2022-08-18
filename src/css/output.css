@@ -1734,6 +1734,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	bottom: 2.5rem;
 }
 
+.right-1 {
+	right: 0.25rem;
+}
+
 .z-50 {
 	z-index: 50;
 }
@@ -1848,6 +1852,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-11 {
 	margin-top: 2.75rem;
 	margin-bottom: 2.75rem;
+}
+
+.my-2 {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
 }
 
 .mt-7 {
@@ -2264,6 +2273,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-52 {
 	width: 13rem;
+}
+
+.w-0\.5 {
+	width: 0.125rem;
+}
+
+.w-0 {
+	width: 0px;
 }
 
 .min-w-full {
@@ -2832,6 +2849,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-neutral-100 {
 	--tw-bg-opacity: 1;
 	background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+	--tw-bg-opacity: 1;
+	background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-60 {
@@ -3478,6 +3500,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transition-duration: 500ms;
 }
 
+.duration-1000 {
+	transition-duration: 1000ms;
+}
+
 .ease-out {
 	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
@@ -3753,16 +3779,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .odd\:bg-white:nth-child(odd) {
 	--tw-bg-opacity: 1;
 	background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.even\:bg-slate-50:nth-child(even) {
-	--tw-bg-opacity: 1;
-	background-color: rgb(248 250 252 / var(--tw-bg-opacity));
-}
-
-.even\:bg-gray-200:nth-child(even) {
-	--tw-bg-opacity: 1;
-	background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .even\:bg-zinc-100:nth-child(even) {
