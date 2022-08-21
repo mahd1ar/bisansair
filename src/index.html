@@ -17,7 +17,13 @@
 </head>
 
 <body class="overflow-x-hidden">
-
+    <div class="fixed top-10 left-10 z-50 opacity-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
+        <span class="hidden sm:block">sm</span>
+        <span class="hidden md:block">md</span>
+        <span class="hidden lg:block">lg</span>
+        <span class="hidden xl:block">xl</span>
+        <span class="hidden 2xl:block">2xl</span>
+    </div>
     <div class="nav-container fixed z-50 w-full transition-all" id="navigation-sticky-placeholder">
         <!-- DO NOT DELETE ME -->
     </div>
@@ -7368,114 +7374,312 @@
         </div>
     </section>
 
-    <!-- logos  -->
-    <section class="bg-gradient-to-t from-gray-200 to-transparent pt-5 pb-20 lg:pt-20">
-        <div class="container mx-auto">
-            <div class="mb-16 mt-40 text-center">
-                <img class="inline-block" src="img/logo-gray.png" alt="" />
-            </div>
 
-            <div class="flex flex-wrap justify-around lg:justify-between">
-                <div
-                    class="flex-center z-20 m-2 aspect-square rounded-xl bg-white p-2 text-center shadow-lg md:w-1/4 lg:w-1/6 lg:max-w-[150px]">
-                    <img class="" src="img/logos/image-16.png" alt="" />
-                </div>
-                <div
-                    class="flex-center z-20 m-2 aspect-square rounded-xl bg-white p-2 text-center shadow-lg md:w-1/4 lg:w-1/6 lg:max-w-[150px]">
-                    <img class="" src="img/logos/image-17.png" alt="" />
-                </div>
-                <div
-                    class="flex-center z-20 m-2 aspect-square rounded-xl bg-white p-2 text-center shadow-lg md:w-1/4 lg:w-1/6 lg:max-w-[150px]">
-                    <img class="" src="img/logos/image-18.png" alt="" />
-                </div>
-                <div
-                    class="flex-center z-20 m-2 aspect-square rounded-xl bg-white p-2 text-center shadow-lg md:w-1/4 lg:w-1/6 lg:max-w-[150px]">
-                    <img class="" src="img/logos/image-19.png" alt="" />
-                </div>
-                <div
-                    class="flex-center z-20 m-2 aspect-square rounded-xl bg-white p-2 text-center shadow-lg md:w-1/4 lg:w-1/6 lg:max-w-[150px]">
-                    <img class="" src="img/logos/image-20.png" alt="" />
-                </div>
-                <div
-                    class="flex-center z-20 m-2 aspect-square rounded-xl bg-white p-2 text-center shadow-lg md:w-1/4 lg:w-1/6 lg:max-w-[150px]">
-                    <img class="" src="img/logos/image-21.png" alt="" />
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <div class="relative w-full overflow-x-clip">
-        <div class="absolute z-10 h-40 w-full bg-gradient-to-b from-gray-200 via-transparent to-transparent"></div>
-        <div class="container relative mx-auto">
-            <img class="absolute -top-28 left-0 z-10 scale-150 transform overflow-x-clip object-cover lg:-top-52"
-                src="img/footer-clouds-2.png" alt="" srcset="" />
-        </div>
-    </div>
-    <footer id="footer">
-        <img class="absolute bottom-0 left-0 z-0 w-full sm:hidden" src="img/footer-clouds-2.png" alt="" />
-        <div class="footer__cols">
-            <div class="footer__col">
-                <ul class="list-inside list-none text-center marker:text-black sm:list-disc sm:text-right">
-                    <li>
-                        <a href=""> درباره ما </a>
-                    </li>
-                    <li>
-                        <a href=""> تماس با ما </a>
-                    </li>
-                    <li>
-                        <a href=""> چرا بیسان سیر </a>
-                    </li>
-                    <li>
-                        <a href=""> باشگاه مشتریان </a>
-                    </li>
-                    <li>
-                        <a href=""> قوانین و مقررات </a>
-                    </li>
-                </ul>
+    <div dir="rtl" style="height: 500px;">
+
+        <footer class="bg-dark flex-center relative" style="background-image: url(img/footer/background.svg);">
+            <!-- corner -->
+            <div class="absolute top-0 flex-center" aria-hidden="true">
+                <img src="img/footer/corner.png" alt="">
+                <div class="bg-dark rounded-3xl py-2 pt-4 flex-center w-12 absolute transform -translate-y-7">
+
+                    <img class=" object-contain transform scale-150" src="img/footer/goldairpane.svg" alt="">
+                </div>
             </div>
-            <div class="footer__col">
-                <ul class="list-inside list-none text-center marker:text-black sm:list-disc sm:text-right">
-                    <li>درباره ما</li>
-                    <li>تماس با ما</li>
-                    <li>چرا بیسان سیر</li>
-                    <li>باشگاه مشتریان</li>
-                    <li>قوانین و مقررات</li>
-                </ul>
-            </div>
-            <div class="footer__col">
-                <ul dir="rtl" class="text-center sm:text-right">
-                    <li class="mb-2 flex items-start justify-center gap-2 sm:justify-start">
-                        <i class="hidden w-5 sm:block"><img class="w-full" src="svg/location.svg" alt="" /></i>
-                        <span>
-                            خیابان شهید بهشتی،خیابان
-                            مهناز)صابونچی(،پلاک 85،طبقه
-                            3،واحد 5
+            <div class="flex flex-col w-full py-8 container mx-auto px-8 lg:px-0">
+                <div class="flex lg:flex-col flex-col-reverse">
+
+                    <div class="flex justify-between flex-wrap ">
+
+                        <div
+                            class="grid sm:grid-cols-6 grid-cols-3 lg:grid-cols-8  w-full  sm:gap-7 justify-evenly lg:justify-between gap-5 ">
+
+                            <a href="#"
+                                class="flex-center md:w-24 w-[90px] m-auto  aspect-square rounded-3xl bg-white p-2 text-center shadow-lg ">
+                                <img class="" src="img/logos/image-16.png" alt="" />
+                            </a>
+                            <a href="#"
+                                class="flex-center md:w-24 w-[90px] m-auto  aspect-square rounded-3xl bg-white p-2 text-center shadow-lg ">
+                                <img class="" src="img/logos/image-17.png" alt="" />
+                            </a>
+                            <a href="#"
+                                class="flex-center md:w-24 w-[90px] m-auto  aspect-square rounded-3xl bg-white p-2 text-center shadow-lg ">
+                                <img class="" src="img/logos/image-18.png" alt="" />
+                            </a>
+                            <!-- gap -->
+                            <div class="hidden lg:block" aria-hidden="true"></div>
+                            <div class="hidden lg:block" aria-hidden="true"></div>
+
+                            <a href="#"
+                                class="flex-center md:w-24 w-[90px] m-auto  aspect-square rounded-3xl bg-white p-2 text-center shadow-lg ">
+                                <img class="" src="img/logos/image-19.png" alt="" />
+                            </a>
+                            <a href="#"
+                                class="flex-center md:w-24 w-[90px] m-auto  aspect-square rounded-3xl bg-white p-2 text-center shadow-lg ">
+                                <img class="" src="img/logos/image-20.png" alt="" />
+                            </a>
+                            <a href="#"
+                                class="flex-center md:w-24 w-[90px] m-auto  aspect-square rounded-3xl bg-white p-2 text-center shadow-lg ">
+                                <img class="" src="img/logos/image-21.png" alt="" />
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-3 text-white gap-4 my-10 mt-12">
+                        <div class=" hidden sm:flex justify-around items-end lg:items-start">
+
+                            <div class=" flex-wrap hidden lg:flex">
+                                <div class=" w-1/2 flex-center gap-2  justify-start">
+                                    <i class="flex-shrink-0">
+                                        <img src="svg/gold-phone.svg" alt="">
+                                    </i>
+                                    <a href="tel:43000040"> ۰۲۱-۴۳۰۰۰۰۳۰ </a>
+                                </div>
+                                <div class="w-1/2 flex-center gap-2   justify-end">
+                                    <i class="flex-shrink-0">
+                                        <img src="svg/gold-mail.svg" alt="">
+                                    </i>
+                                    <a href="mailto:info@bisansair.com">
+                                        info@bisansair.com
+                                    </a>
+                                </div>
+                                <div class=" w-full mt-2">
+
+                                    <i class=" inline-block ml-1">
+                                        <img src="svg/gold-location.svg" alt="">
+                                    </i>
+                                    خیابان شهید بهشتی،خیابان
+                                    صابونچی ، پلاک 85، طبقه
+                                    3 ،واحد 5
+
+                                </div>
+
+                                <div>
+
+                                    <div class="flex flex-col gap-4 mt-8">
+                                        <p>
+
+                                            با ثبت شماره موبایل خود از تورهای ویژه مورد علاقه خود با خبر شوید
+                                        </p>
+                                        <div class="rounded-3xl border overflow-hidden flex">
+                                            <input type="text" class="bg-transparent w-full px-4"
+                                                placeholder="شماره موبایلتان را وارد کنید">
+                                            <button
+                                                class="bg-primery  rounded-3xl py-2 px-4 text-primery-dark flex-shrink-0">
+                                                عضویت
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <ul class="text-white list-disc-gold leading-10 lg:hidden list-inside">
+
+                                <li class="hover:text-primery">
+                                    <a href="">
+                                        تور ویژه
+                                    </a>
+                                </li>
+
+                                <li class="hover:text-primery">
+                                    <a href="">
+                                        تور اروپا
+                                    </a>
+                                </li>
+
+                                <li class="hover:text-primery">
+                                    <a href="">
+                                        درباره ما
+                                    </a>
+                                </li>
+
+                                <li class="hover:text-primery">
+                                    <a href="">
+                                        تماس با ما
+                                    </a>
+                                </li>
+
+                                <li class="hover:text-primery">
+                                    <a href="">
+                                        چرا بیسان سیر
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div
+                            class="flex flex-col col-span-1 sm:col-span-2 lg:col-span-1 justify-center items-center transform translate-y-0 lg:-translate-y-6 ">
+                            <img class="hidden lg:block" style="transform: translateX(15px);" src="img/logo-large.png"
+                                alt="">
+
+                            <img src="img/bisan-text.svg" class="mt-2 hidden lg:block" alt="">
+                            <img src="img/slogan-text.svg" class="lg:mt-6" alt="">
+                            <div class="mt-7 w-full grid grid-cols-4 gap-7">
+                                <a href="#" class="flex gap-2 hover:text-primery">
+                                    <img src="img/social-networks/twitter.svg" alt="">
+                                    توییتر
+                                </a>
+                                <a href="#" class="flex gap-2 hover:text-primery">
+                                    <img src="img/social-networks/facebook.svg" alt="">
+                                    فیسبوک
+                                </a>
+                                <a href="#" class="flex gap-2 hover:text-primery">
+                                    <img src="img/social-networks/telegram.svg" alt="">
+                                    تلگرام
+                                </a>
+                                <a href="#" class="flex gap-2 hover:text-primery">
+                                    <img src="img/social-networks/instagram.svg" alt="">
+                                    اینستاگرام
+                                </a>
+                            </div>
+
+                            <div class="flex flex-wrap lg:hidden mt-6">
+                                <div class=" w-full mb-6 sm:text-base text-sm">
+
+                                    <i class=" inline-block ml-1">
+                                        <img src="svg/gold-location.svg" alt="">
+                                    </i>
+                                    خیابان شهید بهشتی،خیابان
+                                    صابونچی ، پلاک 85، طبقه
+                                    3 ،واحد 5...
+
+                                </div>
+                                <div class=" w-1/2 flex-center gap-2  justify-start">
+                                    <i class="flex-shrink-0">
+                                        <img src="svg/gold-phone.svg" alt="">
+                                    </i>
+                                    <a href="tel:43000040"> ۰۲۱-۴۳۰۰۰۰۳۰ </a>
+                                </div>
+                                <div class="w-1/2 flex-center gap-2  justify-end">
+                                    <i class="flex-shrink-0">
+                                        <img src="svg/gold-mail.svg" alt="">
+                                    </i>
+                                    <a href="mailto:info@bisansair.com">
+                                        info@bisansair.com
+                                    </a>
+                                </div>
+
+                                <div class="sm:block hidden">
+
+                                    <div class="flex flex-col gap-4 mt-8">
+                                        <p class="text-sm mb-4">
+
+                                            با ثبت شماره موبایل خود از تورهای ویژه مورد علاقه خود با خبر شوید
+                                        </p>
+                                        <div class="rounded-3xl border overflow-hidden flex">
+                                            <input type="text" class="bg-transparent w-full px-4"
+                                                placeholder="شماره موبایلتان را وارد کنید">
+                                            <button
+                                                class="bg-primery  rounded-3xl py-2 px-4 text-primery-dark flex-shrink-0">
+                                                عضویت
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="flex justify-evenly sm:justify-around items-end lg:items-start">
+                            <ul class="text-white list-disc-gold leading-10 block sm:hidden lg:block">
+                                <li class="hover:text-primery">
+                                    <a href="">
+
+                                        تور ویژه
+                                    </a>
+                                </li>
+                                <li class="hover:text-primery">
+                                    <a href="">
+
+                                        تور اروپا
+                                    </a>
+                                </li>
+                                <li class="hover:text-primery">
+                                    <a href="">
+
+                                        درباره ما
+                                    </a>
+                                </li>
+                                <li class="hover:text-primery">
+                                    <a href="">
+
+                                        تماس با ما
+                                    </a>
+                                </li>
+                                <li class="hover:text-primery">
+                                    <a href="">
+
+                                        چرا بیسان سیر
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="text-white list-disc-gold leading-10">
+                                <li class="hover:text-primery">
+                                    <a href="">
+
+                                        تور دبی
+                                    </a>
+                                </li>
+                                <li class="hover:text-primery">
+                                    <a href="">
+
+                                        تور آنتالیا
+                                    </a>
+                                </li>
+                                <li class="hover:text-primery">
+                                    <a href="">
+
+                                        تور ایروان
+                                    </a>
+                                </li>
+                                <li class="hover:text-primery">
+                                    <a href="">
+
+                                        تور تفلیس
+                                    </a>
+                                </li>
+                                <li class="hover:text-primery">
+                                    <a href="">
+
+                                        تور استانبول
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="flex flex-col my-6 lg:my-0">
+                    <p class="text-center text-white flex flex-col text-sm lg:text-base">
+                        بیسان‌سیر با مجموعه‌ای بی‌نظیر از خدمات گردشگری در تلاش است تا سفری آسوده و مطمئن را برای
+                        شما
+                        عزیزان فراهم سازد
+                    </p>
+                    <img class="mt-7 mb-5" src="img/footer/seperator.svg" alt="">
+                    <p class="text-gray-200 text-center">
+                        تمامی حقوق مادی و معنوی این وبسایت متعلق به آژانس مسافرتی
+                        <span class="text-primery">
+
+                            بیسان سیر
                         </span>
-                    </li>
-                    <li class="mb-2 flex items-start justify-center gap-2 sm:justify-start">
-                        <i class="hidden w-5 sm:block"><img class="w-full" src="svg/phone-black.svg" alt="" /></i>
-                        <a href="tel:43000040"> 43000040 </a>
-                    </li>
-                    <li class="mb-2 flex items-start justify-center gap-2 sm:justify-start">
-                        <i class="hidden w-5 sm:block"><img class="w-full" src="svg/email.svg" alt="" /></i>
-                        <a href="mailto:info@bisansair.com">
-                            info@bisansair.com
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+                        می باشد
+                    </p>
+                </div>
 
-        <div class="footer__copy-write">
-            <span class="text-black sm:text-white">
-                گردشگری با مجموعه ای بی نظیر از هتل ها در تلاش است
-                تا سفری آسوده و مطمین را برای شما عزیزان رقم بزند
-            </span>
-            <span class="rounded-2xl bg-gray-500 p-1 px-3">
-                تمامی حقوق مطلق است به بیسان سیر
-            </span>
-        </div>
-    </footer>
+                <!-- gap -->
+                <div class="my-8 lg:hidden"></div>
+
+
+            </div>
+        </footer>
+
+    </div>
+
 
     <!-- libraries -->
     <script src="lib/js/rellax.min.js"></script>

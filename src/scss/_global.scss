@@ -55,6 +55,10 @@ table tbody tr {
 	}
 }
 
+.list-disc-gold {
+	list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAICAYAAAArzdW1AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACSSURBVHgBjZDBCcJAFERnPhagF8Fb0kHsQDvwKDYhlpAKLMGbeLSE7UA7cDsw50UyrusiEhLI3Ib//nzmE1nPx64SdQRYfbyAq6mtZ+XF8wtsC9Fugqb4Uxx6SutJ2iJPXSCnFTLuLZsVhiRsDCNk+bYbRuQS9BIPEW16CB+EOkHz8nwPapf6JbKJRVyIzRbxBW9QSjWZS/a1bwAAAABJRU5ErkJggg==);
+}
+
 #mobile-menu {
 	@apply fixed top-0 right-0 z-30 h-full w-full  bg-gradient-to-b from-black to-transparent;
 
