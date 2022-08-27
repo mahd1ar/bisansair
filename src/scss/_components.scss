@@ -1,13 +1,3 @@
-.bi-headline_intro {
-	@apply flex-center mb-5 flex-col text-center font-iransans;
-}
-.bi-headline_title {
-	@apply text-2xl font-bold;
-}
-.bi-headline_description {
-	@apply text-gray-500;
-}
-
 .x-transition {
 	&-enter {
 		@apply transition duration-1000 ease-out;
@@ -33,3 +23,41 @@
 		@apply transition duration-1000 ease-in;
 	}
 }
+
+@keyframes call-icon-puls {
+	
+	0% {
+		transform: rotate(-45deg) scaleX(1);
+	}
+	50% {
+		transform: rotate(-45deg) scale3d(1.05,1.05,1.05);
+	}
+
+	100% {
+		transform: rotate(-45deg) scaleX(1);
+	}
+}
+
+.bi-call-icon {
+    animation: call-icon-puls 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes bi-scrolltotop-keyframe {
+	
+	0% {
+		transform: translate3d(0,-10px ,0) scale3d(1.45,1.45,1.45);
+	}
+	50% {
+		transform: translate3d(0,0px ,0) scale3d(1.5,1.5,1.5);
+	}
+
+	100% {
+		transform: translate3d(0,-10px ,0) scale3d(1.45,1.45,1.45);
+	}
+}
+
+.bi-scrolltotop-animation {
+    animation: bi-scrolltotop-keyframe 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+animation-delay: 400ms;
+}
+

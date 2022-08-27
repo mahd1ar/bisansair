@@ -15,6 +15,48 @@ function getMounthLength(m) {
 
 document.addEventListener('DOMContentLoaded', function () {
 
+
+    if (document.querySelector(".splide")) {
+        const masSize = {
+            NONE: 2,
+            sm: 3,
+            md: 4,
+            lg: 4,
+            xl: 5
+        }
+        const splide = new Splide('.splide', {
+            // type: 'loop',
+            drag: 'free',
+            snap: true,
+            perPage: masSize[currentBrackPoint()],
+            classes: {
+                pagination: 'hidden',
+            },
+        })
+        splide.mount()
+
+    }
+
+    if (document.querySelector(".domestic_tours")) {
+        const masSize = {
+            NONE: 2,
+            sm: 3,
+            md: 4,
+            lg: 4,
+            xl: 5
+        }
+        new Splide('.domestic_tours', {
+            type: 'loop',
+            drag: 'free',
+            snap: true,
+            perPage: masSize[currentBrackPoint()],
+            classes: {
+                pagination: 'hidden',
+            },
+        }).mount();
+
+    }
+
     new WOW({
         animateClass: 'animate__animated'
     }).init();

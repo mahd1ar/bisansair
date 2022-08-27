@@ -12,7 +12,7 @@
 @tailwind utilities;
 
 .bi-primary-pill {
-	@apply cursor-pointer rounded-full bg-yellow-300 p-2 px-3 font-bold text-yellow-900 shadow-xl hover:bg-yellow-200;
+	@apply cursor-pointer rounded-full bg-yellow-300 p-2 px-3 font-bold text-yellow-900 shadow-xl hover:bg-yellow-200 inline-block;
 }
 .bi-primary-btn {
 	@apply cursor-pointer rounded-lg bg-yellow-300 p-2 px-3 font-bold text-yellow-900 shadow-md hover:bg-yellow-200;
