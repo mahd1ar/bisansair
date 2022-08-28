@@ -171,7 +171,13 @@ class Slider {
     maxCartCount = 7;
     sideCardsCount = 2
     taraz = 2
-    constructor({ containerSelectror, nextSelector, prvSelector, isBilateral = true }) {
+    constructor({ containerSelectror, nextSelector, prvSelector, isBilateral = true, sideCardsCount }) {
+
+        if (sideCardsCount) {
+            this.sideCardsCount = sideCardsCount;
+            this.taraz = sideCardsCount;
+        }
+
         this.isBilateral = isBilateral
 
         this.selector = containerSelectror + ' [data-card-item]';

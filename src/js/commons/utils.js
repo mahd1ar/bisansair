@@ -88,64 +88,64 @@ function currentBrackPoint() {
 }
 
 
-class SVGAnimation {
-    animations = []
-    selector = ""
-    constructor(selector, callbackIN, callbackOUT) {
-        this.selector = selector;
-        if (document.querySelector(this.selector))
-            document.querySelector(this.selector).addEventListener("mouseenter", this.animatoinInProxy.bind(this))
-        else throw new Error("invalid selector")
+// class SVGAnimation {
+//     animations = []
+//     selector = ""
+//     constructor(selector, callbackIN, callbackOUT) {
+//         this.selector = selector;
+//         if (document.querySelector(this.selector))
+//             document.querySelector(this.selector).addEventListener("mouseenter", this.animatoinInProxy.bind(this))
+//         else throw new Error("invalid selector")
 
-        this.callbackIN = callbackIN
-        this.callbackOUT = callbackOUT
-    }
-    animatoinOutProxy() {
+//         this.callbackIN = callbackIN
+//         this.callbackOUT = callbackOUT
+//     }
+//     animatoinOutProxy() {
 
-        this.animations.forEach(i => {
+//         this.animations.forEach(i => {
 
-            i.reverse()
-            i.loop = false;
-            i.play()
-            i.loopComplete = () => {
-                i.pause()
+//             i.reverse()
+//             i.loop = false;
+//             i.play()
+//             i.loopComplete = () => {
+//                 i.pause()
 
-                i.remove()
+//                 i.remove()
 
-            }
-            i.complete = () => {
+//             }
+//             i.complete = () => {
 
-                i.pause()
+//                 i.pause()
 
-                i.remove()
-            }
-
-
-        })
-        this.animations.splice(1, this.animations.length)
+//                 i.remove()
+//             }
 
 
-        if (this.callbackOUT)
-            this.callbackOUT(this.animations)
-    }
-    animatoinInProxy() {
-
-        const f1 = document.querySelector(this.selector)
+//         })
+//         this.animations.splice(1, this.animations.length)
 
 
-        const debouncedCalbackout = customDebounce(() => {
-            this.animatoinOutProxy()
-        }, 100)
+//         if (this.callbackOUT)
+//             this.callbackOUT(this.animations)
+//     }
+//     animatoinInProxy() {
+
+//         const f1 = document.querySelector(this.selector)
+
+
+//         const debouncedCalbackout = customDebounce(() => {
+//             this.animatoinOutProxy()
+//         }, 100)
 
 
 
-        f1.onmouseleave = () => {
+//         f1.onmouseleave = () => {
 
-            debouncedCalbackout()
-            // this.callbackOUT(this.animations)
-        }
+//             debouncedCalbackout()
+//             // this.callbackOUT(this.animations)
+//         }
 
-        this.callbackIN(this.animations)
-    }
+//         this.callbackIN(this.animations)
+//     }
 
-}
+// }

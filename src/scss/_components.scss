@@ -61,3 +61,14 @@
 animation-delay: 400ms;
 }
 
+
+.bi-air-slider {
+	&-right {
+		@apply absolute hidden md:block md:-right-24 lg:-right-16 xl:right-0 z-10;
+	}
+
+	&-left {
+		@apply absolute hidden md:block md:-left-24 lg:-left-16 xl:left-0 z-10;
+		transform: scale(-1, 1);
+	}
+}
