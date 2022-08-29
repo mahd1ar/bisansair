@@ -17,6 +17,123 @@
         <!-- DO NOT DELETE ME -->
     </div>
     <header class="mb-10 pt-10">
+        <!-- mobile controller layout -->
+        <nav x-data="mobile_controller" class="fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
+            <div x-show="isOpen" style="display: none" class="relative h-full w-full overflow-hidden bg-white"
+                x-transition.delay.150ms>
+                <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+							background: url(img/backgrounds/Group.png)
+								center center/cover;
+							background-color: #f0f0f0;
+						"></div>
+                <div class="container relative mx-auto flex h-full flex-col">
+                    <div class="mt-10 flex flex-col items-center gap-7">
+                        <img src="img/logo-with-text.svg" />
+                        <h3 class="text-lg font-bold text-primery-dark">
+                            !!! رویاهات رو تور کن
+                        </h3>
+
+                        <button x-show="subMenu.length > 0" x-transition
+                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold text-secondary-dark transition-all"
+                            @click="back">
+                            بازگشت به منوی قبلی
+                        </button>
+                    </div>
+                    <div class="bi-scrollbar mt-4 h-full overflow-auto">
+                        <!-- info: animatin wrapper -->
+                        <div class="grid grid-cols-3 gap-2 px-4 text-center sm:grid-cols-5 md:grid-cols-6"
+                            x-show="animationIndex" x-transition:enter="x-transition-enter"
+                            x-transition:enter-start="x-transition-enter-start"
+                            x-transition:enter-end="x-transition-enter-end" x-transition:leave="x-transition-leave"
+                            x-transition:leave-start="x-transition-leave-start "
+                            x-transition:leave-end="x-transition-leave-end">
+                            <template x-for="({name,link,icon,hasChildren},inx) in ch" :key="inx">
+                                <div :style="{ '--count' : inx }"
+                                    @click="hasChildren ? changeSubMenu(inx) : openlink(link) "
+                                    class="child-item flex aspect-square cursor-pointer cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl bg-gray-200"
+                                    x-transition.fade>
+                                    <span x-show="icon" x-html="icon" class="flex-center bi-svgfull aspect-square w-8">
+                                    </span>
+                                    <span class="text-center font-bold text-secondary-dark" x-text="name"></span>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bi-shadow relative mt-auto h-16">
+                <div class="relative z-20 flex justify-center gap-16 text-secondary-dark">
+                    <div class="flex">
+                        <!-- NOTE : CHANGE THIS LINKS  -->
+                        <button @click="openlink('/blog')"
+                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
+                            <img src="img/controll/blog.svg" />
+                            <span> بلاگ </span>
+                        </button>
+                        <!-- NOTE : CHANGE THIS LINKS  -->
+                        <button @click="openlink('/search')"
+                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
+                            <img src="img/controll/search.svg" />
+                            <span> جستجو </span>
+                        </button>
+                    </div>
+
+                    <div class="flex">
+                        <button @click="taggleMobileMenu"
+                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
+                            <img src="img/controll/menu.svg" />
+                            <span> فهرست </span>
+                        </button>
+                        <!-- NOTE : HOME PAGE LINK HERE -->
+                        <button @click="openlink('/')"
+                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
+                            <img src="img/controll/home.svg" />
+                            <span> خانه </span>
+                        </button>
+                    </div>
+                    <!-- call btn -->
+                    <a href="tel:+982143000030"
+                        class="bi-shadow flex-center absolute top-0 aspect-square w-16 -translate-y-1/2 rotate-45 transform rounded-xl bg-primery">
+                        <img src="img/controll/call.svg" class="-rotate-45 transform cursor-pointer" />
+                    </a>
+                </div>
+                <div aria-hidden="true" class="absolute top-0 z-10 flex w-full justify-center overflow-hidden">
+                    <svg style="transform: translateY(-25px)" width="375" height="89" viewBox="0 0 375 89" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g filter="url(#filter0_d_2657_2667)">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M138.307 31.4436C134.181 27.3178 128.585 25 122.75 25H0V89H375V25H253.25C247.415 25 241.819 27.3179 237.693 31.4437L203.556 65.5807C194.965 74.1723 181.035 74.1723 172.444 65.5807L138.307 31.4436Z"
+                                fill="white" />
+                        </g>
+                        <defs>
+                            <filter id="filter0_d_2657_2667" x="-20" y="0" width="415" height="104"
+                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feColorMatrix in="SourceAlpha" type="matrix"
+                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                <feOffset dy="-5" />
+                                <feGaussianBlur stdDeviation="10" />
+                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2657_2667" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2657_2667"
+                                    result="shape" />
+                            </filter>
+                        </defs>
+                    </svg>
+                </div>
+                <div aria-hidden="true" class="absolute top-0 h-full w-full bg-white" style="
+							clip-path: polygon(
+								50% 92%,
+								66% 0,
+								100% 0,
+								100% 100%,
+								0 100%,
+								0 0,
+								34% 0
+							);
+						"></div>
+            </div>
+        </nav>
         <!-- TRAVEL TEXTURE -->
         <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
 					background: url(svg/travel-textture/one.svg)
@@ -1160,6 +1277,7 @@
     </main>
 
     <script src="js/components/navbar.js"></script>
+    <script src="js/components/mobile-controller.js"></script>
 
     <script>
         var expandable = {
