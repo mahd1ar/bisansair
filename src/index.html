@@ -40,14 +40,19 @@
 							background-color: #f0f0f0;
 						"></div>
                 <div class="container relative mx-auto flex h-full flex-col">
-                    <div class="mt-10 flex flex-col items-center gap-7">
-                        <img src="img/logo-with-text.svg" />
-                        <h3 class="text-lg font-bold text-primery-dark">
+                    <div class="mt-10 flex flex-col items-center">
+                        <div class="relative">
+                            <div
+                                class="absolute w-full h-full bg-gradient-radial from-[#f4f4f4]  to-transparent top-0 left-0 scale-150">
+                            </div>
+                            <img class="relative" src="img/logo-with-text.svg" />
+                        </div>
+                        <h3 class="text-xl font-bold text-primery-dark mt-3">
                             !!! رویاهات رو تور کن
                         </h3>
 
                         <button x-show="subMenu.length > 0" x-transition
-                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold text-secondary-dark transition-all"
+                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold mt-7 text-secondary-dark transition-all"
                             @click="back">
                             بازگشت به منوی قبلی
                         </button>
@@ -107,8 +112,8 @@
 
                     <!-- call btn -->
                     <a href="tel:+982143000030"
-                        class="bi-shadow flex-center flex-center absolute top-0 aspect-square w-16 -translate-y-1/2 rotate-45 transform rounded-xl bg-primery">
-                        <img src="img/controll/call.svg" class="bi-call-icon absolute cursor-pointer" />
+                        class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16  rotate-45 transform rounded-xl bg-primery">
+                        <img src="img/controll/call.svg" class=" absolute cursor-pointer rotate-45" />
                     </a>
                 </div>
                 <div aria-hidden="true" class="absolute top-0 z-10 flex w-full justify-center overflow-hidden">
@@ -150,20 +155,20 @@
         </nav>
         <div id="navigation-placeholder" class="nav-container">
             <!-- NOTE : maybe you need to remove ' hidden lg:block ' in next revition -->
-            <nav id="navigation" x-data="navbar"
-                class="container mx-auto hidden overflow-x-clip lg:block lg:max-w-[1104px] xl:max-w-full">
+            <nav id="navigation" x-data="navbar" class="container mx-auto hidden overflow-x-clip lg:block">
                 <div id="navigation__bar"
                     class="relative z-20 mx-auto hidden flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm md:flex">
                     <div class="flex w-auto justify-between lg:w-full">
                         <a href="tel:02188319191"
-                            class="flex-center flex-0 w-8 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
+                            class="flex-center flex-0 flex-shrink-0 w-8 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
                             <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
                             <span class="mx-2 hidden whitespace-nowrap text-sm tracking-wider lg:block">
                                 ۰۲۱-۳۴۵۶۴۸
                             </span>
                         </a>
 
-                        <div class="menu-top_menu-container hidden lg:block" ref="menuContainer">
+                        <div class="menu-top_menu-container w-full hidden lg:flex flex-col" ref="menuContainer">
+
                             <ul id="menu-top_menu" class="menu">
                                 <li class="menu-item">
                                     <a href="#">خانه
@@ -595,601 +600,624 @@
                     </div>
                 </div>
 
-                <div x-data="fligthPicker"
-                    class="container relative top-8 mx-auto w-10/12 rounded-3xl bg-white px-4 py-[16px] shadow-lg sm:w-1/2 md:w-full md:rounded-full">
-                    <div class="flex flex-col justify-between gap-2 md:flex-row-reverse">
-                        <div class="relative flex w-full items-stretch md:w-1/5">
-                            <div @click="travelPicker.starting.togglePanel()"
-                                class="text-rtl inline-flex w-full cursor-pointer items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap border-b placeholder:text-gray-700 focus-visible:outline-none md:justify-start md:border-b-0 md:text-right">
-                                <div class="flex-shrink-0">
-                                    مبدا
-                                </div>
-                                <div class="mr-2 text-xs text-gray-500" x-text="travelPicker.starting.model"
-                                    x-show="travelPicker.starting.model"></div>
-                            </div>
-                            <span class="bi-icon ml-2 w-16">
-                                <img class="object-contain" src="./svg/departed_plane_icon.svg" alt="" />
-                            </span>
+                <div x-data="fligthPicker" class=" relative top-8  w-10/12  sm:w-1/2 md:w-full ">
 
-                            <div x-show="travelPicker.starting.show"
-                                @click.outside="travelPicker.starting.togglePanel()" style="display: none"
-                                class="travel-selector-card__place-picker travel-selector-card__overlay">
-                                <div class="travel-selector-card__wrap bi-scrollbar flex flex-col">
-                                    <div
-                                        class="flex h-20 items-center justify-between border-b-2 border-gray-300 px-5 lg:hidden">
-                                        <div @click="travelPicker.starting.togglePanel()"
-                                            class="bi-icon cursor-pointer">
-                                            <img src="svg/close.svg" alt="" />
-                                        </div>
+                    <div class="container mx-auto    ">
 
-                                        <h2 class="text-2xl">
-                                            انتخاب
-                                            مبدا
-                                        </h2>
+                        <div
+                            class="flex flex-col bg-white shadow-lg py-4 px-2 rounded-3xl md:rounded-full justify-between gap-2 md:flex-row-reverse">
+
+
+                            <div class="relative flex w-full items-stretch md:w-1/5">
+                                <div @click="travelPicker.starting.togglePanel()"
+                                    class="text-rtl inline-flex w-full cursor-pointer items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap border-b placeholder:text-gray-700 focus-visible:outline-none md:justify-start md:border-b-0 md:text-right">
+                                    <div class="flex-shrink-0">
+                                        مبدا
                                     </div>
-
-                                    <div class="bi-scrollbar flex h-full flex-col overflow-y-scroll"
-                                        x-ref="startingFrom">
-                                        <div class="sticky top-0 z-20 mb-4 border-b-2 bg-white p-3">
-                                            <div class="flex rounded-3xl border-2 border-gray-400 p-2 px-5">
-                                                <div @click="travelPicker.starting.clear()"
-                                                    x-show="travelPicker.starting.model"
-                                                    class="top-0 z-10 cursor-pointer rounded-circle bg-white p-2">
-                                                    <img class="h-4 w-4" src="svg/close.svg" alt="" />
-                                                </div>
-                                                <input x-model="travelPicker.starting.model" class="text-rtl w-full"
-                                                    type="text" placeholder="انتخاب شهر مبدا..." />
-                                            </div>
-                                        </div>
-
-                                        <div class="js-starting-option text-rtl flex rounded-lg bg-gray-200 p-2">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">تهران</span>
-                                        </div>
-
-                                        <div class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/airport-icon.png" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">فرودگاه
-                                                امام
-                                                خمینی</span>
-                                        </div>
-
-                                        <div class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/airport-icon.png" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">
-                                                فرودگاه
-                                                مهرآباد
-                                            </span>
-                                        </div>
-                                        <div class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/airport-icon.png" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">
-                                                تبریز
-                                            </span>
-                                        </div>
-
-                                        <div class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-starting-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-
-                                        <!-- leave me here -->
-                                        <template x-for="i in travelPicker.starting.options" :key="i.id">
-                                            <div @click="travelPicker.starting.pick(i.id)"
-                                                :style="{backgroundColor : i.id === travelPicker.starting.is ? '#fde047' : '' }"
-                                                class="text-rtl flex cursor-pointer rounded-lg p-2 hover:bg-gray-100">
-                                                <span class="flex-center">
-                                                    <img :src="i.icon" alt="" />
-                                                </span>
-                                                <span class="px-3" x-text="i.text"></span>
-                                            </div>
-                                        </template>
-                                    </div>
+                                    <div class="mr-2 text-xs text-gray-500" x-text="travelPicker.starting.model"
+                                        x-show="travelPicker.starting.model"></div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="relative flex w-full items-stretch md:w-1/5">
-                            <div @click="travelPicker.destination.togglePanel()"
-                                class="text-rtl inline-flex w-full cursor-pointer items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap border-b placeholder:text-gray-700 focus-visible:outline-none md:justify-start md:border-b-0 md:text-right">
-                                <div class="flex-shrink-0">
-                                    مقصد
-                                </div>
-                                <div class="mr-2 text-xs text-gray-500" x-text="travelPicker.destination.model"
-                                    x-show="travelPicker.destination.model"></div>
-                            </div>
-                            <span class="bi-icon ml-2 w-16">
-                                <img class="object-contain" src="./svg/arrived_plane_icon.svg" alt="" />
-                            </span>
+                                <span class="bi-icon ml-2 w-16">
+                                    <img class="object-contain" src="./svg/departed_plane_icon.svg" alt="" />
+                                </span>
 
-                            <div x-show="travelPicker.destination.show"
-                                @click.outside="travelPicker.destination.togglePanel(false)" style="display: none"
-                                class="travel-selector-card__place-picker travel-selector-card__overlay">
-                                <div class="travel-selector-card__wrap bi-scrollbar flex flex-col">
-                                    <div
-                                        class="flex h-20 items-center justify-between border-b-2 border-gray-300 px-5 lg:hidden">
-                                        <div @click="travelPicker.destination.togglePanel(false)"
-                                            class="bi-icon cursor-pointer">
-                                            <img src="svg/close.svg" alt="" />
-                                        </div>
-
-                                        <h2 class="text-2xl">
-                                            انتخاب
-                                            مقصد
-                                        </h2>
-                                    </div>
-
-                                    <div class="bi-scrollbar flex h-full flex-col overflow-y-scroll"
-                                        x-ref="destinationCity">
-                                        <div class="sticky top-0 z-20 mb-4 border-b-2 bg-white p-3">
-                                            <div class="flex rounded-3xl border-2 border-gray-400 p-2 px-5">
-                                                <div @click="travelPicker.destination.clear()"
-                                                    x-show="travelPicker.destination.model"
-                                                    class="top-0 z-10 cursor-pointer rounded-circle bg-white p-2">
-                                                    <img class="h-4 w-4" src="svg/close.svg" alt="" />
-                                                </div>
-                                                <input x-model="travelPicker.destination.model" class="text-rtl w-full"
-                                                    type="text" placeholder="انتخاب شهر مقصد..." />
-                                            </div>
-                                        </div>
-
-                                        <div class="js-destination-option text-rtl flex rounded-lg bg-gray-200 p-2">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">تهران</span>
-                                        </div>
-
+                                <div x-show="travelPicker.starting.show"
+                                    @click.outside="travelPicker.starting.togglePanel()" style="display: none"
+                                    class="travel-selector-card__place-picker travel-selector-card__overlay">
+                                    <div class="travel-selector-card__wrap bi-scrollbar flex flex-col">
                                         <div
-                                            class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/airport-icon.png" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">فرودگاه
-                                                امام
-                                                خمینی</span>
-                                        </div>
-
-                                        <div
-                                            class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/airport-icon.png" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">
-                                                فرودگاه
-                                                مهرآباد
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/airport-icon.png" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">
-                                                تبریز
-                                            </span>
-                                        </div>
-
-                                        <div
-                                            class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-                                        <div
-                                            class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
-                                            <span class="flex-center">
-                                                <img src="svg/city-icon.svg" alt="" />
-                                            </span>
-                                            <span class="js-destination-text px-3">
-                                                ترکیه
-                                            </span>
-                                        </div>
-
-                                        <!-- leave me here -->
-                                        <template x-for="i in travelPicker.destination.options" :key="i.id">
-                                            <div @click="travelPicker.destination.pick(i.id)"
-                                                :style="{backgroundColor : i.id === travelPicker.destination.is ? '#fde047' : '' }"
-                                                class="text-rtl flex cursor-pointer rounded-lg p-2 hover:bg-gray-100">
-                                                <span class="flex-center">
-                                                    <img :src="i.icon" alt="" />
-                                                </span>
-                                                <span class="px-3" x-text="i.text"></span>
-                                            </div>
-                                        </template>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="relative flex w-full items-stretch md:w-1/5">
-                            <div @click="datePicker.togglePanel()"
-                                class="text-rtl inline-flex w-full cursor-pointer items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap border-b placeholder:text-gray-700 focus-visible:outline-none md:justify-start md:border-b-0 md:text-right">
-                                <div x-show="!datePicker.formattedLastDayOftravel || !datePicker.formattedFirstDayOftravel"
-                                    class="flex-shrink-0">
-                                    تاریخ
-                                </div>
-                                <div style="
-											display: none;
-										" class="mr-2 flex text-xs text-gray-500"
-                                    x-show="datePicker.formattedLastDayOftravel && datePicker.formattedFirstDayOftravel">
-                                    <div x-text="datePicker.formattedFirstDayOftravel"></div>
-                                    <div class="mx-2">
-                                        /
-                                    </div>
-                                    <div x-text="datePicker.formattedLastDayOftravel"></div>
-                                </div>
-                            </div>
-
-                            <span class="bi-icon ml-2 w-16">
-                                <img class="object-contain" src="./svg/cal.svg" alt="" />
-                            </span>
-
-                            <div id="travel-selector-card__date-picker" class="travel-selector-card__overlay"
-                                @click.outside="datePicker.close()" x-show="datePicker.show" style="display: none">
-                                <div class="travel-selector-card__wrap h-auto">
-                                    <div
-                                        class="flex h-20 items-center justify-between border-b-2 border-gray-300 bg-white px-5 lg:hidden">
-                                        <div @click="datePicker.close()" class="bi-icon cursor-pointer">
-                                            <img src="svg/close.svg" alt="" />
-                                        </div>
-
-                                        <h2 class="text-2xl">
-                                            تاریخ
-                                        </h2>
-                                    </div>
-
-                                    <div class="relative flex h-full flex-col sm:flex-row">
-                                        <div
-                                            class="datepicker--scrollable text-rtl mx-auto flex w-48 flex-col p-5 pb-0 sm:w-2/5 sm:pb-5">
-                                            <div
-                                                class="flex cursor-pointer overflow-hidden rounded-3xl shadow-xl sm:mb-7">
-                                                <template x-for="(i,index) in datePicker.modeLabel">
-                                                    <div @click="datePicker.mode = index" x-text="i" :class="{'w-1/2 p-2 text-center' : true, 
-                                                         'bg-secondary-ligth text-secondary-dark' : datePicker.mode === index 
-                                                        }"></div>
-                                                </template>
-                                            </div>
-
-                                            <div class="hidden sm:flex">
-                                                <div class="bi-from w-3"></div>
-                                                <div class="flex w-full flex-col items-start pr-3">
-                                                    از
-                                                    <br />
-                                                    <span class="mt-1 mb-10 text-right text-xl"
-                                                        x-text="datePicker.formattedFirstDayOftravel">
-                                                        22
-                                                        اردیبهشت
-                                                        1400
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="hidden sm:flex">
-                                                <div class="bi-to w-3"></div>
-                                                <div class="flex w-full flex-col items-start pr-3">
-                                                    تا
-                                                    <br />
-                                                    <span class="mt-1 text-right text-xl"
-                                                        x-text="datePicker.formattedLastDayOftravel">
-                                                        22
-                                                        اردیبهشت
-                                                        1400
-                                                    </span>
-                                                </div>
-                                            </div>
-
-                                            <div @click="datePicker.confirm()"
-                                                class="bi-primary-pill mt-auto hidden justify-center sm:flex lg:hidden">
-                                                تایید
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            class="datepicker--scrollable bi-scrollbar mx-auto h-full w-full max-w-md p-5 sm:w-3/5 sm:border-l-2">
-                                            <div class="mb-7 flex justify-between">
-                                                <div class="cursor-pointer" x-show="datePicker.view === 'days'"
-                                                    @click="datePicker.mode ? datePicker.prevMonth() : datePicker.nextMonth()">
-                                                    <img class="h-3" src="svg/chevron-left.svg" alt="" />
-                                                </div>
-                                                <button @click="datePicker.view = 'months' "
-                                                    :style="{'opacity' : datePicker.view === 'days' ? 1 : 0}"
-                                                    class="text-base text-gray-600 transition-all"
-                                                    x-text="datePicker.candidateFullDate[1] + ' ' + datePicker.candidateFullDate[0] "></button>
-                                                <div class="cursor-pointer" x-show="datePicker.view === 'days'"
-                                                    @click="datePicker.mode ? datePicker.nextMonth() : datePicker.prevMonth()">
-                                                    <img class="h-3" src="svg/chevron-rigth.svg" alt="" />
-                                                </div>
-                                                <div class="flex-center cursor-pointer gap-2"
-                                                    x-show="datePicker.view === 'months'"
-                                                    @click="datePicker.view = 'days'">
-                                                    بازگشت
-                                                    <img class="h-3" src="svg/chevron-rigth.svg" alt="" />
-                                                </div>
-                                            </div>
-
-                                            <div x-show="datePicker.view === 'days' "
-                                                :dir="datePicker.mode? 'ltr' : 'rtl'"
-                                                class="grid-rows-7 grid grid-cols-7">
-                                                <template x-for="d in datePicker.weekDays">
-                                                    <span
-                                                        class="flex-center m-0.5 aspect-square rounded-circle bg-gray-200 text-gray-600 sm:m-1"
-                                                        x-text="d">
-                                                    </span>
-                                                </template>
-
-                                                <template
-                                                    x-for="({date,isOutOfCurrentMonth ,isFri, origin,destination,inRange,isToday,formatedDate },index) in datePicker.days"
-                                                    :key="index">
-                                                    <div @click="datePicker.pick(date)" :class="{
-                                                    'flex-center sm:aspect-square select-none relative ' : true, 
-                                                    'bi-date-pick_start ' : origin && !!datePicker.days.find(i => i.destination) ,
-                                                    'bi-date-pick_end ' :  destination,
-                                                    'bi-date-pick_middle' : inRange 
-                                                }">
-                                                        <span :class="{
-                                                            'rounded-circle w-full h-full text-lg flex-center hover:bg-gray-50 aspect-square' : true,
-                                                            'cursor-pointer' : !isOutOfCurrentMonth,
-                                                            'bg-primery hover:bg-primery' : origin || destination ,
-                                                            'border border-gray-500' : isToday  ,
-                                                            'text-red-400' : isFri && !isOutOfCurrentMonth,
-                                                            'text-red-200' : isFri && isOutOfCurrentMonth,
-                                                            'text-black' : !isFri && !isOutOfCurrentMonth,
-                                                            'text-gray-400' : !isFri && isOutOfCurrentMonth,
-                                                        }" x-text="formatedDate">
-                                                        </span>
-                                                    </div>
-                                                </template>
-                                            </div>
-
-                                            <div x-show="datePicker.view === 'months' " class="grid grid-cols-3 gap-2"
-                                                x-transition>
-                                                <template x-for="(m,index) in datePicker.months">
-                                                    <button @click="datePicker.pickMonth(index)" :class="{
-                                                        'py-5 rounded-3xl ' : true,
-                                                        'bg-primery' : datePicker.mode ? datePicker.en_candidateMonth === index + 1 : datePicker.fa_candidateMonth === index + 1,
-                                                        'bg-neutral-200 hover:bg-gray-100' : datePicker.mode ? datePicker.en_candidateMonth !== index + 1 : datePicker.fa_candidateMonth !== index + 1,
-                                                        'border border-gray-500' : datePicker.mode ? datePicker.today_miladi[1] === index+1 : datePicker.today_shamsi[1] === index+1
-                                                    }" x-text="m"></button>
-                                                </template>
-                                            </div>
-                                            <button @click="datePicker.confirm()"
-                                                class="bi-primary-pill mt-auto w-full justify-center sm:hidden">
-                                                تایید
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <div class="hidden h-16 items-center justify-end bg-neutral-200 lg:flex">
-                                        <div @click="datePicker.confirm()"
-                                            class="m-5 inline-block cursor-pointer rounded-lg bg-white p-2 px-3 shadow-xl">
-                                            تایید
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="relative flex w-full cursor-pointer items-stretch md:w-1/5">
-                            <div class="flex-center w-full">
-                                <div class="text-rtl mx-3 w-full md:text-right" @click="travelersPicker.togglePanel()"
-                                    x-text="travelersPicker.totalTravelers">
-                                    نفرات
-                                </div>
-
-                                <div id="travel-selector-card__traveler-picker" x-show="travelersPicker.show" style="
-											display: none;
-										" @click.outside="travelersPicker.togglePanel()" class="travel-selector-card__overlay items-center">
-                                    <div
-                                        class="bi-scrollbar w-10/12 overflow-auto rounded-3xl bg-white lg:w-full lg:rounded-none">
-                                        <div
-                                            class="sticky top-0 flex h-20 items-center justify-between border-b-2 border-gray-300 bg-white px-5 py-10 lg:hidden">
-                                            <div @click="travelersPicker.togglePanel()" class="bi-icon cursor-pointer">
+                                            class="flex h-20 items-center justify-between border-b-2 border-gray-300 px-5 lg:hidden">
+                                            <div @click="travelPicker.starting.togglePanel()"
+                                                class="bi-icon cursor-pointer">
                                                 <img src="svg/close.svg" alt="" />
                                             </div>
 
                                             <h2 class="text-2xl">
                                                 انتخاب
-                                                مسافر
+                                                مبدا
                                             </h2>
                                         </div>
 
-                                        <div class="flex flex-col items-center justify-center sm:flex-row lg:block">
-                                            <div class="flex w-1/2 flex-col p-2 sm:p-5 lg:hidden">
-                                                <div class="text-center sm:mb-10">
-                                                    <img class="inline-block h-28 w-28 rounded-circle bg-white p-5 shadow-lg"
-                                                        src="svg/user.svg" alt="" />
-                                                </div>
-                                                <div class="">
-                                                    <h5 class="text-rtl mb-6 hidden text-xl sm:block">
-                                                        <template
-                                                            x-for="{label , type , count } in travelersPicker.state"
-                                                            :key="type">
-                                                            <span class="mx-2"
-                                                                x-text="  String( count).toIndiaDigits() + ' ' + label + ' '  ">
-                                                            </span>
-                                                        </template>
-                                                    </h5>
-                                                    <div class="bi-primary-pill hidden sm:block">
-                                                        تایید
-                                                        و
-                                                        جست
-                                                        و
-                                                        جو
+                                        <div class="bi-scrollbar flex h-full flex-col overflow-y-scroll"
+                                            x-ref="startingFrom">
+                                            <div class="sticky top-0 z-20 mb-4 border-b-2 bg-white p-3">
+                                                <div class="flex rounded-3xl border-2 border-gray-400 p-2 px-5">
+                                                    <div @click="travelPicker.starting.clear()"
+                                                        x-show="travelPicker.starting.model"
+                                                        class="top-0 z-10 cursor-pointer rounded-circle bg-white p-2">
+                                                        <img class="h-4 w-4" src="svg/close.svg" alt="" />
                                                     </div>
+                                                    <input x-model="travelPicker.starting.model" class="text-rtl w-full"
+                                                        type="text" placeholder="انتخاب شهر مبدا..." />
                                                 </div>
                                             </div>
 
-                                            <div class="travel-selector--scrollable w-3/4 p-5 sm:w-1/2 lg:w-full">
-                                                <div>
-                                                    <template x-for="(traveler, inx) in travelersPicker.state">
-                                                        <div class="mb-7 flex items-center justify-between">
-                                                            <div @click="travelersPicker.inc(inx)"
-                                                                class="bi-secondary-icon flex-center w-12 sm:w-auto">
-                                                                <img src="svg/plus.svg" alt="" />
-                                                            </div>
-                                                            <div class="flex flex-col-reverse">
-                                                                <span class="text-2xl"
-                                                                    x-text="String(traveler.count).toIndiaDigits()">
-                                                                </span>
+                                            <div class="js-starting-option text-rtl flex rounded-lg bg-gray-200 p-2">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">تهران</span>
+                                            </div>
 
-                                                                <span class="mb-2 text-base text-gray-500"
-                                                                    x-text="traveler.label">
-                                                                </span>
-                                                            </div>
-                                                            <div @click="travelersPicker.dec(inx)"
-                                                                class="bi-secondary-icon flex-center w-12 sm:w-auto">
-                                                                <img src="svg/minus.svg" alt="" />
-                                                            </div>
+                                            <div
+                                                class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/airport-icon.png" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">فرودگاه
+                                                    امام
+                                                    خمینی</span>
+                                            </div>
+
+                                            <div
+                                                class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/airport-icon.png" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">
+                                                    فرودگاه
+                                                    مهرآباد
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/airport-icon.png" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">
+                                                    تبریز
+                                                </span>
+                                            </div>
+
+                                            <div
+                                                class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-starting-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-starting-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+
+                                            <!-- leave me here -->
+                                            <template x-for="i in travelPicker.starting.options" :key="i.id">
+                                                <div @click="travelPicker.starting.pick(i.id)"
+                                                    :style="{backgroundColor : i.id === travelPicker.starting.is ? '#fde047' : '' }"
+                                                    class="text-rtl flex cursor-pointer rounded-lg p-2 hover:bg-gray-100">
+                                                    <span class="flex-center">
+                                                        <img :src="i.icon" alt="" />
+                                                    </span>
+                                                    <span class="px-3" x-text="i.text"></span>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative flex w-full items-stretch md:w-1/5">
+                                <div @click="travelPicker.destination.togglePanel()"
+                                    class="text-rtl inline-flex w-full cursor-pointer items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap border-b placeholder:text-gray-700 focus-visible:outline-none md:justify-start md:border-b-0 md:text-right">
+                                    <div class="flex-shrink-0">
+                                        مقصد
+                                    </div>
+                                    <div class="mr-2 text-xs text-gray-500" x-text="travelPicker.destination.model"
+                                        x-show="travelPicker.destination.model"></div>
+                                </div>
+                                <span class="bi-icon ml-2 w-16">
+                                    <img class="object-contain" src="./svg/arrived_plane_icon.svg" alt="" />
+                                </span>
+
+                                <div x-show="travelPicker.destination.show"
+                                    @click.outside="travelPicker.destination.togglePanel(false)" style="display: none"
+                                    class="travel-selector-card__place-picker travel-selector-card__overlay">
+                                    <div class="travel-selector-card__wrap bi-scrollbar flex flex-col">
+                                        <div
+                                            class="flex h-20 items-center justify-between border-b-2 border-gray-300 px-5 lg:hidden">
+                                            <div @click="travelPicker.destination.togglePanel(false)"
+                                                class="bi-icon cursor-pointer">
+                                                <img src="svg/close.svg" alt="" />
+                                            </div>
+
+                                            <h2 class="text-2xl">
+                                                انتخاب
+                                                مقصد
+                                            </h2>
+                                        </div>
+
+                                        <div class="bi-scrollbar flex h-full flex-col overflow-y-scroll"
+                                            x-ref="destinationCity">
+                                            <div class="sticky top-0 z-20 mb-4 border-b-2 bg-white p-3">
+                                                <div class="flex rounded-3xl border-2 border-gray-400 p-2 px-5">
+                                                    <div @click="travelPicker.destination.clear()"
+                                                        x-show="travelPicker.destination.model"
+                                                        class="top-0 z-10 cursor-pointer rounded-circle bg-white p-2">
+                                                        <img class="h-4 w-4" src="svg/close.svg" alt="" />
+                                                    </div>
+                                                    <input x-model="travelPicker.destination.model"
+                                                        class="text-rtl w-full" type="text"
+                                                        placeholder="انتخاب شهر مقصد..." />
+                                                </div>
+                                            </div>
+
+                                            <div class="js-destination-option text-rtl flex rounded-lg bg-gray-200 p-2">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">تهران</span>
+                                            </div>
+
+                                            <div
+                                                class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/airport-icon.png" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">فرودگاه
+                                                    امام
+                                                    خمینی</span>
+                                            </div>
+
+                                            <div
+                                                class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/airport-icon.png" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">
+                                                    فرودگاه
+                                                    مهرآباد
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/airport-icon.png" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">
+                                                    تبریز
+                                                </span>
+                                            </div>
+
+                                            <div
+                                                class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+                                            <div
+                                                class="js-destination-option text-rtl flex rounded-lg p-2 hover:bg-gray-100">
+                                                <span class="flex-center">
+                                                    <img src="svg/city-icon.svg" alt="" />
+                                                </span>
+                                                <span class="js-destination-text px-3">
+                                                    ترکیه
+                                                </span>
+                                            </div>
+
+                                            <!-- leave me here -->
+                                            <template x-for="i in travelPicker.destination.options" :key="i.id">
+                                                <div @click="travelPicker.destination.pick(i.id)"
+                                                    :style="{backgroundColor : i.id === travelPicker.destination.is ? '#fde047' : '' }"
+                                                    class="text-rtl flex cursor-pointer rounded-lg p-2 hover:bg-gray-100">
+                                                    <span class="flex-center">
+                                                        <img :src="i.icon" alt="" />
+                                                    </span>
+                                                    <span class="px-3" x-text="i.text"></span>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="relative flex w-full items-stretch md:w-1/5">
+                                <div @click="datePicker.togglePanel()"
+                                    class="text-rtl inline-flex w-full cursor-pointer items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap border-b placeholder:text-gray-700 focus-visible:outline-none md:justify-start md:border-b-0 md:text-right">
+                                    <div x-show="!datePicker.formattedLastDayOftravel || !datePicker.formattedFirstDayOftravel"
+                                        class="flex-shrink-0">
+                                        تاریخ
+                                    </div>
+                                    <div style="
+                                display: none;
+                            " class="mr-2 flex text-xs text-gray-500"
+                                        x-show="datePicker.formattedLastDayOftravel && datePicker.formattedFirstDayOftravel">
+                                        <div x-text="datePicker.formattedFirstDayOftravel"></div>
+                                        <div class="mx-2">
+                                            /
+                                        </div>
+                                        <div x-text="datePicker.formattedLastDayOftravel"></div>
+                                    </div>
+                                </div>
+
+                                <span class="bi-icon ml-2 w-16">
+                                    <img class="object-contain" src="./svg/cal.svg" alt="" />
+                                </span>
+
+                                <div id="travel-selector-card__date-picker" class="travel-selector-card__overlay"
+                                    @click.outside="datePicker.close()" x-show="datePicker.show" style="display: none">
+                                    <div class="travel-selector-card__wrap h-auto">
+                                        <div
+                                            class="flex h-20 items-center justify-between border-b-2 border-gray-300 bg-white px-5 lg:hidden">
+                                            <div @click="datePicker.close()" class="bi-icon cursor-pointer">
+                                                <img src="svg/close.svg" alt="" />
+                                            </div>
+
+                                            <h2 class="text-2xl">
+                                                تاریخ
+                                            </h2>
+                                        </div>
+
+                                        <div class="relative flex h-full flex-col sm:flex-row">
+                                            <div
+                                                class="datepicker--scrollable text-rtl mx-auto flex w-48 flex-col p-5 pb-0 sm:w-2/5 sm:pb-5">
+                                                <div
+                                                    class="flex cursor-pointer overflow-hidden rounded-3xl shadow-xl sm:mb-7">
+                                                    <template x-for="(i,index) in datePicker.modeLabel">
+                                                        <div @click="datePicker.mode = index" x-text="i" :class="{'w-1/2 p-2 text-center' : true, 
+                                             'bg-secondary-ligth text-secondary-dark' : datePicker.mode === index 
+                                            }"></div>
+                                                    </template>
+                                                </div>
+
+                                                <div class="hidden sm:flex">
+                                                    <div class="bi-from w-3"></div>
+                                                    <div class="flex w-full flex-col items-start pr-3">
+                                                        از
+                                                        <br />
+                                                        <span class="mt-1 mb-10 text-right text-xl"
+                                                            x-text="datePicker.formattedFirstDayOftravel">
+                                                            22
+                                                            اردیبهشت
+                                                            1400
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <div class="hidden sm:flex">
+                                                    <div class="bi-to w-3"></div>
+                                                    <div class="flex w-full flex-col items-start pr-3">
+                                                        تا
+                                                        <br />
+                                                        <span class="mt-1 text-right text-xl"
+                                                            x-text="datePicker.formattedLastDayOftravel">
+                                                            22
+                                                            اردیبهشت
+                                                            1400
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+                                                <div @click="datePicker.confirm()"
+                                                    class="bi-primary-pill mt-auto hidden justify-center sm:flex lg:hidden">
+                                                    تایید
+                                                </div>
+                                            </div>
+
+                                            <div
+                                                class="datepicker--scrollable bi-scrollbar mx-auto h-full w-full max-w-md p-5 sm:w-3/5 sm:border-l-2">
+                                                <div class="mb-7 flex justify-between">
+                                                    <div class="cursor-pointer" x-show="datePicker.view === 'days'"
+                                                        @click="datePicker.mode ? datePicker.prevMonth() : datePicker.nextMonth()">
+                                                        <img class="h-3" src="svg/chevron-left.svg" alt="" />
+                                                    </div>
+                                                    <button @click="datePicker.view = 'months' "
+                                                        :style="{'opacity' : datePicker.view === 'days' ? 1 : 0}"
+                                                        class="text-base text-gray-600 transition-all"
+                                                        x-text="datePicker.candidateFullDate[1] + ' ' + datePicker.candidateFullDate[0] "></button>
+                                                    <div class="cursor-pointer" x-show="datePicker.view === 'days'"
+                                                        @click="datePicker.mode ? datePicker.nextMonth() : datePicker.prevMonth()">
+                                                        <img class="h-3" src="svg/chevron-rigth.svg" alt="" />
+                                                    </div>
+                                                    <div class="flex-center cursor-pointer gap-2"
+                                                        x-show="datePicker.view === 'months'"
+                                                        @click="datePicker.view = 'days'">
+                                                        بازگشت
+                                                        <img class="h-3" src="svg/chevron-rigth.svg" alt="" />
+                                                    </div>
+                                                </div>
+
+                                                <div x-show="datePicker.view === 'days' "
+                                                    :dir="datePicker.mode? 'ltr' : 'rtl'"
+                                                    class="grid-rows-7 grid grid-cols-7">
+                                                    <template x-for="d in datePicker.weekDays">
+                                                        <span
+                                                            class="flex-center m-0.5 aspect-square rounded-circle bg-gray-200 text-gray-600 sm:m-1"
+                                                            x-text="d">
+                                                        </span>
+                                                    </template>
+
+                                                    <template
+                                                        x-for="({date,isOutOfCurrentMonth ,isFri, origin,destination,inRange,isToday,formatedDate },index) in datePicker.days"
+                                                        :key="index">
+                                                        <div @click="datePicker.pick(date)" :class="{
+                                        'flex-center sm:aspect-square select-none relative ' : true, 
+                                        'bi-date-pick_start ' : origin && !!datePicker.days.find(i => i.destination) ,
+                                        'bi-date-pick_end ' :  destination,
+                                        'bi-date-pick_middle' : inRange 
+                                    }">
+                                                            <span :class="{
+                                                'rounded-circle w-full h-full text-lg flex-center hover:bg-gray-50 aspect-square' : true,
+                                                'cursor-pointer' : !isOutOfCurrentMonth,
+                                                'bg-primery hover:bg-primery' : origin || destination ,
+                                                'border border-gray-500' : isToday  ,
+                                                'text-red-400' : isFri && !isOutOfCurrentMonth,
+                                                'text-red-200' : isFri && isOutOfCurrentMonth,
+                                                'text-black' : !isFri && !isOutOfCurrentMonth,
+                                                'text-gray-400' : !isFri && isOutOfCurrentMonth,
+                                            }" x-text="formatedDate">
+                                                            </span>
                                                         </div>
                                                     </template>
                                                 </div>
 
-                                                <div>
-                                                    <template x-for="(tt,index) in travelersPicker.types" :key="index">
-                                                        <div :class="{'bg-gray-100' : index == travelersPicker.type,
-                                                                        'text-right flex justify-end  rounded-xl p-2' : true
-                                                                    }">
-                                                            <label class="inline-block text-gray-800" :for="index"
-                                                                x-text="tt">
-                                                            </label>
-                                                            <input :value="index" name="fligth-types"
-                                                                x-model="travelersPicker.type" :id="index"
-                                                                class="float-left mt-1 ml-2 h-4 w-4 cursor-pointer appearance-none rounded-full border bg-contain bg-center bg-no-repeat text-right align-top transition duration-200"
-                                                                type="radio" />
-                                                        </div>
+                                                <div x-show="datePicker.view === 'months' "
+                                                    class="grid grid-cols-3 gap-2" x-transition>
+                                                    <template x-for="(m,index) in datePicker.months">
+                                                        <button @click="datePicker.pickMonth(index)" :class="{
+                                            'py-5 rounded-3xl ' : true,
+                                            'bg-primery' : datePicker.mode ? datePicker.en_candidateMonth === index + 1 : datePicker.fa_candidateMonth === index + 1,
+                                            'bg-neutral-200 hover:bg-gray-100' : datePicker.mode ? datePicker.en_candidateMonth !== index + 1 : datePicker.fa_candidateMonth !== index + 1,
+                                            'border border-gray-500' : datePicker.mode ? datePicker.today_miladi[1] === index+1 : datePicker.today_shamsi[1] === index+1
+                                        }" x-text="m"></button>
                                                     </template>
                                                 </div>
+                                                <button @click="datePicker.confirm()"
+                                                    class="bi-primary-pill mt-auto w-full justify-center sm:hidden">
+                                                    تایید
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="hidden h-16 items-center justify-end bg-neutral-200 lg:flex">
+                                            <div @click="datePicker.confirm()"
+                                                class="m-5 inline-block cursor-pointer rounded-lg bg-white p-2 px-3 shadow-xl">
+                                                تایید
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <span class="bi-icon ml-2 w-16" @click="toggleMem">
-                                <img class="object-contain" src="./svg/user.svg" alt="" />
-                            </span>
-                        </div>
+                            <div class="relative flex w-full cursor-pointer items-stretch md:w-1/5">
+                                <div class="flex-center w-full">
+                                    <div class="text-rtl mx-3 w-full md:text-right"
+                                        @click="travelersPicker.togglePanel()" x-text="travelersPicker.totalTravelers">
+                                        نفرات
+                                    </div>
 
-                        <button @click="submit()"
-                            class="flex w-full items-center justify-center rounded-full bg-yellow-300 md:w-32">
-                            <div class="flex-center md:w-full">
-                                <span class="text-[#5A623A] md:mx-3">
-                                    جستجو
+                                    <div id="travel-selector-card__traveler-picker" x-show="travelersPicker.show" style="
+                                display: none;
+                            " @click.outside="travelersPicker.togglePanel()"
+                                        class="travel-selector-card__overlay items-center">
+                                        <div
+                                            class="bi-scrollbar w-10/12 overflow-auto rounded-3xl bg-white lg:w-full lg:rounded-none">
+                                            <div
+                                                class="sticky top-0 flex h-20 items-center justify-between border-b-2 border-gray-300 bg-white px-5 py-10 lg:hidden">
+                                                <div @click="travelersPicker.togglePanel()"
+                                                    class="bi-icon cursor-pointer">
+                                                    <img src="svg/close.svg" alt="" />
+                                                </div>
+
+                                                <h2 class="text-2xl">
+                                                    انتخاب
+                                                    مسافر
+                                                </h2>
+                                            </div>
+
+                                            <div class="flex flex-col items-center justify-center sm:flex-row lg:block">
+                                                <div class="flex w-1/2 flex-col p-2 sm:p-5 lg:hidden">
+                                                    <div class="text-center sm:mb-10">
+                                                        <img class="inline-block h-28 w-28 rounded-circle bg-white p-5 shadow-lg"
+                                                            src="svg/user.svg" alt="" />
+                                                    </div>
+                                                    <div class="">
+                                                        <h5 class="text-rtl mb-6 hidden text-xl sm:block">
+                                                            <template
+                                                                x-for="{label , type , count } in travelersPicker.state"
+                                                                :key="type">
+                                                                <span class="mx-2"
+                                                                    x-text="  String( count).toIndiaDigits() + ' ' + label + ' '  ">
+                                                                </span>
+                                                            </template>
+                                                        </h5>
+                                                        <div class="bi-primary-pill hidden sm:block">
+                                                            تایید
+                                                            و
+                                                            جست
+                                                            و
+                                                            جو
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="travel-selector--scrollable w-3/4 p-5 sm:w-1/2 lg:w-full">
+                                                    <div>
+                                                        <template x-for="(traveler, inx) in travelersPicker.state">
+                                                            <div class="mb-7 flex items-center justify-between">
+                                                                <div @click="travelersPicker.inc(inx)"
+                                                                    class="bi-secondary-icon flex-center w-12 sm:w-auto">
+                                                                    <img src="svg/plus.svg" alt="" />
+                                                                </div>
+                                                                <div class="flex flex-col-reverse">
+                                                                    <span class="text-2xl"
+                                                                        x-text="String(traveler.count).toIndiaDigits()">
+                                                                    </span>
+
+                                                                    <span class="mb-2 text-base text-gray-500"
+                                                                        x-text="traveler.label">
+                                                                    </span>
+                                                                </div>
+                                                                <div @click="travelersPicker.dec(inx)"
+                                                                    class="bi-secondary-icon flex-center w-12 sm:w-auto">
+                                                                    <img src="svg/minus.svg" alt="" />
+                                                                </div>
+                                                            </div>
+                                                        </template>
+                                                    </div>
+
+                                                    <div>
+                                                        <template x-for="(tt,index) in travelersPicker.types"
+                                                            :key="index">
+                                                            <div :class="{'bg-gray-100' : index == travelersPicker.type,
+                                                            'text-right flex justify-end  rounded-xl p-2' : true
+                                                        }">
+                                                                <label class="inline-block text-gray-800" :for="index"
+                                                                    x-text="tt">
+                                                                </label>
+                                                                <input :value="index" name="fligth-types"
+                                                                    x-model="travelersPicker.type" :id="index"
+                                                                    class="float-left mt-1 ml-2 h-4 w-4 cursor-pointer appearance-none rounded-full border bg-contain bg-center bg-no-repeat text-right align-top transition duration-200"
+                                                                    type="radio" />
+                                                            </div>
+                                                        </template>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <span class="bi-icon ml-2 w-16" @click="toggleMem">
+                                    <img class="object-contain" src="./svg/user.svg" alt="" />
                                 </span>
                             </div>
 
-                            <span class="flex-center mx-2 h-10 overflow-hidden rounded-full md:w-12">
-                                <img class="object-contain" src="svg/magnifier.svg" alt="" />
-                            </span>
-                        </button>
+                            <button @click="submit()"
+                                class="flex w-full items-center justify-center rounded-full bg-yellow-300 md:w-32">
+                                <div class="flex-center md:w-full">
+                                    <span class="text-[#5A623A] md:mx-3">
+                                        جستجو
+                                    </span>
+                                </div>
+
+                                <span class="flex-center mx-2 h-10 overflow-hidden rounded-full md:w-12">
+                                    <img class="object-contain" src="svg/magnifier.svg" alt="" />
+                                </span>
+                            </button>
+                        </div>
                     </div>
+
+
+
                 </div>
             </div>
         </div>
@@ -1206,7 +1234,7 @@
                         مسافران کدام است؟</span>
                 </div>
 
-                <div class="splide" dir="ltr">
+                <div class="js-popular-tours lg:hidden" dir="ltr">
                     <div class="splide__arrows hidden">
                         <button class="splide__arrow splide__arrow--prev">
                             <img src="svg/chevron-left.svg" alt="" />
@@ -1218,50 +1246,84 @@
                     </div>
 
                     <div class="splide__track overflow-hidden">
-                        <ul class="splide__list gap-6">
+                        <div class="splide__list gap-6">
                             <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                                 <div
                                     class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
-                                    گرجستان، تفلیس
+                                    1 گرجستان، تفلیس
                                 </div>
                                 <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
                             </a>
                             <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                                 <div
                                     class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
-                                    گرجستان، تفلیس
+                                    2 گرجستان، تفلیس
                                 </div>
                                 <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
                             </a>
                             <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                                 <div
                                     class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
-                                    گرجستان، تفلیس
+                                    3 گرجستان، تفلیس
                                 </div>
                                 <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
                             </a>
                             <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                                 <div
                                     class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
-                                    گرجستان، تفلیس
+                                    4 گرجستان، تفلیس
                                 </div>
                                 <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
                             </a>
                             <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                                 <div
                                     class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
-                                    گرجستان، تفلیس
+                                    5 گرجستان، تفلیس
                                 </div>
                                 <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
                             </a>
                             <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                                 <div
                                     class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
-                                    گرجستان، تفلیس
+                                    6 گرجستان، تفلیس
                                 </div>
                                 <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
                             </a>
-                        </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- fix 4 tour for desktop -->
+                    <div class="gap-6 xl:gap-14 hidden lg:grid grid-cols-4">
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+                            <div
+                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                1 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                        </a>
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+                            <div
+                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                2 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
+                        </a>
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+                            <div
+                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                3 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
+                        </a>
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+                            <div
+                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                4 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1271,8 +1333,8 @@
         <section class="js-nowruz">
             <div
                 class="container mx-auto flex flex-col items-center text-center sm:flex-row md:flex-col overflow-hidden">
-                <img src="img/slider-air-rigth.png" class="bi-air-slider-right" alt="">
-                <img src="img/slider-air-rigth.png" class="bi-air-slider-left" alt="">
+                <img src="img/slider-air-rigth.png" class="bi-air-slider-right" alt="" />
+                <img src="img/slider-air-rigth.png" class="bi-air-slider-left" alt="" />
                 <div
                     class="flex-center relative z-10 mb-8 w-full flex-col text-center font-iransans sm:w-1/2 md:w-full">
                     <h2 class="text-xl font-bold text-black">
@@ -1965,7 +2027,7 @@
                     </span>
                 </div>
 
-                <div class="domestic_tours" dir="ltr">
+                <div class="js-domestic-tours lg:hidden" dir="ltr">
                     <div class="splide__arrows hidden">
                         <button class="splide__arrow splide__arrow--prev">
                             <img src="svg/chevron-left.svg" alt="" />
@@ -1977,7 +2039,7 @@
                     </div>
 
                     <div class="splide__track overflow-hidden">
-                        <ul class="splide__list gap-6">
+                        <div class="splide__list gap-6">
                             <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                                 <div
                                     class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
@@ -2020,7 +2082,41 @@
                                 </div>
                                 <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" loading="lazy" />
                             </a>
-                        </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- fix 4 tour for desktop -->
+                    <div class="gap-6 xl:gap-14 hidden lg:grid grid-cols-4">
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+                            <div
+                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                1 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                        </a>
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+                            <div
+                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                2 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
+                        </a>
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+                            <div
+                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                3 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
+                        </a>
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+                            <div
+                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                4 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -2986,7 +3082,7 @@
                 <img class="bi-scrolltotop-animation object-contain" src="img/footer/goldairpane.svg" alt="" />
             </button>
         </div>
-        <div class="container mx-auto flex w-full flex-col py-8 px-8 lg:px-0">
+        <div class="container mx-auto flex w-full flex-col py-8 ">
             <div class="flex flex-col-reverse lg:flex-col">
                 <div class="flex flex-wrap justify-between">
                     <div
@@ -3024,8 +3120,8 @@
                 </div>
 
                 <div class="my-10 mt-12 grid grid-cols-1 gap-4 text-white sm:grid-cols-4 lg:grid-cols-3">
-                    <div class="hidden items-end justify-around sm:flex lg:items-start">
-                        <div class="hidden h-full flex-col justify-between lg:flex">
+                    <div class="hidden items-end justify-around sm:flex lg:items-start lg:justify-start">
+                        <div class="hidden h-full flex-col justify-between lg:flex " style="max-width : 400px">
                             <div class="flex-wrap flex">
                                 <div class="flex-center w-1/2 justify-start gap-2">
                                     <i class="flex-shrink-0">
@@ -3043,7 +3139,7 @@
                                         ۰۲۱-۴۳۰۰۰۰۳۰
                                     </a>
                                 </div>
-                                <div class="mt-3 flex w-full gap-1">
+                                <div class="mt-4 flex w-full gap-1">
                                     <i class="inline-block flex-shrink-0">
                                         <img src="svg/gold-location.svg" alt="" />
                                     </i>
@@ -3058,8 +3154,8 @@
                             </div>
 
                             <div>
-                                <div class="flex flex-col gap-4">
-                                    <p class="text-sm">
+                                <div class="flex flex-col gap-5">
+                                    <p class="text-sm xl:text-center">
                                         با ثبت شماره
                                         موبایل خود از
                                         تورهای ویژه
@@ -3139,10 +3235,8 @@
                                     <i class="ml-1 inline-block">
                                         <img src="svg/gold-location.svg" alt="" />
                                     </i>
-                                    خیابان
-                                    بهشتی،خیابان
-                                    صابونچی، پلاک
-                                    ۸۵
+                                    خیابان بهشتی،خیابان
+                                    صابونچی، پلاک ۸۵
                                     ،واحد ۵
                                 </div>
                                 <div class="flex-center w-1/2 justify-start gap-2">
@@ -3164,7 +3258,7 @@
 
                                 <div class="hidden sm:block">
                                     <div class="mt-8 flex flex-col gap-4">
-                                        <p class="mb-4 text-sm">
+                                        <p class="mb-4 text-sm md:whitespace-nowrap">
                                             با ثبت
                                             شماره
                                             موبایل

@@ -88,6 +88,7 @@ function currentBrackPoint() {
 }
 
 
+
 // class SVGAnimation {
 //     animations = []
 //     selector = ""

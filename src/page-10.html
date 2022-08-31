@@ -13,13 +13,13 @@
 </head>
 
 <body>
-
     <div class="nav-container fixed z-50 w-full transition-all" id="navigation-sticky-placeholder">
         <!-- DO NOT DELETE ME -->
     </div>
     <header class="mb-10 pt-10">
         <!-- mobile controller layout -->
-        <nav x-data="mobile_controller" class="fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
+        <nav id="" x-data="mobile_controller"
+            class="transition-all duration-300 ease-out fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
             <div x-show="isOpen" style="display: none" class="relative h-full w-full overflow-hidden bg-white"
                 x-transition.delay.150ms>
                 <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
@@ -28,14 +28,19 @@
 							background-color: #f0f0f0;
 						"></div>
                 <div class="container relative mx-auto flex h-full flex-col">
-                    <div class="mt-10 flex flex-col items-center gap-7">
-                        <img src="img/logo-with-text.svg" />
-                        <h3 class="text-lg font-bold text-primery-dark">
+                    <div class="mt-10 flex flex-col items-center">
+                        <div class="relative">
+                            <div
+                                class="absolute w-full h-full bg-gradient-radial from-[#f4f4f4]  to-transparent top-0 left-0 scale-150">
+                            </div>
+                            <img class="relative" src="img/logo-with-text.svg" />
+                        </div>
+                        <h3 class="text-xl font-bold text-primery-dark mt-3">
                             !!! رویاهات رو تور کن
                         </h3>
 
                         <button x-show="subMenu.length > 0" x-transition
-                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold text-secondary-dark transition-all"
+                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold mt-7 text-secondary-dark transition-all"
                             @click="back">
                             بازگشت به منوی قبلی
                         </button>
@@ -51,7 +56,7 @@
                             <template x-for="({name,link,icon,hasChildren},inx) in ch" :key="inx">
                                 <div :style="{ '--count' : inx }"
                                     @click="hasChildren ? changeSubMenu(inx) : openlink(link) "
-                                    class="child-item flex aspect-square cursor-pointer cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl bg-gray-200"
+                                    class="child-item flex aspect-square cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl bg-gray-200"
                                     x-transition.fade>
                                     <span x-show="icon" x-html="icon" class="flex-center bi-svgfull aspect-square w-8">
                                     </span>
@@ -92,10 +97,11 @@
                             <span> خانه </span>
                         </button>
                     </div>
+
                     <!-- call btn -->
                     <a href="tel:+982143000030"
-                        class="bi-shadow flex-center absolute top-0 aspect-square w-16 -translate-y-1/2 rotate-45 transform rounded-xl bg-primery">
-                        <img src="img/controll/call.svg" class="-rotate-45 transform cursor-pointer" />
+                        class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16  rotate-45 transform rounded-xl bg-primery">
+                        <img src="img/controll/call.svg" class=" absolute cursor-pointer rotate-45" />
                     </a>
                 </div>
                 <div aria-hidden="true" class="absolute top-0 z-10 flex w-full justify-center overflow-hidden">
@@ -143,19 +149,20 @@
 				"></div>
 
         <div id="navigation-placeholder" class="nav-container">
-            <nav id="navigation" x-data="navbar" class="container mx-auto hidden overflow-x-clip lg:block ">
-                <div
-                    class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
-                    <div class="flex">
+            <!-- NOTE : maybe you need to remove ' hidden lg:block ' in next revition -->
+            <nav id="navigation" x-data="navbar" class="container mx-auto hidden overflow-x-clip lg:block">
+                <div id="navigation__bar"
+                    class="relative z-20 mx-auto hidden flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm md:flex">
+                    <div class="flex w-auto justify-between lg:w-full">
                         <a href="tel:02188319191"
-                            class="flex-center w-8 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
+                            class="flex-center flex-0 flex-shrink-0 w-8 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
                             <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
-                            <span class="mx-2 hidden text-sm lg:block">
+                            <span class="mx-2 hidden whitespace-nowrap text-sm tracking-wider lg:block">
                                 ۰۲۱-۳۴۵۶۴۸
                             </span>
                         </a>
 
-                        <div class="menu-top_menu-container hidden lg:block" ref="menuContainer">
+                        <div class="menu-top_menu-container w-full hidden lg:flex flex-col" ref="menuContainer">
                             <ul id="menu-top_menu" class="menu">
                                 <li class="menu-item">
                                     <a href="#">خانه
@@ -459,7 +466,8 @@
                         </div>
                     </div>
 
-                    <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+                    <img src="./img/logo76.png" id="navigation__bisanseir-logo" class="w-9 object-contain"
+                        alt="bisanseir-logo" />
 
                     <div @click="taggleMobileMenu" class="cursor-pointer lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -494,10 +502,10 @@
                         </div>
 
                         <div class="relative flex flex-col rounded-3xl bg-white" style="
-									max-height: calc(
-										100% - 97px
-									);
-								" dir="rtl">
+                            max-height: calc(
+                                100% - 97px
+                            );
+                        " dir="rtl">
                             <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
                                 <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
                                     <img src="svg/chevron-rigth.svg" alt="" />
@@ -619,7 +627,7 @@
             <div class="w-full lg:w-9/12">
                 <div>
                     <div
-                        class="bi-scrollbar bi-shadow-sm sticky top-0 z-20 hidden overflow-auto rounded-3xl bg-white py-6 sm:block lg:hidden">
+                        class="bi-scrollbar bi-shadow-sm sticky top-0 z-20 hidden overflow-auto rounded-3xl bg-white py-6 px-4 sm:block lg:hidden">
                         <div
                             class="js-tabs-container bi-scrollbar flex items-start gap-2 whitespace-nowrap font-semibold text-secondary-dark">
                             <a href="#hotels" class="js-tab-item cursor-pointer rounded-3xl bg-slate-200 px-6 py-2">
@@ -629,9 +637,14 @@
                                 اطلاعات تور
                             </a>
 
+                            <a href="#tour_services" class="js-tab-item cursor-pointer rounded-3xl px-6 py-2">
+                                خدمات تور
+                            </a>
+
                             <a href="#gallery" class="js-tab-item cursor-pointer rounded-3xl px-6 py-2">
                                 گالری
                             </a>
+
                             <a href="#Suggested_tour" class="js-tab-item cursor-pointer rounded-3xl px-6 py-2">
                                 تور های پیشنهادی
                             </a>
@@ -639,7 +652,7 @@
                     </div>
 
                     <!-- Hotels table -->
-                    <div class="mt-8" id="hotels">
+                    <div class="" id="hotels">
                         <!-- mobile only -->
                         <div class="flex flex-col gap-4 md:hidden">
                             <div class="bi-shadow-sm flex flex-col gap-1 rounded-2xl p-4 odd:bg-white even:bg-zinc-100">
@@ -961,7 +974,7 @@
                             </div>
                         </div>
                         <!-- desktop only -->
-                        <div class="mt-4 hidden flex-col md:flex">
+                        <div class="mt-4 lg:mt-0 hidden flex-col md:flex">
                             <div class="bi-scrollbar bi-shadow-sm -my-2 overflow-x-auto rounded-3xl bg-white p-6">
                                 <div class="inline-block min-w-full py-2 align-middle">
                                     <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -969,32 +982,32 @@
                                             <thead class="bg-primery text-xs font-bold text-primery-dark">
                                                 <tr>
                                                     <th scope="col"
-                                                        class="rounded-r-2xl px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        class="rounded-r-2xl px-6 py-5 text-right font-bold uppercase tracking-wider">
                                                         نام
                                                         هتل
                                                     </th>
                                                     <th scope="col"
-                                                        class="px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        class="px-6 py-5 text-right font-bold uppercase tracking-wider">
                                                         خدمات
                                                     </th>
                                                     <th scope="col"
-                                                        class="px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        class="px-6 py-5 text-right font-bold uppercase tracking-wider">
                                                         دو
                                                         تخته
                                                     </th>
                                                     <th scope="col"
-                                                        class="px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        class="px-6 py-5 text-right font-bold uppercase tracking-wider">
                                                         یک
                                                         تخته
                                                     </th>
                                                     <th scope="col"
-                                                        class="px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        class="px-6 py-5 text-right font-bold uppercase tracking-wider">
                                                         کودک
                                                         با
                                                         تخت
                                                     </th>
                                                     <th scope="col"
-                                                        class="rounded-l-2xl px-6 py-3 text-right font-bold uppercase tracking-wider">
+                                                        class="rounded-l-2xl px-6 py-5 text-right font-bold uppercase tracking-wider">
                                                         کودک
                                                         بدون
                                                         تخت
@@ -1241,13 +1254,13 @@
                         </div>
                     </div>
 
-                    <!-- Tour info -->
-                    <div class="mt-8" id="tour_info">
+                    <!-- -->
+                    <div class="mt-8">
                         <h2 class="text-xl font-bold text-primery-dark">
                             اطلاعات تور
                         </h2>
                         <div class="mt-4 flex flex-col gap-4">
-                            <div class="grid grid-cols-1 sm:grid-cols-3">
+                            <div id="tour_info" class="grid grid-cols-1 sm:grid-cols-3">
                                 <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
                                     <div class="flex-center rounded-3xl bg-primery px-3">
                                         <img src="img/tours/gold_clock.svg" alt="" />
@@ -1348,6 +1361,53 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div id="tour_services" class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
+                                <div class="flex-center rounded-3xl bg-primery px-3">
+                                    <img src="img/tours/gold_cal.svg" alt="" />
+                                </div>
+                                <div class="flex flex-col justify-center">
+                                    <span class="text-sm text-gray-500">
+                                        خدمات تور
+                                    </span>
+                                    <div class="flex flex-col text-base font-bold text-zinc-500">
+                                        <ul class="list-disc gap-2 p-4 leading-7">
+                                            <li>
+                                                بلیط
+                                                رفت
+                                                و
+                                                برگشت
+                                            </li>
+                                            <li>
+                                                ترانسفر
+                                                فرودگاهی
+                                            </li>
+                                            <li>
+                                                صبحانه
+                                            </li>
+                                            <li>
+                                                گشت
+                                                شهری
+                                                همراه
+                                                با
+                                                نهار
+                                            </li>
+                                            <li>
+                                                امکان
+                                                استفاده
+                                                از
+                                                گشت
+                                                آپشنال
+                                            </li>
+                                            <li>
+                                                بیمه
+                                                مسافرتی
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
                                 <div class="flex-center rounded-3xl bg-primery px-3">
                                     <img src="img/tours/gold_cal.svg" alt="" />
@@ -1784,16 +1844,11 @@
 
                 <div id="guide"
                     class="relative mr-auto flex w-full items-stretch gap-4 rounded-3xl bg-white p-4 shadow-lg sm:w-80 lg:w-full lg:p-6">
-                    <div class="relative flex flex-col gap-2 text-secondary-dark">
-                        <div class="js-timeline absolute right-1 my-2 h-full" style="
+                    <div class="relative flex flex-col gap-4 text-secondary-dark">
+                        <div class="js-timeline absolute right-1 mt-4" style="
 									width: 3px;
 									background-color: #d7d7d7;
-									clip-path: polygon(
-										0 0,
-										100% 0,
-										100% 77%,
-										0 77%
-									);
+									
 								" aria-hidden="true">
                             <div class="js-timeline__progress bg-primery transition-all duration-500 ease-in"
                                 style="height: 0%"></div>
@@ -1808,6 +1863,11 @@
                             <i class="js-ball ml-2 inline-block h-3 w-3 rounded-circle bg-gray-200"></i>
                             <img class="js-indicator ml-1 hidden" src="img/tours/duble_chav-left.svg" alt="" />
                             اطلاعات تور
+                        </div>
+                        <div class="relative" data-guide="tour_services">
+                            <i class="js-ball ml-2 inline-block h-3 w-3 rounded-circle bg-gray-200"></i>
+                            <img class="js-indicator ml-1 hidden" src="img/tours/duble_chav-left.svg" alt="" />
+                            خدمات تور
                         </div>
                         <div class="relative" data-guide="gallery">
                             <i class="js-ball ml-2 inline-block h-3 w-3 rounded-circle bg-gray-200"></i>
@@ -1861,108 +1921,73 @@
     <script src="lib/js/splide.min.js"></script>
     <script src="js/commons/utils.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            if (["lg", "xl"].includes(currentBrackPoint())) {
-                stickybits(".sticky", {
-                    stickyBitStickyOffset: 80,
-                });
-            }
 
-            // slider
-            new Splide(".splide", {
-                perPage: currentBrackPoint() === "NONE" ? 3 : 4,
-                rewind: true,
-            }).mount();
+
+        /**
+         * 
+         * @param {string[]} listOfElements 
+         */
+        function createAnchor(listOfElements) {
+
 
             // observer
             let options = {
                 root: null,
                 rootMargin: "10px",
-                threshold: 1.0,
+                threshold: 1.0
             };
 
-            const observer = new IntersectionObserver((entreis) => {
-                entreis.forEach((entry) => {
+            console.log(listOfElements.length - 1)
+            document.querySelector(".js-timeline ").style.height = Math.ceil(((listOfElements.length - 1) / listOfElements.length) * 100) + "%";
+
+            const observer = new IntersectionObserver(entreis => {
+
+                entreis.forEach(entry => {
                     if (entry.isIntersecting) {
                         const { id } = entry.target;
 
-                        const elements =
-                            document.querySelectorAll(
-                                "#guide [data-guide]"
-                            );
+                        const elements = document.querySelectorAll(
+                            "#guide [data-guide]"
+                        );
 
                         for (
                             let i = 0;
                             i < elements.length;
                             i++
                         ) {
-                            elements[i].querySelector(
-                                ".js-ball"
-                            ).style.background = "#D7D7D7";
+                            const ballEl = elements[i].querySelector(".js-ball");
+                            const indicatorEl = elements[i].querySelector(".js-indicator");
 
-                            elements[i]
-                                .querySelector(
-                                    ".js-indicator"
-                                )
-                                .classList.add("hidden");
-                            elements[i]
-                                .querySelector(
-                                    ".js-indicator"
-                                )
-                                .classList.remove(
-                                    "inline-block"
-                                );
-                            document
-                                .querySelectorAll(
-                                    ".js-tabs-container .js-tab-item"
-                                )
-                            [i].classList.remove(
-                                "bg-slate-200"
-                            );
+                            ballEl.style.background = "#D7D7D7";
+
+                            indicatorEl.classList.add("hidden");
+
+                            indicatorEl.classList.remove("inline-block");
+
+                            try {
+
+                                document.querySelectorAll(".js-tabs-container .js-tab-item")[i].classList.remove("bg-slate-200");
+                            } catch (error) {
+
+                                console.log(errro)
+                            }
                         }
 
-                        for (
-                            let i = 0;
-                            i <
-                            document.querySelectorAll(
-                                "#guide [data-guide]"
-                            ).length;
-                            i++
-                        ) {
-                            const elem =
-                                document.querySelectorAll(
-                                    "#guide [data-guide]"
-                                )[i];
+                        for (let i = 0; i < document.querySelectorAll("#guide [data-guide]").length; i++) {
+                            const elem = document.querySelectorAll("#guide [data-guide]")[i];
 
-                            elem.querySelector(
-                                "i"
-                            ).style.background = "#EDE059";
+                            elem.querySelector("i").style.background = "#EDE059";
 
                             if (elem.dataset.guide === id) {
-                                document
-                                    .querySelectorAll(
-                                        ".js-tabs-container .js-tab-item"
-                                    )
-                                [i].classList.add(
-                                    "bg-slate-200"
-                                );
 
-                                document.querySelector(
-                                    ".js-timeline .js-timeline__progress"
-                                ).style.height =
-                                    i * 25 + "%";
+                                document.querySelectorAll(".js-tabs-container .js-tab-item")[i].classList.add("bg-slate-200");
 
-                                elem.querySelector(
-                                    ".js-indicator"
-                                ).classList.remove(
-                                    "hidden"
-                                );
+                                document.querySelector(".js-timeline .js-timeline__progress").style.height = i * 25 + "%";
 
-                                elem.querySelector(
-                                    ".js-indicator"
-                                ).classList.add(
-                                    "inline-block"
-                                );
+                                elem.querySelector(".js-indicator").classList.remove("hidden");
+
+                                elem.querySelector(".js-indicator").classList.add("inline-block");
+
                                 break;
                             }
                         }
@@ -1970,10 +1995,39 @@
                 });
             }, options);
 
-            observer.observe(gallery);
-            observer.observe(tour_info);
-            observer.observe(hotels);
-            observer.observe(Suggested_tour);
+            listOfElements.forEach(i => {
+
+                observer.observe(document.querySelector("#" + i.replace("#", '')));
+            })
+
+
+        }
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (["lg", "xl"].includes(currentBrackPoint())) {
+                stickybits(".sticky", {
+                    stickyBitStickyOffset: 80
+                });
+            }
+
+            // slider
+            new Splide(".splide", {
+                perPage: currentBrackPoint() === "NONE" ? 3 : 4,
+                rewind: true
+            }).mount();
+
+            createAnchor(
+
+                [
+                    "gallery",
+                    "tour_info",
+                    "hotels",
+                    "tour_services",
+                    "Suggested_tour"
+                ]
+            )
+
         });
     </script>
 </body>

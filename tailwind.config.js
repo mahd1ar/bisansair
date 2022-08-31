@@ -37,8 +37,8 @@ module.exports = {
       screens: {
         // 'md': '786px',
         // 'lg': '1280px',
-        'xl': '1280px',
-        '2xl': '1280px',
+        'xl': '1440px',
+        '2xl': '1440px',
         // 'landscape': { 'raw': 'only screen and (max-width: 600px) and (orientation: landscape)' },
       },
     },

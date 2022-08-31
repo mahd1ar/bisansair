@@ -16,7 +16,7 @@ function getMounthLength(m) {
 document.addEventListener('DOMContentLoaded', function () {
 
 
-    if (document.querySelector(".splide")) {
+    if (document.querySelector(".js-popular-tours")) {
         const masSize = {
             NONE: 2,
             sm: 3,
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lg: 4,
             xl: 5
         }
-        const splide = new Splide('.splide', {
+        const splide = new Splide('.js-popular-tours', {
             // type: 'loop',
             drag: 'free',
             snap: true,
@@ -35,9 +35,16 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         splide.mount()
 
+        setTimeout(() => {
+
+            if (["NONE", "sm", "md"].includes(currentBrackPoint()))
+                document.querySelector(".js-popular-tours .splide__list").style.transform = "translateX(-131px)";
+        }, 1000);
+
+
     }
 
-    if (document.querySelector(".domestic_tours")) {
+    if (document.querySelector(".js-domestic-tours")) {
         const masSize = {
             NONE: 2,
             sm: 3,
@@ -45,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
             lg: 4,
             xl: 5
         }
-        new Splide('.domestic_tours', {
+        new Splide('.js-domestic-tours', {
             type: 'loop',
             drag: 'free',
             snap: true,
@@ -54,6 +61,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 pagination: 'hidden',
             },
         }).mount();
+
+        setTimeout(() => {
+
+            if (["NONE", "sm", "md"].includes(currentBrackPoint()))
+                document.querySelector(".js-domestic-tours .splide__list").style.transform = "translateX(-131px)";
+        }, 1000);
 
     }
 

@@ -18,7 +18,8 @@
     </div>
     <header class="mb-10 pt-10">
         <!-- mobile controller layout -->
-        <nav x-data="mobile_controller" class="fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
+        <nav id="" x-data="mobile_controller"
+            class="transition-all duration-300 ease-out fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
             <div x-show="isOpen" style="display: none" class="relative h-full w-full overflow-hidden bg-white"
                 x-transition.delay.150ms>
                 <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
@@ -27,14 +28,19 @@
 							background-color: #f0f0f0;
 						"></div>
                 <div class="container relative mx-auto flex h-full flex-col">
-                    <div class="mt-10 flex flex-col items-center gap-7">
-                        <img src="img/logo-with-text.svg" />
-                        <h3 class="text-lg font-bold text-primery-dark">
+                    <div class="mt-10 flex flex-col items-center">
+                        <div class="relative">
+                            <div
+                                class="absolute w-full h-full bg-gradient-radial from-[#f4f4f4]  to-transparent top-0 left-0 scale-150">
+                            </div>
+                            <img class="relative" src="img/logo-with-text.svg" />
+                        </div>
+                        <h3 class="text-xl font-bold text-primery-dark mt-3">
                             !!! رویاهات رو تور کن
                         </h3>
 
                         <button x-show="subMenu.length > 0" x-transition
-                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold text-secondary-dark transition-all"
+                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold mt-7 text-secondary-dark transition-all"
                             @click="back">
                             بازگشت به منوی قبلی
                         </button>
@@ -50,7 +56,7 @@
                             <template x-for="({name,link,icon,hasChildren},inx) in ch" :key="inx">
                                 <div :style="{ '--count' : inx }"
                                     @click="hasChildren ? changeSubMenu(inx) : openlink(link) "
-                                    class="child-item flex aspect-square cursor-pointer cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl bg-gray-200"
+                                    class="child-item flex aspect-square cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl bg-gray-200"
                                     x-transition.fade>
                                     <span x-show="icon" x-html="icon" class="flex-center bi-svgfull aspect-square w-8">
                                     </span>
@@ -91,10 +97,11 @@
                             <span> خانه </span>
                         </button>
                     </div>
+
                     <!-- call btn -->
                     <a href="tel:+982143000030"
-                        class="bi-shadow flex-center absolute top-0 aspect-square w-16 -translate-y-1/2 rotate-45 transform rounded-xl bg-primery">
-                        <img src="img/controll/call.svg" class="-rotate-45 transform cursor-pointer" />
+                        class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16  rotate-45 transform rounded-xl bg-primery">
+                        <img src="img/controll/call.svg" class=" absolute cursor-pointer rotate-45" />
                     </a>
                 </div>
                 <div aria-hidden="true" class="absolute top-0 z-10 flex w-full justify-center overflow-hidden">
@@ -143,19 +150,21 @@
 				"></div>
 
         <div id="navigation-placeholder" class="nav-container">
+            <!-- NOTE : maybe you need to remove ' hidden lg:block ' in next revition -->
             <nav id="navigation" x-data="navbar" class="container mx-auto hidden overflow-x-clip lg:block">
-                <div
-                    class="relative z-20 mx-auto flex flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
-                    <div class="flex">
+                <div id="navigation__bar"
+                    class="relative z-20 mx-auto hidden flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm md:flex">
+                    <div class="flex w-auto justify-between lg:w-full">
                         <a href="tel:02188319191"
-                            class="flex-center w-8 flex-1 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
+                            class="flex-center flex-0 flex-shrink-0 w-8 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
                             <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
-                            <span class="mx-2 hidden text-sm lg:block">
+                            <span class="mx-2 hidden whitespace-nowrap text-sm tracking-wider lg:block">
                                 ۰۲۱-۳۴۵۶۴۸
                             </span>
                         </a>
 
-                        <div class="menu-top_menu-container hidden lg:block" ref="menuContainer">
+                        <div class="menu-top_menu-container w-full hidden lg:flex flex-col" ref="menuContainer">
+
                             <ul id="menu-top_menu" class="menu">
                                 <li class="menu-item">
                                     <a href="#">خانه
@@ -459,7 +468,8 @@
                         </div>
                     </div>
 
-                    <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+                    <img src="./img/logo76.png" id="navigation__bisanseir-logo" class="w-9 object-contain"
+                        alt="bisanseir-logo" />
 
                     <div @click="taggleMobileMenu" class="cursor-pointer lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -494,10 +504,10 @@
                         </div>
 
                         <div class="relative flex flex-col rounded-3xl bg-white" style="
-									max-height: calc(
-										100% - 97px
-									);
-								" dir="rtl">
+                            max-height: calc(
+                                100% - 97px
+                            );
+                        " dir="rtl">
                             <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
                                 <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
                                     <img src="svg/chevron-rigth.svg" alt="" />

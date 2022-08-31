@@ -25,50 +25,49 @@
 }
 
 @keyframes call-icon-puls {
-	
 	0% {
-		transform: rotate(-45deg) scaleX(1);
+		transform: translate3d(0, -50%, 0) rotate(-45deg) scaleX(1);
 	}
 	50% {
-		transform: rotate(-45deg) scale3d(1.05,1.05,1.05);
+		transform: translate3d(0, -50%, 0) rotate(-45deg)
+			scale3d(1.05, 1.05, 1.05);
 	}
 
 	100% {
-		transform: rotate(-45deg) scaleX(1);
+		transform: translate3d(0, -50%, 0) rotate(-45deg) scaleX(1);
 	}
 }
 
 .bi-call-icon {
-    animation: call-icon-puls 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	animation: call-icon-puls 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes bi-scrolltotop-keyframe {
-	
 	0% {
-		transform: translate3d(0,-10px ,0) scale3d(1.45,1.45,1.45);
+		transform: translate3d(0, -10px, 0) scale3d(1.45, 1.45, 1.45);
 	}
 	50% {
-		transform: translate3d(0,0px ,0) scale3d(1.5,1.5,1.5);
+		transform: translate3d(0, 0px, 0) scale3d(1.5, 1.5, 1.5);
 	}
 
 	100% {
-		transform: translate3d(0,-10px ,0) scale3d(1.45,1.45,1.45);
+		transform: translate3d(0, -10px, 0) scale3d(1.45, 1.45, 1.45);
 	}
 }
 
 .bi-scrolltotop-animation {
-    animation: bi-scrolltotop-keyframe 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-animation-delay: 400ms;
+	animation: bi-scrolltotop-keyframe 2s cubic-bezier(0.4, 0, 0.6, 1)
+		infinite;
+	animation-delay: 400ms;
 }
-
 
 .bi-air-slider {
 	&-right {
-		@apply absolute hidden md:block md:-right-24 lg:-right-16 xl:right-0 z-10;
+		@apply absolute z-10 hidden md:-right-24 md:block lg:-right-16 xl:right-16;
 	}
 
 	&-left {
-		@apply absolute hidden md:block md:-left-24 lg:-left-16 xl:left-0 z-10;
+		@apply absolute z-10 hidden md:-left-24 md:block lg:-left-16  xl:left-16;
 		transform: scale(-1, 1);
 	}
 }
