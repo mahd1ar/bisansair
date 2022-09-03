@@ -29,7 +29,8 @@
         <!-- DO NOT DELETE ME -->
     </div>
 
-    <header class="relative top-0 z-20 bg-white from-[#92F2FF] to-white pt-0 sm:bg-gradient-to-b sm:pt-5">
+    <header
+        class="relative top-0 z-20 bg-white from-[#92F2FF] to-white pt-0 sm:bg-gradient-to-b sm:pt-5 sm:h-[90vh] overflow-hidden">
         <nav id="" x-data="mobile_controller"
             class="transition-all duration-300 ease-out fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
             <div x-show="isOpen" style="display: none" class="relative h-full w-full overflow-hidden bg-white"
@@ -168,7 +169,6 @@
                         </a>
 
                         <div class="menu-top_menu-container w-full hidden lg:flex flex-col" ref="menuContainer">
-
                             <ul id="menu-top_menu" class="menu">
                                 <li class="menu-item">
                                     <a href="#">خانه
@@ -472,8 +472,8 @@
                         </div>
                     </div>
 
-                    <img src="./img/logo76.png" id="navigation__bisanseir-logo" class="w-9 object-contain"
-                        alt="bisanseir-logo" />
+                    <img src="./img/logo76.png" id="navigation__bisanseir-logo"
+                        class="w-9 object-contain bi-filiplogo-animation" alt="bisanseir-logo" />
 
                     <div @click="taggleMobileMenu" class="cursor-pointer lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -543,7 +543,7 @@
         <div
             class="absolute bottom-0 -z-10 hidden h-full w-full bg-gradient-radial from-yellow-200 via-yellow-50 to-transparent md:block">
         </div>
-        <div class="js-hero relative flex flex-col items-center justify-center overflow-x-clip sm:h-screen sm:flex-row">
+        <div class="js-hero relative flex flex-col items-center justify-center overflow-x-clip h-full sm:flex-row">
             <div class="relative mb-auto w-full">
                 <!-- mobile header background -->
                 <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden sm:hidden" style="
@@ -554,7 +554,8 @@
                 <!-- mobile header -->
                 <div class="container relative mx-auto lg:hidden">
                     <div class="flex flex-row-reverse gap-4 pt-5 text-white sm:pt-0">
-                        <img class="w-16 flex-shrink-0 object-cover" src="img/logo64.png" alt="" />
+                        <img class="w-16 flex-shrink-0 object-cover bi-filiplogo-animation" src="img/logo64.png"
+                            alt="" />
                         <div class="flex flex-col items-end gap-1">
                             <h2 class="font-vazir text-lg font-bold text-black">
                                 آژانس مسافرتی بیسان سیر
@@ -586,7 +587,7 @@
             <!-- <img id="airplane" class="mx-auto relative hidden md:block" src="./img/cloud/airplane.png" alt="" /> -->
 
             <div
-                class="z-20 flex w-full flex-col items-center text-center font-iransans sm:absolute sm:flex-row-reverse sm:px-12 md:flex-col lg:z-10">
+                class="z-20 flex w-full mb-14 sm:mb-0 flex-col items-center text-center font-iransans sm:absolute sm:flex-row-reverse sm:px-12 md:flex-col lg:z-10">
                 <div class="relative hidden w-full sm:block sm:w-1/2 md:w-full">
                     <h1 class="font-vazir text-6xl font-bold">
                         بیسان سیر
@@ -601,13 +602,9 @@
                 </div>
 
                 <div x-data="fligthPicker" class=" relative top-8  w-10/12  sm:w-1/2 md:w-full ">
-
                     <div class="container mx-auto    ">
-
                         <div
                             class="flex flex-col bg-white shadow-lg py-4 px-2 rounded-3xl md:rounded-full justify-between gap-2 md:flex-row-reverse">
-
-
                             <div class="relative flex w-full items-stretch md:w-1/5">
                                 <div @click="travelPicker.starting.togglePanel()"
                                     class="text-rtl inline-flex w-full cursor-pointer items-center justify-center overflow-hidden text-ellipsis whitespace-nowrap border-b placeholder:text-gray-700 focus-visible:outline-none md:justify-start md:border-b-0 md:text-right">
@@ -1215,15 +1212,12 @@
                             </button>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="my-20 flex flex-col gap-16 md:gap-20 lg:gap-36">
+    <main class="mb-20 mt-5 flex flex-col gap-16 md:gap-20 lg:gap-36">
         <section>
             <div class="container mx-auto flex flex-col gap-6">
                 <div class="flex flex-col items-center justify-center">
@@ -1249,7 +1243,7 @@
                         <div class="splide__list gap-6">
                             <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                                 <div
-                                    class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                    class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t  from-black to-transparent py-6 text-white">
                                     1 گرجستان، تفلیس
                                 </div>
                                 <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
@@ -1296,30 +1290,49 @@
                 <div>
                     <!-- fix 4 tour for desktop -->
                     <div class="gap-6 xl:gap-14 hidden lg:grid grid-cols-4">
-                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl group">
                             <div
-                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                class="pointer-events-none  transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                1 گرجستان، تفلیس
+                            </div>
+                            <div
+                                class=" opacity-0 group-hover:opacity-100 transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-primery to-transparent py-6 text-primery-dark font-bold ">
                                 1 گرجستان، تفلیس
                             </div>
                             <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
                         </a>
-                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl group">
                             <div
-                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                class="pointer-events-none  transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
                                 2 گرجستان، تفلیس
                             </div>
-                            <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
-                        </a>
-                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                             <div
-                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                class=" opacity-0 group-hover:opacity-100 transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-primery to-transparent py-6 text-primery-dark font-bold ">
+                                2 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                        </a>
+
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl group">
+                            <div
+                                class="pointer-events-none  transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
                                 3 گرجستان، تفلیس
                             </div>
-                            <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
-                        </a>
-                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                             <div
-                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                class=" opacity-0 group-hover:opacity-100 transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-primery to-transparent py-6 text-primery-dark font-bold ">
+                                3 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                        </a>
+
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl group">
+                            <div
+                                class="pointer-events-none  transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                4 گرجستان، تفلیس
+                            </div>
+                            <div
+                                class=" opacity-0 group-hover:opacity-100 transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-primery to-transparent py-6 text-primery-dark font-bold ">
                                 4 گرجستان، تفلیس
                             </div>
                             <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
@@ -1333,8 +1346,8 @@
         <section class="js-nowruz">
             <div
                 class="container mx-auto flex flex-col items-center text-center sm:flex-row md:flex-col overflow-hidden">
-                <img src="img/slider-air-rigth.png" class="bi-air-slider-right" alt="" />
-                <img src="img/slider-air-rigth.png" class="bi-air-slider-left" alt="" />
+                <!-- <img src="img/slider-air-rigth.png" class="bi-air-slider-right" alt="" />
+                <img src="img/slider-air-rigth.png" class="bi-air-slider-left" alt="" /> -->
                 <div
                     class="flex-center relative z-10 mb-8 w-full flex-col text-center font-iransans sm:w-1/2 md:w-full">
                     <h2 class="text-xl font-bold text-black">
@@ -2089,30 +2102,49 @@
                 <div>
                     <!-- fix 4 tour for desktop -->
                     <div class="gap-6 xl:gap-14 hidden lg:grid grid-cols-4">
-                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl group">
                             <div
-                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                class="pointer-events-none  transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                1 گرجستان، تفلیس
+                            </div>
+                            <div
+                                class=" opacity-0 group-hover:opacity-100 transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-primery to-transparent py-6 text-primery-dark font-bold ">
                                 1 گرجستان، تفلیس
                             </div>
                             <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
                         </a>
-                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
+
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl group">
                             <div
-                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                class="pointer-events-none  transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
                                 2 گرجستان، تفلیس
                             </div>
-                            <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
-                        </a>
-                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                             <div
-                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                class=" opacity-0 group-hover:opacity-100 transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-primery to-transparent py-6 text-primery-dark font-bold ">
+                                2 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                        </a>
+
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl group">
+                            <div
+                                class="pointer-events-none  transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
                                 3 گرجستان، تفلیس
                             </div>
-                            <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
-                        </a>
-                        <a href="#" class="splide__slide overflow-hidden rounded-2xl">
                             <div
-                                class="pointer-events-none absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                class=" opacity-0 group-hover:opacity-100 transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-primery to-transparent py-6 text-primery-dark font-bold ">
+                                3 گرجستان، تفلیس
+                            </div>
+                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                        </a>
+
+                        <a href="#" class="splide__slide overflow-hidden rounded-2xl group">
+                            <div
+                                class="pointer-events-none  transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-black to-transparent py-6 text-white">
+                                4 گرجستان، تفلیس
+                            </div>
+                            <div
+                                class=" opacity-0 group-hover:opacity-100 transition-all duration-700 absolute top-0 left-0 flex h-full w-full flex-col items-center justify-end bg-gradient-to-t from-primery to-transparent py-6 text-primery-dark font-bold ">
                                 4 گرجستان، تفلیس
                             </div>
                             <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
@@ -3087,39 +3119,55 @@
                 <div class="flex flex-wrap justify-between">
                     <div
                         class="grid w-full grid-cols-3 justify-evenly gap-5 sm:grid-cols-6 sm:gap-7 lg:grid-cols-8 lg:justify-between">
-                        <a href="#"
-                            class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
-                            <img class="" src="img/logos/image-16.png" alt="" />
-                        </a>
+                        <div class="w-full">
+                            <a href="#"
+                                class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
+                                <img class="" src="img/logos/image-16.png" alt="" />
+                            </a>
+                        </div>
 
-                        <a href="#"
-                            class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
-                            <img class="" src="img/logos/image-17.png" alt="" />
-                        </a>
-                        <a href="#"
-                            class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
-                            <img class="" src="img/logos/image-18.png" alt="" />
-                        </a>
+                        <div class="w-full">
+                            <a href="#"
+                                class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
+                                <img class="" src="img/logos/image-17.png" alt="" />
+                            </a>
+                        </div>
+
+                        <div class="w-full">
+                            <a href="#"
+                                class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
+                                <img class="" src="img/logos/image-18.png" alt="" />
+                            </a>
+                        </div>
                         <!-- gap -->
                         <div class="hidden lg:block" aria-hidden="true"></div>
                         <div class="hidden lg:block" aria-hidden="true"></div>
 
-                        <a href="#"
-                            class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
-                            <img class="" src="img/logos/image-19.png" alt="" />
-                        </a>
-                        <a href="#"
-                            class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
-                            <img class="" src="img/logos/image-20.png" alt="" />
-                        </a>
-                        <a href="#"
-                            class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
-                            <img class="" src="img/logos/image-21.png" alt="" />
-                        </a>
+                        <div class="sm:mr-auto">
+                            <a href="#"
+                                class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
+                                <img class="" src="img/logos/image-19.png" alt="" />
+                            </a>
+                        </div>
+
+                        <div class="sm:mr-auto">
+                            <a href="#"
+                                class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
+                                <img class="" src="img/logos/image-20.png" alt="" />
+                            </a>
+                        </div>
+
+                        <div class="sm:mr-auto">
+                            <a href="#"
+                                class="flex-center unset mx-auto aspect-square w-[90px] rounded-3xl bg-white p-2 text-center shadow-lg md:w-24 lg:mx-0">
+                                <img class="" src="img/logos/image-21.png" alt="" />
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="my-10 mt-12 grid grid-cols-1 gap-4 text-white sm:grid-cols-4 lg:grid-cols-3">
+                <div
+                    class="my-10 mt-12 grid grid-cols-1 gap-4 lg:gap-0 xl:gap-4 text-white sm:grid-cols-4 lg:grid-cols-3">
                     <div class="hidden items-end justify-around sm:flex lg:items-start lg:justify-start">
                         <div class="hidden h-full flex-col justify-between lg:flex " style="max-width : 400px">
                             <div class="flex-wrap flex">
@@ -3143,7 +3191,7 @@
                                     <i class="inline-block flex-shrink-0">
                                         <img src="svg/gold-location.svg" alt="" />
                                     </i>
-                                    <div class=" ">
+                                    <div class="text-sm xl:text-base text-center whitespace-nowrap">
                                         خیابان
                                         بهشتی،خیابان
                                         صابونچی ، پلاک
@@ -3155,7 +3203,7 @@
 
                             <div>
                                 <div class="flex flex-col gap-5">
-                                    <p class="text-sm xl:text-center">
+                                    <p class="text-xs xl:text-sm text-center xl:text-center">
                                         با ثبت شماره
                                         موبایل خود از
                                         تورهای ویژه
@@ -3166,7 +3214,7 @@
                                         <input type="text" class="w-full bg-transparent px-4"
                                             placeholder="شماره موبایلتان را وارد کنید" />
                                         <button
-                                            class="flex-shrink-0 rounded-3xl bg-primery py-2 px-4 text-primery-dark">
+                                            class="flex-shrink-0 rounded-3xl bg-primery py-2 px-4 text-primery-dark m-1">
                                             عضویت
                                         </button>
                                     </div>
@@ -3212,20 +3260,20 @@
 
                             <img src="img/bisan-text.svg" class="mt-2 hidden lg:block" alt="" />
                             <img src="img/slogan-text.svg" class="lg:mt-6" alt="" />
-                            <div class="mt-7 flex w-full justify-center gap-7">
-                                <a href="#" class="flex gap-3 text-xs hover:text-primery">
+                            <div class="mt-7 flex w-full justify-center gap-7 lg:gap-4 xl:gap-7">
+                                <a href="#" class="flex-center gap-3 lg:gap-1 xl:gap-3 text-xs hover:text-primery">
                                     <img src="img/social-networks/twitter.svg" alt="" />
                                     توییتر
                                 </a>
-                                <a href="#" class="flex gap-3 text-xs hover:text-primery">
+                                <a href="#" class="flex-center gap-3 lg:gap-1 xl:gap-3 text-xs hover:text-primery">
                                     <img src="img/social-networks/facebook.svg" alt="" />
                                     فیسبوک
                                 </a>
-                                <a href="#" class="flex gap-3 text-xs hover:text-primery">
+                                <a href="#" class="flex-center gap-3 lg:gap-1 xl:gap-3 text-xs hover:text-primery">
                                     <img src="img/social-networks/telegram.svg" alt="" />
                                     تلگرام
                                 </a>
-                                <a href="#" class="flex gap-3 text-xs hover:text-primery">
+                                <a href="#" class="flex-center gap-3 lg:gap-1 xl:gap-3 text-xs hover:text-primery">
                                     <img src="img/social-networks/instagram.svg" alt="" />
                                     اینستاگرام
                                 </a>
@@ -3283,7 +3331,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex items-end justify-evenly sm:justify-around lg:items-start">
+                    <div class="flex items-end justify-evenly sm:justify-around lg:items-start lg:-my-2">
                         <ul class="list-disc-gold block leading-10 text-white sm:hidden lg:block">
                             <li class="hover:text-primery">
                                 <a href=""> تور ویژه </a>

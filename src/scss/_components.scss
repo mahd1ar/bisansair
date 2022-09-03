@@ -71,3 +71,21 @@
 		transform: scale(-1, 1);
 	}
 }
+
+@keyframes bi-filiplogo-keyframe {
+	from {
+		transform: rotateY(0deg);
+	}
+	to {
+		transform: rotateY(141deg);
+	}
+}
+
+.bi-filiplogo-animation {
+	&:hover {
+		animation: bi-filiplogo-keyframe 2s cubic-bezier(0.4, 0, 0.6, 1)
+			infinite;
+		animation-delay: 400ms;
+		animation-direction: alternate;
+	}
+}

@@ -620,6 +620,35 @@ table tbody tr td:first-child {
 		transform: scale(-1, 1);
 	}
 
+@-webkit-keyframes bi-filiplogo-keyframe {
+	from {
+		transform: rotateY(0deg);
+	}
+	to {
+		transform: rotateY(141deg);
+	}
+}
+
+@keyframes bi-filiplogo-keyframe {
+	from {
+		transform: rotateY(0deg);
+	}
+	to {
+		transform: rotateY(141deg);
+	}
+}
+
+.bi-filiplogo-animation:hover {
+		-webkit-animation: bi-filiplogo-keyframe 2s cubic-bezier(0.4, 0, 0.6, 1)
+			infinite;
+		        animation: bi-filiplogo-keyframe 2s cubic-bezier(0.4, 0, 0.6, 1)
+			infinite;
+		-webkit-animation-delay: 400ms;
+		        animation-delay: 400ms;
+		-webkit-animation-direction: alternate;
+		        animation-direction: alternate;
+	}
+
 .travel-selector-card__overlay {
 	position: fixed;
 	top: 0px;
@@ -1768,6 +1797,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin: 1.5rem;
 }
 
+.m-1 {
+	margin: 0.25rem;
+}
+
 .m-16 {
 	margin: 4rem;
 }
@@ -1810,11 +1843,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-3 {
 	margin-left: 0.75rem;
 	margin-right: 0.75rem;
-}
-
-.my-20 {
-	margin-top: 5rem;
-	margin-bottom: 5rem;
 }
 
 .mx-5 {
@@ -1955,6 +1983,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin-bottom: 1.75rem;
 }
 
+.mb-20 {
+	margin-bottom: 5rem;
+}
+
 .mt-12 {
 	margin-top: 3rem;
 }
@@ -1989,6 +2021,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-20 {
 	margin-top: 5rem;
+}
+
+.mb-14 {
+	margin-bottom: 3.5rem;
 }
 
 .block {
@@ -2865,10 +2901,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
-.bg-none {
-	background-image: none;
-}
-
 .from-\[\#f4f4f4\] {
 	--tw-gradient-from: #f4f4f4;
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(244 244 244 / 0));
@@ -2892,6 +2924,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .from-black {
 	--tw-gradient-from: #000;
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(0 0 0 / 0));
+}
+
+.from-primery {
+	--tw-gradient-from: #EDE059;
+	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(237 224 89 / 0));
 }
 
 .from-gray-800 {
@@ -3385,6 +3422,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	opacity: 0.5;
 }
 
+.opacity-0 {
+	opacity: 0;
+}
+
 .opacity-80 {
 	opacity: 0.8;
 }
@@ -3488,6 +3529,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .duration-100 {
 	transition-duration: 100ms;
+}
+
+.duration-700 {
+	transition-duration: 700ms;
 }
 
 .duration-150 {
@@ -3867,6 +3912,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 	outline-offset: 2px;
 }
 
+.group:hover .group-hover\:rotate-180 {
+	--tw-rotate: 180deg;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.group:hover .group-hover\:opacity-100 {
+	opacity: 1;
+}
+
 @media (min-width: 640px) {
 
 	.sm\:absolute {
@@ -3941,6 +3995,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 		margin-bottom: 2.5rem;
 	}
 
+	.sm\:mr-auto {
+		margin-right: auto;
+	}
+
 	.sm\:mt-0 {
 		margin-top: 0px;
 	}
@@ -3965,12 +4023,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 		height: 100%;
 	}
 
-	.sm\:h-screen {
-		height: 100vh;
+	.sm\:h-\[90hv\] {
+		height: 90hv;
 	}
 
 	.sm\:h-auto {
 		height: auto;
+	}
+
+	.sm\:h-\[90vh\] {
+		height: 90vh;
 	}
 
 	.sm\:w-1\/2 {
@@ -4117,12 +4179,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 		gap: 0px;
 	}
 
-	.sm\:gap-4 {
-		gap: 1rem;
-	}
-
 	.sm\:gap-1 {
 		gap: 0.25rem;
+	}
+
+	.sm\:gap-4 {
+		gap: 1rem;
 	}
 
 	.sm\:rounded-lg {
@@ -4363,10 +4425,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 		border-radius: 9999px;
 	}
 
-	.md\:rounded-none {
-		border-radius: 0px;
-	}
-
 	.md\:border-l-2 {
 		border-left-width: 2px;
 	}
@@ -4462,6 +4520,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	.lg\:mx-0 {
 		margin-left: 0px;
 		margin-right: 0px;
+	}
+
+	.lg\:-my-2 {
+		margin-top: -0.5rem;
+		margin-bottom: -0.5rem;
 	}
 
 	.lg\:my-0 {
@@ -4599,16 +4662,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 		gap: 9rem;
 	}
 
-	.lg\:gap-6 {
-		gap: 1.5rem;
-	}
-
 	.lg\:gap-0 {
 		gap: 0px;
 	}
 
 	.lg\:gap-4 {
 		gap: 1rem;
+	}
+
+	.lg\:gap-1 {
+		gap: 0.25rem;
+	}
+
+	.lg\:gap-6 {
+		gap: 1.5rem;
 	}
 
 	.lg\:rounded-none {
@@ -4693,6 +4760,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 		gap: 3.5rem;
 	}
 
+	.xl\:gap-4 {
+		gap: 1rem;
+	}
+
+	.xl\:gap-7 {
+		gap: 1.75rem;
+	}
+
+	.xl\:gap-3 {
+		gap: 0.75rem;
+	}
+
 	.xl\:bg-yellow-500 {
 		--tw-bg-opacity: 1;
 		background-color: rgb(234 179 8 / var(--tw-bg-opacity));
@@ -4710,6 +4789,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.xl\:text-center {
 		text-align: center;
+	}
+
+	.xl\:text-base {
+		font-size: 1rem;
+		line-height: 1.5rem;
+	}
+
+	.xl\:text-sm {
+		font-size: 0.875rem;
+		line-height: 1.25rem;
 	}
 
 	.\32xl\:-right-20 {
