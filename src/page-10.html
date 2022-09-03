@@ -554,8 +554,8 @@
             </span>
         </div>
         <!-- Tour introduction -->
-        <div class="mt-2 flex w-full flex-col gap-2 overflow-hidden rounded-2xl shadow-lg sm:flex-row sm:gap-0">
-            <div class="w-full rounded-2xl bg-white sm:w-9/12">
+        <div class="mt-2 flex w-full flex-col gap-2 overflow-hidden rounded-2xl  lg:shadow-lg sm:flex-row sm:gap-0">
+            <div class="w-full rounded-2xl bg-white sm:w-9/12 sm:rounded-none shadow-lg sm:shadow-none">
                 <div class="flex items-start p-5 sm:items-center">
                     <div class="ml-4 shrink-0">
                         <img class="h-16 w-16 rounded-circle object-cover" src="img/flag-turkish.png" alt="" />
@@ -564,7 +564,7 @@
                         <h1 class="text-2xl font-bold">
                             تور استانبول با پرواز ایران ایر
                         </h1>
-                        <div class="flex flex-col flex-wrap items-start gap-4 text-sm sm:flex-row sm:gap-1">
+                        <div class="flex flex-col flex-wrap items-start gap-4 text-sm sm:flex-row sm:gap-1 lg:gap-4">
                             <div
                                 class="flex items-center gap-2 rounded border-2 border-gray-200 py-1 px-2 text-gray-500">
                                 <i class="flex-center aspect-square w-6 rounded-circle bg-primery sm:bg-gray-200">
@@ -613,10 +613,10 @@
                     <div>
                         <div class="flex-center relative w-full gap-3 text-black">
                             <div class="flex-center gap-2">
-                                <span class="text-sm">تومان</span>
+                                <span class="text-xs">تومان</span>
                                 <strong class="text-xl font-bold">5.200.00</strong>
                             </div>
-                            <img class="" src="svg/money.svg" alt="" />
+                            <img class="block sm:hidden md:block" src="svg/money.svg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -654,8 +654,8 @@
                     <!-- Hotels table -->
                     <div class="" id="hotels">
                         <!-- mobile only -->
-                        <div class="flex flex-col gap-4 md:hidden">
-                            <div class="bi-shadow-sm flex flex-col gap-1 rounded-2xl p-4 odd:bg-white even:bg-zinc-100">
+                        <div class="flex flex-col gap-5 md:hidden">
+                            <div class="bi-shadow-sm flex flex-col gap-1 rounded-3xl p-4 odd:bg-white even:bg-zinc-100">
                                 <div class="flex justify-between">
                                     <div class="flex flex-col gap-1">
                                         <h3 class="font-bold text-black">
@@ -761,7 +761,7 @@
                                 </div>
                             </div>
 
-                            <div class="bi-shadow-sm flex flex-col gap-1 rounded-2xl p-4 odd:bg-white even:bg-zinc-100">
+                            <div class="bi-shadow-sm flex flex-col gap-1 rounded-3xl p-4 odd:bg-white even:bg-zinc-100">
                                 <div class="flex justify-between">
                                     <div class="flex flex-col gap-1">
                                         <h3 class="font-bold text-black">
@@ -867,7 +867,7 @@
                                 </div>
                             </div>
 
-                            <div class="bi-shadow-sm flex flex-col gap-1 rounded-2xl p-4 odd:bg-white even:bg-zinc-100">
+                            <div class="bi-shadow-sm flex flex-col gap-1 rounded-3xl p-4 odd:bg-white even:bg-zinc-100">
                                 <div class="flex justify-between">
                                     <div class="flex flex-col gap-1">
                                         <h3 class="font-bold text-black">
@@ -982,32 +982,32 @@
                                             <thead class="bg-primery text-xs font-bold text-primery-dark">
                                                 <tr>
                                                     <th scope="col"
-                                                        class="rounded-r-2xl px-6 py-6 text-sm text-right font-bold uppercase tracking-wider">
+                                                        class="rounded-r-2xl xl:px-6 px-4 py-6  text-sm text-right font-bold uppercase tracking-wider">
                                                         نام
                                                         هتل
                                                     </th>
                                                     <th scope="col"
-                                                        class="px-6 py-6 text-sm text-center font-bold uppercase tracking-wider">
+                                                        class="xl:px-6 px-4 py-6  text-sm text-center font-bold uppercase tracking-wider ">
                                                         خدمات
                                                     </th>
                                                     <th scope="col"
-                                                        class="px-6 py-6 text-sm text-center font-bold uppercase tracking-wider">
+                                                        class="xl:px-6 px-4 py-6  text-sm text-center font-bold uppercase tracking-wider ">
                                                         دو
                                                         تخته
                                                     </th>
                                                     <th scope="col"
-                                                        class="px-6 py-6 text-sm text-center font-bold uppercase tracking-wider">
+                                                        class="xl:px-6 px-4 py-6  text-sm text-center font-bold uppercase tracking-wider ">
                                                         یک
                                                         تخته
                                                     </th>
                                                     <th scope="col"
-                                                        class="px-6 py-6 text-sm text-center font-bold uppercase tracking-wider">
+                                                        class="xl:px-6 px-4 py-6  text-sm text-center font-bold uppercase tracking-wider ">
                                                         کودک
                                                         با
                                                         تخت
                                                     </th>
                                                     <th scope="col"
-                                                        class="rounded-l-2xl px-6 py-6 text-sm text-center font-bold uppercase tracking-wider">
+                                                        class="rounded-l-2xl xl:px-6 px-4 py-6  text-sm text-center font-bold uppercase tracking-wider ">
                                                         کودک
                                                         بدون
                                                         تخت
@@ -1262,7 +1262,7 @@
                         <div class="mt-4 flex flex-col gap-4">
                             <div id="tour_info" class="grid grid-cols-1 sm:grid-cols-3">
                                 <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                    <div class="flex-center rounded-3xl bg-primery px-3">
+                                    <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
                                         <img src="img/tours/gold_clock.svg" alt="" />
                                     </div>
                                     <div class="flex flex-col justify-center">
@@ -1283,7 +1283,7 @@
                                 </div>
 
                                 <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                    <div class="flex-center rounded-3xl bg-primery px-3">
+                                    <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
                                         <img src="img/tours/gold_cal.svg" alt="" />
                                     </div>
                                     <div class="flex flex-col justify-center">
@@ -1305,7 +1305,7 @@
                                 </div>
 
                                 <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                    <div class="flex-center rounded-3xl bg-primery px-3">
+                                    <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
                                         <img src="img/tours/gold-plane.svg" alt="" />
                                     </div>
                                     <div class="flex flex-col justify-center">
@@ -1325,7 +1325,7 @@
                             </div>
 
                             <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                <div class="flex-center rounded-3xl bg-primery px-3">
+                                <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
                                     <img src="img/tours/gold-folder.svg" alt="" />
                                 </div>
                                 <div class="flex flex-col justify-center">
@@ -1363,7 +1363,7 @@
                             </div>
 
                             <div id="tour_services" class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                <div class="flex-center rounded-3xl bg-primery px-3">
+                                <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
                                     <img src="img/tours/gold_cal.svg" alt="" />
                                 </div>
                                 <div class="flex flex-col justify-center">
@@ -1409,7 +1409,7 @@
                             </div>
 
                             <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                <div class="flex-center rounded-3xl bg-primery px-3">
+                                <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
                                     <img src="img/tours/gold_cal.svg" alt="" />
                                 </div>
                                 <div class="flex flex-col justify-center">

@@ -2865,6 +2865,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
+.bg-none {
+	background-image: none;
+}
+
 .from-\[\#f4f4f4\] {
 	--tw-gradient-from: #f4f4f4;
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(244 244 244 / 0));
@@ -3228,10 +3232,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-medium {
 	font-weight: 500;
-}
-
-.font-extrabold {
-	font-weight: 800;
 }
 
 .uppercase {
@@ -4117,12 +4117,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 		gap: 0px;
 	}
 
-	.sm\:gap-1 {
-		gap: 0.25rem;
-	}
-
 	.sm\:gap-4 {
 		gap: 1rem;
+	}
+
+	.sm\:gap-1 {
+		gap: 0.25rem;
 	}
 
 	.sm\:rounded-lg {
@@ -4198,6 +4198,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 	.sm\:text-black {
 		--tw-text-opacity: 1;
 		color: rgb(0 0 0 / var(--tw-text-opacity));
+	}
+
+	.sm\:shadow-none {
+		--tw-shadow: 0 0 #0000;
+		--tw-shadow-colored: 0 0 #0000;
+		box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 	}
 }
 
@@ -4355,6 +4361,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.md\:rounded-full {
 		border-radius: 9999px;
+	}
+
+	.md\:rounded-none {
+		border-radius: 0px;
 	}
 
 	.md\:border-l-2 {
@@ -4561,10 +4571,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 		grid-template-columns: repeat(8, minmax(0, 1fr));
 	}
 
-	.lg\:grid-cols-2 {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-
 	.lg\:grid-cols-1 {
 		grid-template-columns: repeat(1, minmax(0, 1fr));
 	}
@@ -4599,6 +4605,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.lg\:gap-0 {
 		gap: 0px;
+	}
+
+	.lg\:gap-4 {
+		gap: 1rem;
 	}
 
 	.lg\:rounded-none {
@@ -4691,6 +4701,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	.xl\:px-10 {
 		padding-left: 2.5rem;
 		padding-right: 2.5rem;
+	}
+
+	.xl\:px-6 {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
 	}
 
 	.xl\:text-center {
