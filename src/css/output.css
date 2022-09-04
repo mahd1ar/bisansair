@@ -519,6 +519,35 @@ table tbody tr td:first-child {
 	        animation: call-icon-puls 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+@-webkit-keyframes callus-puls {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+@keyframes callus-puls {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+.bi-callus-puls {
+	-webkit-animation: callus-puls 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	        animation: callus-puls 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 @-webkit-keyframes bi-scrolltotop-keyframe {
 	0% {
 		transform: translate3d(0, -10px, 0) scale3d(1.45, 1.45, 1.45);
@@ -647,6 +676,10 @@ table tbody tr td:first-child {
 		        animation-delay: 400ms;
 		-webkit-animation-direction: alternate;
 		        animation-direction: alternate;
+	}
+
+.breadcrumb__peer:hover ~ .breadcrumb__item .breadcrumb__chevron {
+		transform: rotate(180deg);
 	}
 
 .travel-selector-card__overlay {
@@ -1967,6 +2000,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin-bottom: auto;
 }
 
+.mb-14 {
+	margin-bottom: 3.5rem;
+}
+
 .mr-2 {
 	margin-right: 0.5rem;
 }
@@ -2021,10 +2058,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mt-20 {
 	margin-top: 5rem;
-}
-
-.mb-14 {
-	margin-bottom: 3.5rem;
 }
 
 .block {
@@ -3912,11 +3945,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	outline-offset: 2px;
 }
 
-.group:hover .group-hover\:rotate-180 {
-	--tw-rotate: 180deg;
-	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .group:hover .group-hover\:opacity-100 {
 	opacity: 1;
 }
@@ -4023,16 +4051,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 		height: 100%;
 	}
 
-	.sm\:h-\[90hv\] {
-		height: 90hv;
+	.sm\:h-\[90vh\] {
+		height: 90vh;
 	}
 
 	.sm\:h-auto {
 		height: auto;
-	}
-
-	.sm\:h-\[90vh\] {
-		height: 90vh;
 	}
 
 	.sm\:w-1\/2 {
@@ -4732,9 +4756,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 		padding-top: 1rem;
 	}
 
+	.lg\:text-xs {
+		font-size: 0.75rem;
+		line-height: 1rem;
+	}
+
 	.lg\:text-base {
 		font-size: 1rem;
 		line-height: 1.5rem;
+	}
+
+	.lg\:text-\[13px\] {
+		font-size: 13px;
 	}
 
 	.lg\:shadow-none {

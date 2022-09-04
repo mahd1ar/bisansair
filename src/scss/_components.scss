@@ -42,6 +42,22 @@
 	animation: call-icon-puls 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+@keyframes callus-puls {
+	0% {
+		transform: scaleX(1);
+	}
+	50% {
+		transform: scale3d(1.05, 1.05, 1.05);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+.bi-callus-puls {
+	animation: callus-puls 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 @keyframes bi-scrolltotop-keyframe {
 	0% {
 		transform: translate3d(0, -10px, 0) scale3d(1.45, 1.45, 1.45);
@@ -87,5 +103,11 @@
 			infinite;
 		animation-delay: 400ms;
 		animation-direction: alternate;
+	}
+}
+
+.breadcrumb__peer:hover ~ .breadcrumb__item {
+	.breadcrumb__chevron {
+		transform: rotate(180deg);
 	}
 }

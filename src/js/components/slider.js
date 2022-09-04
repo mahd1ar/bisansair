@@ -171,6 +171,23 @@ class Slider {
     maxCartCount = 7;
     sideCardsCount = 2
     taraz = 2
+
+    marginDict = {
+        "NONE": [40, 40],
+        "sm": [40, 40],
+        "md": [50, 80],
+        "lg": [90, 120],
+        "xl": [120, 120],
+    }
+
+    opacityDict = {
+        "NONE": 0.4,
+        "sm": 0.4,
+        "md": 0.25,
+        "lg": 0.25,
+        "xl": 0.25,
+    }
+
     constructor({ containerSelectror, nextSelector, prvSelector, isBilateral = true, sideCardsCount }) {
 
         if (sideCardsCount) {
@@ -288,7 +305,7 @@ class Slider {
 
             if (imgopacity <= 0) {
 
-                cards.at(item).style.transform = `translate3d(${(this.isBilateral ? 1 : -1) * margin * distanse}px ,0px ,0px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
+                this._calc_diamon(cards, item, margin, absMargin, distanse)
                 cards.at(item).style.opacity = 0;
                 setTimeout(() => {
                     cards.at(item).style.display = "none";
@@ -296,13 +313,33 @@ class Slider {
             } else {
                 cards.at(item).style.display = "block";
                 setTimeout(() => {
-
-                    cards.at(item).style.transform = `translate3d(${(this.isBilateral ? 1 : -1) * margin * distanse}px ,0px ,0px) scale(${1 - (this.isBilateral ? absMargin : margin) * 0.1})`;
+                    this._calc_diamon(cards, item, margin, absMargin, distanse)
                     cards.at(item).style.opacity = 1;
                 }, 10);
             }
 
         });
+
+    }
+
+    _calc_diamon(cards, item, margin, absMargin) {
+
+        const distanse = this.marginDict[currentBrackPoint()][+this.isBilateral]
+        const scaleMargin = {
+            "NONE": [0.1, 0.1],
+            "sm": [0.1, 0.1],
+            "md": [0.2, 0.1],
+            "lg": [0.1, 0.1],
+            "xl": [0.1, 0.1],
+        }
+
+        const scale = scaleMargin[currentBrackPoint()][+this.isBilateral]
+
+
+        const X = (this.isBilateral ? 1 : -1) * margin * distanse;
+        const S = 1 - (this.isBilateral ? absMargin : margin) * scale;
+
+        cards.at(item).style.transform = `translate3d(${X}px ,0px ,0px) scale(${S})`;
 
     }
 }

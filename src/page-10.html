@@ -537,20 +537,21 @@
     <main class="container relative mx-auto" dir="rtl">
         <!-- Breadcrumb -->
         <div class="flex justify-center sm:justify-start">
-            <span class=" inline-flex items-center gap-2 rounded-lg bg-white py-1 px-2">
-                <a href="" class="flex-center gap-2 group">
+            <span class="breadcrumb inline-flex items-center gap-2 rounded-lg bg-white py-1 px-2">
+                <!-- loop over breadcrumb items : the first element dosent need breadcrumb__item class -->
+                <a href="" class="flex-center gap-2  breadcrumb__peer">
                     بیسانسیر
-                    <img src="img/tours/chav-left.svg" class="transition-all duration-300 group-hover:rotate-180" />
                 </a>
-                <a href="" class="flex-center gap-2 group">
+                <a href="" class="flex-center gap-2  breadcrumb__peer breadcrumb__item">
+                    <img src="img/tours/chav-left.svg" class="transition-all duration-300 breadcrumb__chevron" />
                     تور
-                    <img src="img/tours/chav-left.svg" class="transition-all duration-300 group-hover:rotate-180" />
                 </a>
-                <a href="" class="flex-center gap-2 group">
+                <a href="" class="flex-center gap-2  breadcrumb__peer breadcrumb__item">
+                    <img src="img/tours/chav-left.svg" class="transition-all duration-300 breadcrumb__chevron" />
                     ترکیه
-                    <img src="img/tours/chav-left.svg" class="transition-all duration-300 group-hover:rotate-180" />
                 </a>
-                <span>
+                <span class="flex-center gap-2  breadcrumb__peer breadcrumb__item">
+                    <img src="img/tours/chav-left.svg" class="transition-all duration-300 breadcrumb__chevron" />
                     استانبول
                 </span>
             </span>
@@ -562,13 +563,13 @@
                     <div class="ml-4 shrink-0">
                         <img class="h-16 w-16 rounded-circle object-cover" src="img/flag-turkish.png" alt="" />
                     </div>
-                    <div class="flex flex-col gap-2">
+                    <div class="flex flex-col gap-4">
                         <h1 class="text-2xl font-bold">
                             تور استانبول با پرواز ایران ایر
                         </h1>
                         <div class="flex flex-col flex-wrap items-start gap-4 text-sm sm:flex-row sm:gap-1 lg:gap-4">
                             <div
-                                class="flex items-center gap-2 rounded border-2 border-gray-200 py-1 px-2 text-gray-500">
+                                class="flex items-center gap-2 rounded-lg border-2 border-gray-200 py-1 px-2 text-gray-500">
                                 <i class="flex-center aspect-square w-6 rounded-circle bg-primery sm:bg-gray-200">
                                     <img src="img/tours/location.svg" alt="" />
                                 </i>
@@ -578,7 +579,7 @@
                             </div>
 
                             <div
-                                class="flex items-center gap-2 rounded border-2 border-gray-200 py-1 px-2 text-gray-500">
+                                class="flex items-center gap-2 rounded-lg border-2 border-gray-200 py-1 px-2 text-gray-500">
                                 <i class="flex-center aspect-square w-6 rounded-circle bg-primery sm:bg-gray-200">
                                     <img src="img/tours/clock.svg" alt="" />
                                 </i>
@@ -586,7 +587,7 @@
                             </div>
 
                             <div
-                                class="flex items-center gap-2 rounded border-2 border-gray-200 py-1 px-2 text-gray-500">
+                                class="flex items-center gap-2 rounded-lg border-2 border-gray-200 py-1 px-2 text-gray-500">
                                 <i class="flex-center aspect-square w-6 rounded-circle bg-primery sm:bg-gray-200">
                                     <img src="img/tours/cal.svg" alt="" />
                                 </i>
@@ -597,7 +598,7 @@
                             </div>
 
                             <div
-                                class="flex items-center gap-2 rounded border-2 border-gray-200 py-1 px-2 text-gray-500">
+                                class="flex items-center gap-2 rounded-lg border-2 border-gray-200 py-1 px-2 text-gray-500">
                                 <i class="flex-center aspect-square w-6 rounded-circle bg-primery sm:bg-gray-200">
                                     <img src="img/tours/hotel.svg" alt="" />
                                 </i>
@@ -1018,7 +1019,7 @@
                                             </thead>
                                             <tbody class="bg-white">
                                                 <tr>
-                                                    <td class="whitespace-nowrap py-4 pr-4 text-center">
+                                                    <td class="whitespace-nowrap py-4 px-1 text-center">
                                                         <div
                                                             class="flex flex-col text-gray-700 justify-center items-center gap-1">
                                                             هتل
@@ -1077,7 +1078,7 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td class="whitespace-nowrap py-4 pr-4">
+                                                    <td class="whitespace-nowrap py-4 px-1 text-center">
                                                         <div
                                                             class="flex flex-col text-gray-700 justify-center items-center gap-1">
                                                             هتل
@@ -1124,7 +1125,7 @@
                                                             تومان
                                                         </span>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
                                                             class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             5700000
@@ -1136,7 +1137,7 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td class="whitespace-nowrap py-4 pr-4 ">
+                                                    <td class="whitespace-nowrap py-4 px-1 text-center">
                                                         <div
                                                             class="flex flex-col text-gray-700 justify-center items-center gap-1">
                                                             هتل
@@ -1195,7 +1196,7 @@
                                                 </tr>
 
                                                 <tr>
-                                                    <td class="whitespace-nowrap py-4 pr-4">
+                                                    <td class="whitespace-nowrap py-4 px-1 text-center">
                                                         <div
                                                             class="flex flex-col text-gray-700 justify-center items-center gap-1">
                                                             هتل
@@ -1762,7 +1763,7 @@
             <aside class="sticky bottom-0 left-0 hidden w-full flex-col gap-4 p-6 lg:relative lg:flex lg:w-3/12 lg:p-0">
                 <a href="#" class="bi-shadow-sm rounded-3xl bg-primery">
                     <div class="flex gap-2 py-4 pr-8">
-                        <div class="flex-center h-16 rounded-3xl bg-white bg-opacity-60 p-2">
+                        <div class="flex-center h-16 rounded-3xl bg-white bg-opacity-60 p-2 bi-callus-puls">
                             <img class="rotate-90 transform" src="img/controll/call.svg" alt="" />
                         </div>
                         <div class="w-f flex flex-col justify-center gap-1">
