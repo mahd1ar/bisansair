@@ -14,6 +14,12 @@ window.mobile_controller = {
     },
     set isOpen(input) {
 
+        const bar = document.querySelector(".js-controller__bar")
+        if (bar) {
+            bar.style.backgroundColor = input ? "white" : ''
+        }
+
+
         if (input) {
             this.$root.classList.remove('h-20')
             this.$root.classList.add('h-full')

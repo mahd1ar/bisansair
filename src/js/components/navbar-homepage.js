@@ -12,6 +12,7 @@ window.navbar = {
         return this._isOpen;
     },
     set isOpen(input) {
+
         if (input && !this.fixedPosition)
             document.querySelector(
                 "#navigation-sticky-placeholder"
@@ -50,6 +51,24 @@ window.navbar = {
                 .querySelector("#navigation__bisanseir-logo")
                 .classList.add("w-20");
         }
+
+        const footer_element = document.querySelector("footer")
+        if (footer_element)
+            respondToVisibility(footer_element, (isVisible) => {
+                if (isVisible) {
+                    const mobile_colntoller = document.querySelector("nav[x-data=mobile_controller]")
+                    if (mobile_colntoller) {
+
+                        mobile_colntoller.style.transform = "translateY(135%)"
+                    }
+                } else {
+                    const mobile_colntoller = document.querySelector("nav[x-data=mobile_controller]")
+                    if (mobile_colntoller)
+                        mobile_colntoller.style.transform = ""
+                    mobile_colntoller.style.opacity = 1
+
+                }
+            })
 
         // normal mode
         function normalMode() {

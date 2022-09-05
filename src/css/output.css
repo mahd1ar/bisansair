@@ -1,6 +1,81 @@
+// font-family: "iransans";
+
 @font-face {
-	font-family: "iransans";
-	src: url("https://cdn.jsdelivr.net/npm/iransans@1.0.0/woff2/IRANSansWeb.woff2");
+	font-family: iransans;
+	font-style: normal;
+	font-weight: 100;
+	src: url("../font/iran-sans/woff/IRANSansX-Thin.woff") format("woff"),
+		url("../font/iran-sans/woff2/IRANSansX-Thin.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: iransans;
+	font-style: normal;
+	font-weight: 200;
+	src: url("../font/iran-sans/woff/IRANSansX-UltraLight.woff")
+			format("woff"),
+		url("../font/iran-sans/woff2/IRANSansX-UltraLight.woff2")
+			format("woff2");
+}
+
+@font-face {
+	font-family: iransans;
+	font-style: normal;
+	font-weight: 300;
+	src: url("../font/iran-sans/woff/IRANSansX-Light.woff") format("woff"),
+		url("../font/iran-sans/woff2/IRANSansX-Light.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: iransans;
+	font-style: normal;
+	font-weight: 500;
+	src: url("../font/iran-sans/woff/IRANSansX-Medium.woff") format("woff"),
+		url("../font/iran-sans/woff2/IRANSansX-Medium.woff2")
+			format("woff2");
+}
+
+@font-face {
+	font-family: iransans;
+	font-style: normal;
+	font-weight: 600;
+	src: url("../font/iran-sans/woff/IRANSansX-DemiBold.woff") format("woff"),
+		url("../font/iran-sans/woff2/IRANSansX-DemiBold.woff2")
+			format("woff2");
+}
+
+@font-face {
+	font-family: iransans;
+	font-style: normal;
+	font-weight: 800;
+	src: url("../font/iran-sans/woff/IRANSansX-ExtraBold.woff") format("woff"),
+		url("../font/iran-sans/woff2/IRANSansX-ExtraBold.woff2")
+			format("woff2");
+}
+
+@font-face {
+	font-family: iransans;
+	font-style: normal;
+	font-weight: 900;
+	src: url("../font/iran-sans/woff/IRANSansX-Black.woff") format("woff"),
+		url("../font/iran-sans/woff2/IRANSansX-Black.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: bold;
+	src: url("../font/iran-sans/woff/IRANSansX-Bold.woff") format("woff"),
+		url("../font/iran-sans/woff2/IRANSansX-Bold.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: normal;
+	src: url("../font/iran-sans/woff/IRANSansX-Regular.woff") format("woff"),
+		url("../font/iran-sans/woff2/IRANSansX-Regular.woff2")
+			format("woff2");
 }
 
 @font-face {
@@ -1135,8 +1210,7 @@ table tbody tr td:first-child {
 	align-items: center !important;
 }
 
-/*! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com
-		  */
+/* ! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com*/
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -2420,11 +2494,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.-rotate-45 {
-	--tw-rotate: -45deg;
-	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .rotate-90 {
 	--tw-rotate: 90deg;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2645,12 +2714,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 	gap: 1.5rem;
 }
 
-.gap-7 {
-	gap: 1.75rem;
-}
-
 .gap-5 {
 	gap: 1.25rem;
+}
+
+.gap-7 {
+	gap: 1.75rem;
 }
 
 .gap-10 {
@@ -3178,10 +3247,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	padding-top: 1rem;
 }
 
-.pr-4 {
-	padding-right: 1rem;
-}
-
 .pt-20 {
 	padding-top: 5rem;
 }
@@ -3196,6 +3261,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pt-6 {
 	padding-top: 1.5rem;
+}
+
+.pr-4 {
+	padding-right: 1rem;
 }
 
 .pr-6 {
@@ -3267,14 +3336,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 	line-height: 1rem;
 }
 
-.text-lg {
-	font-size: 1.125rem;
-	line-height: 1.75rem;
-}
-
 .text-3xl {
 	font-size: 1.875rem;
 	line-height: 2.25rem;
+}
+
+.text-lg {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
 }
 
 .text-6xl {
@@ -3302,6 +3371,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-medium {
 	font-weight: 500;
+}
+
+.font-extrabold {
+	font-weight: 800;
 }
 
 .uppercase {
@@ -4756,18 +4829,13 @@ Ensure the default browser behavior of the `hidden` attribute.
 		padding-top: 1rem;
 	}
 
-	.lg\:text-xs {
-		font-size: 0.75rem;
-		line-height: 1rem;
+	.lg\:text-\[13px\] {
+		font-size: 13px;
 	}
 
 	.lg\:text-base {
 		font-size: 1rem;
 		line-height: 1.5rem;
-	}
-
-	.lg\:text-\[13px\] {
-		font-size: 13px;
 	}
 
 	.lg\:shadow-none {
