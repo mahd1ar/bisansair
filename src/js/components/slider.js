@@ -235,7 +235,7 @@ class Slider {
         }
 
         const recalc = customDebounce(() => {
-            this._calcPosition
+            this._calcPosition()
         }, 1000)
 
         window.addEventListener("resize", () => {

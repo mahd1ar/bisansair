@@ -2434,6 +2434,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 	flex-grow: 0;
 }
 
+.origin-bottom-right {
+	transform-origin: bottom right;
+}
+
+.origin-bottom-left {
+	transform-origin: bottom left;
+}
+
 .-translate-y-1\/2 {
 	--tw-translate-y: -50%;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2502,6 +2510,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .scale-150 {
 	--tw-scale-x: 1.5;
 	--tw-scale-y: 1.5;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-100 {
+	--tw-scale-x: 1;
+	--tw-scale-y: 1;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -2950,6 +2964,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
+.bg-black {
+	--tw-bg-opacity: 1;
+	background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
 .bg-gray-50 {
 	--tw-bg-opacity: 1;
 	background-color: rgb(249 250 251 / var(--tw-bg-opacity));
@@ -3026,11 +3045,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .from-black {
 	--tw-gradient-from: #000;
 	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(0 0 0 / 0));
-}
-
-.from-primery {
-	--tw-gradient-from: #EDE059;
-	--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(237 224 89 / 0));
 }
 
 .from-gray-800 {
@@ -3625,6 +3639,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transition-duration: 150ms;
 }
 
+.delay-150 {
+	transition-delay: 150ms;
+}
+
 .duration-300 {
 	transition-duration: 300ms;
 }
@@ -3637,16 +3655,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transition-duration: 100ms;
 }
 
+.duration-500 {
+	transition-duration: 500ms;
+}
+
 .duration-700 {
 	transition-duration: 700ms;
 }
 
 .duration-150 {
 	transition-duration: 150ms;
-}
-
-.duration-500 {
-	transition-duration: 500ms;
 }
 
 .ease-out {
@@ -3922,6 +3940,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-color: rgb(244 244 245 / var(--tw-bg-opacity));
 }
 
+.hover\:-translate-y-5:hover {
+	--tw-translate-y: -1.25rem;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:scale-105:hover {
 	--tw-scale-x: 1.05;
 	--tw-scale-y: 1.05;
@@ -3992,6 +4015,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	color: rgb(237 224 89 / var(--tw-text-opacity));
 }
 
+.hover\:opacity-30:hover {
+	opacity: 0.3;
+}
+
 .hover\:shadow-xl:hover {
 	--tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 	--tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -4016,10 +4043,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .focus-visible\:outline-none:focus-visible {
 	outline: 2px solid transparent;
 	outline-offset: 2px;
-}
-
-.group:hover .group-hover\:opacity-100 {
-	opacity: 1;
 }
 
 @media (min-width: 640px) {
@@ -4723,6 +4746,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	}
 
+	.lg\:scale-90 {
+		--tw-scale-x: .9;
+		--tw-scale-y: .9;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+	}
+
 	.lg\:grid-cols-3 {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
@@ -4855,6 +4884,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.xl\:block {
 		display: block;
+	}
+
+	.xl\:scale-100 {
+		--tw-scale-x: 1;
+		--tw-scale-y: 1;
+		transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 	}
 
 	.xl\:gap-14 {

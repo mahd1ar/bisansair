@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })()
 
 
+
     new Slider({
         containerSelectror: '.js-nowruz',
         nextSelector: '.js-slider-next',
@@ -751,6 +752,17 @@ const fligthPicker = {
                 if (mobile_colntoller) {
 
                     mobile_colntoller.style.transform = "translateY(100%)"
+                }
+
+
+                if (currentBrackPoint() === 'xl') {
+                    setTimeout(() => {
+                        const fp = [...document.querySelectorAll(".js-fligth-picker__dialog")].find(i => i.style.display !== 'none');
+                        if (fp)
+                            fp.scrollIntoView({ block: "center" })
+
+                    }, 100);
+
                 }
             } else {
                 const mobile_colntoller = document.querySelector("nav[x-data=mobile_controller]")
