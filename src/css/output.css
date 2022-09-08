@@ -1210,6 +1210,89 @@ table tbody tr td:first-child {
 	align-items: center !important;
 }
 
+/*
+*	full screen slider
+*/
+
+.bisan-slider__gallery {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 50;
+	display: none;
+	height: 100%;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+	--tw-bg-opacity: 0.75;
+	opacity: 0;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 200ms;
+	transition-duration: 700ms;
+}
+
+.bisan-slider__x {
+	position: absolute;
+	top: 1.25rem;
+	right: 1.25rem;
+	z-index: 51;
+	display: flex;
+	height: 3.5rem;
+	width: 3.5rem;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.5rem;
+	--tw-bg-opacity: 1;
+	background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+	--tw-text-opacity: 1;
+	color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.bisan-slider__slider {
+	width: 100%;
+	padding-right: 1rem;
+	padding-left: 1rem;
+}
+
+@media (min-width: 640px) {
+
+	.bisan-slider__slider {
+		max-width: 640px;
+	}
+}
+
+@media (min-width: 768px) {
+
+	.bisan-slider__slider {
+		max-width: 768px;
+	}
+}
+
+@media (min-width: 1024px) {
+
+	.bisan-slider__slider {
+		max-width: 1024px;
+	}
+}
+
+@media (min-width: 1440px) {
+
+	.bisan-slider__slider {
+		max-width: 1440px;
+		padding-right: 5rem;
+		padding-left: 5rem;
+	}
+}
+
+.bisan-slider__slider {
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+}
+
 /* ! tailwindcss v3.0.15 | MIT License | https://tailwindcss.com*/
 
 /*
@@ -2110,12 +2193,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin-left: 1rem;
 }
 
-.mb-1\.5 {
-	margin-bottom: 0.375rem;
-}
-
 .mb-1 {
 	margin-bottom: 0.25rem;
+}
+
+.mb-1\.5 {
+	margin-bottom: 0.375rem;
 }
 
 .mb-12 {
@@ -3269,10 +3352,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	padding-top: 5rem;
 }
 
-.pr-8 {
-	padding-right: 2rem;
-}
-
 .pr-5 {
 	padding-right: 1.25rem;
 }
@@ -3417,6 +3496,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .tracking-wider {
 	letter-spacing: 0.05em;
+}
+
+.tracking-wide {
+	letter-spacing: 0.025em;
 }
 
 .text-secondary-dark {
@@ -4923,6 +5006,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 		gap: 0.75rem;
 	}
 
+	.xl\:gap-0 {
+		gap: 0px;
+	}
+
 	.xl\:bg-yellow-500 {
 		--tw-bg-opacity: 1;
 		background-color: rgb(234 179 8 / var(--tw-bg-opacity));
@@ -4936,6 +5023,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	.xl\:px-6 {
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
+	}
+
+	.xl\:px-8 {
+		padding-left: 2rem;
+		padding-right: 2rem;
 	}
 
 	.xl\:text-center {

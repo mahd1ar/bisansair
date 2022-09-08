@@ -29,3 +29,19 @@
 	justify-content: center !important;
 	align-items: center !important;
 }
+
+/*
+*	full screen slider
+*/
+
+.bisan-slider__gallery {
+	@apply fixed top-0 left-0 z-50 hidden h-full w-full  flex-col items-center  justify-center bg-black bg-opacity-75 opacity-0 transition-opacity delay-200 duration-700;
+}
+
+.bisan-slider__x {
+	@apply absolute top-5 right-5  z-[51] flex h-14 w-14 items-center justify-center rounded-lg  bg-black text-white;
+}
+
+.bisan-slider__slider {
+	@apply container mx-auto flex;
+}

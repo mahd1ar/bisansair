@@ -150,3 +150,94 @@ function currentBrackPoint() {
 //     }
 
 // }
+
+/**
+ * 
+ * @param {number} index begin from
+ * @param {Splider} slider splider instance
+ */
+function makeFullScreenSlider(slider, index = 0) {
+
+    const parentDiv = document.createElement("div")
+    parentDiv.classList.add("bisan-slider__gallery")
+    const structure = `
+    <button class="bisan-slider__x ">
+        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41L17.59 5Z" />
+        </svg>
+    </button>
+    <div class="bisan-slider__slider"></div>
+    `
+    parentDiv.innerHTML = structure
+    document.body.appendChild(parentDiv)
+
+
+    const containerParentSelector = ".bisan-slider__gallery"
+    const containerSelector = ".bisan-slider__slider"
+
+    const container = document.querySelector(containerSelector)
+    const parentContainer = document.querySelector(containerParentSelector)
+
+    if (!parentContainer)
+        throw new Error("there is no " + containerParentSelector + " selector")
+    if (!container)
+        throw new Error("there is no " + containerSelector + " selector")
+
+    const allimages = slider.root.querySelectorAll(
+
+        ".splide__slide img"
+    )
+
+    const mockup = `
+        <div class="js-fullscreen-slider rounded-none" dir="ltr">
+                <div class="splide__arrows hidden sm:block">
+                    <button class="splide__arrow splide__arrow--prev">
+                        <img src="svg/chevron-left.svg" alt="" />
+                    </button>
+
+                    <button class="splide__arrow splide__arrow--next">
+                        <img src="svg/chevron-rigth.svg" alt="" />
+                    </button>
+                </div>
+
+                <div class="splide__track">
+        
+
+                    <ul class="splide__list ">
+                        ${[...allimages].map(img => (
+        `<li class="splide__slide overflow-hidden rounded-2xl">
+                                    <img class="w-full h-full object-cover"
+                                        src="${img.src}" />
+                                </li>`
+    )).join("")
+        }
+                    </ul>
+                </div>
+            </div>
+        `
+    container.innerHTML = (mockup);
+    parentContainer.style.display = "flex";
+    const fss = new Splide(".js-fullscreen-slider", {
+
+    })
+    fss.on('mounted', () => {
+        fss.go(index)
+        parentContainer.style.opacity = "1";
+    })
+
+    fss.mount();
+
+
+
+    document.querySelector(".bisan-slider__x").addEventListener("click", () => {
+        parentContainer.style.opacity = "0";
+        setTimeout(() => {
+            fss.destroy()
+            parentContainer.remove();
+        }, 500);
+    })
+
+
+}

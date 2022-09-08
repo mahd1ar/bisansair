@@ -1771,14 +1771,14 @@
             </div>
             <aside class="sticky bottom-0 left-0 hidden w-full flex-col gap-4 p-6 lg:relative lg:flex lg:w-3/12 lg:p-0">
                 <a href="#" class="bi-shadow-sm rounded-3xl bg-primery">
-                    <div class="flex gap-2 py-4 pr-8">
-                        <div class="flex-center bi-callus-puls h-16 rounded-3xl bg-white bg-opacity-60 p-2">
+                    <div class="flex gap-2 xl:gap-0 py-4 px-6 xl:px-8">
+                        <div class="flex-center bi-callus-puls h-16 rounded-3xl bg-white bg-opacity-60 p-2 px-3">
                             <img class="rotate-90 transform" src="img/controll/call.svg" alt="" />
                         </div>
-                        <div class="w-f mx-auto flex flex-col justify-center gap-1">
+                        <div class="w-f mx-auto flex flex-col justify-center gap-1 text-center">
                             <span class="text-sm text-primery-dark mb-1">نیاز به مشاوره
                                 دارید؟</span>
-                            <h3 class=" text-xl font-extrabold">
+                            <h3 class=" text-xl font-extrabold tracking-wide">
                                 ۰۲۱-۴۳۰۰۰۰۳۰
                             </h3>
                         </div>
@@ -1851,6 +1851,7 @@
                 </div>
             </aside>
         </div>
+
     </main>
 
     <div class="flex-center" style="height: 24rem">
@@ -2017,12 +2018,20 @@
                     padding: "5rem",
                     drag: 'free',
                 }).mount();
-            else
-                new Splide(".splide", {
+            else {
+
+                const slider = new Splide(".splide", {
                     perPage: spiderDict[currentBrackPoint()],
                     rewind: true,
                     height: "10rem",
-                }).mount();
+                }).mount()
+
+                slider.on('click', ({ index }) => {
+                    makeFullScreenSlider(slider, index)
+
+
+                });
+            }
 
             createAnchor([
                 "gallery",
@@ -2031,6 +2040,9 @@
                 "tour_services",
                 "Suggested_tour",
             ]);
+
+
+
         });
     </script>
 </body>
