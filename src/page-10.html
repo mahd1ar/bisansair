@@ -2009,8 +2009,9 @@
             }
 
             // slider
-            if (currentBrackPoint() === "NONE")
-                new Splide(".splide", {
+            if (currentBrackPoint() === "NONE") {
+
+                const slider = new Splide(".splide", {
                     perPage: 1,
                     rewind: true,
                     type: 'loop',
@@ -2018,6 +2019,13 @@
                     padding: "5rem",
                     drag: 'free',
                 }).mount();
+
+                slider.on('click', ({ index }) => {
+                    makeFullScreenSlider(slider, index)
+
+
+                });
+            }
             else {
 
                 const slider = new Splide(".splide", {
