@@ -19,7 +19,7 @@
     <header class="mb-10 pt-10">
         <!-- mobile controller layout -->
         <nav id="" x-data="mobile_controller"
-            class="transition-all duration-300 ease-out fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
+            class="fixed bottom-0 z-30 flex h-20 w-full flex-col transition-all duration-300 ease-out lg:hidden">
             <div x-show="isOpen" style="display: none" class="relative h-full w-full overflow-hidden bg-white"
                 x-transition.delay.150ms>
                 <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
@@ -31,16 +31,16 @@
                     <div class="mt-10 flex flex-col items-center">
                         <div class="relative">
                             <div
-                                class="absolute w-full h-full bg-gradient-radial from-[#f4f4f4]  to-transparent top-0 left-0 scale-150">
+                                class="absolute top-0 left-0 h-full w-full scale-150 bg-gradient-radial from-[#f4f4f4] to-transparent">
                             </div>
                             <img class="relative" src="img/logo-with-text.svg" />
                         </div>
-                        <h3 class="text-xl font-bold text-primery-dark mt-3">
+                        <h3 class="mt-3 text-xl font-bold text-primery-dark">
                             !!! رویاهات رو تور کن
                         </h3>
 
                         <button x-show="subMenu.length > 0" x-transition
-                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold mt-7 text-secondary-dark transition-all"
+                            class="flex-center mt-7 h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold text-secondary-dark transition-all"
                             @click="back">
                             بازگشت به منوی قبلی
                         </button>
@@ -100,8 +100,8 @@
 
                     <!-- call btn -->
                     <a href="tel:+982143000030"
-                        class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16  rotate-45 transform rounded-xl bg-primery">
-                        <img src="img/controll/call.svg" class=" absolute cursor-pointer rotate-45" />
+                        class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16 rotate-45 transform rounded-xl bg-primery">
+                        <img src="img/controll/call.svg" class="absolute rotate-45 cursor-pointer" />
                     </a>
                 </div>
                 <div aria-hidden="true" class="absolute top-0 z-10 flex w-full justify-center overflow-hidden">
@@ -155,14 +155,14 @@
                     class="relative z-20 mx-auto hidden flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm md:flex">
                     <div class="flex w-auto justify-between lg:w-full">
                         <a href="tel:02188319191"
-                            class="flex-center flex-0 flex-shrink-0 w-8 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
+                            class="flex-center flex-0 w-8 flex-shrink-0 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
                             <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
                             <span class="mx-2 hidden whitespace-nowrap text-sm tracking-wider lg:block">
                                 ۰۲۱-۳۴۵۶۴۸
                             </span>
                         </a>
 
-                        <div class="menu-top_menu-container w-full hidden lg:flex flex-col" ref="menuContainer">
+                        <div class="menu-top_menu-container hidden w-full flex-col lg:flex" ref="menuContainer">
                             <ul id="menu-top_menu" class="menu">
                                 <li class="menu-item">
                                     <a href="#">خانه
@@ -467,7 +467,7 @@
                     </div>
 
                     <img src="./img/logo76.png" id="navigation__bisanseir-logo"
-                        class="w-9 object-contain bi-filiplogo-animation" alt="bisanseir-logo" />
+                        class="bi-filiplogo-animation w-9 object-contain" alt="bisanseir-logo" />
 
                     <div @click="taggleMobileMenu" class="cursor-pointer lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -502,10 +502,10 @@
                         </div>
 
                         <div class="relative flex flex-col rounded-3xl bg-white" style="
-                            max-height: calc(
-                                100% - 97px
-                            );
-                        " dir="rtl">
+									max-height: calc(
+										100% - 97px
+									);
+								" dir="rtl">
                             <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
                                 <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
                                     <img src="svg/chevron-rigth.svg" alt="" />
@@ -539,26 +539,26 @@
         <div class="flex justify-center sm:justify-start">
             <span class="breadcrumb inline-flex items-center gap-2 rounded-lg bg-white py-1 px-2">
                 <!-- loop over breadcrumb items : the first element dosent need breadcrumb__item class -->
-                <a href="" class="flex-center gap-2  breadcrumb__peer">
+                <a href="" class="flex-center breadcrumb__peer gap-2">
                     بیسانسیر
                 </a>
-                <a href="" class="flex-center gap-2  breadcrumb__peer breadcrumb__item">
-                    <img src="img/tours/chav-left.svg" class="transition-all duration-300 breadcrumb__chevron" />
+                <a href="" class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
                     تور
                 </a>
-                <a href="" class="flex-center gap-2  breadcrumb__peer breadcrumb__item">
-                    <img src="img/tours/chav-left.svg" class="transition-all duration-300 breadcrumb__chevron" />
+                <a href="" class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
                     ترکیه
                 </a>
-                <span class="flex-center gap-2  breadcrumb__peer breadcrumb__item">
-                    <img src="img/tours/chav-left.svg" class="transition-all duration-300 breadcrumb__chevron" />
+                <span class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
                     استانبول
                 </span>
             </span>
         </div>
         <!-- Tour introduction -->
-        <div class="mt-2 flex w-full flex-col gap-2 overflow-hidden rounded-2xl  lg:shadow-lg sm:flex-row sm:gap-0">
-            <div class="w-full rounded-2xl bg-white sm:w-9/12 sm:rounded-none shadow-lg sm:shadow-none">
+        <div class="mt-2 flex w-full flex-col gap-2 overflow-hidden rounded-2xl sm:flex-row sm:gap-0 lg:shadow-lg">
+            <div class="w-full rounded-2xl bg-white shadow-lg sm:w-9/12 sm:rounded-none sm:shadow-none">
                 <div class="flex items-start p-5 sm:items-center">
                     <div class="ml-4 shrink-0">
                         <img class="h-16 w-16 rounded-circle object-cover" src="img/flag-turkish.png" alt="" />
@@ -977,7 +977,7 @@
                             </div>
                         </div>
                         <!-- desktop only -->
-                        <div class="mt-4 lg:mt-2 hidden flex-col md:flex">
+                        <div class="mt-4 hidden flex-col md:flex lg:mt-2">
                             <div class="bi-scrollbar bi-shadow-sm -my-2 overflow-x-auto rounded-3xl bg-white p-6">
                                 <div class="inline-block min-w-full py-2 align-middle">
                                     <div class="overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -985,32 +985,32 @@
                                             <thead class="bg-primery text-xs font-bold text-primery-dark">
                                                 <tr>
                                                     <th scope="col"
-                                                        class="rounded-r-2xl xl:px-6 px-4 py-6  text-sm  font-extrabold uppercase tracking-wider text-center">
+                                                        class="rounded-r-2xl px-4 py-6 text-center text-sm font-extrabold text-zinc-800 xl:px-6">
                                                         نام
                                                         هتل
                                                     </th>
                                                     <th scope="col"
-                                                        class="xl:px-6 px-4 py-6  text-sm text-center font-extrabold uppercase tracking-wider ">
+                                                        class="px-4 py-6 text-center text-sm font-extrabold text-zinc-800 xl:px-6">
                                                         خدمات
                                                     </th>
                                                     <th scope="col"
-                                                        class="xl:px-6 px-4 py-6  text-sm text-center font-extrabold uppercase tracking-wider ">
+                                                        class="px-4 py-6 text-center text-sm font-extrabold text-zinc-800 xl:px-6">
                                                         دو
                                                         تخته
                                                     </th>
                                                     <th scope="col"
-                                                        class="xl:px-6 px-4 py-6  text-sm text-center font-extrabold uppercase tracking-wider ">
+                                                        class="px-4 py-6 text-center text-sm font-extrabold text-zinc-800 xl:px-6">
                                                         یک
                                                         تخته
                                                     </th>
                                                     <th scope="col"
-                                                        class="xl:px-6 px-4 py-6  text-sm text-center font-extrabold uppercase tracking-wider ">
+                                                        class="px-4 py-6 text-center text-sm font-extrabold text-zinc-800 xl:px-6">
                                                         کودک
                                                         با
                                                         تخت
                                                     </th>
                                                     <th scope="col"
-                                                        class="rounded-l-2xl xl:px-6 px-4 py-6  text-sm text-center font-extrabold uppercase tracking-wider ">
+                                                        class="rounded-l-2xl px-4 py-6 text-center text-sm font-extrabold text-zinc-800 xl:px-6">
                                                         کودک
                                                         بدون
                                                         تخت
@@ -1021,7 +1021,7 @@
                                                 <tr>
                                                     <td class="whitespace-nowrap py-4 px-1 text-center">
                                                         <div
-                                                            class="flex flex-col text-gray-700 justify-center items-center gap-1">
+                                                            class="flex flex-col items-center justify-center gap-1 text-gray-700">
                                                             هتل
                                                             ریدل
                                                             استانبول
@@ -1035,90 +1035,31 @@
                                                         </div>
                                                     </td>
                                                     <td class="whitespace-nowrap py-4">
-                                                        <div class="text-sm text-gray-700 text-center">
+                                                        <div class="text-center text-sm text-gray-700">
                                                             B.B
                                                         </div>
                                                     </td>
                                                     <td class="whitespace-nowrap py-4 text-center">
                                                         <span
-                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700  text-center">
+                                                            class="inline-flex rounded-full text-center text-sm font-bold leading-5 text-gray-700">
                                                             3700000
                                                         </span>
                                                         <span class="text-xs text-zinc-500">
                                                             تومان
                                                         </span>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
-                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700 ">
-                                                            5700000
-                                                        </span>
-                                                        <span class="text-xs  text-zinc-500">
-                                                            تومان
-                                                        </span>
-                                                    </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
-                                                        <span
-                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700  ">
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             5700000
                                                         </span>
                                                         <span class="text-xs text-zinc-500">
                                                             تومان
                                                         </span>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
-                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700  ">
-                                                            5700000
-                                                        </span>
-                                                        <span class="text-xs text-zinc-500">
-                                                            تومان
-                                                        </span>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td class="whitespace-nowrap py-4 px-1 text-center">
-                                                        <div
-                                                            class="flex flex-col text-gray-700 justify-center items-center gap-1">
-                                                            هتل
-                                                            ریدل
-                                                            استانبول
-                                                            <div class="flex">
-                                                                <img src="svg/gold-star.svg" alt="" />
-                                                                <img src="svg/gold-star.svg" alt="" />
-                                                                <img src="svg/gold-star.svg" alt="" />
-                                                                <img src="svg/gold-star.svg" alt="" />
-                                                                <img src="svg/gold-star.svg" alt="" />
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="whitespace-nowrap py-4  text-center ">
-                                                        <div class="text-sm text-gray-700">
-                                                            B.B
-                                                        </div>
-                                                    </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
-                                                        <span
-                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700 ">
-                                                            3700000
-                                                        </span>
-                                                        <span class="text-xs text-zinc-500">
-                                                            تومان
-                                                        </span>
-                                                    </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
-                                                        <span
-                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700 ">
-                                                            5700000
-                                                        </span>
-                                                        <span class="text-xs text-zinc-500">
-                                                            تومان
-                                                        </span>
-                                                    </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
-                                                        <span
-                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700 ">
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             5700000
                                                         </span>
                                                         <span class="text-xs text-zinc-500">
@@ -1139,7 +1080,7 @@
                                                 <tr>
                                                     <td class="whitespace-nowrap py-4 px-1 text-center">
                                                         <div
-                                                            class="flex flex-col text-gray-700 justify-center items-center gap-1">
+                                                            class="flex flex-col items-center justify-center gap-1 text-gray-700">
                                                             هتل
                                                             ریدل
                                                             استانبول
@@ -1152,21 +1093,21 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <div class="text-sm text-gray-700">
                                                             B.B
                                                         </div>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
-                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700 ">
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             3700000
                                                         </span>
                                                         <span class="text-xs text-zinc-500">
                                                             تومان
                                                         </span>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
                                                             class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             5700000
@@ -1175,7 +1116,7 @@
                                                             تومان
                                                         </span>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
                                                             class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             5700000
@@ -1184,7 +1125,7 @@
                                                             تومان
                                                         </span>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
                                                             class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             5700000
@@ -1198,7 +1139,7 @@
                                                 <tr>
                                                     <td class="whitespace-nowrap py-4 px-1 text-center">
                                                         <div
-                                                            class="flex flex-col text-gray-700 justify-center items-center gap-1">
+                                                            class="flex flex-col items-center justify-center gap-1 text-gray-700">
                                                             هتل
                                                             ریدل
                                                             استانبول
@@ -1211,12 +1152,12 @@
                                                             </div>
                                                         </div>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <div class="text-sm text-gray-700">
                                                             B.B
                                                         </div>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
                                                             class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             3700000
@@ -1225,7 +1166,7 @@
                                                             تومان
                                                         </span>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
                                                             class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             5700000
@@ -1234,7 +1175,7 @@
                                                             تومان
                                                         </span>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
                                                             class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             5700000
@@ -1243,7 +1184,66 @@
                                                             تومان
                                                         </span>
                                                     </td>
-                                                    <td class="whitespace-nowrap py-4  text-center">
+                                                    <td class="whitespace-nowrap py-4 text-center">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs text-zinc-500">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="whitespace-nowrap py-4 px-1 text-center">
+                                                        <div
+                                                            class="flex flex-col items-center justify-center gap-1 text-gray-700">
+                                                            هتل
+                                                            ریدل
+                                                            استانبول
+                                                            <div class="flex">
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                                <img src="svg/gold-star.svg" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4 text-center">
+                                                        <div class="text-sm text-gray-700">
+                                                            B.B
+                                                        </div>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4 text-center">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            3700000
+                                                        </span>
+                                                        <span class="text-xs text-zinc-500">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4 text-center">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs text-zinc-500">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4 text-center">
+                                                        <span
+                                                            class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
+                                                            5700000
+                                                        </span>
+                                                        <span class="text-xs text-zinc-500">
+                                                            تومان
+                                                        </span>
+                                                    </td>
+                                                    <td class="whitespace-nowrap py-4 text-center">
                                                         <span
                                                             class="inline-flex rounded-full text-sm font-bold leading-5 text-gray-700">
                                                             5700000
@@ -1269,11 +1269,11 @@
                         <div class="mt-4 flex flex-col gap-4">
                             <div id="tour_info" class="grid grid-cols-1 sm:grid-cols-3">
                                 <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                    <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
+                                    <div class="flex-center flex-shrink-0 rounded-3xl bg-primery px-3">
                                         <img src="img/tours/gold_clock.svg" alt="" />
                                     </div>
                                     <div class="flex flex-col justify-center">
-                                        <span class="text-sm text-gray-500 font-bold px-1">تاریخ
+                                        <span class="px-1 text-sm font-bold text-gray-500">تاریخ
                                             رفت و
                                             برگشت</span>
                                         <div class="flex flex-col text-base text-zinc-500">
@@ -1290,11 +1290,11 @@
                                 </div>
 
                                 <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                    <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
+                                    <div class="flex-center flex-shrink-0 rounded-3xl bg-primery px-3">
                                         <img src="img/tours/gold_cal.svg" alt="" />
                                     </div>
                                     <div class="flex flex-col justify-center">
-                                        <span class="text-sm text-gray-500 font-bold px-1">
+                                        <span class="px-1 text-sm font-bold text-gray-500">
                                             مدت تور
                                         </span>
                                         <div class="flex flex-col text-base text-zinc-500">
@@ -1312,11 +1312,11 @@
                                 </div>
 
                                 <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                    <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
+                                    <div class="flex-center flex-shrink-0 rounded-3xl bg-primery px-3">
                                         <img src="img/tours/gold-plane.svg" alt="" />
                                     </div>
                                     <div class="flex flex-col justify-center">
-                                        <span class="text-sm text-gray-500 font-bold px-1">
+                                        <span class="px-1 text-sm font-bold text-gray-500">
                                             حمل و
                                             نقل تور
                                         </span>
@@ -1332,14 +1332,14 @@
                             </div>
 
                             <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
+                                <div class="flex-center flex-shrink-0 rounded-3xl bg-primery px-3">
                                     <img src="img/tours/gold-folder.svg" alt="" />
                                 </div>
                                 <div class="flex flex-col justify-center">
-                                    <span class="text-sm text-gray-500 font-bold">
+                                    <span class="text-sm font-bold text-gray-500">
                                         مدارک لازم
                                     </span>
-                                    <div class="flex flex-col text-base  text-zinc-500">
+                                    <div class="flex flex-col text-base text-zinc-500">
                                         <ul class="list-disc gap-2 p-4 leading-7">
                                             <li>
                                                 تست
@@ -1370,14 +1370,14 @@
                             </div>
 
                             <div id="tour_services" class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
+                                <div class="flex-center flex-shrink-0 rounded-3xl bg-primery px-3">
                                     <img src="img/tours/gold_cal.svg" alt="" />
                                 </div>
                                 <div class="flex flex-col justify-center">
-                                    <span class="text-sm text-gray-500 font-bold">
+                                    <span class="text-sm font-bold text-gray-500">
                                         خدمات تور
                                     </span>
-                                    <div class="flex flex-col text-base  text-zinc-500">
+                                    <div class="flex flex-col text-base text-zinc-500">
                                         <ul class="list-disc gap-2 p-4 leading-7">
                                             <li>
                                                 بلیط
@@ -1416,14 +1416,14 @@
                             </div>
 
                             <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
-                                <div class="flex-center rounded-3xl bg-primery px-3 flex-shrink-0">
+                                <div class="flex-center flex-shrink-0 rounded-3xl bg-primery px-3">
                                     <img src="img/tours/gold_cal.svg" alt="" />
                                 </div>
                                 <div class="flex flex-col justify-center">
-                                    <span class="text-sm text-gray-500 font-bold">
+                                    <span class="text-sm font-bold text-gray-500">
                                         توضیحات
                                     </span>
-                                    <div class="flex flex-col text-base  text-zinc-500">
+                                    <div class="flex flex-col text-base text-zinc-500">
                                         <ul class="list-disc gap-2 p-4 leading-7">
                                             <li>
                                                 تورها
@@ -1477,42 +1477,51 @@
                         <h1 class="text-xl font-bold text-primery-dark">
                             گالری تصاویر
                         </h1>
-                        <div class="splide mt-6" dir="ltr">
-                            <div class="splide__arrows">
-                                <button class="splide__arrow splide__arrow--prev">
-                                    <img src="svg/chevron-left.svg" alt="" />
-                                </button>
+                        <div class="relative mt-6">
+                            <div class="splide rounded-none" dir="ltr">
+                                <div class="splide__arrows hidden sm:block">
+                                    <button class="splide__arrow splide__arrow--prev">
+                                        <img src="svg/chevron-left.svg" alt="" />
+                                    </button>
 
-                                <button class="splide__arrow splide__arrow--next">
-                                    <img src="svg/chevron-rigth.svg" alt="" />
-                                </button>
-                            </div>
+                                    <button class="splide__arrow splide__arrow--next">
+                                        <img src="svg/chevron-rigth.svg" alt="" />
+                                    </button>
+                                </div>
 
-                            <div class="splide__track">
-                                <div class="absolute left-0 z-20 h-full w-20 bg-gradient-to-r from-white via-white to-transparent"
-                                    aria-hidden="true"></div>
-                                <div class="absolute right-0 z-20 h-full w-20 bg-gradient-to-l from-white via-white to-transparent"
-                                    aria-hidden="true"></div>
-                                <ul class="splide__list gap-4">
-                                    <li class="splide__slide overflow-hidden rounded-2xl">
-                                        <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
-                                    </li>
-                                    <li class="splide__slide overflow-hidden rounded-2xl">
-                                        <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
-                                    </li>
-                                    <li class="splide__slide overflow-hidden rounded-2xl">
-                                        <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
-                                    </li>
-                                    <li class="splide__slide overflow-hidden rounded-2xl">
-                                        <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
-                                    </li>
-                                    <li class="splide__slide overflow-hidden rounded-2xl">
-                                        <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
-                                    </li>
-                                    <li class="splide__slide overflow-hidden rounded-2xl">
-                                        <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
-                                    </li>
-                                </ul>
+                                <div class="splide__track">
+                                    <div class="absolute left-0 z-20 h-full w-20 bg-gradient-to-r from-white via-white to-transparent hidden sm:block"
+                                        aria-hidden="true"></div>
+                                    <div class="absolute right-0 z-20 h-full w-20 bg-gradient-to-l from-white via-white to-transparent hidden sm:block"
+                                        aria-hidden="true"></div>
+
+                                    <ul class="splide__list gap-4">
+                                        <li class="splide__slide overflow-hidden rounded-2xl">
+                                            <img class="transition-all duration-500 hover:scale-125 h-full object-cover w-full "
+                                                src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                                        </li>
+                                        <li class="splide__slide overflow-hidden rounded-2xl">
+                                            <img class="transition-all duration-500 hover:scale-125 h-full object-cover w-full "
+                                                src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
+                                        </li>
+                                        <li class="splide__slide overflow-hidden rounded-2xl">
+                                            <img class="transition-all duration-500 hover:scale-125 h-full object-cover w-full "
+                                                src="img/stock/photo-1642201289923-524d32bba771.jpg" />
+                                        </li>
+                                        <li class="splide__slide overflow-hidden rounded-2xl">
+                                            <img class="transition-all duration-500 hover:scale-125 h-full object-cover w-full "
+                                                src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                                        </li>
+                                        <li class="splide__slide overflow-hidden rounded-2xl">
+                                            <img class="transition-all duration-500 hover:scale-125 h-full object-cover w-full "
+                                                src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
+                                        </li>
+                                        <li class="splide__slide overflow-hidden rounded-2xl">
+                                            <img class="transition-all duration-500 hover:scale-125 h-full object-cover w-full "
+                                                src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1524,7 +1533,7 @@
                         </h1>
 
                         <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                            <div class="relative mb-6 rounded-3xl shadow  flex flexcol justify-center items-center">
+                            <div class="flexcol relative mb-6 flex items-center justify-center rounded-3xl shadow">
                                 <!-- overlay -->
                                 <!-- <div class="absolute flex h-full w-full flex-col overflow-hidden rounded-3xl bg-white">
                                     <img class="h-1/2 object-cover" src="img/paris.png" alt="" />
@@ -1534,32 +1543,32 @@
                                 </div> -->
 
                                 <div class="">
-                                    <div class="h-44 absolute top-0 w-full rounded-3xl left-0 ">
-                                        <img class=" object-cover h-full w-full rounded-3xl" src="img/paris.png"
+                                    <div class="absolute top-0 left-0 h-44 w-full rounded-3xl">
+                                        <img class="h-full w-full rounded-3xl object-cover" src="img/paris.png"
                                             alt="" />
                                         <div
-                                            class="absolute top-0  w-full h-full bg-gradient-to-t from-white  to-transparent">
+                                            class="absolute top-0 h-full w-full bg-gradient-to-t from-white to-transparent">
                                         </div>
                                     </div>
                                 </div>
 
                                 <span
-                                    class="absolute flex gap-1  top-7 right-2 rounded-3xl bg-white text-black px-2 py-2 text-base   md:text-xs">
-                                    <img src="img/qeshm-air.png" class="object-cover h-4 rounded-3xl" alt="" />
+                                    class="absolute top-7 right-2 flex gap-1 rounded-3xl bg-white px-2 py-2 text-base text-black md:text-xs">
+                                    <img src="img/qeshm-air.png" class="h-4 rounded-3xl object-cover" alt="" />
                                     قشم ایر
                                 </span>
 
                                 <span
-                                    class="absolute flex gap-1  top-0 -translate-y-1/2 font-bold rounded-3xl bg-primery text-primery-dark  px-3 py-2 text-base   md:text-xs">
+                                    class="absolute top-0 flex -translate-y-1/2 gap-1 rounded-3xl bg-primery px-3 py-2 text-base font-bold text-primery-dark md:text-xs">
                                     تور ویژه
                                 </span>
 
                                 <span
-                                    class="absolute top-7 left-2 rounded-3xl bg-neutral-200 text-black px-2 py-2 text-base   md:text-xs">
+                                    class="absolute top-7 left-2 rounded-3xl bg-neutral-200 px-2 py-2 text-base text-black md:text-xs">
                                     8 روز و 8 شب
                                 </span>
 
-                                <div class="relative pt-20 w-full">
+                                <div class="relative w-full pt-20">
                                     <div
                                         class="relative mr-auto flex h-full flex-col items-stretch justify-end py-6 px-8">
                                         <div class="flex flex-col">
@@ -1569,7 +1578,7 @@
                                                     سه
                                                     روزه
                                                 </h3>
-                                                <ul class="flex flex-wrap items-center justify-start md:gap-8 gap-2 ">
+                                                <ul class="flex flex-wrap items-center justify-start gap-2 md:gap-8">
                                                     <li
                                                         class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-xs shadow-sm">
                                                         <span>بیمه</span>
@@ -1596,7 +1605,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="relative flex-col items-center justify-center mt-4">
+                                        <div class="relative mt-4 flex-col items-center justify-center">
                                             <div class="tour_cards__from--grid py-2">
                                                 <h4 class="mb-3 text-base">
                                                     تهران
@@ -1630,7 +1639,7 @@
 
                                         <div class="mt-3">
                                             <div
-                                                class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-primery text-primery-dark py-3 px-5 text-center ">
+                                                class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-primery py-3 px-5 text-center text-primery-dark">
                                                 <div class="flex-center gap-2">
                                                     <span class="text-sm">تومان</span>
                                                     <strong>5.200.00</strong>
@@ -1642,34 +1651,34 @@
                                 </div>
                             </div>
 
-                            <div class="relative mb-6 rounded-3xl shadow  flex flexcol justify-center items-center">
+                            <div class="flexcol relative mb-6 flex items-center justify-center rounded-3xl shadow">
                                 <div class="">
-                                    <div class="h-44 absolute top-0 w-full rounded-3xl left-0 ">
-                                        <img class=" object-cover h-full w-full rounded-3xl" src="img/paris.png"
+                                    <div class="absolute top-0 left-0 h-44 w-full rounded-3xl">
+                                        <img class="h-full w-full rounded-3xl object-cover" src="img/paris.png"
                                             alt="" />
                                         <div
-                                            class="absolute top-0  w-full h-full bg-gradient-to-t from-white  to-transparent">
+                                            class="absolute top-0 h-full w-full bg-gradient-to-t from-white to-transparent">
                                         </div>
                                     </div>
                                 </div>
 
                                 <span
-                                    class="absolute flex gap-1  top-7 right-2 rounded-3xl bg-white text-black px-2 py-2 text-base   md:text-xs">
-                                    <img src="img/qeshm-air.png" class="object-cover h-4 rounded-3xl" alt="" />
+                                    class="absolute top-7 right-2 flex gap-1 rounded-3xl bg-white px-2 py-2 text-base text-black md:text-xs">
+                                    <img src="img/qeshm-air.png" class="h-4 rounded-3xl object-cover" alt="" />
                                     قشم ایر
                                 </span>
 
                                 <span
-                                    class="absolute flex gap-1  top-0 -translate-y-1/2 font-bold rounded-3xl bg-[#FF5F5F] text-white  px-3 py-2 text-base   md:text-xs">
+                                    class="absolute top-0 flex -translate-y-1/2 gap-1 rounded-3xl bg-[#FF5F5F] px-3 py-2 text-base font-bold text-white md:text-xs">
                                     20 % تخفیف نوروز
                                 </span>
 
                                 <span
-                                    class="absolute top-7 left-2 rounded-3xl bg-neutral-200 text-black px-2 py-2 text-base   md:text-xs">
+                                    class="absolute top-7 left-2 rounded-3xl bg-neutral-200 px-2 py-2 text-base text-black md:text-xs">
                                     8 روز و 8 شب
                                 </span>
 
-                                <div class="relative pt-20 w-full">
+                                <div class="relative w-full pt-20">
                                     <div
                                         class="relative mr-auto flex h-full flex-col items-stretch justify-end py-6 px-8">
                                         <div class="flex flex-col">
@@ -1679,7 +1688,7 @@
                                                     سه
                                                     روزه
                                                 </h3>
-                                                <ul class="flex flex-wrap items-center justify-start md:gap-8 gap-2 ">
+                                                <ul class="flex flex-wrap items-center justify-start gap-2 md:gap-8">
                                                     <li
                                                         class="flex-center gap-3 rounded-2xl bg-neutral-200 px-2 py-1 text-xs shadow-sm">
                                                         <span>بیمه</span>
@@ -1706,7 +1715,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="relative flex-col items-center justify-center mt-4">
+                                        <div class="relative mt-4 flex-col items-center justify-center">
                                             <div class="tour_cards__from--grid py-2">
                                                 <h4 class="mb-3 text-base">
                                                     تهران
@@ -1740,7 +1749,7 @@
 
                                         <div class="mt-3">
                                             <div
-                                                class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-primery text-primery-dark py-3 px-5 text-center ">
+                                                class="flex-center relative top-1/4 w-full gap-3 rounded-full bg-primery py-3 px-5 text-center text-primery-dark">
                                                 <div class="flex-center gap-2">
                                                     <span class="text-sm">تومان</span>
                                                     <strong>5.200.00</strong>
@@ -1763,14 +1772,14 @@
             <aside class="sticky bottom-0 left-0 hidden w-full flex-col gap-4 p-6 lg:relative lg:flex lg:w-3/12 lg:p-0">
                 <a href="#" class="bi-shadow-sm rounded-3xl bg-primery">
                     <div class="flex gap-2 py-4 pr-8">
-                        <div class="flex-center h-16 rounded-3xl bg-white bg-opacity-60 p-2 bi-callus-puls">
+                        <div class="flex-center bi-callus-puls h-16 rounded-3xl bg-white bg-opacity-60 p-2">
                             <img class="rotate-90 transform" src="img/controll/call.svg" alt="" />
                         </div>
-                        <div class="w-f flex flex-col justify-center gap-1">
-                            <span class="text-sm text-primery-dark">نیاز به مشاوره
+                        <div class="w-f mx-auto flex flex-col justify-center gap-1">
+                            <span class="text-sm text-primery-dark mb-1">نیاز به مشاوره
                                 دارید؟</span>
-                            <h3 class="font-yekan text-lg font-semibold">
-                                021-43000030
+                            <h3 class=" text-xl font-extrabold">
+                                ۰۲۱-۴۳۰۰۰۰۳۰
                             </h3>
                         </div>
                     </div>
@@ -1782,7 +1791,6 @@
                         <div class="js-timeline absolute right-1 mt-4" style="
 									width: 3px;
 									background-color: #d7d7d7;
-									
 								" aria-hidden="true">
                             <div class="js-timeline__progress bg-primery transition-all duration-500 ease-in"
                                 style="height: 0%"></div>
@@ -1864,7 +1872,7 @@
             let options = {
                 root: null,
                 rootMargin: "10px",
-                threshold: 1.0
+                threshold: 1.0,
             };
 
             console.log(listOfElements.length - 1);
@@ -1875,28 +1883,29 @@
                     100
                 ) + "%";
 
-            const observer = new IntersectionObserver(entreis => {
-                entreis.forEach(entry => {
+            const observer = new IntersectionObserver((entreis) => {
+                entreis.forEach((entry) => {
                     if (entry.isIntersecting) {
                         const { id } = entry.target;
 
-                        const elements = document.querySelectorAll(
-                            "#guide [data-guide]"
-                        );
+                        const elements =
+                            document.querySelectorAll(
+                                "#guide [data-guide]"
+                            );
 
                         for (
                             let i = 0;
                             i < elements.length;
                             i++
                         ) {
-                            const ballEl = elements[
-                                i
-                            ].querySelector(".js-ball");
-                            const indicatorEl = elements[
-                                i
-                            ].querySelector(
-                                ".js-indicator"
-                            );
+                            const ballEl =
+                                elements[i].querySelector(
+                                    ".js-ball"
+                                );
+                            const indicatorEl =
+                                elements[i].querySelector(
+                                    ".js-indicator"
+                                );
 
                             ballEl.style.background =
                                 "#D7D7D7";
@@ -1932,9 +1941,10 @@
                             ).length;
                             i++
                         ) {
-                            const elem = document.querySelectorAll(
-                                "#guide [data-guide]"
-                            )[i];
+                            const elem =
+                                document.querySelectorAll(
+                                    "#guide [data-guide]"
+                                )[i];
 
                             elem.querySelector(
                                 "i"
@@ -1973,7 +1983,7 @@
                 });
             }, options);
 
-            listOfElements.forEach(i => {
+            listOfElements.forEach((i) => {
                 observer.observe(
                     document.querySelector(
                         "#" + i.replace("#", "")
@@ -1985,23 +1995,41 @@
         document.addEventListener("DOMContentLoaded", function () {
             if (["lg", "xl"].includes(currentBrackPoint())) {
                 stickybits(".sticky", {
-                    stickyBitStickyOffset: 80
+                    stickyBitStickyOffset: 80,
                 });
             }
 
+            const spiderDict = {
+                "NONE": 2,
+                "sm": 3,
+                "md": 4,
+                "lg": 4,
+                "xl": 4
+            }
+
             // slider
-            new Splide(".splide", {
-                perPage: currentBrackPoint() === "NONE" ? 3 : 4,
-                rewind: true,
-                height: '10rem',
-            }).mount();
+            if (currentBrackPoint() === "NONE")
+                new Splide(".splide", {
+                    perPage: 1,
+                    rewind: true,
+                    type: 'loop',
+                    height: "10rem",
+                    padding: "5rem",
+                    drag: 'free',
+                }).mount();
+            else
+                new Splide(".splide", {
+                    perPage: spiderDict[currentBrackPoint()],
+                    rewind: true,
+                    height: "10rem",
+                }).mount();
 
             createAnchor([
                 "gallery",
                 "tour_info",
                 "hotels",
                 "tour_services",
-                "Suggested_tour"
+                "Suggested_tour",
             ]);
         });
     </script>

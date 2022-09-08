@@ -2836,6 +2836,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	border-radius: 0.5rem;
 }
 
+.rounded-none {
+	border-radius: 0px;
+}
+
 .rounded-r-2xl {
 	border-top-right-radius: 1rem;
 	border-bottom-right-radius: 1rem;
@@ -3515,6 +3519,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	color: rgb(71 85 105 / var(--tw-text-opacity));
 }
 
+.text-zinc-800 {
+	--tw-text-opacity: 1;
+	color: rgb(39 39 42 / var(--tw-text-opacity));
+}
+
 .text-red-500 {
 	--tw-text-opacity: 1;
 	color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -3948,6 +3957,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:scale-105:hover {
 	--tw-scale-x: 1.05;
 	--tw-scale-y: 1.05;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:scale-125:hover {
+	--tw-scale-x: 1.25;
+	--tw-scale-y: 1.25;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
