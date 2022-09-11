@@ -1887,6 +1887,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 	right: 50%;
 }
 
+.right-2 {
+	right: 0.5rem;
+}
+
+.left-2 {
+	left: 0.5rem;
+}
+
 .top-10 {
 	top: 2.5rem;
 }
@@ -1901,14 +1909,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .top-8 {
 	top: 2rem;
-}
-
-.right-2 {
-	right: 0.5rem;
-}
-
-.left-2 {
-	left: 0.5rem;
 }
 
 .right-1 {
@@ -2153,6 +2153,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	margin-bottom: 0.25rem;
 }
 
+.mb-4 {
+	margin-bottom: 1rem;
+}
+
 .mt-1 {
 	margin-top: 0.25rem;
 }
@@ -2171,10 +2175,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-2 {
 	margin-left: 0.5rem;
-}
-
-.mb-4 {
-	margin-bottom: 1rem;
 }
 
 .mb-7 {
@@ -2301,6 +2301,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	height: 1.25rem;
 }
 
+.h-44 {
+	height: 11rem;
+}
+
 .h-4 {
 	height: 1rem;
 }
@@ -2331,10 +2335,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-60 {
 	height: 15rem;
-}
-
-.h-44 {
-	height: 11rem;
 }
 
 .h-2 {
@@ -2949,6 +2949,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	border-bottom-width: 2px;
 }
 
+.border-r {
+	border-right-width: 1px;
+}
+
 .border-b {
 	border-bottom-width: 1px;
 }
@@ -3227,6 +3231,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	padding: 0.5rem;
 }
 
+.p-11 {
+	padding: 2.75rem;
+}
+
 .p-16 {
 	padding: 4rem;
 }
@@ -3332,6 +3340,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	padding-top: 12rem;
 }
 
+.pt-20 {
+	padding-top: 5rem;
+}
+
 .pt-0 {
 	padding-top: 0px;
 }
@@ -3350,10 +3362,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pt-4 {
 	padding-top: 1rem;
-}
-
-.pt-20 {
-	padding-top: 5rem;
 }
 
 .pr-5 {
@@ -3398,6 +3406,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .align-middle {
 	vertical-align: middle;
+}
+
+.align-bottom {
+	vertical-align: bottom;
 }
 
 .font-yekan {
@@ -3472,6 +3484,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .font-extrabold {
 	font-weight: 800;
+}
+
+.font-light {
+	font-weight: 300;
 }
 
 .font-medium {
@@ -4627,12 +4643,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 		justify-content: flex-start;
 	}
 
-	.md\:gap-20 {
-		gap: 5rem;
-	}
-
 	.md\:gap-8 {
 		gap: 2rem;
+	}
+
+	.md\:gap-20 {
+		gap: 5rem;
 	}
 
 	.md\:overflow-visible {
@@ -4647,21 +4663,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 		border-radius: 9999px;
 	}
 
-	.md\:border-x-2 {
-		border-left-width: 2px;
-		border-right-width: 2px;
-	}
-
 	.md\:border-l-2 {
 		border-left-width: 2px;
 	}
 
 	.md\:border-b-0 {
 		border-bottom-width: 0px;
-	}
-
-	.md\:border-r-2 {
-		border-right-width: 2px;
 	}
 
 	.md\:bg-gray-200 {
@@ -4685,6 +4692,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	.md\:py-0 {
 		padding-top: 0px;
 		padding-bottom: 0px;
+	}
+
+	.md\:pt-6 {
+		padding-top: 1.5rem;
 	}
 
 	.md\:text-right {
@@ -5031,6 +5042,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	.xl\:px-8 {
 		padding-left: 2rem;
 		padding-right: 2rem;
+	}
+
+	.xl\:px-3 {
+		padding-left: 0.75rem;
+		padding-right: 0.75rem;
 	}
 
 	.xl\:px-10 {
