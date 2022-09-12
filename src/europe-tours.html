@@ -13,6 +13,14 @@
 </head>
 
 <body>
+    <!-- debug brakepoints -->
+    <div class="fixed top-10 left-10 z-50 opacity-50 sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500">
+        <span class="hidden sm:block">sm</span>
+        <span class="hidden md:block">md</span>
+        <span class="hidden lg:block">lg</span>
+        <span class="hidden xl:block">xl</span>
+        <span class="hidden 2xl:block">2xl</span>
+    </div>
     <div class="nav-container fixed z-50 w-full transition-all" id="navigation-sticky-placeholder">
         <!-- DO NOT DELETE ME -->
     </div>
@@ -632,14 +640,110 @@
                         <!-- Flags -->
                         <div class="">
                             <div class="relative mt-2">
-                                <!-- for large screen devices -->
-                                <div class="slider-lg splide hidden rounded-none lg:block" dir="ltr">
+                                <!-- NOTE : there are 3 flag box for 3 diffrent layouts: -->
+                                <!-- for extra large screen devices -->
+                                <div class="slider-xl splide hidden rounded-none xl:block" dir="ltr">
                                     <div class="splide__arrows hidden sm:block">
-                                        <button class="splide__arrow splide__arrow--prev bi-shadow-sm">
+                                        <button class="splide__arrow splide__arrow--prev bi-shadow-sm !left-0">
                                             <img src="svg/chevron-left.svg" alt="" />
                                         </button>
 
-                                        <button class="splide__arrow splide__arrow--next bi-shadow-sm">
+                                        <button class="splide__arrow splide__arrow--next bi-shadow-sm !right-0">
+                                            <img src="svg/chevron-rigth.svg" alt="" />
+                                        </button>
+                                    </div>
+
+                                    <div class="splide__track">
+                                        <ul class="splide__list">
+                                            <li class="splide__slide flex items-center">
+                                                <div class="mx-auto flex justify-center gap-2">
+                                                    <div
+                                                        class="flex w-36 items-center justify-end gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                                                        <span class="text-base font-bold text-gray-500">فرانسه</span>
+                                                        <img class="h-8 w-8 rounded-circle object-cover"
+                                                            src="img/flag-france.png" alt="" />
+                                                    </div>
+
+                                                    <div
+                                                        class="flex w-36 items-center justify-end gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                                                        <span class="text-base font-bold text-gray-500">فرانسه</span>
+                                                        <img class="h-8 w-8 rounded-circle object-cover"
+                                                            src="img/flag-france.png" alt="" />
+                                                    </div>
+
+                                                    <div
+                                                        class="flex w-36 items-center justify-end gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                                                        <span class="text-base font-bold text-gray-500">فرانسه</span>
+                                                        <img class="h-8 w-8 rounded-circle object-cover"
+                                                            src="img/flag-france.png" alt="" />
+                                                    </div>
+
+                                                    <div
+                                                        class="flex w-36 items-center justify-end gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                                                        <span class="text-base font-bold text-gray-500">فرانسه</span>
+                                                        <img class="h-8 w-8 rounded-circle object-cover"
+                                                            src="img/flag-france.png" alt="" />
+                                                    </div>
+
+                                                    <div
+                                                        class="flex w-36 items-center justify-end gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                                                        <span class="text-base font-bold text-gray-500">فرانسه</span>
+                                                        <img class="h-8 w-8 rounded-circle object-cover"
+                                                            src="img/flag-france.png" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li class="splide__slide flex items-center">
+                                                <div class="mx-auto flex justify-center gap-2">
+                                                    <div
+                                                        class="flex w-36 items-center justify-end gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                                                        <span class="text-base font-bold text-gray-500">فرانسه</span>
+                                                        <img class="h-8 w-8 rounded-circle object-cover"
+                                                            src="img/flag-france.png" alt="" />
+                                                    </div>
+
+                                                    <div
+                                                        class="flex w-36 items-center justify-end gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                                                        <span class="text-base font-bold text-gray-500">فرانسه</span>
+                                                        <img class="h-8 w-8 rounded-circle object-cover"
+                                                            src="img/flag-france.png" alt="" />
+                                                    </div>
+
+                                                    <div
+                                                        class="flex w-36 items-center justify-end gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                                                        <span class="text-base font-bold text-gray-500">فرانسه</span>
+                                                        <img class="h-8 w-8 rounded-circle object-cover"
+                                                            src="img/flag-france.png" alt="" />
+                                                    </div>
+
+                                                    <div
+                                                        class="flex w-36 items-center justify-end gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                                                        <span class="text-base font-bold text-gray-500">فرانسه</span>
+                                                        <img class="h-8 w-8 rounded-circle object-cover"
+                                                            src="img/flag-france.png" alt="" />
+                                                    </div>
+
+                                                    <div
+                                                        class="flex w-36 items-center justify-end gap-2 rounded-3xl bg-white px-4 py-2 shadow-lg">
+                                                        <span class="text-base font-bold text-gray-500">فرانسه</span>
+                                                        <img class="h-8 w-8 rounded-circle object-cover"
+                                                            src="img/flag-france.png" alt="" />
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- for large screen devices -->
+                                <div class="slider-lg splide hidden rounded-none lg:block xl:hidden" dir="ltr">
+                                    <div class="splide__arrows hidden sm:block">
+                                        <button class="splide__arrow splide__arrow--prev bi-shadow-sm !left-0">
+                                            <img src="svg/chevron-left.svg" alt="" />
+                                        </button>
+
+                                        <button class="splide__arrow splide__arrow--next bi-shadow-sm !right-0">
                                             <img src="svg/chevron-rigth.svg" alt="" />
                                         </button>
                                     </div>
@@ -716,11 +820,11 @@
                                 <!-- for small screen devices -->
                                 <div class="slider-sm splide rounded-none lg:hidden" dir="ltr">
                                     <div class="splide__arrows hidden sm:block">
-                                        <button class="splide__arrow splide__arrow--prev bi-shadow-sm">
+                                        <button class="splide__arrow splide__arrow--prev bi-shadow-sm !left-0">
                                             <img src="svg/chevron-left.svg" alt="" />
                                         </button>
 
-                                        <button class="splide__arrow splide__arrow--next bi-shadow-sm">
+                                        <button class="splide__arrow splide__arrow--next bi-shadow-sm !right-0">
                                             <img src="svg/chevron-rigth.svg" alt="" />
                                         </button>
                                     </div>
@@ -825,7 +929,7 @@
                             <div x-show="tabno===0" id="card-view-container" x-transition>
                                 <!-- ssr : [loop over card here] -->
                                 <div
-                                    class="relative mx-10 mb-8 cursor-pointer rounded-3xl shadow transition-all hover:shadow-xl sm:mx-0">
+                                    class="relative mx-10 mb-8 cursor-pointer rounded-3xl shadow transition-all hover:shadow-xl sm:mx-0 hover:-translate-x-4 duration-300 ">
                                     <!-- discount -->
                                     <div
                                         class="absolute right-7 z-10 -translate-y-1/2 transform rounded-3xl bg-[#FF5F5F] px-2 py-1 text-sm text-white">
@@ -944,7 +1048,7 @@
                                 </div>
 
                                 <div
-                                    class="relative mx-10 mb-8 cursor-pointer rounded-3xl shadow transition-all hover:shadow-xl sm:mx-0">
+                                    class="relative mx-10 mb-8 cursor-pointer rounded-3xl shadow transition-all hover:shadow-xl sm:mx-0 hover:-translate-x-4 duration-300 ">
                                     <!-- discount -->
                                     <div
                                         class="absolute right-7 z-10 -translate-y-1/2 transform rounded-3xl bg-[#FF5F5F] px-2 py-1 text-sm text-white">
@@ -1063,7 +1167,7 @@
                                 </div>
 
                                 <div
-                                    class="relative mx-10 mb-8 cursor-pointer rounded-3xl shadow transition-all hover:shadow-xl sm:mx-0">
+                                    class="relative mx-10 mb-8 cursor-pointer rounded-3xl shadow transition-all hover:shadow-xl sm:mx-0 hover:-translate-x-4 duration-300 ">
                                     <!-- discount -->
                                     <div
                                         class="absolute right-7 z-10 -translate-y-1/2 transform rounded-3xl bg-[#FF5F5F] px-2 py-1 text-sm text-white">
@@ -1182,7 +1286,7 @@
                                 </div>
 
                                 <div
-                                    class="relative mx-10 mb-8 cursor-pointer rounded-3xl shadow transition-all hover:shadow-xl sm:mx-0">
+                                    class="relative mx-10 mb-8 cursor-pointer rounded-3xl shadow transition-all hover:shadow-xl sm:mx-0 hover:-translate-x-4 duration-300 ">
                                     <!-- discount -->
                                     <div
                                         class="absolute right-7 z-10 -translate-y-1/2 transform rounded-3xl bg-[#FF5F5F] px-2 py-1 text-sm text-white">
@@ -1303,7 +1407,7 @@
 
                             <!-- GRID VIEW -->
                             <div x-show="tabno=== 1" id="grid-view-container"
-                                class="grid gap-2 px-6 sm:grid-cols-2 md:grid-cols-3" x-transition>
+                                class="grid gap-6 sm:grid-cols-2 md:grid-cols-3" x-transition>
                                 <div class="relative mb-6 flex flex-col items-center justify-center rounded-3xl shadow">
                                     <div class="">
                                         <div class="absolute top-0 left-0 h-44 w-full rounded-3xl">
@@ -1640,193 +1744,169 @@
                             <!-- LIST VIEW -->
                             <div x-show="tabno=== 2" id="list-view-container" class="mb-9" x-transition>
                                 <div
-                                    class="mb-2 flex flex-wrap rounded-2xl p-6 shadow-md odd:bg-white even:bg-zinc-100 hover:shadow-xl md:p-3 lg:p-6">
+                                    class="mb-2 relative flex flex-wrap  rounded-2xl shadow-md odd:bg-white even:bg-zinc-100 hover:shadow-xl overflow-hidden">
                                     <div
-                                        class="flex w-1/2 items-center border-b-2 md:w-4/12 md:border-l-2 md:border-b-0">
+                                        class="flex w-1/2 items-center border-b-2 md:w-4/12  md:border-b-0 xl:w-3/12 px-3">
                                         <div>
                                             پاریسگردی
                                             با بیسان
                                             سیر
                                         </div>
-                                        <div
-                                            class="hidden h-full w-1/2 shrink-0 items-center justify-evenly border-r-2 lg:flex">
+                                    </div>
+
+                                    <div
+                                        class="justify-center items-center hidden xl:flex py-4 md:border-l-2  lg:w-2/12">
+                                        <div class="h-full  shrink-0 items-center justify-evenly flex w-full">
                                             <img src="img/qeshm-air-square.png" class="w-12 text-sm" alt="" />
                                             قشم ایر
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="flex-center w-1/2 border-b-2 py-4 md:w-3/12 md:border-l-2 md:border-b-0 md:py-0">
-                                        <div class="w-full flex-col px-3">
-                                            <div class="mb-2 flex items-end justify-between">
-                                                <span class="">
-                                                    کوالالامپور
-                                                </span>
-                                                <span class="text-xs">1400,10,04</span>
-                                            </div>
+                                    <div class=" w-1/2 py-4 md:w-3/12 md:py-0 md:border-b-0 border-b-2">
+                                        <div class=" flex-center py-3  ">
+                                            <div class="px-3 w-full flex-col    md:border-x-2 ">
+                                                <div class="mb-2 flex items-end justify-between">
+                                                    <span class="">
+                                                        کوالالامپور
+                                                    </span>
+                                                    <span class="text-xs">1400,10,04</span>
+                                                </div>
 
-                                            <div class="flex items-end justify-between">
-                                                <span>تهران</span>
-                                                <span class="text-xs">1400,10,04</span>
+                                                <div class="flex items-end justify-between">
+                                                    <span>تهران</span>
+                                                    <span class="text-xs">1400,10,04</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="flex-center w-1/2 py-4 md:w-2/12 md:border-l-2 md:py-0">
+                                    <div class="flex-center w-1/2 md:w-2/12  md:py-0 lg:w-2/12 py-4">
                                         <div class="rounded-3xl bg-gray-200 px-3 py-1 text-xs">
                                             5 شب و 5
                                             روز
                                         </div>
                                     </div>
 
-                                    <div class="flex-center w-1/2 md:w-3/12">
-                                        <div class="align-center flex gap-2 text-primery-dark">
-                                            <span class="text-xl font-bold">55555555</span>
-                                            <span class="text-sm font-light">تومان</span>
+                                    <div class="flex-center w-1/2 md:w-3/12  lg:w-3/12 xl:w-2/12 relative">
+                                        <div class="w-full h-full py-3 ">
+                                            <div class="h-full  md:border-r-2 flex-center">
+                                                <div class="align-center flex gap-2 text-primery-dark">
+                                                    <span class="text-xl font-bold">55555555</span>
+                                                    <span class="text-sm font-light">تومان</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div
-                                    class="mb-2 flex flex-wrap rounded-2xl p-6 shadow-md odd:bg-white even:bg-zinc-100 hover:shadow-xl md:p-3 lg:p-6">
+                                    class="mb-2 relative flex flex-wrap  rounded-2xl shadow-md odd:bg-white even:bg-zinc-100 hover:shadow-xl overflow-hidden">
                                     <div
-                                        class="flex w-1/2 items-center border-b-2 md:w-4/12 md:border-l-2 md:border-b-0">
+                                        class="flex w-1/2 items-center border-b-2 md:w-4/12  md:border-b-0 xl:w-3/12 px-3">
                                         <div>
                                             پاریسگردی
                                             با بیسان
                                             سیر
                                         </div>
-                                        <div
-                                            class="hidden h-full w-1/2 shrink-0 items-center justify-evenly border-r-2 lg:flex">
+                                    </div>
+
+                                    <div
+                                        class="justify-center items-center hidden xl:flex py-4 md:border-l-2  lg:w-2/12">
+                                        <div class="h-full  shrink-0 items-center justify-evenly flex w-full">
                                             <img src="img/qeshm-air-square.png" class="w-12 text-sm" alt="" />
                                             قشم ایر
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="flex-center w-1/2 border-b-2 py-4 md:w-3/12 md:border-l-2 md:border-b-0 md:py-0">
-                                        <div class="w-full flex-col px-3">
-                                            <div class="mb-2 flex items-end justify-between">
-                                                <span class="">
-                                                    کوالالامپور
-                                                </span>
-                                                <span class="text-xs">1400,10,04</span>
-                                            </div>
+                                    <div class=" w-1/2 py-4 md:w-3/12 md:py-0 md:border-b-0 border-b-2">
+                                        <div class=" flex-center py-3  ">
+                                            <div class="px-3 w-full flex-col    md:border-x-2 ">
+                                                <div class="mb-2 flex items-end justify-between">
+                                                    <span class="">
+                                                        کوالالامپور
+                                                    </span>
+                                                    <span class="text-xs">1400,10,04</span>
+                                                </div>
 
-                                            <div class="flex items-end justify-between">
-                                                <span>تهران</span>
-                                                <span class="text-xs">1400,10,04</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex-center w-1/2 py-4 md:w-2/12 md:border-l-2 md:py-0">
-                                        <div class="rounded-3xl bg-white px-3 py-1 text-xs">
-                                            5 شب و 5
-                                            روز
-                                        </div>
-                                    </div>
-
-                                    <div class="flex-center w-1/2 md:w-3/12">
-                                        <div class="align-center flex gap-2 text-primery-dark">
-                                            <span class="text-xl font-bold">55555555</span>
-                                            <span class="text-sm font-light">تومان</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="mb-2 flex flex-wrap rounded-2xl p-6 shadow-md odd:bg-white even:bg-zinc-100 hover:shadow-xl md:p-3 lg:p-6">
-                                    <div
-                                        class="flex w-1/2 items-center border-b-2 md:w-4/12 md:border-l-2 md:border-b-0">
-                                        <div>
-                                            پاریسگردی
-                                            با بیسان
-                                            سیر
-                                        </div>
-                                        <div
-                                            class="hidden h-full w-1/2 shrink-0 items-center justify-evenly border-r-2 lg:flex">
-                                            <img src="img/qeshm-air-square.png" class="w-12 text-sm" alt="" />
-                                            قشم ایر
-                                        </div>
-                                    </div>
-
-                                    <div
-                                        class="flex-center w-1/2 border-b-2 py-4 md:w-3/12 md:border-l-2 md:border-b-0 md:py-0">
-                                        <div class="w-full flex-col px-3">
-                                            <div class="mb-2 flex items-end justify-between">
-                                                <span class="">
-                                                    کوالالامپور
-                                                </span>
-                                                <span class="text-xs">1400,10,04</span>
-                                            </div>
-
-                                            <div class="flex items-end justify-between">
-                                                <span>تهران</span>
-                                                <span class="text-xs">1400,10,04</span>
+                                                <div class="flex items-end justify-between">
+                                                    <span>تهران</span>
+                                                    <span class="text-xs">1400,10,04</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="flex-center w-1/2 py-4 md:w-2/12 md:border-l-2 md:py-0">
+                                    <div class="flex-center w-1/2 md:w-2/12  md:py-0 lg:w-2/12 py-4">
                                         <div class="rounded-3xl bg-gray-200 px-3 py-1 text-xs">
                                             5 شب و 5
                                             روز
                                         </div>
                                     </div>
 
-                                    <div class="flex-center w-1/2 md:w-3/12">
-                                        <div class="align-center flex gap-2 text-primery-dark">
-                                            <span class="text-xl font-bold">55555555</span>
-                                            <span class="text-sm font-light">تومان</span>
+                                    <div class="flex-center w-1/2 md:w-3/12  lg:w-3/12 xl:w-2/12 relative">
+                                        <div class="w-full h-full py-3 ">
+                                            <div class="h-full  md:border-r-2 flex-center">
+                                                <div class="align-center flex gap-2 text-primery-dark">
+                                                    <span class="text-xl font-bold">55555555</span>
+                                                    <span class="text-sm font-light">تومان</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div
-                                    class="mb-2 flex flex-wrap rounded-2xl p-6 shadow-md odd:bg-white even:bg-zinc-100 hover:shadow-xl md:p-3 lg:p-6">
+                                    class="mb-2 relative flex flex-wrap  rounded-2xl shadow-md odd:bg-white even:bg-zinc-100 hover:shadow-xl overflow-hidden">
                                     <div
-                                        class="flex w-1/2 items-center border-b-2 md:w-4/12 md:border-l-2 md:border-b-0">
+                                        class="flex w-1/2 items-center border-b-2 md:w-4/12  md:border-b-0 xl:w-3/12 px-3">
                                         <div>
                                             پاریسگردی
                                             با بیسان
                                             سیر
                                         </div>
-                                        <div
-                                            class="hidden h-full w-1/2 shrink-0 items-center justify-evenly border-r-2 lg:flex">
+                                    </div>
+
+                                    <div
+                                        class="justify-center items-center hidden xl:flex py-4 md:border-l-2  lg:w-2/12">
+                                        <div class="h-full  shrink-0 items-center justify-evenly flex w-full">
                                             <img src="img/qeshm-air-square.png" class="w-12 text-sm" alt="" />
                                             قشم ایر
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="flex-center w-1/2 border-b-2 py-4 md:w-3/12 md:border-l-2 md:border-b-0 md:py-0">
-                                        <div class="w-full flex-col px-3">
-                                            <div class="mb-2 flex items-end justify-between">
-                                                <span class="">
-                                                    کوالالامپور
-                                                </span>
-                                                <span class="text-xs">1400,10,04</span>
-                                            </div>
+                                    <div class=" w-1/2 py-4 md:w-3/12 md:py-0 md:border-b-0 border-b-2">
+                                        <div class=" flex-center py-3  ">
+                                            <div class="px-3 w-full flex-col    md:border-x-2 ">
+                                                <div class="mb-2 flex items-end justify-between">
+                                                    <span class="">
+                                                        کوالالامپور
+                                                    </span>
+                                                    <span class="text-xs">1400,10,04</span>
+                                                </div>
 
-                                            <div class="flex items-end justify-between">
-                                                <span>تهران</span>
-                                                <span class="text-xs">1400,10,04</span>
+                                                <div class="flex items-end justify-between">
+                                                    <span>تهران</span>
+                                                    <span class="text-xs">1400,10,04</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="flex-center w-1/2 py-4 md:w-2/12 md:border-l-2 md:py-0">
-                                        <div class="rounded-3xl bg-white px-3 py-1 text-xs">
+                                    <div class="flex-center w-1/2 md:w-2/12  md:py-0 lg:w-2/12 py-4">
+                                        <div class="rounded-3xl bg-gray-200 px-3 py-1 text-xs">
                                             5 شب و 5
                                             روز
                                         </div>
                                     </div>
 
-                                    <div class="flex-center w-1/2 md:w-3/12">
-                                        <div class="align-center flex gap-2 text-primery-dark">
-                                            <span class="text-xl font-bold">55555555</span>
-                                            <span class="text-sm font-light">تومان</span>
+                                    <div class="flex-center w-1/2 md:w-3/12  lg:w-3/12 xl:w-2/12 relative bg-primery">
+                                        <div class="w-full h-full py-3 ">
+                                            <div class="h-full  md:border-r-2 flex-center">
+                                                <div class="align-center flex gap-2 text-primery-dark">
+                                                    <span class="text-xl font-bold">55555555</span>
+                                                    <span class="text-sm font-light">تومان</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -2007,18 +2087,25 @@
         new Splide(".slider-lg", {
             perPage: 1,
             height: "5rem",
-            pagination: false,
+            pagination: false
         }).mount();
 
         new Splide(".slider-sm", {
             perPage: 1,
             height: "5rem",
-            pagination: false,
+            pagination: false
+        }).mount();
+
+        new Splide(".slider-xl", {
+            perPage: 1,
+            height: "5rem",
+            pagination: false
         }).mount();
 
         const tabs = function () {
             return {
                 tabno: 0,
+                isCurrentStateMobile: true,
                 init() {
                     const recalc = customDebounce(() => {
                         this.getBestView();
@@ -2026,15 +2113,22 @@
                     window.addEventListener("resize", () => {
                         recalc();
                     });
-                    this.getBestView();
+                    this.tabno = this.currentStateIsMobile() ? 1 : 0;
+                    this.isCurrentStateMobile = this.currentStateIsMobile()
+                },
+                currentStateIsMobile() {
+                    return currentBrackPoint() === "NONE";
                 },
                 getBestView() {
-                    this.tabno = ["sm", "NONE"].includes(
-                        currentBrackPoint()
+                    if (
+                        this.isCurrentStateMobile === false &&
+                        currentBrackPoint() === "NONE" &&
+                        this.tabno === 0
                     )
-                        ? 1
-                        : 0;
-                },
+                        this.tabno = 1;
+
+                    this.isCurrentStateMobile = this.currentStateIsMobile();
+                }
             };
         };
     </script>
