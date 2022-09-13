@@ -2578,6 +2578,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.translate-y-4 {
+	--tw-translate-y: 1rem;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .rotate-45 {
 	--tw-rotate: 45deg;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2955,6 +2960,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .border-b-2 {
 	border-bottom-width: 2px;
+}
+
+.border-r-2 {
+	border-right-width: 2px;
 }
 
 .border-b {
@@ -4048,18 +4057,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-color: rgb(244 244 245 / var(--tw-bg-opacity));
 }
 
+.hover\:-translate-x-4:hover {
+	--tw-translate-x: -1rem;
+	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:-translate-y-5:hover {
 	--tw-translate-y: -1.25rem;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.hover\:translate-x-3:hover {
-	--tw-translate-x: 0.75rem;
-	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.hover\:-translate-x-4:hover {
-	--tw-translate-x: -1rem;
+.hover\:translate-y-4:hover {
+	--tw-translate-y: 1rem;
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -5039,8 +5048,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 		width: 25%;
 	}
 
+	.xl\:w-8 {
+		width: 2rem;
+	}
+
 	.xl\:w-2\/12 {
 		width: 16.666667%;
+	}
+
+	.xl\:w-32 {
+		width: 8rem;
+	}
+
+	.xl\:flex-grow {
+		flex-grow: 1;
 	}
 
 	.xl\:scale-100 {
@@ -5092,6 +5113,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	.xl\:px-6 {
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
+	}
+
+	.xl\:px-4 {
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 
 	.xl\:text-center {
