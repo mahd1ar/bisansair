@@ -1963,7 +1963,7 @@
                                 document.querySelector(
                                     ".js-timeline .js-timeline__progress"
                                 ).style.height =
-                                    i * 25 + "%";
+                                    i * 100 / (listOfElements.length - 1) + "%";
 
                                 elem.querySelector(
                                     ".js-indicator"
