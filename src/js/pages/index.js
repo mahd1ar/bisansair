@@ -1,3 +1,64 @@
+class LoWrapper {
+    animation = null
+    _hoverd = false
+    get hoverd() {
+        return this._hoverd
+    }
+    set hoverd(state) {
+        if (state === this._hoverd)
+            return
+
+        this._hoverd = state
+
+        if (state) this.in()
+        else this.out()
+    }
+    constructor({ target, path, name, timeout = 1000 }) {
+
+        this.animation = bodymovin.loadAnimation({
+            container: document.getElementById(target),
+            path,
+            renderer: 'svg',
+            loop: true,
+            autoplay: false,
+            name
+        })
+
+        const recalc = customDebounce((ev) => {
+            this.calcPosition(ev)
+        }, 1000)
+
+        document.querySelector(`#${target}`).onmouseover =
+            document.querySelector(`#${target}`).onmouseout = (ev) => {
+                recalc(ev)
+            }
+
+        console.log(this.animation)
+
+    }
+
+    in() {
+        console.log(this.animation.name + " in")
+        this.animation.play()
+
+    }
+    out() {
+
+        console.log(this.animation.name + " out")
+        this.animation.stop()
+    }
+
+    calcPosition(event) {
+
+        if (event.type == 'mouseover') {
+            this.hoverd = true
+        }
+        if (event.type == 'mouseout') {
+            this.hoverd = false
+        }
+    }
+
+}
 
 
 function getMounthLength(m) {
@@ -107,6 +168,55 @@ document.addEventListener('DOMContentLoaded', function () {
         isBilateral: currentBrackPoint() === 'NONE',
         sideCardsCount: 2
     });
+
+
+    new LoWrapper({
+        name: 'target',
+        path: "svg/services/target.json",
+        target: 'target-svg',
+        timeout: 700
+    })
+
+    new LoWrapper({
+        name: 'bestprice',
+        path: "svg/services/best_price.json",
+        target: 'best-price-svg',
+        timeout: 700
+    })
+
+    new LoWrapper({
+        name: 'tour',
+        path: "svg/services/tour.json",
+        target: 'tour-svg',
+        timeout: 700
+    })
+
+    new LoWrapper({
+        name: 'visa',
+        path: "svg/services/visa.json",
+        target: 'visa-svg',
+        timeout: 700
+    })
+
+    new LoWrapper({
+        name: 'safely',
+        path: "svg/services/safely.json",
+        target: 'safely-svg',
+        timeout: 700
+    })
+
+    new LoWrapper({
+        name: '24hours',
+        path: "svg/services/24hours.json",
+        target: 'hours-svg',
+        timeout: 700
+    })
+
+
+
+
+
+    // targetAnimation.wrapper.onmouseover = targetAnimation.wrapper.onmouseout = handler;
 
 })
 

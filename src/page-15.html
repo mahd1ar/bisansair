@@ -8,7 +8,6 @@
     <title>page 15</title>
     <link rel="stylesheet" href="css/output.css" />
     <script defer src="lib/js/alpine.js"></script>
-
 </head>
 
 <body>
@@ -567,63 +566,64 @@
         <div class="flex flex-col gap-6 lg:flex-row">
             <div class="lg:w-8/12">
                 <div>
-                    <div class="mb-12 flex items-center gap-6 bg-white p-6 rounded-3xl text-base sm:text-xl">
-                        <span class=" font-bold text-primery-dark shrink-0 hidden sm:block">اخذ ویزا</span>
-                        <input class=" " type="text" placeholder="نام کشور مورد نظر را وارد کنید ..." />
-                        <div
-                            class="mr-auto flex cursor-pointer gap-3 rounded-3xl bg-primery p-2 sm:px-4 py-2 hover:bg-yellow-200">
-                            <img src="svg/magnifier.svg" alt="" />
-                            <span class="hidden sm:block">جستجو</span>
-                        </div>
-                    </div>
-
                     <div x-data="navTabs">
-                        <ul class="js-tab-items bi-shadow-sm sm:flex justify-between gap-7 rounded-3xl px-6 py-4 hidden"
+                        <ul class="js-tab-items bi-shadow-sm hidden justify-between gap-7 rounded-3xl bg-white px-6 py-4 sm:flex"
                             role="tablist">
                             <li class="js-nav-item flex-center flex-col gap-2"
-                                @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#home-tab-pane"
+                                @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_asia"
                                 data-tab-index="0">
                                 <img :src="navItems[0].currentImg"
-                                    data-active-image="svg/continent/colored/map_africa.png"
-                                    data-disabled-image="svg/continent/b&w/map_africa.png" alt="" />
-                                <h4 class="js-nav-label">آسیا</h4>
-                            </li>
-                            <li class="js-nav-item flex-center flex-col gap-2"
-                                @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_asia"
-                                data-tab-index="1">
-                                <img :src="navItems[1].currentImg"
                                     data-active-image="svg/continent/colored/map_asia.png"
                                     data-disabled-image="svg/continent/b&w/map_asia.png" alt="" />
-                                <h4 class="js-nav-label">اروپا</h4>
+                                <h4 class="js-nav-label">
+                                    آسیا
+                                </h4>
                             </li>
+
                             <li class="js-nav-item flex-center flex-col gap-2"
                                 @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_europe"
-                                data-tab-index="2">
-                                <img :src="navItems[2].currentImg"
+                                data-tab-index="1">
+                                <img :src="navItems[1].currentImg"
                                     data-active-image="svg/continent/colored/map_europe.png"
                                     data-disabled-image="svg/continent/b&w/map_europe.png" alt="" />
-                                <h4 class="js-nav-label">آفریقا</h4>
+                                <h4 class="js-nav-label">
+                                    اروپا
+                                </h4>
                             </li>
+
                             <li class="js-nav-item flex-center flex-col gap-2"
-                                @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_north-america"
+                                @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map-africa"
+                                data-tab-index="2">
+                                <img :src="navItems[2].currentImg"
+                                    data-active-image="svg/continent/colored/map_africa.png"
+                                    data-disabled-image="svg/continent/b&w/map_africa.png" alt="" />
+                                <h4 class="js-nav-label">
+                                    آفریقا
+                                </h4>
+                            </li>
+
+                            <li class="js-nav-item flex-center flex-col gap-2"
+                                @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_oceania"
                                 data-tab-index="3">
                                 <img :src="navItems[3].currentImg"
-                                    data-active-image="svg/continent/colored/map_north-america.png"
-                                    data-disabled-image="svg/continent/b&w/map_north-america.png" alt="" />
+                                    data-active-image="svg/continent/colored/map_oceania.png"
+                                    data-disabled-image="svg/continent/b&w/map_oceania.png" alt="" />
                                 <h4 class="js-nav-label">
                                     اقیانوسیه
                                 </h4>
                             </li>
+
                             <li class="js-nav-item flex-center flex-col gap-2"
-                                @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_oceania"
+                                @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_north-america"
                                 data-tab-index="4">
                                 <img :src="navItems[4].currentImg"
-                                    data-active-image="svg/continent/colored/map_oceania.png"
-                                    data-disabled-image="svg/continent/b&w/map_oceania.png" alt="" />
+                                    data-active-image="svg/continent/colored/map_north-america.png"
+                                    data-disabled-image="svg/continent/b&w/map_north-america.png" alt="" />
                                 <h4 class="js-nav-label">
                                     آمریکای شمالی
                                 </h4>
                             </li>
+
                             <li class="js-nav-item flex-center flex-col gap-2"
                                 @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_south-america"
                                 data-tab-index="5">
@@ -636,9 +636,8 @@
                             </li>
                         </ul>
                         <div class="js-tab-content">
-
-                            <div class="tab-pane grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 xl:grid-cols-3"
-                                id="home-tab-pane" role="tabpanel">
+                            <div class="tab-pane grid grid-cols-1 gap-x-12 gap-y-5 sm:grid-cols-2 xl:grid-cols-3"
+                                id="map-africa" role="tabpanel">
                                 <div
                                     class="bi-shadow-sm flex cursor-pointer items-center gap-8 rounded-3xl bg-white p-6 px-5 hover:bg-[#E6E6E6]">
                                     <img src="img/flag-france.png" class="w-14 rounded-circle shadow-md" />
@@ -702,7 +701,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 xl:grid-cols-3"
+                            <div class="tab-pane grid grid-cols-1 gap-x-12 gap-y-5 sm:grid-cols-2 xl:grid-cols-3"
                                 id="map_asia" role="tabpanel">
                                 <div
                                     class="bi-shadow-sm flex cursor-pointer items-center gap-8 rounded-3xl bg-white p-6 px-5 hover:bg-[#E6E6E6]">
@@ -767,7 +766,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 xl:grid-cols-3"
+                            <div class="tab-pane grid grid-cols-1 gap-x-12 gap-y-5 sm:grid-cols-2 xl:grid-cols-3"
                                 id="map_europe" role="tabpanel">
                                 <div
                                     class="bi-shadow-sm flex cursor-pointer items-center gap-8 rounded-3xl bg-white p-6 px-5 hover:bg-[#E6E6E6]">
@@ -832,7 +831,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 xl:grid-cols-3"
+                            <div class="tab-pane grid grid-cols-1 gap-x-12 gap-y-5 sm:grid-cols-2 xl:grid-cols-3"
                                 id="map_south-america" role="tabpanel">
                                 <div
                                     class="bi-shadow-sm flex cursor-pointer items-center gap-8 rounded-3xl bg-white p-6 px-5 hover:bg-[#E6E6E6]">
@@ -897,7 +896,7 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 xl:grid-cols-3"
+                            <div class="tab-pane grid grid-cols-1 gap-x-12 gap-y-5 sm:grid-cols-2 xl:grid-cols-3"
                                 id="map_oceania" role="tabpanel">
                                 <div
                                     class="bi-shadow-sm flex cursor-pointer items-center gap-8 rounded-3xl bg-white p-6 px-5 hover:bg-[#E6E6E6]">
@@ -962,9 +961,8 @@
                                 </div>
                             </div>
 
-                            <div class="tab-pane grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-5 xl:grid-cols-3"
+                            <div class="tab-pane grid grid-cols-1 gap-x-12 gap-y-5 sm:grid-cols-2 xl:grid-cols-3"
                                 id="map_north-america" role="tabpanel">
-
                                 <div
                                     class="bi-shadow-sm flex cursor-pointer items-center gap-8 rounded-3xl bg-white p-6 px-5 hover:bg-[#E6E6E6]">
                                     <img src="img/flag-france.png" class="w-14 rounded-circle shadow-md" />
@@ -1006,33 +1004,29 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                         <!-- dont even touch this -->
-                        <div class="my-7 sm:hidden block">
+                        <div class="my-7 block sm:hidden">
                             <template x-for="(country,index) in navItems">
                                 <div>
-
-                                    <div class="w-full flex justify-between p-6 bi-shadow-sm rounded-3xl items-center">
-                                        <div x-text="country.label" class="text-xl text-primery-dark font-bold"></div>
+                                    <div class="bi-shadow-sm flex w-full items-center justify-between rounded-3xl p-6">
+                                        <div x-text="country.label" class="text-xl font-bold text-primery-dark"></div>
                                         <button @click="selectTab(index)"
-                                            class="w-14 aspect-square flex-center shadow-xl rounded-full">
-                                            <img src="svg/chevron-down.svg" alt="">
+                                            class="flex-center aspect-square w-14 rounded-full shadow-xl">
+                                            <img src="svg/chevron-down.svg" alt="" />
                                         </button>
                                         <!-- <img :src="country.activeImg" alt=""> -->
                                     </div>
                                     <div>
-                                        <div class="overflow-hidden " x-show=" content !== '' && index === selected "
+                                        <div class="overflow-hidden" x-show=" content !== '' && index === selected "
                                             x-transition:enter="transition ease-out duration-1000"
                                             x-transition:enter-start="opacity-0  max-h-0"
                                             x-transition:enter-end="opacity-100 "
                                             x-transition:leave="transition ease-in duration-1000"
                                             x-transition:leave-start="opacity-100 "
                                             x-transition:leave-end="opacity-0 max-h-0">
-
-                                            <div x-html="content" class="mt-8">
-                                            </div>
+                                            <div x-html="content" class="mt-8"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1047,7 +1041,7 @@
                 </div>
             </div>
 
-            <aside class="lg:w-4/12 mt-10 sm:mt-0">
+            <aside class="mt-10 sm:mt-0 lg:w-4/12">
                 <h2 class="text-xl font-bold text-primery-dark">
                     چرا بهتر است ما براى شما ويزا بگيريم؟
                 </h2>
@@ -1238,7 +1232,9 @@
 
                     this.navItems = navElArr.map((el) => ({
                         link: el.dataset.bsTarget,
-                        label: el.querySelector(".js-nav-label").innerText,
+                        label: el.querySelector(
+                            ".js-nav-label"
+                        ).innerText,
                         diabledImg:
                             el.querySelector("img").dataset
                                 .disabledImage,
@@ -1259,45 +1255,45 @@
                 selectTab(tabidnex) {
                     tabidnex = parseInt(tabidnex);
 
-                    if (tabidnex === this.selected) return
+                    if (tabidnex === this.selected) return;
 
-                    this.$refs.body.style.height = this.offsetHeight + "px"
-                    this.content = '';
+                    this.$refs.body.style.height =
+                        this.offsetHeight + "px";
+                    this.content = "";
 
+                    for (
+                        let i = 0;
+                        i < this.navItems.length;
+                        i++
+                    )
+                        this.navItems[i].currentImg =
+                            this.navItems[i].diabledImg;
 
-
-                    for (let i = 0; i < this.navItems.length; i++)
-                        this.navItems[i].currentImg = this.navItems[i].diabledImg;
-
-                    this.navItems[tabidnex].currentImg = this.navItems[tabidnex].activeImg;
+                    this.navItems[tabidnex].currentImg =
+                        this.navItems[tabidnex].activeImg;
                     this.selected = tabidnex;
 
-                    if (currentBrackPoint() === 'NONE') {
-                        this._fn(tabidnex)
+                    if (currentBrackPoint() === "NONE") {
+                        this._fn(tabidnex);
                         setTimeout(() => {
-
-                            this.$el.scrollIntoView(true)
+                            this.$el.scrollIntoView(true);
                         }, 100);
-
-                    }
-                    else
+                    } else
                         setTimeout(() => {
-                            this._fn(tabidnex)
+                            this._fn(tabidnex);
                         }, 400);
-
-
                 },
                 _fn(tabidnex) {
-                    this.$refs.body.style.height = ''
+                    this.$refs.body.style.height = "";
                     this.content = document.querySelector(
                         this.navItems[tabidnex].link
                     ).outerHTML;
                     setTimeout(() => {
-                        this.offsetHeight = this.$refs.body.offsetHeight;
+                        this.offsetHeight =
+                            this.$refs.body.offsetHeight;
                     }, 100);
-                    console.log(this.offsetHeight)
-                }
-
+                    console.log(this.offsetHeight);
+                },
             };
         };
     </script>

@@ -565,28 +565,29 @@
 
         <div class="flex flex-col gap-6 lg:flex-row">
             <aside class="lg:w-3/12">
-                <div class=" w-full flex-col items-center justify-start gap-4 h-full flex">
-                    <div
-                        class="flex flex-col sm:flex-row w-full sm:items-center items-start gap-5 overflow-hidden rounded-3xl bg-white p-4 py-5 shadow lg:block">
-                        <div class="shrink-0 flex items-center justify-start gap-4">
-                            <img class="h-10 w-10 rounded-circle shadow-md" src="img/flag-turkish.png" alt="" />
-                            <h1 class="text-3xl font-bold">
-                                ترکیه
-                            </h1>
-                        </div>
-                        <div class="mt-0 lg:mt-2">
-                            <span
-                                class="mt-0 inline-block rounded-3xl bg-gray-500 px-2 py-1 text-xs text-white lg:mt-2">جمعیت
-                                61616161 نفر</span>
-                            <span
-                                class="mt-0 inline-block rounded-3xl bg-red-400 px-2 py-1 text-xs text-white lg:mt-2">کرونا
-                                قرمز</span>
-                            <span
-                                class="mt-0 inline-block rounded-3xl bg-gray-500 px-2 py-1 text-xs text-white lg:mt-2">زبان
-                                : فرانسوی</span>
-                        </div>
+                <div
+                    class="flex flex-col sm:flex-row w-full sm:items-center items-start gap-5 overflow-hidden rounded-3xl bg-white p-4 py-5 shadow lg:block">
+                    <div class="shrink-0 flex items-center justify-start gap-4">
+                        <img class="h-10 w-10 rounded-circle shadow-md" src="img/flag-turkish.png" alt="" />
+                        <h1 class="text-3xl font-bold">
+                            ترکیه
+                        </h1>
                     </div>
+                    <div class="mt-0 lg:mt-2">
+                        <span
+                            class="mt-0 inline-block rounded-3xl bg-gray-500 px-2 py-1 text-xs text-white lg:mt-2">جمعیت
+                            61616161 نفر</span>
+                        <span
+                            class="mt-0 inline-block rounded-3xl bg-red-400 px-2 py-1 text-xs text-white lg:mt-2">کرونا
+                            قرمز</span>
+                        <span
+                            class="mt-0 inline-block rounded-3xl bg-gray-500 px-2 py-1 text-xs text-white lg:mt-2">زبان
+                            : فرانسوی</span>
+                    </div>
+                </div>
 
+                <!-- sticky nav -->
+                <div class="flex w-full flex-col items-center justify-center gap-4 mt-6 sticky top-20">
                     <div class="w-full  flex-col gap-4 z-10 bg-white rounded-3xl hidden lg:flex" id="sticky-container">
                         <div id="guide"
                             class="relative mr-auto flex w-full items-stretch gap-4 rounded-3xl text-sm xl:text-base bg-white p-4 shadow-lg sm:w-80 lg:w-full lg:p-6">
@@ -618,24 +619,22 @@
                                 </div>
                             </div>
                         </div>
-
-                        <a href="#" class="bi-shadow-sm  w-full rounded-3xl bg-primery ">
-                            <div class="flex gap-2 py-4 px-6 xl:gap-0 xl:px-8">
-                                <div
-                                    class="flex-center bi-callus-puls h-16 rounded-3xl bg-white bg-opacity-60 p-2 xl:px-3">
-                                    <img class="rotate-90 transform" src="img/controll/call.svg" alt="" />
-                                </div>
-                                <div class="w-f mx-auto flex flex-col justify-center gap-1 text-center">
-                                    <span class="mb-1 text-sm text-primery-dark">نیاز به
-                                        مشاوره
-                                        دارید؟</span>
-                                    <h3 class="text-xl font-extrabold tracking-wide">
-                                        ۰۲۱-۴۳۰۰۰۰۳۰
-                                    </h3>
-                                </div>
-                            </div>
-                        </a>
                     </div>
+
+                    <a href="#" class="bi-shadow-sm hidden w-full rounded-3xl bg-primery lg:block">
+                        <div class="flex gap-2 py-4 px-6 xl:gap-0 xl:px-8">
+                            <div class="flex-center bi-callus-puls h-16 rounded-3xl bg-white bg-opacity-60 p-2 xl:px-3">
+                                <img class="rotate-90 transform" src="img/controll/call.svg" alt="" />
+                            </div>
+                            <div class="w-f mx-auto flex flex-col justify-center gap-1 text-center">
+                                <span class="mb-1 text-sm text-primery-dark">نیاز به مشاوره
+                                    دارید؟</span>
+                                <h3 class="text-xl font-extrabold tracking-wide">
+                                    ۰۲۱-۴۳۰۰۰۰۳۰
+                                </h3>
+                            </div>
+                        </div>
+                    </a>
 
                     <a href="#" class="bi-shadow-sm hidden w-full rounded-3xl bg-primery-dark lg:block">
                         <div class="flex gap-2 py-3 px-6 xl:gap-0 xl:px-8">
@@ -646,36 +645,35 @@
                             </div>
                         </div>
                     </a>
-
                     <p class="mt-2 hidden text-xl font-bold lg:block">
                         درباره اروپا بیشتر بدانید
                     </p>
-                    <!-- loop -->
+
                     <div class="hidden flex-col items-center justify-center lg:flex">
-                        <div class="flex flex-col ">
-                            <div class="flex-center bi-overlay mt-6 h-full w-full rounded-3xl" style="
-                                        background: url(img/countries/image8.jpg)
-                                            center center/cover;
-                                    ">
+                        <div class="flex-col flex gap-7">
+                            <div class="flex-center bi-overlay h-full w-full rounded-3xl" style="
+                                                        background: url(img/countries/image8.jpg)
+                                                            center center/cover;
+                                                    ">
                                 <div class="relative p-11 text-center text-lg font-bold text-white">
                                     بایدها و نبایدهای
                                     سفر به شهر بارسلونا
                                 </div>
                             </div>
 
-                            <div class="flex-center bi-overlay mt-6 h-full w-full rounded-3xl" style="
-                                        background: url(img/countries/image8.jpg)
-                                            center center/cover;
-                                    ">
+                            <div class="flex-center bi-overlay h-full w-full rounded-3xl" style="
+                                                        background: url(img/countries/image8.jpg)
+                                                            center center/cover;
+                                                    ">
                                 <div class="relative p-11 text-center text-lg font-bold text-white">
                                     اقامت در فرانسه
                                 </div>
                             </div>
 
-                            <div class="flex-center bi-overlay mt-6 h-full w-full rounded-3xl" style="
-                                        background: url(img/countries/image8.jpg)
-                                            center center/cover;
-                                    ">
+                            <div class="flex-center bi-overlay h-full w-full rounded-3xl" style="
+                                                        background: url(img/countries/image8.jpg)
+                                                            center center/cover;
+                                                    ">
                                 <div class="relative p-11 text-center text-lg font-bold text-white">
                                     بایدها و نبایدهای
                                     سفر به شهر بارسلونا
@@ -1640,7 +1638,6 @@
     <script src="js/commons/utils.js"></script>
     <script src="js/components/navbar.js"></script>
     <script src="js/components/mobile-controller.js"></script>
-    <script src="lib/js/stickybits.min.js"></script>
     <script>
         function createAnchor(listOfElements) {
             // observer
@@ -1764,7 +1761,6 @@
                 tabno: 0,
                 isCurrentStateMobile: true,
                 init() {
-
                     const recalc = customDebounce(() => {
                         this.getBestView();
                     }, 1000);
@@ -1783,7 +1779,6 @@
                     return currentBrackPoint() === "NONE";
                 },
                 getBestView() {
-
                     if (
                         this.isCurrentStateMobile === false &&
                         currentBrackPoint() &&
@@ -1797,12 +1792,6 @@
         };
 
         document.addEventListener("DOMContentLoaded", function () {
-            if (["lg", "xl"].includes(currentBrackPoint())) {
-                stickybits("#sticky-container", {
-                    stickyBitStickyOffset: 80
-                });
-            }
-
             createAnchor(["section-1", "section-2", "section-3"]);
         });
     </script>
