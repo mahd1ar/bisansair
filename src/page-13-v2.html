@@ -16,7 +16,7 @@
 
 <body>
     <!-- brake points debug -->
-    <div class="sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
+    <div class=" sm:bg-green-400 md:bg-red-500 lg:bg-blue-500 xl:bg-yellow-500 fixed top-10 left-10 z-50">
         <span class="hidden sm:block">sm</span>
         <span class="hidden md:block">md</span>
         <span class="hidden lg:block">lg</span>
@@ -24,8 +24,6 @@
         <span class="hidden 2xl:block">2xl</span>
     </div>
     <!-- /debug -->
-
-
     <div class="fixed w-full z-50 transition-all nav-container" id="navigation-sticky-placeholder">
         <!-- DO NOT DELETE ME -->
     </div>
@@ -158,6 +156,7 @@
         <div class="absolute w-full top-0 bi-overlay-gradient-white overflow-hidden h-80"
             style="background: url(svg/travel-textture/one.svg) center center/cover;">
         </div>
+
 
         <div id="navigation-placeholder" class="nav-container">
             <!-- NOTE : maybe you need to remove ' hidden lg:block ' in next revition -->
@@ -548,8 +547,29 @@
     </header>
 
     <main id="main" class="container mx-auto relative gap-6 flex flex-col" dir="rtl">
+        <!-- Breadcrumb -->
+        <div class="flex justify-center sm:justify-start mt-4">
+            <span class="breadcrumb inline-flex items-center gap-2 rounded-lg bg-white py-1 px-2">
+                <!-- loop over breadcrumb items : the first element dosent need breadcrumb__item class -->
+                <a href="" class="flex-center breadcrumb__peer gap-2">
+                    بیسانسیر
+                </a>
+                <a href="" class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
+                    تور
+                </a>
+                <a href="" class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
+                    ترکیه
+                </a>
+                <span class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
+                    استانبول
+                </span>
+            </span>
+        </div>
         <!-- slider -->
-        <div class="mt-4 w-full" dir="ltr">
+        <div class="w-full" dir="ltr">
 
             <div id="main-slider" class="splide">
 
@@ -569,9 +589,9 @@
                             <div class=" absolute bottom-9">
                                 <h2 class="text-white text-3xl font-bold">بزرگترین دیدنی های دبی</h2>
                                 <div class="mt-4 flex-center gap-2 text-black ">
-                                    <span class="bi-primary-tag ">dobiy</span>
-                                    <span class="bi-primary-tag ">emarat</span>
-                                    <span class="bi-primary-tag ">danestani ha</span>
+                                    <span class="bi-primary-tag ">دبی</span>
+                                    <span class="bi-primary-tag ">امارات</span>
+                                    <span class="bi-primary-tag ">دانستنی ها</span>
                                 </div>
                             </div>
                         </li>
@@ -580,9 +600,9 @@
                             <div class=" absolute bottom-9">
                                 <h2 class="text-white text-3xl font-bold">بزرگترین دیدنی های دبی</h2>
                                 <div class="mt-4 flex-center gap-2 text-black ">
-                                    <span class="bi-primary-tag ">dobiy</span>
-                                    <span class="bi-primary-tag ">emarat</span>
-                                    <span class="bi-primary-tag ">danestani ha</span>
+                                    <span class="bi-primary-tag ">دبی</span>
+                                    <span class="bi-primary-tag ">امارات</span>
+                                    <span class="bi-primary-tag ">دانستنی ها</span>
                                 </div>
                             </div>
                         </li>
@@ -636,7 +656,7 @@
 
                         <div class="flex items-start  mb-4 hover:bg-slate-100 cursor-pointer p-2 rounded-md">
 
-                            <img class="w-20 aspect-square flex-shrink-0 rounded-2xl overflow-clip relative  object-cover"
+                            <img class="w-20 aspect-square flex-shrink-0 rounded-3xl overflow-clip relative  object-cover"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
 
                             <div class="w-full overflow-hidden pr-4 text-ellipsis">
@@ -655,7 +675,7 @@
                         </div>
                         <div class="flex items-start  mb-4 hover:bg-slate-100 cursor-pointer p-2 rounded-md">
 
-                            <img class="w-20 aspect-square flex-shrink-0 rounded-2xl overflow-clip relative  object-cover"
+                            <img class="w-20 aspect-square flex-shrink-0 rounded-3xl overflow-clip relative  object-cover"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
 
                             <div class="w-full overflow-hidden pr-4 text-ellipsis">
@@ -674,7 +694,7 @@
                         </div>
                         <div class="flex items-start  mb-4 hover:bg-slate-100 cursor-pointer p-2 rounded-md">
 
-                            <img class="w-20 aspect-square flex-shrink-0 rounded-2xl overflow-clip relative  object-cover"
+                            <img class="w-20 aspect-square flex-shrink-0 rounded-3xl overflow-clip relative  object-cover"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
 
                             <div class="w-full overflow-hidden pr-4 text-ellipsis">
@@ -693,7 +713,7 @@
                         </div>
                         <div class="flex items-start  mb-4 hover:bg-slate-100 cursor-pointer p-2 rounded-md">
 
-                            <img class="w-20 aspect-square flex-shrink-0 rounded-2xl overflow-clip relative  object-cover"
+                            <img class="w-20 aspect-square flex-shrink-0 rounded-3xl overflow-clip relative  object-cover"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
 
                             <div class="w-full overflow-hidden pr-4 text-ellipsis">
@@ -721,19 +741,19 @@
                     <div class="flex gap-2 flex-wrap">
 
                         <!-- tags -->
-                        <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                        <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm text-xs">
                             دانستنیها
                         </span>
-                        <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                        <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm text-xs">
                             دانستنیها
                         </span>
-                        <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                        <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm text-xs">
                             دانستنیها
                         </span>
-                        <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                        <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm text-xs">
                             دانستنیها
                         </span>
-                        <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                        <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm text-xs">
                             دانستنیها
                         </span>
 
@@ -748,7 +768,7 @@
 
                         <div class="flex items-start  mb-4 hover:bg-slate-100 cursor-pointer p-2 rounded-md">
 
-                            <img class="w-20 aspect-square flex-shrink-0 rounded-2xl overflow-clip relative  object-cover"
+                            <img class="w-20 aspect-square flex-shrink-0 rounded-3xl overflow-clip relative  object-cover"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
 
                             <div class="w-full overflow-hidden pr-4 text-ellipsis">
@@ -768,7 +788,7 @@
 
                         <div class="flex items-start  mb-4 hover:bg-slate-100 cursor-pointer p-2 rounded-md">
 
-                            <img class="w-20 aspect-square flex-shrink-0 rounded-2xl overflow-clip relative  object-cover"
+                            <img class="w-20 aspect-square flex-shrink-0 rounded-3xl overflow-clip relative  object-cover"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
 
                             <div class="w-full overflow-hidden pr-4 text-ellipsis">
@@ -788,7 +808,7 @@
 
                         <div class="flex items-start  mb-4 hover:bg-slate-100 cursor-pointer p-2 rounded-md">
 
-                            <img class="w-20 aspect-square flex-shrink-0 rounded-2xl overflow-clip relative  object-cover"
+                            <img class="w-20 aspect-square flex-shrink-0 rounded-3xl overflow-clip relative  object-cover"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
 
                             <div class="w-full overflow-hidden pr-4 text-ellipsis">
@@ -808,7 +828,7 @@
 
                         <div class="flex items-start  mb-4 hover:bg-slate-100 cursor-pointer p-2 rounded-md">
 
-                            <img class="w-20 aspect-square flex-shrink-0 rounded-2xl overflow-clip relative  object-cover"
+                            <img class="w-20 aspect-square flex-shrink-0 rounded-3xl overflow-clip relative  object-cover"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
 
                             <div class="w-full overflow-hidden pr-4 text-ellipsis">
@@ -839,9 +859,9 @@
 
 
                     <div
-                        class="flex flex-col sm:flex-row p-6 shadow-md rounded-3xl mb-4 hover:bg-slate-100 cursor-pointer  ">
-                        <div class="sm:w-52 w-full h-40 sm:h-auto flex-shrink-0 rounded-2xl overflow-clip relative">
-                            <img class="w-full object-cover object-center"
+                        class="flex flex-col sm:flex-row p-4 md:p-6 shadow-md rounded-3xl mb-4 hover:bg-slate-100 cursor-pointer  ">
+                        <div class="sm:w-52 w-full h-40 sm:h-auto flex-shrink-0 rounded-3xl overflow-clip relative">
+                            <img class="w-full object-cover object-center h-full"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
                             <!-- tag -->
                             <div class="absolute py-1 px-2 right-4 bottom-4 bg-white rounded-2xl text-xs text-gray-600">
@@ -851,7 +871,7 @@
                         <div class="mt-6 sm:mt-0 sm:pr-6 flex flex-col justify-between">
                             <h3 class="font-bold">کانال آب دبی</h3>
                             <div class="text-sm text-neutral-600 mt-2 h-full relative overflow-hidden text-ellipsis">
-                                <p class="max-h-full mb-2">
+                                <p class="max-h-full mb-2 leading-7">
 
                                     صفا بدون شک پرطرفدارترین پارک در دبی است. بیش از ده سال است که ساکنین و
                                     گردشگران، به
@@ -861,23 +881,39 @@
                                     باربیکیوی پارک، در این فضای دلنشین و زیبا می‌گذرانند
                                 </p>
                             </div>
-                            <div class="mt-auto flex gap-2 ">
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                            <div class="mt-auto flex gap-2 flex-wrap">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     دبی
                                 </span>
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     امارات
                                 </span>
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
+                                    دانستنیها
+                                </span>
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
+                                    دانستنیها
+                                </span>
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
+                                    دانستنیها
+                                </span>
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
+                                    دانستنیها
+                                </span>
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
+                                    دانستنیها
+                                </span>
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     دانستنیها
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div
-                        class="flex flex-col sm:flex-row p-6 shadow-md rounded-3xl mb-4 hover:bg-slate-100 cursor-pointer  ">
-                        <div class="sm:w-52 w-full h-40 sm:h-auto flex-shrink-0 rounded-2xl overflow-clip relative">
-                            <img class="w-full object-cover object-center"
+                        class="flex flex-col sm:flex-row p-4 md:p-6 shadow-md rounded-3xl mb-4 hover:bg-slate-100 cursor-pointer  ">
+                        <div class="sm:w-52 w-full h-40 sm:h-auto flex-shrink-0 rounded-3xl overflow-clip relative">
+                            <img class="w-full object-cover object-center h-full"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
                             <!-- tag -->
                             <div class="absolute py-1 px-2 right-4 bottom-4 bg-white rounded-2xl text-xs text-gray-600">
@@ -887,7 +923,7 @@
                         <div class="mt-6 sm:mt-0 sm:pr-6 flex flex-col justify-between">
                             <h3 class="font-bold">کانال آب دبی</h3>
                             <div class="text-sm text-neutral-600 mt-2 h-full relative overflow-hidden text-ellipsis">
-                                <p class="max-h-full mb-2">
+                                <p class="max-h-full mb-2 leading-7">
 
                                     صفا بدون شک پرطرفدارترین پارک در دبی است. بیش از ده سال است که ساکنین و
                                     گردشگران، به
@@ -898,22 +934,22 @@
                                 </p>
                             </div>
                             <div class="mt-auto flex gap-2 ">
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     دبی
                                 </span>
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     امارات
                                 </span>
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     دانستنیها
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div
-                        class="flex flex-col sm:flex-row p-6 shadow-md rounded-3xl mb-4 hover:bg-slate-100 cursor-pointer  ">
-                        <div class="sm:w-52 w-full h-40 sm:h-auto flex-shrink-0 rounded-2xl overflow-clip relative">
-                            <img class="w-full object-cover object-center"
+                        class="flex flex-col sm:flex-row p-4 md:p-6 shadow-md rounded-3xl mb-4 hover:bg-slate-100 cursor-pointer  ">
+                        <div class="sm:w-52 w-full h-40 sm:h-auto flex-shrink-0 rounded-3xl overflow-clip relative">
+                            <img class="w-full object-cover object-center h-full"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
                             <!-- tag -->
                             <div class="absolute py-1 px-2 right-4 bottom-4 bg-white rounded-2xl text-xs text-gray-600">
@@ -923,7 +959,7 @@
                         <div class="mt-6 sm:mt-0 sm:pr-6 flex flex-col justify-between">
                             <h3 class="font-bold">کانال آب دبی</h3>
                             <div class="text-sm text-neutral-600 mt-2 h-full relative overflow-hidden text-ellipsis">
-                                <p class="max-h-full mb-2">
+                                <p class="max-h-full mb-2 leading-7">
 
                                     صفا بدون شک پرطرفدارترین پارک در دبی است. بیش از ده سال است که ساکنین و
                                     گردشگران، به
@@ -934,22 +970,22 @@
                                 </p>
                             </div>
                             <div class="mt-auto flex gap-2 ">
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     دبی
                                 </span>
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     امارات
                                 </span>
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     دانستنیها
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div
-                        class="flex flex-col sm:flex-row p-6 shadow-md rounded-3xl mb-4 hover:bg-slate-100 cursor-pointer  ">
-                        <div class="sm:w-52 w-full h-40 sm:h-auto flex-shrink-0 rounded-2xl overflow-clip relative">
-                            <img class="w-full object-cover object-center"
+                        class="flex flex-col sm:flex-row p-4 md:p-6 shadow-md rounded-3xl mb-4 hover:bg-slate-100 cursor-pointer  ">
+                        <div class="sm:w-52 w-full h-40 sm:h-auto flex-shrink-0 rounded-3xl overflow-clip relative">
+                            <img class="w-full object-cover object-center h-full"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
                             <!-- tag -->
                             <div class="absolute py-1 px-2 right-4 bottom-4 bg-white rounded-2xl text-xs text-gray-600">
@@ -959,7 +995,7 @@
                         <div class="mt-6 sm:mt-0 sm:pr-6 flex flex-col justify-between">
                             <h3 class="font-bold">کانال آب دبی</h3>
                             <div class="text-sm text-neutral-600 mt-2 h-full relative overflow-hidden text-ellipsis">
-                                <p class="max-h-full mb-2">
+                                <p class="max-h-full mb-2 leading-7">
 
                                     صفا بدون شک پرطرفدارترین پارک در دبی است. بیش از ده سال است که ساکنین و
                                     گردشگران، به
@@ -970,22 +1006,22 @@
                                 </p>
                             </div>
                             <div class="mt-auto flex gap-2 ">
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     دبی
                                 </span>
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     امارات
                                 </span>
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     دانستنیها
                                 </span>
                             </div>
                         </div>
                     </div>
                     <div
-                        class="flex flex-col sm:flex-row p-6 shadow-md rounded-3xl mb-4 hover:bg-slate-100 cursor-pointer  ">
-                        <div class="sm:w-52 w-full h-40 sm:h-auto flex-shrink-0 rounded-2xl overflow-clip relative">
-                            <img class="w-full object-cover object-center"
+                        class="flex flex-col sm:flex-row p-4 md:p-6 shadow-md rounded-3xl mb-4 hover:bg-slate-100 cursor-pointer  ">
+                        <div class="sm:w-52 w-full h-40 sm:h-auto flex-shrink-0 rounded-3xl overflow-clip relative">
+                            <img class="w-full object-cover object-center h-full"
                                 src="img/stock/photo-1642201289923-524d32bba771.jpg" alt="">
                             <!-- tag -->
                             <div class="absolute py-1 px-2 right-4 bottom-4 bg-white rounded-2xl text-xs text-gray-600">
@@ -995,7 +1031,7 @@
                         <div class="mt-6 sm:mt-0 sm:pr-6 flex flex-col justify-between">
                             <h3 class="font-bold">کانال آب دبی</h3>
                             <div class="text-sm text-neutral-600 mt-2 h-full relative overflow-hidden text-ellipsis">
-                                <p class="max-h-full mb-2">
+                                <p class="max-h-full mb-2 leading-7">
 
                                     صفا بدون شک پرطرفدارترین پارک در دبی است. بیش از ده سال است که ساکنین و
                                     گردشگران، به
@@ -1006,13 +1042,13 @@
                                 </p>
                             </div>
                             <div class="mt-auto flex gap-2 ">
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     دبی
                                 </span>
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     امارات
                                 </span>
-                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl">
+                                <span class="text-secondary-dark bg-secondary-ligth px-2 py-1 rounded-xl text-sm">
                                     دانستنیها
                                 </span>
                             </div>
@@ -1021,6 +1057,8 @@
 
 
                 </div>
+
+
                 <!-- pagination -->
                 <div class="text-center my-8">
                     <div class="flex-center flex-row-reverse gap-1">
@@ -1056,10 +1094,12 @@
         ...gap ( delete me later )
     </div>
 
+
+
     <script src="js/components/navbar.js"></script>
     <script src="js/commons/utils.js"></script>
     <script src="lib/js/splide.min.js"></script>
-    <!-- <script src="js/pages/page-13.js"></script> -->
+    <script src="js/components/mobile-controller.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
@@ -1097,14 +1137,6 @@
             });
 
             splide.mount();
-
-            const tabItems = document.querySelectorAll(".js-tab-item")
-            tabItems.forEach(i => {
-                i.addEventListener("click", () => {
-                    i.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" })
-                })
-            })
-
 
         });
 
