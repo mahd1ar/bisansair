@@ -1981,10 +1981,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	float: left;
 }
 
-.clear-left {
-	clear: left;
-}
-
 .m-0 {
 	margin: 0px;
 }
@@ -2227,6 +2223,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-12 {
 	margin-bottom: 3rem;
+}
+
+.mt-40 {
+	margin-top: 10rem;
 }
 
 .block {
@@ -2684,10 +2684,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.grid-cols-2 {
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
 .flex-row {
 	flex-direction: row;
 }
@@ -3065,6 +3061,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-\[\#E6E6E6\] {
 	--tw-bg-opacity: 1;
 	background-color: rgb(230 230 230 / var(--tw-bg-opacity));
+}
+
+.bg-red-800 {
+	--tw-bg-opacity: 1;
+	background-color: rgb(153 27 27 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-60 {
@@ -3476,10 +3477,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 	font-weight: 400;
 }
 
-.font-thin {
-	font-weight: 100;
-}
-
 .leading-7 {
 	line-height: 1.75rem;
 }
@@ -3650,6 +3647,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	opacity: 0.8;
 }
 
+.opacity-75 {
+	opacity: 0.75;
+}
+
 .shadow-lg {
 	--tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 	--tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -3708,6 +3709,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .drop-shadow-md {
 	--tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+	filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.drop-shadow-lg {
+	--tw-drop-shadow: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 	filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -4467,6 +4473,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 		position: relative;
 	}
 
+	.md\:sticky {
+		position: -webkit-sticky;
+		position: sticky;
+	}
+
 	.md\:col-span-2 {
 		grid-column: span 2 / span 2;
 	}
@@ -4738,6 +4749,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 		left: auto;
 	}
 
+	.lg\:top-20 {
+		top: 5rem;
+	}
+
 	.lg\:z-10 {
 		z-index: 10;
 	}
@@ -4821,16 +4836,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 		width: 80%;
 	}
 
-	.lg\:w-8\/12 {
-		width: 66.666667%;
-	}
-
 	.lg\:w-4\/12 {
 		width: 33.333333%;
 	}
 
+	.lg\:w-8\/12 {
+		width: 66.666667%;
+	}
+
 	.lg\:w-1\/2 {
 		width: 50%;
+	}
+
+	.lg\:w-\[196px\] {
+		width: 196px;
+	}
+
+	.lg\:w-\[420px\] {
+		width: 420px;
 	}
 
 	.lg\:-translate-y-6 {

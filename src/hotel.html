@@ -688,7 +688,7 @@
                             </div>
                         </div>
                         <!-- details -->
-                        <div x-data="{isOpen : true}" class="relative">
+                        <div x-data="{isOpen : true}" class="relative px-8 mt-5">
                             <div class="mt-1 flex flex-col overflow-hidden transition-all duration-500 ease-out"
                                 :style="{ maxHeight : isOpen ? '400px' : '100px'}">
                                 <div class="mt-1">
@@ -842,7 +842,7 @@
 
                         <!-- description -->
                         <div class="mt-8 gap-6 flex flex-col">
-                            <div class="p-4 bi-shadow-sm rounded-3xl" id="description">
+                            <div class="p-4 bi-shadow-sm rounded-3xl scroll-mt-20" id="description">
 
                                 <h2 class="text-xl font-bold text-primery-dark">
                                     در مورد هتل
@@ -885,11 +885,11 @@
 
                         <!-- #facilities -->
                         <div class="mt-8">
-                            <h2 class="text-xl font-bold text-primery-dark" id="facilities">
+                            <h2 class="text-xl font-bold text-primery-dark scroll-mt-20" id="facilities">
                                 امکانات
                             </h2>
                             <div class="mt-4 flex flex-col gap-4">
-                                <div id="tour_info" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                     <div class="bi-shadow-sm flex gap-2 rounded-2xl p-6">
                                         <div class="flex-center flex-shrink-0 rounded-3xl bg-primery px-3">
                                             <img src="img/tours/gold_clock.svg" alt="" />
@@ -1033,7 +1033,7 @@
 
                         <!-- #flags -->
                         <div class="mt-8">
-                            <h2 class="text-xl font-bold text-primery-dark" id="flags">
+                            <h2 class="text-xl font-bold text-primery-dark scroll-mt-20" id="flags">
                                 زبان ها
                             </h2>
 
@@ -1197,98 +1197,108 @@
                         هتل های مشابه
                     </h4>
 
-                    <div class="mt-6 flex h-56 flex-col overflow-hidden rounded-3xl lg:aspect-square lg:h-auto" style="
-                                background: url(img/mosque.jpg) center
-                                    center / cover;
-                            ">
-                        <div class="relative mt-auto flex flex-col items-center py-4 text-white">
-                            <!-- overlay -->
-                            <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black to-transparent">
+                    <div class="mt-7 flex flex-col gap-6">
+
+                        <a href="#" class=" flex  flex-col overflow-hidden rounded-3xl  ">
+                            <div class="relative mt-auto flex flex-col items-center  text-white">
+                                <!-- overlay -->
+                                <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black to-transparent">
+                                </div>
+                                <img class="rounded-3xl w-full object-cover"
+                                    src="https://dummyimage.com/302x222/dedede/0011ff&text=figma+sized+img" alt="">
+                                <div class="flex flex-col absolute bottom-0 py-4">
+                                    <span class="relative font-light">
+                                        Grand hilaroium istonbul
+                                    </span>
+                                    <div class="flex-center relative mt-1 flex flex-row-reverse gap-1">
+                                        <span>
+                                            <img src="svg/star.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star-outline.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star-outline.svg" alt="" />
+                                        </span>
+                                    </div>
+
+                                </div>
                             </div>
-                            <span class="relative">
-                                Grand hilaroium istonbul
-                            </span>
-                            <div class="flex-center relative mt-1 flex flex-row-reverse gap-1">
-                                <span>
-                                    <img src="svg/star.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star-outline.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star-outline.svg" alt="" />
-                                </span>
+                        </a>
+
+                        <a href="#" class=" flex  flex-col overflow-hidden rounded-3xl  ">
+                            <div class="relative mt-auto flex flex-col items-center  text-white">
+                                <!-- overlay -->
+                                <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black to-transparent">
+                                </div>
+                                <img class="rounded-3xl w-full object-cover" src="img/mosque.jpg" alt="">
+                                <div class="flex flex-col absolute bottom-0 py-4">
+                                    <span class="relative font-light">
+                                        Grand hilaroium istonbul
+                                    </span>
+                                    <div class="flex-center relative mt-1 flex flex-row-reverse gap-1">
+                                        <span>
+                                            <img src="svg/star.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star-outline.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star-outline.svg" alt="" />
+                                        </span>
+                                    </div>
+
+                                </div>
                             </div>
-                        </div>
+                        </a>
+
+                        <a href="#" class=" flex  flex-col overflow-hidden rounded-3xl  ">
+                            <div class="relative mt-auto flex flex-col items-center  text-white">
+                                <!-- overlay -->
+                                <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black to-transparent">
+                                </div>
+                                <img class="rounded-3xl w-full object-cover" src="img/mosque.jpg" alt="">
+                                <div class="flex flex-col absolute bottom-0 py-4">
+                                    <span class="relative font-light">
+                                        Grand hilaroium istonbul
+                                    </span>
+                                    <div class="flex-center relative mt-1 flex flex-row-reverse gap-1">
+                                        <span>
+                                            <img src="svg/star.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star-outline.svg" alt="" />
+                                        </span>
+                                        <span>
+                                            <img src="svg/star-outline.svg" alt="" />
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+
                     </div>
 
-                    <div class="mt-6 flex h-56 flex-col overflow-hidden rounded-3xl lg:aspect-square lg:h-auto" style="
-                                background: url(img/mosque.jpg) center
-                                    center / cover;
-                            ">
-                        <div class="relative mt-auto flex flex-col items-center py-4 text-white">
-                            <!-- overlay -->
-                            <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black to-transparent">
-                            </div>
-                            <span class="relative">
-                                Grand hilaroium istonbul
-                            </span>
-                            <div class="flex-center relative mt-1 flex flex-row-reverse gap-1">
-                                <span>
-                                    <img src="svg/star.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star-outline.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star-outline.svg" alt="" />
-                                </span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="mt-6 flex h-56 flex-col overflow-hidden rounded-3xl lg:aspect-square lg:h-auto" style="
-                                background: url(img/mosque.jpg) center
-                                    center / cover;
-                            ">
-                        <div class="relative mt-auto flex flex-col items-center py-4 text-white">
-                            <!-- overlay -->
-                            <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-black to-transparent">
-                            </div>
-                            <span class="relative">
-                                Grand hilaroium istonbul
-                            </span>
-                            <div class="flex-center relative mt-1 flex flex-row-reverse gap-1">
-                                <span>
-                                    <img src="svg/star.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star-outline.svg" alt="" />
-                                </span>
-                                <span>
-                                    <img src="svg/star-outline.svg" alt="" />
-                                </span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </aside>
         </div>

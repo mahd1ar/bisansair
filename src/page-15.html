@@ -572,7 +572,7 @@
                             <li class="js-nav-item flex-center flex-col gap-2"
                                 @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_asia"
                                 data-tab-index="0">
-                                <img :src="navItems[0].currentImg"
+                                <img :src="navItems[0].currentImg" data-bg-image="img/schema.png"
                                     data-active-image="svg/continent/colored/map_asia.png"
                                     data-disabled-image="svg/continent/b&w/map_asia.png" alt="" />
                                 <h4 class="js-nav-label">
@@ -583,7 +583,7 @@
                             <li class="js-nav-item flex-center flex-col gap-2"
                                 @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_europe"
                                 data-tab-index="1">
-                                <img :src="navItems[1].currentImg"
+                                <img :src="navItems[1].currentImg" data-bg-image=""
                                     data-active-image="svg/continent/colored/map_europe.png"
                                     data-disabled-image="svg/continent/b&w/map_europe.png" alt="" />
                                 <h4 class="js-nav-label">
@@ -594,7 +594,7 @@
                             <li class="js-nav-item flex-center flex-col gap-2"
                                 @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map-africa"
                                 data-tab-index="2">
-                                <img :src="navItems[2].currentImg"
+                                <img :src="navItems[2].currentImg" data-bg-image="img/schema.png"
                                     data-active-image="svg/continent/colored/map_africa.png"
                                     data-disabled-image="svg/continent/b&w/map_africa.png" alt="" />
                                 <h4 class="js-nav-label">
@@ -605,7 +605,7 @@
                             <li class="js-nav-item flex-center flex-col gap-2"
                                 @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_oceania"
                                 data-tab-index="3">
-                                <img :src="navItems[3].currentImg"
+                                <img :src="navItems[3].currentImg" data-bg-image="img/schema.png"
                                     data-active-image="svg/continent/colored/map_oceania.png"
                                     data-disabled-image="svg/continent/b&w/map_oceania.png" alt="" />
                                 <h4 class="js-nav-label">
@@ -616,7 +616,7 @@
                             <li class="js-nav-item flex-center flex-col gap-2"
                                 @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_north-america"
                                 data-tab-index="4">
-                                <img :src="navItems[4].currentImg"
+                                <img :src="navItems[4].currentImg" data-bg-image="img/schema.png"
                                     data-active-image="svg/continent/colored/map_north-america.png"
                                     data-disabled-image="svg/continent/b&w/map_north-america.png" alt="" />
                                 <h4 class="js-nav-label">
@@ -627,7 +627,7 @@
                             <li class="js-nav-item flex-center flex-col gap-2"
                                 @click="selectTab(  $el.dataset.tabIndex )" data-bs-target="#map_south-america"
                                 data-tab-index="5">
-                                <img :src="navItems[5].currentImg"
+                                <img :src="navItems[5].currentImg" data-bg-image="img/schema.png"
                                     data-active-image="svg/continent/colored/map_south-america.png"
                                     data-disabled-image="svg/continent/b&w/map_south-america.png" alt="" />
                                 <h4 class="js-nav-label">
@@ -1007,13 +1007,25 @@
                         </div>
 
                         <!-- dont even touch this -->
-                        <div class="my-7 block sm:hidden">
+                        <div class="my-7 flex flex-col gap-10 sm:hidden">
                             <template x-for="(country,index) in navItems">
-                                <div>
-                                    <div class="bi-shadow-sm flex w-full items-center justify-between rounded-3xl p-6">
-                                        <div x-text="country.label" class="text-xl font-bold text-primery-dark"></div>
+                                <div class="">
+                                    <div
+                                        class=" drop-shadow-md relative flex w-full items-center justify-between rounded-3xl bg-white p-6 ">
+
+                                        <template x-if="country.bgImage">
+                                            <div class="absolute top-0 left-0 flex h-full w-full justify-center">
+                                                <img :src="country.bgImage" alt="" />
+                                                <div
+                                                    class="absolute top-0 left-0 h-full w-full rounded-3xl bg-white opacity-50">
+                                                </div>
+                                            </div>
+                                        </template>
+
+                                        <div x-text="country.label"
+                                            class="relative text-xl font-bold text-primery-dark"></div>
                                         <button @click="selectTab(index)"
-                                            class="flex-center aspect-square w-14 rounded-full shadow-xl">
+                                            class="flex-center relative aspect-square w-14 rounded-full shadow-xl scroll-mt-20">
                                             <img src="svg/chevron-down.svg" alt="" />
                                         </button>
                                         <!-- <img :src="country.activeImg" alt=""> -->
@@ -1048,7 +1060,7 @@
 
                 <div class="mt-7 flex flex-col gap-6">
                     <div class="flex gap-4">
-                        <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                        <div class="flex-center w-16 shrink-0 rounded-full bg-secondary-ligth">
                             <img src="svg/mailman.svg" alt="" />
                         </div>
                         <div>
@@ -1067,7 +1079,7 @@
                     </div>
 
                     <div class="flex gap-4">
-                        <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                        <div class="flex-center w-16 shrink-0 rounded-full bg-secondary-ligth">
                             <img src="svg/running-man.svg" alt="" />
                         </div>
                         <div>
@@ -1084,7 +1096,7 @@
                     </div>
 
                     <div class="flex gap-4">
-                        <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                        <div class="flex-center w-16 shrink-0 rounded-full bg-secondary-ligth">
                             <img src="svg/commenting-man.svg" alt="" />
                         </div>
                         <div>
@@ -1101,7 +1113,7 @@
                     </div>
 
                     <div class="flex gap-4">
-                        <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                        <div class="flex-center w-16 shrink-0 rounded-full bg-secondary-ligth">
                             <img src="svg/nice-hand.svg" alt="" />
                         </div>
                         <div>
@@ -1119,7 +1131,7 @@
                     </div>
 
                     <div class="flex gap-4">
-                        <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                        <div class="flex-center w-16 shrink-0 rounded-full bg-secondary-ligth">
                             <img src="svg/credit-card.svg" alt="" />
                         </div>
                         <div>
@@ -1137,7 +1149,7 @@
                     </div>
 
                     <div class="flex gap-4">
-                        <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                        <div class="flex-center w-16 shrink-0 rounded-full bg-secondary-ligth">
                             <img src="svg/five-star.svg" alt="" />
                         </div>
                         <div>
@@ -1154,7 +1166,7 @@
                     </div>
 
                     <div class="flex gap-4">
-                        <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                        <div class="flex-center w-16 shrink-0 rounded-full bg-secondary-ligth">
                             <img src="svg/support.svg" alt="" />
                         </div>
                         <div>
@@ -1172,7 +1184,7 @@
                     </div>
 
                     <div class="flex gap-4">
-                        <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                        <div class="flex-center w-16 shrink-0 rounded-full bg-secondary-ligth">
                             <img src="svg/verify.svg" alt="" />
                         </div>
                         <div>
@@ -1189,7 +1201,7 @@
                     </div>
 
                     <div class="flex gap-4">
-                        <div class="flex-center w-16 shrink-0 rounded-full bg-gray-100">
+                        <div class="flex-center w-16 shrink-0 rounded-full bg-secondary-ligth">
                             <img src="svg/health.svg" alt="" />
                         </div>
                         <div>
@@ -1244,8 +1256,11 @@
                         currentImg:
                             el.querySelector("img").dataset
                                 .disabledImage,
+                        bgImage:
+                            el.querySelector("img").dataset
+                                .bgImage,
                     }));
-                    // console.log(this.navItems)
+                    console.log(this.navItems)
                     this.selectTab(0);
 
                     this.$root.querySelector(
@@ -1274,6 +1289,7 @@
                     this.selected = tabidnex;
 
                     if (currentBrackPoint() === "NONE") {
+
                         this._fn(tabidnex);
                         setTimeout(() => {
                             this.$el.scrollIntoView(true);
