@@ -12,14 +12,13 @@
 </head>
 
 <body>
-
-    <div class="fixed w-full z-50 transition-all nav-container" id="navigation-sticky-placeholder">
+    <div class="nav-container fixed z-50 w-full transition-all" id="navigation-sticky-placeholder">
         <!-- DO NOT DELETE ME -->
     </div>
     <header class="mb-10 pt-10">
         <!-- mobile controller layout -->
         <nav id="" x-data="mobile_controller"
-            class="transition-all duration-300 ease-out fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
+            class="fixed bottom-0 z-30 flex h-20 w-full flex-col transition-all duration-300 ease-out lg:hidden">
             <div x-show="isOpen" style="display: none" class="relative h-full w-full overflow-hidden bg-white"
                 x-transition.delay.150ms>
                 <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
@@ -31,16 +30,16 @@
                     <div class="mt-10 flex flex-col items-center">
                         <div class="relative">
                             <div
-                                class="absolute w-full h-full bg-gradient-radial from-[#f4f4f4]  to-transparent top-0 left-0 scale-150">
+                                class="absolute top-0 left-0 h-full w-full scale-150 bg-gradient-radial from-[#f4f4f4] to-transparent">
                             </div>
                             <img class="relative" src="img/logo-with-text.svg" />
                         </div>
-                        <h3 class="text-xl font-bold text-primery-dark mt-3">
+                        <h3 class="mt-3 text-xl font-bold text-primery-dark">
                             !!! رویاهات رو تور کن
                         </h3>
 
                         <button x-show="subMenu.length > 0" x-transition
-                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold mt-7 text-secondary-dark transition-all"
+                            class="flex-center mt-7 h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold text-secondary-dark transition-all"
                             @click="back">
                             بازگشت به منوی قبلی
                         </button>
@@ -100,8 +99,8 @@
 
                     <!-- call btn -->
                     <a href="tel:+982143000030"
-                        class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16  rotate-45 transform rounded-xl bg-primery">
-                        <img src="img/controll/call.svg" class=" absolute cursor-pointer rotate-45" />
+                        class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16 rotate-45 transform rounded-xl bg-primery">
+                        <img src="img/controll/call.svg" class="absolute rotate-45 cursor-pointer" />
                     </a>
                 </div>
                 <div aria-hidden="true" class="absolute top-0 z-10 flex w-full justify-center overflow-hidden">
@@ -155,15 +154,14 @@
                     class="relative z-20 mx-auto hidden flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm md:flex">
                     <div class="flex w-auto justify-between lg:w-full">
                         <a href="tel:02188319191"
-                            class="flex-center flex-0 flex-shrink-0 w-8 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
+                            class="flex-center flex-0 w-8 flex-shrink-0 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
                             <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
                             <span class="mx-2 hidden whitespace-nowrap text-sm tracking-wider lg:block">
                                 ۰۲۱-۳۴۵۶۴۸
                             </span>
                         </a>
 
-                        <div class="menu-top_menu-container w-full hidden lg:flex flex-col" ref="menuContainer">
-
+                        <div class="menu-top_menu-container hidden w-full flex-col lg:flex" ref="menuContainer">
                             <ul id="menu-top_menu" class="menu">
                                 <li class="menu-item">
                                     <a href="#">خانه
@@ -468,7 +466,7 @@
                     </div>
 
                     <img src="./img/logo76.png" id="navigation__bisanseir-logo"
-                        class="w-9 object-contain bi-filiplogo-animation" alt="bisanseir-logo" />
+                        class="bi-filiplogo-animation w-9 object-contain" alt="bisanseir-logo" />
 
                     <div @click="taggleMobileMenu" class="cursor-pointer lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -503,10 +501,10 @@
                         </div>
 
                         <div class="relative flex flex-col rounded-3xl bg-white" style="
-                            max-height: calc(
-                                100% - 97px
-                            );
-                        " dir="rtl">
+									max-height: calc(
+										100% - 97px
+									);
+								" dir="rtl">
                             <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
                                 <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
                                     <img src="svg/chevron-rigth.svg" alt="" />
@@ -535,18 +533,39 @@
         </div>
     </header>
 
-    <main id="main" class="container relative mx-auto flex flex-col gap-6 lg:flex-row" dir="rtl">
-        <div class="mb-12 w-full ">
-            <div>
-                <div class="text-xl font-bold text-primery-dark mb-2 sm:hidden">
+    <main id="main" class="container relative mx-auto" dir="rtl">
+        <div class="flex justify-center sm:justify-start">
+            <span class="breadcrumb inline-flex items-center gap-2 rounded-lg bg-white py-1 px-2">
+                <!-- loop over breadcrumb items : the first element dosent need breadcrumb__item class -->
+                <a href="" class="flex-center breadcrumb__peer gap-2">
+                    بیسانسیر
+                </a>
+                <a href="" class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
+                    تور
+                </a>
+                <a href="" class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
+                    ترکیه
+                </a>
+                <span class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
+                    استانبول
+                </span>
+            </span>
+        </div>
+
+        <div class="mb-12 mt-3 flex w-full flex-col lg:flex-row">
+            <div class="w-full">
+                <div class="mb-2 text-xl font-bold text-primery-dark sm:hidden">
                     سوالات متداول
                 </div>
 
-                <div class="mb-5 flex items-center gap-6 bg-white p-6 shadow-lg rounded-3xl">
-                    <span class="text-xl font-bold text-primery-dark hidden sm:block">
+                <div class="bi-shadow-sm mb-5 flex items-center gap-6 rounded-3xl bg-white p-6">
+                    <span class="hidden flex-shrink-0 text-xl font-bold text-primery-dark sm:block">
                         سوالات متداول
                     </span>
-                    <input class="text-xl w-full" type="text" placeholder="نام کشور مورد نظر را وارد کنید ..." />
+                    <input class="w-full text-xl" type="text" placeholder="سوال خود را بنویسید ... " />
                     <div
                         class="mr-auto flex flex-shrink-0 cursor-pointer gap-3 rounded-3xl bg-primery px-4 py-2 hover:bg-yellow-200">
                         <img src="svg/magnifier.svg" alt="" />
@@ -554,282 +573,460 @@
                     </div>
                 </div>
 
-
-                <div class="text-secondary-dark flex gap-4 flex-wrap">
+                <div class="flex flex-wrap gap-4 text-secondary-dark">
                     <span data-category-id="0"
-                        class="py-2 px-4 shadow-lg cursor-pointer hover:bg-gray-100 rounded-3xl bg-slate-200">
+                        class="cursor-pointer rounded-3xl bg-slate-200 py-2 px-4 shadow-lg hover:bg-gray-100">
                         خرید
                     </span>
                     <span data-category-id="1"
-                        class="py-2 px-4 shadow-lg cursor-pointer hover:bg-gray-100 rounded-3xl bg-white">
+                        class="cursor-pointer rounded-3xl bg-white py-2 px-4 shadow-lg hover:bg-gray-100">
                         پشتیبانی
                     </span>
                     <span data-category-id="2"
-                        class="py-2 px-4 shadow-lg cursor-pointer hover:bg-gray-100 rounded-3xl bg-white">
+                        class="cursor-pointer rounded-3xl bg-white py-2 px-4 shadow-lg hover:bg-gray-100">
                         استرداد
                     </span>
                     <span data-category-id="3"
-                        class="py-2 px-4 shadow-lg cursor-pointer hover:bg-gray-100 rounded-3xl bg-white">
+                        class="cursor-pointer rounded-3xl bg-white py-2 px-4 shadow-lg hover:bg-gray-100">
                         شرایط تور اقساط
                     </span>
                     <span data-category-id="4"
-                        class="py-2 px-4 shadow-lg cursor-pointer hover:bg-gray-100 rounded-3xl bg-white">
+                        class="cursor-pointer rounded-3xl bg-white py-2 px-4 shadow-lg hover:bg-gray-100">
                         ویزا
                     </span>
-
                 </div>
 
                 <div data-content="0">
-                    <h2 class="text-xl font-bold text-primery-dark mt-10 mb-6">خرید</h2>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال اول</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <h2 class="mt-10 mb-6 text-xl font-bold text-primery-dark">
+                        خرید
+                    </h2>
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">
+                            حداقل اعتبار مورد نیاز پاسپورت
+                            برای سفرهای خارجی چقدر است؟
+                        </h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال دوم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">
+                            برای کودکان از چه سنی تست PCR
+                            پرواز ضروری است؟
+                        </h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال سوم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">
+                            مدت زمان اعتبار گواهی تست منفی
+                            PCR در زمان ورود به کشور مقصد
+                            چگونه است؟
+                        </h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال چهارم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">
+                            استرداد پروازهای سیستمی به چه
+                            صورت میباشد؟
+                        </h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
 
                     <div class="flex-center mt-8">
-                        <button
-                            class="text-secondary-dark py-2 px-4 rounded-3xl bg-white shadow-md hover:bg-gray-100">سوالات
-                            بیشتر</button>
+                        <button class="rounded-3xl bg-white py-2 px-4 text-secondary-dark shadow-md hover:bg-gray-100">
+                            سوالات بیشتر
+                        </button>
                     </div>
                 </div>
 
                 <div data-content="1">
-                    <h2 class="text-xl font-bold text-primery-dark mt-10 mb-6">پشتیبانی</h2>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال اول</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <h2 class="mt-10 mb-6 text-xl font-bold text-primery-dark">
+                        پشتیبانی
+                    </h2>
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">سوال اول</h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال دوم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">سوال دوم</h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال سوم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">سوال سوم</h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال چهارم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">
+                            سوال چهارم
+                        </h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
 
                     <div class="flex-center mt-8">
-                        <button
-                            class="text-secondary-dark py-2 px-4 rounded-3xl bg-white shadow-md hover:bg-gray-100">سوالات
-                            بیشتر</button>
+                        <button class="rounded-3xl bg-white py-2 px-4 text-secondary-dark shadow-md hover:bg-gray-100">
+                            سوالات بیشتر
+                        </button>
                     </div>
                 </div>
 
                 <div data-content="2">
-                    <h2 class="text-xl font-bold text-primery-dark mt-10 mb-6">استرداد</h2>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال اول</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <h2 class="mt-10 mb-6 text-xl font-bold text-primery-dark">
+                        استرداد
+                    </h2>
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">سوال اول</h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال دوم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">سوال دوم</h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال سوم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">سوال سوم</h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال چهارم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">
+                            سوال چهارم
+                        </h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
 
                     <div class="flex-center mt-8">
-                        <button
-                            class="text-secondary-dark py-2 px-4 rounded-3xl bg-white shadow-md hover:bg-gray-100">سوالات
-                            بیشتر</button>
+                        <button class="rounded-3xl bg-white py-2 px-4 text-secondary-dark shadow-md hover:bg-gray-100">
+                            سوالات بیشتر
+                        </button>
                     </div>
                 </div>
 
                 <div data-content="3">
-                    <h2 class="text-xl font-bold text-primery-dark mt-10 mb-6">شرایط تور اقساط</h2>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال اول</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <h2 class="mt-10 mb-6 text-xl font-bold text-primery-dark">
+                        شرایط تور اقساط
+                    </h2>
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">سوال اول</h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال دوم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">سوال دوم</h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال سوم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">سوال سوم</h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
-                    <div class="px-12 py-6 shadow-md rounded-3xl mb-6">
-                        <h4 class="text-lg mb-4">سوال چهارم</h4>
-                        <p class="leading-7 text-base">
-                            لورم ایپسوم یا طرح‌نما (به انگلیسی: Lorem ipsum) به متنی آزمایشی و بی‌معنی در صنعت چاپ،
-                            صفحه‌آرایی و طراحی گرافیک گفته می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی
-                            برای پر کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده می نماید، تا از
-                            نظر گرافیکی نشانگر چگونگی نوع و اندازه فونت و ظاهر متن باشد. معمولا طراحان گرافیک برای
-                            صفحه‌آرایی، نخست از متن‌های آزمایشی و بی‌معنی استفاده
+                    <div class="bi-shadow-sm mb-6 rounded-3xl px-12 py-6">
+                        <h4 class="mb-4 text-lg">
+                            سوال چهارم
+                        </h4>
+                        <p class="text-base leading-7">
+                            لورم ایپسوم یا طرح‌نما (به
+                            انگلیسی: Lorem ipsum) به متنی
+                            آزمایشی و بی‌معنی در صنعت چاپ،
+                            صفحه‌آرایی و طراحی گرافیک گفته
+                            می‌شود. طراح گرافیک از این متن
+                            به عنوان عنصری از ترکیب بندی
+                            برای پر کردن صفحه و ارایه اولیه
+                            شکل ظاهری و کلی طرح سفارش گرفته
+                            شده استفاده می نماید، تا از نظر
+                            گرافیکی نشانگر چگونگی نوع و
+                            اندازه فونت و ظاهر متن باشد.
+                            معمولا طراحان گرافیک برای
+                            صفحه‌آرایی، نخست از متن‌های
+                            آزمایشی و بی‌معنی استفاده
                         </p>
                     </div>
 
                     <div class="flex-center mt-8">
-                        <button
-                            class="text-secondary-dark py-2 px-4 rounded-3xl bg-white shadow-md hover:bg-gray-100">سوالات
-                            بیشتر</button>
+                        <button class="rounded-3xl bg-white py-2 px-4 text-secondary-dark shadow-md hover:bg-gray-100">
+                            سوالات بیشتر
+                        </button>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
-
     </main>
 
-    <div class="flex-center " style="height: 24rem">...gap ( delete me later )</div>
-    <script src="js/commons/utils.js"> </script>
+    <div class="flex-center" style="height: 24rem">
+        ...gap ( delete me later )
+    </div>
+    <script src="js/commons/utils.js"></script>
     <script src="js/components/navbar.js"></script>
     <script src="js/components/mobile-controller.js"></script>
     <script>
-
-
         class Tabs {
             contents = document.querySelectorAll("[data-content]");
             tabs = document.querySelectorAll("[data-category-id]");
             activeClassList = "bg-slate-200";
-            selectedId
+            selectedId;
 
             constructor() {
-
                 this.contents.forEach((content) => {
                     content.style.display = "none";
-                })
+                });
 
                 this.tabs.forEach((tabPill, index) => {
                     if (index === 0) {
-                        const catid = tabPill.dataset.categoryId;
-                        const content = document.querySelector(`[data-content="${catid}"]`);
+                        const catid =
+                            tabPill.dataset.categoryId;
+                        const content =
+                            document.querySelector(
+                                `[data-content="${catid}"]`
+                            );
                         if (content) {
-                            content.style.display = "block"
+                            content.style.display = "block";
                         } else {
-                            this.contents[0].style.display = 'block'
-                            this._clearAllTabPills()
+                            this.contents[0].style.display =
+                                "block";
+                            this._clearAllTabPills();
 
                             document
-                                .querySelector("[data-category-id='" + this.contents[0].dataset.content + "']")
-                                .classList
-                                .add(this.activeClassList)
+                                .querySelector(
+                                    "[data-category-id='" +
+                                    this
+                                        .contents[0]
+                                        .dataset
+                                        .content +
+                                    "']"
+                                )
+                                .classList.add(
+                                    this.activeClassList
+                                );
                         }
                     }
 
-                    tabPill.addEventListener('click', (el) => {
+                    tabPill.addEventListener("click", (el) => {
+                        this.selectedId =
+                            el.target.dataset.categoryId;
+                        this._clearAllTabPills();
+                        el.target.classList.add(
+                            this.activeClassList
+                        );
 
-                        this.selectedId = el.target.dataset.categoryId;
-                        this._clearAllTabPills()
-                        el.target.classList.add(this.activeClassList)
-
-
-                        this.contents.forEach(i => {
+                        this.contents.forEach((i) => {
                             // if (i.dataset.content === this.selectedId) {
                             //     this._showElement(i)
                             // } else {
@@ -837,46 +1034,43 @@
 
                             // }
                             i.style.display =
-                                (i.dataset.content === this.selectedId) ?
-                                    "block" :
-                                    "none"
-                        })
-                    })
-                })
-
-
+                                i.dataset.content ===
+                                    this.selectedId
+                                    ? "block"
+                                    : "none";
+                        });
+                    });
+                });
             }
 
             _clearAllTabPills() {
-                this.tabs.forEach(j => j.classList.remove("bg-slate-200"))
+                this.tabs.forEach((j) =>
+                    j.classList.remove("bg-slate-200")
+                );
             }
-
 
             _hideElement(element, timeout = 400, callback) {
                 element.style.transition = `all ${timeout}ms ease`;
-                element.style.transform = "translate3d(50px, 0px, 0px)";
+                element.style.transform =
+                    "translate3d(50px, 0px, 0px)";
                 element.style.opacity = "0";
 
                 setTimeout(() => {
                     element.style.display = "none";
-                    if (callback)
-                        callback()
-
+                    if (callback) callback();
                 }, timeout);
             }
 
             _showElement(element, timeout) {
                 element.style.display = "block";
                 element.style.transition = `all ${timeout}ms ease`;
-                element.style.transform = "translate3d(0px, 0px, 0px)";
+                element.style.transform =
+                    "translate3d(0px, 0px, 0px)";
                 element.style.opacity = "1";
             }
         }
 
-
-        new Tabs()
-
-
+        new Tabs();
     </script>
 </body>
 

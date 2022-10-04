@@ -1,134 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>page 16</title>
+		<link rel="stylesheet" href="css/output.css" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>page 16</title>
-    <link rel="stylesheet" href="css/output.css" />
+		<script defer src="lib/js/alpine.js"></script>
+	</head>
 
-    <script defer src="lib/js/alpine.js"></script>
-</head>
-
-<body>
-
-    <div class="fixed w-full z-50 transition-all nav-container" id="navigation-sticky-placeholder">
-        <!-- DO NOT DELETE ME -->
-    </div>
-    <header class="mb-10 pt-10">
-        <!-- mobile controller layout -->
-        <nav id="" x-data="mobile_controller"
-            class="transition-all duration-300 ease-out fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
-            <div x-show="isOpen" style="display: none" class="relative h-full w-full overflow-hidden bg-white"
-                x-transition.delay.150ms>
-                <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+	<body>
+		<div
+			class="nav-container fixed z-50 w-full transition-all"
+			id="navigation-sticky-placeholder"
+		>
+			<!-- DO NOT DELETE ME -->
+		</div>
+		<header class="mb-10 pt-10">
+			<!-- mobile controller layout -->
+			<nav
+				id=""
+				x-data="mobile_controller"
+				class="fixed bottom-0 z-30 flex h-20 w-full flex-col transition-all duration-300 ease-out lg:hidden"
+			>
+				<div
+					x-show="isOpen"
+					style="display: none"
+					class="relative h-full w-full overflow-hidden bg-white"
+					x-transition.delay.150ms
+				>
+					<div
+						class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden"
+						style="
 							background: url(img/backgrounds/Group.png)
 								center center/cover;
 							background-color: #f0f0f0;
-						"></div>
-                <div class="container relative mx-auto flex h-full flex-col">
-                    <div class="mt-10 flex flex-col items-center">
-                        <div class="relative">
-                            <div
-                                class="absolute w-full h-full bg-gradient-radial from-[#f4f4f4]  to-transparent top-0 left-0 scale-150">
-                            </div>
-                            <img class="relative" src="img/logo-with-text.svg" />
-                        </div>
-                        <h3 class="text-xl font-bold text-primery-dark mt-3">
-                            !!! رویاهات رو تور کن
-                        </h3>
+						"
+					></div>
+					<div
+						class="container relative mx-auto flex h-full flex-col"
+					>
+						<div
+							class="mt-10 flex flex-col items-center"
+						>
+							<div class="relative">
+								<div
+									class="absolute top-0 left-0 h-full w-full scale-150 bg-gradient-radial from-[#f4f4f4] to-transparent"
+								></div>
+								<img
+									class="relative"
+									src="img/logo-with-text.svg"
+								/>
+							</div>
+							<h3
+								class="mt-3 text-xl font-bold text-primery-dark"
+							>
+								!!! رویاهات رو تور کن
+							</h3>
 
-                        <button x-show="subMenu.length > 0" x-transition
-                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold mt-7 text-secondary-dark transition-all"
-                            @click="back">
-                            بازگشت به منوی قبلی
-                        </button>
-                    </div>
-                    <div class="bi-scrollbar mt-4 h-full overflow-auto">
-                        <!-- info: animatin wrapper -->
-                        <div class="grid grid-cols-3 gap-2 px-4 text-center sm:grid-cols-5 md:grid-cols-6"
-                            x-show="animationIndex" x-transition:enter="x-transition-enter"
-                            x-transition:enter-start="x-transition-enter-start"
-                            x-transition:enter-end="x-transition-enter-end" x-transition:leave="x-transition-leave"
-                            x-transition:leave-start="x-transition-leave-start "
-                            x-transition:leave-end="x-transition-leave-end">
-                            <template x-for="({name,link,icon,hasChildren},inx) in ch" :key="inx">
-                                <div :style="{ '--count' : inx }"
-                                    @click="hasChildren ? changeSubMenu(inx) : openlink(link) "
-                                    class="child-item flex aspect-square cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl bg-gray-200"
-                                    x-transition.fade>
-                                    <span x-show="icon" x-html="icon" class="flex-center bi-svgfull aspect-square w-8">
-                                    </span>
-                                    <span class="text-center font-bold text-secondary-dark" x-text="name"></span>
-                                </div>
-                            </template>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="js-controller__bar bi-shadow relative mt-auto h-16 transition-all">
-                <div class="relative z-20 flex justify-center gap-16 text-secondary-dark">
-                    <div class="flex">
-                        <!-- NOTE : CHANGE THIS LINKS  -->
-                        <button @click="openlink('/blog')"
-                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
-                            <img src="img/controll/blog.svg" />
-                            <span> بلاگ </span>
-                        </button>
-                        <!-- NOTE : CHANGE THIS LINKS  -->
-                        <button @click="openlink('/search')"
-                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
-                            <img src="img/controll/search.svg" />
-                            <span> جستجو </span>
-                        </button>
-                    </div>
+							<button
+								x-show="subMenu.length > 0"
+								x-transition
+								class="flex-center mt-7 h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold text-secondary-dark transition-all"
+								@click="back"
+							>
+								بازگشت به منوی قبلی
+							</button>
+						</div>
+						<div
+							class="bi-scrollbar mt-4 h-full overflow-auto"
+						>
+							<!-- info: animatin wrapper -->
+							<div
+								class="grid grid-cols-3 gap-2 px-4 text-center sm:grid-cols-5 md:grid-cols-6"
+								x-show="animationIndex"
+								x-transition:enter="x-transition-enter"
+								x-transition:enter-start="x-transition-enter-start"
+								x-transition:enter-end="x-transition-enter-end"
+								x-transition:leave="x-transition-leave"
+								x-transition:leave-start="x-transition-leave-start "
+								x-transition:leave-end="x-transition-leave-end"
+							>
+								<template
+									x-for="({name,link,icon,hasChildren},inx) in ch"
+									:key="inx"
+								>
+									<div
+										:style="{ '--count' : inx }"
+										@click="hasChildren ? changeSubMenu(inx) : openlink(link) "
+										class="child-item flex aspect-square cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl bg-gray-200"
+										x-transition.fade
+									>
+										<span
+											x-show="icon"
+											x-html="icon"
+											class="flex-center bi-svgfull aspect-square w-8"
+										>
+										</span>
+										<span
+											class="text-center font-bold text-secondary-dark"
+											x-text="name"
+										></span>
+									</div>
+								</template>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					class="js-controller__bar bi-shadow relative mt-auto h-16 transition-all"
+				>
+					<div
+						class="relative z-20 flex justify-center gap-16 text-secondary-dark"
+					>
+						<div class="flex">
+							<!-- NOTE : CHANGE THIS LINKS  -->
+							<button
+								@click="openlink('/blog')"
+								class="flex aspect-square w-20 flex-col items-center justify-center gap-1"
+							>
+								<img
+									src="img/controll/blog.svg"
+								/>
+								<span> بلاگ </span>
+							</button>
+							<!-- NOTE : CHANGE THIS LINKS  -->
+							<button
+								@click="openlink('/search')"
+								class="flex aspect-square w-20 flex-col items-center justify-center gap-1"
+							>
+								<img
+									src="img/controll/search.svg"
+								/>
+								<span> جستجو </span>
+							</button>
+						</div>
 
-                    <div class="flex">
-                        <button @click="taggleMobileMenu"
-                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
-                            <img src="img/controll/menu.svg" />
-                            <span> فهرست </span>
-                        </button>
-                        <!-- NOTE : HOME PAGE LINK HERE -->
-                        <button @click="openlink('/')"
-                            class="flex aspect-square w-20 flex-col items-center justify-center gap-1">
-                            <img src="img/controll/home.svg" />
-                            <span> خانه </span>
-                        </button>
-                    </div>
+						<div class="flex">
+							<button
+								@click="taggleMobileMenu"
+								class="flex aspect-square w-20 flex-col items-center justify-center gap-1"
+							>
+								<img
+									src="img/controll/menu.svg"
+								/>
+								<span> فهرست </span>
+							</button>
+							<!-- NOTE : HOME PAGE LINK HERE -->
+							<button
+								@click="openlink('/')"
+								class="flex aspect-square w-20 flex-col items-center justify-center gap-1"
+							>
+								<img
+									src="img/controll/home.svg"
+								/>
+								<span> خانه </span>
+							</button>
+						</div>
 
-                    <!-- call btn -->
-                    <a href="tel:+982143000030"
-                        class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16  rotate-45 transform rounded-xl bg-primery">
-                        <img src="img/controll/call.svg" class=" absolute cursor-pointer rotate-45" />
-                    </a>
-                </div>
-                <div aria-hidden="true" class="absolute top-0 z-10 flex w-full justify-center overflow-hidden">
-                    <svg style="transform: translateY(-25px)" width="375" height="89" viewBox="0 0 375 89" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g filter="url(#filter0_d_2657_2667)">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M138.307 31.4436C134.181 27.3178 128.585 25 122.75 25H0V89H375V25H253.25C247.415 25 241.819 27.3179 237.693 31.4437L203.556 65.5807C194.965 74.1723 181.035 74.1723 172.444 65.5807L138.307 31.4436Z"
-                                fill="white" />
-                        </g>
-                        <defs>
-                            <filter id="filter0_d_2657_2667" x="-20" y="0" width="415" height="104"
-                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                <feColorMatrix in="SourceAlpha" type="matrix"
-                                    values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                <feOffset dy="-5" />
-                                <feGaussianBlur stdDeviation="10" />
-                                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
-                                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2657_2667" />
-                                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2657_2667"
-                                    result="shape" />
-                            </filter>
-                        </defs>
-                    </svg>
-                </div>
-                <div aria-hidden="true" class="absolute top-0 h-full w-full bg-white" style="
+						<!-- call btn -->
+						<a
+							href="tel:+982143000030"
+							class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16 rotate-45 transform rounded-xl bg-primery"
+						>
+							<img
+								src="img/controll/call.svg"
+								class="absolute rotate-45 cursor-pointer"
+							/>
+						</a>
+					</div>
+					<div
+						aria-hidden="true"
+						class="absolute top-0 z-10 flex w-full justify-center overflow-hidden"
+					>
+						<svg
+							style="transform: translateY(-25px)"
+							width="375"
+							height="89"
+							viewBox="0 0 375 89"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<g filter="url(#filter0_d_2657_2667)">
+								<path
+									fill-rule="evenodd"
+									clip-rule="evenodd"
+									d="M138.307 31.4436C134.181 27.3178 128.585 25 122.75 25H0V89H375V25H253.25C247.415 25 241.819 27.3179 237.693 31.4437L203.556 65.5807C194.965 74.1723 181.035 74.1723 172.444 65.5807L138.307 31.4436Z"
+									fill="white"
+								/>
+							</g>
+							<defs>
+								<filter
+									id="filter0_d_2657_2667"
+									x="-20"
+									y="0"
+									width="415"
+									height="104"
+									filterUnits="userSpaceOnUse"
+									color-interpolation-filters="sRGB"
+								>
+									<feFlood
+										flood-opacity="0"
+										result="BackgroundImageFix"
+									/>
+									<feColorMatrix
+										in="SourceAlpha"
+										type="matrix"
+										values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+										result="hardAlpha"
+									/>
+									<feOffset dy="-5" />
+									<feGaussianBlur
+										stdDeviation="10"
+									/>
+									<feColorMatrix
+										type="matrix"
+										values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+									/>
+									<feBlend
+										mode="normal"
+										in2="BackgroundImageFix"
+										result="effect1_dropShadow_2657_2667"
+									/>
+									<feBlend
+										mode="normal"
+										in="SourceGraphic"
+										in2="effect1_dropShadow_2657_2667"
+										result="shape"
+									/>
+								</filter>
+							</defs>
+						</svg>
+					</div>
+					<div
+						aria-hidden="true"
+						class="absolute top-0 h-full w-full bg-white"
+						style="
 							clip-path: polygon(
 								50% 92%,
 								66% 0,
@@ -138,544 +249,1042 @@
 								0 0,
 								34% 0
 							);
-						"></div>
-            </div>
-        </nav>
-        <!-- TRAVEL TEXTURE -->
-        <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
+						"
+					></div>
+				</div>
+			</nav>
+			<!-- TRAVEL TEXTURE -->
+			<div
+				class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden"
+				style="
 					background: url(svg/travel-textture/one.svg)
 						center center/cover;
 					background-color: #f0f0f0;
-				"></div>
+				"
+			></div>
 
-        <div id="navigation-placeholder" class="nav-container">
-            <!-- NOTE : maybe you need to remove ' hidden lg:block ' in next revition -->
-            <nav id="navigation" x-data="navbar" class="container mx-auto hidden overflow-x-clip lg:block">
-                <div id="navigation__bar"
-                    class="relative z-20 mx-auto hidden flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm md:flex">
-                    <div class="flex w-auto justify-between lg:w-full">
-                        <a href="tel:02188319191"
-                            class="flex-center flex-0 flex-shrink-0 w-8 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
-                            <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
-                            <span class="mx-2 hidden whitespace-nowrap text-sm tracking-wider lg:block">
-                                ۰۲۱-۳۴۵۶۴۸
-                            </span>
-                        </a>
+			<div id="navigation-placeholder" class="nav-container">
+				<!-- NOTE : maybe you need to remove ' hidden lg:block ' in next revition -->
+				<nav
+					id="navigation"
+					x-data="navbar"
+					class="container mx-auto hidden overflow-x-clip lg:block"
+				>
+					<div
+						id="navigation__bar"
+						class="relative z-20 mx-auto hidden flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm md:flex"
+					>
+						<div
+							class="flex w-auto justify-between lg:w-full"
+						>
+							<a
+								href="tel:02188319191"
+								class="flex-center flex-0 w-8 flex-shrink-0 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none"
+							>
+								<img
+									src="./svg/phone.svg"
+									class="h-6 w-6 object-contain py-1"
+									alt=""
+								/>
+								<span
+									class="mx-2 hidden whitespace-nowrap text-sm tracking-wider lg:block"
+								>
+									۰۲۱-۳۴۵۶۴۸
+								</span>
+							</a>
 
-                        <div class="menu-top_menu-container w-full hidden lg:flex flex-col" ref="menuContainer">
+							<div
+								class="menu-top_menu-container hidden w-full flex-col lg:flex"
+								ref="menuContainer"
+							>
+								<ul
+									id="menu-top_menu"
+									class="menu"
+								>
+									<li class="menu-item">
+										<a href="#"
+											>خانه
+											<i
+												class="hidden"
+											>
+												<img
+													src="svg/mobile-controller/tiket.svg"
+													alt="ticket"
+												/>
+											</i>
+										</a>
+									</li>
+									<li
+										class="menu-item menu-item-has-children"
+									>
+										<a href="#"
+											>تور
+											<i
+												class="hidden"
+											>
+												<img
+													src="svg/mobile-controller/tiket.svg"
+													alt="ticket"
+												/>
+											</i>
+										</a>
+										<ul
+											class="sub-menu"
+										>
+											<li
+												class="menu-item"
+											>
+												<a
+													href="#"
+												>
+													bitumen
+													penetration
+													grade
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+											<li
+												class="menu-item"
+											>
+												<a
+													href="#"
+													>performance
+													grade
+													bitumen
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+											<li
+												class="menu-item menu-item-has-children"
+											>
+												<a
+													href="#"
+													>Bitumen
+													Cutback
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+												<ul
+													class="sub-menu"
+												>
+													<li
+														class="menu-item"
+													>
+														<a
+															href="#"
+															>Cutback
+															bitumen
+															slow
+															curing
+															(SC)
 
-                            <ul id="menu-top_menu" class="menu">
-                                <li class="menu-item">
-                                    <a href="#">خانه
-                                        <i class="hidden">
-                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">تور
-                                        <i class="hidden">
-                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                        </i>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item">
-                                            <a href="#">
-                                                bitumen
-                                                penetration
-                                                grade
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">performance
-                                                grade
-                                                bitumen
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item menu-item-has-children">
-                                            <a href="#">Bitumen
-                                                Cutback
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item">
-                                                    <a href="#">Cutback
-                                                        bitumen
-                                                        slow
-                                                        curing
-                                                        (SC)
+															<i
+																class="hidden"
+															>
+																<img
+																	src="svg/mobile-controller/tiket.svg"
+																	alt="ticket"
+																/>
+															</i>
+														</a>
+													</li>
+													<li
+														class="menu-item"
+													>
+														<a
+															href="#"
+															>Cutback
+															bitumen
+															medium
+															curing
+															(MC)
+															<i
+																class="hidden"
+															>
+																<img
+																	src="svg/mobile-controller/tiket.svg"
+																	alt="ticket"
+																/>
+															</i>
+														</a>
+													</li>
+													<li
+														class="menu-item"
+													>
+														<a
+															href="#"
+															>Rapid
+															curing
+															cutback
+															bitumen
+															(RC)
+															<i
+																class="hidden"
+															>
+																<img
+																	src="svg/mobile-controller/tiket.svg"
+																	alt="ticket"
+																/>
+															</i>
+														</a>
+													</li>
+												</ul>
+											</li>
+											<li
+												class="menu-item menu-item-has-children"
+											>
+												<a
+													href="#"
+													>bitumen
+													emulsion</a
+												>
+												<ul
+													class="sub-menu"
+												>
+													<li
+														class="menu-item"
+													>
+														<a
+															href="#"
+															>Bitumen
+															Emulsion
+															(BE)
+															<i
+																class="hidden"
+															>
+																<img
+																	src="svg/mobile-controller/tiket.svg"
+																	alt="ticket"
+																/>
+															</i>
+														</a>
+													</li>
+													<li
+														class="menu-item"
+													>
+														<a
+															href="#"
+															>Cationic
+															Emulsions
+															<i
+																class="hidden"
+															>
+																<img
+																	src="svg/mobile-controller/tiket.svg"
+																	alt="ticket"
+																/>
+															</i>
+														</a>
+													</li>
+													<li
+														class="menu-item"
+													>
+														<a
+															href="#"
+															>Anionic
+															Emulsions
+															<i
+																class="hidden"
+															>
+																<img
+																	src="svg/mobile-controller/tiket.svg"
+																	alt="ticket"
+																/>
+															</i>
+														</a>
+													</li>
+												</ul>
+											</li>
+											<li
+												class="menu-item"
+											>
+												<a
+													href="#"
+													>Mulch
+													Emulsified
+													Bitumen
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+											<li
+												class="menu-item"
+											>
+												<a
+													href="#"
+													>Solvent
+													Base
+													Primer
 
-                                                        <i class="hidden">
-                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                        </i>
-                                                    </a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="#">Cutback
-                                                        bitumen
-                                                        medium
-                                                        curing
-                                                        (MC)
-                                                        <i class="hidden">
-                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                        </i>
-                                                    </a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="#">Rapid
-                                                        curing
-                                                        cutback
-                                                        bitumen
-                                                        (RC)
-                                                        <i class="hidden">
-                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                        </i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item menu-item-has-children">
-                                            <a href="#">bitumen
-                                                emulsion</a>
-                                            <ul class="sub-menu">
-                                                <li class="menu-item">
-                                                    <a href="#">Bitumen
-                                                        Emulsion
-                                                        (BE)
-                                                        <i class="hidden">
-                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                        </i>
-                                                    </a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="#">Cationic
-                                                        Emulsions
-                                                        <i class="hidden">
-                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                        </i>
-                                                    </a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="#">Anionic
-                                                        Emulsions
-                                                        <i class="hidden">
-                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                        </i>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">Mulch
-                                                Emulsified
-                                                Bitumen
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">Solvent
-                                                Base
-                                                Primer
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+											<li
+												class="menu-item"
+											>
+												<a
+													href="#"
+													>Polymer
+													Modified
+													Emulsion
+													(PME)
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+											<li
+												class="menu-item"
+											>
+												<a
+													href="#"
+													>Ready
+													Mixed
+													Asphalt
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+											<li
+												class="menu-item"
+											>
+												<a
+													href="#"
+													>Bituplast
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+											<li
+												class="menu-item"
+											>
+												<a
+													href="#"
+													>Bitumen
+													Base
+													Waterproofing
+													Mortar
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+											<li
+												class="menu-item"
+											>
+												<a
+													href="#"
+													>Bituco
+													Organic
+													Cleaner
+													(BOC):
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+										</ul>
+									</li>
+									<li
+										class="menu-item menu-item-has-children"
+									>
+										<a href="#"
+											>ﻫﺘﻞ ﻫﺎ
+											<i
+												class="hidden"
+											>
+												<img
+													src="svg/mobile-controller/tiket.svg"
+													alt="ticket"
+												/>
+											</i>
+										</a>
+										<ul
+											class="sub-menu"
+										>
+											<li
+												class="menu-item menu-item-object-post"
+											>
+												<a
+													href="#"
+													>Standardizing
+													Bodies
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+											<li
+												class="menu-item menu-item-object-post"
+											>
+												<a
+													href="#"
+													>Family
+													of
+													Bitumenous
+													Binders
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
+											</li>
+											<li
+												class="menu-item"
+											>
+												<a
+													href="#"
+													>Quality
+													Control
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/> </i
+												></a>
+											</li>
+											<li
+												class="menu-item menu-item-object-post menu-item-has-children"
+											>
+												<a
+													href="#"
+													>BITUMEN
+													EMULSIONS
+													<i
+														class="hidden"
+													>
+														<img
+															src="svg/mobile-controller/tiket.svg"
+															alt="ticket"
+														/>
+													</i>
+												</a>
 
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">Polymer
-                                                Modified
-                                                Emulsion
-                                                (PME)
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">Ready
-                                                Mixed
-                                                Asphalt
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">Bituplast
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">Bitumen
-                                                Base
-                                                Waterproofing
-                                                Mortar
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">Bituco
-                                                Organic
-                                                Cleaner
-                                                (BOC):
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">ﻫﺘﻞ ﻫﺎ
-                                        <i class="hidden">
-                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                        </i>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item menu-item-object-post">
-                                            <a href="#">Standardizing
-                                                Bodies
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item menu-item-object-post">
-                                            <a href="#">Family
-                                                of
-                                                Bitumenous
-                                                Binders
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="#">Quality
-                                                Control
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" /> </i></a>
-                                        </li>
-                                        <li class="menu-item menu-item-object-post menu-item-has-children">
-                                            <a href="#">BITUMEN
-                                                EMULSIONS
-                                                <i class="hidden">
-                                                    <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                </i>
-                                            </a>
+												<ul
+													class="sub-menu"
+												>
+													<li
+														class="menu-item"
+													>
+														<a
+															href="#"
+															>Cutback
+															bitumen
+															slow
+															curing
+															(SC)
+															<i
+																class="hidden"
+															>
+																<img
+																	src="svg/mobile-controller/tiket.svg"
+																	alt="ticket"
+																/> </i
+														></a>
+													</li>
+													<li
+														class="menu-item"
+													>
+														<a
+															href="#"
+															>Cutback
+															bitumen
+															medium
+															curing
+															(MC)
+															<i
+																class="hidden"
+															>
+																<img
+																	src="svg/mobile-controller/tiket.svg"
+																	alt="ticket"
+																/> </i
+														></a>
+													</li>
+													<li
+														class="menu-item"
+													>
+														<a
+															href="#"
+															>Rapid
+															curing
+															cutback
+															bitumen
+															(RC)
+															<i
+																class="hidden"
+															>
+																<img
+																	src="svg/mobile-controller/tiket.svg"
+																	alt="ticket"
+																/> </i
+														></a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li class="menu-item">
+										<a href="#"
+											>تور اقساط
+											<i
+												class="hidden"
+											>
+												<img
+													src="svg/mobile-controller/tiket.svg"
+													alt="ticket"
+												/>
+											</i>
+										</a>
+									</li>
+									<li class="menu-item">
+										<a href="#"
+											>تور اروپا
+											<i
+												class="hidden"
+											>
+												<img
+													src="svg/mobile-controller/tiket.svg"
+													alt="ticket"
+												/>
+											</i>
+										</a>
+									</li>
+									<li class="menu-item">
+										<a href="#"
+											>ﺗﻮر ویژه
+											<i
+												class="hidden"
+											>
+												<img
+													src="svg/mobile-controller/tiket.svg"
+													alt="ticket"
+												/>
+											</i>
+										</a>
+									</li>
 
-                                            <ul class="sub-menu">
-                                                <li class="menu-item">
-                                                    <a href="#">Cutback
-                                                        bitumen
-                                                        slow
-                                                        curing
-                                                        (SC)
-                                                        <i class="hidden">
-                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                        </i></a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="#">Cutback
-                                                        bitumen
-                                                        medium
-                                                        curing
-                                                        (MC)
-                                                        <i class="hidden">
-                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                        </i></a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="#">Rapid
-                                                        curing
-                                                        cutback
-                                                        bitumen
-                                                        (RC)
-                                                        <i class="hidden">
-                                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                                        </i></a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#">تور اقساط
-                                        <i class="hidden">
-                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#">تور اروپا
-                                        <i class="hidden">
-                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#">ﺗﻮر ویژه
-                                        <i class="hidden">
-                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                        </i>
-                                    </a>
-                                </li>
+									<li class="menu-item">
+										<a href="#"
+											>ویزا
+											<i
+												class="hidden"
+											>
+												<img
+													src="svg/mobile-controller/tiket.svg"
+													alt="ticket"
+												/> </i
+										></a>
+									</li>
+									<li class="menu-item">
+										<a href="#"
+											>بلاگ
+											<i
+												class="hidden"
+											>
+												<img
+													src="svg/mobile-controller/tiket.svg"
+													alt="ticket"
+												/>
+											</i>
+										</a>
+									</li>
+									<li class="menu-item">
+										<a href="#"
+											>بلاگ1
+											<i
+												class="hidden"
+											>
+												<img
+													src="svg/mobile-controller/tiket.svg"
+													alt="ticket"
+												/>
+											</i>
+										</a>
+									</li>
+									<li class="menu-item">
+										<a
+											href="https://google.com"
+										>
+											2بلاگ
+											<i
+												class="hidden"
+											>
+												<img
+													src="svg/mobile-controller/tiket.svg"
+													alt="ticket"
+												/>
+											</i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 
-                                <li class="menu-item">
-                                    <a href="#">ویزا
-                                        <i class="hidden">
-                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" /> </i></a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#">بلاگ
-                                        <i class="hidden">
-                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="#">بلاگ1
-                                        <i class="hidden">
-                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="menu-item">
-                                    <a href="https://google.com">
-                                        2بلاگ
-                                        <i class="hidden">
-                                            <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
-                                        </i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+						<img
+							src="./img/logo76.png"
+							id="navigation__bisanseir-logo"
+							class="bi-filiplogo-animation w-9 object-contain"
+							alt="bisanseir-logo"
+						/>
 
-                    <img src="./img/logo76.png" id="navigation__bisanseir-logo"
-                        class="w-9 object-contain bi-filiplogo-animation" alt="bisanseir-logo" />
+						<div
+							@click="taggleMobileMenu"
+							class="cursor-pointer lg:hidden"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="h-6 w-6"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M4 6h16M4 12h16M4 18h16"
+								/>
+							</svg>
+						</div>
+					</div>
 
-                    <div @click="taggleMobileMenu" class="cursor-pointer lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </div>
-                </div>
+					<!-- MOBILE SECTION -->
+					<div
+						id="mobile-menu"
+						x-show="isOpen"
+						style="display: none"
+						x-transition.opacity
+					>
+						<div class="mobile-menu__overlay">
+							<div
+								class="mx-auto mt-5 flex w-full flex-grow-0 items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm"
+							>
+								<div class="flex">
+									<div
+										class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none"
+									>
+										<img
+											src="./svg/phone.svg"
+											class="h-6 w-6 object-contain py-1"
+											alt=""
+										/>
+									</div>
+								</div>
 
-                <!-- MOBILE SECTION -->
-                <div id="mobile-menu" x-show="isOpen" style="display: none" x-transition.opacity>
-                    <div class="mobile-menu__overlay">
-                        <div
-                            class="mx-auto mt-5 flex w-full flex-grow-0 items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm">
-                            <div class="flex">
-                                <div
-                                    class="flex flex-1 items-center justify-center rounded-full bg-yellow-300 p-1 text-gray-500 shadow-lg md:bg-gray-200 md:shadow-none">
-                                    <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
-                                </div>
-                            </div>
+								<img
+									src="./img/logo.png"
+									class="w-9 object-contain"
+									alt=""
+								/>
 
-                            <img src="./img/logo.png" class="w-9 object-contain" alt="" />
+								<button
+									@click="taggleMobileMenu()"
+									class="relative cursor-pointer lg:hidden"
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										class="h-6 w-6"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+									>
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M6 18L18 6M6 6l12 12"
+										/>
+									</svg>
+								</button>
+							</div>
 
-                            <button @click="taggleMobileMenu()" class="relative cursor-pointer lg:hidden">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M6 18L18 6M6 6l12 12" />
-                                </svg>
-                            </button>
-                        </div>
+							<div
+								class="relative flex flex-col rounded-3xl bg-white"
+								style="
+									max-height: calc(
+										100% - 97px
+									);
+								"
+								dir="rtl"
+							>
+								<div
+									class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl"
+								>
+									<span
+										x-show="subMenu.length"
+										class="bi-icon cursor-pointer"
+										@click="subMenu.pop()"
+									>
+										<img
+											src="svg/chevron-rigth.svg"
+											alt=""
+										/>
+									</span>
 
-                        <div class="relative flex flex-col rounded-3xl bg-white" style="
-                            max-height: calc(
-                                100% - 97px
-                            );
-                        " dir="rtl">
-                            <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
-                                <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
-                                    <img src="svg/chevron-rigth.svg" alt="" />
-                                </span>
+									<h1
+										x-text="subMenu.length ? currentSubmenu.name : 'منو' "
+									></h1>
+								</div>
 
-                                <h1 x-text="subMenu.length ? currentSubmenu.name : 'منو' "></h1>
-                            </div>
+								<ul class="bi-scrollbar w-full">
+									<template
+										x-for=" ({name,link,hasChildren},inx) in ch"
+										:key="inx"
+									>
+										<li>
+											<a
+												@click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') "
+												class=""
+											>
+												<span
+													x-text="name"
+												></span>
+												<img
+													x-show="hasChildren"
+													class="icon"
+													src="svg/chevron-left.svg"
+													x-transition
+												/>
+											</a>
+										</li>
+									</template>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- / -->
+				</nav>
+			</div>
+		</header>
 
-                            <ul class="bi-scrollbar w-full">
-                                <template x-for=" ({name,link,hasChildren},inx) in ch" :key="inx">
-                                    <li>
-                                        <a @click="hasChildren ? subMenu.push(inx) : window.open(link,'_self') "
-                                            class="">
-                                            <span x-text="name"></span>
-                                            <img x-show="hasChildren" class="icon" src="svg/chevron-left.svg"
-                                                x-transition />
-                                        </a>
-                                    </li>
-                                </template>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- / -->
-            </nav>
-        </div>
-    </header>
+		<main
+			id="main"
+			class="container relative mx-auto flex flex-col gap-3"
+			dir="rtl"
+		>
+			<!-- Breadcrumb -->
+			<div class="flex justify-center sm:justify-start">
+				<span
+					class="breadcrumb inline-flex items-center gap-2 rounded-lg bg-white py-1 px-2"
+				>
+					<!-- loop over breadcrumb items : the first element dosent need breadcrumb__item class -->
+					<a
+						href=""
+						class="flex-center breadcrumb__peer gap-2"
+					>
+						بیسانسیر
+					</a>
+					<a
+						href=""
+						class="flex-center breadcrumb__peer breadcrumb__item gap-2"
+					>
+						<img
+							src="img/tours/chav-left.svg"
+							class="breadcrumb__chevron transition-all duration-300"
+						/>
+						تور
+					</a>
+					<a
+						href=""
+						class="flex-center breadcrumb__peer breadcrumb__item gap-2"
+					>
+						<img
+							src="img/tours/chav-left.svg"
+							class="breadcrumb__chevron transition-all duration-300"
+						/>
+						ترکیه
+					</a>
+					<span
+						class="flex-center breadcrumb__peer breadcrumb__item gap-2"
+					>
+						<img
+							src="img/tours/chav-left.svg"
+							class="breadcrumb__chevron transition-all duration-300"
+						/>
+						استانبول
+					</span>
+				</span>
+			</div>
+			<h1 class="mb-3 text-2xl font-bold text-primery-dark">
+				ارتباط با ما
+			</h1>
 
-    <main id="main" class="container  mx-auto flex flex-col" dir="rtl">
-        <div class="relative flex flex-col gap-6 px-2 lg:flex-row">
+			<div class="flex flex-col gap-6">
+				<div class="relative flex flex-col gap-6 lg:flex-row">
+					<div class="w-full lg:w-1/2">
+						<div>
+							<form class="flex flex-col gap-6">
+								<div
+									class="flex flex-col gap-6 sm:flex-row sm:gap-1"
+								>
+									<div
+										class="w-full shrink-0 sm:w-1/2"
+									>
+										<div
+											class="relative"
+										>
+											<span
+												class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs"
+											>
+												نام
+											</span>
+											<div
+												class="relative overflow-hidden rounded-3xl border border-gray-400 bg-white"
+											>
+												<input
+													class="py-2 px-6 focus:placeholder:text-white"
+													type="text"
+													placeholder="علی"
+												/>
+											</div>
+										</div>
+									</div>
+									<div
+										class="w-full shrink-0 sm:w-1/2"
+									>
+										<div
+											class="relative"
+										>
+											<span
+												class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs"
+											>
+												نام
+												خانوادگی
+											</span>
+											<div
+												class="relative overflow-hidden rounded-3xl border border-gray-400 bg-white"
+											>
+												<input
+													class="py-2 px-6 focus:placeholder:text-white"
+													type="text"
+													placeholder="احمدی"
+												/>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="w-full">
+									<div class="relative">
+										<span
+											class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs"
+										>
+											موضوع
+										</span>
+										<div
+											class="relative overflow-hidden rounded-3xl border border-gray-400 bg-white"
+										>
+											<input
+												class="py-2 px-6 focus:placeholder:text-white"
+												type="text"
+												placeholder="خرید"
+											/>
+										</div>
+									</div>
+								</div>
+								<div class="w-full">
+									<div class="relative">
+										<span
+											class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs"
+										>
+											نام خانوادگی
+										</span>
+										<div
+											class="relative overflow-hidden rounded-3xl border border-gray-400 bg-white"
+										>
+											<textarea
+												class="w-full py-3 px-6 focus:placeholder:text-white focus-visible:outline-none"
+												type="text"
+												placeholder="پاسخ شما"
+												cols="30"
+												rows="7"
+											></textarea>
+										</div>
+									</div>
+								</div>
+								<div>
+									<button
+										class="inline-block rounded-3xl bg-primery px-4 py-2 font-bold text-primery-dark shadow-xl hover:bg-yellow-200"
+										type="submit"
+									>
+										ارسال
+									</button>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="w-full lg:w-1/2">
+						<div
+							class="relative flex h-72 flex-col items-center justify-center"
+						>
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12939.179951151129!2d50.981228732403565!3d35.82950540204879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2see!4v1645952091896!5m2!1sen!2see"
+								class="h-full w-full rounded-3xl opacity-80 brightness-100 grayscale filter"
+								style="border: 0"
+								allowfullscreen=""
+								loading="lazy"
+							></iframe>
+							<div
+								class="bottom-10 flex w-full flex-col items-center justify-center gap-1 sm:absolute sm:w-10/12 sm:flex-row sm:gap-4"
+							>
+								<a
+									href="#"
+									class="flex-center w-full cursor-pointer gap-2 rounded-3xl bg-white py-2 px-6 text-secondary-dark shadow-md hover:bg-slate-100 sm:w-1/2"
+								>
+									<img
+										src="svg/google-map.svg"
+										alt=""
+									/>
+									مسیریابی با ویز
+								</a>
+								<a
+									href="#"
+									class="flex-center w-full cursor-pointer gap-2 rounded-3xl bg-white py-2 px-6 text-secondary-dark shadow-md hover:bg-slate-100 sm:w-1/2"
+								>
+									<img
+										src="svg/waze.svg"
+										alt=""
+									/>
+									مسیریابی با گوگل
+								</a>
+							</div>
+						</div>
 
-            <div class="w-full lg:w-1/2">
+						<div class="mt-6 flex flex-col gap-2">
+							<div class="flex gap-2 text-gray-600">
+								<span class="flex-center w-10">
+									<img
+										class="object-contain"
+										src="svg/location.svg"
+										alt=""
+									/>
+								</span>
+								<div>
+									خیابان شهید بهشتی،خیابان
+									مهناز(صابونچی)،پلاک
+									58،طبقه 3،واحد 5
+								</div>
+							</div>
+							<div class="flex gap-2 text-gray-600">
+								<span class="flex-center w-10">
+									<img
+										class="object-contain"
+										src="svg/phone-black.svg"
+										alt=""
+									/>
+								</span>
+								<div>43000030</div>
+							</div>
+							<div class="flex gap-2 text-gray-600">
+								<span class="flex-center w-10">
+									<img
+										class="object-contain"
+										src="svg/email.svg"
+										alt=""
+									/>
+								</span>
+								<div>info@bisanseir.com</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					class="mt-1 flex flex-col gap-4 border-t pt-6 text-gray-500"
+				>
+					<div>
+						ﭘﺸﺘﯿﺒﺎﻧﯽ ﺑﯿﺴﺎن ﺳﯿﺮ در ﺗﻤﺎم ﻃﻮل ﻫﻔﺘﻪ، ﺑﻪ ﺻﻮﺮﺗ
+						24 ﺳﺎﻋﺘﻪ ﭘﺎﺳﺨﮕﻮی ﺷﻤﺎ در زﻣﯿﻨﻪ ﻫﺎی ﻣﺨﺘﻠﻒ از
+						ﺟﻤﻠﻪ: وﯾﺰﺎﯾ ﺗﮏ و ﮔﺮوﻫﯽ، ﺑﻠﯿﻂ ﻫﻮاﭘﯿﻤﺎ، رزرو
+						ﻫﺘﻞ و ﺗﻮر و... ﻣﯽ ﺑﺎﺷﺪ.
+					</div>
 
-                <div>
+					<div>
+						ﺑﯿﺴﺎن‌ﺳﯿﺮ ﯾﮑﯽ از ﻣﻤﺘﺎزﺗﺮﯾﻦ ﺷﺮﮐﺖ‌ﻫﺎی اراﺋﻪ
+						ﺧﺪﻣﺎت ﮔﺮدﺷﮕﺮی ﻣﯽ‌ﺑﺎﺷﺪ و ﺑﻪ‌ﺧﻮد ﻣﯽ‌ﺑﺎﻟﯿﻢ ﮐﻪ
+						ﻫﻤﻪ روﺰﻫ ﺑﻪ ﺗﻌﺪاد ﻣﺸﺘﺮﯾﺎن وﻓﺎدارﻣﺎن اﻓﺰوﺪﻫ
+						ﻣﯽ‌ﺷﻮد
+					</div>
+				</div>
+			</div>
+		</main>
 
+		<div class="flex-center" style="height: 24rem">
+			...gap ( delete me later )
+		</div>
 
-                    <form class="flex flex-col gap-6">
-                        <div class="flex flex-col gap-6 sm:gap-1 sm:flex-row">
-                            <div class="w-full shrink-0 sm:w-1/2">
-                                <div class="relative">
-                                    <span
-                                        class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs">
-                                        نام
-                                    </span>
-                                    <div class="relative overflow-hidden rounded-3xl border border-gray-400 bg-white">
-                                        <input class="py-2 px-6 focus:placeholder:text-white" type="text"
-                                            placeholder="علی" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="w-full shrink-0 sm:w-1/2">
-                                <div class="relative">
-                                    <span
-                                        class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs">
-                                        نام خانوادگی
-
-                                    </span>
-                                    <div class="relative overflow-hidden rounded-3xl border border-gray-400 bg-white">
-                                        <input class="py-2 px-6 focus:placeholder:text-white" type="text"
-                                            placeholder="احمدی" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full">
-                            <div class="relative">
-                                <span
-                                    class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs">
-                                    موضوع
-                                </span>
-                                <div class="relative overflow-hidden rounded-3xl border border-gray-400 bg-white">
-                                    <input class="py-2 px-6 focus:placeholder:text-white" type="text"
-                                        placeholder="خرید" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-full">
-                            <div class="relative">
-                                <span
-                                    class="absolute top-0 right-5 z-20 -translate-y-1/2 transform bg-white p-1 text-xs">
-                                    نام خانوادگی
-                                </span>
-                                <div class="relative my-4 overflow-hidden rounded-3xl border bg-white border-gray-400">
-                                    <textarea
-                                        class="w-full py-2 px-6 focus:placeholder:text-white focus-visible:outline-none"
-                                        type="text" placeholder="پاسخ شما" cols="30" rows="7"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <button
-                                class="inline-block rounded-3xl bg-primery px-4 py-2 font-bold text-primery-dark hover:bg-yellow-200"
-                                type="submit">
-                                ارسال
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class=" w-full lg:w-1/2">
-
-                <div class="relative h-72 flex flex-col justify-center items-center">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12939.179951151129!2d50.981228732403565!3d35.82950540204879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2see!4v1645952091896!5m2!1sen!2see"
-                        class="w-full filter grayscale brightness-100 h-full  rounded-3xl opacity-80" style="border:0;"
-                        allowfullscreen="" loading="lazy"></iframe>
-                    <div
-                        class="sm:absolute bottom-10 w-full sm:w-10/12  flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-4">
-                        <a href="#"
-                            class="py-2 px-6 cursor-pointer w-full sm:w-1/2 shadow-md rounded-3xl bg-white hover:bg-slate-100 flex-center text-secondary-dark gap-2">
-                            <img src="svg/google-map.svg" alt="">
-                            مسیریابی با ویز
-                        </a>
-                        <a href="#"
-                            class="py-2 px-6 cursor-pointer w-full sm:w-1/2 shadow-md rounded-3xl bg-white hover:bg-slate-100 flex-center text-secondary-dark gap-2">
-                            <img src="svg/waze.svg" alt="">
-                            مسیریابی با گوگل
-                        </a>
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-2 mt-6">
-                    <div class="flex gap-2 text-gray-600">
-                        <span class="w-10 flex-center">
-                            <img class="object-contain" src="svg/location.svg" alt="">
-                        </span>
-                        <div>
-                            خیابان شهید بهشتی،خیابان مهناز(صابونچی)،پلاک 58،طبقه 3،واحد 5
-                        </div>
-                    </div>
-                    <div class="flex gap-2 text-gray-600">
-                        <span class="w-10 flex-center">
-                            <img class="object-contain" src="svg/phone-black.svg" alt="">
-                        </span>
-                        <div>
-                            43000030
-                        </div>
-                    </div>
-                    <div class="flex gap-2 text-gray-600">
-                        <span class="w-10 flex-center">
-                            <img class="object-contain" src="svg/email.svg" alt="">
-                        </span>
-                        <div>
-                            info@bisanseir.com
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="border-t flex flex-col text-gray-500 gap-4 pt-6 mt-6">
-            <div>
-                ﭘﺸﺘﯿﺒﺎﻧﯽ ﺑﯿﺴﺎن ﺳﯿﺮ در ﺗﻤﺎم ﻃﻮل ﻫﻔﺘﻪ، ﺑﻪ ﺻﻮﺮﺗ 24 ﺳﺎﻋﺘﻪ ﭘﺎﺳﺨﮕﻮی ﺷﻤﺎ در زﻣﯿﻨﻪ ﻫﺎی ﻣﺨﺘﻠﻒ از ﺟﻤﻠﻪ: وﯾﺰﺎﯾ ﺗﮏ و
-                ﮔﺮوﻫﯽ، ﺑﻠﯿﻂ ﻫﻮاﭘﯿﻤﺎ، رزرو ﻫﺘﻞ و ﺗﻮر و... ﻣﯽ ﺑﺎﺷﺪ.
-            </div>
-
-            <div>
-                ﺑﯿﺴﺎن‌ﺳﯿﺮ ﯾﮑﯽ از ﻣﻤﺘﺎزﺗﺮﯾﻦ ﺷﺮﮐﺖ‌ﻫﺎی اراﺋﻪ ﺧﺪﻣﺎت ﮔﺮدﺷﮕﺮی ﻣﯽ‌ﺑﺎﺷﺪ و ﺑﻪ‌ﺧﻮد ﻣﯽ‌ﺑﺎﻟﯿﻢ ﮐﻪ ﻫﻤﻪ روﺰﻫ ﺑﻪ ﺗﻌﺪاد
-                ﻣﺸﺘﺮﯾﺎن وﻓﺎدارﻣﺎن اﻓﺰوﺪﻫ ﻣﯽ‌ﺷﻮد
-            </div>
-        </div>
-    </main>
-
-    <div class="flex-center " style="height: 24rem">...gap ( delete me later )</div>
-
-    <script src="js/components/navbar.js"></script>
-    <script src="js/components/mobile-controller.js"></script>
-    <script src="js/commons/utils.js"></script>
-
-</body>
-
+		<script src="js/components/navbar.js"></script>
+		<script src="js/components/mobile-controller.js"></script>
+		<script src="js/commons/utils.js"></script>
+	</body>
 </html>

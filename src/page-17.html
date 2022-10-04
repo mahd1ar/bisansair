@@ -15,15 +15,13 @@
 </head>
 
 <body>
-
-
-    <div class="fixed w-full z-50 transition-all nav-container" id="navigation-sticky-placeholder">
+    <div class="nav-container fixed z-50 w-full transition-all" id="navigation-sticky-placeholder">
         <!-- DO NOT DELETE ME -->
     </div>
     <header class="mb-10 pt-10">
         <!-- mobile controller layout -->
         <nav id="" x-data="mobile_controller"
-            class="transition-all duration-300 ease-out fixed bottom-0 z-30 flex h-20 w-full flex-col lg:hidden">
+            class="fixed bottom-0 z-30 flex h-20 w-full flex-col transition-all duration-300 ease-out lg:hidden">
             <div x-show="isOpen" style="display: none" class="relative h-full w-full overflow-hidden bg-white"
                 x-transition.delay.150ms>
                 <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden" style="
@@ -35,16 +33,16 @@
                     <div class="mt-10 flex flex-col items-center">
                         <div class="relative">
                             <div
-                                class="absolute w-full h-full bg-gradient-radial from-[#f4f4f4]  to-transparent top-0 left-0 scale-150">
+                                class="absolute top-0 left-0 h-full w-full scale-150 bg-gradient-radial from-[#f4f4f4] to-transparent">
                             </div>
                             <img class="relative" src="img/logo-with-text.svg" />
                         </div>
-                        <h3 class="text-xl font-bold text-primery-dark mt-3">
+                        <h3 class="mt-3 text-xl font-bold text-primery-dark">
                             !!! رویاهات رو تور کن
                         </h3>
 
                         <button x-show="subMenu.length > 0" x-transition
-                            class="flex-center h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold mt-7 text-secondary-dark transition-all"
+                            class="flex-center mt-7 h-10 w-full overflow-hidden rounded-3xl bg-secondary-ligth font-bold text-secondary-dark transition-all"
                             @click="back">
                             بازگشت به منوی قبلی
                         </button>
@@ -104,8 +102,8 @@
 
                     <!-- call btn -->
                     <a href="tel:+982143000030"
-                        class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16  rotate-45 transform rounded-xl bg-primery">
-                        <img src="img/controll/call.svg" class=" absolute cursor-pointer rotate-45" />
+                        class="bi-call-icon bi-shadow flex-center flex-center absolute top-0 aspect-square w-16 rotate-45 transform rounded-xl bg-primery">
+                        <img src="img/controll/call.svg" class="absolute rotate-45 cursor-pointer" />
                     </a>
                 </div>
                 <div aria-hidden="true" class="absolute top-0 z-10 flex w-full justify-center overflow-hidden">
@@ -159,15 +157,14 @@
                     class="relative z-20 mx-auto hidden flex-grow items-center justify-between rounded-2xl bg-white px-5 py-3 drop-shadow-sm md:flex">
                     <div class="flex w-auto justify-between lg:w-full">
                         <a href="tel:02188319191"
-                            class="flex-center flex-0 flex-shrink-0 w-8 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
+                            class="flex-center flex-0 w-8 flex-shrink-0 rounded-full bg-yellow-300 py-1 text-gray-500 shadow-lg lg:w-32 lg:bg-gray-200 lg:shadow-none">
                             <img src="./svg/phone.svg" class="h-6 w-6 object-contain py-1" alt="" />
                             <span class="mx-2 hidden whitespace-nowrap text-sm tracking-wider lg:block">
                                 ۰۲۱-۳۴۵۶۴۸
                             </span>
                         </a>
 
-                        <div class="menu-top_menu-container w-full hidden lg:flex flex-col" ref="menuContainer">
-
+                        <div class="menu-top_menu-container hidden w-full flex-col lg:flex" ref="menuContainer">
                             <ul id="menu-top_menu" class="menu">
                                 <li class="menu-item">
                                     <a href="#">خانه
@@ -472,7 +469,7 @@
                     </div>
 
                     <img src="./img/logo76.png" id="navigation__bisanseir-logo"
-                        class="w-9 object-contain bi-filiplogo-animation" alt="bisanseir-logo" />
+                        class="bi-filiplogo-animation w-9 object-contain" alt="bisanseir-logo" />
 
                     <div @click="taggleMobileMenu" class="cursor-pointer lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -507,10 +504,10 @@
                         </div>
 
                         <div class="relative flex flex-col rounded-3xl bg-white" style="
-                            max-height: calc(
-                                100% - 97px
-                            );
-                        " dir="rtl">
+									max-height: calc(
+										100% - 97px
+									);
+								" dir="rtl">
                             <div class="mt-2 mb-5 flex items-center justify-start gap-3 p-5 text-xl">
                                 <span x-show="subMenu.length" class="bi-icon cursor-pointer" @click="subMenu.pop()">
                                     <img src="svg/chevron-rigth.svg" alt="" />
@@ -539,202 +536,251 @@
         </div>
     </header>
 
-    <main class="container relative mx-auto flex flex-col items-start gap-6 md:flex-row" dir="rtl">
-        <div class="w-full  lg:w-8/12">
-            <div>
-                <!-- Title -->
+    <main id="main" class="container relative mx-auto flex flex-col gap-3" dir="rtl">
+        <!-- Breadcrumb -->
+        <div class="flex justify-center sm:justify-start">
+            <span class="breadcrumb inline-flex items-center gap-2 rounded-lg bg-white py-1 px-2">
+                <!-- loop over breadcrumb items : the first element dosent need breadcrumb__item class -->
+                <a href="" class="flex-center breadcrumb__peer gap-2">
+                    بیسانسیر
+                </a>
+                <a href="" class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
+                    تور
+                </a>
+                <a href="" class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
+                    ترکیه
+                </a>
+                <span class="flex-center breadcrumb__peer breadcrumb__item gap-2">
+                    <img src="img/tours/chav-left.svg" class="breadcrumb__chevron transition-all duration-300" />
+                    استانبول
+                </span>
+            </span>
+        </div>
+        <h1 class="mb-3 text-2xl font-bold text-primery-dark">
+            درباره ما
+        </h1>
+
+        <div class="relative flex flex-col items-start gap-6 md:flex-row">
+            <div class="w-full">
                 <div>
-                    <h1 class="text-2xl text-primery-dark font-bold">
-                        درباره ما
-                    </h1>
-                </div>
+                    <!-- slider -->
+                    <div class="mt-4" dir="ltr">
+                        <div id="main-slider" class="splide">
+                            <div class="splide__arrows">
+                                <button class="splide__arrow splide__arrow--prev">
+                                    <img src="svg/chevron-left.svg" alt="" />
+                                </button>
+                                <button class="splide__arrow splide__arrow--next">
+                                    <img src="svg/chevron-rigth.svg" alt="" />
+                                </button>
+                            </div>
 
-                <!-- slider -->
-                <div class="mt-4" dir="ltr">
-                    <div id="main-slider" class="splide">
-                        <div class="splide__arrows">
-                            <button class="splide__arrow splide__arrow--prev">
-                                <img src="svg/chevron-left.svg" alt="" />
-                            </button>
-                            <button class="splide__arrow splide__arrow--next">
-                                <img src="svg/chevron-rigth.svg" alt="" />
-                            </button>
+                            <div class="splide__track rounded-3xl">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
+                        <!-- 
+                        <ul id="thumbnails" class="thumbnails">
+                            <li class="thumbnail">
+                                <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
+                            </li>
+                            <li class="thumbnail">
+                                <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
+                            </li>
+                            <li class="thumbnail">
+                                <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
+                            </li>
+                            <li class="thumbnail">
+                                <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                            </li>
+                        </ul> -->
+                    </div>
 
-                        <div class="splide__track">
-                            <ul class="splide__list">
-                                <li class="splide__slide">
-                                    <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
+                    <div class="mt-8 flex flex-col-reverse items-start sm:flex-row">
+                        <div
+                            class="bi-shadow-sm mt-8 flex w-full flex-col gap-4 rounded-3xl p-4 font-light leading-7 text-zinc-600 sm:mt-0 sm:w-1/2 lg:w-full">
+                            <div>
+                                بیسان‌سیر با بروزرسانی
+                                اطلاعات خود در زمینه
+                                تورهای مسافرتی و خدمات اخذ
+                                ویزای توریستی و تحصیلی،
+                                توسط پرسنلی با تجربه،
+                                کارآزموده و متعهد در تلاش
+                                است که با ارائه خدماتی
+                                متمایز به شما اثبات کند که
+                                در این حرفه بهترین است.
+                            </div>
+                            <div>
+                                هدف اصلی بیسان‌سیر جلب نظر
+                                شما مسافران عزیز و ارائه
+                                بهترین مشاوره و
+                                برنامه‌ریزی درخصوص انتخاب
+                                مناسب‌ترین پروازها و
+                                هتل‌ها برای سفرتان می‌باشد
+                                تا آرامش و لذت‌تان در طول
+                                سفر چند برابر گردد.
+                            </div>
+                            <div>
+                                از اصول حرفه‌ای این
+                                مجموعه، اخلاق حرفه‌ای و
+                                تعهد بر توافقات با مشتری
+                                می‌باشد که موجب متمایز شدن
+                                بیسان‌سیر با رقبا گردیده
+                                است.
+                            </div>
+                            <div>
+                                همیشه رضایت کامل مسافران
+                                را مهمترین هدف خود قرار
+                                داده و با ارائه خدماتی نو
+                                و با کیفیت به مسافران
+                                توانسته‌ایم در این صنعت به
+                                سرعت رشد کنیم.
+                            </div>
+                        </div>
+                        <div class="flex w-full flex-col rounded-3xl p-6 sm:w-1/2 lg:hidden">
+                            <h3 class="text-xl font-bold text-primery-dark">
+                                خدمات بیسان سیر
+                            </h3>
+
+                            <ul class="list-square mt-5 flex list-inside flex-col gap-2 space-y-4 text-gray-800">
+                                <li>
+                                    رزرو و صدور بلیط
+                                    تمامی ایرلاین‌های
+                                    داخلی و خارجی
                                 </li>
-                                <li class="splide__slide">
-                                    <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
+                                <li>
+                                    رزرو هتل در سراسر
+                                    جهان به صورت آنلاین
+                                    و گارانتی شده
                                 </li>
-                                <li class="splide__slide">
-                                    <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
+                                <li>خدمات اخذ ویزا</li>
+                                <li>
+                                    صدور بیمه نامه
+                                    مسافرتی خارجی
                                 </li>
-                                <li class="splide__slide">
-                                    <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
+                                <li>
+                                    ارائه خدمات VIP و
+                                    CIP
+                                </li>
+                                <li>
+                                    مشاوره رایگان در
+                                    امور اخذ ویزا
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <!-- 
-                    <ul id="thumbnails" class="thumbnails">
-                        <li class="thumbnail">
-                            <img src="img/stock/photo-1642201137425-b82da17f4051.jpg" />
-                        </li>
-                        <li class="thumbnail">
-                            <img src="img/stock/photo-1642201289923-524d32bba771.jpg" />
-                        </li>
-                        <li class="thumbnail">
-                            <img src="img/stock/photo-1643779375239-2bff1d13c64d.jpg" />
-                        </li>
-                        <li class="thumbnail">
-                            <img src="img/stock/photo-1644258201768-e6d8b09e34a4.jpg" />
-                        </li>
-                    </ul> -->
-                </div>
 
+                    <div class="bi-shadow-sm mt-6 flex flex-col gap-5 rounded-3xl p-4">
+                        <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+                            <span class="text-xl font-bold text-primery-dark">
+                                پشتیبانی
+                            </span>
 
-                <div class="flex flex-col-reverse sm:flex-row items-start mt-8">
+                            <div class="flex gap-5 rounded-3xl bg-primery py-2 px-5 text-primery-dark">
+                                <div class="flex gap-2">
+                                    <img src="svg/24-gold.svg" alt="" />
+                                    24 ساعته
+                                </div>
+                                <div class="flex gap-2">
+                                    <img src="svg/cal-gold.svg" alt="" />
 
-                    <div class="flex flex-col mt-8 sm:mt-0 w-full sm:w-1/2 lg:w-full gap-4 text-gray-700 leading-7 ">
-                        <div>
-                            بیسان‌سیر با بروزرسانی اطلاعات خود در زمینه تورهای مسافرتی و خدمات اخذ ویزای توریستی و
-                            تحصیلی،
-                            توسط پرسنلی با تجربه، کارآزموده و متعهد در تلاش است که با ارائه خدماتی متمایز به شما اثبات
-                            کند
-                            که در این حرفه بهترین است.
-                        </div>
-                        <div>
-                            هدف اصلی بیسان‌سیر جلب نظر شما مسافران عزیز و ارائه بهترین مشاوره و برنامه‌ریزی درخصوص
-                            انتخاب
-                            مناسب‌ترین پروازها و هتل‌ها برای سفرتان می‌باشد تا آرامش و لذت‌تان در طول سفر چند برابر
-                            گردد.
-                        </div>
-                        <div>
-                            از اصول حرفه‌ای این مجموعه، اخلاق حرفه‌ای و تعهد بر توافقات با مشتری می‌باشد که موجب متمایز
-                            شدن
-                            بیسان‌سیر با رقبا گردیده است.
-                        </div>
-                        <div>
-                            همیشه رضایت کامل مسافران را مهمترین هدف خود قرار داده و با ارائه خدماتی نو و با کیفیت به
-                            مسافران
-                            توانسته‌ایم در این صنعت به سرعت رشد کنیم.
-                        </div>
-                    </div>
-                    <div class="flex flex-col p-6 rounded-3xl w-full sm:w-1/2 lg:hidden">
-                        <h3 class="text-xl text-primery-dark font-bold">خدمات بیسان سیر </h3>
-
-                        <ul class="flex flex-col gap-2 text-gray-800 list-disc list-inside">
-                            <li>
-                                رزرو و صدور بلیط تمامی ایرلاین‌های داخلی و خارجی
-                            </li>
-                            <li>
-                                رزرو هتل در سراسر جهان به صورت آنلاین و گارانتی شده
-                            </li>
-                            <li>خدمات اخذ ویزا</li>
-                            <li>صدور بیمه نامه مسافرتی خارجی</li>
-                            <li>ارائه خدمات VIP و CIP</li>
-                            <li>مشاوره رایگان در امور اخذ ویزا</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="p-6 shadow-md mt-6 flex flex-col gap-4 rounded-3xl">
-                    <div class="flex flex-col gap-4 sm:flex-row items-start sm:items-center justify-between ">
-                        <span class="text-xl text-primery-dark font-bold">
-                            پشتیبانی
-                        </span>
-
-                        <div class="bg-secondary-dark flex text-white rounded-3xl gap-5 py-2 px-5">
-                            <div class="flex gap-2">
-                                <img src="svg/24.svg" alt="">
-                                24 ساعته
-                            </div>
-                            <div class="flex gap-2">
-                                <img src="svg/cal-white.png" alt="">
-
-                                7 روز هفته
+                                    7 روز هفته
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="text-gray-500 ">
-                        7 روز هفته، به صورت 24 ساعته پاسخگوی شما در زمینه‌های مختلف هستیم تا آسایش خاطر را برای شما
-                        عزیزان از لحظه خرید تا بازگشت از سفر فراهم کنیم.
-                    </div>
-                </div>
-
-                <div class="text-gray-700 leading-7 mt-6">
-                    ما در حوزه گردشگری حرف‌های زیادی برای گفتن داریم و به خود می‌بالیم که همه روزه برتعداد مشتریان
-                    وفادارمان افزوده می‌شود.
-                </div>
-
-
-
-                <div class="flex flex-col gap-2 mt-6">
-                    <div class="flex gap-2 text-gray-600">
-                        <span class="w-10 flex-center">
-                            <img class="object-contain" src="svg/location.svg" alt="">
-                        </span>
-                        <div>
-                            خیابان شهید بهشتی،خیابان مهناز(صابونچی)،پلاک 58،طبقه 3،واحد 5
+                        <div class="font-light text-zinc-600">
+                            7 روز هفته، به صورت 24 ساعته
+                            پاسخگوی شما در زمینه‌های مختلف
+                            هستیم تا آسایش خاطر را برای شما
+                            عزیزان از لحظه خرید تا بازگشت از
+                            سفر فراهم کنیم.
                         </div>
                     </div>
-                    <div class="flex gap-2 text-gray-600">
-                        <span class="w-10 flex-center">
-                            <img class="object-contain" src="svg/phone-black.svg" alt="">
-                        </span>
-                        <div>
-                            43000030
-                        </div>
-                    </div>
-                    <div class="flex gap-2 text-gray-600">
-                        <span class="w-10 flex-center">
-                            <img class="object-contain" src="svg/email.svg" alt="">
-                        </span>
-                        <div>
-                            info@bisanseir.com
-                        </div>
-                    </div>
-                </div>
 
+                    <div class="mt-6 font-light leading-7 text-zinc-600">
+                        ما در حوزه گردشگری حرف‌های زیادی برای
+                        گفتن داریم و به خود می‌بالیم که همه
+                        روزه برتعداد مشتریان وفادارمان افزوده
+                        می‌شود.
+                    </div>
+
+                    <div class="mt-6 flex flex-col gap-2 font-light text-zinc-600">
+                        <div class="flex gap-2 text-gray-600">
+                            <span class="flex w-10 items-center justify-center">
+                                <img class="object-contain" src="svg/location.svg" alt="" />
+                            </span>
+                            <div>
+                                خیابان شهید بهشتی،خیابان
+                                مهناز(صابونچی)،پلاک
+                                58،طبقه 3،واحد 5
+                            </div>
+                        </div>
+                        <div class="flex gap-2 text-gray-600">
+                            <span class="flex w-10 items-center justify-center">
+                                <img class="object-contain" src="svg/phone-black.svg" alt="" />
+                            </span>
+                            <div>43000030</div>
+                        </div>
+                        <div class="flex gap-2 text-gray-600">
+                            <span class="flex w-10 items-center justify-center">
+                                <img class="object-contain" src="svg/email.svg" alt="" />
+                            </span>
+                            <div>info@bisanseir.com</div>
+                        </div>
+                    </div>
+
+                    <br /><br /><br /><br /><br /><br />
+                </div>
             </div>
+            <aside class="relative bottom-0 left-0 top-20 hidden flex-shrink-0 lg:sticky lg:block lg:w-[320px]">
+                <div class="flex flex-col gap-4 rounded-3xl bg-white p-6 shadow-lg">
+                    <h3 class="text-xl font-bold text-primery-dark">
+                        خدمات بیسان سیر
+                    </h3>
+
+                    <ul class="list-square flex list-inside flex-col gap-2 space-y-4 text-gray-800">
+                        <li>
+                            رزرو و صدور بلیط تمامی
+                            ایرلاین‌های داخلی و خارجی
+                        </li>
+                        <li>
+                            رزرو هتل در سراسر جهان به صورت
+                            آنلاین و گارانتی شده
+                        </li>
+                        <li>خدمات اخذ ویزا</li>
+                        <li>صدور بیمه نامه مسافرتی خارجی</li>
+                        <li>ارائه خدمات VIP و CIP</li>
+                        <li>
+                            مشاوره رایگان در امور اخذ ویزا
+                        </li>
+                    </ul>
+                </div>
+            </aside>
         </div>
-        <aside class="relative bottom-0 left-0 hidden lg:block lg:w-4/12">
-            <div class="shadow-lg p-6 flex flex-col gap-4 bg-white rounded-3xl">
-                <h3 class="text-xl text-primery-dark font-bold">خدمات بیسان سیر </h3>
-
-                <ul class="flex flex-col gap-2 text-gray-800 list-disc list-inside">
-                    <li>
-                        رزرو و صدور بلیط تمامی ایرلاین‌های داخلی و خارجی
-                    </li>
-                    <li>
-                        رزرو هتل در سراسر جهان به صورت آنلاین و گارانتی شده
-                    </li>
-                    <li>خدمات اخذ ویزا</li>
-                    <li>صدور بیمه نامه مسافرتی خارجی</li>
-                    <li>ارائه خدمات VIP و CIP</li>
-                    <li>مشاوره رایگان در امور اخذ ویزا</li>
-                </ul>
-            </div>
-        </aside>
     </main>
 
     <script src="js/components/navbar.js"></script>
     <script src="js/components/mobile-controller.js"></script>
     <script src="lib/js/splide.min.js"></script>
-    <script src="js/commons/utils.js"> </script>
-    <script src="lib/js/stickybits.min.js"></script>
+    <script src="js/commons/utils.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-
-            if (["lg", 'xl'].includes(currentBrackPoint())) {
-                stickybits("aside", { stickyBitStickyOffset: 80 });
-
-            }
-
+        document.addEventListener("DOMContentLoaded", function () {
             const splide = new Splide("#main-slider", {
                 width: "100%",
                 height: 378,
@@ -743,12 +789,8 @@
             });
 
             splide.mount();
-
         });
     </script>
-
-
-
 </body>
 
 </html>
