@@ -558,7 +558,7 @@
                 </span>
             </span>
         </div>
-        <h1 class="mb-3 text-2xl font-bold text-primery-dark">
+        <h1 class=" text-2xl font-bold text-primery-dark">
             درباره ما
         </h1>
 
@@ -566,7 +566,7 @@
             <div class="w-full">
                 <div>
                     <!-- slider -->
-                    <div class="mt-4" dir="ltr">
+                    <div dir="ltr">
                         <div id="main-slider" class="splide">
                             <div class="splide__arrows">
                                 <button class="splide__arrow splide__arrow--prev">
@@ -747,20 +747,18 @@
                     <br /><br /><br /><br /><br /><br />
                 </div>
             </div>
-            <aside class="relative bottom-0 left-0 top-20 hidden flex-shrink-0 lg:sticky lg:block lg:w-[320px]">
-                <div class="flex flex-col gap-4 rounded-3xl bg-white p-6 shadow-lg">
+            <aside class="relative bottom-0 left-0 top-20 hidden flex-shrink-0 lg:sticky lg:block lg:w-[302px]">
+                <div class="js-summary flex flex-col gap-4 rounded-3xl bg-white p-6 shadow-lg">
                     <h3 class="text-xl font-bold text-primery-dark">
                         خدمات بیسان سیر
                     </h3>
 
-                    <ul class="list-square flex list-inside flex-col gap-2 space-y-4 text-gray-800">
+                    <ul class="list-square flex list-inside flex-col gap-2 space-y-4 text-gray-800 font-normal">
                         <li>
-                            رزرو و صدور بلیط تمامی
-                            ایرلاین‌های داخلی و خارجی
+                            رزرو و صدور بلیط تمامی ایرلاین‌ها
                         </li>
                         <li>
-                            رزرو هتل در سراسر جهان به صورت
-                            آنلاین و گارانتی شده
+                            رزرو هتل در سراسر جهان
                         </li>
                         <li>خدمات اخذ ویزا</li>
                         <li>صدور بیمه نامه مسافرتی خارجی</li>
@@ -781,9 +779,12 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+
+            const box = ["lg", "xl"].includes(currentBrackPoint()) && document.querySelector(".js-summary")
+
             const splide = new Splide("#main-slider", {
                 width: "100%",
-                height: 378,
+                height: box ? +  getComputedStyle(box).height.replace('px', '') : 378,
                 pagination: false,
                 cover: true,
             });
