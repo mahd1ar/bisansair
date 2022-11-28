@@ -65,13 +65,18 @@ window.mobile_controller = {
             t.name = name ? name.innerHTML.replace(/\s+/g, ' ').trim() : "ROOT";
             t.link = name ? name.href : "#";
             t.children = [];
+            t.order = Number(el.dataset.order) || -1
+            t.show = el.dataset.showInMobile ? (el.dataset.showInMobile.toLowerCase()) === 'true' : true
 
             index++
 
             for (let i = 0; i < els.length; i++) {
-
-                t.children.push(traverse(els[i], index))
+                const x = traverse(els[i], index)
+                if (x.show)
+                    t.children.push(x)
             }
+
+            t.children.sort(({ order: a }, { order: b }) => a - b === Math.abs(a) - Math.abs(b) ? a - b : b - a)
 
             return t
 
@@ -100,7 +105,6 @@ window.mobile_controller = {
         for (let i = 0; i < this.subMenu.length; i++) {
             l = l[this.subMenu[i]].children
         }
-
 
         return l
     },

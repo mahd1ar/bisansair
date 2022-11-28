@@ -33,8 +33,6 @@ class LoWrapper {
                 recalc(ev)
             }
 
-        console.log(this.animation)
-
     }
 
     in() {
@@ -86,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
             xl: 5
         }
         const splide = new Splide('.js-popular-tours', {
-            // type: 'loop',
+            type: 'loop',
             drag: 'free',
             snap: true,
             perPage: masSize[currentBrackPoint()],

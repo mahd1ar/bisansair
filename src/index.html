@@ -72,15 +72,18 @@
                             x-transition:enter-end="x-transition-enter-end" x-transition:leave="x-transition-leave"
                             x-transition:leave-start="x-transition-leave-start "
                             x-transition:leave-end="x-transition-leave-end">
-                            <template x-for="({name,link,icon,hasChildren},inx) in ch" :key="inx">
+                            <template x-for="({ name, link, icon, hasChildren  },inx) in ch" :key="inx">
+
                                 <div :style="{ '--count' : inx }"
                                     @click="hasChildren ? changeSubMenu(inx) : openlink(link) "
+                                    :class="{'bg-primery' : inx === 4}"
                                     class="child-item flex aspect-square cursor-pointer flex-col items-center justify-center gap-1 rounded-2xl bg-gray-200"
                                     x-transition.fade>
                                     <span x-show="icon" x-html="icon" class="flex-center bi-svgfull aspect-square w-8">
                                     </span>
                                     <span class="text-center font-bold text-secondary-dark" x-text="name"></span>
                                 </div>
+
                             </template>
                         </div>
                     </div>
@@ -177,21 +180,21 @@
 
                         <div class="menu-top_menu-container hidden w-full flex-col lg:flex" ref="menuContainer">
                             <ul id="menu-top_menu" class="menu">
-                                <li class="menu-item">
+                                <li class="menu-item" data-order="1" data-show-in-mobile="false">
                                     <a href="#">خانه
                                         <i class="hidden">
                                             <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
                                         </i>
                                     </a>
                                 </li>
-                                <li class="menu-item menu-item-has-children">
+                                <li class="menu-item menu-item-has-children" data-order="2" data-show-in-mobile="true">
                                     <a href="#">تور
                                         <i class="hidden">
                                             <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
                                         </i>
                                     </a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item">
+                                        <li class="menu-item" data-order="1" data-show-in-mobile="true">
                                             <a href="#">
                                                 bitumen
                                                 penetration
@@ -201,7 +204,7 @@
                                                 </i>
                                             </a>
                                         </li>
-                                        <li class="menu-item">
+                                        <li class="menu-item" data-order="2" data-show-in-mobile="true">
                                             <a href="#">performance
                                                 grade
                                                 bitumen
@@ -210,7 +213,8 @@
                                                 </i>
                                             </a>
                                         </li>
-                                        <li class="menu-item menu-item-has-children">
+                                        <li class="menu-item menu-item-has-children" data-order="3"
+                                            data-show-in-mobile="true">
                                             <a href="#">Bitumen
                                                 Cutback
                                                 <i class="hidden">
@@ -218,7 +222,7 @@
                                                 </i>
                                             </a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item">
+                                                <li class="menu-item" data-order="1" data-show-in-mobile="true">
                                                     <a href="#">Cutback
                                                         bitumen
                                                         slow
@@ -230,7 +234,7 @@
                                                         </i>
                                                     </a>
                                                 </li>
-                                                <li class="menu-item">
+                                                <li class="menu-item" data-order="2" data-show-in-mobile="true">
                                                     <a href="#">Cutback
                                                         bitumen
                                                         medium
@@ -241,7 +245,7 @@
                                                         </i>
                                                     </a>
                                                 </li>
-                                                <li class="menu-item">
+                                                <li class="menu-item" data-order="3" data-show-in-mobile="true">
                                                     <a href="#">Rapid
                                                         curing
                                                         cutback
@@ -254,11 +258,12 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item menu-item-has-children">
+                                        <li class="menu-item menu-item-has-children" data-order="4"
+                                            data-show-in-mobile="true">
                                             <a href="#">bitumen
                                                 emulsion</a>
                                             <ul class="sub-menu">
-                                                <li class="menu-item">
+                                                <li class="menu-item" data-order="2" data-show-in-mobile="true">
                                                     <a href="#">Bitumen
                                                         Emulsion
                                                         (BE)
@@ -267,7 +272,7 @@
                                                         </i>
                                                     </a>
                                                 </li>
-                                                <li class="menu-item">
+                                                <li class="menu-item" data-order="1" data-show-in-mobile="true">
                                                     <a href="#">Cationic
                                                         Emulsions
                                                         <i class="hidden">
@@ -275,7 +280,7 @@
                                                         </i>
                                                     </a>
                                                 </li>
-                                                <li class="menu-item">
+                                                <li class="menu-item" data-order="3" data-show-in-mobile="true">
                                                     <a href="#">Anionic
                                                         Emulsions
                                                         <i class="hidden">
@@ -285,7 +290,7 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li class="menu-item">
+                                        <li class="menu-item" data-order="6" data-show-in-mobile="true">
                                             <a href="#">Mulch
                                                 Emulsified
                                                 Bitumen
@@ -294,7 +299,7 @@
                                                 </i>
                                             </a>
                                         </li>
-                                        <li class="menu-item">
+                                        <li class="menu-item" data-order="5" data-show-in-mobile="true">
                                             <a href="#">Solvent
                                                 Base
                                                 Primer
@@ -352,7 +357,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="menu-item menu-item-has-children">
+                                <li class="menu-item menu-item-has-children" data-order="4" data-show-in-mobile="true">
                                     <a href="#">ﻫﺘﻞ ﻫﺎ
                                         <i class="hidden">
                                             <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
@@ -426,7 +431,7 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="menu-item">
+                                <li class="menu-item" data-order="3" data-show-in-mobile="true">
                                     <a href="#">تور اقساط
                                         <i class="hidden">
                                             <img src="svg/mobile-controller/tiket.svg" alt="ticket" />
