@@ -280,7 +280,6 @@ class Slider {
 
         range(REdge, LEdge + 1).forEach((item, id) => {
 
-
             let margin = (this.taraz - id);
 
             const absMargin = Math.abs(margin);
@@ -299,7 +298,7 @@ class Slider {
 
             const imgopacity = this.isBilateral ?
                 1 - absMargin * opacity :
-                item > selectedCard ? 0 : 1 - absMargin * opacity;
+                item > this.state ? 0 : 1 - absMargin * opacity;
 
             cards.at(item).querySelector('img').style.opacity = imgopacity;
 

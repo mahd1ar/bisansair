@@ -4818,10 +4818,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 		width: 50%;
 	}
 
-	.lg\:w-\[320px\] {
-		width: 320px;
-	}
-
 	.lg\:w-\[302px\] {
 		width: 302px;
 	}
