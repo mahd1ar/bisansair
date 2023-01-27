@@ -30,8 +30,14 @@
         <!-- DO NOT DELETE ME -->
     </div>
 
+    <div class="h-96 bg-[#f0f0f0] absolute top-0 left-0 w-full">
+        <img src="svg/travel-textture/one.svg" class="w-full h-full " alt="">
+        <div aria-hidden="true" class="absolute inset-0 w-full h-full  bg-gradient-to-t from-white to-transparent">
+        </div>
+    </div>
+    <!-- if you want to bring back date picker replace class with this sm:h-[90vh] -->
     <header
-        class="relative top-0 z-20 flex flex-col bg-white from-[#92F2FF] to-white pt-0 sm:h-[90vh] sm:bg-gradient-to-b sm:pt-5">
+        class="relative top-0 z-20 flex flex-col sm:bg-white from-[#92F2FF] to-white pt-0 sm:h-[60vh] sm:bg-gradient-to-b sm:pt-5">
         <!-- yellow overlay -->
         <div
             class="absolute bottom-0 -z-10 hidden h-full w-full bg-gradient-radial from-yellow-200 via-yellow-50 to-transparent md:block">
@@ -553,12 +559,7 @@
 
         <div class="js-hero relative flex h-full flex-col items-center justify-center overflow-x-clip sm:flex-row">
             <div class="relative mb-auto w-full">
-                <!-- mobile header background -->
-                <div class="bi-overlay-gradient-white absolute top-0 h-80 w-full overflow-hidden sm:hidden" style="
-							background: url(svg/travel-textture/one.svg)
-								center center/cover;
-							background-color: #f0f0f0;
-						" aria-hidden="true"></div>
+
                 <!-- mobile header -->
                 <div class="container relative mx-auto lg:hidden">
                     <div class="flex flex-row-reverse gap-4 pt-5 text-white sm:pt-0">
@@ -597,7 +598,7 @@
 
             <div
                 class="z-20 mb-14 flex w-full flex-col items-center text-center font-iransans sm:absolute sm:mb-0 sm:flex-row-reverse sm:px-12 md:flex-col lg:z-10">
-                <div class="relative hidden w-full sm:block sm:w-1/2 md:w-full">
+                <div class="relative hidden w-full sm:block sm:w-full">
                     <h1 class="font-vazir text-6xl font-bold">
                         بیسان سیر
                     </h1>
@@ -605,12 +606,12 @@
                         با بیسان به بیش از 50 نقطه دنبا سفر کن
                     </h2>
                     <div
-                        class="pointer-events-none absolute left-0 -top-32 -z-10 w-full sm:-top-20 sm:w-[110%] md:hidden">
+                        class="pointer-events-none absolute left-0 -top-32 -z-10 w-full sm:-top-20 sm:w-full md:hidden">
                         <img src="img/Airplane.png" alt="" />
                     </div>
                 </div>
-
-                <div x-data="fligthPicker" class="relative top-8 w-10/12 sm:w-1/2 md:w-full">
+                <!-- temporarily hidden -->
+                <div x-data="fligthPicker" class="hidden relative top-8 w-10/12 sm:w-1/2 md:w-full">
                     <div class="container mx-auto">
                         <div
                             class="flex flex-col justify-between gap-2 rounded-3xl bg-white py-4 px-2 shadow-lg md:flex-row-reverse md:rounded-full">
@@ -1233,7 +1234,7 @@
 
     <main class="mb-20 mt-5 flex flex-col gap-16 md:gap-20 lg:gap-36">
         <section>
-            <div class="container mx-auto flex flex-col gap-6">
+            <div class="container mx-auto flex flex-col gap-6 relative">
                 <div class="flex flex-col items-center justify-center">
                     <h2 class="text-xl font-bold text-black">
                         تور های پر طرفدار
