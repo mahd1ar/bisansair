@@ -2329,6 +2329,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	height: 3.5rem;
 }
 
+.h-96 {
+	height: 24rem;
+}
+
 .h-auto {
 	height: auto;
 }
@@ -2367,14 +2371,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .h-72 {
 	height: 18rem;
-}
-
-.h-56 {
-	height: 14rem;
-}
-
-.h-96 {
-	height: 24rem;
 }
 
 .max-h-full {
@@ -3034,6 +3030,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#f0f0f0\] {
+	--tw-bg-opacity: 1;
+	background-color: rgb(240 240 240 / var(--tw-bg-opacity));
+}
+
 .bg-gray-100 {
 	--tw-bg-opacity: 1;
 	background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -3068,14 +3069,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 	background-color: rgb(230 230 230 / var(--tw-bg-opacity));
 }
 
-.bg-red-200 {
+.bg-\[\#dfd6cd\] {
 	--tw-bg-opacity: 1;
-	background-color: rgb(254 202 202 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#f0f0f0\] {
-	--tw-bg-opacity: 1;
-	background-color: rgb(240 240 240 / var(--tw-bg-opacity));
+	background-color: rgb(223 214 205 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-60 {
@@ -4238,12 +4234,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 		height: 90vh;
 	}
 
-	.sm\:h-auto {
-		height: auto;
-	}
-
 	.sm\:h-\[60vh\] {
 		height: 60vh;
+	}
+
+	.sm\:h-auto {
+		height: auto;
 	}
 
 	.sm\:w-80 {
@@ -4272,8 +4268,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 		width: 9rem;
 	}
 
-	.sm\:w-\[110\%\] {
-		width: 110%;
+	.sm\:w-full {
+		width: 100%;
 	}
 
 	.sm\:w-2\/5 {
@@ -4314,10 +4310,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 	.sm\:w-8\/12 {
 		width: 66.666667%;
-	}
-
-	.sm\:w-full {
-		width: 100%;
 	}
 
 	.sm\:-translate-x-1\/2 {
@@ -4656,6 +4648,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 	.md\:bg-gray-200 {
 		--tw-bg-opacity: 1;
 		background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+	}
+
+	.md\:bg-gradient-to-r {
+		background-image: linear-gradient(to right, var(--tw-gradient-stops));
 	}
 
 	.md\:p-3 {

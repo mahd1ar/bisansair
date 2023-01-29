@@ -2193,8 +2193,8 @@
         <section class="">
             <div class="container mx-auto">
                 <div
-                    class="to-whitep-16 text-rtl relative flex items-center justify-between overflow-hidden rounded-3xl bg-gradient-to-r from-[#dfd6cd] p-16 font-iransans shadow-xl">
-                    <div class="relative z-10">
+                    class="to-whitep-16 text-rtl relative flex items-center flex-col md:flex-row gap-2 justify-between overflow-hidden rounded-3xl bg-[#dfd6cd] md:bg-gradient-to-r from-[#dfd6cd] to-white p-16 font-iransans shadow-xl">
+                    <div class="relative z-10 flex flex-col">
                         <h1 class="text-4xl font-bold">
                             تور های اقساطی
                         </h1>
@@ -2202,17 +2202,19 @@
                             با تور های اقصاتی بیسان به راحتی
                             به تمام نقاط دنیا سفر کنید
                         </p>
+                        <div class="text-left md:text-right">
 
-                        <button class="bi-primary-pill mt-5 inline-block">
-                            شرایط و قوانین
-                        </button>
+                            <button class="bi-primary-pill mt-5 inline-block ">
+                                شرایط و قوانین
+                            </button>
+                        </div>
                     </div>
 
-                    <img class="hidden md:block" src="svg/human-1.svg" alt="" loading="lazy" />
-                    <div
+                    <img class="block" src="svg/human-1.svg" alt="" loading="lazy" />
+                    <!-- <div
                         class="absolute inset-0 z-0 h-full w-full after:absolute after:top-0 after:h-full after:w-full after:bg-gradient-to-l after:from-gray-300 after:to-transparent md:hidden">
                         <img class="h-full object-cover" src="img/tours.png" alt="" />
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
